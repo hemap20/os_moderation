@@ -44,6 +44,13 @@ IGNORED_FILENAMES = {".DS_Store"}
 GEMINI_API_KEY_ENV = "GEMINI_API_KEY"
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.1-flash-lite")
 
+# --- Vertex AI auth (alternative to the plain API key above). Point
+# GOOGLE_APPLICATION_CREDENTIALS at a service-account JSON *file* (never
+# inline JSON in .env — see incident notes), and set these two:
+VERTEXAI_PROJECT_ENV = "GOOGLE_CLOUD_PROJECT"
+VERTEXAI_LOCATION_ENV = "GOOGLE_CLOUD_LOCATION"
+VERTEXAI_DEFAULT_LOCATION = "global"
+
 # Transcript completeness validation
 INCOMPLETE_TRANSCRIPT_MIN_GAP_SEC = 15.0
 INCOMPLETE_TRANSCRIPT_GAP_FRACTION = 0.10

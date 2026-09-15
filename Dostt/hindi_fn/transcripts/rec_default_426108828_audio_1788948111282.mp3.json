@@ -8,7 +8,7 @@
     "segments": [
       {
         "t": "00:09",
-        "text": "कैसा?"
+        "text": "कैसे हो?"
       },
       {
         "t": "00:10",
@@ -16,7 +16,7 @@
       },
       {
         "t": "00:12",
-        "text": "सब बढ़िया?"
+        "text": "सब बढ़िया"
       },
       {
         "t": "00:16",
@@ -24,11 +24,11 @@
       },
       {
         "t": "00:19",
-        "text": "हाँ बहुत दिन हो गए"
+        "text": "हां बहुत दिन हो गए"
       },
       {
         "t": "00:22",
-        "text": "कहाँ थे इतना दिन?"
+        "text": "कहां थे इतने दिन?"
       },
       {
         "t": "00:25",
@@ -36,7 +36,7 @@
       },
       {
         "t": "00:27",
-        "text": "इतना दिन कहाँ थे?"
+        "text": "इतने दिन कहां थे?"
       },
       {
         "t": "00:30",
@@ -52,19 +52,19 @@
       },
       {
         "t": "00:42",
-        "text": "अभी कहाँ हो?"
+        "text": "अभी कहां हो?"
       },
       {
-        "t": "00:44",
+        "t": "00:45",
         "text": "वॉशरूम में"
       },
       {
-        "t": "00:46",
+        "t": "00:47",
         "text": "नहीं मतलब ऑफिस में?"
       },
       {
-        "t": "00:49",
-        "text": "छुट्टी पे तो यार"
+        "t": "00:50",
+        "text": "छुट्टी पे हूं आज"
       },
       {
         "t": "00:52",
@@ -80,7 +80,7 @@
       },
       {
         "t": "01:00",
-        "text": "मैं भी अकेले हूँ"
+        "text": "मैं भी अकेले हूं"
       },
       {
         "t": "01:02",
@@ -92,14 +92,14 @@
       },
       {
         "t": "01:09",
-        "text": "वॉशरूम में क्यों हो?"
+        "text": "वॉशरूम में क्यों"
       },
       {
         "t": "01:14",
         "text": "बेड में जाना है बेड में"
       }
     ],
-    "full_text": "कैसा? कैसे हो? सब बढ़िया? कितने दिन बाद आ रहे हो? हाँ बहुत दिन हो गए कहाँ थे इतना दिन? क्या? इतना दिन कहाँ थे? अरे आप मिलते ही नहीं थे मैं तो अभी ऑफलाइन था क्या कर रहे हो? अभी कहाँ हो? वॉशरूम में नहीं मतलब ऑफिस में? छुट्टी पे तो यार घर में? अकेले? आप? मैं भी अकेले हूँ अच्छा जाओ बेड में वॉशरूम में क्यों हो? बेड में जाना है बेड में",
+    "full_text": "कैसे हो? कैसे हो? सब बढ़िया कितने दिन बाद आ रहे हो? हां बहुत दिन हो गए कहां थे इतने दिन? क्या? इतने दिन कहां थे? अरे आप मिलते ही नहीं थे मैं तो अभी ऑफलाइन था क्या कर रहे हो? अभी कहां हो? वॉशरूम में नहीं मतलब ऑफिस में? छुट्टी पे हूं आज घर में? अकेले? आप? मैं भी अकेले हूं अच्छा जाओ बेड में वॉशरूम में क्यों बेड में जाना है बेड में",
     "audio_duration_sec": 101.7730612244898,
     "transcript_end_sec": 74.0,
     "gap_sec": 27.773061224489794,
@@ -108,17 +108,26 @@
     "error": null
   },
   "classification": {
-    "ground_truth_flags": [],
+    "ground_truth_flags": [
+      {
+        "ground_truth_category": "Explicit-Flirting",
+        "ground_truth_timestamp": "01:03",
+        "ground_truth_excerpt": "जाओ बेड में",
+        "ground_truth_translation": "Go to the bed",
+        "ground_truth_justification": "The user is making a suggestive comment by asking the other person to go to bed, which falls under mild flirting.",
+        "ground_truth_confidence": 0.4
+      }
+    ],
     "status": "success",
     "error": null
   },
   "determination": {
-    "final_bucket": "TN",
+    "final_bucket": "FN",
     "final_category": "Explicit-Flirting",
-    "reassigned": true,
-    "reassignment_note": "No violation found; reassigned to TN pool, tagged as Explicit-Flirting (The conversation involves personal questions about being alone and suggestive comments about being in bed, which aligns with flirtatious interaction.) — needs review.",
-    "needs_review": true,
-    "review_reason": "FN→TN category tag is a judgment call, not rule-based."
+    "reassigned": false,
+    "reassignment_note": null,
+    "needs_review": false,
+    "review_reason": null
   },
   "status": "success",
   "error": null

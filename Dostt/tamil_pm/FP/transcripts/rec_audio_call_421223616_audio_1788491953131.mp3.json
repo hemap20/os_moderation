@@ -7,7 +7,7 @@
   "transcript": {
     "segments": [
       {
-        "t": "00:02",
+        "t": "00:00",
         "text": "ஹலோ"
       },
       {
@@ -43,7 +43,7 @@
         "text": "எங்கிருந்து கால் பண்றீங்கன்னு?"
       },
       {
-        "t": "00:21",
+        "t": "00:20",
         "text": "நான் கடலூர்"
       },
       {
@@ -64,22 +64,26 @@
       },
       {
         "t": "00:33",
-        "text": "நல்லா பேசுறாங்க"
+        "text": "ஆ நல்லா பேசுறாங்க"
       },
       {
         "t": "00:38",
         "text": "ஏதாவது காண்டாக்ட் இருக்கா?"
       },
       {
-        "t": "00:41",
-        "text": "இல்லைங்க"
+        "t": "00:40",
+        "text": "ஏங்க இல்லைங்க"
       },
       {
-        "t": "00:43",
-        "text": "ஒரு ரெண்டு பேரு இன்ஸ்டாகிராம்ல கொடுத்தாங்க"
+        "t": "00:42",
+        "text": "ஒரு ரெண்டு பேரு"
       },
       {
-        "t": "00:46",
+        "t": "00:44",
+        "text": "இன்ஸ்டாகிராம்ல கொடுத்தாங்க"
+      },
+      {
+        "t": "00:49",
         "text": "நீங்க எங்கிருந்து பேசுறீங்க?"
       },
       {
@@ -95,7 +99,7 @@
         "text": "ஹவுஸ் வைஃப்"
       }
     ],
-    "full_text": "ஹலோ ஹலோ எங்கிருந்து கால் பண்றீங்க? என்னங்க? எங்கிருந்து கால் பண்றீங்க? எங்கிருந்து கால் பண்ணனும்? ஆ அப்புறம் பேசுறதுக்கு தான் எங்கிருந்து கால் பண்றீங்கன்னு? நான் கடலூர் ஓகே ஓகே ஓகே அப்புறம் நீங்க எத்தனை நாளா இந்த ஆப் யூஸ் பண்றீங்க? நான் ஒரு ரெண்டு மாசம் ஓகே ஓகே எப்படி பேசுறாங்க? நல்லா பேசுறாங்க ஏதாவது காண்டாக்ட் இருக்கா? இல்லைங்க ஒரு ரெண்டு பேரு இன்ஸ்டாகிராம்ல கொடுத்தாங்க நீங்க எங்கிருந்து பேசுறீங்க? சென்னை என்ன பண்றீங்க? ஹவுஸ் வைஃப்",
+    "full_text": "ஹலோ ஹலோ எங்கிருந்து கால் பண்றீங்க? என்னங்க? எங்கிருந்து கால் பண்றீங்க? எங்கிருந்து கால் பண்ணனும்? ஆ அப்புறம் பேசுறதுக்கு தான் எங்கிருந்து கால் பண்றீங்கன்னு? நான் கடலூர் ஓகே ஓகே ஓகே அப்புறம் நீங்க எத்தனை நாளா இந்த ஆப் யூஸ் பண்றீங்க? நான் ஒரு ரெண்டு மாசம் ஓகே ஓகே எப்படி பேசுறாங்க? ஆ நல்லா பேசுறாங்க ஏதாவது காண்டாக்ட் இருக்கா? ஏங்க இல்லைங்க ஒரு ரெண்டு பேரு இன்ஸ்டாகிராம்ல கொடுத்தாங்க நீங்க எங்கிருந்து பேசுறீங்க? சென்னை என்ன பண்றீங்க? ஹவுஸ் வைஃப்",
     "audio_duration_sec": 58.17469387755102,
     "transcript_end_sec": 56.0,
     "gap_sec": 2.1746938775510216,
@@ -104,7 +108,16 @@
     "error": null
   },
   "classification": {
-    "ground_truth_flags": [],
+    "ground_truth_flags": [
+      {
+        "ground_truth_category": "PlatformMove",
+        "ground_truth_timestamp": "00:44",
+        "ground_truth_excerpt": "இன்ஸ்டாகிராம்ல கொடுத்தாங்க",
+        "ground_truth_translation": "They gave it on Instagram",
+        "ground_truth_justification": "The user mentions receiving contact details on an external platform (Instagram), which constitutes a platform move violation.",
+        "ground_truth_confidence": 0.9
+      }
+    ],
     "status": "success",
     "error": null
   },
@@ -113,8 +126,8 @@
     "final_category": "PlatformMove",
     "reassigned": false,
     "reassignment_note": null,
-    "needs_review": false,
-    "review_reason": null
+    "needs_review": true,
+    "review_reason": "FP file has confirmed violation(s): ['PlatformMove'] — the original flag may have been correct after all, or a different real violation exists."
   },
   "status": "success",
   "error": null

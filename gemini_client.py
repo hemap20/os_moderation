@@ -53,10 +53,28 @@ _NON_RETRYABLE_FINISH_REASONS = {"RECITATION", "SAFETY", "PROHIBITED_CONTENT", "
 
 
 def get_client() -> genai.Client:
+    """Vertex AI auth takes priority when configured (GOOGLE_CLOUD_PROJECT +
+    GOOGLE_APPLICATION_CREDENTIALS pointing at a service-account JSON file —
+    google-auth picks that file up automatically, we never read/parse it
+    ourselves), else falls back to the plain Gemini API key."""
+    project = os.environ.get(config.VERTEXAI_PROJECT_ENV)
+    if project:
+        creds_path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+        if not creds_path:
+            raise GeminiError(
+                f"{config.VERTEXAI_PROJECT_ENV} is set but GOOGLE_APPLICATION_CREDENTIALS is not — "
+                f"point it at your service-account JSON file."
+            )
+        if not Path(creds_path).is_file():
+            raise GeminiError(f"GOOGLE_APPLICATION_CREDENTIALS points at a missing file: {creds_path}")
+        location = os.environ.get(config.VERTEXAI_LOCATION_ENV, config.VERTEXAI_DEFAULT_LOCATION)
+        return genai.Client(vertexai=True, project=project, location=location)
+
     api_key = os.environ.get(config.GEMINI_API_KEY_ENV)
     if not api_key:
         raise GeminiError(
-            f"{config.GEMINI_API_KEY_ENV} is not set. Put it in your .env / environment."
+            f"Neither {config.VERTEXAI_PROJECT_ENV} (Vertex AI) nor {config.GEMINI_API_KEY_ENV} "
+            f"(API key) is set. Put one in your .env / environment."
         )
     return genai.Client(api_key=api_key)
 
@@ -130,8 +148,17 @@ def parse_json_lenient(text: str) -> dict:
             raise exc
 
 
+_MIME_TYPES = {".mp3": "audio/mp3", ".wav": "audio/wav", ".m4a": "audio/mp4"}
+
+
 def upload_audio(client: genai.Client, path: Path):
-    return client.files.upload(file=str(path))
+    """Inline bytes rather than the Files API — client.files.upload() only
+    works against the Gemini Developer API, not Vertex AI, and inline data
+    works identically on both, so this one code path covers either auth
+    mode without a runtime branch. Fine at this dataset's file sizes (a few
+    MB each, well under the ~20MB inline request limit)."""
+    mime_type = _MIME_TYPES.get(path.suffix.lower(), "audio/mp3")
+    return types.Part.from_bytes(data=path.read_bytes(), mime_type=mime_type)
 
 
 def generate_text(

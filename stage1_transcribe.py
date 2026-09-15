@@ -38,8 +38,12 @@ Rules:
 - Break the transcript into short lines, each tagged with a single
   timestamp "t" in MM:SS format marking when that line starts, relative to
   the start of the audio.
-- Transcribe verbatim in the native language/script actually spoken
-  (romanized or native script is fine, just be consistent).
+- Transcribe verbatim in the NATIVE SCRIPT of the language actually spoken
+  (e.g. Devanagari for Hindi, Tamil script for Tamil, Telugu script for
+  Telugu, Kannada script for Kannada, Malayalam script for Malayalam).
+  Do NOT romanize/transliterate into Latin letters, even for code-switched
+  English words embedded in the sentence — write the whole line in the
+  native script, transliterating any English words into that script too.
 - Do not classify, flag, or judge any content. Pure transcription only.
 - If a line is inaudible/unintelligible, write "[inaudible]" for that
   line's text rather than guessing.

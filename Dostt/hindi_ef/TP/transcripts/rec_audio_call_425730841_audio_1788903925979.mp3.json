@@ -7,47 +7,47 @@
   "transcript": {
     "segments": [
       {
-        "t": "00:01",
-        "text": "Hello."
+        "t": "00:00",
+        "text": "हेलो"
       },
       {
         "t": "00:03",
-        "text": "Hello."
+        "text": "हेलो"
       },
       {
-        "t": "00:04",
-        "text": "Hi."
+        "t": "00:05",
+        "text": "हाय"
       },
       {
         "t": "00:06",
-        "text": "Kaise ho?"
+        "text": "हाय कैसे हो?"
       },
       {
-        "t": "00:07",
-        "text": "Main theek hoon, aap batao."
+        "t": "00:08",
+        "text": "मैं ठीक हूँ, आप बताओ?"
       },
       {
-        "t": "00:09",
-        "text": "Main bhi theek hoon. WhatsApp video calling karte hain aap?"
+        "t": "00:10",
+        "text": "मैं भी ठीक हूँ, व्हाट्सएप वीडियो कॉलिंग करते हैं आप?"
       },
       {
         "t": "00:13",
-        "text": "Nahi."
+        "text": "नहीं"
       },
       {
         "t": "00:15",
-        "text": "Aa jao na."
+        "text": "आ जाओ ना"
       },
       {
         "t": "00:18",
-        "text": "Nahi, kar lete hain na."
+        "text": "नहीं कर लेते ना"
       },
       {
         "t": "00:20",
-        "text": "Hum us pe service dete hain full body ka."
+        "text": "हम उस पर सर्विस देते हैं फुल बॉडी का"
       }
     ],
-    "full_text": "Hello. Hello. Hi. Kaise ho? Main theek hoon, aap batao. Main bhi theek hoon. WhatsApp video calling karte hain aap? Nahi. Aa jao na. Nahi, kar lete hain na. Hum us pe service dete hain full body ka.",
+    "full_text": "हेलो हेलो हाय हाय कैसे हो? मैं ठीक हूँ, आप बताओ? मैं भी ठीक हूँ, व्हाट्सएप वीडियो कॉलिंग करते हैं आप? नहीं आ जाओ ना नहीं कर लेते ना हम उस पर सर्विस देते हैं फुल बॉडी का",
     "audio_duration_sec": 23.771428571428572,
     "transcript_end_sec": 20.0,
     "gap_sec": 3.7714285714285722,
@@ -58,19 +58,11 @@
   "classification": {
     "ground_truth_flags": [
       {
-        "ground_truth_category": "PlatformMove",
-        "ground_truth_timestamp": "00:09",
-        "ground_truth_excerpt": "WhatsApp video calling karte hain aap?",
-        "ground_truth_translation": "Do you do WhatsApp video calling?",
-        "ground_truth_justification": "The user is explicitly asking to move the conversation to an external platform, WhatsApp.",
-        "ground_truth_confidence": 1.0
-      },
-      {
-        "ground_truth_category": "Explicit-Flirting",
+        "ground_truth_category": "SuspiciousActivity",
         "ground_truth_timestamp": "00:20",
-        "ground_truth_excerpt": "Hum us pe service dete hain full body ka.",
+        "ground_truth_excerpt": "हम उस पर सर्विस देते हैं फुल बॉडी का",
         "ground_truth_translation": "We provide full body service on that.",
-        "ground_truth_justification": "The user is offering a 'full body' service, which implies sexual content.",
+        "ground_truth_justification": "The user is explicitly offering a service (full body) in a context that implies a transactional nature for video calls.",
         "ground_truth_confidence": 0.8
       }
     ],
@@ -82,8 +74,8 @@
     "final_category": "Explicit-Flirting",
     "reassigned": false,
     "reassignment_note": null,
-    "needs_review": false,
-    "review_reason": null
+    "needs_review": true,
+    "review_reason": "Classifier found different categor(y/ies) ['SuspiciousActivity']; folder assumed Explicit-Flirting."
   },
   "status": "success",
   "error": null

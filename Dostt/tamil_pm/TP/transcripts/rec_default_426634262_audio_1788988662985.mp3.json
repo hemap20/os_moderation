@@ -7,102 +7,78 @@
   "transcript": {
     "segments": [
       {
-        "t": "00:03",
-        "text": "Hello"
+        "t": "00:00",
+        "text": "ஹலோ"
       },
       {
-        "t": "00:07",
-        "text": "Hello"
+        "t": "00:05",
+        "text": "ஹலோ"
       },
       {
         "t": "00:08",
-        "text": "Hello"
+        "text": "ஹலோ"
       },
       {
         "t": "00:10",
-        "text": "Hello ready"
+        "text": "என்ன பண்றீங்க"
       },
       {
-        "t": "00:12",
-        "text": "Naa chennai"
-      },
-      {
-        "t": "00:13",
-        "text": "neenga"
-      },
-      {
-        "t": "00:15",
-        "text": "Naa kera"
-      },
-      {
-        "t": "00:15",
-        "text": "enna panra"
+        "t": "00:14",
+        "text": "நான் கேக்குறேன் என்ன பண்ற"
       },
       {
         "t": "00:18",
-        "text": "Enna panra"
+        "text": "என்ன பண்ற"
       },
       {
         "t": "00:20",
-        "text": "Illa"
+        "text": "ஒன்னும் இல்ல"
       },
       {
         "t": "00:22",
-        "text": "Nee enna panra"
+        "text": "நீ என்ன பண்ற"
       },
       {
-        "t": "00:25",
-        "text": "Naa unkitta pesitu irukken"
+        "t": "00:24",
+        "text": "நான் உங்ககிட்ட பேசிட்டு இருக்கேன்"
       },
       {
         "t": "00:27",
-        "text": "Size sollu ready"
+        "text": "என்ன சைஸ் ஓடி"
       },
       {
         "t": "00:29",
-        "text": "Illa"
+        "text": "என்ன"
       },
       {
-        "t": "00:31",
-        "text": "Oru size sollu"
+        "t": "00:30",
+        "text": "என்ன சைஸ் ஓடி"
+      },
+      {
+        "t": "00:32",
+        "text": "என்ன"
       },
       {
         "t": "00:33",
-        "text": "Hmm"
-      },
-      {
-        "t": "00:34",
-        "text": "Oru size"
-      },
-      {
-        "t": "00:35",
-        "text": "evlo"
+        "text": "என்ன சைஸ் வேணும்"
       },
       {
         "t": "00:36",
-        "text": "What's up bro"
+        "text": "வாட்ஸ்அப் வா"
       },
       {
-        "t": "00:39",
-        "text": "Innum konjam kammi"
+        "t": "00:38",
+        "text": "இன்னும் கொஞ்சம் காமிக்க"
       },
       {
-        "t": "00:41",
-        "text": "Illa pathum theriya"
-      },
-      {
-        "t": "00:42",
-        "text": "the"
-      },
-      {
-        "t": "00:43",
-        "text": "the"
+        "t": "00:40",
+        "text": "இல்ல பாத்துட்டு இருக்கேன்"
       }
     ],
-    "full_text": "Hello Hello Hello Hello ready Naa chennai neenga Naa kera enna panra Enna panra Illa Nee enna panra Naa unkitta pesitu irukken Size sollu ready Illa Oru size sollu Hmm Oru size evlo What's up bro Innum konjam kammi Illa pathum theriya the the",
+    "full_text": "ஹலோ ஹலோ ஹலோ என்ன பண்றீங்க நான் கேக்குறேன் என்ன பண்ற என்ன பண்ற ஒன்னும் இல்ல நீ என்ன பண்ற நான் உங்ககிட்ட பேசிட்டு இருக்கேன் என்ன சைஸ் ஓடி என்ன என்ன சைஸ் ஓடி என்ன என்ன சைஸ் வேணும் வாட்ஸ்அப் வா இன்னும் கொஞ்சம் காமிக்க இல்ல பாத்துட்டு இருக்கேன்",
     "audio_duration_sec": 43.885714285714286,
-    "transcript_end_sec": 43.0,
-    "gap_sec": 0.8857142857142861,
+    "transcript_end_sec": 40.0,
+    "gap_sec": 3.885714285714286,
     "incomplete_transcript": false,
     "status": "success",
     "error": null
@@ -112,10 +88,18 @@
       {
         "ground_truth_category": "Explicit-Flirting",
         "ground_truth_timestamp": "00:27",
-        "ground_truth_excerpt": "Size sollu ready",
-        "ground_truth_translation": "Tell me the size",
-        "ground_truth_justification": "The user is making a suggestive request for body measurements.",
+        "ground_truth_excerpt": "என்ன சைஸ் ஓடி",
+        "ground_truth_translation": "What size [body measurement]",
+        "ground_truth_justification": "The user is asking about body measurements which is a violation of the explicit-flirting policy.",
         "ground_truth_confidence": 0.4
+      },
+      {
+        "ground_truth_category": "PlatformMove",
+        "ground_truth_timestamp": "00:36",
+        "ground_truth_excerpt": "வாட்ஸ்அப் வா",
+        "ground_truth_translation": "Come to WhatsApp",
+        "ground_truth_justification": "The user is explicitly suggesting moving the conversation to an external communication application (WhatsApp).",
+        "ground_truth_confidence": 0.9
       }
     ],
     "status": "success",
@@ -126,8 +110,8 @@
     "final_category": "PlatformMove",
     "reassigned": false,
     "reassignment_note": null,
-    "needs_review": true,
-    "review_reason": "Classifier found different categor(y/ies) ['Explicit-Flirting']; folder assumed PlatformMove."
+    "needs_review": false,
+    "review_reason": null
   },
   "status": "success",
   "error": null

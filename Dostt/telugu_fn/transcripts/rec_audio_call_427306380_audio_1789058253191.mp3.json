@@ -7,63 +7,63 @@
   "transcript": {
     "segments": [
       {
-        "t": "00:01",
-        "text": "Hello."
+        "t": "00:00",
+        "text": "హలో"
       },
       {
-        "t": "00:02",
-        "text": "Hello."
+        "t": "00:03",
+        "text": "హలో"
       },
       {
         "t": "00:04",
-        "text": "Hai, ekkada nunchi?"
+        "text": "హాయ్ ఎక్కడి నుంచి?"
       },
       {
         "t": "00:06",
-        "text": "Vijayawada meeru?"
+        "text": "విజయవాడ మీరు?"
       },
       {
-        "t": "00:07",
-        "text": "Nenu Hyderabad, married-a?"
+        "t": "00:08",
+        "text": "నేను హైదరాబాద్ మ్యారీడ్ ఆ?"
       },
       {
-        "t": "00:09",
-        "text": "Yes, married. Yes, yes."
+        "t": "00:10",
+        "text": "ఎస్ మ్యారీడ్"
       },
       {
         "t": "00:12",
-        "text": "Eppudaina vachava Hyderabad ki?"
+        "text": "ఎప్పుడైనా వచ్చావా హైదరాబాద్ కి?"
       },
       {
         "t": "00:14",
-        "text": "Ledu, raledu."
+        "text": "నేను కూడా రాలేదు"
       },
       {
-        "t": "00:15",
-        "text": "Mhm."
+        "t": "00:16",
+        "text": "ఉమ్"
       },
       {
         "t": "00:19",
-        "text": "Okati adagana?"
+        "text": "ఒకటి అడగనా?"
       },
       {
-        "t": "00:21",
-        "text": "Enti?"
+        "t": "00:20",
+        "text": "ఏంటో?"
       },
       {
-        "t": "00:22",
-        "text": "Em ananu ante aduguta."
+        "t": "00:23",
+        "text": "ఏమన్నాను అంటే అడుగుతా"
       },
       {
         "t": "00:25",
-        "text": "Adigina tarvata alochista."
+        "text": "అడిగింది బట్టి ఆలోచిస్తా"
       },
       {
         "t": "00:28",
-        "text": "Personal ga manam meet avtava?"
+        "text": "పర్సనల్ గా మనం మీట్ అవుతావా?"
       }
     ],
-    "full_text": "Hello. Hello. Hai, ekkada nunchi? Vijayawada meeru? Nenu Hyderabad, married-a? Yes, married. Yes, yes. Eppudaina vachava Hyderabad ki? Ledu, raledu. Mhm. Okati adagana? Enti? Em ananu ante aduguta. Adigina tarvata alochista. Personal ga manam meet avtava?",
+    "full_text": "హలో హలో హాయ్ ఎక్కడి నుంచి? విజయవాడ మీరు? నేను హైదరాబాద్ మ్యారీడ్ ఆ? ఎస్ మ్యారీడ్ ఎప్పుడైనా వచ్చావా హైదరాబాద్ కి? నేను కూడా రాలేదు ఉమ్ ఒకటి అడగనా? ఏంటో? ఏమన్నాను అంటే అడుగుతా అడిగింది బట్టి ఆలోచిస్తా పర్సనల్ గా మనం మీట్ అవుతావా?",
     "audio_duration_sec": 32.182857142857145,
     "transcript_end_sec": 28.0,
     "gap_sec": 4.182857142857145,
@@ -72,17 +72,26 @@
     "error": null
   },
   "classification": {
-    "ground_truth_flags": [],
+    "ground_truth_flags": [
+      {
+        "ground_truth_category": "PlatformMove",
+        "ground_truth_timestamp": "00:28",
+        "ground_truth_excerpt": "పర్సనల్ గా మనం మీట్ అవుతావా?",
+        "ground_truth_translation": "Will you meet me personally?",
+        "ground_truth_justification": "The user is suggesting an offline meeting, which is a violation of the platform's policy regarding moving interactions outside the platform.",
+        "ground_truth_confidence": 0.8
+      }
+    ],
     "status": "success",
     "error": null
   },
   "determination": {
-    "final_bucket": "TN",
-    "final_category": "Explicit-Flirting",
-    "reassigned": true,
-    "reassignment_note": "No violation found; reassigned to TN pool, tagged as Explicit-Flirting (The conversation focuses on personal relationship status and culminates in a request to meet up in person.) — needs review.",
-    "needs_review": true,
-    "review_reason": "FN→TN category tag is a judgment call, not rule-based."
+    "final_bucket": "FN",
+    "final_category": "PlatformMove",
+    "reassigned": false,
+    "reassignment_note": null,
+    "needs_review": false,
+    "review_reason": null
   },
   "status": "success",
   "error": null

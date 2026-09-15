@@ -7,63 +7,67 @@
   "transcript": {
     "segments": [
       {
-        "t": "00:05",
-        "text": "Hello"
+        "t": "00:00",
+        "text": "హలో"
       },
       {
-        "t": "00:07",
-        "text": "Nenu peru"
+        "t": "00:05",
+        "text": "హలో"
+      },
+      {
+        "t": "00:08",
+        "text": "నీ పేరు?"
       },
       {
         "t": "00:09",
-        "text": "Na peru Hema, nee peru?"
+        "text": "నా పేరు హేమ, నీ పేరు?"
       },
       {
         "t": "00:12",
-        "text": "Abhishek, em chestuntav? Married ah nuvvu?"
+        "text": "అభిషేక్, ఏం చేస్తున్నావ్ మేడం?"
       },
       {
         "t": "00:15",
-        "text": "Ah married, chustunnav friends with benefits kosam nuvvu?"
+        "text": "అన్ మ్యారీడ్, చూస్తున్నా ఫ్రెండ్స్ విత్ బెనిఫిట్స్ కోసం, నువ్వు?"
       },
       {
         "t": "00:20",
-        "text": "Hmm?"
+        "text": "ఉమ్"
       },
       {
         "t": "00:22",
-        "text": "Friends with benefits kosam chustunnav nuvvu?"
+        "text": "ఫ్రెండ్స్ విత్ బెనిఫిట్స్ కోసం చూస్తున్నావ్ నువ్వు?"
       },
       {
-        "t": "00:26",
-        "text": "Ah, romantic ga chustunna."
+        "t": "00:25",
+        "text": "నేను రొమాంటిక్ గా చూస్తున్నా"
       },
       {
-        "t": "00:31",
-        "text": "Avuna, tinava?"
+        "t": "00:30",
+        "text": "అవునా, తిన్నావా?"
       },
       {
         "t": "00:34",
-        "text": "Tinnav nuvvu?"
+        "text": "తిన్నా, నువ్వు?"
       },
       {
-        "t": "00:41",
-        "text": "Romantic ga, romantic ga kada?"
+        "t": "00:40",
+        "text": "రొమాంటిక్ గా రొమాంటిక్ గా కాదా?"
       },
       {
         "t": "00:49",
-        "text": "Hello."
+        "text": "హలో"
       },
       {
         "t": "00:50",
-        "text": "Okka nimisham line lo undu, Insta unda?"
+        "text": "ఒక్క నిమిషం లైన్ లో ఉండు, ఇన్స్టా ఉందా?"
       },
       {
         "t": "00:53",
-        "text": "Insta lo"
+        "text": "ఇన్స్టా ఉంది"
       }
     ],
-    "full_text": "Hello Nenu peru Na peru Hema, nee peru? Abhishek, em chestuntav? Married ah nuvvu? Ah married, chustunnav friends with benefits kosam nuvvu? Hmm? Friends with benefits kosam chustunnav nuvvu? Ah, romantic ga chustunna. Avuna, tinava? Tinnav nuvvu? Romantic ga, romantic ga kada? Hello. Okka nimisham line lo undu, Insta unda? Insta lo",
+    "full_text": "హలో హలో నీ పేరు? నా పేరు హేమ, నీ పేరు? అభిషేక్, ఏం చేస్తున్నావ్ మేడం? అన్ మ్యారీడ్, చూస్తున్నా ఫ్రెండ్స్ విత్ బెనిఫిట్స్ కోసం, నువ్వు? ఉమ్ ఫ్రెండ్స్ విత్ బెనిఫిట్స్ కోసం చూస్తున్నావ్ నువ్వు? నేను రొమాంటిక్ గా చూస్తున్నా అవునా, తిన్నావా? తిన్నా, నువ్వు? రొమాంటిక్ గా రొమాంటిక్ గా కాదా? హలో ఒక్క నిమిషం లైన్ లో ఉండు, ఇన్స్టా ఉందా? ఇన్స్టా ఉంది",
     "audio_duration_sec": 54.59591836734694,
     "transcript_end_sec": 53.0,
     "gap_sec": 1.5959183673469397,
@@ -74,19 +78,11 @@
   "classification": {
     "ground_truth_flags": [
       {
-        "ground_truth_category": "Explicit-Flirting",
-        "ground_truth_timestamp": "00:15",
-        "ground_truth_excerpt": "chustunnav friends with benefits kosam nuvvu?",
-        "ground_truth_translation": "Are you looking for friends with benefits?",
-        "ground_truth_justification": "The user is making a suggestive comment regarding friends with benefits.",
-        "ground_truth_confidence": 0.4
-      },
-      {
         "ground_truth_category": "PlatformMove",
         "ground_truth_timestamp": "00:50",
-        "ground_truth_excerpt": "Okka nimisham line lo undu, Insta unda?",
-        "ground_truth_translation": "Wait a minute, do you have Insta?",
-        "ground_truth_justification": "The user is explicitly asking for an external social media platform (Instagram).",
+        "ground_truth_excerpt": "ఒక్క నిమిషం లైన్ లో ఉండు, ఇన్స్టా ఉందా?",
+        "ground_truth_translation": "Stay on the line for a minute, do you have Insta?",
+        "ground_truth_justification": "The user is asking for the other person's Instagram handle, which is an external communication platform.",
         "ground_truth_confidence": 0.9
       }
     ],
@@ -98,8 +94,8 @@
     "final_category": "Explicit-Flirting",
     "reassigned": false,
     "reassignment_note": null,
-    "needs_review": false,
-    "review_reason": null
+    "needs_review": true,
+    "review_reason": "Classifier found different categor(y/ies) ['PlatformMove']; folder assumed Explicit-Flirting."
   },
   "status": "success",
   "error": null

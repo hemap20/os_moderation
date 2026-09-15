@@ -7,63 +7,59 @@
   "transcript": {
     "segments": [
       {
-        "t": "00:07",
-        "text": "Hello"
+        "t": "00:05",
+        "text": "हेलो"
       },
       {
         "t": "00:10",
-        "text": "Hello"
+        "text": "हेलो"
       },
       {
         "t": "00:19",
-        "text": "Hello"
+        "text": "हेलो"
       },
       {
         "t": "00:25",
-        "text": "Mujhse toh hatao"
+        "text": "म्यूजिक तो हटाओ"
       },
       {
         "t": "00:34",
-        "text": "Abhi"
+        "text": "हेलो"
       },
       {
-        "t": "00:37",
-        "text": "Hello"
-      },
-      {
-        "t": "00:40",
-        "text": "Hello"
+        "t": "00:39",
+        "text": "हेलो"
       },
       {
         "t": "00:42",
-        "text": "Hello"
+        "text": "हेलो"
       },
       {
         "t": "00:43",
-        "text": "Abhi aayi awaaz"
+        "text": "अभी आई आवाज"
       },
       {
         "t": "00:45",
-        "text": "Aa rahi hai kahan se"
+        "text": "आ रही है कहां से"
       },
       {
         "t": "00:47",
-        "text": "Main Odisha se hoon aap kahan se"
+        "text": "मैं उड़ीसा से हूं आप कहां से"
       },
       {
-        "t": "00:52",
-        "text": "Main UP"
+        "t": "00:51",
+        "text": "मैं यूपी"
       },
       {
         "t": "00:54",
-        "text": "Peeva latta mukal ka"
+        "text": "पीवा लटम का लगाओ"
       },
       {
         "t": "00:58",
-        "text": "Ki heera jis naach ke dikhao"
+        "text": "कि हीर जैसे नाच के दिखाओ"
       }
     ],
-    "full_text": "Hello Hello Hello Mujhse toh hatao Abhi Hello Hello Hello Abhi aayi awaaz Aa rahi hai kahan se Main Odisha se hoon aap kahan se Main UP Peeva latta mukal ka Ki heera jis naach ke dikhao",
+    "full_text": "हेलो हेलो हेलो म्यूजिक तो हटाओ हेलो हेलो हेलो अभी आई आवाज आ रही है कहां से मैं उड़ीसा से हूं आप कहां से मैं यूपी पीवा लटम का लगाओ कि हीर जैसे नाच के दिखाओ",
     "audio_duration_sec": 68.36244897959183,
     "transcript_end_sec": 58.0,
     "gap_sec": 10.362448979591832,
@@ -72,17 +68,26 @@
     "error": null
   },
   "classification": {
-    "ground_truth_flags": [],
+    "ground_truth_flags": [
+      {
+        "ground_truth_category": "Explicit-Flirting",
+        "ground_truth_timestamp": "00:58",
+        "ground_truth_excerpt": "कि हीर जैसे नाच के दिखाओ",
+        "ground_truth_translation": "Dance like Heer for me",
+        "ground_truth_justification": "The user is making a suggestive request for the other person to dance, which falls under mild suggestive content.",
+        "ground_truth_confidence": 0.4
+      }
+    ],
     "status": "success",
     "error": null
   },
   "determination": {
-    "final_bucket": "TN",
+    "final_bucket": "FN",
     "final_category": "Explicit-Flirting",
-    "reassigned": true,
-    "reassignment_note": "No violation found; reassigned to TN pool, tagged as Explicit-Flirting (The conversation involves casual personal inquiries and a playful, flirtatious request for the other person to dance.) — needs review.",
-    "needs_review": true,
-    "review_reason": "FN→TN category tag is a judgment call, not rule-based."
+    "reassigned": false,
+    "reassignment_note": null,
+    "needs_review": false,
+    "review_reason": null
   },
   "status": "success",
   "error": null

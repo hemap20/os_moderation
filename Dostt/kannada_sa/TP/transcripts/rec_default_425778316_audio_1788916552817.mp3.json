@@ -8,85 +8,93 @@
     "segments": [
       {
         "t": "00:03",
-        "text": "Hello."
+        "text": "हेलो"
       },
       {
         "t": "00:05",
-        "text": "Hi."
+        "text": "हाय"
       },
       {
-        "t": "00:07",
-        "text": "Aap kidhar se hai?"
+        "t": "00:08",
+        "text": "आप किधर से है?"
       },
       {
         "t": "00:10",
-        "text": "Telangana."
+        "text": "तेलंगाना"
       },
       {
         "t": "00:11",
-        "text": "Aap?"
+        "text": "आप?"
       },
       {
-        "t": "00:12",
-        "text": "Main Kerala se."
+        "t": "00:13",
+        "text": "मैं केरला से"
       },
       {
         "t": "00:16",
-        "text": "Okay."
+        "text": "अच्छा"
       },
       {
-        "t": "00:17",
-        "text": "Kaunsa purpose pe aaye hai, app mein?"
+        "t": "00:18",
+        "text": "कौन सा पर्पस पे आए है आप में?"
       },
       {
-        "t": "00:21",
-        "text": "Woh do din pehle."
+        "t": "00:20",
+        "text": "वो दो दिन पहले"
       },
       {
         "t": "00:24",
-        "text": "Haan, purpose. Uh, baat karne ke liye aur romantic talking ke liye."
+        "text": "हां पर्पस"
       },
       {
-        "t": "00:31",
-        "text": "Kaunsa purpose pe aaye hai?"
+        "t": "00:26",
+        "text": "बात करने के लिए और रोमांटिक टॉकिंग के लिए"
+      },
+      {
+        "t": "00:30",
+        "text": "कौन सा पर्पस में आए है?"
       },
       {
         "t": "00:33",
-        "text": "Uh, odd video call, open call."
+        "text": "ऑडियो कॉल ओपन कॉल"
       },
       {
         "t": "00:37",
-        "text": "Are you comfortable for that?"
+        "text": "आर यू कंफर्टेबल फॉर दैट?"
       },
       {
         "t": "00:40",
-        "text": "Yeah."
+        "text": "या"
       },
       {
         "t": "00:41",
-        "text": "Nude calls?"
+        "text": "न्यूड कॉल्स"
       },
       {
         "t": "00:43",
-        "text": "Yeah."
+        "text": "या"
       },
       {
         "t": "00:45",
-        "text": "What is the payment?"
+        "text": "बट विथ पेमेंट"
       },
       {
         "t": "00:48",
-        "text": "Hmm, kitna aapka payment hai, fully nude?"
+        "text": "कितना आपका पेमेंट है?"
       },
       {
-        "t": "00:53",
-        "text": "You tell."
+        "t": "00:50",
+        "text": "फुल्ली न्यूड"
+      },
+      {
+        "t": "00:52",
+        "text": "यू टेल"
       }
     ],
-    "full_text": "Hello. Hi. Aap kidhar se hai? Telangana. Aap? Main Kerala se. Okay. Kaunsa purpose pe aaye hai, app mein? Woh do din pehle. Haan, purpose. Uh, baat karne ke liye aur romantic talking ke liye. Kaunsa purpose pe aaye hai? Uh, odd video call, open call. Are you comfortable for that? Yeah. Nude calls? Yeah. What is the payment? Hmm, kitna aapka payment hai, fully nude? You tell.",
+    "full_text": "हेलो हाय आप किधर से है? तेलंगाना आप? मैं केरला से अच्छा कौन सा पर्पस पे आए है आप में? वो दो दिन पहले हां पर्पस बात करने के लिए और रोमांटिक टॉकिंग के लिए कौन सा पर्पस में आए है? ऑडियो कॉल ओपन कॉल आर यू कंफर्टेबल फॉर दैट? या न्यूड कॉल्स या बट विथ पेमेंट कितना आपका पेमेंट है? फुल्ली न्यूड यू टेल",
     "audio_duration_sec": 54.12571428571429,
-    "transcript_end_sec": 53.0,
-    "gap_sec": 1.125714285714288,
+    "transcript_end_sec": 52.0,
+    "gap_sec": 2.125714285714288,
     "incomplete_transcript": false,
     "status": "success",
     "error": null
@@ -95,26 +103,34 @@
     "ground_truth_flags": [
       {
         "ground_truth_category": "Explicit-Flirting",
-        "ground_truth_timestamp": "00:33",
-        "ground_truth_excerpt": "Uh, odd video call, open call.",
-        "ground_truth_translation": "Uh, odd video call, open call.",
-        "ground_truth_justification": "The user is requesting an 'open call', which is a term used for explicit sexual content.",
+        "ground_truth_timestamp": "00:41",
+        "ground_truth_excerpt": "न्यूड कॉल्स",
+        "ground_truth_translation": "Nude calls",
+        "ground_truth_justification": "The user is explicitly requesting nude calls, which falls under suggestive/explicit content.",
         "ground_truth_confidence": 0.8
       },
       {
-        "ground_truth_category": "Explicit-Flirting",
-        "ground_truth_timestamp": "00:41",
-        "ground_truth_excerpt": "Nude calls?",
-        "ground_truth_translation": "Nude calls?",
-        "ground_truth_justification": "The user is explicitly requesting nude video calls.",
+        "ground_truth_category": "SuspiciousActivity",
+        "ground_truth_timestamp": "00:45",
+        "ground_truth_excerpt": "बट विथ पेमेंट",
+        "ground_truth_translation": "But with payment",
+        "ground_truth_justification": "The user is explicitly linking payment to the requested sexual service (nude calls).",
         "ground_truth_confidence": 0.9
       },
       {
         "ground_truth_category": "SuspiciousActivity",
         "ground_truth_timestamp": "00:48",
-        "ground_truth_excerpt": "Hmm, kitna aapka payment hai, fully nude?",
-        "ground_truth_translation": "Hmm, what is your payment, fully nude?",
-        "ground_truth_justification": "The user is explicitly asking for the rate for a sexual service (fully nude video call).",
+        "ground_truth_excerpt": "कितना आपका पेमेंट है?",
+        "ground_truth_translation": "How much is your payment?",
+        "ground_truth_justification": "The user is asking for rates in the context of a sexual service request.",
+        "ground_truth_confidence": 0.9
+      },
+      {
+        "ground_truth_category": "Explicit-Flirting",
+        "ground_truth_timestamp": "00:50",
+        "ground_truth_excerpt": "फुल्ली न्यूड",
+        "ground_truth_translation": "Fully nude",
+        "ground_truth_justification": "The user is explicitly requesting fully nude content.",
         "ground_truth_confidence": 0.9
       }
     ],
