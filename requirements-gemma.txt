@@ -1,0 +1,10 @@
+# Separate venv from requirements.txt (this pulls torch + friends, a much
+# heavier/different dependency set than the Gemini pipeline). Needs Python
+# 3.10+ — this repo's main .venv is 3.9, likely too old for current
+# transformers releases.
+torch
+transformers>=4.50
+accelerate
+pydub
+pydantic>=2.0
+mutagen>=1.47
