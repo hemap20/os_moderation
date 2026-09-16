@@ -1,0 +1,22 @@
+[
+  {
+    "chunk_offset_sec": 0.0,
+    "raw": "```json\n{\n  \"d\": []\n}\n```<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 28.0,
+    "raw": "```json\n{\n  \"d\": [\n    {\n      \"f\": \"SuspiciousActivity\",\n      \"t\": \"00:00:00\",\n      \"seg\": \"నేనేం జప్తతన్నా నువ్వేం మాట్లాడతాన్నో\",\n      \"tr\": \"What do you charge for night?\",\n      \"j\": \"The user is asking about the rate for a service, which falls under suspicious activity, but since it is not explicitly linked to a sexual service and is ambiguous, no flag is raised.\",\n      \"c\": 0.3\n    },\n    {\n      \"f\": \"PlatformMove\",\n      \"t\": \"00:00:08\",\n      \"seg\": \"వీడియో కాల్కైతే కలవొచ్చా\",\n      \"tr\": \"Can we meet on a video call?\",\n      \"j\": \"This is a request for an in-platform video call feature, which is explicitly excluded from flagging.\",\n      \"c\": 0.0\n    },\n    {\n      \"f\": \"PlatformMove\",\n      \"t\": \"00:00:12\",\n      \"seg\": \"సర్ ఎంత వీడియో కాల్ కి\",\n      \"tr\": \"Sir, how much for a video call?\",\n      \"j\": \"This is a query about pricing for a video call, which is ambiguous and does not meet the criteria for a PlatformMove violation (no external app or contact sharing).\",\n      \"c\": 0.3\n    },\n    {\n      \"f\": \"PlatformMove\",\n      \"t\": \"00:00:16\",\n      \"seg\": \"ఒకే గంటక ఐదుందల\",\n      \"tr\": \"Five hundred for one hour\",\n      \"j\": \"This is a discussion about pricing, not a request to move to an external application or share contact details, so no flag is raised.\",\n      \"c\": 0.0\n    },\n    {\n      \"f\": \"PlatformMove\",\n      \"t\": \"00:00:20\",\n      \"seg\": \"గివ్ మీ యువర్ నెంబర్\",\n      \"tr\": \"Give me your number\",\n      \"j\": \"The user is requesting a phone number, which is a PlatformMove trigger. However, since the context is ambiguous and not explicitly linked to an external communication app or payment details, the confidence is low.\",\n      \"c\": 0.4\n    }\n  ]\n}\n```<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 56.0,
+    "raw": "```json\n{\n  \"d\": [\n    {\n      \"f\": \"PlatformMove\",\n      \"t\": \"0:00\",\n      \"seg\": \" Telugu lo number cheppu message chestha\",\n      \"tr\": \"Tell me the number in Telugu, message it.\",\n      \"j\": \"The user is asking for a phone number to be shared via a messaging platform, which falls under sharing contact details.\",\n      \"c\": 0.95\n    }\n  ]\n}\n```<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 84.0,
+    "raw": "```json\n{\"d\": []}\n```<turn|>",
+    "thinking": null
+  }
+]

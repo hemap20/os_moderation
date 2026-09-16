@@ -1,0 +1,293 @@
+[2026-09-16T02:42:22] [INFO] Loading google/gemma-4-E2B-it (thinking=True)...
+[2026-09-16T02:42:38] [INFO] Model loaded.
+[2026-09-16T02:42:38] [INFO] DRY RUN: 2 file(s)
+[2026-09-16T02:42:38] [INFO] [1/2] rec_audio_call_392603926_audio_1785858184285.mp3
+[2026-09-16T02:43:01] [ERROR] rec_audio_call_392603926_audio_1785858184285.mp3 chunk@0.0s failed: `parse_response` requires `prefix=` (the prompt that came before generation), because chat templates often pre-write part of the assistant message (e.g. an opening `<think>` tag) that the parser must see to parse correctly. If you're sure you don't need the prefix, you can pass an empty string or list.
+Traceback (most recent call last):
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemma_local.py", line 400, in process_file
+    answer_text, thinking_text, raw_response, token_infos = classify_chunk(model, processor, chunk_path, thinking, logger)
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemma_local.py", line 250, in classify_chunk
+    parsed = processor.parse_response(raw_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/.venv-gemma/lib/python3.11/site-packages/transformers/processing_utils.py", line 2290, in parse_response
+    return self.tokenizer.parse_response(response, schema, prefix=prefix, tools=tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/.venv-gemma/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3382, in parse_response
+    raise ValueError(
+ValueError: `parse_response` requires `prefix=` (the prompt that came before generation), because chat templates often pre-write part of the assistant message (e.g. an opening `<think>` tag) that the parser must see to parse correctly. If you're sure you don't need the prefix, you can pass an empty string or list.
+
+[2026-09-16T02:43:25] [ERROR] rec_audio_call_392603926_audio_1785858184285.mp3 chunk@28.0s failed: `parse_response` requires `prefix=` (the prompt that came before generation), because chat templates often pre-write part of the assistant message (e.g. an opening `<think>` tag) that the parser must see to parse correctly. If you're sure you don't need the prefix, you can pass an empty string or list.
+Traceback (most recent call last):
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemma_local.py", line 400, in process_file
+    answer_text, thinking_text, raw_response, token_infos = classify_chunk(model, processor, chunk_path, thinking, logger)
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemma_local.py", line 250, in classify_chunk
+    parsed = processor.parse_response(raw_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/.venv-gemma/lib/python3.11/site-packages/transformers/processing_utils.py", line 2290, in parse_response
+    return self.tokenizer.parse_response(response, schema, prefix=prefix, tools=tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/.venv-gemma/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3382, in parse_response
+    raise ValueError(
+ValueError: `parse_response` requires `prefix=` (the prompt that came before generation), because chat templates often pre-write part of the assistant message (e.g. an opening `<think>` tag) that the parser must see to parse correctly. If you're sure you don't need the prefix, you can pass an empty string or list.
+
+[2026-09-16T02:43:56] [ERROR] rec_audio_call_392603926_audio_1785858184285.mp3 chunk@56.0s failed: `parse_response` requires `prefix=` (the prompt that came before generation), because chat templates often pre-write part of the assistant message (e.g. an opening `<think>` tag) that the parser must see to parse correctly. If you're sure you don't need the prefix, you can pass an empty string or list.
+Traceback (most recent call last):
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemma_local.py", line 400, in process_file
+    answer_text, thinking_text, raw_response, token_infos = classify_chunk(model, processor, chunk_path, thinking, logger)
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemma_local.py", line 250, in classify_chunk
+    parsed = processor.parse_response(raw_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/.venv-gemma/lib/python3.11/site-packages/transformers/processing_utils.py", line 2290, in parse_response
+    return self.tokenizer.parse_response(response, schema, prefix=prefix, tools=tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/.venv-gemma/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3382, in parse_response
+    raise ValueError(
+ValueError: `parse_response` requires `prefix=` (the prompt that came before generation), because chat templates often pre-write part of the assistant message (e.g. an opening `<think>` tag) that the parser must see to parse correctly. If you're sure you don't need the prefix, you can pass an empty string or list.
+
+[2026-09-16T02:43:56] [INFO] [2/2] rec_audio_call_392607690_audio_1785858500937.mp3
+[2026-09-16T02:44:17] [ERROR] rec_audio_call_392607690_audio_1785858500937.mp3 chunk@0.0s failed: `parse_response` requires `prefix=` (the prompt that came before generation), because chat templates often pre-write part of the assistant message (e.g. an opening `<think>` tag) that the parser must see to parse correctly. If you're sure you don't need the prefix, you can pass an empty string or list.
+Traceback (most recent call last):
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemma_local.py", line 400, in process_file
+    answer_text, thinking_text, raw_response, token_infos = classify_chunk(model, processor, chunk_path, thinking, logger)
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemma_local.py", line 250, in classify_chunk
+    parsed = processor.parse_response(raw_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/.venv-gemma/lib/python3.11/site-packages/transformers/processing_utils.py", line 2290, in parse_response
+    return self.tokenizer.parse_response(response, schema, prefix=prefix, tools=tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/.venv-gemma/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3382, in parse_response
+    raise ValueError(
+ValueError: `parse_response` requires `prefix=` (the prompt that came before generation), because chat templates often pre-write part of the assistant message (e.g. an opening `<think>` tag) that the parser must see to parse correctly. If you're sure you don't need the prefix, you can pass an empty string or list.
+
+[2026-09-16T02:44:51] [ERROR] rec_audio_call_392607690_audio_1785858500937.mp3 chunk@28.0s failed: `parse_response` requires `prefix=` (the prompt that came before generation), because chat templates often pre-write part of the assistant message (e.g. an opening `<think>` tag) that the parser must see to parse correctly. If you're sure you don't need the prefix, you can pass an empty string or list.
+Traceback (most recent call last):
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemma_local.py", line 400, in process_file
+    answer_text, thinking_text, raw_response, token_infos = classify_chunk(model, processor, chunk_path, thinking, logger)
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemma_local.py", line 250, in classify_chunk
+    parsed = processor.parse_response(raw_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/.venv-gemma/lib/python3.11/site-packages/transformers/processing_utils.py", line 2290, in parse_response
+    return self.tokenizer.parse_response(response, schema, prefix=prefix, tools=tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/.venv-gemma/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3382, in parse_response
+    raise ValueError(
+ValueError: `parse_response` requires `prefix=` (the prompt that came before generation), because chat templates often pre-write part of the assistant message (e.g. an opening `<think>` tag) that the parser must see to parse correctly. If you're sure you don't need the prefix, you can pass an empty string or list.
+
+[2026-09-16T02:45:25] [ERROR] rec_audio_call_392607690_audio_1785858500937.mp3 chunk@56.0s failed: `parse_response` requires `prefix=` (the prompt that came before generation), because chat templates often pre-write part of the assistant message (e.g. an opening `<think>` tag) that the parser must see to parse correctly. If you're sure you don't need the prefix, you can pass an empty string or list.
+Traceback (most recent call last):
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemma_local.py", line 400, in process_file
+    answer_text, thinking_text, raw_response, token_infos = classify_chunk(model, processor, chunk_path, thinking, logger)
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemma_local.py", line 250, in classify_chunk
+    parsed = processor.parse_response(raw_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/.venv-gemma/lib/python3.11/site-packages/transformers/processing_utils.py", line 2290, in parse_response
+    return self.tokenizer.parse_response(response, schema, prefix=prefix, tools=tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/.venv-gemma/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3382, in parse_response
+    raise ValueError(
+ValueError: `parse_response` requires `prefix=` (the prompt that came before generation), because chat templates often pre-write part of the assistant message (e.g. an opening `<think>` tag) that the parser must see to parse correctly. If you're sure you don't need the prefix, you can pass an empty string or list.
+
+[2026-09-16T02:45:49] [ERROR] rec_audio_call_392607690_audio_1785858500937.mp3 chunk@84.0s failed: `parse_response` requires `prefix=` (the prompt that came before generation), because chat templates often pre-write part of the assistant message (e.g. an opening `<think>` tag) that the parser must see to parse correctly. If you're sure you don't need the prefix, you can pass an empty string or list.
+Traceback (most recent call last):
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemma_local.py", line 400, in process_file
+    answer_text, thinking_text, raw_response, token_infos = classify_chunk(model, processor, chunk_path, thinking, logger)
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemma_local.py", line 250, in classify_chunk
+    parsed = processor.parse_response(raw_response)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/.venv-gemma/lib/python3.11/site-packages/transformers/processing_utils.py", line 2290, in parse_response
+    return self.tokenizer.parse_response(response, schema, prefix=prefix, tools=tools)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/.venv-gemma/lib/python3.11/site-packages/transformers/tokenization_utils_base.py", line 3382, in parse_response
+    raise ValueError(
+ValueError: `parse_response` requires `prefix=` (the prompt that came before generation), because chat templates often pre-write part of the assistant message (e.g. an opening `<think>` tag) that the parser must see to parse correctly. If you're sure you don't need the prefix, you can pass an empty string or list.
+
+[2026-09-16T02:45:49] [INFO] Done in 191.0s — success=0 error=2
+[2026-09-16T02:46:26] [INFO] Loading google/gemma-4-E2B-it (thinking=True)...
+[2026-09-16T02:46:41] [INFO] Model loaded.
+[2026-09-16T02:46:41] [INFO] DRY RUN: 1 file(s)
+[2026-09-16T02:46:41] [INFO] [1/1] rec_audio_call_392603926_audio_1785858184285.mp3
+[2026-09-16T02:48:06] [WARN] chunk@56.0s: model returned non-MM:SS timestamp '0s' for category 'PlatformMove' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T02:48:06] [INFO] Done in 84.9s — success=1 error=0
+[2026-09-16T15:57:52] [INFO] Loading google/gemma-4-E2B-it (thinking=True)...
+[2026-09-16T15:58:08] [INFO] Model loaded.
+[2026-09-16T15:58:08] [INFO] Skipping 0 already-done file(s)
+[2026-09-16T15:58:08] [INFO] [1/385] rec_audio_call_392603926_audio_1785858184285.mp3
+[2026-09-16T15:59:35] [WARN] chunk@56.0s: model returned non-MM:SS timestamp '0s' for category 'PlatformMove' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T15:59:35] [INFO] [2/385] rec_audio_call_392607690_audio_1785858500937.mp3
+[2026-09-16T16:01:39] [INFO] [3/385] rec_audio_call_392643395_audio_1785861202288.mp3
+[2026-09-16T16:10:37] [INFO] [4/385] rec_audio_call_425736604_audio_1788905083156.mp3
+[2026-09-16T16:11:32] [WARN] chunk@28.0s: model returned non-MM:SS timestamp '0s' for category 'PlatformMove' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T16:11:32] [INFO] [5/385] rec_audio_call_425748748_audio_1788908276475.mp3
+[2026-09-16T16:13:14] [INFO] [6/385] rec_audio_call_425749256_audio_1788908432017.mp3
+[2026-09-16T16:14:17] [INFO] [7/385] rec_default_426610557_audio_1788986010552.mp3
+[2026-09-16T16:15:07] [INFO] [8/385] rec_audio_call_425655492_audio_1788895962923.mp3
+[2026-09-16T16:18:24] [INFO] [9/385] rec_audio_call_425656293_audio_1788896013602.mp3
+[2026-09-16T16:19:50] [INFO] [10/385] rec_audio_call_425679391_audio_1788897730000.mp3
+[2026-09-16T16:22:56] [INFO] [11/385] rec_audio_call_425691838_audio_1788898819143.mp3
+[2026-09-16T16:24:04] [INFO] [12/385] rec_default_426593829_audio_1788984553610.mp3
+[2026-09-16T16:28:35] [INFO] [13/385] rec_audio_call_419965552_audio_1788369990564.mp3
+[2026-09-16T16:30:22] [INFO] [14/385] rec_audio_call_421071310_audio_1788465787061.mp3
+[2026-09-16T16:38:06] [INFO] [15/385] rec_audio_call_421768524_audio_1788539479106.mp3
+[2026-09-16T16:38:38] [INFO] [16/385] rec_audio_call_421835569_audio_1788543699379.mp3
+[2026-09-16T16:40:05] [INFO] [17/385] rec_audio_call_421997101_audio_1788553909604.mp3
+[2026-09-16T16:47:18] [INFO] [18/385] rec_audio_call_423610988_audio_1788712982461.mp3
+[2026-09-16T16:48:10] [INFO] [19/385] rec_audio_call_425656431_audio_1788896027178.mp3
+[2026-09-16T16:49:47] [INFO] [20/385] rec_default_420147298_audio_1788380486702.mp3
+[2026-09-16T16:56:18] [INFO] [21/385] rec_default_420599099_audio_1788430532077.mp3
+[2026-09-16T17:00:09] [INFO] [22/385] rec_default_421888258_audio_1788546625741.mp3
+[2026-09-16T17:00:40] [INFO] [23/385] rec_default_423958539_audio_1788751477018.mp3
+[2026-09-16T17:03:06] [WARN] chunk@112.0s: model returned non-MM:SS timestamp '00:00:00-00:00:06' for category 'Explicit-Flirting' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T17:04:15] [INFO] [24/385] rec_audio_call_421981200_audio_1788552638354.mp3
+[2026-09-16T17:06:13] [INFO] [25/385] rec_audio_call_422812035_audio_1788633064712.mp3
+[2026-09-16T17:08:05] [WARN] chunk@56.0s: model returned non-MM:SS timestamp '0:00-0:12' for category 'SuspiciousActivity' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T17:08:05] [WARN] chunk@56.0s: model returned non-MM:SS timestamp '0:00-0:12' for category 'SuspiciousActivity' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T17:09:21] [INFO] [26/385] rec_audio_call_423872491_audio_1788731676125.mp3
+[2026-09-16T17:10:15] [INFO] [27/385] rec_audio_call_424735559_audio_1788811052808.mp3
+[2026-09-16T17:11:05] [INFO] [28/385] rec_audio_call_425051281_audio_1788851621695.mp3
+[2026-09-16T17:19:35] [INFO] [29/385] rec_default_422797054_audio_1788632206019.mp3
+[2026-09-16T17:23:41] [INFO] [30/385] rec_audio_call_421865395_audio_1788545383247.mp3
+[2026-09-16T17:24:13] [WARN] chunk@0.0s: model returned non-MM:SS timestamp '0s' for category 'Explicit-Flirting' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T17:24:59] [INFO] [31/385] rec_audio_call_425933838_audio_1788934868635.mp3
+[2026-09-16T17:30:01] [INFO] [32/385] rec_audio_call_426596251_audio_1788984756063.mp3
+[2026-09-16T17:31:11] [INFO] [33/385] rec_audio_call_426599617_audio_1788985040466.mp3
+[2026-09-16T17:33:58] [INFO] [34/385] rec_default_423978016_audio_1788753648923.mp3
+[2026-09-16T17:36:16] [INFO] [35/385] rec_default_425396309_audio_1788879180076.mp3
+[2026-09-16T17:38:45] [INFO] [36/385] rec_default_425778316_audio_1788916552817.mp3
+[2026-09-16T17:40:01] [INFO] [37/385] rec_audio_call_424867062_audio_1788834834877.mp3
+[2026-09-16T17:42:52] [INFO] [38/385] rec_audio_call_425730841_audio_1788903925979.mp3
+[2026-09-16T17:43:28] [INFO] [39/385] rec_audio_call_425744236_audio_1788906883727.mp3
+[2026-09-16T17:52:25] [INFO] [40/385] rec_audio_call_426409268_audio_1788973959169.mp3
+[2026-09-16T17:53:57] [INFO] [41/385] rec_default_424880310_audio_1788836667926.mp3
+[2026-09-16T18:01:05] [INFO] [42/385] rec_default_425134890_audio_1788857770816.mp3
+[2026-09-16T18:05:56] [INFO] [43/385] rec_default_425141339_audio_1788858189163.mp3
+[2026-09-16T18:12:35] [INFO] [44/385] rec_audio_call_424610503_audio_1788803501320.mp3
+[2026-09-16T18:13:32] [INFO] [45/385] rec_audio_call_424798751_audio_1788818609448.mp3
+[2026-09-16T18:16:10] [INFO] [46/385] rec_audio_call_425147890_audio_1788858642964.mp3
+[2026-09-16T18:16:46] [WARN] chunk@0.0s: model returned non-MM:SS timestamp '0s' for category 'Explicit-Flirting' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T18:17:42] [INFO] [47/385] rec_audio_call_425713085_audio_1788901236624.mp3
+[2026-09-16T18:18:48] [WARN] chunk@28.0s: model returned non-MM:SS timestamp '0s' for category 'Explicit-Flirting' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T18:18:48] [INFO] [48/385] rec_audio_call_419508797_audio_1788334367395.mp3
+[2026-09-16T18:19:42] [INFO] [49/385] rec_audio_call_421677953_audio_1788530753328.mp3
+[2026-09-16T18:20:19] [WARN] chunk@0.0s: model returned non-MM:SS timestamp '0s' for category 'Explicit-Flirting' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T18:20:33] [INFO] [50/385] rec_audio_call_423351802_audio_1788689747483.mp3
+[2026-09-16T18:22:02] [INFO] [51/385] rec_audio_call_423591955_audio_1788711572217.mp3
+[2026-09-16T18:23:51] [INFO] [52/385] rec_audio_call_423629370_audio_1788714233340.mp3
+[2026-09-16T18:27:14] [WARN] chunk@140.0s: model returned non-MM:SS timestamp '0s' for category 'Explicit-Flirting' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T18:39:26] [INFO] [53/385] rec_audio_call_426565546_audio_1788982388939.mp3
+[2026-09-16T18:39:43] [INFO] [54/385] rec_default_419887388_audio_1788364981482.mp3
+[2026-09-16T18:43:43] [INFO] [55/385] rec_default_421661435_audio_1788529081993.mp3
+[2026-09-16T18:44:52] [INFO] [56/385] rec_default_421956667_audio_1788550846403.mp3
+[2026-09-16T18:46:01] [INFO] [57/385] rec_default_423887482_audio_1788735128862.mp3
+[2026-09-16T18:50:30] [INFO] [58/385] rec_default_424793843_audio_1788817690775.mp3
+[2026-09-16T18:52:50] [INFO] [59/385] rec_default_425627452_audio_1788894258639.mp3
+[2026-09-16T18:53:19] [INFO] [60/385] rec_audio_call_426099993_audio_1788947488901.mp3
+[2026-09-16T18:58:06] [INFO] [61/385] rec_audio_call_426101059_audio_1788947560284.mp3
+[2026-09-16T19:05:44] [INFO] [62/385] rec_audio_call_426107984_audio_1788948053829.mp3
+[2026-09-16T19:06:30] [INFO] [63/385] rec_audio_call_426107995_audio_1788948050780.mp3
+[2026-09-16T19:07:52] [INFO] [64/385] rec_audio_call_426108129_audio_1788948057694.mp3
+[2026-09-16T19:09:12] [INFO] [65/385] rec_audio_call_426119888_audio_1788948897495.mp3
+[2026-09-16T19:09:27] [INFO] [66/385] rec_audio_call_426127774_audio_1788949477698.mp3
+[2026-09-16T19:12:59] [INFO] [67/385] rec_audio_call_426194933_audio_1788954682604.mp3
+[2026-09-16T19:17:46] [INFO] [68/385] rec_audio_call_426195125_audio_1788954700286.mp3
+[2026-09-16T19:21:06] [INFO] [69/385] rec_audio_call_426201717_audio_1788955277234.mp3
+[2026-09-16T19:21:53] [INFO] [70/385] rec_audio_call_426201848_audio_1788955284435.mp3
+[2026-09-16T19:24:09] [INFO] [71/385] rec_audio_call_426202468_audio_1788955343920.mp3
+[2026-09-16T19:26:20] [INFO] [72/385] rec_audio_call_426202822_audio_1788955375114.mp3
+[2026-09-16T19:28:59] [INFO] [73/385] rec_audio_call_426202958_audio_1788955393853.mp3
+[2026-09-16T19:30:54] [INFO] [74/385] rec_audio_call_426203219_audio_1788955405537.mp3
+[2026-09-16T19:31:40] [INFO] [75/385] rec_audio_call_426203802_audio_1788955464104.mp3
+[2026-09-16T19:36:17] [INFO] [76/385] rec_audio_call_426204124_audio_1788955491095.mp3
+[2026-09-16T20:00:42] [WARN] rec_audio_call_426204124_audio_1788955491095.mp3 chunk@84.0s took 1383s (normal is ~10-90s) — likely system memory pressure (check for other concurrent model processes), not a bug in this chunk.
+[2026-09-16T20:01:28] [INFO] [77/385] rec_audio_call_426204404_audio_1788955515816.mp3
+[2026-09-16T20:03:18] [INFO] [78/385] rec_audio_call_426204463_audio_1788955521517.mp3
+[2026-09-16T20:07:37] [INFO] [79/385] rec_audio_call_426847860_audio_1789020585952.mp3
+[2026-09-16T20:08:49] [INFO] [80/385] rec_audio_call_426848290_audio_1789020619592.mp3
+[2026-09-16T20:10:09] [INFO] [81/385] rec_audio_call_426848321_audio_1789020622237.mp3
+[2026-09-16T20:12:18] [INFO] [82/385] rec_audio_call_426848355_audio_1789020625114.mp3
+[2026-09-16T20:13:36] [INFO] [83/385] rec_audio_call_426848440_audio_1789020630279.mp3
+[2026-09-16T20:14:14] [INFO] [84/385] rec_audio_call_426848640_audio_1789020645122.mp3
+[2026-09-16T20:15:36] [INFO] [85/385] rec_audio_call_426848943_audio_1789020668404.mp3
+[2026-09-16T20:17:37] [INFO] [86/385] rec_audio_call_426849624_audio_1789020718433.mp3
+[2026-09-16T20:20:30] [INFO] [87/385] rec_audio_call_426849843_audio_1789020732404.mp3
+[2026-09-16T20:32:02] [INFO] [88/385] rec_audio_call_426850383_audio_1789020772255.mp3
+[2026-09-16T20:32:45] [INFO] [89/385] rec_audio_call_426851323_audio_1789020846081.mp3
+[2026-09-16T20:34:12] [INFO] [90/385] rec_audio_call_426851772_audio_1789020879921.mp3
+[2026-09-16T20:37:38] [WARN] chunk@140.0s: model returned non-MM:SS timestamp '0s' for category 'Explicit-Flirting' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T20:37:38] [WARN] chunk@140.0s: model returned non-MM:SS timestamp '10s' for category 'PlatformMove' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T20:37:38] [INFO] [91/385] rec_audio_call_426851856_audio_1789020892000.mp3
+[2026-09-16T20:41:15] [INFO] [92/385] rec_audio_call_426854007_audio_1789021052086.mp3
+[2026-09-16T20:42:28] [INFO] [93/385] rec_audio_call_426854157_audio_1789021067058.mp3
+[2026-09-16T20:44:33] [INFO] [94/385] rec_audio_call_426883755_audio_1789023272654.mp3
+[2026-09-16T20:44:51] [INFO] [95/385] rec_audio_call_427029817_audio_1789033741551.mp3
+[2026-09-16T20:45:31] [INFO] [96/385] rec_audio_call_427302258_audio_1789057958698.mp3
+[2026-09-16T20:46:07] [INFO] [97/385] rec_audio_call_427307060_audio_1789058304926.mp3
+[2026-09-16T20:46:41] [INFO] [98/385] rec_audio_call_427311569_audio_1789058616356.mp3
+[2026-09-16T20:47:17] [INFO] [99/385] rec_audio_call_427314953_audio_1789058839016.mp3
+[2026-09-16T20:47:54] [INFO] [100/385] rec_default_426100823_audio_1788947551748.mp3
+[2026-09-16T20:48:35] [INFO] [101/385] rec_default_426107316_audio_1788948009635.mp3
+[2026-09-16T20:49:12] [INFO] [102/385] rec_default_426107744_audio_1788948040810.mp3
+[2026-09-16T20:53:00] [INFO] [103/385] rec_default_426108828_audio_1788948111282.mp3
+[2026-09-16T20:54:41] [INFO] [104/385] rec_default_426126463_audio_1788949378147.mp3
+[2026-09-16T20:54:58] [INFO] [105/385] rec_default_426126833_audio_1788949400904.mp3
+[2026-09-16T20:56:13] [INFO] [106/385] rec_default_426127716_audio_1788949472727.mp3
+[2026-09-16T20:58:20] [INFO] [107/385] rec_default_426194323_audio_1788954640272.mp3
+[2026-09-16T20:58:55] [INFO] [108/385] rec_default_426195344_audio_1788954727902.mp3
+[2026-09-16T20:59:43] [INFO] [109/385] rec_default_426202313_audio_1788955333217.mp3
+[2026-09-16T21:00:35] [INFO] [110/385] rec_default_426204264_audio_1788955509025.mp3
+[2026-09-16T21:02:23] [INFO] [111/385] rec_default_426204318_audio_1788955517179.mp3
+[2026-09-16T21:03:38] [INFO] [112/385] rec_default_426848660_audio_1789020643588.mp3
+[2026-09-16T21:09:38] [INFO] [113/385] rec_default_426851955_audio_1789020893146.mp3
+[2026-09-16T21:10:18] [INFO] [114/385] rec_default_426853539_audio_1789021025445.mp3
+[2026-09-16T21:11:21] [INFO] [115/385] rec_default_427012373_audio_1789032615035.mp3
+[2026-09-16T21:12:16] [INFO] [116/385] rec_default_427038720_audio_1789034321734.mp3
+[2026-09-16T21:12:34] [INFO] [117/385] rec_default_427305556_audio_1789058198302.mp3
+[2026-09-16T21:14:11] [INFO] [118/385] rec_audio_call_426576577_audio_1788983168675.mp3
+[2026-09-16T21:33:04] [WARN] chunk@896.0s: model returned non-MM:SS timestamp '0s' for category 'PlatformMove' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T21:33:04] [WARN] chunk@896.0s: model returned non-MM:SS timestamp None for category None — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T21:34:10] [INFO] [119/385] rec_audio_call_426580380_audio_1788983454564.mp3
+[2026-09-16T21:36:24] [INFO] [120/385] rec_audio_call_426601291_audio_1788985175536.mp3
+[2026-09-16T21:37:21] [INFO] [121/385] rec_default_426573210_audio_1788982914417.mp3
+[2026-09-16T21:42:28] [INFO] [122/385] rec_default_426597928_audio_1788984899162.mp3
+[2026-09-16T21:52:50] [INFO] [123/385] rec_default_426662883_audio_1788994670065.mp3
+[2026-09-16T21:58:11] [WARN] chunk@280.0s: model returned non-MM:SS timestamp '00:00:00-00:00:03' for category 'PlatformMove' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T21:58:11] [INFO] [124/385] rec_audio_call_426604675_audio_1788985474412.mp3
+[2026-09-16T22:00:00] [INFO] [125/385] rec_audio_call_426613454_audio_1788986291945.mp3
+[2026-09-16T22:02:57] [INFO] [126/385] rec_default_426634262_audio_1788988662985.mp3
+[2026-09-16T22:04:06] [INFO] [127/385] rec_default_426647598_audio_1788990955665.mp3
+[2026-09-16T22:08:53] [WARN] chunk@224.0s: model returned non-MM:SS timestamp '0s' for category 'PlatformMove' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T22:09:55] [WARN] chunk@280.0s: model returned non-MM:SS timestamp '00:00:00-00:00:10' for category 'PlatformMove' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T22:10:54] [INFO] [128/385] rec_audio_call_421223616_audio_1788491953131.mp3
+[2026-09-16T22:12:15] [INFO] [129/385] rec_audio_call_421566156_audio_1788520297969.mp3
+[2026-09-16T22:13:27] [INFO] [130/385] rec_audio_call_423645324_audio_1788715186440.mp3
+[2026-09-16T22:15:23] [WARN] chunk@84.0s: model returned non-MM:SS timestamp '0s' for category 'PlatformMove' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T22:16:23] [INFO] [131/385] rec_audio_call_424378148_audio_1788784557326.mp3
+[2026-09-16T22:18:48] [INFO] [132/385] rec_audio_call_424416192_audio_1788788125311.mp3
+[2026-09-16T22:22:51] [INFO] [133/385] rec_audio_call_425918552_audio_1788933686610.mp3
+[2026-09-16T22:26:40] [INFO] [134/385] rec_default_425656790_audio_1788896051031.mp3
+[2026-09-16T22:28:39] [INFO] [135/385] rec_audio_call_420847903_audio_1788453013104.mp3
+[2026-09-16T22:46:45] [INFO] [136/385] rec_audio_call_424557037_audio_1788800497337.mp3
+[2026-09-16T22:49:34] [INFO] [137/385] rec_audio_call_424970880_audio_1788845652480.mp3
+[2026-09-16T22:50:38] [INFO] [138/385] rec_audio_call_425207957_audio_1788862678382.mp3
+[2026-09-16T22:56:56] [INFO] [139/385] rec_audio_call_426372327_audio_1788971567973.mp3
+[2026-09-16T22:58:44] [INFO] [140/385] rec_default_423104500_audio_1788669374178.mp3
+[2026-09-16T23:03:00] [INFO] [141/385] rec_default_423163427_audio_1788674918154.mp3
+[2026-09-16T23:04:00] [INFO] [142/385] rec_default_426023290_audio_1788941856621.mp3
+[2026-09-16T23:04:55] [INFO] [143/385] rec_audio_call_426570103_audio_1788982695863.mp3
+[2026-09-16T23:09:09] [WARN] chunk@224.0s: model returned non-MM:SS timestamp '0s' for category 'Explicit-Flirting' — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T23:24:30] [INFO] [144/385] rec_audio_call_426580224_audio_1788983439239.mp3
+[2026-09-16T23:25:53] [INFO] [145/385] rec_audio_call_426626261_audio_1788987652206.mp3
+[2026-09-16T23:30:18] [INFO] [146/385] rec_audio_call_426634717_audio_1788988729707.mp3
+[2026-09-16T23:32:58] [INFO] [147/385] rec_default_426593601_audio_1788984536403.mp3
+[2026-09-16T23:36:17] [INFO] [148/385] rec_default_426620137_audio_1788986984372.mp3
+[2026-09-16T23:39:41] [INFO] [149/385] rec_default_426633368_audio_1788988531170.mp3
+[2026-09-16T23:42:30] [INFO] [150/385] rec_audio_call_426416419_audio_1788974369340.mp3
+[2026-09-16T23:43:11] [WARN] chunk@0.0s: model returned non-MM:SS timestamp None for category None — using it as-is, NOT offset-corrected to file-relative time.
+[2026-09-16T23:44:55] [INFO] [151/385] rec_audio_call_426613454_audio_1788986291945.mp3
+[2026-09-16T23:47:54] [INFO] [152/385] rec_audio_call_420358272_audio_1788412834216.mp3

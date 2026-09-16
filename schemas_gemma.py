@@ -39,5 +39,7 @@ class GemmaFileResult(BaseModel):
     thinking: bool
     chunk_seconds: float
     flags: List[GemmaChunkFlag] = Field(default_factory=list)
+    chunks_total: int = 0
+    chunks_failed: int = 0
     status: Literal["success", "error"] = "success"
     error: Optional[str] = None

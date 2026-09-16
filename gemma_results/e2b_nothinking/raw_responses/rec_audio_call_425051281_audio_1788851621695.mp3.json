@@ -1,0 +1,82 @@
+[
+  {
+    "chunk_offset_sec": 0.0,
+    "raw": "```json\n{\"d\": []}\n```<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 28.0,
+    "raw": "```json\n{\"d\": []}\n```<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 56.0,
+    "raw": "```json\n{\"d\": []}\n```<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 84.0,
+    "raw": "```json\n{\n  \"d\": [\n    {\n      \"f\": \"PlatformMove\",\n      \"t\": \"00:00:15\",\n      \"seg\": \"मैं वीडियो कॉल वगैरह करते हैं वीडियो कॉल शो होगा बजट पे। वीडियो कॉल करते हैं।\",\n      \"tr\": \"I do video calls etc. Video call will be shown on budget. I do video calls.\",\n      \"j\": \"The user is discussing the capability of video calls on the platform, which is an in-platform feature, and does not constitute a move to an external application or sharing of contact details.\",\n      \"c\": 0.1\n    }\n  ]\n}\n```<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 112.0,
+    "raw": "```json\n{\"d\": []}\n```<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 140.0,
+    "raw": "```json\n{\n  \"d\": [\n    {\n      \"f\": \"SuspiciousActivity\",\n      \"t\": \"0:13\",\n      \"seg\": \"इते पण तुला पैसे लावून व्हिडिओ कॉलवर जास्त कॉइन लागतो\",\n      \"tr\": \"It also costs more coins for a video call with you by paying money\",\n      \"j\": \"The user is discussing the cost (coins) associated with a video call service, which falls under the ambiguous category of discussing platform features/coins, thus not triggering a violation.\",\n      \"c\": 0.1\n    },\n    {\n      \"f\": \"PlatformMove\",\n      \"t\": \"0:23\",\n      \"seg\": \"मजे हे WhatsApp ला\",\n      \"tr\": \"Just WhatsApp\",\n      \"j\": \"The user explicitly suggests moving the conversation to an external communication application (WhatsApp).\",\n      \"c\": 0.95\n    },\n    {\n      \"f\": \"SuspiciousActivity\",\n      \"t\": \"0:25\",\n      \"seg\": \"तर मी तुला देते 300 चार्ज\",\n      \"tr\": \"Then I will give you 300 charge\",\n      \"j\": \"The user explicitly mentions a price ('300 charge') in exchange for a service, which is a mild violation related to transactional behavior, although not explicitly sexual.\",\n      \"c\": 0.75\n    }\n  ]\n}\n```<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 168.0,
+    "raw": "```json\n{\"d\": [{\"f\": \"PlatformMove\", \"t\": \"0s\", \"seg\": \"एक मिनट हमारा नंबर घेऊ दे तुझा\", \"tr\": \"Wait a minute, give me your number\", \"j\": \"The user is requesting the other person's contact number, which falls under sharing contact details, triggering the PlatformMove policy.\", \"c\": 0.95}]}\n```<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 196.0,
+    "raw": "```json\n{\"d\": []}\n```<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 224.0,
+    "raw": "{\"d\": []}<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 252.0,
+    "raw": "```json\n{\"d\": []}\n```<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 280.0,
+    "raw": "```json\n{\n  \"d\": [\n    {\n      \"f\": \"SuspiciousActivity\",\n      \"t\": \"0s\",\n      \"seg\": \"इट इज सांग मला तुला पाहिजे की नाही\",\n      \"tr\": \"It is song, do you want it or not\",\n      \"j\": \"The user is asking if the other person wants a song, which is ambiguous and does not constitute a direct link to payment for sexual services.\",\n      \"c\": 0.1\n    },\n    {\n      \"f\": \"SuspiciousActivity\",\n      \"t\": \"3s\",\n      \"seg\": \"रेट काय\",\n      \"tr\": \"What is the rate\",\n      \"j\": \"The user is asking about a 'rate', which could be interpreted as a request for pricing, but without further context linking it to sexual services or payment for a service, it is not flagged.\",\n      \"c\": 0.2\n    },\n    {\n      \"f\": \"SuspiciousActivity\",\n      \"t\": \"5s\",\n      \"seg\": \"300\",\n      \"tr\": \"300\",\n      \"j\": \"The mention of '300' follows a query about a rate, but the context is too ambiguous to confirm it is an explicit offer or request for payment for sexual services.\",\n      \"c\": 0.1\n    },\n    {\n      \"f\": \"PlatformMove\",\n      \"t\": \"10s\",\n      \"seg\": \"ऑडिओ कॉल आहे का\",\n      \"tr\": \"Is it an audio call\",\n      \"j\": \"This is a query about the type of call (audio vs. video) on the current platform, which is not a violation.\",\n      \"c\": 0.0\n    }\n  ]\n}\n```<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 308.0,
+    "raw": "```json\n{\n  \"d\": [\n    {\n      \"f\": \"SuspiciousActivity\",\n      \"t\": \"0s\",\n      \"seg\": \"अरे टानी बोलायचा थोडीतने व्हिडिओ कॉल ओपन शोधते तेचा रेट आहे\",\n      \"tr\": \"Hey Tani, I was looking for an open video call, what is the rate for that?\",\n      \"j\": \"The user is directly asking for the rate for an 'open video call', which falls under the SuspiciousActivity policy regarding asking about rates for services.\",\n      \"c\": 0.95\n    },\n    {\n      \"f\": \"SuspiciousActivity\",\n      \"t\": \"3s\",\n      \"seg\": \"आणि ओपन कॉल बाय जे बोलायसाठी बोलायसाठी पाहिजे तत काय मला एवढं विशेष नाही तु जेतिला इथे रिचार्जпля पैसे काकतो तू एवढै तिकडे मला टाकून दे\",\n      \"tr\": \"And for the open call that I want to talk about, what, I don't need that much special, why are you taking money from Jeti here, just send it to me there.\",\n      \"j\": \"The user is indirectly referencing payment ('paisa') in the context of a service request, which is a mild violation under SuspiciousActivity.\",\n      \"c\": 0.65\n    },\n    {\n      \"f\": \"PlatformMove\",\n      \"t\": \"6s\",\n      \"seg\": \"नंबर तेच आहे का? पेटीएम दिलू\",\n      \"tr\": \"Is that the number? I'll pay via Paytm.\",\n      \"j\": \"The user shares a payment method reference ('Paytm'), which is a potential PlatformMove trigger if it implies sharing actionable payment details, although the context is ambiguous, it is flagged due to the explicit mention of a payment app.\",\n      \"c\": 0.75\n    }\n  ]\n}\n```<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 336.0,
+    "raw": "```json\n{\"d\": [{\"f\": \"PlatformMove\", \"t\": \"0.0\", \"seg\": \"पेमेंटला नंबर तोच है का? मैं चैनल पर टाकूँ लिसना। स्कैनर और वर्क? कशावर टाकूँ देता नंबर वो? मला पुतये एकदम फेस तो फोटो टाकई। ठीक है ना फेस दाखोते ना। हम्म चल तो, ये फोटो टाक। और स्कैनर सपोर्ट फोटो टाक। बघू, टाक तो मैं।\", \"tr\": \"Is that the payment number? I will put it on the channel, listen. Scanner and work? How do I put the number? I will put a picture of my face. Okay, right, I will show my face. Hmm, okay, put this photo. And put the scanner support photo. Let's see, I will put it.\", \"j\": \"The user is asking for or discussing sharing payment details (payment number, scanner) and sharing personal photos (face photo) which could be precursors to PlatformMove or SuspiciousActivity. Since the context is about sharing payment/contact info, it is flagged.\", \"c\": 0.85}]}\n```<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 364.0,
+    "raw": "```json\n{\"d\": []}\n```<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 392.0,
+    "raw": "{\"d\": []}<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 420.0,
+    "raw": "{\"d\": []}<turn|>",
+    "thinking": null
+  }
+]

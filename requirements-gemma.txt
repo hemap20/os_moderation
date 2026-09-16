@@ -6,5 +6,18 @@ torch
 transformers>=4.50
 accelerate
 pydub
+pillow  # required by Gemma4Processor even for audio-only use
+torchvision  # ditto — Gemma4's image-processing import path is loaded unconditionally
+librosa  # apply_chat_template's built-in audio loader requires this backend
+torchaudio  # indic_conformer_pipeline.py's audio loading/resampling
+onnxruntime  # required by indic-conformer's trust_remote_code modeling file
+# DO NOT install torchcodec: it's broken in this environment (Homebrew
+# ffmpeg's shared libs aren't on torchcodec's expected rpath — see
+# indic_conformer_pipeline.py's load_audio() comment), AND installing it
+# changes transformers' apply_chat_template() default audio backend
+# selection, which broke gemma_local.py's audio loading even though that
+# script never calls torchcodec directly. Neither script needs it —
+# librosa covers both. If a future dependency pulls it in transitively,
+# uninstall it again.
 pydantic>=2.0
 mutagen>=1.47

@@ -247,7 +247,13 @@ def classify_chunk(model, processor, chunk_path: Path, thinking: bool, logger: S
     raw_response = processor.decode(generated_ids[input_len:], skip_special_tokens=False)
 
     if thinking:
-        parsed = processor.parse_response(raw_response)
+        # parse_response needs the exact prompt text that preceded
+        # generation (the chat template may pre-write an opening <think>
+        # tag as part of the assistant turn) — reconstruct it by decoding
+        # the actual input tokens, not by re-rendering the template, so it
+        # exactly matches what the model saw.
+        prefix_text = processor.decode(inputs["input_ids"][0], skip_special_tokens=False)
+        parsed = processor.parse_response(raw_response, prefix=prefix_text)
         answer_text = parsed.get("content", raw_response)
         thinking_text = parsed.get("thinking")
     else:
@@ -259,11 +265,37 @@ def classify_chunk(model, processor, chunk_path: Path, thinking: bool, logger: S
     return answer_text, thinking_text, raw_response, token_infos
 
 
-def parse_and_score_flags(answer_text: str, token_infos: list, chunk_offset_sec: float, logger: StageLogger) -> List[GemmaChunkFlag]:
-    import gemini_client  # reuse the lenient JSON parser — plain stdlib json under the hood, no Gemini-specific dependency
+def _strip_code_fence(text: str) -> str:
+    """Gemini's response_mime_type=application/json enforces raw JSON with
+    no wrapper — local transformers generation has no equivalent constraint,
+    and Gemma reliably wraps output in a ```json ... ``` markdown fence.
+    Strip that before attempting to parse."""
+    import re
 
+    stripped = text.strip()
+    match = re.match(r"^```(?:json)?\s*\n?(.*?)\n?```$", stripped, re.DOTALL)
+    return match.group(1) if match else stripped
+
+
+def parse_json_lenient(text: str) -> dict:
+    """Same lenient-parse approach as gemini_client.parse_json_lenient, but
+    duplicated here (not imported) — gemini_client.py imports google.genai
+    at module level, which only exists in the main pipeline's .venv, not
+    .venv-gemma. These two pipelines' dependencies must stay independent."""
+    text = _strip_code_fence(text)
     try:
-        parsed = gemini_client.parse_json_lenient(answer_text)
+        return json.loads(text)
+    except json.JSONDecodeError as exc:
+        try:
+            obj, _end = json.JSONDecoder().raw_decode(text.strip())
+            return obj
+        except json.JSONDecodeError:
+            raise exc
+
+
+def parse_and_score_flags(answer_text: str, token_infos: list, chunk_offset_sec: float, logger: StageLogger) -> List[GemmaChunkFlag]:
+    try:
+        parsed = parse_json_lenient(answer_text)
     except Exception as exc:
         logger.warn(f"chunk classification JSON parse failed: {exc}")
         return []
@@ -279,7 +311,15 @@ def parse_and_score_flags(answer_text: str, token_infos: list, chunk_offset_sec:
             t_sec = _parse_mmss(flag.get("t", ""))
         except Exception:
             t_sec = None
-        global_ts = _format_mmss((t_sec or 0) + chunk_offset_sec) if t_sec is not None else flag.get("t", "")
+        if t_sec is not None:
+            global_ts = _format_mmss(t_sec + chunk_offset_sec)
+        else:
+            logger.warn(
+                f"chunk@{chunk_offset_sec}s: model returned non-MM:SS timestamp "
+                f"{flag.get('t')!r} for category {flag.get('f')!r} — using it as-is, "
+                f"NOT offset-corrected to file-relative time."
+            )
+            global_ts = flag.get("t", "")
         flags.append(GemmaChunkFlag(
             model_category=flag.get("f", ""),
             model_timestamp=global_ts,
@@ -359,17 +399,43 @@ def process_file(model, processor, record, model_key: str, thinking: bool, chunk
     chunks = chunk_audio(record.path, chunk_seconds, tmp_dir)
     all_flags: List[GemmaChunkFlag] = []
     raw_responses = []
+    n_failed = 0
 
     for chunk_path, offset_sec in chunks:
+        chunk_t0 = time.time()
         try:
             answer_text, thinking_text, raw_response, token_infos = classify_chunk(model, processor, chunk_path, thinking, logger)
+            elapsed = time.time() - chunk_t0
+            # A single chunk normally takes ~10-25s (non-thinking) or up to
+            # ~90s (thinking). A chunk taking minutes usually means the
+            # system is swap-thrashing (e.g. another heavy model process
+            # running concurrently) rather than anything wrong with this
+            # chunk itself — surfacing it loudly and immediately (not just
+            # visible in hindsight from log timestamp gaps) is what lets you
+            # notice and intervene in real time instead of losing hours.
+            if elapsed > 120:
+                logger.warn(
+                    f"{record.file_id} chunk@{offset_sec}s took {elapsed:.0f}s (normal is ~10-90s) — "
+                    f"likely system memory pressure (check for other concurrent model processes), not a bug in this chunk."
+                )
             raw_responses.append({"chunk_offset_sec": offset_sec, "raw": raw_response, "thinking": thinking_text})
             flags = parse_and_score_flags(answer_text, token_infos, offset_sec, logger)
             all_flags.extend(flags)
         except Exception as exc:  # noqa: BLE001
+            n_failed += 1
             logger.error(f"{record.file_id} chunk@{offset_sec}s failed: {exc}\n{traceback.format_exc()}")
         finally:
             chunk_path.unlink(missing_ok=True)
+
+    # A file where every chunk failed produced zero real signal — reporting
+    # that as status="success" with flags=[] would be indistinguishable from
+    # a genuine "no violations found", which is a materially different and
+    # much more important thing to know when reviewing results later.
+    n_total = len(chunks)
+    if n_total > 0 and n_failed == n_total:
+        status, error = "error", f"all {n_total} chunk(s) failed — see log"
+    else:
+        status, error = "success", None
 
     return GemmaFileResult(
         file_id=record.file_id,
@@ -377,7 +443,10 @@ def process_file(model, processor, record, model_key: str, thinking: bool, chunk
         thinking=thinking,
         chunk_seconds=chunk_seconds,
         flags=all_flags,
-        status="success",
+        chunks_total=n_total,
+        chunks_failed=n_failed,
+        status=status,
+        error=error,
     ), raw_responses
 
 
@@ -444,7 +513,10 @@ def main():
         logger.info(f"[{i}/{len(records)}] {record.file_id}")
         try:
             result, raw_responses = process_file(model, processor, record, args.model, args.thinking, args.chunk_seconds, logger, tmp_dir)
-            n_success += 1
+            if result.status == "success":
+                n_success += 1
+            else:
+                n_error += 1
             if args.dry_run:
                 print(result.model_dump_json(indent=2))
             else:
