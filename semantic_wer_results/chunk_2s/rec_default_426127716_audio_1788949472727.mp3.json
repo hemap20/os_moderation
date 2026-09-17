@@ -1,0 +1,39 @@
+{
+  "file_id": "rec_default_426127716_audio_1788949472727.mp3",
+  "chunk_seconds": 2.0,
+  "reference_word_count": 185,
+  "affected_word_count": 20,
+  "semantic_wer": 0.10810810810810811,
+  "discrepancies": [
+    {
+      "reference_text": "मैं भी ठीक हूँ",
+      "hypothesis_text": "ठीक न",
+      "category": "negation_flipped",
+      "word_count_affected": 4,
+      "explanation": "The reference 'I am also fine' is changed to 'fine no', which flips the meaning."
+    },
+    {
+      "reference_text": "वहाँ",
+      "hypothesis_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 1,
+      "explanation": "The location 'there' is missing from the hypothesis."
+    },
+    {
+      "reference_text": "देखना तो आप अच्छे से दिखाओ",
+      "hypothesis_text": "देखना आपका बच्चे फ",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The hypothesis introduces 'child' which is not present in the reference."
+    },
+    {
+      "reference_text": "ये सही कर लो आप, सही कर लो आप ये",
+      "hypothesis_text": "सही कर लो सही कर लो तो",
+      "category": "key_content_missing",
+      "word_count_affected": 9,
+      "explanation": "The pronoun 'you' is missing from the request."
+    }
+  ],
+  "status": "success",
+  "error": null
+}

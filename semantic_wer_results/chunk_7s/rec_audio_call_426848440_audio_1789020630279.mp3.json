@@ -1,0 +1,32 @@
+{
+  "file_id": "rec_audio_call_426848440_audio_1789020630279.mp3",
+  "chunk_seconds": 7.0,
+  "reference_word_count": 35,
+  "affected_word_count": 17,
+  "semantic_wer": 0.4857142857142857,
+  "discrepancies": [
+    {
+      "reference_text": "हां आप कहां से असम से हूं मैं",
+      "hypothesis_text": "आप घम",
+      "category": "named_entity_altered",
+      "word_count_affected": 8,
+      "explanation": "The location Assam was incorrectly transcribed as 'घम' and the surrounding context was lost."
+    },
+    {
+      "reference_text": "आप कहां से यूपी से हं",
+      "hypothesis_text": "आप यपी से",
+      "category": "key_content_missing",
+      "word_count_affected": 6,
+      "explanation": "The question about location was truncated, losing the meaning of the inquiry."
+    },
+    {
+      "reference_text": "कर रहे हैं",
+      "hypothesis_text": "कर रही ह",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The gender of the subject was incorrectly changed from masculine to feminine."
+    }
+  ],
+  "status": "success",
+  "error": null
+}

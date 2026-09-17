@@ -1,0 +1,46 @@
+{
+  "file_id": "rec_default_426107744_audio_1788948040810.mp3",
+  "chunk_seconds": 5.0,
+  "reference_word_count": 312,
+  "affected_word_count": 34,
+  "semantic_wer": 0.10897435897435898,
+  "discrepancies": [
+    {
+      "reference_text": "मेरा नाम दिव्या है",
+      "hypothesis_text": "मैनम देव",
+      "category": "named_entity_altered",
+      "word_count_affected": 4,
+      "explanation": "The name Divya was incorrectly transcribed as Dev."
+    },
+    {
+      "reference_text": "एज क्या है आपकी? मेरी एज 24 है 24",
+      "hypothesis_text": "क्या मेरी स्टुड वो है चौबीस",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The question about age and the response were garbled, losing the context of age."
+    },
+    {
+      "reference_text": "क्या जॉब करते हो आप? कंपनी में हूं मैं परवेज है तो हां ओके",
+      "hypothesis_text": "क्या शौक है क",
+      "category": "key_content_missing",
+      "word_count_affected": 13,
+      "explanation": "The question about job and the answer were replaced with a question about hobbies, losing the original content."
+    },
+    {
+      "reference_text": "दिमाग हो",
+      "hypothesis_text": "बीमार हो",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The word दिमाग (brain) was replaced by बीमार (sick), changing the meaning of the sentence."
+    },
+    {
+      "reference_text": "लड़की इतना कब से सीधे होने लगे?",
+      "hypothesis_text": "लड़की इतना काफी सीधे होने लगे",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The phrase कब से (since when) was replaced by काफी (quite), changing the meaning of the question."
+    }
+  ],
+  "status": "success",
+  "error": null
+}

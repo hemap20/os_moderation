@@ -1,0 +1,39 @@
+{
+  "file_id": "rec_default_420147298_audio_1788380486702.mp3",
+  "chunk_seconds": 2.0,
+  "reference_word_count": 913,
+  "affected_word_count": 15,
+  "semantic_wer": 0.01642935377875137,
+  "discrepancies": [
+    {
+      "reference_text": "2000, कितने की बोर्न हो? 2003",
+      "hypothesis_text": "टू डाजें कितनी की बोरन टू थाउज थी",
+      "category": "number_or_id_altered",
+      "word_count_affected": 6,
+      "explanation": "The birth year 2000 and 2003 were incorrectly transcribed as 'two dozen' and 'two thousand three' respectively."
+    },
+    {
+      "reference_text": "ज़ारा@2003",
+      "hypothesis_text": "जा रहा है एट द रेट टूडो थ",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The username 'Zara@2003' was garbled into a nonsensical phrase."
+    },
+    {
+      "reference_text": "डिनर नहीं किए",
+      "hypothesis_text": "डिनर नहीं क्यों",
+      "category": "negation_flipped",
+      "word_count_affected": 3,
+      "explanation": "The hypothesis changes the statement 'did not have dinner' into a question 'why dinner', altering the meaning."
+    },
+    {
+      "reference_text": "बॉयफ्रेंड वगैरह नहीं है क्या?",
+      "hypothesis_text": "वगरा नहीं है क",
+      "category": "key_content_missing",
+      "word_count_affected": 5,
+      "explanation": "The word 'boyfriend' is missing from the hypothesis, losing the context of the question."
+    }
+  ],
+  "status": "success",
+  "error": null
+}
