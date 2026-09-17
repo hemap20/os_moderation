@@ -302,7 +302,16 @@ def parse_and_score_flags(answer_text: str, token_infos: list, chunk_offset_sec:
         return []
 
     flags = []
-    raw_flags = parsed.get("d", [])
+    # The model occasionally returns a bare JSON array (the "d" list itself)
+    # instead of the expected {"d": [...]} object — recover rather than crash.
+    if isinstance(parsed, list):
+        logger.warn("model returned a bare JSON array instead of {\"d\": [...]}; treating it as the flags list")
+        raw_flags = parsed
+    elif isinstance(parsed, dict):
+        raw_flags = parsed.get("d", [])
+    else:
+        logger.warn(f"model returned unexpected JSON top-level type {type(parsed).__name__}, treating as no flags")
+        raw_flags = []
     entry_starts = _find_flag_entry_char_offsets(answer_text, len(raw_flags))
     for flag, start_char in zip(raw_flags, entry_starts):
         scoring = compute_flag_confidence_and_entropy(
