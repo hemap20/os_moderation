@@ -1,0 +1,39 @@
+{
+  "file_id": "rec_audio_call_424886004_audio_1788837418505.mp3",
+  "chunk_seconds": 10.0,
+  "reference_word_count": 458,
+  "affected_word_count": 14,
+  "semantic_wer": 0.03056768558951965,
+  "discrepancies": [
+    {
+      "reference_text": "అచ్చా మీ సిస్టర్ ని ఇక్కడికి పంపియమను",
+      "hypothesis_text": "చ్చ మీ సిస్టర్ని ఎక్కడన్నా పంపియ మ",
+      "category": "named_entity_altered",
+      "word_count_affected": 6,
+      "explanation": "The location 'here' (ఇక్కడికి) was changed to 'somewhere' (ఎక్కడన్నా), altering the meaning of the request."
+    },
+    {
+      "reference_text": "అరవిందలో",
+      "hypothesis_text": "అంద",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The specific hospital name 'Aravinda' was garbled into a meaningless word."
+    },
+    {
+      "reference_text": "ఐటిఐ లో",
+      "hypothesis_text": "డ జాబ్",
+      "category": "number_or_id_altered",
+      "word_count_affected": 2,
+      "explanation": "The specific workplace/entity 'ITI' was omitted and replaced with generic text."
+    },
+    {
+      "reference_text": "నేను చేసే అంత ఖాళీ లేను",
+      "hypothesis_text": "నేంత లే",
+      "category": "key_content_missing",
+      "word_count_affected": 5,
+      "explanation": "The phrase indicating the speaker is not free/available was truncated, losing the original meaning."
+    }
+  ],
+  "status": "success",
+  "error": null
+}

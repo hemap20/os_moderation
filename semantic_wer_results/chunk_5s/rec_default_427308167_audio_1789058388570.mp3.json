@@ -1,0 +1,39 @@
+{
+  "file_id": "rec_default_427308167_audio_1789058388570.mp3",
+  "chunk_seconds": 5.0,
+  "reference_word_count": 546,
+  "affected_word_count": 13,
+  "semantic_wer": 0.023809523809523808,
+  "discrepancies": [
+    {
+      "reference_text": "எனக்கு 25 தான் ஆகுது",
+      "hypothesis_text": "எனக்கு எடி இருக்கு",
+      "category": "number_or_id_altered",
+      "word_count_affected": 4,
+      "explanation": "The age 25 was incorrectly transcribed as 'எடி' (meaningless/garbled)."
+    },
+    {
+      "reference_text": "எனக்கு 24",
+      "hypothesis_text": "எனக்கு இரு நாலு",
+      "category": "number_or_id_altered",
+      "word_count_affected": 2,
+      "explanation": "The age 24 was transcribed as 'இரு நாலு' (two four), which is a phonetic representation rather than the number itself, but in this context, it is a minor discrepancy; however, the previous age error is significant."
+    },
+    {
+      "reference_text": "18 பிளஸ்",
+      "hypothesis_text": "எ பிள",
+      "category": "number_or_id_altered",
+      "word_count_affected": 2,
+      "explanation": "The age rating '18 plus' was garbled to 'எ பிள'."
+    },
+    {
+      "reference_text": "ஆடியோ கால்ல வந்து சேஞ்ச் ஆகாது",
+      "hypothesis_text": "ஆடியோ கால் வந்து சேஞ்ச் ஆகும்",
+      "category": "negation_flipped",
+      "word_count_affected": 5,
+      "explanation": "The hypothesis flipped the meaning by stating it 'will change' instead of 'will not change'."
+    }
+  ],
+  "status": "success",
+  "error": null
+}

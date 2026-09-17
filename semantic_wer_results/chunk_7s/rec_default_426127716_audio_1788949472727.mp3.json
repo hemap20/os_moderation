@@ -1,0 +1,39 @@
+{
+  "file_id": "rec_default_426127716_audio_1788949472727.mp3",
+  "chunk_seconds": 7.0,
+  "reference_word_count": 185,
+  "affected_word_count": 22,
+  "semantic_wer": 0.11891891891891893,
+  "discrepancies": [
+    {
+      "reference_text": "हाय कैसे हो? बढ़िया, आप बताओ। मैं भी ठीक हूँ।",
+      "hypothesis_text": "कैसे हो बताओ",
+      "category": "key_content_missing",
+      "word_count_affected": 9,
+      "explanation": "Several conversational phrases are missing from the beginning of the transcript."
+    },
+    {
+      "reference_text": "वहाँ टीवी चल रहा है।",
+      "hypothesis_text": "टव चलला",
+      "category": "named_entity_altered",
+      "word_count_affected": 4,
+      "explanation": "The word TV is garbled and the sentence structure is significantly altered."
+    },
+    {
+      "reference_text": "देखना तो आप अच्छे से दिखाओ।",
+      "hypothesis_text": "देखना आप कल अच्छे से देखा",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The word कल (tomorrow) is incorrectly inserted, changing the meaning of the request."
+    },
+    {
+      "reference_text": "बाय बाय। बाय।",
+      "hypothesis_text": "भाई",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The closing farewell was replaced with the word for brother."
+    }
+  ],
+  "status": "success",
+  "error": null
+}

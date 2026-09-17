@@ -1,0 +1,53 @@
+{
+  "file_id": "rec_audio_call_426594019_audio_1788984570393.mp3",
+  "chunk_seconds": 10.0,
+  "reference_word_count": 421,
+  "affected_word_count": 13,
+  "semantic_wer": 0.030878859857482184,
+  "discrepancies": [
+    {
+      "reference_text": "హలో హాయ్ ఎక్కడి నుంచి అండి",
+      "hypothesis_text": "హలో్ విజయవాడ మీరెక్కడి నుంచండి",
+      "category": "named_entity_altered",
+      "word_count_affected": 4,
+      "explanation": "The hypothesis incorrectly identifies the location as Vijayawada instead of a greeting."
+    },
+    {
+      "reference_text": "12,000",
+      "hypothesis_text": "పన్నెండు వేలు",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The hypothesis converts the numeric value into text, which is acceptable, but the context of the salary is slightly garbled."
+    },
+    {
+      "reference_text": "22",
+      "hypothesis_text": "ఇరవై రెండు",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The hypothesis converts the numeric age into text, which is acceptable, but the surrounding context is slightly garbled."
+    },
+    {
+      "reference_text": "24 25",
+      "hypothesis_text": "ట్వంటీ ఫోర్ ట్వంటీ ఫైవ్",
+      "category": "number_or_id_altered",
+      "word_count_affected": 2,
+      "explanation": "The hypothesis converts the numeric age range into English-transliterated text, which is a change in format."
+    },
+    {
+      "reference_text": "20",
+      "hypothesis_text": "లేకపోతే ే",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The hypothesis completely misses the age value '20' and replaces it with filler text."
+    },
+    {
+      "reference_text": "మీ బ్రా సైజ్ ఎంత",
+      "hypothesis_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The hypothesis completely omits the question regarding bra size."
+    }
+  ],
+  "status": "success",
+  "error": null
+}

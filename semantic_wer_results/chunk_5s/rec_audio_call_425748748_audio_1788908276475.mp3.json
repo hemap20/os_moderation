@@ -1,0 +1,46 @@
+{
+  "file_id": "rec_audio_call_425748748_audio_1788908276475.mp3",
+  "chunk_seconds": 5.0,
+  "reference_word_count": 119,
+  "affected_word_count": 26,
+  "semantic_wer": 0.2184873949579832,
+  "discrepancies": [
+    {
+      "reference_text": "अच्छी हूँ, आप कैसे हो? बहुत बढ़िया। कहाँ से हो? MP से, आप कहाँ से हो?",
+      "hypothesis_text": "छ कैसे होहत िल्ली से",
+      "category": "key_content_missing",
+      "word_count_affected": 13,
+      "explanation": "Several sentences regarding the speaker's well-being and location are missing or garbled."
+    },
+    {
+      "reference_text": "नहीं हूँ",
+      "hypothesis_text": "",
+      "category": "negation_flipped",
+      "word_count_affected": 2,
+      "explanation": "The negation is missing, which flips the meaning of the sentence."
+    },
+    {
+      "reference_text": "संगम विहार",
+      "hypothesis_text": "संगम बहार",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The location name is incorrectly transcribed."
+    },
+    {
+      "reference_text": "मैं मयूर विहार से हूँ",
+      "hypothesis_text": "मैं मयूर भी ह",
+      "category": "named_entity_altered",
+      "word_count_affected": 4,
+      "explanation": "The location name is garbled and loses its identity."
+    },
+    {
+      "reference_text": "बट मैं आपको जानूँगी पहले",
+      "hypothesis_text": "वो च आपो तो पहले",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The sentence expressing the intent to know the person first is garbled and loses its original meaning."
+    }
+  ],
+  "status": "success",
+  "error": null
+}

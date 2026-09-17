@@ -1,0 +1,46 @@
+{
+  "file_id": "rec_audio_call_426203802_audio_1788955464104.mp3",
+  "chunk_seconds": 10.0,
+  "reference_word_count": 558,
+  "affected_word_count": 28,
+  "semantic_wer": 0.05017921146953405,
+  "discrepancies": [
+    {
+      "reference_text": "मैं फार्मासिस्ट हूं मेडिकल स्टोर है मेरा",
+      "hypothesis_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 7,
+      "explanation": "The hypothesis completely omits the speaker's profession and business ownership."
+    },
+    {
+      "reference_text": "मेरा है तीन चार ब्रांच है मेरी रामदेव मेडिकल करके",
+      "hypothesis_text": "नेे तीन च्र ामवड",
+      "category": "named_entity_altered",
+      "word_count_affected": 9,
+      "explanation": "The name of the medical store 'Ramdev' is garbled and the information about having three or four branches is lost."
+    },
+    {
+      "reference_text": "मेरा नाम सारिका है",
+      "hypothesis_text": "सारील",
+      "category": "named_entity_altered",
+      "word_count_affected": 4,
+      "explanation": "The speaker's name 'Sarika' is incorrectly transcribed."
+    },
+    {
+      "reference_text": "मेरी 27 27 सिंगल मैं 28 हूं सिंगल",
+      "hypothesis_text": "ट्व च  फ देता",
+      "category": "number_or_id_altered",
+      "word_count_affected": 7,
+      "explanation": "The ages and status information are garbled and inaccurate."
+    },
+    {
+      "reference_text": "किडनी",
+      "hypothesis_text": "डन",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The medical term 'kidney' is replaced with a nonsensical word, losing the context of the medical explanation."
+    }
+  ],
+  "status": "success",
+  "error": null
+}

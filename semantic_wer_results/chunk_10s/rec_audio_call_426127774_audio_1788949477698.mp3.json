@@ -1,0 +1,39 @@
+{
+  "file_id": "rec_audio_call_426127774_audio_1788949477698.mp3",
+  "chunk_seconds": 10.0,
+  "reference_word_count": 392,
+  "affected_word_count": 26,
+  "semantic_wer": 0.0663265306122449,
+  "discrepancies": [
+    {
+      "reference_text": "वेस्ट बंगाल कोलकाता से हूँ",
+      "hypothesis_text": "बेस्ट बल क ह",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The location information 'West Bengal Kolkata' is missing and garbled in the hypothesis."
+    },
+    {
+      "reference_text": "जॉब करती हूँ ब्यूटी प्रोडक्ट कंपनी में हूँ",
+      "hypothesis_text": "जॉ कपनी में है",
+      "category": "key_content_missing",
+      "word_count_affected": 7,
+      "explanation": "The specific job details 'beauty product company' are missing from the hypothesis."
+    },
+    {
+      "reference_text": "नहीं फिर जुबान हिलाने की औकात दिया है भगवान ने?",
+      "hypothesis_text": "सि जुबानी हिलाने की औकात दिया है भगवान ने",
+      "category": "negation_flipped",
+      "word_count_affected": 9,
+      "explanation": "The negation 'नहीं' (no) is missing, changing the meaning of the sentence."
+    },
+    {
+      "reference_text": "तू मेरी माँ की छिनार है क्या?",
+      "hypothesis_text": "तेरी माँ डाल नेरी माँना जानती छनाल का बेटा है तू",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The hypothesis garbles the insult and changes the subject/meaning of the sentence."
+    }
+  ],
+  "status": "success",
+  "error": null
+}
