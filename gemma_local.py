@@ -50,6 +50,7 @@ from schemas_gemma import GemmaChunkFlag, GemmaFileResult
 MODEL_IDS = {
     "e2b": "google/gemma-4-E2B-it",
     "e4b": "google/gemma-4-E4B-it",
+    "12b": "google/gemma-4-12B-it",
 }
 
 CHUNK_SECONDS_MAX = 30.0
@@ -479,7 +480,7 @@ def write_error(model_key: str, thinking: bool, file_id: str, error: str):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model", choices=["e2b", "e4b"], required=True)
+    parser.add_argument("--model", choices=["e2b", "e4b", "12b"], required=True)
     parser.add_argument("--thinking", action="store_true")
     parser.add_argument("--chunk-seconds", type=float, default=DEFAULT_CHUNK_SECONDS)
     parser.add_argument("--dry-run", action="store_true")
