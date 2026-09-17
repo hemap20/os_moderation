@@ -1,0 +1,30 @@
+```json
+{
+  "d": [
+    {
+      "f": "SuspiciousActivity",
+      "t": "00:50",
+      "seg": "గివ్ మీ య నంబర్ మ టై పాస్ చేస్త",
+      "tr": "Give me your number, I will pass time",
+      "j": "The user is asking for a phone number with the implication that it is for passing time, which is ambiguous but leans towards PlatformMove/SuspiciousActivity. Given the context of the preceding discussion about payment for calls, this is flagged as a request for contact information.",
+      "c": 0.75
+    },
+    {
+      "f": "SuspiciousActivity",
+      "t": "00:55",
+      "seg": "నీకు డబ్బులు కొట్టాకనే వీడియో కాల్ ఆన్ చేస్తావు కదా డబ్బులు కొట్టకుండా అయితే ఆన్ చేయవు కదా",
+      "tr": "You will only turn on the video call after you pay money, right? If you don't pay, you won't turn it on, right?",
+      "j": "The user is explicitly linking the activation of a video call to payment, which falls under the definition of SuspiciousActivity regarding payment for services.",
+      "c": 0.95
+    },
+    {
+      "f": "SuspiciousActivity",
+      "t": "01:10",
+      "seg": "డబ్బులు కొట్టాల్సిందే కదా నీకు అర్థంమవుతుందా",
+      "tr": "You have to pay money, do you understand?",
+      "j": "The user is directly asserting that payment is necessary for the service being discussed, reinforcing the transactional nature of the conversation.",
+      "c": 0.85
+    }
+  ]
+}
+```<turn|>
