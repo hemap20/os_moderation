@@ -1,0 +1,24 @@
+[2026-09-17T11:26:53] [INFO] Loading bodhan-ai/indic-transcribe-core...
+Fetching 22 files:   0%|          | 0/22 [00:00<?, ?it/s]Fetching 22 files: 100%|██████████| 22/22 [00:00<00:00, 1590.09it/s]
+Traceback (most recent call last):
+  File "/workspace/.cache/huggingface/hub/models--bodhan-ai--indic-transcribe-core/snapshots/8206740d5d46c10b5682e06adc1031b6e123ddd4/indic_transcribe.py", line 61, in <module>
+    from .lid import RECOMMENDED_LANGS, TRAINED_LANGS, lid_from_encoder_states  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ImportError: attempted relative import with no known parent package
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/os_moderation/indic_transcribe_core_pipeline.py", line 326, in <module>
+    main()
+  File "/workspace/os_moderation/indic_transcribe_core_pipeline.py", line 272, in main
+    asr = load_model()
+          ^^^^^^^^^^^^
+  File "/workspace/os_moderation/indic_transcribe_core_pipeline.py", line 67, in load_model
+    from indic_transcribe import IndicTranscribe  # noqa: E402 — only importable after the path insert above
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/.cache/huggingface/hub/models--bodhan-ai--indic-transcribe-core/snapshots/8206740d5d46c10b5682e06adc1031b6e123ddd4/indic_transcribe.py", line 69, in <module>
+    from tokenization_indic_canary import IndicCanaryTokenizer
+  File "/workspace/.cache/huggingface/hub/models--bodhan-ai--indic-transcribe-core/snapshots/8206740d5d46c10b5682e06adc1031b6e123ddd4/tokenization_indic_canary.py", line 33, in <module>
+    import sentencepiece as spm
+ModuleNotFoundError: No module named 'sentencepiece'

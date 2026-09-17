@@ -1,0 +1,224 @@
+[2026-09-17T11:26:54] [INFO] Loading google/gemma-4-E2B-it (text-only, non-thinking)...
+Loading weights:   0%|          | 0/1951 [00:00<?, ?it/s]Loading weights:  11%|█         | 205/1951 [00:00<00:00, 2026.82it/s]Loading weights:  21%|██        | 408/1951 [00:00<00:00, 1902.03it/s]Loading weights:  31%|███       | 599/1951 [00:00<00:00, 1767.43it/s]Loading weights:  40%|███▉      | 777/1951 [00:01<00:03, 346.29it/s] Loading weights:  46%|████▌     | 891/1951 [00:01<00:02, 371.78it/s]Loading weights:  50%|█████     | 981/1951 [00:01<00:02, 407.43it/s]Loading weights:  54%|█████▍    | 1061/1951 [00:02<00:02, 383.87it/s]Loading weights:  58%|█████▊    | 1126/1951 [00:02<00:02, 348.27it/s]Loading weights:  60%|██████    | 1178/1951 [00:02<00:02, 326.35it/s]Loading weights:  63%|██████▎   | 1222/1951 [00:02<00:02, 310.70it/s]Loading weights:  65%|██████▍   | 1261/1951 [00:03<00:02, 284.47it/s]Loading weights:  66%|██████▋   | 1294/1951 [00:03<00:02, 286.77it/s]Loading weights:  73%|███████▎  | 1424/1951 [00:03<00:01, 476.31it/s]Loading weights:  80%|███████▉  | 1560/1951 [00:03<00:00, 663.11it/s]Loading weights:  86%|████████▌ | 1670/1951 [00:03<00:00, 763.15it/s]Loading weights:  95%|█████████▍| 1852/1951 [00:03<00:00, 1024.52it/s]Loading weights: 100%|██████████| 1951/1951 [00:03<00:00, 543.38it/s] 
+[2026-09-17T11:27:13] [INFO] Model loaded.
+[2026-09-17T11:27:13] [INFO] Skipping 9 already-done file(s)
+[2026-09-17T11:27:13] [INFO] [1/372] rec_audio_call_425679391_audio_1788897730000.mp3
+[2026-09-17T11:27:26] [INFO] [2/372] rec_audio_call_425691838_audio_1788898819143.mp3
+[2026-09-17T11:27:33] [INFO] [3/372] rec_default_426593829_audio_1788984553610.mp3
+[2026-09-17T11:27:52] [INFO] [4/372] rec_audio_call_419965552_audio_1788369990564.mp3
+[2026-09-17T11:27:54] [INFO] [5/372] rec_audio_call_421071310_audio_1788465787061.mp3
+[2026-09-17T11:28:38] [INFO] [6/372] rec_audio_call_421768524_audio_1788539479106.mp3
+[2026-09-17T11:28:39] [INFO] [7/372] rec_audio_call_421835569_audio_1788543699379.mp3
+[2026-09-17T11:28:40] [INFO] [8/372] rec_audio_call_421997101_audio_1788553909604.mp3
+[2026-09-17T11:28:47] [INFO] [9/372] rec_audio_call_423610988_audio_1788712982461.mp3
+[2026-09-17T11:28:48] [INFO] [10/372] rec_audio_call_425656431_audio_1788896027178.mp3
+[2026-09-17T11:28:50] [INFO] [11/372] rec_default_420147298_audio_1788380486702.mp3
+[2026-09-17T11:28:58] [INFO] [12/372] rec_default_420599099_audio_1788430532077.mp3
+[2026-09-17T11:29:00] [INFO] [13/372] rec_default_421888258_audio_1788546625741.mp3
+[2026-09-17T11:29:05] [INFO] [14/372] rec_default_423958539_audio_1788751477018.mp3
+[2026-09-17T11:29:11] [INFO] [15/372] rec_audio_call_421981200_audio_1788552638354.mp3
+[2026-09-17T11:29:19] [INFO] [16/372] rec_audio_call_422812035_audio_1788633064712.mp3
+[2026-09-17T11:29:26] [INFO] [17/372] rec_audio_call_423872491_audio_1788731676125.mp3
+[2026-09-17T11:29:33] [INFO] [18/372] rec_audio_call_424735559_audio_1788811052808.mp3
+[2026-09-17T11:29:41] [ERROR] rec_audio_call_424735559_audio_1788811052808.mp3: FAILED — 'list' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/workspace/os_moderation/gemma_local_text.py", line 178, in main
+    result, raw_response = process_file(model, processor, record, args.model, args.transcript_chunk_seconds, logger)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/os_moderation/gemma_local_text.py", line 100, in process_file
+    flags = parse_and_score_flags(answer_text, token_infos, chunk_offset_sec=0.0, logger=logger)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/os_moderation/gemma_local.py", line 305, in parse_and_score_flags
+    raw_flags = parsed.get("d", [])
+                ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+
+[2026-09-17T11:29:41] [INFO] [19/372] rec_audio_call_425051281_audio_1788851621695.mp3
+[2026-09-17T11:29:56] [INFO] [20/372] rec_default_422797054_audio_1788632206019.mp3
+[2026-09-17T11:30:19] [INFO] [21/372] rec_audio_call_421865395_audio_1788545383247.mp3
+[2026-09-17T11:30:26] [INFO] [22/372] rec_audio_call_425933838_audio_1788934868635.mp3
+[2026-09-17T11:30:59] [INFO] [23/372] rec_audio_call_426596251_audio_1788984756063.mp3
+[2026-09-17T11:31:05] [INFO] [24/372] rec_audio_call_426599617_audio_1788985040466.mp3
+[2026-09-17T11:31:33] [INFO] [25/372] rec_default_423978016_audio_1788753648923.mp3
+[2026-09-17T11:31:41] [INFO] [26/372] rec_default_425396309_audio_1788879180076.mp3
+[2026-09-17T11:31:49] [INFO] [27/372] rec_default_425778316_audio_1788916552817.mp3
+[2026-09-17T11:31:55] [INFO] [28/372] rec_audio_call_424867062_audio_1788834834877.mp3
+[2026-09-17T11:32:02] [INFO] [29/372] rec_audio_call_425730841_audio_1788903925979.mp3
+[2026-09-17T11:32:08] [INFO] [30/372] rec_audio_call_425744236_audio_1788906883727.mp3
+[2026-09-17T11:32:22] [INFO] [31/372] rec_audio_call_426409268_audio_1788973959169.mp3
+[2026-09-17T11:32:24] [INFO] [32/372] rec_default_424880310_audio_1788836667926.mp3
+[2026-09-17T11:32:31] [INFO] [33/372] rec_default_425134890_audio_1788857770816.mp3
+[2026-09-17T11:32:48] [INFO] [34/372] rec_default_425141339_audio_1788858189163.mp3
+[2026-09-17T11:33:46] [INFO] [35/372] rec_audio_call_424610503_audio_1788803501320.mp3
+[2026-09-17T11:33:53] [INFO] [36/372] rec_audio_call_424798751_audio_1788818609448.mp3
+[2026-09-17T11:34:00] [INFO] [37/372] rec_audio_call_425147890_audio_1788858642964.mp3
+[2026-09-17T11:34:01] [INFO] [38/372] rec_audio_call_425713085_audio_1788901236624.mp3
+[2026-09-17T11:34:03] [INFO] [39/372] rec_audio_call_419508797_audio_1788334367395.mp3
+[2026-09-17T11:34:04] [INFO] [40/372] rec_audio_call_421677953_audio_1788530753328.mp3
+[2026-09-17T11:34:12] [INFO] [41/372] rec_audio_call_423351802_audio_1788689747483.mp3
+[2026-09-17T11:34:20] [INFO] [42/372] rec_audio_call_423591955_audio_1788711572217.mp3
+[2026-09-17T11:34:22] [INFO] [43/372] rec_audio_call_423629370_audio_1788714233340.mp3
+[2026-09-17T11:34:59] [INFO] [44/372] rec_audio_call_426565546_audio_1788982388939.mp3
+[2026-09-17T11:35:01] [INFO] [45/372] rec_default_419887388_audio_1788364981482.mp3
+[2026-09-17T11:35:17] [INFO] [46/372] rec_default_421661435_audio_1788529081993.mp3
+[2026-09-17T11:35:25] [INFO] [47/372] rec_default_421956667_audio_1788550846403.mp3
+[2026-09-17T11:35:27] [INFO] [48/372] rec_default_423887482_audio_1788735128862.mp3
+[2026-09-17T11:35:35] [INFO] [49/372] rec_default_424793843_audio_1788817690775.mp3
+[2026-09-17T11:35:37] [INFO] [50/372] rec_default_425627452_audio_1788894258639.mp3
+[2026-09-17T11:35:38] [INFO] [51/372] rec_audio_call_426099993_audio_1788947488901.mp3
+[2026-09-17T11:35:39] [INFO] [52/372] rec_audio_call_426101059_audio_1788947560284.mp3
+[2026-09-17T11:35:55] [INFO] [53/372] rec_audio_call_426107984_audio_1788948053829.mp3
+[2026-09-17T11:35:57] [INFO] [54/372] rec_audio_call_426107995_audio_1788948050780.mp3
+[2026-09-17T11:35:58] [INFO] [55/372] rec_audio_call_426108129_audio_1788948057694.mp3
+[2026-09-17T11:36:00] [INFO] [56/372] rec_audio_call_426119888_audio_1788948897495.mp3
+[2026-09-17T11:36:01] [INFO] [57/372] rec_audio_call_426127774_audio_1788949477698.mp3
+[2026-09-17T11:36:30] [INFO] [58/372] rec_audio_call_426194933_audio_1788954682604.mp3
+[2026-09-17T11:36:44] [INFO] [59/372] rec_audio_call_426195125_audio_1788954700286.mp3
+[2026-09-17T11:36:45] [INFO] [60/372] rec_audio_call_426201717_audio_1788955277234.mp3
+[2026-09-17T11:36:47] [INFO] [61/372] rec_audio_call_426201848_audio_1788955284435.mp3
+[2026-09-17T11:36:48] [INFO] [62/372] rec_audio_call_426202468_audio_1788955343920.mp3
+[2026-09-17T11:36:50] [INFO] [63/372] rec_audio_call_426202822_audio_1788955375114.mp3
+[2026-09-17T11:36:57] [INFO] [64/372] rec_audio_call_426202958_audio_1788955393853.mp3
+[2026-09-17T11:36:58] [INFO] [65/372] rec_audio_call_426203219_audio_1788955405537.mp3
+[2026-09-17T11:37:00] [INFO] [66/372] rec_audio_call_426203802_audio_1788955464104.mp3
+[2026-09-17T11:37:09] [INFO] [67/372] rec_audio_call_426204124_audio_1788955491095.mp3
+[2026-09-17T11:37:11] [INFO] [68/372] rec_audio_call_426204404_audio_1788955515816.mp3
+[2026-09-17T11:37:12] [INFO] [69/372] rec_audio_call_426204463_audio_1788955521517.mp3
+[2026-09-17T11:37:14] [INFO] [70/372] rec_audio_call_426847860_audio_1789020585952.mp3
+[2026-09-17T11:37:16] [INFO] [71/372] rec_audio_call_426848290_audio_1789020619592.mp3
+[2026-09-17T11:37:17] [INFO] [72/372] rec_audio_call_426848321_audio_1789020622237.mp3
+[2026-09-17T11:37:19] [INFO] [73/372] rec_audio_call_426848355_audio_1789020625114.mp3
+[2026-09-17T11:37:21] [INFO] [74/372] rec_audio_call_426848440_audio_1789020630279.mp3
+[2026-09-17T11:37:22] [INFO] [75/372] rec_audio_call_426848640_audio_1789020645122.mp3
+[2026-09-17T11:37:24] [INFO] [76/372] rec_audio_call_426848943_audio_1789020668404.mp3
+[2026-09-17T11:37:25] [INFO] [77/372] rec_audio_call_426849624_audio_1789020718433.mp3
+[2026-09-17T11:37:27] [INFO] [78/372] rec_audio_call_426849843_audio_1789020732404.mp3
+[2026-09-17T11:37:47] [INFO] [79/372] rec_audio_call_426850383_audio_1789020772255.mp3
+[2026-09-17T11:37:49] [INFO] [80/372] rec_audio_call_426851323_audio_1789020846081.mp3
+[2026-09-17T11:37:50] [INFO] [81/372] rec_audio_call_426851772_audio_1789020879921.mp3
+[2026-09-17T11:38:02] [INFO] [82/372] rec_audio_call_426851856_audio_1789020892000.mp3
+[2026-09-17T11:38:11] [INFO] [83/372] rec_audio_call_426854007_audio_1789021052086.mp3
+[2026-09-17T11:38:12] [INFO] [84/372] rec_audio_call_426854157_audio_1789021067058.mp3
+[2026-09-17T11:38:14] [INFO] [85/372] rec_audio_call_426883755_audio_1789023272654.mp3
+[2026-09-17T11:38:15] [INFO] [86/372] rec_audio_call_427029817_audio_1789033741551.mp3
+[2026-09-17T11:38:17] [INFO] [87/372] rec_audio_call_427302258_audio_1789057958698.mp3
+[2026-09-17T11:38:18] [INFO] [88/372] rec_audio_call_427307060_audio_1789058304926.mp3
+[2026-09-17T11:38:20] [INFO] [89/372] rec_audio_call_427311569_audio_1789058616356.mp3
+[2026-09-17T11:38:21] [INFO] [90/372] rec_audio_call_427314953_audio_1789058839016.mp3
+[2026-09-17T11:38:23] [INFO] [91/372] rec_default_426100823_audio_1788947551748.mp3
+[2026-09-17T11:38:24] [INFO] [92/372] rec_default_426107316_audio_1788948009635.mp3
+[2026-09-17T11:38:26] [INFO] [93/372] rec_default_426107744_audio_1788948040810.mp3
+[2026-09-17T11:38:28] [INFO] [94/372] rec_default_426108828_audio_1788948111282.mp3
+[2026-09-17T11:38:29] [INFO] [95/372] rec_default_426126463_audio_1788949378147.mp3
+[2026-09-17T11:38:31] [INFO] [96/372] rec_default_426126833_audio_1788949400904.mp3
+[2026-09-17T11:38:32] [INFO] [97/372] rec_default_426127716_audio_1788949472727.mp3
+[2026-09-17T11:38:34] [INFO] [98/372] rec_default_426194323_audio_1788954640272.mp3
+[2026-09-17T11:38:35] [INFO] [99/372] rec_default_426195344_audio_1788954727902.mp3
+[2026-09-17T11:38:37] [INFO] [100/372] rec_default_426202313_audio_1788955333217.mp3
+[2026-09-17T11:38:38] [INFO] [101/372] rec_default_426204264_audio_1788955509025.mp3
+[2026-09-17T11:38:39] [INFO] [102/372] rec_default_426204318_audio_1788955517179.mp3
+[2026-09-17T11:38:40] [INFO] [103/372] rec_default_426848660_audio_1789020643588.mp3
+[2026-09-17T11:38:57] [INFO] [104/372] rec_default_426851955_audio_1789020893146.mp3
+[2026-09-17T11:38:58] [INFO] [105/372] rec_default_426853539_audio_1789021025445.mp3
+[2026-09-17T11:38:59] [INFO] [106/372] rec_default_427012373_audio_1789032615035.mp3
+[2026-09-17T11:39:01] [INFO] [107/372] rec_default_427038720_audio_1789034321734.mp3
+[2026-09-17T11:39:02] [INFO] [108/372] rec_default_427305556_audio_1789058198302.mp3
+[2026-09-17T11:39:03] [INFO] [109/372] rec_audio_call_426576577_audio_1788983168675.mp3
+[2026-09-17T11:39:16] [INFO] [110/372] rec_audio_call_426580380_audio_1788983454564.mp3
+[2026-09-17T11:39:24] [INFO] [111/372] rec_audio_call_426601291_audio_1788985175536.mp3
+[2026-09-17T11:39:26] [INFO] [112/372] rec_default_426573210_audio_1788982914417.mp3
+[2026-09-17T11:39:34] [INFO] [113/372] rec_default_426597928_audio_1788984899162.mp3
+[2026-09-17T11:39:49] [INFO] [114/372] rec_default_426662883_audio_1788994670065.mp3
+[2026-09-17T11:39:51] [INFO] [115/372] rec_audio_call_426604675_audio_1788985474412.mp3
+[2026-09-17T11:39:53] [INFO] [116/372] rec_audio_call_426613454_audio_1788986291945.mp3
+[2026-09-17T11:40:14] [INFO] [117/372] rec_default_426634262_audio_1788988662985.mp3
+[2026-09-17T11:40:15] [INFO] [118/372] rec_default_426647598_audio_1788990955665.mp3
+[2026-09-17T11:40:26] [INFO] [119/372] rec_audio_call_421223616_audio_1788491953131.mp3
+[2026-09-17T11:40:27] [INFO] [120/372] rec_audio_call_421566156_audio_1788520297969.mp3
+[2026-09-17T11:40:28] [INFO] [121/372] rec_audio_call_423645324_audio_1788715186440.mp3
+[2026-09-17T11:40:39] [INFO] [122/372] rec_audio_call_424378148_audio_1788784557326.mp3
+[2026-09-17T11:40:40] [INFO] [123/372] rec_audio_call_424416192_audio_1788788125311.mp3
+[2026-09-17T11:40:58] [WARN] chunk classification JSON parse failed: Expecting ',' delimiter: line 18 column 1 (char 839)
+[2026-09-17T11:40:58] [INFO] [124/372] rec_audio_call_425918552_audio_1788933686610.mp3
+[2026-09-17T11:41:09] [INFO] [125/372] rec_default_425656790_audio_1788896051031.mp3
+[2026-09-17T11:41:21] [INFO] [126/372] rec_audio_call_420847903_audio_1788453013104.mp3
+[2026-09-17T11:41:36] [INFO] [127/372] rec_audio_call_424557037_audio_1788800497337.mp3
+[2026-09-17T11:42:03] [INFO] [128/372] rec_audio_call_424970880_audio_1788845652480.mp3
+[2026-09-17T11:42:09] [INFO] [129/372] rec_audio_call_425207957_audio_1788862678382.mp3
+[2026-09-17T11:42:19] [INFO] [130/372] rec_audio_call_426372327_audio_1788971567973.mp3
+[2026-09-17T11:42:20] [INFO] [131/372] rec_default_423104500_audio_1788669374178.mp3
+[2026-09-17T11:42:31] [INFO] [132/372] rec_default_423163427_audio_1788674918154.mp3
+[2026-09-17T11:42:40] [INFO] [133/372] rec_default_426023290_audio_1788941856621.mp3
+[2026-09-17T11:42:41] [INFO] [134/372] rec_audio_call_426570103_audio_1788982695863.mp3
+[2026-09-17T11:42:56] [INFO] [135/372] rec_audio_call_426580224_audio_1788983439239.mp3
+[2026-09-17T11:42:57] [INFO] [136/372] rec_audio_call_426626261_audio_1788987652206.mp3
+[2026-09-17T11:42:59] [INFO] [137/372] rec_audio_call_426634717_audio_1788988729707.mp3
+[2026-09-17T11:43:00] [INFO] [138/372] rec_default_426593601_audio_1788984536403.mp3
+[2026-09-17T11:43:10] [INFO] [139/372] rec_default_426620137_audio_1788986984372.mp3
+[2026-09-17T11:43:43] [INFO] [140/372] rec_default_426633368_audio_1788988531170.mp3
+[2026-09-17T11:43:50] [INFO] [141/372] rec_audio_call_426416419_audio_1788974369340.mp3
+[2026-09-17T11:43:51] [INFO] [142/372] rec_audio_call_420358272_audio_1788412834216.mp3
+[2026-09-17T11:44:00] [INFO] [143/372] rec_audio_call_420511856_audio_1788424457087.mp3
+[2026-09-17T11:44:11] [INFO] [144/372] rec_audio_call_420632008_audio_1788432977108.mp3
+[2026-09-17T11:44:18] [INFO] [145/372] rec_audio_call_425129217_audio_1788857364836.mp3
+[2026-09-17T11:44:37] [INFO] [146/372] rec_audio_call_426104039_audio_1788947773748.mp3
+[2026-09-17T11:44:39] [INFO] [147/372] rec_default_421372353_audio_1788505796052.mp3
+[2026-09-17T11:44:54] [INFO] [148/372] rec_default_421961206_audio_1788551169146.mp3
+[2026-09-17T11:44:55] [INFO] [149/372] rec_default_424950341_audio_1788843964859.mp3
+[2026-09-17T11:45:05] [INFO] [150/372] rec_default_425392837_audio_1788878842788.mp3
+[2026-09-17T11:45:13] [INFO] [151/372] rec_default_426076857_audio_1788945867967.mp3
+[2026-09-17T11:45:15] [INFO] [152/372] rec_audio_call_427301394_audio_1789057897529.mp3
+[2026-09-17T11:45:16] [INFO] [153/372] rec_audio_call_427304995_audio_1789058153813.mp3
+[2026-09-17T11:45:18] [INFO] [154/372] rec_audio_call_427305229_audio_1789058170052.mp3
+[2026-09-17T11:45:19] [INFO] [155/372] rec_audio_call_427305426_audio_1789058184851.mp3
+[2026-09-17T11:45:21] [INFO] [156/372] rec_audio_call_427305578_audio_1789058200155.mp3
+[2026-09-17T11:45:22] [INFO] [157/372] rec_audio_call_427305579_audio_1789058197575.mp3
+[2026-09-17T11:45:24] [INFO] [158/372] rec_audio_call_427309343_audio_1789058465241.mp3
+[2026-09-17T11:45:25] [INFO] [159/372] rec_audio_call_427310164_audio_1789058518972.mp3
+[2026-09-17T11:45:26] [INFO] [160/372] rec_audio_call_427312372_audio_1789058676733.mp3
+[2026-09-17T11:45:35] [INFO] [161/372] rec_audio_call_427313310_audio_1789058737356.mp3
+[2026-09-17T11:45:45] [INFO] [162/372] rec_audio_call_427313337_audio_1789058738019.mp3
+[2026-09-17T11:45:47] [INFO] [163/372] rec_audio_call_427315026_audio_1789058843014.mp3
+[2026-09-17T11:45:48] [INFO] [164/372] rec_audio_call_427316125_audio_1789058922687.mp3
+[2026-09-17T11:45:50] [INFO] [165/372] rec_audio_call_427316431_audio_1789058946312.mp3
+[2026-09-17T11:45:51] [INFO] [166/372] rec_default_427302623_audio_1789057989394.mp3
+[2026-09-17T11:45:53] [INFO] [167/372] rec_default_427303915_audio_1789058082453.mp3
+[2026-09-17T11:45:54] [INFO] [168/372] rec_default_427307746_audio_1789058356862.mp3
+[2026-09-17T11:45:56] [INFO] [169/372] rec_default_427308167_audio_1789058388570.mp3
+[2026-09-17T11:46:03] [INFO] [170/372] rec_default_427310161_audio_1789058524351.mp3
+[2026-09-17T11:46:12] [ERROR] rec_default_427310161_audio_1789058524351.mp3: FAILED — 'list' object has no attribute 'get'
+Traceback (most recent call last):
+  File "/workspace/os_moderation/gemma_local_text.py", line 178, in main
+    result, raw_response = process_file(model, processor, record, args.model, args.transcript_chunk_seconds, logger)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/os_moderation/gemma_local_text.py", line 100, in process_file
+    flags = parse_and_score_flags(answer_text, token_infos, chunk_offset_sec=0.0, logger=logger)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/os_moderation/gemma_local.py", line 305, in parse_and_score_flags
+    raw_flags = parsed.get("d", [])
+                ^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'get'
+
+[2026-09-17T11:46:12] [INFO] [171/372] rec_default_427312501_audio_1789058683465.mp3
+[2026-09-17T11:46:13] [INFO] [172/372] rec_default_427313073_audio_1789058722144.mp3
+[2026-09-17T11:46:15] [INFO] [173/372] rec_default_427314573_audio_1789058813038.mp3
+[2026-09-17T11:46:16] [INFO] [174/372] rec_audio_call_426641897_audio_1788989870691.mp3
+[2026-09-17T11:46:18] [INFO] [175/372] rec_audio_call_426641906_audio_1788989875034.mp3
+[2026-09-17T11:46:31] [INFO] [176/372] rec_audio_call_426647851_audio_1788991002681.mp3
+[2026-09-17T11:46:54] [INFO] [177/372] rec_audio_call_426655391_audio_1788992749491.mp3
+[2026-09-17T11:46:55] [INFO] [178/372] rec_audio_call_426669176_audio_1788996452632.mp3
+[2026-09-17T11:47:02] [INFO] [179/372] rec_default_426642159_audio_1788989918579.mp3
+[2026-09-17T11:47:17] [INFO] [180/372] rec_audio_call_426646095_audio_1788990649220.mp3
+[2026-09-17T11:47:34] [INFO] [181/372] rec_audio_call_426665213_audio_1788995377531.mp3
+[2026-09-17T11:47:35] [INFO] [182/372] rec_default_426639345_audio_1788989459421.mp3
+[2026-09-17T11:47:37] [INFO] [183/372] rec_default_426645015_audio_1788990433927.mp3
+[2026-09-17T11:48:02] [INFO] [184/372] rec_audio_call_426149164_audio_1788951056501.mp3
+[2026-09-17T11:48:03] [INFO] [185/372] rec_audio_call_426151853_audio_1788951260489.mp3
+[2026-09-17T11:48:06] [INFO] [186/372] rec_audio_call_426180101_audio_1788953436912.mp3
+[193/380] rec_audio_call_426151853_audio_1788951260489.mp3
+[2026-09-17T11:47:59] [INFO] [194/380] rec_audio_call_426180101_audio_1788953436912.mp3
+[2026-09-17T11:48:13] [INFO] [195/380] rec_audio_call_426279116_audio_1788962727515.mp3
+[2026-09-17T11:48:20] [INFO] [196/380] rec_audio_call_426299827_audio_1788964873398.mp3
+ [195/381] rec_audio_call_426180101_audio_1788953436912.mp3
+[2026-09-17T11:48:09] [INFO] [196/381] rec_audio_call_426279116_audio_1788962727515.mp3
+[2026-09-17T11:48:16] [INFO] [197/381] rec_audio_call_426299827_audio_1788964873398.mp3
