@@ -28,8 +28,10 @@ import argparse
 import csv
 import json
 import sys
+import threading
 import time
 import traceback
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Optional
 
@@ -264,6 +266,10 @@ def main():
     parser.add_argument("--dry-run-limit", type=int, default=config.DEFAULT_DRY_RUN_LIMIT)
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--limit", type=int, default=None)
+    parser.add_argument("--workers", type=int, default=4,
+                         help="Concurrent files in flight (GPU-bound, but low GPU utilization from one-at-a-time "
+                              "dispatch overhead means threading can still help keep the GPU busier — PyTorch "
+                              "releases the GIL during actual kernel execution)")
     args = parser.parse_args()
 
     chunk_sizes = [float(x) for x in args.chunk_seconds.split(",")]
@@ -290,22 +296,32 @@ def main():
 
         results = []
         n_success, n_error = 0, 0
+        counts_lock = threading.Lock()
         t0 = time.time()
-        for i, record in enumerate(records, 1):
+
+        def process_one(i, record):
+            nonlocal n_success, n_error
             logger.info(f"[chunk={chunk_seconds}s {i}/{len(records)}] {record.file_id}")
             try:
                 result = process_file(asr, record, chunk_seconds, logger)
-                n_success += 1
-                results.append(result)
+                with counts_lock:
+                    n_success += 1
+                    results.append(result)
                 if args.dry_run:
                     print(json.dumps(result, indent=2, ensure_ascii=False))
                 else:
                     write_result(chunk_seconds, result)
             except Exception as exc:  # noqa: BLE001
-                n_error += 1
+                with counts_lock:
+                    n_error += 1
                 logger.error(f"{record.file_id}: FAILED — {exc}\n{traceback.format_exc()}")
                 if not args.dry_run:
                     write_error(chunk_seconds, record.file_id, str(exc))
+
+        with ThreadPoolExecutor(max_workers=args.workers) as pool:
+            futures = [pool.submit(process_one, i, record) for i, record in enumerate(records, 1)]
+            for fut in as_completed(futures):
+                fut.result()  # re-raise anything that escaped process_one's own try/except
 
         logger.info(f"chunk_seconds={chunk_seconds} done in {time.time() - t0:.1f}s — success={n_success} error={n_error}")
 
