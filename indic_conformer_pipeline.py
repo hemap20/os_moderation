@@ -46,6 +46,7 @@ import asr_metrics
 import config
 import dataset_v2 as dsv2
 from pipeline_logging import StageLogger
+from transcription_reports import write_all_reports
 
 LANGUAGE_CODES = {
     "hindi": "hi",
@@ -243,31 +244,9 @@ def write_per_chunk_report(chunk_seconds: float, results: List[dict]):
     return rows
 
 
-def write_comparison_report(all_rows_by_chunk: dict):
-    def mean(vals):
-        vals = [v for v in vals if v is not None]
-        return sum(vals) / len(vals) if vals else None
-
-    comparison = []
-    for chunk_seconds, rows in all_rows_by_chunk.items():
-        comparison.append({
-            "chunk_seconds": chunk_seconds,
-            "n_files": len(rows),
-            "mean_wer": mean([r["wer"] for r in rows]),
-            "mean_cer": mean([r["cer"] for r in rows]),
-            "mean_boundary_corruption_rate": mean([r["boundary_corruption_rate"] for r in rows]),
-            "mean_policy_term_recall": mean([r["policy_term_recall"] for r in rows]),
-            "mean_real_time_factor": mean([r["real_time_factor"] for r in rows]),
-        })
-    comparison.sort(key=lambda r: r["chunk_seconds"])
-
-    out_path = config.PROJECT_ROOT / "indic_conformer_results" / "chunk_size_comparison.csv"
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(out_path, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["chunk_seconds", "n_files", "mean_wer", "mean_cer", "mean_boundary_corruption_rate", "mean_policy_term_recall", "mean_real_time_factor"])
-        writer.writeheader()
-        writer.writerows(comparison)
-    return comparison
+# Overall (micro-averaged) and per-language pivot reports are read straight
+# from disk (all completed files, not just this run's in-memory subset) —
+# see transcription_reports.write_all_reports().
 
 
 def main():
@@ -287,7 +266,6 @@ def main():
     logger.info("Model loaded.")
 
     all_records = dsv2.load_dataset_v2()
-    all_rows_by_chunk = {}
 
     for chunk_seconds in chunk_sizes:
         records = all_records
@@ -324,16 +302,10 @@ def main():
         logger.info(f"chunk_seconds={chunk_seconds} done in {time.time() - t0:.1f}s — success={n_success} error={n_error}")
 
         if not args.dry_run:
-            rows = write_per_chunk_report(chunk_seconds, results)
-            all_rows_by_chunk[chunk_seconds] = rows
+            write_per_chunk_report(chunk_seconds, results)
 
-    if not args.dry_run and all_rows_by_chunk:
-        comparison = write_comparison_report(all_rows_by_chunk)
-        print("\n" + "=" * 80)
-        print("CHUNK SIZE COMPARISON")
-        print("=" * 80)
-        for row in comparison:
-            print(row)
+    if not args.dry_run:
+        write_all_reports("indic_conformer", config.PROJECT_ROOT / "indic_conformer_results", chunk_sizes)
 
 
 if __name__ == "__main__":

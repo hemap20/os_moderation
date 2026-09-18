@@ -39,6 +39,7 @@ import asr_metrics
 import config
 import dataset_v2 as dsv2
 from pipeline_logging import StageLogger
+from transcription_reports import write_all_reports
 
 LANGUAGE_CODES = {
     "hindi": "hi",
@@ -231,46 +232,10 @@ def write_per_chunk_report(chunk_seconds: float):
     return rows
 
 
-def write_comparison_report(chunk_sizes):
-    """WER/CER are MICRO-averaged (total errors / total reference
-    words-or-chars across the corpus), not a mean of per-file ratios — a
-    simple mean gets badly distorted by near-silent calls where the
-    reference is only 1-3 words, since a single genuine filler word there
-    can register as WER>10 for that one file alone. Other metrics (already
-    bounded ratios, not error-count-over-tiny-denominator) still use a
-    plain mean."""
-    def mean(vals):
-        vals = [v for v in vals if v is not None]
-        return sum(vals) / len(vals) if vals else None
-
-    def micro_average(rows, err_key, ref_key):
-        total_err, total_ref = 0.0, 0
-        for r in rows:
-            if r[ref_key]:
-                total_err += r[err_key] * r[ref_key]  # rows store the ratio; recover the error count
-                total_ref += r[ref_key]
-        return total_err / total_ref if total_ref else None
-
-    comparison = []
-    for chunk_seconds in chunk_sizes:
-        rows = write_per_chunk_report(chunk_seconds)
-        comparison.append({
-            "chunk_seconds": chunk_seconds, "n_files": len(rows),
-            "micro_wer": micro_average(rows, "wer", "wer_ref_word_count"),
-            "micro_cer": micro_average(rows, "cer", "cer_ref_char_count"),
-            "mean_boundary_corruption_rate": mean([r["boundary_corruption_rate"] for r in rows]),
-            "mean_policy_term_recall": mean([r["policy_term_recall"] for r in rows]),
-            "mean_real_time_factor": mean([r["real_time_factor"] for r in rows]),
-        })
-    comparison.sort(key=lambda r: r["chunk_seconds"])
-
-    out_path = config.PROJECT_ROOT / "indic_transcribe_core_results" / "chunk_size_comparison.csv"
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(out_path, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["chunk_seconds", "n_files", "micro_wer", "micro_cer", "mean_boundary_corruption_rate", "mean_policy_term_recall", "mean_real_time_factor"])
-        writer.writeheader()
-        writer.writerows(comparison)
-    return comparison
+# Overall (micro-averaged) and per-language pivot reports are read straight
+# from disk (all completed files, not just this run's in-memory subset) —
+# see transcription_reports.write_all_reports(). write_per_chunk_report()
+# above still writes its own per-chunk metrics.csv as a side artifact.
 
 
 def unique_records():
@@ -347,15 +312,11 @@ def main():
         logger.info(f"chunk_seconds={chunk_seconds} done in {time.time() - t0:.1f}s — success={n_success} error={n_error}")
 
         if not args.dry_run:
+            write_per_chunk_report(chunk_seconds)
             processed_chunk_sizes.append(chunk_seconds)
 
     if not args.dry_run and processed_chunk_sizes:
-        comparison = write_comparison_report(processed_chunk_sizes)
-        print("\n" + "=" * 80)
-        print("CHUNK SIZE COMPARISON")
-        print("=" * 80)
-        for row in comparison:
-            print(row)
+        write_all_reports("indic_transcribe_core", config.PROJECT_ROOT / "indic_transcribe_core_results", processed_chunk_sizes)
 
 
 if __name__ == "__main__":
