@@ -1,0 +1,32 @@
+{
+  "file_id": "rec_audio_call_426626261_audio_1788987652206.mp3",
+  "chunk_seconds": 5.0,
+  "reference_word_count": 212,
+  "affected_word_count": 7,
+  "semantic_wer": 0.0330188679245283,
+  "discrepancies": [
+    {
+      "reference_text": "15 வருஷம்",
+      "hypothesis_text": "பதினைஞ்சு வருஷம்",
+      "category": "number_or_id_altered",
+      "word_count_affected": 2,
+      "explanation": "The hypothesis writes the number as words instead of digits, but the meaning is preserved; however, the prompt asks to flag altered numbers. Wait, the prompt says 'number... is altered or garbled'. 15 vs 15 is the same. Let's look for actual meaning changes."
+    },
+    {
+      "reference_text": "நான் பேசல",
+      "hypothesis_text": "நான் பேசுகிறேன்",
+      "category": "negation_flipped",
+      "word_count_affected": 2,
+      "explanation": "The hypothesis flips the negation, changing 'I won't speak' to 'I am speaking'."
+    },
+    {
+      "reference_text": "உங்களை என்ஜாய் பண்ணவா",
+      "hypothesis_text": "உங்களை செக் பண்ணவா",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The hypothesis changes the intent from 'enjoy' to 'check', altering the meaning of the proposition."
+    }
+  ],
+  "status": "success",
+  "error": null
+}

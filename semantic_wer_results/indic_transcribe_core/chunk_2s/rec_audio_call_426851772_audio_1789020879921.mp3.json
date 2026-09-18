@@ -1,0 +1,39 @@
+{
+  "file_id": "rec_audio_call_426851772_audio_1789020879921.mp3",
+  "chunk_seconds": 2.0,
+  "reference_word_count": 270,
+  "affected_word_count": 10,
+  "semantic_wer": 0.037037037037037035,
+  "discrepancies": [
+    {
+      "reference_text": "बढ़िया है",
+      "hypothesis_text": "बढ़िया नहीं है",
+      "category": "negation_flipped",
+      "word_count_affected": 2,
+      "explanation": "The hypothesis added a negation, flipping the meaning of the response."
+    },
+    {
+      "reference_text": "मैं सीतापुर",
+      "hypothesis_text": "मैं सीता कब सोने",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The location name was garbled into a nonsensical phrase."
+    },
+    {
+      "reference_text": "मैं आगरा से हूं",
+      "hypothesis_text": "हजरा सिंह",
+      "category": "named_entity_altered",
+      "word_count_affected": 4,
+      "explanation": "The location name was replaced by a name-like entity."
+    },
+    {
+      "reference_text": "हॉट बातें",
+      "hypothesis_text": "हार्ड बात",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The term 'hot' was changed to 'hard', altering the context of the conversation."
+    }
+  ],
+  "status": "success",
+  "error": null
+}

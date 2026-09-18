@@ -1,0 +1,32 @@
+{
+  "file_id": "rec_default_420147298_audio_1788380486702.mp3",
+  "chunk_seconds": 2.0,
+  "reference_word_count": 913,
+  "affected_word_count": 10,
+  "semantic_wer": 0.01095290251916758,
+  "discrepancies": [
+    {
+      "reference_text": "कोलकाता से हैं",
+      "hypothesis_text": "ऑल द सेम",
+      "category": "named_entity_altered",
+      "word_count_affected": 3,
+      "explanation": "The location Kolkata was misheard as 'all the same'."
+    },
+    {
+      "reference_text": "2003",
+      "hypothesis_text": "टू डो थाउजेंड थ्री",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The birth year was garbled."
+    },
+    {
+      "reference_text": "नहीं, घर पे कोई भी नहीं है",
+      "hypothesis_text": "घर पे कोई उठेगा कोई नहीं है",
+      "category": "negation_flipped",
+      "word_count_affected": 6,
+      "explanation": "The hypothesis implies someone might wake up, contradicting the reference that the house is empty."
+    }
+  ],
+  "status": "success",
+  "error": null
+}
