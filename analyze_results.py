@@ -22,12 +22,15 @@ Matching rule (per user's explicit spec):
   truth positive but no matched flag. FP if ground truth negative but
   model raised >=1 flag. TN if ground truth negative and model raised none.
 
-Disambiguation: when a file has more than one ground-truth OR model flag
-in the SAME category, a single (gt, model) pair can't be assumed to
-correspond just because the category matches — an LLM judges which
-specific flags refer to the same quote/incident. When there's exactly one
-flag on each side for a category, that pairing is assumed by construction
-(no LLM call needed).
+Matching is done ENTIRELY by Gemini, no Python shortcut: every file's
+full ground-truth flag list and model flag list (category + translation)
+is sent to Gemini, batched 5 files per call, and Gemini alone decides
+which specific flags correspond to the same incident (same category AND
+same semantic content) — including the trivial one-vs-one case, which
+used to be auto-matched locally but is now judged by the model like
+everything else. Python only turns Gemini's returned (gt_index,
+model_index) pairs into TP/FP/FN counts — no arithmetic judgment calls
+are made by Gemini, only the matching decision.
 
 Confidence-bucket precision (flag level, discrete bins, precision only —
 per your choice): each model flag is binned by its confidence — once using
@@ -85,35 +88,49 @@ def bucket_label(lo: float, hi: float) -> str:
     return f"{lo:.1f}-{min(hi, 1.0):.1f}"
 
 
-DISAMBIGUATE_INSTRUCTION = """
-You are matching two lists of flagged excerpts from the SAME audio call,
-both already known to be the SAME violation category. List A is the
-ground-truth (trusted) flags; list B is a candidate model's flags. Decide
-which items in A and B refer to the SAME underlying quote/incident in the
-call (semantically the same moment, even if the English translation
-wording differs) — this is NOT about exact string match, only about
-whether they describe the same specific thing being said.
+BATCH_MATCH_INSTRUCTION = """
+You are matching ground-truth policy-violation flags against a candidate
+model's flags, across SEVERAL different audio calls at once. For each
+call (identified by file_id), you are given a GT list and a MODEL list,
+each item being {category, translation} describing a possible violation
+in that call.
 
-Each A item may match AT MOST one B item and vice versa. Not every item
-needs a match (a genuine miss or a genuine extra flag is a valid outcome
-you should report, not force a bad match).
+For each file, decide which GT item and MODEL item refer to the SAME
+underlying incident: they must share the SAME category AND describe the
+same specific quote/moment (semantically — translation wording may
+differ, but it must be the same thing being said, not just the same
+category in general). Each GT item may match AT MOST one MODEL item and
+vice versa. Do not force a match — a genuine miss (a GT flag nothing in
+MODEL corresponds to) or a genuine extra/wrong flag (a MODEL flag nothing
+in GT corresponds to) are valid, expected outcomes and should be left
+unmatched.
 
 Return ONE raw, minified JSON object:
-{"pairs": [[a_index, b_index], ...]}
-Indices are 0-based, referring to the order items are given below.
-If there are no matches, return {"pairs": []}. Your entire response must
-be only the minified JSON object and nothing else.
+{"results": [{"file_id": "...", "pairs": [[gt_index, model_index], ...]}]}
+Indices are 0-based into that file's own GT/MODEL lists as given below.
+Include EVERY file_id given, even if its pairs list ends up empty. Your
+entire response must be only the minified JSON object and nothing else.
 """.strip()
 
-DISAMBIGUATE_SCHEMA = {
+BATCH_MATCH_SCHEMA = {
     "type": "object",
     "properties": {
-        "pairs": {
+        "results": {
             "type": "array",
-            "items": {"type": "array", "items": {"type": "integer"}, "minItems": 2, "maxItems": 2},
+            "items": {
+                "type": "object",
+                "properties": {
+                    "file_id": {"type": "string"},
+                    "pairs": {
+                        "type": "array",
+                        "items": {"type": "array", "items": {"type": "integer"}, "minItems": 2, "maxItems": 2},
+                    },
+                },
+                "required": ["file_id", "pairs"],
+            },
         },
     },
-    "required": ["pairs"],
+    "required": ["results"],
 }
 
 
@@ -153,58 +170,49 @@ def load_model_flags(model_dir: Path, file_id: str) -> Optional[List[dict]]:
     return out
 
 
-def disambiguate_category_group(client, file_id: str, category: str, gt_idxs: List[int], gt_items: List[dict],
-                                 model_idxs: List[int], model_items: List[dict], logger: StageLogger) -> List[Tuple[int, int]]:
-    """gt_idxs/model_idxs: original flag indices (into the file's full flags list) for this category.
-    gt_items/model_items: same length, the corresponding flag dicts. Returns matched (gt_idx, model_idx) pairs."""
-    a_lines = "\n".join(f"A[{i}]: {it['translation']}" for i, it in enumerate(gt_items))
-    b_lines = "\n".join(f"B[{i}]: {it['translation']}" for i, it in enumerate(model_items))
-    prompt_content = f"{DISAMBIGUATE_INSTRUCTION}\n\nCategory: {category}\n\n[LIST A]\n{a_lines}\n\n[LIST B]\n{b_lines}"
+def match_files_batch(client, batch_items: List[dict], logger: StageLogger) -> Dict[str, List[Tuple[int, int]]]:
+    """batch_items: list of {file_id, gt_flags, model_flags}. Returns file_id -> matched (gt_idx, model_idx) pairs.
+    Files with no flags on either side are skipped locally (nothing to match)."""
+    scoreable = [it for it in batch_items if it["gt_flags"] or it["model_flags"]]
+    result: Dict[str, List[Tuple[int, int]]] = {it["file_id"]: [] for it in batch_items}
+    if not scoreable:
+        return result
+
+    file_blocks = []
+    for it in scoreable:
+        gt_lines = "\n".join(f'  GT[{i}] category={f["category"]} translation="{f["translation"]}"' for i, f in enumerate(it["gt_flags"]))
+        model_lines = "\n".join(f'  MODEL[{i}] category={f["category"]} translation="{f["translation"]}"' for i, f in enumerate(it["model_flags"]))
+        file_blocks.append(f'[FILE file_id="{it["file_id"]}"]\nGT:\n{gt_lines or "  (none)"}\nMODEL:\n{model_lines or "  (none)"}')
+    prompt_content = f"{BATCH_MATCH_INSTRUCTION}\n\n" + "\n\n".join(file_blocks)
 
     def do_call():
-        return gemini_client.generate_text(client, config.GEMINI_MODEL, contents=[prompt_content], response_json_schema=DISAMBIGUATE_SCHEMA)
+        return gemini_client.generate_text(client, config.GEMINI_MODEL, contents=[prompt_content], response_json_schema=BATCH_MATCH_SCHEMA)
 
     def on_retry(attempt, max_retries, delay, exc):
-        logger.warn(f"{file_id} category={category}: disambiguation attempt {attempt}/{max_retries} failed ({exc}); retrying in {delay:.1f}s")
+        file_ids = ", ".join(it["file_id"] for it in scoreable)
+        logger.warn(f"batch [{file_ids}]: match attempt {attempt}/{max_retries} failed ({exc}); retrying in {delay:.1f}s")
 
     raw_text = gemini_client.call_with_retries(do_call, on_retry=on_retry)
     parsed = gemini_client.parse_json_lenient(raw_text)
 
-    pairs = []
-    used_a, used_b = set(), set()
-    for a_i, b_i in parsed.get("pairs", []):
-        if a_i in used_a or b_i in used_b:
+    by_file = {it["file_id"]: it for it in scoreable}
+    for entry in parsed.get("results", []):
+        file_id = entry.get("file_id")
+        item = by_file.get(file_id)
+        if item is None:
             continue
-        if not (0 <= a_i < len(gt_items)) or not (0 <= b_i < len(model_items)):
-            continue
-        used_a.add(a_i)
-        used_b.add(b_i)
-        pairs.append((gt_idxs[a_i], model_idxs[b_i]))
-    return pairs
-
-
-def match_flags(client, file_id: str, gt_flags: List[dict], model_flags: List[dict], logger: StageLogger) -> List[Tuple[int, int]]:
-    """Returns matched (gt_index, model_index) pairs across the whole file, grouped per category."""
-    gt_by_cat = defaultdict(list)
-    for i, f in enumerate(gt_flags):
-        gt_by_cat[f["category"]].append(i)
-    model_by_cat = defaultdict(list)
-    for i, f in enumerate(model_flags):
-        model_by_cat[f["category"]].append(i)
-
-    all_pairs = []
-    for category in set(gt_by_cat) | set(model_by_cat):
-        gt_idxs = gt_by_cat.get(category, [])
-        model_idxs = model_by_cat.get(category, [])
-        if not gt_idxs or not model_idxs:
-            continue  # unmatched on one side entirely -> all FN or all FP for this category, no pairs
-        if len(gt_idxs) == 1 and len(model_idxs) == 1:
-            all_pairs.append((gt_idxs[0], model_idxs[0]))
-            continue
-        gt_items = [gt_flags[i] for i in gt_idxs]
-        model_items = [model_flags[i] for i in model_idxs]
-        all_pairs.extend(disambiguate_category_group(client, file_id, category, gt_idxs, gt_items, model_idxs, model_items, logger))
-    return all_pairs
+        pairs = []
+        used_gt, used_model = set(), set()
+        for a_i, b_i in entry.get("pairs", []):
+            if a_i in used_gt or b_i in used_model:
+                continue
+            if not (0 <= a_i < len(item["gt_flags"])) or not (0 <= b_i < len(item["model_flags"])):
+                continue
+            used_gt.add(a_i)
+            used_model.add(b_i)
+            pairs.append((a_i, b_i))
+        result[file_id] = pairs
+    return result
 
 
 def unique_records():
@@ -216,13 +224,16 @@ def unique_records():
         yield r
 
 
-def score_file(client, record: dsv2.FileRecordV2, model_dir: Path, logger: StageLogger) -> Optional[dict]:
+def build_score_input(record: dsv2.FileRecordV2, model_dir: Path) -> Optional[dict]:
     gt_flags = load_ground_truth(record)
     model_flags = load_model_flags(model_dir, record.file_id)
     if gt_flags is None or model_flags is None:
         return None
+    return {"file_id": record.file_id, "language": record.language, "gt_flags": gt_flags, "model_flags": model_flags}
 
-    matched_pairs = match_flags(client, record.file_id, gt_flags, model_flags, logger)
+
+def score_file(item: dict, matched_pairs: List[Tuple[int, int]]) -> dict:
+    gt_flags, model_flags, record_language = item["gt_flags"], item["model_flags"], item["language"]
     matched_gt = {p[0] for p in matched_pairs}
     matched_model = {p[1] for p in matched_pairs}
 
@@ -246,8 +257,8 @@ def score_file(client, record: dsv2.FileRecordV2, model_dir: Path, logger: Stage
         flags_detail.append({**f, "matched": i in matched_model})
 
     return {
-        "file_id": record.file_id,
-        "language": record.language,
+        "file_id": item["file_id"],
+        "language": record_language,
         "gt_flag_count": len(gt_flags),
         "model_flag_count": len(model_flags),
         "flag_tp": flag_tp,
@@ -331,6 +342,7 @@ def main():
     parser.add_argument("--dry-run-limit", type=int, default=config.DEFAULT_DRY_RUN_LIMIT)
     parser.add_argument("--force", action="store_true", help="Recompute per-file scoring even if a cached per-file result exists")
     parser.add_argument("--workers", type=int, default=6)
+    parser.add_argument("--batch-size", type=int, default=5, help="Files' worth of GT+model flags sent to Gemini per matching call")
     args = parser.parse_args()
 
     model_keys = args.models.split(",") if args.models else list(MODEL_DIRS)
@@ -357,32 +369,45 @@ def main():
         counts_lock = threading.Lock()
         scored_rows: List[dict] = []
 
-        def process_one(record):
-            nonlocal n_scored, n_skipped
+        to_score = []
+        for record in records:
             cache_path = per_file_dir / f"{record.file_id}.json"
             if not args.force and not args.dry_run and cache_path.exists():
-                result = json.loads(cache_path.read_text())
-            else:
-                result = score_file(client, record, model_dir, logger)
-                if result is None:
-                    with counts_lock:
-                        n_skipped += 1
-                    return
+                scored_rows.append(json.loads(cache_path.read_text()))
+                n_scored += 1
+                continue
+            item = build_score_input(record, model_dir)
+            if item is None:
+                n_skipped += 1
+                continue
+            to_score.append(item)
+
+        batch_size = max(1, args.batch_size)
+        batches = [to_score[i:i + batch_size] for i in range(0, len(to_score), batch_size)]
+        logger.info(f"[{model_key}] {len(to_score)} file(s) to score (Gemini-matched) in {len(batches)} batch(es) of up to {batch_size}, {n_scored} already cached")
+
+        def process_batch(b_idx, batch_items):
+            nonlocal n_scored
+            file_ids = ", ".join(it["file_id"] for it in batch_items)
+            logger.info(f"[{model_key} batch {b_idx}/{len(batches)}] {len(batch_items)} file(s): {file_ids}")
+            pairs_by_file = match_files_batch(client, batch_items, logger)
+            for item in batch_items:
+                result = score_file(item, pairs_by_file.get(item["file_id"], []))
                 if not args.dry_run:
+                    cache_path = per_file_dir / f"{item['file_id']}.json"
                     cache_path.parent.mkdir(parents=True, exist_ok=True)
                     cache_path.write_text(json.dumps(result, ensure_ascii=False, indent=2))
-            with counts_lock:
-                scored_rows.append(result)
-                n_scored += 1
+                with counts_lock:
+                    scored_rows.append(result)
+                    n_scored += 1
 
-        logger.info(f"[{model_key}] scoring {len(records)} file(s) against ground truth...")
         with ThreadPoolExecutor(max_workers=args.workers) as pool:
-            futures = [pool.submit(process_one, r) for r in records]
+            futures = [pool.submit(process_batch, i, batch) for i, batch in enumerate(batches, 1)]
             for fut in as_completed(futures):
                 try:
                     fut.result()
                 except Exception as exc:  # noqa: BLE001
-                    logger.error(f"[{model_key}] worker failed: {exc}\n{traceback.format_exc()}")
+                    logger.error(f"[{model_key}] batch worker failed: {exc}\n{traceback.format_exc()}")
 
         logger.info(f"[{model_key}] done in {time.time() - t0:.1f}s — scored={n_scored} skipped(no gt/no result)={n_skipped}")
 
