@@ -202,39 +202,62 @@ def write_error(chunk_seconds: float, file_id: str, error: str):
     (d / f"{file_id}.json").write_text(json.dumps({"file_id": file_id, "status": "error", "error": error}, indent=2))
 
 
-def write_per_chunk_report(chunk_seconds: float, results):
+def write_per_chunk_report(chunk_seconds: float):
+    """Reads ALL completed transcripts for this chunk size from disk — not
+    just whatever subset this particular invocation processed — so resuming
+    a partially- or fully-done chunk size still produces a report covering
+    every file, not only the newly-processed ones."""
     d = output_dir(chunk_seconds)
     d.mkdir(parents=True, exist_ok=True)
     rows = []
-    for r in results:
-        if r["status"] != "success" or r["metrics"] is None:
+    for p in (d / "transcripts").glob("*.json"):
+        r = json.loads(p.read_text())
+        if r.get("status") != "success" or r.get("metrics") is None:
             continue
         m = r["metrics"]
         rows.append({
             "file_id": r["file_id"], "language": r["language"],
             "wer": m["wer"]["wer"], "cer": m["cer"]["cer"],
+            "wer_ref_word_count": m["wer"]["ref_word_count"],
+            "cer_ref_char_count": m["cer"]["ref_char_count"],
             "boundary_corruption_rate": m["boundary_corruption"]["rate"],
             "policy_term_recall": m["policy_term_recall"]["recall"] if m["policy_term_recall"] else None,
             "real_time_factor": m["real_time_factor"],
         })
     with open(d / "metrics.csv", "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["file_id", "language", "wer", "cer", "boundary_corruption_rate", "policy_term_recall", "real_time_factor"])
+        writer = csv.DictWriter(f, fieldnames=["file_id", "language", "wer", "cer", "wer_ref_word_count", "cer_ref_char_count", "boundary_corruption_rate", "policy_term_recall", "real_time_factor"])
         writer.writeheader()
         writer.writerows(rows)
     return rows
 
 
-def write_comparison_report(all_rows_by_chunk: dict):
+def write_comparison_report(chunk_sizes):
+    """WER/CER are MICRO-averaged (total errors / total reference
+    words-or-chars across the corpus), not a mean of per-file ratios — a
+    simple mean gets badly distorted by near-silent calls where the
+    reference is only 1-3 words, since a single genuine filler word there
+    can register as WER>10 for that one file alone. Other metrics (already
+    bounded ratios, not error-count-over-tiny-denominator) still use a
+    plain mean."""
     def mean(vals):
         vals = [v for v in vals if v is not None]
         return sum(vals) / len(vals) if vals else None
 
+    def micro_average(rows, err_key, ref_key):
+        total_err, total_ref = 0.0, 0
+        for r in rows:
+            if r[ref_key]:
+                total_err += r[err_key] * r[ref_key]  # rows store the ratio; recover the error count
+                total_ref += r[ref_key]
+        return total_err / total_ref if total_ref else None
+
     comparison = []
-    for chunk_seconds, rows in all_rows_by_chunk.items():
+    for chunk_seconds in chunk_sizes:
+        rows = write_per_chunk_report(chunk_seconds)
         comparison.append({
             "chunk_seconds": chunk_seconds, "n_files": len(rows),
-            "mean_wer": mean([r["wer"] for r in rows]),
-            "mean_cer": mean([r["cer"] for r in rows]),
+            "micro_wer": micro_average(rows, "wer", "wer_ref_word_count"),
+            "micro_cer": micro_average(rows, "cer", "cer_ref_char_count"),
             "mean_boundary_corruption_rate": mean([r["boundary_corruption_rate"] for r in rows]),
             "mean_policy_term_recall": mean([r["policy_term_recall"] for r in rows]),
             "mean_real_time_factor": mean([r["real_time_factor"] for r in rows]),
@@ -244,7 +267,7 @@ def write_comparison_report(all_rows_by_chunk: dict):
     out_path = config.PROJECT_ROOT / "indic_transcribe_core_results" / "chunk_size_comparison.csv"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["chunk_seconds", "n_files", "mean_wer", "mean_cer", "mean_boundary_corruption_rate", "mean_policy_term_recall", "mean_real_time_factor"])
+        writer = csv.DictWriter(f, fieldnames=["chunk_seconds", "n_files", "micro_wer", "micro_cer", "mean_boundary_corruption_rate", "mean_policy_term_recall", "mean_real_time_factor"])
         writer.writeheader()
         writer.writerows(comparison)
     return comparison
@@ -279,7 +302,7 @@ def main():
     logger.info("Model loaded.")
 
     all_records = list(unique_records())
-    all_rows_by_chunk = {}
+    processed_chunk_sizes = []
 
     for chunk_seconds in chunk_sizes:
         records = all_records
@@ -294,7 +317,6 @@ def main():
             if args.limit:
                 records = records[: args.limit]
 
-        results = []
         n_success, n_error = 0, 0
         counts_lock = threading.Lock()
         t0 = time.time()
@@ -306,7 +328,6 @@ def main():
                 result = process_file(asr, record, chunk_seconds, logger)
                 with counts_lock:
                     n_success += 1
-                    results.append(result)
                 if args.dry_run:
                     print(json.dumps(result, indent=2, ensure_ascii=False))
                 else:
@@ -326,11 +347,10 @@ def main():
         logger.info(f"chunk_seconds={chunk_seconds} done in {time.time() - t0:.1f}s — success={n_success} error={n_error}")
 
         if not args.dry_run:
-            rows = write_per_chunk_report(chunk_seconds, results)
-            all_rows_by_chunk[chunk_seconds] = rows
+            processed_chunk_sizes.append(chunk_seconds)
 
-    if not args.dry_run and all_rows_by_chunk:
-        comparison = write_comparison_report(all_rows_by_chunk)
+    if not args.dry_run and processed_chunk_sizes:
+        comparison = write_comparison_report(processed_chunk_sizes)
         print("\n" + "=" * 80)
         print("CHUNK SIZE COMPARISON")
         print("=" * 80)
