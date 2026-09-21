@@ -465,7 +465,7 @@ def main():
 
         overall_entropy = entropy_by_correctness(scored_rows)
         overall_file_rows.append({"model": model_key, **aggregate_file_level(scored_rows), **overall_entropy})
-        overall_flag_rows.append({"model": model_key, **aggregate_flag_level(scored_rows)})
+        overall_flag_rows.append({"model": model_key, **aggregate_flag_level(scored_rows), **overall_entropy})
 
         by_lang = defaultdict(list)
         for r in scored_rows:
@@ -476,7 +476,7 @@ def main():
         for lang, lang_rows in sorted(by_lang.items()):
             lang_entropy = entropy_by_correctness(lang_rows)
             by_language_file_rows.append({"model": model_key, "language": lang, **aggregate_file_level(lang_rows), **lang_entropy})
-            by_language_flag_rows.append({"model": model_key, "language": lang, **aggregate_flag_level(lang_rows)})
+            by_language_flag_rows.append({"model": model_key, "language": lang, **aggregate_flag_level(lang_rows), **lang_entropy})
             for row in confidence_bucket_table(lang_rows, "model_confidence"):
                 bucket_rows_model_conf.append({"model": model_key, "language": lang, **row})
             for row in confidence_bucket_table(lang_rows, "logprob_derived_confidence"):
@@ -504,11 +504,11 @@ def main():
     merge_and_write_csv(OUTPUT_DIR / "confusion_file_level_overall.csv", overall_file_rows,
               ["model", "n_files", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"] + FILE_LEVEL_FIELDS_EXTRA, model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confusion_flag_level_overall.csv", overall_flag_rows,
-              ["model", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"], model_keys)
+              ["model", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"] + FILE_LEVEL_FIELDS_EXTRA, model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confusion_file_level_by_language.csv", by_language_file_rows,
               ["model", "language", "n_files", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"] + FILE_LEVEL_FIELDS_EXTRA, model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confusion_flag_level_by_language.csv", by_language_flag_rows,
-              ["model", "language", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"], model_keys)
+              ["model", "language", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"] + FILE_LEVEL_FIELDS_EXTRA, model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confidence_buckets_model_confidence.csv", bucket_rows_model_conf,
               ["model", "language", "bucket", "n_flags", "tp", "fp", "precision", "mean_entropy_overall", "mean_entropy_tp", "mean_entropy_fp"], model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confidence_buckets_logprob_confidence.csv", bucket_rows_logprob_conf,
