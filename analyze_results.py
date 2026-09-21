@@ -305,21 +305,27 @@ def aggregate_flag_level(rows: List[dict]) -> dict:
     return confusion_metrics(tp, fp, fn, tn)
 
 
+def _mean_entropy(flags: List[dict]) -> Optional[float]:
+    vals = [f["entropy_mean"] for f in flags if f.get("entropy_mean") is not None]
+    return r2(sum(vals) / len(vals) if vals else None)
+
+
 def confidence_bucket_table(rows: List[dict], confidence_key: str) -> List[dict]:
     all_flags = [f for r in rows for f in r["model_flags"] if f.get(confidence_key) is not None]
     table = []
     for lo, hi in CONFIDENCE_BINS:
         in_bin = [f for f in all_flags if lo <= f[confidence_key] < hi]
-        tp = sum(1 for f in in_bin if f["matched"])
-        fp = len(in_bin) - tp
-        entropies = [f["entropy_mean"] for f in in_bin if f.get("entropy_mean") is not None]
+        tp_flags = [f for f in in_bin if f["matched"]]
+        fp_flags = [f for f in in_bin if not f["matched"]]
         table.append({
             "bucket": bucket_label(lo, hi),
             "n_flags": len(in_bin),
-            "tp": tp,
-            "fp": fp,
-            "precision": r2(tp / len(in_bin) if in_bin else None),
-            "mean_entropy": r2(sum(entropies) / len(entropies) if entropies else None),
+            "tp": len(tp_flags),
+            "fp": len(fp_flags),
+            "precision": r2(len(tp_flags) / len(in_bin) if in_bin else None),
+            "mean_entropy_overall": _mean_entropy(in_bin),
+            "mean_entropy_tp": _mean_entropy(tp_flags),
+            "mean_entropy_fp": _mean_entropy(fp_flags),
         })
     return table
 
@@ -327,15 +333,18 @@ def confidence_bucket_table(rows: List[dict], confidence_key: str) -> List[dict]
 def entropy_by_correctness(rows: List[dict]) -> dict:
     """Mean excerpt-token entropy split by whether the flag was matched
     (TP) or not (FP) — higher entropy on FP flags would mean the model was
-    quoting text it wasn't actually sure about."""
+    quoting text it wasn't actually sure about. Also reports the overall
+    mean across every flag regardless of correctness."""
     all_flags = [f for r in rows for f in r["model_flags"]]
-    matched = [f["entropy_mean"] for f in all_flags if f["matched"] and f.get("entropy_mean") is not None]
-    unmatched = [f["entropy_mean"] for f in all_flags if not f["matched"] and f.get("entropy_mean") is not None]
+    matched = [f for f in all_flags if f["matched"]]
+    unmatched = [f for f in all_flags if not f["matched"]]
     return {
-        "mean_entropy_tp_flags": r2(sum(matched) / len(matched) if matched else None),
-        "n_tp_flags_with_entropy": len(matched),
-        "mean_entropy_fp_flags": r2(sum(unmatched) / len(unmatched) if unmatched else None),
-        "n_fp_flags_with_entropy": len(unmatched),
+        "mean_entropy_overall": _mean_entropy(all_flags),
+        "n_flags_with_entropy": sum(1 for f in all_flags if f.get("entropy_mean") is not None),
+        "mean_entropy_tp_flags": _mean_entropy(matched),
+        "n_tp_flags_with_entropy": sum(1 for f in matched if f.get("entropy_mean") is not None),
+        "mean_entropy_fp_flags": _mean_entropy(unmatched),
+        "n_fp_flags_with_entropy": sum(1 for f in unmatched if f.get("entropy_mean") is not None),
     }
 
 
@@ -495,38 +504,19 @@ def main():
     merge_and_write_csv(OUTPUT_DIR / "confusion_flag_level_by_language.csv", by_language_flag_rows,
               ["model", "language", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"], model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confidence_buckets_model_confidence.csv", bucket_rows_model_conf,
-              ["model", "language", "bucket", "n_flags", "tp", "fp", "precision", "mean_entropy"], model_keys)
+              ["model", "language", "bucket", "n_flags", "tp", "fp", "precision", "mean_entropy_overall", "mean_entropy_tp", "mean_entropy_fp"], model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confidence_buckets_logprob_confidence.csv", bucket_rows_logprob_conf,
-              ["model", "language", "bucket", "n_flags", "tp", "fp", "precision", "mean_entropy"], model_keys)
+              ["model", "language", "bucket", "n_flags", "tp", "fp", "precision", "mean_entropy_overall", "mean_entropy_tp", "mean_entropy_fp"], model_keys)
     merge_and_write_csv(OUTPUT_DIR / "entropy_by_correctness.csv", entropy_rows,
-              ["model", "language", "mean_entropy_tp_flags", "n_tp_flags_with_entropy", "mean_entropy_fp_flags", "n_fp_flags_with_entropy"], model_keys)
+              ["model", "language", "mean_entropy_overall", "n_flags_with_entropy",
+               "mean_entropy_tp_flags", "n_tp_flags_with_entropy",
+               "mean_entropy_fp_flags", "n_fp_flags_with_entropy"], model_keys)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     (OUTPUT_DIR / "summary.json").write_text(json.dumps(all_summary, ensure_ascii=False, indent=2))
 
-    print("\n" + "=" * 80)
-    print("FILE-LEVEL CONFUSION MATRIX (overall)")
-    print("=" * 80)
-    for row in overall_file_rows:
-        print(row)
-    print(f"\nFull per-model, per-language results (precision/recall/specificity/accuracy,")
-    print(f"confidence-bucket precision, entropy) saved to:")
-    print(f"  {OUTPUT_DIR}/summary.json  (everything, nested by model -> language)")
-    print(f"  {OUTPUT_DIR}/{{model}}/summary.json  (one model at a time)")
-
-    print("\n" + "=" * 80)
-    print("FLAG-LEVEL CONFUSION MATRIX (overall)")
-    print("=" * 80)
-    for row in overall_flag_rows:
-        print(row)
-
-    print("\n" + "=" * 80)
-    print("MEAN TOKEN ENTROPY: TP FLAGS vs FP FLAGS (overall)")
-    print("=" * 80)
-    for row in entropy_rows:
-        if row.get("language") == "ALL":
-            print(f"{row['model']:32} mean_entropy_tp={row['mean_entropy_tp_flags']}  (n={row['n_tp_flags_with_entropy']})   "
-                  f"mean_entropy_fp={row['mean_entropy_fp_flags']}  (n={row['n_fp_flags_with_entropy']})")
+    print(f"Scored {len(model_keys)} model(s). Results saved to {OUTPUT_DIR}/ "
+          f"(summary.json, {{model}}/summary.json, and per-metric CSVs) — no results printed to terminal.")
 
     print(f"\nAll CSVs written to {OUTPUT_DIR}/")
 
