@@ -204,3 +204,68 @@ def write_all_reports(source: str, output_root: Path, chunk_sizes: List[float]) 
         print(row)
     print(f"\nPer-language metrics (WER/CER/semantic-WER/boundary-corruption/policy-recall/RTF")
     print(f"x chunk size) saved to: {pivot_path}")
+
+
+COMBINED_PIVOT_METRICS = ["WER", "CER", "SWER"]
+
+
+def write_combined_language_pivot(sources: Dict[str, Path], chunk_sizes: List[float]) -> Path:
+    """One row per (model, language); columns are {WER,CER,SWER}_{chunk}s —
+    the same data as write_language_pivot's per-model WER/CER/SWER columns,
+    but all sources combined into a single file with `model` as a column,
+    saved to analysis_results/transcription_metrics_pivot_by_language.csv."""
+    rows = []
+    for source, output_root in sources.items():
+        per_lang: Dict[str, Dict[tuple, Optional[float]]] = defaultdict(dict)
+
+        for chunk_seconds in chunk_sizes:
+            file_rows = load_file_rows(output_root, chunk_seconds)
+            if not file_rows:
+                continue
+            by_lang = defaultdict(list)
+            for r in file_rows:
+                by_lang[r["language"]].append(r)
+            for language, lang_rows in by_lang.items():
+                per_lang[language][("WER", chunk_seconds)] = micro_average(lang_rows, "wer", "wer_ref_word_count")
+                per_lang[language][("CER", chunk_seconds)] = micro_average(lang_rows, "cer", "cer_ref_char_count")
+
+            language_by_file = {r["file_id"]: r["language"] for r in file_rows}
+            sem_rows = load_semantic_wer_rows(source, chunk_seconds, language_by_file)
+            sem_by_lang = defaultdict(list)
+            for r in sem_rows:
+                sem_by_lang[r["language"]].append(r)
+            for language, lang_rows in sem_by_lang.items():
+                per_lang[language][("SWER", chunk_seconds)] = micro_average(lang_rows, "semantic_wer", "reference_word_count")
+
+        for language in sorted(per_lang):
+            vals = per_lang[language]
+            row = {"model": source, "language": language}
+            for metric in COMBINED_PIVOT_METRICS:
+                for c in chunk_sizes:
+                    row[f"{metric}_{c:g}s"] = r2(vals.get((metric, c)))
+            rows.append(row)
+
+    fieldnames = ["model", "language"] + [f"{m}_{c:g}s" for m in COMBINED_PIVOT_METRICS for c in chunk_sizes]
+    out_path = config.PROJECT_ROOT / "analysis_results" / "transcription_metrics_pivot_by_language.csv"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(out_path, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    return out_path
+
+
+if __name__ == "__main__":
+    # Standalone regeneration of every transcription report, straight from
+    # whatever's already on disk — no re-transcription needed.
+    SOURCES = {
+        "indic_conformer": config.PROJECT_ROOT / "indic_conformer_results",
+        "indic_transcribe_core": config.PROJECT_ROOT / "indic_transcribe_core_results",
+    }
+    CHUNK_SIZES = [2.0, 5.0, 7.0, 10.0]
+
+    for source_name, root in SOURCES.items():
+        write_all_reports(source_name, root, CHUNK_SIZES)
+
+    combined_path = write_combined_language_pivot(SOURCES, CHUNK_SIZES)
+    print(f"\nCombined model+language WER/CER/SWER-by-chunk pivot saved to: {combined_path}")
