@@ -209,7 +209,7 @@ def main():
             for bucket, vals in sorted(by_bucket.items(), key=lambda kv: float(kv[0].split("-")[0].rstrip("+"))):
                 all_bucket_rows.append({
                     "source": source, "metric": key_name, "bucket": bucket,
-                    "n_judged": len(vals), "pct_significant": sum(vals) / len(vals),
+                    "n_judged": len(vals), "pct_significant": round(sum(vals) / len(vals), 2),
                 })
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

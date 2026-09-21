@@ -89,9 +89,9 @@ def bucket_by(rows: List[dict], key: str) -> List[dict]:
         table.append({
             "bucket": label,
             "n_files": len(vals),
-            "mean_semantic_wer": sum(vals) / len(vals),
-            "min_semantic_wer": min(vals),
-            "max_semantic_wer": max(vals),
+            "mean_semantic_wer": round(sum(vals) / len(vals), 2),
+            "min_semantic_wer": round(min(vals), 2),
+            "max_semantic_wer": round(max(vals), 2),
         })
     return table
 
@@ -111,14 +111,14 @@ def main():
         wer_table = bucket_by(rows, "wer")
         print("\nBy raw WER bucket -> mean semantic WER:")
         for row in wer_table:
-            print(f"  WER {row['bucket']:>8}  n={row['n_files']:4d}  mean_semantic_wer={row['mean_semantic_wer']:.4f}  (range {row['min_semantic_wer']:.3f}-{row['max_semantic_wer']:.3f})")
+            print(f"  WER {row['bucket']:>8}  n={row['n_files']:4d}  mean_semantic_wer={row['mean_semantic_wer']:.2f}  (range {row['min_semantic_wer']:.2f}-{row['max_semantic_wer']:.2f})")
         for row in wer_table:
             all_wer_rows.append({"source": source, **row})
 
         cer_table = bucket_by(rows, "cer")
         print("\nBy raw CER bucket -> mean semantic WER:")
         for row in cer_table:
-            print(f"  CER {row['bucket']:>8}  n={row['n_files']:4d}  mean_semantic_wer={row['mean_semantic_wer']:.4f}  (range {row['min_semantic_wer']:.3f}-{row['max_semantic_wer']:.3f})")
+            print(f"  CER {row['bucket']:>8}  n={row['n_files']:4d}  mean_semantic_wer={row['mean_semantic_wer']:.2f}  (range {row['min_semantic_wer']:.2f}-{row['max_semantic_wer']:.2f})")
         for row in cer_table:
             all_cer_rows.append({"source": source, **row})
 

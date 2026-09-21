@@ -49,6 +49,10 @@ def mean(vals) -> Optional[float]:
     return sum(vals) / len(vals) if vals else None
 
 
+def r2(x: Optional[float]) -> Optional[float]:
+    return round(x, 2) if x is not None else None
+
+
 def load_file_rows(output_root: Path, chunk_seconds: float) -> List[dict]:
     """One row per successfully-transcribed file for this chunk size, with
     every metric plus its natural weighting count (ref word/char count for
@@ -115,11 +119,11 @@ def write_overall_comparison(output_root: Path, chunk_sizes: List[float]) -> Lis
         comparison.append({
             "chunk_seconds": chunk_seconds,
             "n_files": len(rows),
-            "micro_wer": micro_average(rows, "wer", "wer_ref_word_count"),
-            "micro_cer": micro_average(rows, "cer", "cer_ref_char_count"),
-            "mean_boundary_corruption_rate": mean([r["boundary_corruption_rate"] for r in rows]),
-            "mean_policy_term_recall": mean([r["policy_term_recall"] for r in rows]),
-            "mean_real_time_factor": mean([r["real_time_factor"] for r in rows]),
+            "micro_wer": r2(micro_average(rows, "wer", "wer_ref_word_count")),
+            "micro_cer": r2(micro_average(rows, "cer", "cer_ref_char_count")),
+            "mean_boundary_corruption_rate": r2(mean([r["boundary_corruption_rate"] for r in rows])),
+            "mean_policy_term_recall": r2(mean([r["policy_term_recall"] for r in rows])),
+            "mean_real_time_factor": r2(mean([r["real_time_factor"] for r in rows])),
         })
     comparison.sort(key=lambda r: r["chunk_seconds"])
 
@@ -180,7 +184,7 @@ def write_language_pivot(source: str, output_root: Path, chunk_sizes: List[float
         for language in sorted(per_lang):
             vals = per_lang[language]
             writer.writerow([language] + [
-                f"{vals[(m, c)]:.4f}" if vals.get((m, c)) is not None else ""
+                f"{r2(vals[(m, c)]):.2f}" if vals.get((m, c)) is not None else ""
                 for m in PIVOT_METRICS for c in chunk_sizes
             ])
     return out_path

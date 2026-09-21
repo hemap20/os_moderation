@@ -269,15 +269,19 @@ def score_file(item: dict, matched_pairs: List[Tuple[int, int]]) -> dict:
     }
 
 
+def r2(x: Optional[float]) -> Optional[float]:
+    return round(x, 2) if x is not None else None
+
+
 def confusion_metrics(tp: int, fp: int, fn: int, tn: Optional[int] = None) -> dict:
     precision = tp / (tp + fp) if (tp + fp) else None
     recall = tp / (tp + fn) if (tp + fn) else None
-    out = {"tp": tp, "fp": fp, "fn": fn, "precision": precision, "recall": recall}
+    out = {"tp": tp, "fp": fp, "fn": fn, "precision": r2(precision), "recall": r2(recall)}
     if tn is not None:
         out["tn"] = tn
-        out["specificity"] = tn / (tn + fp) if (tn + fp) else None
+        out["specificity"] = r2(tn / (tn + fp) if (tn + fp) else None)
         total = tp + fp + fn + tn
-        out["accuracy"] = (tp + tn) / total if total else None
+        out["accuracy"] = r2((tp + tn) / total if total else None)
     return out
 
 
@@ -314,20 +318,23 @@ def confidence_bucket_table(rows: List[dict], confidence_key: str) -> List[dict]
             "n_flags": len(in_bin),
             "tp": tp,
             "fp": fp,
-            "precision": tp / len(in_bin) if in_bin else None,
-            "mean_entropy": sum(entropies) / len(entropies) if entropies else None,
+            "precision": r2(tp / len(in_bin) if in_bin else None),
+            "mean_entropy": r2(sum(entropies) / len(entropies) if entropies else None),
         })
     return table
 
 
 def entropy_by_correctness(rows: List[dict]) -> dict:
+    """Mean excerpt-token entropy split by whether the flag was matched
+    (TP) or not (FP) — higher entropy on FP flags would mean the model was
+    quoting text it wasn't actually sure about."""
     all_flags = [f for r in rows for f in r["model_flags"]]
     matched = [f["entropy_mean"] for f in all_flags if f["matched"] and f.get("entropy_mean") is not None]
     unmatched = [f["entropy_mean"] for f in all_flags if not f["matched"] and f.get("entropy_mean") is not None]
     return {
-        "mean_entropy_tp_flags": sum(matched) / len(matched) if matched else None,
+        "mean_entropy_tp_flags": r2(sum(matched) / len(matched) if matched else None),
         "n_tp_flags_with_entropy": len(matched),
-        "mean_entropy_fp_flags": sum(unmatched) / len(unmatched) if unmatched else None,
+        "mean_entropy_fp_flags": r2(sum(unmatched) / len(unmatched) if unmatched else None),
         "n_fp_flags_with_entropy": len(unmatched),
     }
 
@@ -512,6 +519,14 @@ def main():
     print("=" * 80)
     for row in overall_flag_rows:
         print(row)
+
+    print("\n" + "=" * 80)
+    print("MEAN TOKEN ENTROPY: TP FLAGS vs FP FLAGS (overall)")
+    print("=" * 80)
+    for row in entropy_rows:
+        if row.get("language") == "ALL":
+            print(f"{row['model']:32} mean_entropy_tp={row['mean_entropy_tp_flags']}  (n={row['n_tp_flags_with_entropy']})   "
+                  f"mean_entropy_fp={row['mean_entropy_fp_flags']}  (n={row['n_fp_flags_with_entropy']})")
 
     print(f"\nAll CSVs written to {OUTPUT_DIR}/")
 
