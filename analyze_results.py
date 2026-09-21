@@ -463,7 +463,8 @@ def main():
                 "entropy_by_correctness": entropy_by_correctness(lang_rows),
             }
 
-        overall_file_rows.append({"model": model_key, **aggregate_file_level(scored_rows)})
+        overall_entropy = entropy_by_correctness(scored_rows)
+        overall_file_rows.append({"model": model_key, **aggregate_file_level(scored_rows), **overall_entropy})
         overall_flag_rows.append({"model": model_key, **aggregate_flag_level(scored_rows)})
 
         by_lang = defaultdict(list)
@@ -473,20 +474,21 @@ def main():
         model_summary = {"overall": language_block(scored_rows), "by_language": {}}
 
         for lang, lang_rows in sorted(by_lang.items()):
-            by_language_file_rows.append({"model": model_key, "language": lang, **aggregate_file_level(lang_rows)})
+            lang_entropy = entropy_by_correctness(lang_rows)
+            by_language_file_rows.append({"model": model_key, "language": lang, **aggregate_file_level(lang_rows), **lang_entropy})
             by_language_flag_rows.append({"model": model_key, "language": lang, **aggregate_flag_level(lang_rows)})
             for row in confidence_bucket_table(lang_rows, "model_confidence"):
                 bucket_rows_model_conf.append({"model": model_key, "language": lang, **row})
             for row in confidence_bucket_table(lang_rows, "logprob_derived_confidence"):
                 bucket_rows_logprob_conf.append({"model": model_key, "language": lang, **row})
-            entropy_rows.append({"model": model_key, "language": lang, **entropy_by_correctness(lang_rows)})
+            entropy_rows.append({"model": model_key, "language": lang, **lang_entropy})
             model_summary["by_language"][lang] = language_block(lang_rows)
 
         for row in confidence_bucket_table(scored_rows, "model_confidence"):
             bucket_rows_model_conf.append({"model": model_key, "language": "ALL", **row})
         for row in confidence_bucket_table(scored_rows, "logprob_derived_confidence"):
             bucket_rows_logprob_conf.append({"model": model_key, "language": "ALL", **row})
-        entropy_rows.append({"model": model_key, "language": "ALL", **entropy_by_correctness(scored_rows)})
+        entropy_rows.append({"model": model_key, "language": "ALL", **overall_entropy})
 
         all_summary[model_key] = model_summary
         (OUTPUT_DIR / model_key).mkdir(parents=True, exist_ok=True)
@@ -495,12 +497,16 @@ def main():
     if args.dry_run:
         return
 
+    FILE_LEVEL_FIELDS_EXTRA = ["mean_entropy_overall", "n_flags_with_entropy",
+                               "mean_entropy_tp_flags", "n_tp_flags_with_entropy",
+                               "mean_entropy_fp_flags", "n_fp_flags_with_entropy"]
+
     merge_and_write_csv(OUTPUT_DIR / "confusion_file_level_overall.csv", overall_file_rows,
-              ["model", "n_files", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"], model_keys)
+              ["model", "n_files", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"] + FILE_LEVEL_FIELDS_EXTRA, model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confusion_flag_level_overall.csv", overall_flag_rows,
               ["model", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"], model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confusion_file_level_by_language.csv", by_language_file_rows,
-              ["model", "language", "n_files", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"], model_keys)
+              ["model", "language", "n_files", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"] + FILE_LEVEL_FIELDS_EXTRA, model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confusion_flag_level_by_language.csv", by_language_flag_rows,
               ["model", "language", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"], model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confidence_buckets_model_confidence.csv", bucket_rows_model_conf,
