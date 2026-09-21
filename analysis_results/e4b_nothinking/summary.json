@@ -6,21 +6,21 @@
       "tp": 26,
       "fp": 4,
       "fn": 187,
-      "precision": 0.8666666666666667,
-      "recall": 0.12206572769953052,
+      "precision": 0.87,
+      "recall": 0.12,
       "tn": 163,
-      "specificity": 0.9760479041916168,
-      "accuracy": 0.49736842105263157
+      "specificity": 0.98,
+      "accuracy": 0.5
     },
     "flag_level": {
       "tp": 27,
       "fp": 18,
       "fn": 485,
       "precision": 0.6,
-      "recall": 0.052734375,
+      "recall": 0.05,
       "tn": 163,
-      "specificity": 0.9005524861878453,
-      "accuracy": 0.2741702741702742
+      "specificity": 0.9,
+      "accuracy": 0.27
     },
     "confidence_buckets": {
       "model_confidence": [
@@ -30,7 +30,9 @@
           "tp": 0,
           "fp": 0,
           "precision": null,
-          "mean_entropy": null
+          "mean_entropy_overall": null,
+          "mean_entropy_tp": null,
+          "mean_entropy_fp": null
         },
         {
           "bucket": "0.2-0.4",
@@ -38,15 +40,19 @@
           "tp": 0,
           "fp": 0,
           "precision": null,
-          "mean_entropy": null
+          "mean_entropy_overall": null,
+          "mean_entropy_tp": null,
+          "mean_entropy_fp": null
         },
         {
           "bucket": "0.4-0.6",
           "n_flags": 3,
           "tp": 1,
           "fp": 2,
-          "precision": 0.3333333333333333,
-          "mean_entropy": 0.5583771994263524
+          "precision": 0.33,
+          "mean_entropy_overall": 0.56,
+          "mean_entropy_tp": 0.45,
+          "mean_entropy_fp": 0.61
         },
         {
           "bucket": "0.6-0.8",
@@ -54,7 +60,9 @@
           "tp": 0,
           "fp": 2,
           "precision": 0.0,
-          "mean_entropy": 0.8245674172424202
+          "mean_entropy_overall": 0.82,
+          "mean_entropy_tp": null,
+          "mean_entropy_fp": 0.82
         },
         {
           "bucket": "0.8-1.0",
@@ -62,7 +70,9 @@
           "tp": 26,
           "fp": 14,
           "precision": 0.65,
-          "mean_entropy": 0.42465138271978464
+          "mean_entropy_overall": 0.42,
+          "mean_entropy_tp": 0.37,
+          "mean_entropy_fp": 0.53
         }
       ],
       "logprob_derived_confidence": [
@@ -72,7 +82,9 @@
           "tp": 0,
           "fp": 0,
           "precision": null,
-          "mean_entropy": null
+          "mean_entropy_overall": null,
+          "mean_entropy_tp": null,
+          "mean_entropy_fp": null
         },
         {
           "bucket": "0.2-0.4",
@@ -80,7 +92,9 @@
           "tp": 0,
           "fp": 0,
           "precision": null,
-          "mean_entropy": null
+          "mean_entropy_overall": null,
+          "mean_entropy_tp": null,
+          "mean_entropy_fp": null
         },
         {
           "bucket": "0.4-0.6",
@@ -88,7 +102,9 @@
           "tp": 0,
           "fp": 0,
           "precision": null,
-          "mean_entropy": null
+          "mean_entropy_overall": null,
+          "mean_entropy_tp": null,
+          "mean_entropy_fp": null
         },
         {
           "bucket": "0.6-0.8",
@@ -96,22 +112,28 @@
           "tp": 4,
           "fp": 4,
           "precision": 0.5,
-          "mean_entropy": 0.5110638440371031
+          "mean_entropy_overall": 0.51,
+          "mean_entropy_tp": 0.41,
+          "mean_entropy_fp": 0.61
         },
         {
           "bucket": "0.8-1.0",
           "n_flags": 37,
           "tp": 23,
           "fp": 14,
-          "precision": 0.6216216216216216,
-          "mean_entropy": 0.43842732403401236
+          "precision": 0.62,
+          "mean_entropy_overall": 0.44,
+          "mean_entropy_tp": 0.36,
+          "mean_entropy_fp": 0.57
         }
       ]
     },
     "entropy_by_correctness": {
-      "mean_entropy_tp_flags": 0.36875859630372726,
+      "mean_entropy_overall": 0.45,
+      "n_flags_with_entropy": 45,
+      "mean_entropy_tp_flags": 0.37,
       "n_tp_flags_with_entropy": 27,
-      "mean_entropy_fp_flags": 0.5752133134085918,
+      "mean_entropy_fp_flags": 0.58,
       "n_fp_flags_with_entropy": 18
     }
   },
@@ -123,21 +145,21 @@
         "tp": 12,
         "fp": 2,
         "fn": 45,
-        "precision": 0.8571428571428571,
-        "recall": 0.21052631578947367,
+        "precision": 0.86,
+        "recall": 0.21,
         "tn": 57,
-        "specificity": 0.9661016949152542,
-        "accuracy": 0.5948275862068966
+        "specificity": 0.97,
+        "accuracy": 0.59
       },
       "flag_level": {
         "tp": 12,
         "fp": 6,
         "fn": 125,
-        "precision": 0.6666666666666666,
-        "recall": 0.08759124087591241,
+        "precision": 0.67,
+        "recall": 0.09,
         "tn": 57,
-        "specificity": 0.9047619047619048,
-        "accuracy": 0.345
+        "specificity": 0.9,
+        "accuracy": 0.34
       },
       "confidence_buckets": {
         "model_confidence": [
@@ -147,7 +169,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.2-0.4",
@@ -155,7 +179,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.4-0.6",
@@ -163,7 +189,9 @@
             "tp": 1,
             "fp": 1,
             "precision": 0.5,
-            "mean_entropy": 0.520273099181525
+            "mean_entropy_overall": 0.52,
+            "mean_entropy_tp": 0.45,
+            "mean_entropy_fp": 0.59
           },
           {
             "bucket": "0.6-0.8",
@@ -171,15 +199,19 @@
             "tp": 0,
             "fp": 1,
             "precision": 0.0,
-            "mean_entropy": 0.665551653428821
+            "mean_entropy_overall": 0.67,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": 0.67
           },
           {
             "bucket": "0.8-1.0",
             "n_flags": 15,
             "tp": 11,
             "fp": 4,
-            "precision": 0.7333333333333333,
-            "mean_entropy": 0.2728417651288532
+            "precision": 0.73,
+            "mean_entropy_overall": 0.27,
+            "mean_entropy_tp": 0.28,
+            "mean_entropy_fp": 0.25
           }
         ],
         "logprob_derived_confidence": [
@@ -189,7 +221,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.2-0.4",
@@ -197,7 +231,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.4-0.6",
@@ -205,30 +241,38 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.6-0.8",
             "n_flags": 3,
             "tp": 2,
             "fp": 1,
-            "precision": 0.6666666666666666,
-            "mean_entropy": 0.4362576525135844
+            "precision": 0.67,
+            "mean_entropy_overall": 0.44,
+            "mean_entropy_tp": 0.36,
+            "mean_entropy_fp": 0.59
           },
           {
             "bucket": "0.8-1.0",
             "n_flags": 15,
             "tp": 10,
             "fp": 5,
-            "precision": 0.6666666666666666,
-            "mean_entropy": 0.2993300914122611
+            "precision": 0.67,
+            "mean_entropy_overall": 0.3,
+            "mean_entropy_tp": 0.28,
+            "mean_entropy_fp": 0.34
           }
         ]
       },
       "entropy_by_correctness": {
-        "mean_entropy_tp_flags": 0.2939497169640044,
+        "mean_entropy_overall": 0.32,
+        "n_flags_with_entropy": 18,
+        "mean_entropy_tp_flags": 0.29,
         "n_tp_flags_with_entropy": 12,
-        "mean_entropy_fp_flags": 0.37855462085943614,
+        "mean_entropy_fp_flags": 0.38,
         "n_fp_flags_with_entropy": 6
       }
     },
@@ -240,20 +284,20 @@
         "fp": 0,
         "fn": 27,
         "precision": 1.0,
-        "recall": 0.12903225806451613,
+        "recall": 0.13,
         "tn": 37,
         "specificity": 1.0,
-        "accuracy": 0.6029411764705882
+        "accuracy": 0.6
       },
       "flag_level": {
         "tp": 5,
         "fp": 4,
         "fn": 78,
-        "precision": 0.5555555555555556,
-        "recall": 0.060240963855421686,
+        "precision": 0.56,
+        "recall": 0.06,
         "tn": 37,
-        "specificity": 0.9024390243902439,
-        "accuracy": 0.3387096774193548
+        "specificity": 0.9,
+        "accuracy": 0.34
       },
       "confidence_buckets": {
         "model_confidence": [
@@ -263,7 +307,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.2-0.4",
@@ -271,7 +317,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.4-0.6",
@@ -279,7 +327,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.6-0.8",
@@ -287,15 +337,19 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.8-1.0",
             "n_flags": 9,
             "tp": 5,
             "fp": 4,
-            "precision": 0.5555555555555556,
-            "mean_entropy": 0.3769053992226982
+            "precision": 0.56,
+            "mean_entropy_overall": 0.38,
+            "mean_entropy_tp": 0.35,
+            "mean_entropy_fp": 0.41
           }
         ],
         "logprob_derived_confidence": [
@@ -305,7 +359,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.2-0.4",
@@ -313,7 +369,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.4-0.6",
@@ -321,7 +379,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.6-0.8",
@@ -329,7 +389,9 @@
             "tp": 1,
             "fp": 0,
             "precision": 1.0,
-            "mean_entropy": 0.3525072033749893
+            "mean_entropy_overall": 0.35,
+            "mean_entropy_tp": 0.35,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.8-1.0",
@@ -337,14 +399,18 @@
             "tp": 4,
             "fp": 4,
             "precision": 0.5,
-            "mean_entropy": 0.37995517370366183
+            "mean_entropy_overall": 0.38,
+            "mean_entropy_tp": 0.35,
+            "mean_entropy_fp": 0.41
           }
         ]
       },
       "entropy_by_correctness": {
-        "mean_entropy_tp_flags": 0.3539063960629145,
+        "mean_entropy_overall": 0.38,
+        "n_flags_with_entropy": 9,
+        "mean_entropy_tp_flags": 0.35,
         "n_tp_flags_with_entropy": 5,
-        "mean_entropy_fp_flags": 0.40565415317242803,
+        "mean_entropy_fp_flags": 0.41,
         "n_fp_flags_with_entropy": 4
       }
     },
@@ -356,20 +422,20 @@
         "fp": 1,
         "fn": 34,
         "precision": 0.5,
-        "recall": 0.02857142857142857,
+        "recall": 0.03,
         "tn": 22,
-        "specificity": 0.9565217391304348,
-        "accuracy": 0.39655172413793105
+        "specificity": 0.96,
+        "accuracy": 0.4
       },
       "flag_level": {
         "tp": 1,
         "fp": 3,
         "fn": 73,
         "precision": 0.25,
-        "recall": 0.013513513513513514,
+        "recall": 0.01,
         "tn": 22,
         "specificity": 0.88,
-        "accuracy": 0.23232323232323232
+        "accuracy": 0.23
       },
       "confidence_buckets": {
         "model_confidence": [
@@ -379,7 +445,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.2-0.4",
@@ -387,7 +455,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.4-0.6",
@@ -395,7 +465,9 @@
             "tp": 0,
             "fp": 1,
             "precision": 0.0,
-            "mean_entropy": 0.6345853999160075
+            "mean_entropy_overall": 0.63,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": 0.63
           },
           {
             "bucket": "0.6-0.8",
@@ -403,7 +475,9 @@
             "tp": 0,
             "fp": 1,
             "precision": 0.0,
-            "mean_entropy": 0.9835831810560194
+            "mean_entropy_overall": 0.98,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": 0.98
           },
           {
             "bucket": "0.8-1.0",
@@ -411,7 +485,9 @@
             "tp": 1,
             "fp": 1,
             "precision": 0.5,
-            "mean_entropy": 0.8453903111146246
+            "mean_entropy_overall": 0.85,
+            "mean_entropy_tp": 0.71,
+            "mean_entropy_fp": 0.98
           }
         ],
         "logprob_derived_confidence": [
@@ -421,7 +497,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.2-0.4",
@@ -429,7 +507,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.4-0.6",
@@ -437,7 +517,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.6-0.8",
@@ -445,22 +527,28 @@
             "tp": 0,
             "fp": 1,
             "precision": 0.0,
-            "mean_entropy": 0.9835831810560194
+            "mean_entropy_overall": 0.98,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": 0.98
           },
           {
             "bucket": "0.8-1.0",
             "n_flags": 3,
             "tp": 1,
             "fp": 2,
-            "precision": 0.3333333333333333,
-            "mean_entropy": 0.7751220073817523
+            "precision": 0.33,
+            "mean_entropy_overall": 0.78,
+            "mean_entropy_tp": 0.71,
+            "mean_entropy_fp": 0.81
           }
         ]
       },
       "entropy_by_correctness": {
-        "mean_entropy_tp_flags": 0.7114374331431463,
+        "mean_entropy_overall": 0.83,
+        "n_flags_with_entropy": 4,
+        "mean_entropy_tp_flags": 0.71,
         "n_tp_flags_with_entropy": 1,
-        "mean_entropy_fp_flags": 0.8658372566860434,
+        "mean_entropy_fp_flags": 0.87,
         "n_fp_flags_with_entropy": 3
       }
     },
@@ -471,21 +559,21 @@
         "tp": 6,
         "fp": 1,
         "fn": 28,
-        "precision": 0.8571428571428571,
-        "recall": 0.17647058823529413,
+        "precision": 0.86,
+        "recall": 0.18,
         "tn": 30,
-        "specificity": 0.967741935483871,
-        "accuracy": 0.5538461538461539
+        "specificity": 0.97,
+        "accuracy": 0.55
       },
       "flag_level": {
         "tp": 6,
         "fp": 4,
         "fn": 88,
         "precision": 0.6,
-        "recall": 0.06382978723404255,
+        "recall": 0.06,
         "tn": 30,
-        "specificity": 0.8823529411764706,
-        "accuracy": 0.28125
+        "specificity": 0.88,
+        "accuracy": 0.28
       },
       "confidence_buckets": {
         "model_confidence": [
@@ -495,7 +583,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.2-0.4",
@@ -503,7 +593,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.4-0.6",
@@ -511,7 +603,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.6-0.8",
@@ -519,7 +613,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.8-1.0",
@@ -527,7 +623,9 @@
             "tp": 6,
             "fp": 4,
             "precision": 0.6,
-            "mean_entropy": 0.6519969852119458
+            "mean_entropy_overall": 0.65,
+            "mean_entropy_tp": 0.52,
+            "mean_entropy_fp": 0.85
           }
         ],
         "logprob_derived_confidence": [
@@ -537,7 +635,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.2-0.4",
@@ -545,7 +645,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.4-0.6",
@@ -553,7 +655,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.6-0.8",
@@ -561,22 +665,28 @@
             "tp": 1,
             "fp": 1,
             "precision": 0.5,
-            "mean_entropy": 0.4889645742047945
+            "mean_entropy_overall": 0.49,
+            "mean_entropy_tp": 0.58,
+            "mean_entropy_fp": 0.4
           },
           {
             "bucket": "0.8-1.0",
             "n_flags": 8,
             "tp": 5,
             "fp": 3,
-            "precision": 0.625,
-            "mean_entropy": 0.6927550879637336
+            "precision": 0.62,
+            "mean_entropy_overall": 0.69,
+            "mean_entropy_tp": 0.51,
+            "mean_entropy_fp": 1.0
           }
         ]
       },
       "entropy_by_correctness": {
-        "mean_entropy_tp_flags": 0.5205507634307899,
+        "mean_entropy_overall": 0.65,
+        "n_flags_with_entropy": 10,
+        "mean_entropy_tp_flags": 0.52,
         "n_tp_flags_with_entropy": 6,
-        "mean_entropy_fp_flags": 0.8491663178836797,
+        "mean_entropy_fp_flags": 0.85,
         "n_fp_flags_with_entropy": 4
       }
     },
@@ -588,20 +698,20 @@
         "fp": 0,
         "fn": 53,
         "precision": 1.0,
-        "recall": 0.05357142857142857,
+        "recall": 0.05,
         "tn": 17,
         "specificity": 1.0,
-        "accuracy": 0.273972602739726
+        "accuracy": 0.27
       },
       "flag_level": {
         "tp": 3,
         "fp": 1,
         "fn": 121,
         "precision": 0.75,
-        "recall": 0.024193548387096774,
+        "recall": 0.02,
         "tn": 17,
-        "specificity": 0.9444444444444444,
-        "accuracy": 0.14084507042253522
+        "specificity": 0.94,
+        "accuracy": 0.14
       },
       "confidence_buckets": {
         "model_confidence": [
@@ -611,7 +721,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.2-0.4",
@@ -619,7 +731,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.4-0.6",
@@ -627,7 +741,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.6-0.8",
@@ -635,7 +751,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.8-1.0",
@@ -643,7 +761,9 @@
             "tp": 3,
             "fp": 1,
             "precision": 0.75,
-            "mean_entropy": 0.32263244112639994
+            "mean_entropy_overall": 0.32,
+            "mean_entropy_tp": 0.27,
+            "mean_entropy_fp": 0.47
           }
         ],
         "logprob_derived_confidence": [
@@ -653,7 +773,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.2-0.4",
@@ -661,7 +783,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.4-0.6",
@@ -669,7 +793,9 @@
             "tp": 0,
             "fp": 0,
             "precision": null,
-            "mean_entropy": null
+            "mean_entropy_overall": null,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": null
           },
           {
             "bucket": "0.6-0.8",
@@ -677,7 +803,9 @@
             "tp": 0,
             "fp": 1,
             "precision": 0.0,
-            "mean_entropy": 0.465718261915474
+            "mean_entropy_overall": 0.47,
+            "mean_entropy_tp": null,
+            "mean_entropy_fp": 0.47
           },
           {
             "bucket": "0.8-1.0",
@@ -685,14 +813,18 @@
             "tp": 3,
             "fp": 0,
             "precision": 1.0,
-            "mean_entropy": 0.2749371675300419
+            "mean_entropy_overall": 0.27,
+            "mean_entropy_tp": 0.27,
+            "mean_entropy_fp": null
           }
         ]
       },
       "entropy_by_correctness": {
-        "mean_entropy_tp_flags": 0.2749371675300419,
+        "mean_entropy_overall": 0.32,
+        "n_flags_with_entropy": 4,
+        "mean_entropy_tp_flags": 0.27,
         "n_tp_flags_with_entropy": 3,
-        "mean_entropy_fp_flags": 0.465718261915474,
+        "mean_entropy_fp_flags": 0.47,
         "n_fp_flags_with_entropy": 1
       }
     }

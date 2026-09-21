@@ -953,3 +953,599 @@ gemini_client.NonRetryableGeminiError: Empty response from Gemini (finish_reason
 [2026-09-18T12:26:04] [INFO] [gemini-3.5-flash-lite batch 75/76] 5 file(s): rec_default_427012589_audio_1789032630677.mp3, rec_default_427012755_audio_1789032638070.mp3, rec_default_427018157_audio_1789032985293.mp3, rec_default_427030481_audio_1789033781981.mp3, rec_default_427035680_audio_1789034118532.mp3
 [2026-09-18T12:26:04] [INFO] [gemini-3.5-flash-lite batch 76/76] 2 file(s): rec_default_427037139_audio_1789034210020.mp3, rec_default_427038996_audio_1789034340803.mp3
 [2026-09-18T12:26:08] [INFO] [gemini-3.5-flash-lite] done in 26.7s — scored=377 skipped(no gt/no result)=4
+[2026-09-21T16:38:57] [INFO] [e2b_thinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 381 already cached
+[2026-09-21T16:38:57] [INFO] [e2b_thinking] done in 0.1s — scored=381 skipped(no gt/no result)=0
+[2026-09-21T16:38:57] [INFO] [e2b_nothinking] 5 file(s) to score (Gemini-matched) in 1 batch(es) of up to 5, 376 already cached
+[2026-09-21T16:38:57] [INFO] [e2b_nothinking batch 1/1] 5 file(s): rec_audio_call_425691838_audio_1788898819143.mp3, rec_default_426593829_audio_1788984553610.mp3, rec_audio_call_419965552_audio_1788369990564.mp3, rec_audio_call_421071310_audio_1788465787061.mp3, rec_audio_call_421768524_audio_1788539479106.mp3
+[2026-09-21T16:39:04] [ERROR] [e2b_nothinking] batch worker failed: Empty response from Gemini (finish_reason=SAFETY): sdk_http_response=HttpResponse(
+  headers=<dict len=10>
+) candidates=[Candidate(
+  content=Content(
+    role='model'
+  ),
+  finish_reason=<FinishReason.SAFETY: 'SAFETY'>,
+  safety_ratings=[
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_HATE_SPEECH: 'HARM_CATEGORY_HATE_SPEECH'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.00041603678,
+      severity=<HarmSeverity.HARM_SEVERITY_LOW: 'HARM_SEVERITY_LOW'>,
+      severity_score=0.119939595
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: 'HARM_CATEGORY_DANGEROUS_CONTENT'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.02441138,
+      severity=<HarmSeverity.HARM_SEVERITY_LOW: 'HARM_SEVERITY_LOW'>,
+      severity_score=0.21732888
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_HARASSMENT: 'HARM_CATEGORY_HARASSMENT'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.03192842,
+      severity=<HarmSeverity.HARM_SEVERITY_MEDIUM: 'HARM_SEVERITY_MEDIUM'>,
+      severity_score=0.29412213
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: 'HARM_CATEGORY_SEXUALLY_EXPLICIT'>,
+      probability=<HarmProbability.LOW: 'LOW'>,
+      probability_score=0.3916065,
+      severity=<HarmSeverity.HARM_SEVERITY_NEGLIGIBLE: 'HARM_SEVERITY_NEGLIGIBLE'>,
+      severity_score=0.34072357
+    ),
+  ]
+)] create_time=datetime.datetime(2026, 9, 21, 11, 8, 58, 827097, tzinfo=TzInfo(0)) model_version='gemini-3.1-flash-lite' prompt_feedback=None response_id='ShCxatm9MrOQ694Pju-f8QQ' usage_metadata=GenerateContentResponseUsageMetadata(
+  candidates_token_count=236,
+  candidates_tokens_details=[
+    ModalityTokenCount(
+      modality=<MediaModality.TEXT: 'TEXT'>,
+      token_count=236
+    ),
+  ],
+  prompt_token_count=1781,
+  prompt_tokens_details=[
+    ModalityTokenCount(
+      modality=<MediaModality.TEXT: 'TEXT'>,
+      token_count=1781
+    ),
+  ],
+  thoughts_token_count=1178,
+  total_token_count=3195,
+  traffic_type=<TrafficType.ON_DEMAND: 'ON_DEMAND'>
+) automatic_function_calling_history=[] parsed=None
+Traceback (most recent call last):
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/analyze_results.py", line 434, in main
+    fut.result()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/analyze_results.py", line 419, in process_batch
+    pairs_by_file = match_files_batch(client, batch_items, logger)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/analyze_results.py", line 195, in match_files_batch
+    raw_text = gemini_client.call_with_retries(do_call, on_retry=on_retry)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemini_client.py", line 94, in call_with_retries
+    return fn()
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/analyze_results.py", line 189, in do_call
+    return gemini_client.generate_text(client, config.GEMINI_MODEL, contents=[prompt_content], response_json_schema=BATCH_MATCH_SCHEMA)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemini_client.py", line 209, in generate_text
+    raise NonRetryableGeminiError(message)
+gemini_client.NonRetryableGeminiError: Empty response from Gemini (finish_reason=SAFETY): sdk_http_response=HttpResponse(
+  headers=<dict len=10>
+) candidates=[Candidate(
+  content=Content(
+    role='model'
+  ),
+  finish_reason=<FinishReason.SAFETY: 'SAFETY'>,
+  safety_ratings=[
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_HATE_SPEECH: 'HARM_CATEGORY_HATE_SPEECH'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.00041603678,
+      severity=<HarmSeverity.HARM_SEVERITY_LOW: 'HARM_SEVERITY_LOW'>,
+      severity_score=0.119939595
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: 'HARM_CATEGORY_DANGEROUS_CONTENT'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.02441138,
+      severity=<HarmSeverity.HARM_SEVERITY_LOW: 'HARM_SEVERITY_LOW'>,
+      severity_score=0.21732888
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_HARASSMENT: 'HARM_CATEGORY_HARASSMENT'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.03192842,
+      severity=<HarmSeverity.HARM_SEVERITY_MEDIUM: 'HARM_SEVERITY_MEDIUM'>,
+      severity_score=0.29412213
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: 'HARM_CATEGORY_SEXUALLY_EXPLICIT'>,
+      probability=<HarmProbability.LOW: 'LOW'>,
+      probability_score=0.3916065,
+      severity=<HarmSeverity.HARM_SEVERITY_NEGLIGIBLE: 'HARM_SEVERITY_NEGLIGIBLE'>,
+      severity_score=0.34072357
+    ),
+  ]
+)] create_time=datetime.datetime(2026, 9, 21, 11, 8, 58, 827097, tzinfo=TzInfo(0)) model_version='gemini-3.1-flash-lite' prompt_feedback=None response_id='ShCxatm9MrOQ694Pju-f8QQ' usage_metadata=GenerateContentResponseUsageMetadata(
+  candidates_token_count=236,
+  candidates_tokens_details=[
+    ModalityTokenCount(
+      modality=<MediaModality.TEXT: 'TEXT'>,
+      token_count=236
+    ),
+  ],
+  prompt_token_count=1781,
+  prompt_tokens_details=[
+    ModalityTokenCount(
+      modality=<MediaModality.TEXT: 'TEXT'>,
+      token_count=1781
+    ),
+  ],
+  thoughts_token_count=1178,
+  total_token_count=3195,
+  traffic_type=<TrafficType.ON_DEMAND: 'ON_DEMAND'>
+) automatic_function_calling_history=[] parsed=None
+
+[2026-09-21T16:39:04] [INFO] [e2b_nothinking] done in 6.3s — scored=376 skipped(no gt/no result)=0
+[2026-09-21T16:39:04] [INFO] [e4b_thinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 183 already cached
+[2026-09-21T16:39:04] [INFO] [e4b_thinking] done in 0.1s — scored=183 skipped(no gt/no result)=198
+[2026-09-21T16:39:04] [INFO] [e4b_nothinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 380 already cached
+[2026-09-21T16:39:04] [INFO] [e4b_nothinking] done in 0.1s — scored=380 skipped(no gt/no result)=1
+[2026-09-21T16:39:04] [INFO] [12b_nothinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 381 already cached
+[2026-09-21T16:39:04] [INFO] [12b_nothinking] done in 0.1s — scored=381 skipped(no gt/no result)=0
+[2026-09-21T16:39:04] [INFO] [e2b_conformer5s_text_nothinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 381 already cached
+[2026-09-21T16:39:04] [INFO] [e2b_conformer5s_text_nothinking] done in 0.0s — scored=381 skipped(no gt/no result)=0
+[2026-09-21T16:39:04] [INFO] [e4b_conformer5s_text_nothinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 381 already cached
+[2026-09-21T16:39:04] [INFO] [e4b_conformer5s_text_nothinking] done in 0.0s — scored=381 skipped(no gt/no result)=0
+[2026-09-21T16:39:04] [INFO] [gemini-3.5-flash-lite] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 377 already cached
+[2026-09-21T16:39:04] [INFO] [gemini-3.5-flash-lite] done in 0.0s — scored=377 skipped(no gt/no result)=4
+[2026-09-21T16:45:40] [INFO] [e2b_thinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 381 already cached
+[2026-09-21T16:45:40] [INFO] [e2b_thinking] done in 0.1s — scored=381 skipped(no gt/no result)=0
+[2026-09-21T16:45:40] [INFO] [e2b_nothinking] 5 file(s) to score (Gemini-matched) in 1 batch(es) of up to 5, 376 already cached
+[2026-09-21T16:45:40] [INFO] [e2b_nothinking batch 1/1] 5 file(s): rec_audio_call_425691838_audio_1788898819143.mp3, rec_default_426593829_audio_1788984553610.mp3, rec_audio_call_419965552_audio_1788369990564.mp3, rec_audio_call_421071310_audio_1788465787061.mp3, rec_audio_call_421768524_audio_1788539479106.mp3
+[2026-09-21T16:45:46] [ERROR] [e2b_nothinking] batch worker failed: Empty response from Gemini (finish_reason=SAFETY): sdk_http_response=HttpResponse(
+  headers=<dict len=10>
+) candidates=[Candidate(
+  content=Content(
+    role='model'
+  ),
+  finish_reason=<FinishReason.SAFETY: 'SAFETY'>,
+  safety_ratings=[
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_HATE_SPEECH: 'HARM_CATEGORY_HATE_SPEECH'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.00041603678,
+      severity=<HarmSeverity.HARM_SEVERITY_LOW: 'HARM_SEVERITY_LOW'>,
+      severity_score=0.119939595
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: 'HARM_CATEGORY_DANGEROUS_CONTENT'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.02441138,
+      severity=<HarmSeverity.HARM_SEVERITY_LOW: 'HARM_SEVERITY_LOW'>,
+      severity_score=0.21732888
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_HARASSMENT: 'HARM_CATEGORY_HARASSMENT'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.03192842,
+      severity=<HarmSeverity.HARM_SEVERITY_MEDIUM: 'HARM_SEVERITY_MEDIUM'>,
+      severity_score=0.29412213
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: 'HARM_CATEGORY_SEXUALLY_EXPLICIT'>,
+      probability=<HarmProbability.LOW: 'LOW'>,
+      probability_score=0.3916065,
+      severity=<HarmSeverity.HARM_SEVERITY_NEGLIGIBLE: 'HARM_SEVERITY_NEGLIGIBLE'>,
+      severity_score=0.34072357
+    ),
+  ]
+)] create_time=datetime.datetime(2026, 9, 21, 11, 15, 41, 631413, tzinfo=TzInfo(0)) model_version='gemini-3.1-flash-lite' prompt_feedback=None response_id='3RGxavXEJuvpjNAP7u786Ag' usage_metadata=GenerateContentResponseUsageMetadata(
+  candidates_token_count=236,
+  candidates_tokens_details=[
+    ModalityTokenCount(
+      modality=<MediaModality.TEXT: 'TEXT'>,
+      token_count=236
+    ),
+  ],
+  prompt_token_count=1781,
+  prompt_tokens_details=[
+    ModalityTokenCount(
+      modality=<MediaModality.TEXT: 'TEXT'>,
+      token_count=1781
+    ),
+  ],
+  thoughts_token_count=1178,
+  total_token_count=3195,
+  traffic_type=<TrafficType.ON_DEMAND: 'ON_DEMAND'>
+) automatic_function_calling_history=[] parsed=None
+Traceback (most recent call last):
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/analyze_results.py", line 443, in main
+    fut.result()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/analyze_results.py", line 428, in process_batch
+    pairs_by_file = match_files_batch(client, batch_items, logger)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/analyze_results.py", line 195, in match_files_batch
+    raw_text = gemini_client.call_with_retries(do_call, on_retry=on_retry)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemini_client.py", line 94, in call_with_retries
+    return fn()
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/analyze_results.py", line 189, in do_call
+    return gemini_client.generate_text(client, config.GEMINI_MODEL, contents=[prompt_content], response_json_schema=BATCH_MATCH_SCHEMA)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemini_client.py", line 209, in generate_text
+    raise NonRetryableGeminiError(message)
+gemini_client.NonRetryableGeminiError: Empty response from Gemini (finish_reason=SAFETY): sdk_http_response=HttpResponse(
+  headers=<dict len=10>
+) candidates=[Candidate(
+  content=Content(
+    role='model'
+  ),
+  finish_reason=<FinishReason.SAFETY: 'SAFETY'>,
+  safety_ratings=[
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_HATE_SPEECH: 'HARM_CATEGORY_HATE_SPEECH'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.00041603678,
+      severity=<HarmSeverity.HARM_SEVERITY_LOW: 'HARM_SEVERITY_LOW'>,
+      severity_score=0.119939595
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: 'HARM_CATEGORY_DANGEROUS_CONTENT'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.02441138,
+      severity=<HarmSeverity.HARM_SEVERITY_LOW: 'HARM_SEVERITY_LOW'>,
+      severity_score=0.21732888
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_HARASSMENT: 'HARM_CATEGORY_HARASSMENT'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.03192842,
+      severity=<HarmSeverity.HARM_SEVERITY_MEDIUM: 'HARM_SEVERITY_MEDIUM'>,
+      severity_score=0.29412213
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: 'HARM_CATEGORY_SEXUALLY_EXPLICIT'>,
+      probability=<HarmProbability.LOW: 'LOW'>,
+      probability_score=0.3916065,
+      severity=<HarmSeverity.HARM_SEVERITY_NEGLIGIBLE: 'HARM_SEVERITY_NEGLIGIBLE'>,
+      severity_score=0.34072357
+    ),
+  ]
+)] create_time=datetime.datetime(2026, 9, 21, 11, 15, 41, 631413, tzinfo=TzInfo(0)) model_version='gemini-3.1-flash-lite' prompt_feedback=None response_id='3RGxavXEJuvpjNAP7u786Ag' usage_metadata=GenerateContentResponseUsageMetadata(
+  candidates_token_count=236,
+  candidates_tokens_details=[
+    ModalityTokenCount(
+      modality=<MediaModality.TEXT: 'TEXT'>,
+      token_count=236
+    ),
+  ],
+  prompt_token_count=1781,
+  prompt_tokens_details=[
+    ModalityTokenCount(
+      modality=<MediaModality.TEXT: 'TEXT'>,
+      token_count=1781
+    ),
+  ],
+  thoughts_token_count=1178,
+  total_token_count=3195,
+  traffic_type=<TrafficType.ON_DEMAND: 'ON_DEMAND'>
+) automatic_function_calling_history=[] parsed=None
+
+[2026-09-21T16:45:46] [INFO] [e2b_nothinking] done in 5.9s — scored=376 skipped(no gt/no result)=0
+[2026-09-21T16:45:46] [INFO] [e4b_thinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 183 already cached
+[2026-09-21T16:45:46] [INFO] [e4b_thinking] done in 0.1s — scored=183 skipped(no gt/no result)=198
+[2026-09-21T16:45:46] [INFO] [e4b_nothinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 380 already cached
+[2026-09-21T16:45:46] [INFO] [e4b_nothinking] done in 0.1s — scored=380 skipped(no gt/no result)=1
+[2026-09-21T16:45:46] [INFO] [12b_nothinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 381 already cached
+[2026-09-21T16:45:46] [INFO] [12b_nothinking] done in 0.0s — scored=381 skipped(no gt/no result)=0
+[2026-09-21T16:45:46] [INFO] [e2b_conformer5s_text_nothinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 381 already cached
+[2026-09-21T16:45:46] [INFO] [e2b_conformer5s_text_nothinking] done in 0.0s — scored=381 skipped(no gt/no result)=0
+[2026-09-21T16:45:46] [INFO] [e4b_conformer5s_text_nothinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 381 already cached
+[2026-09-21T16:45:46] [INFO] [e4b_conformer5s_text_nothinking] done in 0.0s — scored=381 skipped(no gt/no result)=0
+[2026-09-21T16:45:46] [INFO] [gemini-3.5-flash-lite] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 377 already cached
+[2026-09-21T16:45:46] [INFO] [gemini-3.5-flash-lite] done in 0.0s — scored=377 skipped(no gt/no result)=4
+[2026-09-21T16:49:44] [INFO] [e2b_thinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 381 already cached
+[2026-09-21T16:49:44] [INFO] [e2b_thinking] done in 0.0s — scored=381 skipped(no gt/no result)=0
+[2026-09-21T16:49:44] [INFO] [e2b_nothinking] 5 file(s) to score (Gemini-matched) in 1 batch(es) of up to 5, 376 already cached
+[2026-09-21T16:49:44] [INFO] [e2b_nothinking batch 1/1] 5 file(s): rec_audio_call_425691838_audio_1788898819143.mp3, rec_default_426593829_audio_1788984553610.mp3, rec_audio_call_419965552_audio_1788369990564.mp3, rec_audio_call_421071310_audio_1788465787061.mp3, rec_audio_call_421768524_audio_1788539479106.mp3
+[2026-09-21T16:49:50] [ERROR] [e2b_nothinking] batch worker failed: Empty response from Gemini (finish_reason=SAFETY): sdk_http_response=HttpResponse(
+  headers=<dict len=10>
+) candidates=[Candidate(
+  content=Content(
+    role='model'
+  ),
+  finish_reason=<FinishReason.SAFETY: 'SAFETY'>,
+  safety_ratings=[
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_HATE_SPEECH: 'HARM_CATEGORY_HATE_SPEECH'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.00041603678,
+      severity=<HarmSeverity.HARM_SEVERITY_LOW: 'HARM_SEVERITY_LOW'>,
+      severity_score=0.119939595
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: 'HARM_CATEGORY_DANGEROUS_CONTENT'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.02441138,
+      severity=<HarmSeverity.HARM_SEVERITY_LOW: 'HARM_SEVERITY_LOW'>,
+      severity_score=0.21732888
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_HARASSMENT: 'HARM_CATEGORY_HARASSMENT'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.03192842,
+      severity=<HarmSeverity.HARM_SEVERITY_MEDIUM: 'HARM_SEVERITY_MEDIUM'>,
+      severity_score=0.29412213
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: 'HARM_CATEGORY_SEXUALLY_EXPLICIT'>,
+      probability=<HarmProbability.LOW: 'LOW'>,
+      probability_score=0.3916065,
+      severity=<HarmSeverity.HARM_SEVERITY_NEGLIGIBLE: 'HARM_SEVERITY_NEGLIGIBLE'>,
+      severity_score=0.34072357
+    ),
+  ]
+)] create_time=datetime.datetime(2026, 9, 21, 11, 19, 45, 444841, tzinfo=TzInfo(0)) model_version='gemini-3.1-flash-lite' prompt_feedback=None response_id='0RKxaqmTG-2v694P16LdkAY' usage_metadata=GenerateContentResponseUsageMetadata(
+  candidates_token_count=236,
+  candidates_tokens_details=[
+    ModalityTokenCount(
+      modality=<MediaModality.TEXT: 'TEXT'>,
+      token_count=236
+    ),
+  ],
+  prompt_token_count=1781,
+  prompt_tokens_details=[
+    ModalityTokenCount(
+      modality=<MediaModality.TEXT: 'TEXT'>,
+      token_count=1781
+    ),
+  ],
+  thoughts_token_count=1178,
+  total_token_count=3195,
+  traffic_type=<TrafficType.ON_DEMAND: 'ON_DEMAND'>
+) automatic_function_calling_history=[] parsed=None
+Traceback (most recent call last):
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/analyze_results.py", line 443, in main
+    fut.result()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/analyze_results.py", line 428, in process_batch
+    pairs_by_file = match_files_batch(client, batch_items, logger)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/analyze_results.py", line 195, in match_files_batch
+    raw_text = gemini_client.call_with_retries(do_call, on_retry=on_retry)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemini_client.py", line 94, in call_with_retries
+    return fn()
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/analyze_results.py", line 189, in do_call
+    return gemini_client.generate_text(client, config.GEMINI_MODEL, contents=[prompt_content], response_json_schema=BATCH_MATCH_SCHEMA)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemini_client.py", line 209, in generate_text
+    raise NonRetryableGeminiError(message)
+gemini_client.NonRetryableGeminiError: Empty response from Gemini (finish_reason=SAFETY): sdk_http_response=HttpResponse(
+  headers=<dict len=10>
+) candidates=[Candidate(
+  content=Content(
+    role='model'
+  ),
+  finish_reason=<FinishReason.SAFETY: 'SAFETY'>,
+  safety_ratings=[
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_HATE_SPEECH: 'HARM_CATEGORY_HATE_SPEECH'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.00041603678,
+      severity=<HarmSeverity.HARM_SEVERITY_LOW: 'HARM_SEVERITY_LOW'>,
+      severity_score=0.119939595
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: 'HARM_CATEGORY_DANGEROUS_CONTENT'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.02441138,
+      severity=<HarmSeverity.HARM_SEVERITY_LOW: 'HARM_SEVERITY_LOW'>,
+      severity_score=0.21732888
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_HARASSMENT: 'HARM_CATEGORY_HARASSMENT'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.03192842,
+      severity=<HarmSeverity.HARM_SEVERITY_MEDIUM: 'HARM_SEVERITY_MEDIUM'>,
+      severity_score=0.29412213
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: 'HARM_CATEGORY_SEXUALLY_EXPLICIT'>,
+      probability=<HarmProbability.LOW: 'LOW'>,
+      probability_score=0.3916065,
+      severity=<HarmSeverity.HARM_SEVERITY_NEGLIGIBLE: 'HARM_SEVERITY_NEGLIGIBLE'>,
+      severity_score=0.34072357
+    ),
+  ]
+)] create_time=datetime.datetime(2026, 9, 21, 11, 19, 45, 444841, tzinfo=TzInfo(0)) model_version='gemini-3.1-flash-lite' prompt_feedback=None response_id='0RKxaqmTG-2v694P16LdkAY' usage_metadata=GenerateContentResponseUsageMetadata(
+  candidates_token_count=236,
+  candidates_tokens_details=[
+    ModalityTokenCount(
+      modality=<MediaModality.TEXT: 'TEXT'>,
+      token_count=236
+    ),
+  ],
+  prompt_token_count=1781,
+  prompt_tokens_details=[
+    ModalityTokenCount(
+      modality=<MediaModality.TEXT: 'TEXT'>,
+      token_count=1781
+    ),
+  ],
+  thoughts_token_count=1178,
+  total_token_count=3195,
+  traffic_type=<TrafficType.ON_DEMAND: 'ON_DEMAND'>
+) automatic_function_calling_history=[] parsed=None
+
+[2026-09-21T16:49:50] [INFO] [e2b_nothinking] done in 5.4s — scored=376 skipped(no gt/no result)=0
+[2026-09-21T16:49:50] [INFO] [e4b_thinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 183 already cached
+[2026-09-21T16:49:50] [INFO] [e4b_thinking] done in 0.1s — scored=183 skipped(no gt/no result)=198
+[2026-09-21T16:49:50] [INFO] [e4b_nothinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 380 already cached
+[2026-09-21T16:49:50] [INFO] [e4b_nothinking] done in 0.1s — scored=380 skipped(no gt/no result)=1
+[2026-09-21T16:49:50] [INFO] [12b_nothinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 381 already cached
+[2026-09-21T16:49:50] [INFO] [12b_nothinking] done in 0.1s — scored=381 skipped(no gt/no result)=0
+[2026-09-21T16:49:50] [INFO] [e2b_conformer5s_text_nothinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 381 already cached
+[2026-09-21T16:49:50] [INFO] [e2b_conformer5s_text_nothinking] done in 0.0s — scored=381 skipped(no gt/no result)=0
+[2026-09-21T16:49:50] [INFO] [e4b_conformer5s_text_nothinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 381 already cached
+[2026-09-21T16:49:50] [INFO] [e4b_conformer5s_text_nothinking] done in 0.0s — scored=381 skipped(no gt/no result)=0
+[2026-09-21T16:49:50] [INFO] [gemini-3.5-flash-lite] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 377 already cached
+[2026-09-21T16:49:50] [INFO] [gemini-3.5-flash-lite] done in 0.0s — scored=377 skipped(no gt/no result)=4
+[2026-09-21T16:51:55] [INFO] [e2b_thinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 381 already cached
+[2026-09-21T16:51:55] [INFO] [e2b_thinking] done in 0.0s — scored=381 skipped(no gt/no result)=0
+[2026-09-21T16:51:55] [INFO] [e2b_nothinking] 5 file(s) to score (Gemini-matched) in 1 batch(es) of up to 5, 376 already cached
+[2026-09-21T16:51:55] [INFO] [e2b_nothinking batch 1/1] 5 file(s): rec_audio_call_425691838_audio_1788898819143.mp3, rec_default_426593829_audio_1788984553610.mp3, rec_audio_call_419965552_audio_1788369990564.mp3, rec_audio_call_421071310_audio_1788465787061.mp3, rec_audio_call_421768524_audio_1788539479106.mp3
+[2026-09-21T16:52:00] [ERROR] [e2b_nothinking] batch worker failed: Empty response from Gemini (finish_reason=SAFETY): sdk_http_response=HttpResponse(
+  headers=<dict len=10>
+) candidates=[Candidate(
+  content=Content(
+    role='model'
+  ),
+  finish_reason=<FinishReason.SAFETY: 'SAFETY'>,
+  safety_ratings=[
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_HATE_SPEECH: 'HARM_CATEGORY_HATE_SPEECH'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.00041603678,
+      severity=<HarmSeverity.HARM_SEVERITY_LOW: 'HARM_SEVERITY_LOW'>,
+      severity_score=0.119939595
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: 'HARM_CATEGORY_DANGEROUS_CONTENT'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.02441138,
+      severity=<HarmSeverity.HARM_SEVERITY_LOW: 'HARM_SEVERITY_LOW'>,
+      severity_score=0.21732888
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_HARASSMENT: 'HARM_CATEGORY_HARASSMENT'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.03192842,
+      severity=<HarmSeverity.HARM_SEVERITY_MEDIUM: 'HARM_SEVERITY_MEDIUM'>,
+      severity_score=0.29412213
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: 'HARM_CATEGORY_SEXUALLY_EXPLICIT'>,
+      probability=<HarmProbability.LOW: 'LOW'>,
+      probability_score=0.3916065,
+      severity=<HarmSeverity.HARM_SEVERITY_NEGLIGIBLE: 'HARM_SEVERITY_NEGLIGIBLE'>,
+      severity_score=0.34072357
+    ),
+  ]
+)] create_time=datetime.datetime(2026, 9, 21, 11, 21, 55, 915141, tzinfo=TzInfo(0)) model_version='gemini-3.1-flash-lite' prompt_feedback=None response_id='UxOxasXtN6T5jNAPxr-J0A4' usage_metadata=GenerateContentResponseUsageMetadata(
+  candidates_token_count=236,
+  candidates_tokens_details=[
+    ModalityTokenCount(
+      modality=<MediaModality.TEXT: 'TEXT'>,
+      token_count=236
+    ),
+  ],
+  prompt_token_count=1781,
+  prompt_tokens_details=[
+    ModalityTokenCount(
+      modality=<MediaModality.TEXT: 'TEXT'>,
+      token_count=1781
+    ),
+  ],
+  thoughts_token_count=1178,
+  total_token_count=3195,
+  traffic_type=<TrafficType.ON_DEMAND: 'ON_DEMAND'>
+) automatic_function_calling_history=[] parsed=None
+Traceback (most recent call last):
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/analyze_results.py", line 443, in main
+    fut.result()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 52, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/analyze_results.py", line 428, in process_batch
+    pairs_by_file = match_files_batch(client, batch_items, logger)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/analyze_results.py", line 195, in match_files_batch
+    raw_text = gemini_client.call_with_retries(do_call, on_retry=on_retry)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemini_client.py", line 94, in call_with_retries
+    return fn()
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/analyze_results.py", line 189, in do_call
+    return gemini_client.generate_text(client, config.GEMINI_MODEL, contents=[prompt_content], response_json_schema=BATCH_MATCH_SCHEMA)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemini_client.py", line 209, in generate_text
+    raise NonRetryableGeminiError(message)
+gemini_client.NonRetryableGeminiError: Empty response from Gemini (finish_reason=SAFETY): sdk_http_response=HttpResponse(
+  headers=<dict len=10>
+) candidates=[Candidate(
+  content=Content(
+    role='model'
+  ),
+  finish_reason=<FinishReason.SAFETY: 'SAFETY'>,
+  safety_ratings=[
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_HATE_SPEECH: 'HARM_CATEGORY_HATE_SPEECH'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.00041603678,
+      severity=<HarmSeverity.HARM_SEVERITY_LOW: 'HARM_SEVERITY_LOW'>,
+      severity_score=0.119939595
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: 'HARM_CATEGORY_DANGEROUS_CONTENT'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.02441138,
+      severity=<HarmSeverity.HARM_SEVERITY_LOW: 'HARM_SEVERITY_LOW'>,
+      severity_score=0.21732888
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_HARASSMENT: 'HARM_CATEGORY_HARASSMENT'>,
+      probability=<HarmProbability.NEGLIGIBLE: 'NEGLIGIBLE'>,
+      probability_score=0.03192842,
+      severity=<HarmSeverity.HARM_SEVERITY_MEDIUM: 'HARM_SEVERITY_MEDIUM'>,
+      severity_score=0.29412213
+    ),
+    SafetyRating(
+      category=<HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: 'HARM_CATEGORY_SEXUALLY_EXPLICIT'>,
+      probability=<HarmProbability.LOW: 'LOW'>,
+      probability_score=0.3916065,
+      severity=<HarmSeverity.HARM_SEVERITY_NEGLIGIBLE: 'HARM_SEVERITY_NEGLIGIBLE'>,
+      severity_score=0.34072357
+    ),
+  ]
+)] create_time=datetime.datetime(2026, 9, 21, 11, 21, 55, 915141, tzinfo=TzInfo(0)) model_version='gemini-3.1-flash-lite' prompt_feedback=None response_id='UxOxasXtN6T5jNAPxr-J0A4' usage_metadata=GenerateContentResponseUsageMetadata(
+  candidates_token_count=236,
+  candidates_tokens_details=[
+    ModalityTokenCount(
+      modality=<MediaModality.TEXT: 'TEXT'>,
+      token_count=236
+    ),
+  ],
+  prompt_token_count=1781,
+  prompt_tokens_details=[
+    ModalityTokenCount(
+      modality=<MediaModality.TEXT: 'TEXT'>,
+      token_count=1781
+    ),
+  ],
+  thoughts_token_count=1178,
+  total_token_count=3195,
+  traffic_type=<TrafficType.ON_DEMAND: 'ON_DEMAND'>
+) automatic_function_calling_history=[] parsed=None
+
+[2026-09-21T16:52:00] [INFO] [e2b_nothinking] done in 5.3s — scored=376 skipped(no gt/no result)=0
+[2026-09-21T16:52:00] [INFO] [e4b_thinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 183 already cached
+[2026-09-21T16:52:00] [INFO] [e4b_thinking] done in 0.1s — scored=183 skipped(no gt/no result)=198
+[2026-09-21T16:52:00] [INFO] [e4b_nothinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 380 already cached
+[2026-09-21T16:52:00] [INFO] [e4b_nothinking] done in 0.1s — scored=380 skipped(no gt/no result)=1
+[2026-09-21T16:52:00] [INFO] [12b_nothinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 381 already cached
+[2026-09-21T16:52:00] [INFO] [12b_nothinking] done in 0.1s — scored=381 skipped(no gt/no result)=0
+[2026-09-21T16:52:00] [INFO] [e2b_conformer5s_text_nothinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 381 already cached
+[2026-09-21T16:52:00] [INFO] [e2b_conformer5s_text_nothinking] done in 0.0s — scored=381 skipped(no gt/no result)=0
+[2026-09-21T16:52:00] [INFO] [e4b_conformer5s_text_nothinking] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 381 already cached
+[2026-09-21T16:52:00] [INFO] [e4b_conformer5s_text_nothinking] done in 0.0s — scored=381 skipped(no gt/no result)=0
+[2026-09-21T16:52:00] [INFO] [gemini-3.5-flash-lite] 0 file(s) to score (Gemini-matched) in 0 batch(es) of up to 5, 377 already cached
+[2026-09-21T16:52:00] [INFO] [gemini-3.5-flash-lite] done in 0.0s — scored=377 skipped(no gt/no result)=4
