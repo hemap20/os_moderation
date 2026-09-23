@@ -74,7 +74,7 @@ DEFAULT_BACKOFF_BASE_SEC = 2.0
 DEFAULT_DRY_RUN_LIMIT = 3
 
 
-def dataset_paths(dataset_root: Optional[str] = None) -> dict:
+def dataset_paths(dataset_root: Optional[str] = None, results_tag: Optional[str] = None) -> dict:
     """Resolve the dataset directory and ITS OWN result directories for
     either the full dataset (default, dataset_root=None -> DOSTT_DIR) or an
     alternate root such as Dostt_dev/ (passed via each script's
@@ -82,7 +82,15 @@ def dataset_paths(dataset_root: Optional[str] = None) -> dict:
     gemini_results/analysis_results directories, suffixed from the root's
     own name (Dostt_dev -> *_dev), so a dev-set run can never read from or
     write into the full-dataset result directories without any script
-    needing per-root logic of its own."""
+    needing per-root logic of its own.
+
+    results_tag (--results-tag) adds a further suffix on top, for keeping
+    separate PROMPT EXPERIMENTS apart from each other and from the baseline
+    — e.g. dataset_root=None, results_tag="promptA" ->
+    gemma_results_promptA/, analysis_results_promptA/ (full dataset); or
+    dataset_root="Dostt_dev", results_tag="promptA" ->
+    gemma_results_dev_promptA/ (dev set). Orthogonal to dataset_root: it
+    never affects which dataset_dir is read, only where results are written."""
     if dataset_root is None:
         root = DOSTT_DIR
         suffix = ""
@@ -97,6 +105,8 @@ def dataset_paths(dataset_root: Optional[str] = None) -> dict:
             suffix = "_" + name[len("Dostt_"):]
         else:
             suffix = "_" + name
+    if results_tag:
+        suffix = f"{suffix}_{results_tag}"
     return {
         "dataset_dir": root,
         "gemma_results_dir": PROJECT_ROOT / f"gemma_results{suffix}",

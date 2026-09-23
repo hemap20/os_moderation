@@ -1084,6 +1084,8 @@ def main():
     parser.add_argument("--dataset-root", type=str, default=None,
                          help="Alternate dataset root, e.g. Dostt_dev — see analyze_results.py --dataset-root; "
                               "must match whatever root was used for the analyze_results.py run being classified")
+    parser.add_argument("--results-tag", type=str, default=None,
+                         help="Must match the --results-tag used for the analyze_results.py run being classified")
     args = parser.parse_args()
 
     if args.score_review:
@@ -1091,7 +1093,7 @@ def main():
         return
 
     global OUTPUT_DIR
-    ar.configure_dataset_root(args.dataset_root)  # before any ar.MODEL_DIRS/ar.OUTPUT_DIR/ar.unique_records() use
+    ar.configure_dataset_root(args.dataset_root, args.results_tag)  # before any ar.MODEL_DIRS/ar.OUTPUT_DIR/ar.unique_records() use
     OUTPUT_DIR = ar.OUTPUT_DIR / "fp_classification"
 
     logger = StageLogger("classify_fps")

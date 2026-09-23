@@ -119,14 +119,16 @@ MODEL_DIRS: Dict[str, Path] = _build_model_dirs(config.PROJECT_ROOT / "gemma_res
 OUTPUT_DIR: Path = config.PROJECT_ROOT / "analysis_results"
 
 
-def configure_dataset_root(dataset_root: Optional[str] = None):
+def configure_dataset_root(dataset_root: Optional[str] = None, results_tag: Optional[str] = None):
     """Repoints DATASET_DIR/MODEL_DIRS/OUTPUT_DIR at dataset_root's own
-    result directories. Call once, first thing, in any script's main() that
-    accepts --dataset-root — including classify_fps.py, via
-    analyze_results.configure_dataset_root(args.dataset_root), so both
-    scripts resolve to the same dev/prod directories for the same value."""
+    result directories, further tagged by results_tag (e.g. a prompt
+    experiment name) if given. Call once, first thing, in any script's
+    main() that accepts --dataset-root/--results-tag — including
+    classify_fps.py, via analyze_results.configure_dataset_root(args.
+    dataset_root, args.results_tag), so both scripts resolve to the same
+    directories for the same values."""
     global DATASET_DIR, MODEL_DIRS, OUTPUT_DIR
-    paths = config.dataset_paths(dataset_root)
+    paths = config.dataset_paths(dataset_root, results_tag)
     DATASET_DIR = paths["dataset_dir"]
     MODEL_DIRS = _build_model_dirs(paths["gemma_results_dir"], paths["gemini_results_dir"])
     OUTPUT_DIR = paths["analysis_results_dir"]
@@ -695,8 +697,12 @@ def main():
                          help="Alternate dataset root, e.g. Dostt_dev — routes results to "
                               "analysis_results_<suffix>/ (and reads gemma/gemini_results_<suffix>/) "
                               "automatically; default (unset) uses the full Dostt/ dataset")
+    parser.add_argument("--results-tag", type=str, default=None,
+                         help="Extra results-directory suffix for keeping a prompt experiment's results "
+                              "separate, e.g. --results-tag promptA -> analysis_results_promptA/ (or "
+                              "analysis_results_dev_promptA/ combined with --dataset-root Dostt_dev)")
     args = parser.parse_args()
-    configure_dataset_root(args.dataset_root)  # first thing — everything below reads MODEL_DIRS/OUTPUT_DIR/DATASET_DIR
+    configure_dataset_root(args.dataset_root, args.results_tag)  # first thing — everything below reads MODEL_DIRS/OUTPUT_DIR/DATASET_DIR
 
     model_keys = args.models.split(",") if args.models else list(MODEL_DIRS)
     logger = StageLogger("analyze_results")

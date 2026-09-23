@@ -66,6 +66,11 @@ RAW_SCHEMA_STR = json.dumps(raw_model_output_json_schema())
 # root, without any other function in this module needing to change.
 DATASET_DIR: Path = config.DOSTT_DIR
 GEMMA_RESULTS_DIR: Path = config.PROJECT_ROOT / "gemma_results"
+# Reassigned by main() from --prompt-path — lets a prompt experiment run
+# against an alternate file (e.g. prompt_v2.py) WITHOUT touching prompt.py
+# itself, since prompt.py is also what generated ground truth and must stay
+# fixed for scoring to remain meaningful.
+PROMPT_PATH: Path = config.CLASSIFICATION_PROMPT_PATH
 
 
 def output_dir(model_key: str, thinking: bool) -> Path:
@@ -231,7 +236,7 @@ def compute_flag_confidence_and_entropy(token_infos: list, full_text: str, flag_
 def classify_chunk(model, processor, chunk_path: Path, thinking: bool, logger: StageLogger):
     import torch
 
-    prompt_text = prompt_loader.render_prompt(config.CLASSIFICATION_PROMPT_PATH, json_schema_str=RAW_SCHEMA_STR)
+    prompt_text = prompt_loader.render_prompt(PROMPT_PATH, json_schema_str=RAW_SCHEMA_STR)
     messages = [{
         "role": "user",
         "content": [
@@ -506,11 +511,21 @@ def main():
     parser.add_argument("--dataset-root", type=str, default=None,
                          help="Alternate dataset root, e.g. Dostt_dev — routes results to "
                               "gemma_results_<suffix>/ automatically; default uses the full Dostt/ dataset")
+    parser.add_argument("--results-tag", type=str, default=None,
+                         help="Extra results-directory suffix for a prompt experiment, e.g. "
+                              "--results-tag promptA -> gemma_results_promptA/")
+    parser.add_argument("--prompt-path", type=str, default=None,
+                         help="Alternate prompt file for a prompt experiment, e.g. prompt_v2.py — "
+                              "does NOT affect ground truth, which always used prompt.py; "
+                              "default (unset) uses config.CLASSIFICATION_PROMPT_PATH (prompt.py)")
     args = parser.parse_args()
 
-    global DATASET_DIR, GEMMA_RESULTS_DIR
-    paths = config.dataset_paths(args.dataset_root)
+    global DATASET_DIR, GEMMA_RESULTS_DIR, PROMPT_PATH
+    paths = config.dataset_paths(args.dataset_root, args.results_tag)
     DATASET_DIR = paths["dataset_dir"]
+    if args.prompt_path:
+        p = Path(args.prompt_path)
+        PROMPT_PATH = p if p.is_absolute() else config.PROJECT_ROOT / p
     GEMMA_RESULTS_DIR = paths["gemma_results_dir"]
 
     logger = StageLogger(f"gemma_local_{args.model}_{'thinking' if args.thinking else 'nothinking'}")
@@ -530,7 +545,13 @@ def main():
         if args.limit:
             records = records[: args.limit]
 
-    tmp_dir = GEMMA_RESULTS_DIR / "_chunks_tmp"
+    # Nested inside this run's OWN output_dir (per model + thinking flag), not
+    # the shared GEMMA_RESULTS_DIR — chunk filenames are only unique per
+    # file_id, so two runs (e.g. --thinking and non-thinking) sharing one tmp
+    # dir race on the same chunk*.wav paths when run concurrently, corrupting
+    # whichever one loses the race (observed: "Incorrect padding" audio
+    # errors from a chunk truncated mid-write by the other process).
+    tmp_dir = output_dir(args.model, args.thinking) / "_chunks_tmp"
     n_success, n_error = 0, 0
     t0 = time.time()
 

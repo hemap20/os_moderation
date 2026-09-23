@@ -45,6 +45,9 @@ RAW_SCHEMA_STR = json.dumps(raw_model_output_json_schema())
 # --dataset-root via config.dataset_paths(), same pattern as gemma_local.py.
 DATASET_DIR: Path = config.DOSTT_DIR
 GEMINI_RESULTS_DIR: Path = config.PROJECT_ROOT / "gemini_results"
+# Reassigned by main() from --prompt-path — see gemma_local.py's PROMPT_PATH
+# for why this is separate from what generated ground truth.
+PROMPT_PATH: Path = config.CLASSIFICATION_PROMPT_PATH
 
 
 def output_dir(model: str) -> Path:
@@ -53,7 +56,7 @@ def output_dir(model: str) -> Path:
 
 
 def call_classification(client, model: str, record: dsv2.FileRecordV2, logger: StageLogger) -> str:
-    prompt_text = prompt_loader.render_prompt(config.CLASSIFICATION_PROMPT_PATH, json_schema_str=RAW_SCHEMA_STR)
+    prompt_text = prompt_loader.render_prompt(PROMPT_PATH, json_schema_str=RAW_SCHEMA_STR)
 
     def do_call():
         uploaded = gemini_client.upload_audio(client, record.path)
@@ -133,17 +136,26 @@ def main():
     parser.add_argument("--dataset-root", type=str, default=None,
                          help="Alternate dataset root, e.g. Dostt_dev — routes results to "
                               "gemini_results_<suffix>/ automatically; default uses the full Dostt/ dataset")
+    parser.add_argument("--results-tag", type=str, default=None,
+                         help="Extra results-directory suffix for a prompt experiment, e.g. "
+                              "--results-tag promptA -> gemini_results_promptA/")
+    parser.add_argument("--prompt-path", type=str, default=None,
+                         help="Alternate prompt file for a prompt experiment, e.g. prompt_v2.py — "
+                              "does NOT affect ground truth, which always used prompt.py")
     args = parser.parse_args()
 
-    global DATASET_DIR, GEMINI_RESULTS_DIR
-    paths = config.dataset_paths(args.dataset_root)
+    global DATASET_DIR, GEMINI_RESULTS_DIR, PROMPT_PATH
+    paths = config.dataset_paths(args.dataset_root, args.results_tag)
     DATASET_DIR = paths["dataset_dir"]
     GEMINI_RESULTS_DIR = paths["gemini_results_dir"]
+    if args.prompt_path:
+        p = Path(args.prompt_path)
+        PROMPT_PATH = p if p.is_absolute() else config.PROJECT_ROOT / p
 
     logger = StageLogger(f"gemini_model_eval_{args.model.replace('/', '_')}")
 
     try:
-        prompt_loader.load_raw_prompt(config.CLASSIFICATION_PROMPT_PATH)
+        prompt_loader.load_raw_prompt(PROMPT_PATH)
     except FileNotFoundError as exc:
         logger.error(str(exc))
         return
