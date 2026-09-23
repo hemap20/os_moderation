@@ -3,14 +3,44 @@
   "language": "hindi",
   "gt_flag_count": 3,
   "model_flag_count": 9,
-  "flag_tp": 3,
-  "flag_fn": 0,
-  "flag_fp": 6,
+  "flag_tp": 2,
+  "flag_fn": 1,
+  "flag_fp": 7,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I will show it on this, why wouldn't I, but I show it better on WhatsApp because it gets blurred here.",
+      "timestamp": "1:40",
+      "excerpt": "मैं इस पे तो दिखा दूंगी दिखाऊंगी क्यों नहीं दिखाऊंगी बट मैं व्हाट्सएप पे अच्छे से शो करती हूँ",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Look, I charge 1000, you tell me how much you will give.",
+      "timestamp": "2:45",
+      "excerpt": "देखो मैं 1000 लेती हूँ तुम बताओ कितना दोगे",
+      "confidence": 0.4,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I charge 500 for an open show and 1000 for couple sex/live sex.",
+      "timestamp": "2:57",
+      "excerpt": "500 में ओपन शो का लेती हूँ और कपल सेक्स लाइफ सेक्स का 1000 लेती हूँ",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "Explicit-Flirting",
       "translation": "Oh, did you see an open show?",
+      "timestamp": "00:53",
+      "excerpt": "Oh, open show dekha apne?",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9678172024324069,
       "entropy_mean": 0.2996071894497921,
@@ -19,6 +49,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "If you show, I will happily look.",
+      "timestamp": "00:56",
+      "excerpt": "आप दिखाएं तो मैं देख लेता खुशी से।",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9769927052085475,
       "entropy_mean": 0.20609177702984502,
@@ -27,6 +59,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "So show then. We also want to see what it looks like.",
+      "timestamp": "00:56",
+      "excerpt": "तो दिखाओ ना फिर। हम भी देख लेते हैं क्या दिखता है।",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.4748436544796874,
       "entropy_mean": 0.2231121102120988,
@@ -35,6 +69,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Okay, I will show you, but tell me what I will get. Tell me what you want.",
+      "timestamp": "01:24",
+      "excerpt": "Toh dekh dekho, dikha to dungi, but mujhe kya milega ye batao. Kya chahiye batao.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9747831604135516,
       "entropy_mean": 0.16948043697409748,
@@ -43,6 +79,8 @@
     {
       "category": "PlatformMove",
       "translation": "but I show it well on WhatsApp because it gets blurred here, right.",
+      "timestamp": "01:24",
+      "excerpt": "but main WhatsApp pe acche se show karti hu kyonki ispe blur ho jati hai na.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.6810250496657951,
       "entropy_mean": 0.4016243725076386,
@@ -51,6 +89,8 @@
     {
       "category": "PlatformMove",
       "translation": "I am showing you on this too. I will show you on WhatsApp too.",
+      "timestamp": "02:07",
+      "excerpt": "मैं आपको इस पे भी दिखा दे रही हूं व्हाट्सएप पे भी दिखा दूंगी",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.971429685778725,
       "entropy_mean": 0.12488733207966174,
@@ -59,6 +99,8 @@
     {
       "category": "PlatformMove",
       "translation": "Now come on WhatsApp",
+      "timestamp": "02:53",
+      "excerpt": "अब तो आजा WhatsApp पे",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9676017126670994,
       "entropy_mean": 0.2611966067459434,
@@ -67,14 +109,18 @@
     {
       "category": "SuspiciousActivity",
       "translation": "I take 1000, you tell me how much you will give",
+      "timestamp": "02:58",
+      "excerpt": "मैं 1000 लेती हूं तुम बताओ कितना दोगे",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.3597275941742826,
       "entropy_mean": 0.165285229302026,
-      "matched": true
+      "matched": false
     },
     {
       "category": "SuspiciousActivity",
       "translation": "I take the open show for 500 and couple sex, live sex for 1000.",
+      "timestamp": "02:48",
+      "excerpt": "500 में ओपन शो का लेती हूं और कपल सेक्स, लाइव सेक्स का 1000।",
       "model_confidence": 1.0,
       "logprob_derived_confidence": 0.9820535767854438,
       "entropy_mean": 0.1334680732300446,

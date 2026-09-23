@@ -7,10 +7,40 @@
   "flag_fn": 2,
   "flag_fp": 1,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Are you interested in taking an open talk service?",
+      "timestamp": "00:45",
+      "excerpt": "എനിക്ക് ഓപ്പൺ ടോക്ക് സർവീസ് എടുക്കാൻ താല്പര്യം ഉണ്ടോ",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "It is a video call service, it is through Telegram.",
+      "timestamp": "00:57",
+      "excerpt": "വീഡിയോ കോൾ സർവീസ് ആണ് ടെലഗ്രാമിൽ കൂടി ആണ്",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Okay, I will give you my Telegram ID, send a hi.",
+      "timestamp": "1:15",
+      "excerpt": "ഓക്കെ ഞാൻ ടെലഗ്രാം ഐഡി അറിയാം ഒരു ഹായ് അയക്കും",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "I know the Telegram ID, I will tell you okay Kapil42",
+      "timestamp": "00:56",
+      "excerpt": "okkey naa Telegram ID ariyam, mariyayikum okkey Kapil42",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999999880790719,
       "entropy_mean": 0.18691360128312864,
@@ -19,6 +49,8 @@
     {
       "category": "PlatformMove",
       "translation": "Ah, the two-dot number is available.",
+      "timestamp": "01:52",
+      "excerpt": "Ah two dot number bayo.",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999999761581452,
       "entropy_mean": 3.793352214209733e-06,

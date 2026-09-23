@@ -7,10 +7,48 @@
   "flag_fn": 2,
   "flag_fp": 1,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "On WhatsApp",
+      "timestamp": "00:54",
+      "excerpt": "व्हाट्सएप पे",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Payment will be required",
+      "timestamp": "1:05",
+      "excerpt": "पेमेंट लगेगा",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Full body show",
+      "timestamp": "1:17",
+      "excerpt": "फुल बॉडी शो है",
+      "confidence": 0.8,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "200",
+      "timestamp": "1:33",
+      "excerpt": "200",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "On WhatsApp",
+      "timestamp": "00:28",
+      "excerpt": "व्हाट्सएप पे",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.8732854751323986,
       "entropy_mean": 0.3951785764347733,
@@ -19,6 +57,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Will there be a payment?",
+      "timestamp": "00:57",
+      "excerpt": "क्या पेमेंट लगेगा",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9999988873842969,
       "entropy_mean": 4.533187359356816e-05,
@@ -27,6 +67,8 @@
     {
       "category": "PlatformMove",
       "translation": "It is on WhatsApp",
+      "timestamp": "01:24",
+      "excerpt": "व्हाट्सएप पे है",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9235083396844151,
       "entropy_mean": 0.20370656618906652,

@@ -7,10 +7,48 @@
   "flag_fn": 1,
   "flag_fp": 3,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I do video calls on WhatsApp for charges, will you do it?",
+      "timestamp": "00:50",
+      "excerpt": "मैं व्हाट्सएप पे वीडियो कॉल्स वगैरह करती हूं चार्जेस लेके आप करोगे",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I do open video calls for charges, will you do it?",
+      "timestamp": "01:04",
+      "excerpt": "मैं ओपन वीडियो कॉल्स वगैरह करती हूं चार्जेस लेके आप करोगे",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Dude, so should I masturbate here by opening it?",
+      "timestamp": "01:12",
+      "excerpt": "यार तो मैं इतनी बार मुट्ठी मारूं इधर ओपन करके",
+      "confidence": 0.7,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "250",
+      "timestamp": "01:24",
+      "excerpt": "250",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "Can you? Actually, I do video calls on WhatsApp with charges, will you do it?",
+      "timestamp": "00:56",
+      "excerpt": "Sakte ho aap? Actually main WhatsApp pe video calls wagera karti hoon charges leke, aap karoge?",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9610488363825265,
       "entropy_mean": 0.26118944039131814,
@@ -19,6 +57,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Will you do open video calls with charges?",
+      "timestamp": "00:56",
+      "excerpt": "Kya main open video calls wagera karti hoon charges leke, aap karoge?",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.540800326703849,
       "entropy_mean": 0.3842504184475443,
@@ -27,6 +67,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "And you, I'll masturbate once here, open [video call].",
+      "timestamp": "00:56",
+      "excerpt": "Aur tum main itni ek baar mutthi maru idhar open karke.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.8439858644745597,
       "entropy_mean": 0.36175655048652644,
@@ -35,6 +77,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "So how many rupees do you charge?",
+      "timestamp": "00:56",
+      "excerpt": "To kitne rupaye leti ho?",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.8821615669494719,
       "entropy_mean": 0.45391682907938957,
@@ -43,6 +87,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Oh man, in half an hour, I can ejaculate 10 times.",
+      "timestamp": "01:24",
+      "excerpt": "Are yaar, aadhe ghante mein toh mera 10 baar nikal jayega.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9627553103969275,
       "entropy_mean": 0.11749898296591654,
@@ -51,6 +97,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "The charges are the same, damn take, I'm gonna time it.",
+      "timestamp": "01:24",
+      "excerpt": "Charges wohi hai, damn take, I'm gonna time kar lo.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.5727804628029785,
       "entropy_mean": 0.23478086499800646,

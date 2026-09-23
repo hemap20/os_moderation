@@ -3,22 +3,46 @@
   "language": "hindi",
   "gt_flag_count": 2,
   "model_flag_count": 3,
-  "flag_tp": 0,
-  "flag_fn": 2,
-  "flag_fp": 3,
-  "file_bucket": "FN",
+  "flag_tp": 1,
+  "flag_fn": 1,
+  "flag_fp": 2,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "And some people also give a little bit on WhatsApp too",
+      "timestamp": "00:22",
+      "excerpt": "और कोई एक आधा डाल डूल भी देते हैं व्हाट्सएप पे भी",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Oh, so you talk on WhatsApp too?",
+      "timestamp": "00:34",
+      "excerpt": "अच्छा तो व्हाट्सएप पे भी कर लेती हो बात",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "Let's also see dal-dhul on WhatsApp",
+      "timestamp": "00:25",
+      "excerpt": "दाल-धूल भी देखते व्हाट्सएप पे",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9985959184386459,
       "entropy_mean": 0.4114929653356809,
-      "matched": false
+      "matched": true
     },
     {
       "category": "SuspiciousActivity",
       "translation": "Hello, if you want a good number today, take the call. Thank you for talking. They also happen to earn a little.",
+      "timestamp": "00:28",
+      "excerpt": "हेलो आज अगर वो अच्छा नंबर चाहिए तो लेती है बात। थैंक यू बात करते वि कर लेती। उन्ना तो भी तो हो जाते हैं थोड़ी अर्निंग भी।",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.998727701722784,
       "entropy_mean": 0.35666660977376985,
@@ -27,6 +51,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "And they cheat by talking. You have to admit you want to talk to one.",
+      "timestamp": "00:41",
+      "excerpt": "और बात कर कर के ठग जाते हैं आपने तो माना एक से बात करनी है मैंने",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9987276421939795,
       "entropy_mean": 0.08076113085522055,

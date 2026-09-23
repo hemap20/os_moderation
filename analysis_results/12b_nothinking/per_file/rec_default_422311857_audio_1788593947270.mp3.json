@@ -3,14 +3,52 @@
   "language": "kannada",
   "gt_flag_count": 4,
   "model_flag_count": 2,
-  "flag_tp": 1,
-  "flag_fn": 3,
-  "flag_fp": 1,
+  "flag_tp": 2,
+  "flag_fn": 2,
+  "flag_fp": 0,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Will you do a full body open show?",
+      "timestamp": "00:27",
+      "excerpt": "ಫುಲ್ ಬಾಡಿ ಓಪನ್ ಶೋ ಮಾಡ್ತೀರಾ ಮಾಡ್ತೀರಾ?",
+      "confidence": 0.4,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "300 rupees, I will show you everything, if okay I will give you my WhatsApp number, pay me via video call and I will show you everything.",
+      "timestamp": "00:43",
+      "excerpt": "300 ರೂಪಾಯಿ, ನಿಮಗೆ ಔಟ್ ಆಗೋದು ತೋರಿಸ್ತೀನಿ 300 ರೂಪಾಯಿ, ಓಕೆ ಅಂದ್ರೆ ವಾಟ್ಸಪ್ ನಂಬರ್ ಕೊಡ್ತೀನಿ ವಿಡಿಯೋ ಕಾಲ್ ಮಾಡ್ಕೊಂಡೆ ಪೇ ಮಾಡಿ ನಿಮಗೆ ಔಟ್ ಆಗೋದು ತೋರಿಸ್ತೀನಿ",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "On WhatsApp",
+      "timestamp": "00:39",
+      "excerpt": "ವಾಟ್ಸಪ್ ಅಲ್ಲಿ",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "I will tell you the number, take it and call whenever you want.",
+      "timestamp": "01:03",
+      "excerpt": "ನಂಬರ್ ಹೇಳ್ತೀನಿ ತಗೊಳ್ಳಿ ನಿಮಗೆ ಯಾವಾಗ ಬೇಕೋ ಅವಾಗ ಮಾಡಿ",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "They are asking for money to make a video call",
+      "timestamp": "01:02",
+      "excerpt": "वीडियो कॉल मारने के लिए पैसे मांग रहे हैं",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.599625016074489,
       "entropy_mean": null,
@@ -19,10 +57,12 @@
     {
       "category": "PlatformMove",
       "translation": "918746",
+      "timestamp": "01:07",
+      "excerpt": "918746",
       "model_confidence": 1.0,
       "logprob_derived_confidence": 0.9961747423914123,
       "entropy_mean": null,
-      "matched": false
+      "matched": true
     }
   ]
 }

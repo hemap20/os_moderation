@@ -3,14 +3,44 @@
   "language": "hindi",
   "gt_flag_count": 3,
   "model_flag_count": 5,
-  "flag_tp": 2,
-  "flag_fn": 1,
-  "flag_fp": 3,
+  "flag_tp": 3,
+  "flag_fn": 0,
+  "flag_fp": 2,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "What is below, it's a pussy, what else?",
+      "timestamp": "01:38",
+      "excerpt": "नीचे क्या चूत है और क्या",
+      "confidence": 0.8,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Let's do it on WhatsApp",
+      "timestamp": "02:20",
+      "excerpt": "व्हाट्सएप पे करते हैं",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Show it on WhatsApp",
+      "timestamp": "02:27",
+      "excerpt": "व्हाट्सएप पे दिखाओ",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "Explicit-Flirting",
       "translation": "You have to show something on the video call.",
+      "timestamp": "01:02",
+      "excerpt": "Kuch toh dikhana hoga video call pe.",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9809458269591903,
       "entropy_mean": 0.19580281042990463,
@@ -19,6 +49,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Will you show?",
+      "timestamp": "01:06",
+      "excerpt": "Dikhaoge?",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9777399045359113,
       "entropy_mean": 0.009438082920193361,
@@ -27,14 +59,18 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Should I show the one below?",
+      "timestamp": "01:24",
+      "excerpt": "Main niche wala dikha doon?",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.960128310041032,
       "entropy_mean": 0.241419189937525,
-      "matched": false
+      "matched": true
     },
     {
       "category": "PlatformMove",
       "translation": "Let's do it on WhatsApp.",
+      "timestamp": "02:20",
+      "excerpt": "WhatsApp pe karte hain.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9318224593378565,
       "entropy_mean": 0.31112943865203607,
@@ -43,6 +79,8 @@
     {
       "category": "PlatformMove",
       "translation": "Show me on WhatsApp.",
+      "timestamp": "02:22",
+      "excerpt": "WhatsApp pe dikha.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.4534793440276698,
       "entropy_mean": 0.17383430590853094,

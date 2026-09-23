@@ -7,10 +7,32 @@
   "flag_fn": 1,
   "flag_fp": 0,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "If you want any personal chat, I will do it if you pay, or video calls if you want that.",
+      "timestamp": "00:29",
+      "excerpt": "మీకు ఏమైనా పర్సనల్ చాట్ కావాలి అంటే పేమెంట్ చేస్తే చేస్తానండి వీడియో కాల్స్ అలా ఏమైనా కావాలి అంటే",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Demo is 100, video call is 300.",
+      "timestamp": "00:42",
+      "excerpt": "డెమో అయితే 100 అండి వీడియో కాల్ అయితే 300",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "Give a demo for 100 and take 300 for video call",
+      "timestamp": "00:33",
+      "excerpt": "demo dete 100 ande video call lete 300",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9886014434015966,
       "entropy_mean": null,

@@ -7,10 +7,32 @@
   "flag_fn": 1,
   "flag_fp": 1,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "They talk romantically, they talk sexily, they talk friendly",
+      "timestamp": "00:47",
+      "excerpt": "ரோமேண்டிக்கா பேசுவாங்க செக்ஸியா பேசுவாங்க பிரண்ட்லியாவும் பேசுவாங்க",
+      "confidence": 0.3,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "If you want to talk separately on WhatsApp, talk by giving WhatsApp number",
+      "timestamp": "01:03",
+      "excerpt": "தனியா வாட்ஸ்அப் இதுல பேசினா பேசுங்க வாட்ஸ்அப் நம்பர் எல்லாம் கொடுத்து",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "Pay for ladies, pay six or pay friendly ones",
+      "timestamp": "01:03",
+      "excerpt": "रोमंडियां पेसवांगे सिक्स या पेसवांगे फ्रेंडलीयाव पेसवांगे",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9998949358833056,
       "entropy_mean": 0.18871781068600105,
@@ -19,6 +41,8 @@
     {
       "category": "PlatformMove",
       "translation": "We can talk on WhatsApp. Give the WhatsApp number.",
+      "timestamp": "01:03",
+      "excerpt": "Tari WhatsApp endre pechna besunge. WhatsApp number la guruthe.",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.999999642372309,
       "entropy_mean": 0.1381802553244619,

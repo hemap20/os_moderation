@@ -3,14 +3,44 @@
   "language": "hindi",
   "gt_flag_count": 3,
   "model_flag_count": 9,
-  "flag_tp": 3,
-  "flag_fn": 0,
-  "flag_fp": 6,
+  "flag_tp": 2,
+  "flag_fn": 1,
+  "flag_fp": 7,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "I am asking to have sex",
+      "timestamp": "01:06",
+      "excerpt": "सेक्स करने बोल रहा हूँ",
+      "confidence": 0.8,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Show everything and then I will keep sending you money every day, okay?",
+      "timestamp": "02:14",
+      "excerpt": "पूरी दूध और फिर मैं आपको पैसे भेजते जाऊंगा रोज रोज रोज रोज ठीक है",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "First, first show me by depositing 300 rupees.",
+      "timestamp": "02:47",
+      "excerpt": "पहले पहले मुझे ₹300 डाल के दिखाओ",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "Explicit-Flirting",
       "translation": "I am asking to have sex.",
+      "timestamp": "[TIMESTAMP]",
+      "excerpt": "सेक्स करने बोल रहा हूँ।",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9639909685065711,
       "entropy_mean": 0.2983807003644567,
@@ -19,6 +49,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Will you have sex?",
+      "timestamp": "[TIMESTAMP]",
+      "excerpt": "सेक्स करोगी?",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9648520801363715,
       "entropy_mean": 0.5081563445273787,
@@ -27,6 +59,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Will you have sex?",
+      "timestamp": "[TIMESTAMP]",
+      "excerpt": "तू सेक्स करोगी क्या?",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.8611600750737086,
       "entropy_mean": 0.6150299151583264,
@@ -35,6 +69,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Hey, do it during the day.",
+      "timestamp": "[TIMESTAMP]",
+      "excerpt": "अरे दिन पे करो।",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9648710581353022,
       "entropy_mean": 0.9916010022163391,
@@ -43,6 +79,8 @@
     {
       "category": "PlatformMove",
       "translation": "Can I get your number?",
+      "timestamp": "01:52",
+      "excerpt": "Can I get your number?",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9641250615566375,
       "entropy_mean": 0.30847047828137875,
@@ -51,6 +89,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "First, show me by putting 300 rupees. Then what do I say, I will come daily.",
+      "timestamp": "02:48",
+      "excerpt": "Pehle mujhe 300 rupaye daal ke dikhao. Phir main kya kehti hoon, roz aaungi.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9735226645422541,
       "entropy_mean": 0.103453825195958,
@@ -59,14 +99,18 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Show me by doing a video call, then I will put 200 rupees for you. I will daily...",
+      "timestamp": "02:56",
+      "excerpt": "Mujhe soch video call karke dikhana, toh main aapko 200 rupaye daal dungi. Main roz...",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.4458917687298205,
       "entropy_mean": 0.47363190929769416,
-      "matched": true
+      "matched": false
     },
     {
       "category": "SuspiciousActivity",
       "translation": "Yes, so first see, first show by putting [money].",
+      "timestamp": "03:03",
+      "excerpt": "Haan, toh pehle dekho, pehle daal ke dikhao.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9741700647227799,
       "entropy_mean": 0.202515325121567,
@@ -75,6 +119,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Yes, I send the money to the other person only after seeing them.",
+      "timestamp": "03:44",
+      "excerpt": "हां, मैं दूसरे को भेज देना पैसे उसको देखकर ही रखता हूं।",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9752353639789887,
       "entropy_mean": 0.13893474190102684,

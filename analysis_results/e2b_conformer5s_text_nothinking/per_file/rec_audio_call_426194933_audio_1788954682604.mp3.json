@@ -7,10 +7,32 @@
   "flag_fn": 2,
   "flag_fp": 2,
   "file_bucket": "FN",
+  "qualifying_pm_ef_bucket": "FN",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I will only talk to you on WhatsApp, that's it",
+      "timestamp": "01:00",
+      "excerpt": "मुझे सिर्फ आपसे बात करूंगा व्हाट्सएप पर बस",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "I said, can I give you my number?",
+      "timestamp": "02:09",
+      "excerpt": "मैंने कहा क्या मैं अपना नंबर दे सकता हूं?",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "I earn two lakh, so I know how to shop. Two lakh earn",
+      "timestamp": "01:30",
+      "excerpt": "मैं दो लाख कमाती हूँ तो मुझे मेरा शॉपिंग करना आता है अ् दो लाख कमा",
       "model_confidence": null,
       "logprob_derived_confidence": 0.9327772519188049,
       "entropy_mean": 0.008172150722958802,
@@ -19,6 +41,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Will they take me with a mug for shopping? Will that be okay for me?",
+      "timestamp": "02:40",
+      "excerpt": "मुक लेके चले जाएंगे शॉपिंग करने के लिए चलेगा ना मुझे क्या",
       "model_confidence": null,
       "logprob_derived_confidence": 0.9942565602024548,
       "entropy_mean": 2.379271898453291e-06,

@@ -7,10 +7,48 @@
   "flag_fn": 2,
   "flag_fp": 1,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will only call if you pay money, otherwise I won't.",
+      "timestamp": "01:36",
+      "excerpt": "మనీ వేస్తేనే కాల్ చేస్తాను లేకపోతే చేయను",
+      "confidence": 0.95,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I take 500 for half an hour.",
+      "timestamp": "01:41",
+      "excerpt": "హాఫ్ ఆన్ అవర్ 500 తీసుకుంటానండి",
+      "confidence": 0.95,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "I will tell you the number, I will tell you the WhatsApp number.",
+      "timestamp": "02:04",
+      "excerpt": "నెంబర్ చెప్తానండి వాట్సప్ నెంబర్ చెప్తాను",
+      "confidence": 0.95,
+      "matched": true
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Okay, what is your bra/boob size?",
+      "timestamp": "02:07",
+      "excerpt": "ఓకే మీ సైజ్ ఏంటి బ్రా బూబ్స్",
+      "confidence": 0.8,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "If I get money, I will call, otherwise I won't",
+      "timestamp": "01:39",
+      "excerpt": "మనీ ఎస్తేనే కాల్ చేస్తానో లేకపోతే చేయను",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999999850988398,
       "entropy_mean": 0.15645137111066762,
@@ -19,6 +57,8 @@
     {
       "category": "PlatformMove",
       "translation": "I am giving the WhatsApp number",
+      "timestamp": "0.0",
+      "excerpt": "whatsapp number chettanu",
       "model_confidence": null,
       "logprob_derived_confidence": 0.9999999403953606,
       "entropy_mean": 0.3863749901517622,
@@ -27,6 +67,8 @@
     {
       "category": "PlatformMove",
       "translation": "I am giving the WhatsApp number",
+      "timestamp": "0.0",
+      "excerpt": "whatsapp number chettanu",
       "model_confidence": null,
       "logprob_derived_confidence": 0.9882154274291524,
       "entropy_mean": 0.3863749901517622,

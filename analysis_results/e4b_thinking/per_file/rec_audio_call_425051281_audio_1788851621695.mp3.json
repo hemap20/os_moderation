@@ -3,14 +3,52 @@
   "language": "hindi",
   "gt_flag_count": 4,
   "model_flag_count": 14,
-  "flag_tp": 2,
-  "flag_fn": 2,
-  "flag_fp": 12,
+  "flag_tp": 4,
+  "flag_fn": 0,
+  "flag_fp": 10,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I provide video call service on contact number, meaning on WhatsApp",
+      "timestamp": "02:37",
+      "excerpt": "मी व्हिडिओ कॉल सर्विस देते कॉन्टॅक्ट नंबरवर म्हणजे व्हॉट्सॲपला",
+      "confidence": 1.0,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Then I will give you 300 charges",
+      "timestamp": "02:45",
+      "excerpt": "तर मी तुला देते 300 चार्जेस",
+      "confidence": 1.0,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Tell me your number, I will send you a hi",
+      "timestamp": "02:53",
+      "excerpt": "सांग नंबर तुझा मी तुला हाय टाकते",
+      "confidence": 1.0,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I give video call open shows, that has a rate",
+      "timestamp": "05:12",
+      "excerpt": "व्हिडिओ कॉल ओपन शो देते त्याचा रेट आहे",
+      "confidence": 1.0,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "On my contact number, my WhatsApp.",
+      "timestamp": "02:55",
+      "excerpt": "अ कॉन्टॅक्ट नंबरवर माझे हे WhatsApp ला.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9645910570555344,
       "entropy_mean": 0.19743426013828866,
@@ -19,14 +57,18 @@
     {
       "category": "PlatformMove",
       "translation": "Wait a minute, I want your number, your Instagram number, you know, the number you use.",
+      "timestamp": "02:48",
+      "excerpt": "Ek minute, tumhara number gheute tuzha Instagram number tu jaan number tu jan ni tula ha tagte.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9080165202406068,
       "entropy_mean": 0.25490603267493,
-      "matched": false
+      "matched": true
     },
     {
       "category": "PlatformMove",
       "translation": "84 84 86 51 49 33 73",
+      "timestamp": "02:48",
+      "excerpt": "84 84 86 51 49 33 73",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.6426544772421126,
       "entropy_mean": 0.8173735363408923,
@@ -35,6 +77,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "What is the rate?",
+      "timestamp": "04:42",
+      "excerpt": "रेट काय?",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9782859787545146,
       "entropy_mean": 0.10345374047756195,
@@ -43,6 +87,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "You won't talk for free on an audio call, right?",
+      "timestamp": "04:48",
+      "excerpt": "ऑडियो कॉल पर फ्री मध्ये नाही बोलणार है ना?",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.6441570811824364,
       "entropy_mean": 0.6538904310618818,
@@ -51,6 +97,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "What is the rate, Dada?",
+      "timestamp": "04:54",
+      "excerpt": "रेट काय दादा?",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.979291715242327,
       "entropy_mean": 0.5737988315522671,
@@ -59,6 +107,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Hey, what, I want to give a little video call open show, what is its rate?",
+      "timestamp": "05:08",
+      "excerpt": "अरे काय मी बोलायचा थोड़ीने व्हिडिओ कॉल ओपन शो देते त्याचा रेट आहे.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9477062917996049,
       "entropy_mean": 0.11071702726684929,
@@ -67,14 +117,18 @@
     {
       "category": "SuspiciousActivity",
       "translation": "You put money for recharge here, put that much money here for me.",
+      "timestamp": "05:08",
+      "excerpt": "तू जे तिडला इथे रिचार्जला पैसे टाकतोस तू एवढे तिकडे मला टाकून दे.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.944598822418384,
       "entropy_mean": 0.6490491305404638,
-      "matched": false
+      "matched": true
     },
     {
       "category": "PlatformMove",
       "translation": "Should I give the number?",
+      "timestamp": "05:08",
+      "excerpt": "नंबर देऊच आहे का?",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.936008753045127,
       "entropy_mean": 0.019942653481848538,
@@ -83,6 +137,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Payment will happen.",
+      "timestamp": "05:08",
+      "excerpt": "पेमेंट होईल.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9193234619826278,
       "entropy_mean": 0.134513739067188,
@@ -91,6 +147,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "How much is it in 30 minutes?",
+      "timestamp": "06:39",
+      "excerpt": "तीनシャレ वेळ किती",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.97476218137852,
       "entropy_mean": 0.3808233141899109,
@@ -99,6 +157,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Will you do open calls?",
+      "timestamp": "08:23",
+      "excerpt": "Kya aap open call karogi?",
       "model_confidence": 0.45,
       "logprob_derived_confidence": 0.9824248263441535,
       "entropy_mean": 0.297974920701433,
@@ -107,6 +167,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "If you send nudes, I will give 500.",
+      "timestamp": "10:45",
+      "excerpt": "Agar aap nudes bhejogi toh main 500 dunga.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.7373755377458598,
       "entropy_mean": 1.2743607418877738,
@@ -115,6 +177,8 @@
     {
       "category": "PlatformMove",
       "translation": "Let's talk on WhatsApp.",
+      "timestamp": "12:10",
+      "excerpt": "Chalo WhatsApp pe baat karte hain.",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9143249210344024,
       "entropy_mean": 0.6901399130907117,

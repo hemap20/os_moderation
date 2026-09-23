@@ -3,14 +3,44 @@
   "language": "telugu",
   "gt_flag_count": 3,
   "model_flag_count": 4,
-  "flag_tp": 0,
-  "flag_fn": 3,
-  "flag_fp": 4,
-  "file_bucket": "FN",
+  "flag_tp": 1,
+  "flag_fn": 2,
+  "flag_fp": 3,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Will you come to WhatsApp?",
+      "timestamp": "00:36",
+      "excerpt": "వాట్సాప్ వస్తారా?",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Do PhonePe (payment).",
+      "timestamp": "02:10",
+      "excerpt": "ఫోన్ పే చేయండి",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Show me first, then I will do it.",
+      "timestamp": "02:36",
+      "excerpt": "ముందు చూపి అప్పుడు చేస్తా",
+      "confidence": 0.4,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "WhatsApp. Tell the number, tell the number. You said it. Tell your number. You tell it.",
+      "timestamp": "00:28",
+      "excerpt": "వాట్సాప్. చెప్పండి నంబర్ చెప్పండి. మీరే చెప్పాయి. మీ నంబర్ చెప్పండి. మీరే చెప్పండి.",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999999403953606,
       "entropy_mean": 0.09893999588482458,
@@ -19,6 +49,8 @@
     {
       "category": "PlatformMove",
       "translation": "Hi in Pan number 863 964 0057 7057",
+      "timestamp": "00:56",
+      "excerpt": "హాయ్ ఇన్ పణ్ నెంబర్ 863 964 0057 7057",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999998807907318,
       "entropy_mean": 0.14384687379729968,
@@ -27,6 +59,8 @@
     {
       "category": "PlatformMove",
       "translation": "number de de. Hello. English phone number sunya. Yes. I will send it to you. My number is 8639. Yes. 660057. 64",
+      "timestamp": "01:24",
+      "excerpt": "number de de. Hello. English phone number sunya. Haan. Uss tar pe chhanne pashunchi. Mu ye raasko jabu. 8639. Haan. 660057. 64",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999999701976798,
       "entropy_mean": 0.16857196231243185,
@@ -35,10 +69,12 @@
     {
       "category": "PlatformMove",
       "translation": "WhatsApp is better.",
+      "timestamp": "01:52",
+      "excerpt": "WhatsApp bettera.",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999998211861101,
       "entropy_mean": 0.36775253487576265,
-      "matched": false
+      "matched": true
     }
   ]
 }

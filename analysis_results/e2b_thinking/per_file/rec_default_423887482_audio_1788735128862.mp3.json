@@ -7,10 +7,40 @@
   "flag_fn": 2,
   "flag_fp": 1,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "I am saying your boobs are nice",
+      "timestamp": "01:39",
+      "excerpt": "मैं बोल रहा हूं आपके बूब्स अच्छे हैं",
+      "confidence": 0.4,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "We also do that on WhatsApp etc.",
+      "timestamp": "02:01",
+      "excerpt": "हम व्हाट्सएप वगैरह पे भी वो करते हैं",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will give it sir, you will have to send payment on WhatsApp",
+      "timestamp": "02:17",
+      "excerpt": "मैं दे दूंगी सर व्हाट्सएप पे पेमेंट डालना पड़ेगा आपको",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "We do it on WhatsApp or at night.",
+      "timestamp": "01:52",
+      "excerpt": "हम WhatsApp पे या रात में ही लोग करते हैं।",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999999403953606,
       "entropy_mean": 0.18307088317608305,
@@ -19,6 +49,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Friend, I can give you a rate/price, it feels good, you can comment.",
+      "timestamp": "02:27",
+      "excerpt": "yaar se karke do aapko daam de sakta hai achha lagta hai comment kar sakte hain",
       "model_confidence": 0.65,
       "logprob_derived_confidence": 0.9999602963750004,
       "entropy_mean": 0.14980463524771861,

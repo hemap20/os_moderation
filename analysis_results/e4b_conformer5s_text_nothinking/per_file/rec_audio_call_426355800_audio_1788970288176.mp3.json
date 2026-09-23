@@ -3,14 +3,44 @@
   "language": "telugu",
   "gt_flag_count": 3,
   "model_flag_count": 3,
-  "flag_tp": 0,
-  "flag_fn": 3,
-  "flag_fp": 3,
-  "file_bucket": "FN",
+  "flag_tp": 1,
+  "flag_fn": 2,
+  "flag_fp": 2,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "What do you charge for the night?",
+      "timestamp": "00:27",
+      "excerpt": "మీరు అంటే లైక్ వాట్ డు యు ఛార్జ్ ఫర్ నైట్?",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "500 for half an hour",
+      "timestamp": "00:44",
+      "excerpt": "అరగంటకి 500",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Okay give me your number",
+      "timestamp": "00:49",
+      "excerpt": "ఓకే గివ్ మీ యువర్ నంబర్",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "You only turn on the video call after paying money, right? You won't turn it on without paying, right?",
+      "timestamp": "00:55",
+      "excerpt": "నీకు డబ్బులు కొట్టాకనే వీడియో కాల్ ఆన్ చేస్తావు కదా డబ్బులు కొట్టకుండా అయితే ఆన్ చేయవు కదా",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.8344100750564,
       "entropy_mean": 0.0012009818651696517,
@@ -19,6 +49,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "You have to pay money, right? Do you understand?",
+      "timestamp": "01:10",
+      "excerpt": "డబ్బులు కొట్టాల్సిందే కదా నీకు అర్థంమవుతుందా",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9374111770513033,
       "entropy_mean": 0.005699204859242357,
@@ -27,10 +59,12 @@
     {
       "category": "PlatformMove",
       "translation": "Tomorrow, I will message your number in Telugu.",
+      "timestamp": "01:20",
+      "excerpt": "రే తెలుగులో నెంబర్షప్పు మెసేజ్ చేస్తా",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.865893688704308,
       "entropy_mean": 0.00814008503079796,
-      "matched": false
+      "matched": true
     }
   ]
 }

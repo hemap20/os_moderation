@@ -7,10 +7,40 @@
   "flag_fn": 2,
   "flag_fp": 1,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Do you like sexy video calls?",
+      "timestamp": "00:38",
+      "excerpt": "आपको सेक्सी वीडियो कॉल्स पसंद है?",
+      "confidence": 0.6,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I do it for money, will you?",
+      "timestamp": "00:46",
+      "excerpt": "पैसे लेकर करती हूं, करोगे?",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "350",
+      "timestamp": "00:54",
+      "excerpt": "350",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "I will give 150, for 200 you will come nicely from the worker.",
+      "timestamp": "0:00-0:12",
+      "excerpt": "150 denge 200 pe mangate chud aayenge baniya se acche se",
       "model_confidence": null,
       "logprob_derived_confidence": 0.9999999552965245,
       "entropy_mean": 0.13506199378369013,
@@ -19,6 +49,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "300 for what? I will give you 350. If you take 350, you will make a video and take it.",
+      "timestamp": "0:00-0:12",
+      "excerpt": "300 pe chah? 350 aapko denge tum. 350 aapko deke tum video bana deke lenge.",
       "model_confidence": null,
       "logprob_derived_confidence": 0.9884796880338589,
       "entropy_mean": 0.3603899774384445,

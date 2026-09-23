@@ -7,10 +7,32 @@
   "flag_fn": 1,
   "flag_fp": 0,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Private WhatsApp works here.",
+      "timestamp": "01:35",
+      "excerpt": "प्राइवेट व्हाट्सएप चलता है यहाँ।",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "There are 500 charges. 500 for a full open video call.",
+      "timestamp": "01:51",
+      "excerpt": "500 चार्जेस है। 500 में फुल ओपनली वीडियो कॉल।",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "Five hundred charges for five hundred in full open limit",
+      "timestamp": "01:50",
+      "excerpt": "फाइव हंड्रेड चार्जेस से फाइव हंड्रेड में फुल ओपन लिमिडक",
       "model_confidence": 0.5,
       "logprob_derived_confidence": 0.9146596583659966,
       "entropy_mean": 1.3748894298405547e-05,

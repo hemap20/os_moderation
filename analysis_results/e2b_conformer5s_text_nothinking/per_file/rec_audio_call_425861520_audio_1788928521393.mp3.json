@@ -7,10 +7,32 @@
   "flag_fn": 1,
   "flag_fp": 2,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "If you want any personal chat, I will do it if you pay, if you want any video calls.",
+      "timestamp": "00:48",
+      "excerpt": "మీకు ఏమైనా పర్సనల్ చాట్ కావాలి అంటే పేమెంట్ చేస్తే చేస్తానండి వీడియో కాల్స్ ఏమైనా కావాలి అంటే",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Will you talk a little sexually?",
+      "timestamp": "00:56",
+      "excerpt": "కొంచెం సెక్సువల్ గా మాట్లాడుతారా",
+      "confidence": 0.8,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "I am a housewife, do you want a personal site?",
+      "timestamp": "00:45",
+      "excerpt": "నేను హౌస్ వైఫ్ అండి మీకు ఏమనా పర్సనల్ సైట్ కావాలి",
       "model_confidence": 0.65,
       "logprob_derived_confidence": 0.8263843362305388,
       "entropy_mean": 3.403080955132169e-06,
@@ -19,6 +41,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "If I pay money, I will do it, if you need anything for a video call",
+      "timestamp": "00:50",
+      "excerpt": "ఫను పేమెంట్ చేస్తే చేస్తానండి వీడియో కాల్ చాల ఏమైనా కావాలి అంటే",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9999973774196841,
       "entropy_mean": 1.0190564262381617e-05,
@@ -27,6 +51,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Will you talk about coins?",
+      "timestamp": "00:55",
+      "excerpt": "కొెం సే సోల్తా మాట్లాడుతారా",
       "model_confidence": 0.55,
       "logprob_derived_confidence": 0.9999973774196841,
       "entropy_mean": 4.664083483972724e-06,

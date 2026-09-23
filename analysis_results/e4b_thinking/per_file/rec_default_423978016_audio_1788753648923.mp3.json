@@ -7,10 +7,32 @@
   "flag_fn": 0,
   "flag_fp": 0,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Private WhatsApp works here.",
+      "timestamp": "01:35",
+      "excerpt": "प्राइवेट व्हाट्सएप चलता है यहाँ।",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "There are 500 charges. 500 for a full open video call.",
+      "timestamp": "01:51",
+      "excerpt": "500 चार्जेस है। 500 में फुल ओपनली वीडियो कॉल।",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "Does private WhatsApp work?",
+      "timestamp": "01:24",
+      "excerpt": "private WhatsApp chalta hai?",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9561326477541268,
       "entropy_mean": 0.2935856840728472,
@@ -19,6 +41,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Charges are 500 for a full open video call.",
+      "timestamp": "01:52",
+      "excerpt": "charges se 500 mein full open le video call.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9722355355259662,
       "entropy_mean": 0.17181677878685755,

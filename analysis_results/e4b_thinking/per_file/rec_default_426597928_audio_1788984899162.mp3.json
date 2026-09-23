@@ -7,10 +7,40 @@
   "flag_fn": 1,
   "flag_fp": 14,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "How much amount?",
+      "timestamp": "01:50",
+      "excerpt": "எவ்வளவு அமௌன்ட்?",
+      "confidence": 0.8,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Will you give your WhatsApp number?",
+      "timestamp": "03:50",
+      "excerpt": "இது வாட்ஸ்அப் நம்பர் குடுப்பீங்களா?",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "This is double eight.",
+      "timestamp": "06:42",
+      "excerpt": "இது டபுள் எய்ட்.",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "How much will you give?",
+      "timestamp": "01:52",
+      "excerpt": "Evlo kudupinga?",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9736998971896345,
       "entropy_mean": 0.40720752502481145,
@@ -19,6 +49,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "How much for a full night?",
+      "timestamp": "01:52",
+      "excerpt": "Full night na evlo?",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9742913766781223,
       "entropy_mean": 0.3421106613386655,
@@ -27,6 +59,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Ah, because the body is swaying/dancing, boss.",
+      "timestamp": "03:13",
+      "excerpt": "Ah, adikke body taangla boss.",
       "model_confidence": 0.3,
       "logprob_derived_confidence": 0.9672654460917652,
       "entropy_mean": 0.21577009115480905,
@@ -35,6 +69,8 @@
     {
       "category": "PlatformMove",
       "translation": "If you give your WhatsApp number? Is it okay? No. If you give your WhatsApp number? I will come. WhatsApp.",
+      "timestamp": "03:44",
+      "excerpt": "WhatsApp number kuduthina? Selava? Perilla. WhatsApp number kuduthina? Na vandu. WhatsApp.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.943557744244711,
       "entropy_mean": 0.2617821195043914,
@@ -43,6 +79,8 @@
     {
       "category": "PlatformMove",
       "translation": "Ah, if you pay, okay, I am ready to give my WhatsApp number. Okay.",
+      "timestamp": "03:44",
+      "excerpt": "Ah, neenga pay panna okay-na, na WhatsApp number kuduka ready. Okay.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.919383159607147,
       "entropy_mean": 0.3615746506982974,
@@ -51,6 +89,8 @@
     {
       "category": "PlatformMove",
       "translation": "Give me a number you trust. Let's do WhatsApp.",
+      "timestamp": "05:15",
+      "excerpt": "Che number ungalukku nambikkiradha number kudunga. WhatsApp pandrang.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9531062226240643,
       "entropy_mean": 0.12451270520562767,
@@ -59,6 +99,8 @@
     {
       "category": "PlatformMove",
       "translation": "So okay, give us that, give the WhatsApp number.",
+      "timestamp": "0:00-0:05",
+      "excerpt": "So okay, avadhu nam kudunga, WhatsApp number kudunga.",
       "model_confidence": 1.0,
       "logprob_derived_confidence": 0.9608799877209593,
       "entropy_mean": 0.1359345238818475,
@@ -67,6 +109,8 @@
     {
       "category": "PlatformMove",
       "translation": "I will give the WhatsApp number.",
+      "timestamp": "0:00-0:05",
+      "excerpt": "WhatsApp number kudta.",
       "model_confidence": 1.0,
       "logprob_derived_confidence": 0.5826868122463192,
       "entropy_mean": 0.10452803096473261,
@@ -75,6 +119,8 @@
     {
       "category": "PlatformMove",
       "translation": "Tell me the number.",
+      "timestamp": "05:42",
+      "excerpt": "நம்பர் சொல்லுங்க.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9666500723652514,
       "entropy_mean": 0.21747368294745684,
@@ -83,6 +129,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Will you come after paying?",
+      "timestamp": "05:44",
+      "excerpt": "பே பண்ணிட்டு வருவீங்களா?",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.8342610941613926,
       "entropy_mean": 0.6132311253340959,
@@ -91,6 +139,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "How much amount?",
+      "timestamp": "05:46",
+      "excerpt": "எவ்வளவு அமௌண்ட்?",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.6575379851151487,
       "entropy_mean": 0.12830467604298973,
@@ -99,6 +149,8 @@
     {
       "category": "PlatformMove",
       "translation": "Tell me this, tell me the number.",
+      "timestamp": "06:29",
+      "excerpt": "இது சொல்லுங்க, நம்பர் சொல்லுங்க.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9550794398324143,
       "entropy_mean": 0.23600254822395073,
@@ -107,6 +159,8 @@
     {
       "category": "PlatformMove",
       "translation": "Okay, tell your WhatsApp number then I'll reactivate.",
+      "timestamp": "06:32",
+      "excerpt": "Okay, tell your WhatsApp number then I'll reactivate.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9599946182197654,
       "entropy_mean": 0.13877620862194817,
@@ -115,6 +169,8 @@
     {
       "category": "PlatformMove",
       "translation": "Tell your WhatsApp number, I will reactivate.",
+      "timestamp": "06:37",
+      "excerpt": "Ninga unga WhatsApp number sollunga, naan react panren.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9606742078984365,
       "entropy_mean": 0.3892114858758922,
@@ -123,6 +179,8 @@
     {
       "category": "PlatformMove",
       "translation": "9500 9500 92 92.",
+      "timestamp": "06:47",
+      "excerpt": "9500 9500 92 92.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.5983244179447418,
       "entropy_mean": 1.242502092930954,
@@ -131,6 +189,8 @@
     {
       "category": "PlatformMove",
       "translation": "Tell me your number.",
+      "timestamp": "07:04",
+      "excerpt": "Idhu nam number solunga.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9594544796181215,
       "entropy_mean": 0.2274881113320589,

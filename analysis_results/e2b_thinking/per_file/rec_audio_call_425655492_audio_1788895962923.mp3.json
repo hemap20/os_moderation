@@ -7,10 +7,64 @@
   "flag_fn": 4,
   "flag_fp": 0,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "What is your bra size?",
+      "timestamp": "01:28",
+      "excerpt": "कितना साइज है तुम्हारा बूब्स का",
+      "confidence": 0.8,
+      "matched": false
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "By putting a finger",
+      "timestamp": "01:47",
+      "excerpt": "उंगली डाल के",
+      "confidence": 0.7,
+      "matched": false
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "I want to f***, come on video call",
+      "timestamp": "01:51",
+      "excerpt": "यार एक बार चूतने का मन करे वीडियो कॉल पे आना",
+      "confidence": 0.8,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Put money, I will come on video call",
+      "timestamp": "01:56",
+      "excerpt": "पैसे डाल दे आ जाऊंगी वीडियो कॉल पे",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Come to Instagram",
+      "timestamp": "02:13",
+      "excerpt": "Instagram पे आ जाओ",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "On WhatsApp",
+      "timestamp": "02:34",
+      "excerpt": "WhatsApp पे",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "Come with money on a video call.",
+      "timestamp": "01:52",
+      "excerpt": "चलो पैसे डाल के आ जाओगे वीडियो कॉल पे।",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9999999105930439,
       "entropy_mean": 0.13837665571527277,
@@ -19,6 +73,8 @@
     {
       "category": "PlatformMove",
       "translation": "Make an Instagram here. I am not on Instagram. So how is it? I am on WhatsApp. We are going on WhatsApp.",
+      "timestamp": "02:20",
+      "excerpt": "Isme Instagram bana de. Instagram pe nahi hoon main. Toh kaise hai? WhatsApp pe hain. WhatsApp mein chal rahe hain.",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999998609225206,
       "entropy_mean": 0.2420238530107003,

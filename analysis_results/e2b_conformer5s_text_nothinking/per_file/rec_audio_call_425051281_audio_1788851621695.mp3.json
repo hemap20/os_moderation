@@ -3,22 +3,62 @@
   "language": "hindi",
   "gt_flag_count": 4,
   "model_flag_count": 2,
-  "flag_tp": 0,
-  "flag_fn": 4,
-  "flag_fp": 2,
-  "file_bucket": "FN",
-  "model_flags": [
+  "flag_tp": 1,
+  "flag_fn": 3,
+  "flag_fp": 1,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
     {
-      "category": "SuspiciousActivity",
-      "translation": "That call gets blurred, you have to pay money for it, video calls cost more coins",
-      "model_confidence": null,
-      "logprob_derived_confidence": 0.9009759455863728,
-      "entropy_mean": 1.3517242833962743e-05,
+      "category": "PlatformMove",
+      "translation": "I provide video call service on contact number, meaning on WhatsApp",
+      "timestamp": "02:37",
+      "excerpt": "मी व्हिडिओ कॉल सर्विस देते कॉन्टॅक्ट नंबरवर म्हणजे व्हॉट्सॲपला",
+      "confidence": 1.0,
       "matched": false
     },
     {
       "category": "SuspiciousActivity",
+      "translation": "Then I will give you 300 charges",
+      "timestamp": "02:45",
+      "excerpt": "तर मी तुला देते 300 चार्जेस",
+      "confidence": 1.0,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Tell me your number, I will send you a hi",
+      "timestamp": "02:53",
+      "excerpt": "सांग नंबर तुझा मी तुला हाय टाकते",
+      "confidence": 1.0,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I give video call open shows, that has a rate",
+      "timestamp": "05:12",
+      "excerpt": "व्हिडिओ कॉल ओपन शो देते त्याचा रेट आहे",
+      "confidence": 1.0,
+      "matched": false
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "That call gets blurred, you have to pay money for it, video calls cost more coins",
+      "timestamp": "02:30",
+      "excerpt": "वो कॉल ब्लर होता इ प तु पैसेा लगते वीडियो कॉल व जास्त कॉइन लगते",
+      "model_confidence": null,
+      "logprob_derived_confidence": 0.9009759455863728,
+      "entropy_mean": 1.3517242833962743e-05,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
       "translation": "The number is on WhatsApp for the video call service",
+      "timestamp": "02:40",
+      "excerpt": "नबर वे वहाट्सप त पे ज वडियो कॉल सर्विस",
       "model_confidence": null,
       "logprob_derived_confidence": 0.9999864898834502,
       "entropy_mean": 0.0028443855429603243,

@@ -7,10 +7,40 @@
   "flag_fn": 1,
   "flag_fp": 2,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "300 rupees payment",
+      "timestamp": "00:35",
+      "excerpt": "300 ரூபாய் பேமெண்ட்",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "90 255 820 34",
+      "timestamp": "00:45",
+      "excerpt": "90 255 820 34",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Shall I call on WhatsApp?",
+      "timestamp": "01:10",
+      "excerpt": "வாட்ஸ்அப் கால் பண்ணவா",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "₹300 payment.",
+      "timestamp": "00:32",
+      "excerpt": "₹300 பேமெண்ட்.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.957297851475209,
       "entropy_mean": 0.44508002201716107,
@@ -19,6 +49,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Half an hour service.",
+      "timestamp": "00:35",
+      "excerpt": "அரை மணி நேர சர்வீஸ்.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.8779988037532003,
       "entropy_mean": 0.9011573241878068,
@@ -27,6 +59,8 @@
     {
       "category": "PlatformMove",
       "translation": "901...",
+      "timestamp": "00:39",
+      "excerpt": "901...",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9114550469278011,
       "entropy_mean": 0.09349520256121953,
@@ -35,6 +69,8 @@
     {
       "category": "PlatformMove",
       "translation": "Shall we do a WhatsApp call?",
+      "timestamp": "00:59",
+      "excerpt": "WhatsApp call panava?",
       "model_confidence": 1.0,
       "logprob_derived_confidence": 0.9533717924082173,
       "entropy_mean": 0.18573840230237693,

@@ -7,10 +7,40 @@
   "flag_fn": 2,
   "flag_fp": 3,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I need a phone number, how do I contact you?",
+      "timestamp": "00:27",
+      "excerpt": "போன் நம்பர் வேணுமே இப்ப நான் எப்படி நான் உங்களை காண்டாக்ட் பண்ணிட்டு வர்றது?",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I shouldn't ask for money, but I will give you 1500 or 2000 in hand when we meet.",
+      "timestamp": "00:40",
+      "excerpt": "நான் காசு கேட்கக்கூடாது ஆனா நேர்ல வந்து உனக்கு 1500 இல்லனா 2000 கையில தரேன்",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will give you money in your hand, then we can go into a room.",
+      "timestamp": "01:30",
+      "excerpt": "உன் கையில காசு தரேன் அதுக்கப்புறம் நம்ம ரூம்குள்ள போலாம்",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "Phone number",
+      "timestamp": "00:45",
+      "excerpt": "फोन नंबर",
       "model_confidence": 0.98,
       "logprob_derived_confidence": 0.9999998807907858,
       "entropy_mean": 5.833488403439446e-07,
@@ -19,6 +49,8 @@
     {
       "category": "PlatformMove",
       "translation": "I will give the phone number",
+      "timestamp": "00:33",
+      "excerpt": "போன் நம்பர் தரேன்",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999999642372195,
       "entropy_mean": 2.099868037822953e-06,
@@ -27,6 +59,8 @@
     {
       "category": "PlatformMove",
       "translation": "Share the phone number?",
+      "timestamp": "00:56",
+      "excerpt": "શેરぽ ફોન નંબર தெரியാ?",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999999701976798,
       "entropy_mean": 0.29289820018069196,
@@ -35,6 +69,8 @@
     {
       "category": "PlatformMove",
       "translation": "Give me the number",
+      "timestamp": "01:24",
+      "excerpt": "நீ நம்பர் கொடு",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.002345419916537139,

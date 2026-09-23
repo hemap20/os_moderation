@@ -3,22 +3,46 @@
   "language": "malayalam",
   "gt_flag_count": 2,
   "model_flag_count": 5,
-  "flag_tp": 1,
-  "flag_fn": 1,
-  "flag_fp": 4,
+  "flag_tp": 2,
+  "flag_fn": 0,
+  "flag_fp": 3,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I give WhatsApp number to those who want open talk",
+      "timestamp": "01:50",
+      "excerpt": "ഓപ്പൺ ഡോക്ക് വേണ്ടവർക്ക് വാട്സാപ്പ് നമ്പർ കൊടുക്കും",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "I will send the details right now",
+      "timestamp": "03:33",
+      "excerpt": "ഞാൻ ഡീറ്റെയിൽസ് ഇപ്പൊ ഇട്ടു തരാം",
+      "confidence": 0.8,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "This is my phone number XXXXXXXXXX",
+      "timestamp": "00:00",
+      "excerpt": "എൻ്റെ ഫോൺ നമ്പർ ഇതാണ് XXXXXXXXXX",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9914927472627371,
       "entropy_mean": 0.25462432873837315,
-      "matched": false
+      "matched": true
     },
     {
       "category": "SuspiciousActivity",
       "translation": "Are you on Friends, have you connected?",
+      "timestamp": "00:56",
+      "excerpt": "ఎగనండలే ఆప్ ఫ్రెండ్స్ నేకె కెట్టియా",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.987354284731414,
       "entropy_mean": 0.7140272560570945,
@@ -27,6 +51,8 @@
     {
       "category": "PlatformMove",
       "translation": "Idna ta open doke illa ivana ta vendor ge whatsapp number kodu",
+      "timestamp": "0s",
+      "excerpt": "ಇದನಾ ಟಾ ಆಪನ್ ದೋಕ ಇಲ್ಲ ಇವನ ಟಾ ಕ ವেন্ডಾರ್ ಗೆ ವಾಟ್ಸಪ್ ನಂಬರ್ ಕೊಡು",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.6847580275915486,
@@ -35,6 +61,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "It is a paid service, I told you.",
+      "timestamp": "02:48",
+      "excerpt": "पेड सर्विस ആണ് నేত্রീ പറഞ്ഞേക്കാം",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9999111968157202,
       "entropy_mean": 0.9901925646376589,
@@ -43,6 +71,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "I am hidden. Hidden no. Ah okay.",
+      "timestamp": "03:16",
+      "excerpt": "मैं हाईड। हाईडनो। आ कटो।",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9435294181880163,
       "entropy_mean": 0.4470379483173019,

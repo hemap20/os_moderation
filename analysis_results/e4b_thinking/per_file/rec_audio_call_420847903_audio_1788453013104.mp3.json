@@ -7,10 +7,56 @@
   "flag_fn": 1,
   "flag_fp": 22,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "What bra are you wearing?",
+      "timestamp": "03:49",
+      "excerpt": "வேற என்ன பிரா போட்டு இருக்கீங்கன்னு?",
+      "confidence": 0.4,
+      "matched": false
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "What size are you wearing fully?",
+      "timestamp": "07:25",
+      "excerpt": "என்ன சைஸ் போடுறீங்க ஃபுல்லா?",
+      "confidence": 0.4,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will give you 2000 rupees, will you come on video call?",
+      "timestamp": "09:56",
+      "excerpt": "2000 ரூபாய் தரேன் வீடியோ கால் வரீங்களா?",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Tell me the number.",
+      "timestamp": "13:45",
+      "excerpt": "நம்பர் சொல்லுங்க.",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "97. 390. 64. 911.",
+      "timestamp": "14:09",
+      "excerpt": "97. 390. 64. 911.",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "Explicit-Flirting",
       "translation": "Are you in a saree or in a nighty?",
+      "timestamp": "02:48",
+      "excerpt": "Saree-la irkingala, nighty-la irkingala?",
       "model_confidence": 0.3,
       "logprob_derived_confidence": 0.9822877937467982,
       "entropy_mean": 0.1634901533923932,
@@ -19,6 +65,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Sex all must be done.",
+      "timestamp": "05:08",
+      "excerpt": "செக்ஸ் எல்லாம் பண்ணனும்",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.979536084634647,
       "entropy_mean": 0.3011933711263737,
@@ -27,14 +75,18 @@
     {
       "category": "PlatformMove",
       "translation": "Will you give me your WhatsApp number?",
+      "timestamp": "05:41",
+      "excerpt": "நீங்க வாட்ஸ்அப் நம்பர் கொடுக்குமா?",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9652914948827048,
       "entropy_mean": 0.23648727307272566,
-      "matched": false
+      "matched": true
     },
     {
       "category": "SuspiciousActivity",
       "translation": "I will pay you something and watch your video call.",
+      "timestamp": "05:48",
+      "excerpt": "நான் ஏதோ உங்களுக்கு ஏதோ பே பண்ணி உட்டுங்க வீடியோ கால்ல பாத்துறேன்.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.6034238619833268,
       "entropy_mean": 0.38285406567779035,
@@ -43,6 +95,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "I will pay some amount and watch the video call.",
+      "timestamp": "05:54",
+      "excerpt": "ஏதோ அமௌண்ட் பே பண்ணிட்டு வீடியோ கால்ல பார்க்கறேனே.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.5823040564819668,
       "entropy_mean": 0.4480605235012869,
@@ -51,6 +105,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Now, if we want to see your video call, we have to pay 200 rupees.",
+      "timestamp": "06:04",
+      "excerpt": "Ippo oru 200 rupay illa pay pannittu ungal video call ah paakanum naanga.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9736830469421769,
       "entropy_mean": 0.11831310260135386,
@@ -59,6 +115,8 @@
     {
       "category": "PlatformMove",
       "translation": "We are just talking, we will talk on a normal call.",
+      "timestamp": "06:04",
+      "excerpt": "Summa pesrana normal call ah pesuvom.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9884630824307282,
       "entropy_mean": 0.5982962667942047,
@@ -67,6 +125,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "For sex, you did [something] to bring out the sex power.",
+      "timestamp": "06:32",
+      "excerpt": "செக்ஸ் பண்றதுக்கு, செக்ஸ் பவரை வர வைக்கலாம் பண்ணீங்க.",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9732736754980188,
       "entropy_mean": 0.1279733271362024,
@@ -75,6 +135,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Now, doing it has money/cost.",
+      "timestamp": "06:32",
+      "excerpt": "இனி பண்றது காசு இருக்கு.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9423186979876449,
       "entropy_mean": 0.36041398912173606,
@@ -83,6 +145,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Are you thin or fat?",
+      "timestamp": "07:10",
+      "excerpt": "நீ ஒல்லியா இருக்கீங்களா குண்டா இருக்கீங்களா",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.974412400822134,
       "entropy_mean": 0.1599422273121339,
@@ -91,6 +155,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "What size do you wear?",
+      "timestamp": "07:18",
+      "excerpt": "என்ன சைஸ் போடுறீங்க?",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.4889018840899452,
       "entropy_mean": 0.8822644278407097,
@@ -99,6 +165,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Tell me, you looked good. If a mood comes, a girl will play this game. If that girl plays, forgive me.",
+      "timestamp": "07:56",
+      "excerpt": "சொல்லுங்க நல்லா பாத்தீங்க. கொஞ்சம் ஒரு அந்த மூட் வந்துச்சுன்னா ஒரு மாய் இந்த கே பண்ணுவாங்க. அந்த மாய் பண்றனா மன்னிச்சுங்க.",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9638159486200781,
       "entropy_mean": 0.3128990395259323,
@@ -107,22 +175,28 @@
     {
       "category": "PlatformMove",
       "translation": "Please give your number.",
+      "timestamp": "09:20",
+      "excerpt": "Long number thareengala please.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9680495764850128,
       "entropy_mean": 0.28587990178688677,
-      "matched": true
-    },
-    {
-      "category": "SuspiciousActivity",
-      "translation": "Is it 2000 rupees for you? In video?",
-      "model_confidence": 0.8,
-      "logprob_derived_confidence": 0.9734240490917567,
-      "entropy_mean": 0.1620456234913945,
       "matched": false
     },
     {
       "category": "SuspiciousActivity",
+      "translation": "Is it 2000 rupees for you? In video?",
+      "timestamp": "09:48",
+      "excerpt": "உங்களுக்கு 2000 ரூபா ஆகுதா? வீடியோலயா?",
+      "model_confidence": 0.8,
+      "logprob_derived_confidence": 0.9734240490917567,
+      "entropy_mean": 0.1620456234913945,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
       "translation": "If you want to give 2000, where are you?",
+      "timestamp": "09:48",
+      "excerpt": "2000 எல்லாம் கொடுக்கணும்னா எர்கிங்க?",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9587500239888104,
       "entropy_mean": 0.3578421590738799,
@@ -131,6 +205,8 @@
     {
       "category": "PlatformMove",
       "translation": "Tell me your number, I will give you my number.",
+      "timestamp": "10:44",
+      "excerpt": "Unga number kodranna solunga, naan number kodukken.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9661857846027869,
       "entropy_mean": 0.15301131396842851,
@@ -139,14 +215,18 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Tell me if you are fully available for a video call, I will prepare for you. 2000.",
+      "timestamp": "10:44",
+      "excerpt": "Nee video call la full ah varreenaa solunga, naan ungalukku ready pandren. 2000.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9216780956674503,
       "entropy_mean": 0.46510385827148965,
-      "matched": true
+      "matched": false
     },
     {
       "category": "SuspiciousActivity",
       "translation": "Just for money, for money to come. For romance, for money to come.",
+      "timestamp": "11:12",
+      "excerpt": "சும்மா பேசம் சாலியா பேசம் வரத. ரொமான்சா பேசம் வரத.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9700306675836664,
       "entropy_mean": 0.1344988922026624,
@@ -155,6 +235,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "If you show only above [the waist/upper body], 500. Okay?",
+      "timestamp": "11:12",
+      "excerpt": "மேல மட்டும் காமிக்கறனா 500. ஓகேவா?",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9714512027990816,
       "entropy_mean": 1.430040630698204,
@@ -163,6 +245,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "First pay, I'll come.",
+      "timestamp": "11:12",
+      "excerpt": "ஃபர்ஸ்ட் பே பண்ணுங்க நான் காம.",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9714502184522696,
       "entropy_mean": 0.8230349352726569,
@@ -171,6 +255,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "I will come to look below. Advantage is below.",
+      "timestamp": "11:55",
+      "excerpt": "Enakku keela paathradhaanga varum. Advantage la keela.",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9672603369426811,
       "entropy_mean": 0.12120718849548666,
@@ -179,6 +265,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Only above I am. I only want to show myself.",
+      "timestamp": "12:05",
+      "excerpt": "Meela mattum naan. Naan mattum naan venam kamikranu varan.",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.6189038159533634,
       "entropy_mean": 0.19060283501658257,
@@ -187,6 +275,8 @@
     {
       "category": "PlatformMove",
       "translation": "Tell me your phone number, I will give the number.",
+      "timestamp": "13:07",
+      "excerpt": "En phone number solunga naan number kodukuren.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9599888162792005,
       "entropy_mean": 0.1567198432164029,
@@ -195,6 +285,8 @@
     {
       "category": "PlatformMove",
       "translation": "97 97 390 390 64",
+      "timestamp": "13:47",
+      "excerpt": "97 97 390 390 64",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9609496896655919,
       "entropy_mean": 0.22577440063469112,
@@ -203,6 +295,8 @@
     {
       "category": "PlatformMove",
       "translation": "97 390 64 64 911",
+      "timestamp": "14:00",
+      "excerpt": "97 390 64 64 911",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9431330667023853,
       "entropy_mean": 0.186725223204121,
@@ -211,6 +305,8 @@
     {
       "category": "PlatformMove",
       "translation": "If I call you on the phone one day, give me the number.",
+      "timestamp": "14:28",
+      "excerpt": "Na one day pannittu namak phone adikkuradha number.",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9578373650446802,
       "entropy_mean": 0.1440727460029458,

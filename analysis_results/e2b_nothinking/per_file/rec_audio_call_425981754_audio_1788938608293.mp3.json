@@ -7,10 +7,40 @@
   "flag_fn": 0,
   "flag_fp": 5,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Are you interested in a video call where I show everything openly and sexily, take my WhatsApp number",
+      "timestamp": "00:18",
+      "excerpt": "ಇಂಟರೆಸ್ಟ್ ಇದಿಯಾ ವಿಡಿಯೋ ಕಾಲ್ ಅಲ್ಲಿ ಫುಲ್ ಸೆಕ್ಸಿಯಾಗಿ ಬಟ್ಟೆ ಎಲ್ಲಾ ಓಪನ್ ಮಾಡಿ ನೀವು ಹೆಂಗೆ ಹೇಳ್ತೀರಾ ಹಂಗೆ ಸಿಂಗರಿಂಗ್ ಮಾಡ್ಕೊಂಡು ತೋರಿಸ್ತೀನಿ ವಾಟ್ಸಪ್ ನಂಬರ್ ತಗೊಳ್ಳಿ",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "You have to pay 500 rupees, if you say yes I will come for a real meet, pay 500 for video call now, no time limit, I will show",
+      "timestamp": "00:39",
+      "excerpt": "500 ರೂಪಾಯಿ ಪೇ ಮಾಡಬೇಕು ನೀವು ಹೂ ಅಂದ್ರೆ ನಾನು ರಿಯಲ್ ಮೀಟ್ ಗೆ ಬರ್ತೀನಿ ಇವಾಗ ವಿಡಿಯೋ ಕಾಲ್ ಗೆ 500 ಪೇ ಮಾಡಿ ಎಷ್ಟೊತ್ತು ಬೇಕು ಅಷ್ಟೊತ್ತು ಟೈಮ್ ಲಿಮಿಟ್ ಇಲ್ಲ ತೋರಿಸ್ತೀನಿ",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "I will tell you all that on WhatsApp, tell me the number, I will send a 'Hi', see, I will call",
+      "timestamp": "01:07",
+      "excerpt": "ಅದೆಲ್ಲ ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಹೇಳ್ತೀನಿ ನಂಬರ್ ಹೇಳಿ ಹಾಯ್ ಅಂತ ಹಾಕ್ತೀನಿ ನೋಡಿ ಕಾಲ್ ಮಾಡ್ತೀನಿ",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "I am interested in a video call, fully sexually open the bottle, you will do hanging and show it, give me the WhatsApp number.",
+      "timestamp": "00:45",
+      "excerpt": "इन्ट्रेस्ट इदिया वीडियो कॉलले फुल सेक्सियगे बट्टे ल ओपन माडी निवें हेंगे दिरंग हिंगरींग मार्कोंं परोसतीनी व्हाट्सएप नंबर तगोळी",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999905528866883,
       "entropy_mean": 0.6826351407352228,
@@ -19,6 +49,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "I am interested in a video call, fully sexually open the bottle, you will do hanging and show it.",
+      "timestamp": "00:45",
+      "excerpt": "इन्ट्रेस्ट इदिया वीडियो कॉलले फुल सेक्सियगे बट्टे ल ओपन माडी निवें हेंगे दिरंग हिंगरींग मार्कोंं परोसतीनी",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9918913019656054,
       "entropy_mean": 0.7141952861811182,
@@ -27,6 +59,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Open me bottle, show it personally",
+      "timestamp": "00:28",
+      "excerpt": "ઓપન માડી બટટેલા શક્શિયેગી શો માર્તીની",
       "model_confidence": 0.45,
       "logprob_derived_confidence": 0.9886382819043262,
       "entropy_mean": 0.45531164417702713,
@@ -35,6 +69,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "500 rupees to pay",
+      "timestamp": "00:31",
+      "excerpt": "૫૦૦ રૂપિયા પે મેડબેક",
       "model_confidence": 0.75,
       "logprob_derived_confidence": 0.9999968211197721,
       "entropy_mean": 0.33895017111593556,
@@ -43,6 +79,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Take the number, let's do a video call",
+      "timestamp": "00:34",
+      "excerpt": "નંબર તો લઈ નંદ માડી વિડિયો કોલો",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9999968807242255,
       "entropy_mean": 0.45510021815841484,
@@ -51,6 +89,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "No, I will meet you in person, for the video call 500 pay, whatever you want, whatever the time limit, you are taking",
+      "timestamp": "00:36",
+      "excerpt": "નહીં હું અંદર નાન રિયલ મીટકો બરતીની ઇવા વિડિયો કોલગે ૫૦૦ પે મેડી એશ્તો દેબેક અશ્તો તો ટાઇમ લિમિટ ઇલા તુરસ્તિની",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999968807242255,
       "entropy_mean": 0.35188032743926023,
@@ -59,6 +99,8 @@
     {
       "category": "PlatformMove",
       "translation": "Why are you saying that, I am single on Page, if you tell location I will meet you in real life, okay",
+      "timestamp": "00:39",
+      "excerpt": "નિયું હેં ગેલતીરા માડકોતી નાન સિંગલુ પીજલી ઇરોદો નિયું લોકેશન કણસીદરે નાન રિયલ મીટકો ઓકે",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9944579492869091,
       "entropy_mean": 0.274668919129898,
@@ -67,6 +109,8 @@
     {
       "category": "PlatformMove",
       "translation": "I will tell you the number on WhatsApp, you can write it and call.",
+      "timestamp": "00:56",
+      "excerpt": "agela whatsappal heltine number ili hai anta haktini modi call madtini 8721 87221 72254 72254",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.2509058361501605,

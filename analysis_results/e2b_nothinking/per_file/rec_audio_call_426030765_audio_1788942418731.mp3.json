@@ -3,14 +3,52 @@
   "language": "telugu",
   "gt_flag_count": 4,
   "model_flag_count": 3,
-  "flag_tp": 1,
-  "flag_fn": 3,
-  "flag_fp": 2,
+  "flag_tp": 2,
+  "flag_fn": 2,
+  "flag_fp": 1,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Normal show 300, romantic with vulgarity 500, if okay I'll give number, don't take for time pass",
+      "timestamp": "00:20",
+      "excerpt": "నార్మల్ షో 300 రొమాంటిక్ బూతులతోని 500 ఓకే అంటే నెంబర్ ఇస్తా టైం పాస్ కి మాత్రం తీసుకోకు",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will pay only after you show first, I won't do it normally",
+      "timestamp": "00:28",
+      "excerpt": "అను ఫస్ట్ చూపించిన తర్వాతే పేమెంట్ చేస్తాను మామూలుగా అయితే నేను చేయను",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "I will take off clothes",
+      "timestamp": "00:40",
+      "excerpt": "బట్టలు విప్పేస్తాను",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "9848 51 46 45",
+      "timestamp": "01:02",
+      "excerpt": "9848 51 46 45",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "Normal is 300, romantic bottles are 500, okay",
+      "timestamp": "00:15",
+      "excerpt": "नॉर्मल जो 300 रोमांटिक बूतलो तो 500 ओके",
       "model_confidence": 0.75,
       "logprob_derived_confidence": 0.8966149325558325,
       "entropy_mean": 0.30850862453730155,
@@ -19,14 +57,18 @@
     {
       "category": "SuspiciousActivity",
       "translation": "In the nude call, if I turn off the camera nude, they block the payment, don't do that separately",
+      "timestamp": "00:28",
+      "excerpt": "मत्तो न्यूड आई तो कॉललोने न्यूड आंगेने कैम ऑफ चेस नू पेमेंट ऐगाने ब्लॉको पेठेस तर अलगमे मतदो",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9999951721054586,
       "entropy_mean": 0.6355382458748542,
-      "matched": false
+      "matched": true
     },
     {
       "category": "SuspiciousActivity",
       "translation": "No, I will do a video call, I will put on the lips, put on, creep",
+      "timestamp": "00:41",
+      "excerpt": "न आ नेनो कु वीडियो कॉल चेय बट्टर लिप्पेसेसता लिप्पेसे क्रूपी",
       "model_confidence": 0.3,
       "logprob_derived_confidence": 0.9999951721054586,
       "entropy_mean": 0.45270392727238334,

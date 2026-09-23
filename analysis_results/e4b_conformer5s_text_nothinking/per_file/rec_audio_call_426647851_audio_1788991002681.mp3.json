@@ -3,22 +3,38 @@
   "language": "telugu",
   "gt_flag_count": 1,
   "model_flag_count": 3,
-  "flag_tp": 1,
-  "flag_fn": 0,
-  "flag_fp": 2,
-  "file_bucket": "TP",
+  "flag_tp": 0,
+  "flag_fn": 1,
+  "flag_fp": 3,
+  "file_bucket": "FN",
+  "qualifying_pm_ef_bucket": "FN",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I will do it on Insta, look",
+      "timestamp": "12:54",
+      "excerpt": "ఇన్స్టా లో చేస్తా చూడండి",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "If I like it here, shall we connect on Insta?",
+      "timestamp": "09:05",
+      "excerpt": "ఇక్కడ నాకు నచ్చితే ఇన్స్టాలో కనెక్ట్ అవుదాం",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.604810323586141,
       "entropy_mean": 0.028512093554676463,
-      "matched": true
+      "matched": false
     },
     {
       "category": "PlatformMove",
       "translation": "Yes, is there only Insta or anything else?",
+      "timestamp": "09:35",
+      "excerpt": "అవును ఇంస్ా ఒకటే ఉందా లేద ఇం ఏమ ఉన్నాయా",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.8302323934466951,
       "entropy_mean": 0.00592362010370056,
@@ -27,6 +43,8 @@
     {
       "category": "PlatformMove",
       "translation": "Do you have Snap or anything?",
+      "timestamp": "09:40",
+      "excerpt": "స్నేప్ జనీ గటేం లేదా",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.8302313047634589,
       "entropy_mean": 0.0009984625919767292,

@@ -7,10 +7,48 @@
   "flag_fn": 2,
   "flag_fp": 2,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "But for a nude call you have to pay 800",
+      "timestamp": "00:21",
+      "excerpt": "ஆனா வந்து நியூட் காலுக்கு நீங்க வந்து 800 பே பண்ணனும்",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Not on this, I will give a WhatsApp number",
+      "timestamp": "00:17",
+      "excerpt": "இதுல கிடையாது நான் வாட்ஸ்அப் நம்பர் தருவேன்",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "After paying, I can remove my bra and I can show you",
+      "timestamp": "00:39",
+      "excerpt": "அதுக்கப்புறம் பே பண்ணதுக்கு அப்புறம் ஐ கேன் ரிமூவ் மை பிரா அண்ட் ஐ கேன் ஷோ யூ",
+      "confidence": 0.8,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "8123314449",
+      "timestamp": "1:02",
+      "excerpt": "8123314449",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "You have to pay 800 for the nude call.",
+      "timestamp": "00:15",
+      "excerpt": "न्यूड कॉल को नीगा बंद 800 पे பண்ணணும்",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999854969388581,
       "entropy_mean": 0.3410753114311425,
@@ -19,6 +57,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Can I show you full nude but first I don't have a bra on",
+      "timestamp": "00:28",
+      "excerpt": "mungke na solunga i can show you full nude pad first munne no bra avada darupen",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9989167545510101,
       "entropy_mean": 0.4522037576572561,
@@ -27,6 +67,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "After that, you can pay 800",
+      "timestamp": "00:33",
+      "excerpt": "adkuapru 800 ninga pay pannalam",
       "model_confidence": 0.2,
       "logprob_derived_confidence": 0.9999993642185372,
       "entropy_mean": 0.32107065225470965,
@@ -35,6 +77,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "After that, after paying I can remove my bra and I can show you",
+      "timestamp": "00:36",
+      "excerpt": "adkuapru pay pandradheku apru i can remove my bra and i can show you",
       "model_confidence": 0.7,
       "logprob_derived_confidence": 0.9999993642185372,
       "entropy_mean": 0.10575042679277369,

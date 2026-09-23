@@ -3,22 +3,38 @@
   "language": "hindi",
   "gt_flag_count": 1,
   "model_flag_count": 2,
-  "flag_tp": 1,
-  "flag_fn": 0,
-  "flag_fp": 1,
-  "file_bucket": "TP",
+  "flag_tp": 0,
+  "flag_fn": 1,
+  "flag_fp": 2,
+  "file_bucket": "FN",
+  "qualifying_pm_ef_bucket": "FN",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "How much will I give? How much will I give you? I will give 300 rupees, 400 rupees, 500 rupees.",
+      "timestamp": "03:57",
+      "excerpt": "कितने दूँगा मैं? कितने दूँगा मैं आपको? 300 रुपये दूँगा, 400 रुपये दूँगा, 500 रुपये दूँगा.",
+      "confidence": 0.8,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "I will give 1500 rupees, 1400 rupees, 1200 rupees",
+      "timestamp": "03:55",
+      "excerpt": "1500 rupaye dunga 1400 rupaye dunga 1200 rupaye dunga",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9818740121788653,
       "entropy_mean": null,
-      "matched": true
+      "matched": false
     },
     {
       "category": "SuspiciousActivity",
       "translation": "You are showing your body to everyone for 300 rupees",
+      "timestamp": "04:23",
+      "excerpt": "300 rupees mein aap body dikha rahe ho sabko",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.99696482810269,
       "entropy_mean": null,

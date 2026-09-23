@@ -3,22 +3,46 @@
   "language": "telugu",
   "gt_flag_count": 2,
   "model_flag_count": 11,
-  "flag_tp": 1,
-  "flag_fn": 1,
-  "flag_fp": 10,
-  "file_bucket": "TP",
+  "flag_tp": 0,
+  "flag_fn": 2,
+  "flag_fp": 11,
+  "file_bucket": "FN",
+  "qualifying_pm_ef_bucket": "FN",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will show, do a WhatsApp call and PhonePe, let's talk on video call",
+      "timestamp": "2:30",
+      "excerpt": "చూపిస్తా వాట్సాప్ కాల్ చేసి ఫోన్ పే చెయ్ మాట్లాడదాం వీడియో కాల్",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Are you wearing a bra inside?",
+      "timestamp": "3:54",
+      "excerpt": "లోపల బ్రా వేసుకున్నారా",
+      "confidence": 0.4,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "I want to talk like a WhatsApp call or PhonePe, video call",
+      "timestamp": "02:21",
+      "excerpt": "चुपिसा WhatsApp कॉल जैसी फोन पे चाहिए बात लड़दाव वीडियो कॉल",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.8795358866194756,
       "entropy_mean": 0.3937945693350533,
-      "matched": true
+      "matched": false
     },
     {
       "category": "SuspiciousActivity",
       "translation": "Someone gives payment, Sargam payment",
+      "timestamp": "02:48",
+      "excerpt": "किन्ही को किन्ही होते पेमेंट देता सरगम पेमेंट",
       "model_confidence": 0.3,
       "logprob_derived_confidence": 0.9130981402610719,
       "entropy_mean": 0.3357725523721704,
@@ -27,6 +51,8 @@
     {
       "category": "PlatformMove",
       "translation": "do a video call and then top up fast",
+      "timestamp": "03:16",
+      "excerpt": "ne video call karke paya top up anje fasto",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9972373778043568,
       "entropy_mean": 0.4964611445356986,
@@ -35,6 +61,8 @@
     {
       "category": "PlatformMove",
       "translation": "wait for some time fast",
+      "timestamp": "03:21",
+      "excerpt": "chega kono evro chopiir fasto",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9972373778043568,
       "entropy_mean": 0.8387096790102078,
@@ -43,6 +71,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "My coke and payment, I will top UPI, I will pay UPI then downwards the amount. Whatever.",
+      "timestamp": "03:44",
+      "excerpt": "మై కోక్ కే అండ పేమెంట్, నేను టాప్ ఓపియండి, పైన ఓపియండి తర్వాత కిందకి అమౌంట్ ఇస్తాను. ఏమైనా సరే.",
       "model_confidence": 0.3,
       "logprob_derived_confidence": 0.9999996026362352,
       "entropy_mean": 0.44811278476146227,
@@ -51,6 +81,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Is there something in the jacket? Saree.",
+      "timestamp": "03:59",
+      "excerpt": "ఆ జాకెట్ లో ఏదో సెరియా? సెరియా.",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.999951164278786,
       "entropy_mean": 0.41279513750438734,
@@ -59,6 +91,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "There is a bra in that jacket, right? I will take a loan.",
+      "timestamp": "04:09",
+      "excerpt": "ఆ జాకెట్ లో ఏదో బ్రా ఉంటది కదా అప్పు వేస్తాను.",
       "model_confidence": 0.6,
       "logprob_derived_confidence": 0.9999512238805182,
       "entropy_mean": 0.19705193536068882,
@@ -67,6 +101,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Are you wearing a jacket or not? Bra on, and that's it.",
+      "timestamp": "04:27",
+      "excerpt": "मी कार्डதமாவத்துண்டா ஜாக்கெட் తీயேண்டி பிரவுंडனானேவெண்டாத்லனே",
       "model_confidence": null,
       "logprob_derived_confidence": 0.9999985396953481,
       "entropy_mean": 0.8640134976281283,
@@ -75,6 +111,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "She opened it.",
+      "timestamp": "04:37",
+      "excerpt": "மேரோடு ஓப்பன் செய்ச்சாரன்",
       "model_confidence": null,
       "logprob_derived_confidence": 0.9999985396953481,
       "entropy_mean": 1.2488138178984325,
@@ -83,6 +121,8 @@
     {
       "category": "PlatformMove",
       "translation": "Okay, if you do it, I will take the number.",
+      "timestamp": "0s",
+      "excerpt": "సరే దేసా, చేస్తా అంటే ఎపండీ నెంబర్ తీసుకొస్తా.",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9863634391112195,
       "entropy_mean": 0.5364087536224815,
@@ -91,6 +131,8 @@
     {
       "category": "PlatformMove",
       "translation": "I am not, I will give the point. There is a bra inside, right?",
+      "timestamp": "10s",
+      "excerpt": "నేనెంంటొనా, ఐ పాయింట్ ఆగే తీయండి. లోపల బ్రా ఉంటది కదా.",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9863634391112195,
       "entropy_mean": 0.32209967377086823,

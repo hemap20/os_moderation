@@ -3,14 +3,68 @@
   "language": "hindi",
   "gt_flag_count": 6,
   "model_flag_count": 4,
-  "flag_tp": 2,
-  "flag_fn": 4,
-  "flag_fp": 2,
+  "flag_tp": 1,
+  "flag_fn": 5,
+  "flag_fp": 3,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "What is your bra size?",
+      "timestamp": "01:28",
+      "excerpt": "कितना साइज है तुम्हारा बूब्स का",
+      "confidence": 0.8,
+      "matched": false
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "By putting a finger",
+      "timestamp": "01:47",
+      "excerpt": "उंगली डाल के",
+      "confidence": 0.7,
+      "matched": false
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "I want to f***, come on video call",
+      "timestamp": "01:51",
+      "excerpt": "यार एक बार चूतने का मन करे वीडियो कॉल पे आना",
+      "confidence": 0.8,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Put money, I will come on video call",
+      "timestamp": "01:56",
+      "excerpt": "पैसे डाल दे आ जाऊंगी वीडियो कॉल पे",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Come to Instagram",
+      "timestamp": "02:13",
+      "excerpt": "Instagram पे आ जाओ",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "On WhatsApp",
+      "timestamp": "02:34",
+      "excerpt": "WhatsApp पे",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "I am making an audio call. It is better than a video call, let's do it.",
+      "timestamp": "00:56",
+      "excerpt": "ऑडियो कॉल कर रहा हूं। वीडियो कॉल से बेहतर हैoverline कर लेते हैं।",
       "model_confidence": null,
       "logprob_derived_confidence": 0.6929895184834725,
       "entropy_mean": 0.46149511961608797,
@@ -19,6 +73,8 @@
     {
       "category": "PlatformMove",
       "translation": "I am making an audio call. It is better than a video call, let's do it.",
+      "timestamp": "00:56",
+      "excerpt": "ऑडियो कॉल कर रहा हूं। वीडियो कॉल से बेहतर हैoverline कर लेते हैं।",
       "model_confidence": null,
       "logprob_derived_confidence": 0.9998432417638843,
       "entropy_mean": 0.46149511961608797,
@@ -27,14 +83,18 @@
     {
       "category": "PlatformMove",
       "translation": "Okay leave it, I feel like coming on a video call. Just put the money and come on the video call.",
+      "timestamp": "0s",
+      "excerpt": "ठीक है छोड़, मेरा मन कर रहा है वीडियो कॉल पे आना ना। सीधा पैसे डाल के आ जाओगे वीडियो कॉल पे।",
       "model_confidence": 0.45,
       "logprob_derived_confidence": 0.8952386427837541,
       "entropy_mean": 0.18810756693476202,
-      "matched": true
+      "matched": false
     },
     {
       "category": "PlatformMove",
       "translation": "He is on WhatsApp",
+      "timestamp": "0.0",
+      "excerpt": "व्हाट्सऐप पे हैं",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9777898866658052,
       "entropy_mean": 0.5614596997387707,

@@ -7,10 +7,40 @@
   "flag_fn": 3,
   "flag_fp": 3,
   "file_bucket": "FN",
+  "qualifying_pm_ef_bucket": "FN",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "What do you charge for the night?",
+      "timestamp": "00:27",
+      "excerpt": "మీరు అంటే లైక్ వాట్ డు యు ఛార్జ్ ఫర్ నైట్?",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "500 for half an hour",
+      "timestamp": "00:44",
+      "excerpt": "అరగంటకి 500",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Okay give me your number",
+      "timestamp": "00:49",
+      "excerpt": "ఓకే గివ్ మీ యువర్ నంబర్",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "Give me your number, I will pass time",
+      "timestamp": "00:50",
+      "excerpt": "గివ్ మీ య నంబర్ మ టై పాస్ చేస్త",
       "model_confidence": 0.75,
       "logprob_derived_confidence": 0.9999047835134066,
       "entropy_mean": 8.876594901803998e-05,
@@ -19,6 +49,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "You will only turn on the video call after you pay money, right? If you don't pay, you won't turn it on, right?",
+      "timestamp": "00:55",
+      "excerpt": "నీకు డబ్బులు కొట్టాకనే వీడియో కాల్ ఆన్ చేస్తావు కదా డబ్బులు కొట్టకుండా అయితే ఆన్ చేయవు కదా",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999047835134066,
       "entropy_mean": 1.4697957157111718e-05,
@@ -27,6 +59,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "You have to pay money, do you understand?",
+      "timestamp": "01:10",
+      "excerpt": "డబ్బులు కొట్టాల్సిందే కదా నీకు అర్థంమవుతుందా",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9999047835134066,
       "entropy_mean": 0.002098768789596898,

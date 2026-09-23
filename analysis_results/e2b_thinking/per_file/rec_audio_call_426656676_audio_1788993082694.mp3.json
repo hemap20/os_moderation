@@ -3,14 +3,36 @@
   "language": "malayalam",
   "gt_flag_count": 2,
   "model_flag_count": 5,
-  "flag_tp": 1,
-  "flag_fn": 1,
-  "flag_fp": 4,
+  "flag_tp": 2,
+  "flag_fn": 0,
+  "flag_fp": 3,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 0.67,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I will give my number",
+      "timestamp": "05:04",
+      "excerpt": "എന്റെ നമ്പർ തരാം",
+      "confidence": 1.0,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Send that number to me on WhatsApp",
+      "timestamp": "06:02",
+      "excerpt": "നീ ആ നമ്പർ എനിക്ക് വാട്സാപ്പിൽ ഒന്ന് അയക്ക്",
+      "confidence": 1.0,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "Explicit-Flirting",
       "translation": "You are tall and fat. Will you give rent?",
+      "timestamp": "03:16",
+      "excerpt": "ఎక్కి పొడరే ఎంట ఫ్యాట్ అండి. అవరే రెండ్ കൊടുకండ?",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9999640171370857,
       "entropy_mean": 0.2137571450483703,
@@ -19,6 +41,8 @@
     {
       "category": "PlatformMove",
       "translation": "What is the number?",
+      "timestamp": "05:25",
+      "excerpt": "ఏది నంబర్ దర",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999999403953606,
       "entropy_mean": 0.3520285558188334,
@@ -27,6 +51,8 @@
     {
       "category": "PlatformMove",
       "translation": "730. 60. 60, right? 74. 74. My number 22.",
+      "timestamp": "05:08",
+      "excerpt": "730. 60. 60, right? 74. 74. My number 22.",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999998807907318,
       "entropy_mean": 0.16579820914861365,
@@ -35,14 +61,18 @@
     {
       "category": "PlatformMove",
       "translation": "I will give you WhatsApp",
+      "timestamp": "05:36",
+      "excerpt": "I will give you WhatsApp",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.2964950018878361,
-      "matched": false
+      "matched": true
     },
     {
       "category": "PlatformMove",
       "translation": "Nagi, take WhatsApp.",
+      "timestamp": "06:04",
+      "excerpt": "नगी, WhatsApp ले।",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999999523162967,
       "entropy_mean": 4.549218967753177e-06,

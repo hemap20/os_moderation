@@ -7,10 +7,56 @@
   "flag_fn": 4,
   "flag_fp": 3,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "What bra are you wearing?",
+      "timestamp": "03:49",
+      "excerpt": "வேற என்ன பிரா போட்டு இருக்கீங்கன்னு?",
+      "confidence": 0.4,
+      "matched": false
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "What size are you wearing fully?",
+      "timestamp": "07:25",
+      "excerpt": "என்ன சைஸ் போடுறீங்க ஃபுல்லா?",
+      "confidence": 0.4,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will give you 2000 rupees, will you come on video call?",
+      "timestamp": "09:56",
+      "excerpt": "2000 ரூபாய் தரேன் வீடியோ கால் வரீங்களா?",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Tell me the number.",
+      "timestamp": "13:45",
+      "excerpt": "நம்பர் சொல்லுங்க.",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "97. 390. 64. 911.",
+      "timestamp": "14:09",
+      "excerpt": "97. 390. 64. 911.",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "2000 rupees for video call",
+      "timestamp": "09:48",
+      "excerpt": "2000 roo avuthana video kadalena",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.8083102474548746,
       "entropy_mean": 1.3719077334459984,
@@ -19,6 +65,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "If I give 2000 amount, will you do video call?",
+      "timestamp": "09:52",
+      "excerpt": "2000 amount tharan video kadalena",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9994493001938733,
       "entropy_mean": 1.0318645577869823,
@@ -27,6 +75,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "If I give 2000, you will take it and do it",
+      "timestamp": "09:55",
+      "excerpt": "2000 la kudukkum bodhu eduthu kumayaanga",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9994491810504099,
       "entropy_mean": 1.0623567638991744,
@@ -35,6 +85,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Who will give 2000?",
+      "timestamp": "09:59",
+      "excerpt": "yaar kudukamaatanga 2000",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.999448168332822,
       "entropy_mean": 0.5668191649672487,

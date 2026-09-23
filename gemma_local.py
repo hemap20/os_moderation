@@ -60,10 +60,17 @@ TOP_K_LOGPROBS = 20
 RAW_SCHEMA_STR = json.dumps(raw_model_output_json_schema())
 
 
+# Mutable module globals (not frozen constants) — reassigned by main() from
+# --dataset-root via config.dataset_paths(), so a dev-set run's outputs land
+# under gemma_results_<suffix>/ and its dataset reads from the alternate
+# root, without any other function in this module needing to change.
+DATASET_DIR: Path = config.DOSTT_DIR
+GEMMA_RESULTS_DIR: Path = config.PROJECT_ROOT / "gemma_results"
+
+
 def output_dir(model_key: str, thinking: bool) -> Path:
     suffix = "thinking" if thinking else "nothinking"
-    d = config.PROJECT_ROOT / "gemma_results" / f"{model_key}_{suffix}"
-    return d
+    return GEMMA_RESULTS_DIR / f"{model_key}_{suffix}"
 
 
 # ---------------------------------------------------------------------------
@@ -496,14 +503,22 @@ def main():
     parser.add_argument("--dry-run-limit", type=int, default=config.DEFAULT_DRY_RUN_LIMIT)
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--limit", type=int, default=None)
+    parser.add_argument("--dataset-root", type=str, default=None,
+                         help="Alternate dataset root, e.g. Dostt_dev — routes results to "
+                              "gemma_results_<suffix>/ automatically; default uses the full Dostt/ dataset")
     args = parser.parse_args()
+
+    global DATASET_DIR, GEMMA_RESULTS_DIR
+    paths = config.dataset_paths(args.dataset_root)
+    DATASET_DIR = paths["dataset_dir"]
+    GEMMA_RESULTS_DIR = paths["gemma_results_dir"]
 
     logger = StageLogger(f"gemma_local_{args.model}_{'thinking' if args.thinking else 'nothinking'}")
     logger.info(f"Loading {MODEL_IDS[args.model]} (thinking={args.thinking})...")
     model, processor = load_model(args.model)
     logger.info("Model loaded.")
 
-    records = dsv2.load_dataset_v2()
+    records = dsv2.load_dataset_v2(DATASET_DIR)
     if args.dry_run:
         records = records[: args.dry_run_limit]
         logger.info(f"DRY RUN: {len(records)} file(s)")
@@ -515,7 +530,7 @@ def main():
         if args.limit:
             records = records[: args.limit]
 
-    tmp_dir = config.PROJECT_ROOT / "gemma_results" / "_chunks_tmp"
+    tmp_dir = GEMMA_RESULTS_DIR / "_chunks_tmp"
     n_success, n_error = 0, 0
     t0 = time.time()
 

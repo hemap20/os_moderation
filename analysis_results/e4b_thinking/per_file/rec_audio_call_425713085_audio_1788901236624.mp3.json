@@ -7,10 +7,40 @@
   "flag_fn": 2,
   "flag_fp": 2,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "What will you show for 200?",
+      "timestamp": "00:22",
+      "excerpt": "200 में क्या दिखाओगी",
+      "confidence": 0.8,
+      "matched": false
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Will there be fingering too?",
+      "timestamp": "00:26",
+      "excerpt": "फिंगरिंग भी होगा",
+      "confidence": 0.8,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Money later",
+      "timestamp": "00:32",
+      "excerpt": "पैसा बाद में",
+      "confidence": 0.7,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "Explicit-Flirting",
       "translation": "Full body. It will be visible in me.",
+      "timestamp": "00:00",
+      "excerpt": "फुल बॉडी। मेरे में दिख होगा।",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9828940323580131,
       "entropy_mean": 0.2662726709760526,
@@ -19,6 +49,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Will there be fingering too?",
+      "timestamp": "00:28",
+      "excerpt": "fingering bhi hoga?",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9715944352195841,
       "entropy_mean": 0.3598731321282685,
@@ -27,6 +59,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "And did the money increase?",
+      "timestamp": "00:28",
+      "excerpt": "aur paisa badh gaya?",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.75664141069299,
       "entropy_mean": 1.316055138905843,

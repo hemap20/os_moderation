@@ -3,14 +3,44 @@
   "language": "telugu",
   "gt_flag_count": 3,
   "model_flag_count": 5,
-  "flag_tp": 3,
-  "flag_fn": 0,
-  "flag_fp": 2,
+  "flag_tp": 2,
+  "flag_fn": 1,
+  "flag_fp": 3,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Will you give me your number?",
+      "timestamp": "00:13",
+      "excerpt": "నెంబర్ ఇస్తారా?",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Let's chat on WhatsApp.",
+      "timestamp": "00:16",
+      "excerpt": "వాట్సాప్ లో చేద్దాం అండి చాట్",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "If you are okay with it, give me your number and I will send a hi on WhatsApp, send a photo.",
+      "timestamp": "3:02",
+      "excerpt": "మీకు ఓకే అయితే నెంబర్ ఇచ్చి ఫోటో హాయ్ పెడతా వాట్సాప్ లో ఫోటో పంపించండి",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "Let's chat on WhatsApp.",
+      "timestamp": "00:15",
+      "excerpt": "WhatsApp lo chat chedham",
       "model_confidence": 0.98,
       "logprob_derived_confidence": 0.9999998569488798,
       "entropy_mean": 3.6949761187399233e-06,
@@ -19,14 +49,18 @@
     {
       "category": "PlatformMove",
       "translation": "Keep the number, right?",
+      "timestamp": "00:28",
+      "excerpt": "Sarra number raho toh na?",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9999999403953641,
       "entropy_mean": 0.2201152013573875,
-      "matched": true
+      "matched": false
     },
     {
       "category": "PlatformMove",
       "translation": "I send the number, good photo, Neha is, I will send the photo on WhatsApp.",
+      "timestamp": "02:48",
+      "excerpt": "मैं को भेजते नंबर ही अच्छी फोटो नेहा है पड़ता वो WhatsApp पे फोटो पमपचें।",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999998807907318,
       "entropy_mean": 0.1136311011359951,
@@ -35,6 +69,8 @@
     {
       "category": "PlatformMove",
       "translation": "Okay then WhatsApp is here let's just finish it",
+      "timestamp": "03:51",
+      "excerpt": "अच्छा तब WhatsApp ला है हम बस कर लेते हैं",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.18006429060669688,
@@ -43,6 +79,8 @@
     {
       "category": "PlatformMove",
       "translation": "The number is chatta",
+      "timestamp": "03:58",
+      "excerpt": "चटता रो नंबर है",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9087540954533344,
       "entropy_mean": 0.31454175151884556,

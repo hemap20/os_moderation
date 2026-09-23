@@ -7,10 +7,40 @@
   "flag_fn": 1,
   "flag_fp": 2,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Are you interested in taking an open talk service?",
+      "timestamp": "00:45",
+      "excerpt": "എനിക്ക് ഓപ്പൺ ടോക്ക് സർവീസ് എടുക്കാൻ താല്പര്യം ഉണ്ടോ",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "It is a video call service, it is through Telegram.",
+      "timestamp": "00:57",
+      "excerpt": "വീഡിയോ കോൾ സർവീസ് ആണ് ടെലഗ്രാമിൽ കൂടി ആണ്",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Okay, I will give you my Telegram ID, send a hi.",
+      "timestamp": "1:15",
+      "excerpt": "ഓക്കെ ഞാൻ ടെലഗ്രാം ഐഡി അറിയാം ഒരു ഹായ് അയക്കും",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "How is it? This video call service is through Telegram. Ah, 20 minutes, 250 rupees is for a video call. Open open is. We have a call. Ah ah. Okay, how to say? Ah okay, let's see. Okay, I know the Telegram ID. Hi also. Ah okay, capital 42. For winter.",
+      "timestamp": "0s",
+      "excerpt": "എങ്ങനെയാണ്? ഈ വീഡിയോ കോൾ സർവീസ് ആണ് ടെലഗ്രാമീ കൂടിയാണ്. ആ ഇരുപത് മിനിറ്റ് ഇരുനൂറ്റി അമ്പത് രൂപയാണ് വീഡിയോ കോൾ ആണ്. ഓപ്പൺ ഓപ്പൺ ആണ്. നമുക്കൊരു കോൾ ആണ്. ആ ആ. ഓക്കെ, എങ്ങനെ പറയാം? ആ ഓക്കെ, നോക്കണ. ഓക്കെ ഞാൻ ടെലഗ്രാം ഐഡി അറിയാം. ഹായ് ഐക്കും. ആ ഓക്കെ, ക്യാപിറ്റൽ 42. ഫോർ വിന്റർ.",
       "model_confidence": 0.3,
       "logprob_derived_confidence": 0.9127134011420059,
       "entropy_mean": 0.2721108684815491,
@@ -19,6 +49,8 @@
     {
       "category": "PlatformMove",
       "translation": "Capital F, then small letter ID HA, ID HN one two zero.",
+      "timestamp": "0s",
+      "excerpt": "कैपिटल एफ, फिर स्मॉल लेटर आईडी एचए, आईडी एचएन वन टू जीरो।",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.32340214355099306,
@@ -27,6 +59,8 @@
     {
       "category": "PlatformMove",
       "translation": "Black profile kitiyo?",
+      "timestamp": "4s",
+      "excerpt": "ब्लैक प्रोफाइल कितियो?",
       "model_confidence": 0.3,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.7001161383038076,
@@ -35,6 +69,8 @@
     {
       "category": "PlatformMove",
       "translation": "A small letter ID HA.",
+      "timestamp": "5s",
+      "excerpt": "ए स्मॉल लेटर आईडी एचए।",
       "model_confidence": 0.6,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.16519633930765565,

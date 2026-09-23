@@ -3,14 +3,28 @@
   "language": "hindi",
   "gt_flag_count": 1,
   "model_flag_count": 4,
-  "flag_tp": 1,
-  "flag_fn": 0,
-  "flag_fp": 3,
-  "file_bucket": "TP",
+  "flag_tp": 0,
+  "flag_fn": 1,
+  "flag_fp": 4,
+  "file_bucket": "FN",
+  "qualifying_pm_ef_bucket": "FN",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "If I pay you directly via Paytm?",
+      "timestamp": "00:49",
+      "excerpt": "आपको पेटीएम कर दूं डायरेक्ट तो",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "Do you talk like this for money?",
+      "timestamp": "00:28",
+      "excerpt": "Paisa ke liye aisa baat karte ho aap?",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9653289498764445,
       "entropy_mean": 0.15670511399507217,
@@ -19,14 +33,18 @@
     {
       "category": "PlatformMove",
       "translation": "Okay, should I Paytm you directly?",
+      "timestamp": "00:28",
+      "excerpt": "Ok, kya aapko Paytm kar do direct to?",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.88832186351521,
       "entropy_mean": 0.15874081707897858,
-      "matched": true
+      "matched": false
     },
     {
       "category": "PlatformMove",
       "translation": "Do Paytm directly now, then we will talk about it.",
+      "timestamp": "00:56",
+      "excerpt": "Abhi Paytm kar do direct, phir baat karoge uspe.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9605031888661718,
       "entropy_mean": 0.1596065099970474,
@@ -35,6 +53,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Will it be 1000?",
+      "timestamp": "00:56",
+      "excerpt": "1000 karega?",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9269806603582624,
       "entropy_mean": 0.8682378729184469,

@@ -3,14 +3,52 @@
   "language": "hindi",
   "gt_flag_count": 4,
   "model_flag_count": 3,
-  "flag_tp": 1,
-  "flag_fn": 3,
-  "flag_fp": 2,
+  "flag_tp": 2,
+  "flag_fn": 2,
+  "flag_fp": 1,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I do video calls on WhatsApp for charges, will you do it?",
+      "timestamp": "00:50",
+      "excerpt": "मैं व्हाट्सएप पे वीडियो कॉल्स वगैरह करती हूं चार्जेस लेके आप करोगे",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I do open video calls for charges, will you do it?",
+      "timestamp": "01:04",
+      "excerpt": "मैं ओपन वीडियो कॉल्स वगैरह करती हूं चार्जेस लेके आप करोगे",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Dude, so should I masturbate here by opening it?",
+      "timestamp": "01:12",
+      "excerpt": "यार तो मैं इतनी बार मुट्ठी मारूं इधर ओपन करके",
+      "confidence": 0.7,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "250",
+      "timestamp": "01:24",
+      "excerpt": "250",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "Can you tell me, actually, I do video calls on WhatsApp with charges?",
+      "timestamp": "00:55",
+      "excerpt": "बता सकते हो आप एक्चुअली मै व्हाट्सएप पे वीडियो कॉलस वगैरह करती हूँ चार्जस लेके आपका",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9622601604534788,
       "entropy_mean": 0.023087384795017978,
@@ -19,6 +57,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "I do open video calls with charges, will you do it?",
+      "timestamp": "01:05",
+      "excerpt": "ओपन वीडियो कॉल्स वगैरह करती हूँ चार्जेस लेके आप करोगे",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9935974912081418,
       "entropy_mean": 0.009435615278836577,
@@ -27,10 +67,12 @@
     {
       "category": "SuspiciousActivity",
       "translation": "How many rupees do you take?",
+      "timestamp": "01:20",
+      "excerpt": "आप तो कितने रुपए लेती हो",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.993597076647272,
       "entropy_mean": 0.010215570710743785,
-      "matched": false
+      "matched": true
     }
   ]
 }

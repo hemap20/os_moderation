@@ -3,14 +3,44 @@
   "language": "hindi",
   "gt_flag_count": 3,
   "model_flag_count": 3,
-  "flag_tp": 1,
-  "flag_fn": 2,
-  "flag_fp": 2,
+  "flag_tp": 2,
+  "flag_fn": 1,
+  "flag_fp": 1,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Do you like open video calls etc.?",
+      "timestamp": "00:23",
+      "excerpt": "आपको ओपन वीडियो कॉल्स वगैरह पसंद है?",
+      "confidence": 0.4,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I do chargeable video calls, will you do it?",
+      "timestamp": "00:39",
+      "excerpt": "मैं चार्जेबल वीडियो कॉल करती हूं करेंगे आप?",
+      "confidence": 0.8,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "300",
+      "timestamp": "00:44",
+      "excerpt": "300",
+      "confidence": 0.8,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "Tell me, do you like open video calls or anything like that?",
+      "timestamp": "00:20",
+      "excerpt": "बताइए आपको ओपन वीडियो कॉल्स वगैर पसंद है",
       "model_confidence": 0.7,
       "logprob_derived_confidence": 0.955040911366445,
       "entropy_mean": 0.015986263685545055,
@@ -19,14 +49,18 @@
     {
       "category": "SuspiciousActivity",
       "translation": "I am chargeable.",
+      "timestamp": "00:25",
+      "excerpt": "म चार्जेबल",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9764840075915722,
       "entropy_mean": 0.0027903825932753534,
-      "matched": false
+      "matched": true
     },
     {
       "category": "SuspiciousActivity",
       "translation": "I do chargeable video calls, it is three hundred.",
+      "timestamp": "00:40",
+      "excerpt": "चार्जेबल वीडियो कॉल करती हूँ करें थ्री हंड्रेड",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9764838911856282,
       "entropy_mean": 0.06711351750764677,

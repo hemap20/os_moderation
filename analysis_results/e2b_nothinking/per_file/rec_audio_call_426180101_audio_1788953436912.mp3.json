@@ -7,10 +7,32 @@
   "flag_fn": 0,
   "flag_fp": 1,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Which one, on WhatsApp?",
+      "timestamp": "00:11",
+      "excerpt": "ఏది వాట్సాప్ లోనా",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Tell me the number, tell me, I will take 200, okay? I am in a good mood.",
+      "timestamp": "00:17",
+      "excerpt": "చెప్పు నెంబర్ చెప్పు నేను 200 తీసుకుంటా ఓకేనా నీకు మంచి మూడ్ లో ఉన్నా",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "interested in video call let's talk",
+      "timestamp": "0s",
+      "excerpt": "video call interest thed matadukunnama",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9885967861743747,
       "entropy_mean": 0.48883178300457075,
@@ -19,6 +41,8 @@
     {
       "category": "PlatformMove",
       "translation": "on WhatsApp",
+      "timestamp": "0s",
+      "excerpt": "ae whatsapp la na",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9999985992958078,
       "entropy_mean": 0.48896235006941424,
@@ -27,6 +51,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "tell the number i will give 200 ok you are in a good mood",
+      "timestamp": "0s",
+      "excerpt": "chapp number cheppu nenu 200 diskunta ok na niku manchi mood lo unna",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9999853777422183,
       "entropy_mean": 0.20537544229667357,

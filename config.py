@@ -1,6 +1,7 @@
 """Central configuration for the moderation eval pipeline."""
 import os
 from pathlib import Path
+from typing import Optional
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 
@@ -44,6 +45,19 @@ IGNORED_FILENAMES = {".DS_Store"}
 GEMINI_API_KEY_ENV = "GEMINI_API_KEY"
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.1-flash-lite")
 
+# Classifier model for classify_fps.py's FP-type sub-classification. Would
+# ideally be stronger than GEMINI_MODEL (the ground-truth generator) so it
+# isn't just repeating ground truth's own blind spots, but gemini-3.5-flash
+# was tried and hard-blocks with PROHIBITED_CONTENT on some moderation
+# transcripts in this dataset (not overridable via safety_settings) — so
+# this reverts to the same model as ground truth per explicit user decision,
+# until a stronger tier is confirmed not to hit that block on this content.
+GEMINI_CLASSIFIER_MODEL = os.environ.get("GEMINI_CLASSIFIER_MODEL", "gemini-3.1-flash-lite")
+
+# Matching model for analyze_results.py's GT<->model flag pairing step. Same
+# reasoning/reversion as GEMINI_CLASSIFIER_MODEL above.
+GEMINI_MATCH_MODEL = os.environ.get("GEMINI_MATCH_MODEL", "gemini-3.1-flash-lite")
+
 # --- Vertex AI auth (alternative to the plain API key above). Point
 # GOOGLE_APPLICATION_CREDENTIALS at a service-account JSON *file* (never
 # inline JSON in .env — see incident notes), and set these two:
@@ -58,3 +72,34 @@ INCOMPLETE_TRANSCRIPT_GAP_FRACTION = 0.10
 DEFAULT_MAX_RETRIES = 5
 DEFAULT_BACKOFF_BASE_SEC = 2.0
 DEFAULT_DRY_RUN_LIMIT = 3
+
+
+def dataset_paths(dataset_root: Optional[str] = None) -> dict:
+    """Resolve the dataset directory and ITS OWN result directories for
+    either the full dataset (default, dataset_root=None -> DOSTT_DIR) or an
+    alternate root such as Dostt_dev/ (passed via each script's
+    --dataset-root). An alternate root gets its own gemma_results/
+    gemini_results/analysis_results directories, suffixed from the root's
+    own name (Dostt_dev -> *_dev), so a dev-set run can never read from or
+    write into the full-dataset result directories without any script
+    needing per-root logic of its own."""
+    if dataset_root is None:
+        root = DOSTT_DIR
+        suffix = ""
+    else:
+        root = Path(dataset_root)
+        if not root.is_absolute():
+            root = PROJECT_ROOT / root
+        name = root.name
+        if name == "Dostt":
+            suffix = ""
+        elif name.startswith("Dostt_"):
+            suffix = "_" + name[len("Dostt_"):]
+        else:
+            suffix = "_" + name
+    return {
+        "dataset_dir": root,
+        "gemma_results_dir": PROJECT_ROOT / f"gemma_results{suffix}",
+        "gemini_results_dir": PROJECT_ROOT / f"gemini_results{suffix}",
+        "analysis_results_dir": PROJECT_ROOT / f"analysis_results{suffix}",
+    }

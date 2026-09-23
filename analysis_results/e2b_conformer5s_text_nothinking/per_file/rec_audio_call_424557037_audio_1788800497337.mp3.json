@@ -3,30 +3,64 @@
   "language": "tamil",
   "gt_flag_count": 3,
   "model_flag_count": 3,
-  "flag_tp": 3,
-  "flag_fn": 0,
-  "flag_fp": 0,
+  "flag_tp": 1,
+  "flag_fn": 2,
+  "flag_fp": 2,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I need a phone number, how do I contact you?",
+      "timestamp": "00:27",
+      "excerpt": "போன் நம்பர் வேணுமே இப்ப நான் எப்படி நான் உங்களை காண்டாக்ட் பண்ணிட்டு வர்றது?",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I shouldn't ask for money, but I will give you 1500 or 2000 in hand when we meet.",
+      "timestamp": "00:40",
+      "excerpt": "நான் காசு கேட்கக்கூடாது ஆனா நேர்ல வந்து உனக்கு 1500 இல்லனா 2000 கையில தரேன்",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will give you money in your hand, then we can go into a room.",
+      "timestamp": "01:30",
+      "excerpt": "உன் கையில காசு தரேன் அதுக்கப்புறம் நம்ம ரூம்குள்ள போலாம்",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "You didn't get the number and won't call, okay, I will give the number for a video call",
+      "timestamp": "01:15",
+      "excerpt": "நம்பர்்டு நீ நம்பர் வாங்கிட்டு கால் பண்ண மாட்ட சரி வீடியோ கால் நான் நம்பர் தரேன்",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9968752625348845,
       "entropy_mean": 0.034879327512295,
-      "matched": true
+      "matched": false
     },
     {
       "category": "SuspiciousActivity",
       "translation": "But yesterday I gave you thousand five under...",
+      "timestamp": "00:40",
+      "excerpt": "ஆனா நேல வந்து உனக்கு தௌசண்ட் பைவ் ண்ட்ர் இல்ாடூ த",
       "model_confidence": 0.3,
       "logprob_derived_confidence": 0.9998999985443802,
       "entropy_mean": 0.008576065662146984,
-      "matched": true
+      "matched": false
     },
     {
       "category": "SuspiciousActivity",
       "translation": "Oh, give the money in your hand, give the money in your hand, then we can go inside the room",
+      "timestamp": "01:30",
+      "excerpt": "ஓ உன் கையில கா உன் கையில காசு தறேன் அதுக்கப்புறம் நம்ம ரூமுக்குள்ள போலாம்",
       "model_confidence": 0.55,
       "logprob_derived_confidence": 0.9998999985443802,
       "entropy_mean": 0.029684152698145626,

@@ -7,10 +7,48 @@
   "flag_fn": 2,
   "flag_fp": 0,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Will you come on WhatsApp call?",
+      "timestamp": "00:24",
+      "excerpt": "ವಾಟ್ಸಪ್ ಕಾಲ್ ಬರ್ತೀರಾ?",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "If you pay for video call, I will do a real meet",
+      "timestamp": "00:35",
+      "excerpt": "ವಿಡಿಯೋ ಕಾಲ್ ಗೆ ಪೇ ಮಾಡಿದ್ರೆ ರಿಯಲ್ ಮೀಟ್ ಮಾಡ್ತೀನಿ",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "One night 5000",
+      "timestamp": "00:40",
+      "excerpt": "ಒನ್ ನೈಟ್ 5000",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "I feel like doing a real meet, you look good",
+      "timestamp": "00:50",
+      "excerpt": "ರಿಯಲ್ ಮೀಟ್ ಮಾಡ್ಬೇಕು ಅನ್ಸುತ್ತೆ ಚೆನ್ನಾಗಿ ಕಾಣ್ತಿದ್ದೀರಾ",
+      "confidence": 0.4,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "You will have to pay for the video call",
+      "timestamp": "00:33",
+      "excerpt": "Video call ke liye pay karna padega",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9906882918973164,
       "entropy_mean": null,
@@ -19,6 +57,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "One night 5000",
+      "timestamp": "00:39",
+      "excerpt": "One night 5000",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9999689480204718,
       "entropy_mean": null,

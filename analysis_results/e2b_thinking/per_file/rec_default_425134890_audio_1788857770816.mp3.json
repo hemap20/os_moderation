@@ -3,14 +3,52 @@
   "language": "hindi",
   "gt_flag_count": 4,
   "model_flag_count": 2,
-  "flag_tp": 1,
-  "flag_fn": 3,
-  "flag_fp": 1,
+  "flag_tp": 2,
+  "flag_fn": 2,
+  "flag_fp": 0,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Do you do fingering?",
+      "timestamp": "00:35",
+      "excerpt": "अच्छा फिंगरिंग करते हो",
+      "confidence": 0.4,
+      "matched": true
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Oh my god, how big are yours?",
+      "timestamp": "01:20",
+      "excerpt": "यार आपके कितने बड़े हैं बाप रे",
+      "confidence": 0.4,
+      "matched": false
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "There is no one here, take your books out.",
+      "timestamp": "02:26",
+      "excerpt": "अब हमने कोई नहीं है क्या बुक्स निकाल लो ना",
+      "confidence": 0.4,
+      "matched": true
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "No, I am masturbating.",
+      "timestamp": "03:34",
+      "excerpt": "नहीं यार मैं हिला रहा हूं",
+      "confidence": 0.8,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "Explicit-Flirting",
       "translation": "Do you do thingering?",
+      "timestamp": "00:28",
+      "excerpt": "थिंगरिंग करते हो?",
       "model_confidence": 0.45,
       "logprob_derived_confidence": 0.9999999850988398,
       "entropy_mean": 0.4248290479008574,
@@ -19,10 +57,12 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Take out your boobs",
+      "timestamp": "02:20",
+      "excerpt": "अपना बब्स निकाल लो ना",
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.9999999105930439,
       "entropy_mean": 0.2644031830195672,
-      "matched": false
+      "matched": true
     }
   ]
 }

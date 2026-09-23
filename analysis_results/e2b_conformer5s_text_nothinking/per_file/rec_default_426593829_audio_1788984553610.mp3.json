@@ -7,10 +7,40 @@
   "flag_fn": 2,
   "flag_fp": 1,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I will show it on this, why wouldn't I, but I show it better on WhatsApp because it gets blurred here.",
+      "timestamp": "1:40",
+      "excerpt": "मैं इस पे तो दिखा दूंगी दिखाऊंगी क्यों नहीं दिखाऊंगी बट मैं व्हाट्सएप पे अच्छे से शो करती हूँ",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Look, I charge 1000, you tell me how much you will give.",
+      "timestamp": "2:45",
+      "excerpt": "देखो मैं 1000 लेती हूँ तुम बताओ कितना दोगे",
+      "confidence": 0.4,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I charge 500 for an open show and 1000 for couple sex/live sex.",
+      "timestamp": "2:57",
+      "excerpt": "500 में ओपन शो का लेती हूँ और कपल सेक्स लाइफ सेक्स का 1000 लेती हूँ",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "Hey, look, I take one thousand, you tell me how much you will give, two hundred",
+      "timestamp": "02:45",
+      "excerpt": "ऐ तो देखो मैं वन थाउजेंड लेतीू तुम बताओ कितना दोगे दो सौ",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9991778598581144,
       "entropy_mean": 0.00504079026355637,
@@ -19,6 +49,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "I take five hundred for a show and one thousand for couple sex life sex",
+      "timestamp": "03:00",
+      "excerpt": "फाइव हंड्रेड में पन शो का लेती हूं और कपल सेक्स लाइफ सेक्स का वन थाउजेंड ले",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9991778598581144,
       "entropy_mean": 0.0007930918537481048,

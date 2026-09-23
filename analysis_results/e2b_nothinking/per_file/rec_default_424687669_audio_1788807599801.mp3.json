@@ -7,10 +7,56 @@
   "flag_fn": 3,
   "flag_fp": 6,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Will you come to WhatsApp call?",
+      "timestamp": "00:15",
+      "excerpt": "ವಾಟ್ಸಪ್ ಕಾಲ್ ಬರ್ತೀರಾ?",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Tell me your number.",
+      "timestamp": "00:25",
+      "excerpt": "ನಂಬರ್ ಹೇಳು.",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "1000 for full open video call with face and fingering.",
+      "timestamp": "00:46",
+      "excerpt": "1000 ಫುಲ್ ಓಪನ್ ವಿಡಿಯೋ ಕಾಲ್ ವಿತ್ ಫೇಸ್ ಅಂಡ್ ಫಿಂಗರಿಂಗ್.",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Only if you pay for this will I do a real meet. One night 5000.",
+      "timestamp": "00:53",
+      "excerpt": "ಇದಕ್ಕೆ ಪೇ ಮಾಡಿದ್ರೆನೇ ರಿಯಲ್ ಮೀಟ್ ಮಾಡೋದು. ಒನ್ ನೈಟ್ 5000.",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "How much more will you do? Full nude call.",
+      "timestamp": "01:29",
+      "excerpt": "ಇನ್ನೇಷ್ಟು ಮಾಡ್ತೀರಾ? ಫುಲ್ ನೂಡ್ ಕಾಲ್.",
+      "confidence": 0.4,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "What are the rates? Hey, if you pay, I will show a video call.",
+      "timestamp": "00:35",
+      "excerpt": "ఏం రేట్స్ సరే అండి? హెలి నీవు ఎష్ పంట్తరా పే ಮಾಡಿದ್ರೆ వీడియో కాల్ షో మార్తిన",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.999999860922562,
       "entropy_mean": 0.720842496883365,
@@ -19,6 +65,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "So what are the rates? If I pay, 1000 for a full open video call with face and fingering.",
+      "timestamp": "00:43",
+      "excerpt": "అలా నిమ్దే ఏం రేట్స్ ఇది ఏడతరే నం పేయమండ్రో 1000 ఫుల్ ఓపెన్ వీడియో కాల్ విత్ ఫేస్ అండ్ ఫింగర్రింగ్",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.999999860922562,
       "entropy_mean": 0.34009455597479626,
@@ -27,6 +75,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Real meet? If I pay, real meet, 1 night 5000.",
+      "timestamp": "00:49",
+      "excerpt": "రియల్ మీట్ అదరే ఇదిక్ పేయమండరే రియల్ మీట్ మాడొ 1 నైట్ 5000",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.999999860922562,
       "entropy_mean": 0.23334549617413844,
@@ -35,6 +85,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Tell me if you are free, I will call you.",
+      "timestamp": "01:52",
+      "excerpt": "niyava free irthira heli na call maadi na sikthini",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.978969478950441,
       "entropy_mean": 0.2908719167953677,
@@ -43,6 +95,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Are you also not a job or an employee, are you free?",
+      "timestamp": "01:57",
+      "excerpt": "neevu kuda job alla employ alla nimde niyava free irthira",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.978969478950441,
       "entropy_mean": 0.1825352845227144,
@@ -51,6 +105,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Almost, if you are free, then if you tell me, I will take leave.",
+      "timestamp": "02:07",
+      "excerpt": "almoost re have niyava free irthira andre nivu nannage heludre na divh aktani",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.978969478950441,
       "entropy_mean": 0.4695197999487088,
@@ -59,6 +115,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "I am taking leave.",
+      "timestamp": "02:12",
+      "excerpt": "hadake leave aktira",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.978969478950441,
       "entropy_mean": 0.1897129907965791,
@@ -67,6 +125,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Will you give leave?",
+      "timestamp": "02:15",
+      "excerpt": "leave kudthara nimge",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.978969478950441,
       "entropy_mean": 0.16829372463750283,

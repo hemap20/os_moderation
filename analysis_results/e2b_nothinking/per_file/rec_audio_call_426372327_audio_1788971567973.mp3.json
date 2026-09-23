@@ -7,10 +7,40 @@
   "flag_fn": 2,
   "flag_fp": 2,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Give me your number",
+      "timestamp": "00:58",
+      "excerpt": "நம்பர் குடு",
+      "confidence": 1.0,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "You will have to pay an amount",
+      "timestamp": "01:00",
+      "excerpt": "நீ அமௌன்ட் பே பண்ற மாதிரி இருக்கும்",
+      "confidence": 0.8,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "You can call this number anytime",
+      "timestamp": "01:09",
+      "excerpt": "நீ எப்ப வேணாலும் இந்த நம்பருக்கு கால் பண்ணலாம்",
+      "confidence": 1.0,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "Message on WhatsApp?",
+      "timestamp": "00:28",
+      "excerpt": "whatsapp pe message kiyan?",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.7250678551693758,
@@ -19,6 +49,8 @@
     {
       "category": "PlatformMove",
       "translation": "Message on WhatsApp?",
+      "timestamp": "00:28",
+      "excerpt": "whatsapp pe message kiyan?",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.7250678551693758,
@@ -27,6 +59,8 @@
     {
       "category": "PlatformMove",
       "translation": "Give the number. Nani amon pay pandara malli po. Evalove. 300. Will you take it or not? I will call that number anytime. I have blocked, okay? I will not block.",
+      "timestamp": "00:56",
+      "excerpt": "నేరే నంబర్ కొడ. నానీ అమోన్ పే పండర మళ్ళీ పో. ఎవలోవే. 300. వాంగి てయమాత తీపరేనా? నాయి ఎమత మతని ఎప్పుడైనా దన నంబర్ కాల్ పనలానాదా వచీర్ప. నే ఎచ్ఛర్కర సరే బ్లాక్ పండు బెర్రాయింగలే. నామ్ బ్లాక్ పనమాటే.",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.999995589305122,
       "entropy_mean": 0.6360491001116637,

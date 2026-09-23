@@ -41,9 +41,15 @@ from schemas_gemma import GemmaChunkFlag, GemmaFileResult
 RAW_SCHEMA_STR = json.dumps(raw_model_output_json_schema())
 
 
+# Mutable module globals (not frozen constants) — reassigned by main() from
+# --dataset-root via config.dataset_paths(), same pattern as gemma_local.py.
+DATASET_DIR: Path = config.DOSTT_DIR
+GEMINI_RESULTS_DIR: Path = config.PROJECT_ROOT / "gemini_results"
+
+
 def output_dir(model: str) -> Path:
     safe_name = model.replace("/", "_")
-    return config.PROJECT_ROOT / "gemini_results" / safe_name
+    return GEMINI_RESULTS_DIR / safe_name
 
 
 def call_classification(client, model: str, record: dsv2.FileRecordV2, logger: StageLogger) -> str:
@@ -109,7 +115,7 @@ def write_error(model: str, file_id: str, error: str):
 
 def unique_records():
     seen = set()
-    for r in dsv2.load_dataset_v2():
+    for r in dsv2.load_dataset_v2(DATASET_DIR):
         if r.file_id in seen:
             continue
         seen.add(r.file_id)
@@ -124,7 +130,15 @@ def main():
     parser.add_argument("--force", action="store_true")
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument("--workers", type=int, default=8, help="Concurrent Gemini calls (I/O-bound, threading is safe here)")
+    parser.add_argument("--dataset-root", type=str, default=None,
+                         help="Alternate dataset root, e.g. Dostt_dev — routes results to "
+                              "gemini_results_<suffix>/ automatically; default uses the full Dostt/ dataset")
     args = parser.parse_args()
+
+    global DATASET_DIR, GEMINI_RESULTS_DIR
+    paths = config.dataset_paths(args.dataset_root)
+    DATASET_DIR = paths["dataset_dir"]
+    GEMINI_RESULTS_DIR = paths["gemini_results_dir"]
 
     logger = StageLogger(f"gemini_model_eval_{args.model.replace('/', '_')}")
 

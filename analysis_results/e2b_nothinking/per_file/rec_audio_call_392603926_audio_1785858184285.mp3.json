@@ -3,14 +3,28 @@
   "language": "hindi",
   "gt_flag_count": 1,
   "model_flag_count": 2,
-  "flag_tp": 1,
-  "flag_fn": 0,
-  "flag_fp": 1,
-  "file_bucket": "TP",
+  "flag_tp": 0,
+  "flag_fn": 1,
+  "flag_fp": 2,
+  "file_bucket": "FN",
+  "qualifying_pm_ef_bucket": "FN",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "So tell me your WhatsApp number",
+      "timestamp": "00:56",
+      "excerpt": "तो अपना व्हाट्सएप नंबर बोलो",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "Explicit-Flirting",
       "translation": "I do a diamond job, what do you do?",
+      "timestamp": "00:28",
+      "excerpt": "मैं डायमंड जॉब करता हूँ आप क्या करती हो",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9998660596388933,
       "entropy_mean": 0.08426924263988622,
@@ -19,10 +33,12 @@
     {
       "category": "PlatformMove",
       "translation": "No, I don't want a friend through WhatsApp number right now, talk for a few days, then I can give it, right",
+      "timestamp": "0.0",
+      "excerpt": "नहीं واتসআপ नंबर से दोस्त नहीं चाहिए अभी थोड़े दिन थोड़े दिन से ही बात करे तो दे सकता हूं ना",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.8118886218423983,
       "entropy_mean": 0.17413940936345518,
-      "matched": true
+      "matched": false
     }
   ]
 }

@@ -7,10 +7,40 @@
   "flag_fn": 1,
   "flag_fp": 0,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Will you do a video call on WhatsApp?",
+      "timestamp": "00:31",
+      "excerpt": "ವಿಡಿಯೋ ಕಾಲ್ ಮಾಡ್ತೀರಾ ವಾಟ್ಸಪ್ ಅಲ್ಲಿ",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Give me your number",
+      "timestamp": "00:40",
+      "excerpt": "ನಂಬರ್ ಕೊಡಿ",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "300 rupees",
+      "timestamp": "00:40",
+      "excerpt": "300 ರುಪೀಸ್",
+      "confidence": 0.8,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "Will you do video call on WhatsApp?",
+      "timestamp": "00:30",
+      "excerpt": "ವಿಡಿಯೋ ಕಾಲ್ ಮಾಡ್ತೀರಾ ವಾಟ್ಸಪಲ್ಲಿ",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.8683631384630032,
       "entropy_mean": 0.0028486634247371968,
@@ -19,6 +49,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Give me the number, I am not a fraud, three hundred rupees to you",
+      "timestamp": "00:40",
+      "excerpt": "ಬರ್ತ ನಂಬರ್ ಕೊಡಿ ನಾನ ನ್ ಮೋಸಗತಿ ಅಲ್ಲ ತ್ರೀ ಹಂಡ್ರೆಡ್ ರುಪೀಸ್ ನಿಮ",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9989532931744614,
       "entropy_mean": 0.011198086377071608,

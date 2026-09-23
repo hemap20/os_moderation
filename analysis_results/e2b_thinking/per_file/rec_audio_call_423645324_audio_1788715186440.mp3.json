@@ -3,14 +3,36 @@
   "language": "tamil",
   "gt_flag_count": 2,
   "model_flag_count": 2,
-  "flag_tp": 1,
-  "flag_fn": 1,
-  "flag_fp": 1,
-  "file_bucket": "TP",
+  "flag_tp": 0,
+  "flag_fn": 2,
+  "flag_fp": 2,
+  "file_bucket": "FN",
+  "qualifying_pm_ef_bucket": "FN",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Can we talk sexily?",
+      "timestamp": "2:08",
+      "excerpt": "செக்ஸியா பேசலாமா",
+      "confidence": 0.4,
+      "matched": false
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Okay, if I come now, can I do you? Can I enjoy with you?",
+      "timestamp": "2:22",
+      "excerpt": "சரி இப்ப வந்தா உன்னைய பண்ணலாமா உன் கூட என்ஜாய் பண்ணலாமா",
+      "confidence": 0.4,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "Will you give me the ID? Hmm, what is the ID, you are saying Insta ID here.",
+      "timestamp": "0s",
+      "excerpt": "ID kuda denungala ninga? Hmm, na da ID kuda ortenngala Insta ID iniki.",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.109391069731654,
@@ -19,10 +41,12 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Shall we do sex?",
+      "timestamp": "02:07",
+      "excerpt": "सेक्सिया पेस्रलामा?",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999510205539779,
       "entropy_mean": 2.6338309396134464e-06,
-      "matched": true
+      "matched": false
     }
   ]
 }

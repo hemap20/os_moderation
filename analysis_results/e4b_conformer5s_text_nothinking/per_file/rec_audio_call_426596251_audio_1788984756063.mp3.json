@@ -7,10 +7,40 @@
   "flag_fn": 1,
   "flag_fp": 0,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Oh, do you do WhatsApp video calling?",
+      "timestamp": "00:22",
+      "excerpt": "अच्छा व्हाट्सएप वीडियो कॉलिंग करते हैं आप?",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "What do you charge?",
+      "timestamp": "00:25",
+      "excerpt": "क्या चार्ज लेते हैं?",
+      "confidence": 0.8,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "We give 10 minutes for 300 and half an hour for 600.",
+      "timestamp": "00:28",
+      "excerpt": "हम आप वो मतलब 300 में 10 मिनट देते हैं और 600 में आधा घंटा देते हैं",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "What do you charge?",
+      "timestamp": "00:25",
+      "excerpt": "क्या चार्ज लेते हैं हम ह",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9776897174658761,
       "entropy_mean": 0.00610984746132696,
@@ -19,6 +49,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Meaning, we give ten minutes for three hundred and half an hour for six hundred.",
+      "timestamp": "00:30",
+      "excerpt": "मतलब थ्री हंड्रेड में दस मिनट देते हैं और सिक्स हंड्रेड में",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9990659171103192,
       "entropy_mean": 0.0010278348959678182,

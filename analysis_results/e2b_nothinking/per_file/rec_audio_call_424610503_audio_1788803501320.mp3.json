@@ -7,10 +7,40 @@
   "flag_fn": 1,
   "flag_fp": 0,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Do you like open video calls etc.?",
+      "timestamp": "00:23",
+      "excerpt": "आपको ओपन वीडियो कॉल्स वगैरह पसंद है?",
+      "confidence": 0.4,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I do chargeable video calls, will you do it?",
+      "timestamp": "00:39",
+      "excerpt": "मैं चार्जेबल वीडियो कॉल करती हूं करेंगे आप?",
+      "confidence": 0.8,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "300",
+      "timestamp": "00:44",
+      "excerpt": "300",
+      "confidence": 0.8,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "Explicit-Flirting",
       "translation": "Yes, do you like open video calls etc.",
+      "timestamp": "00:35",
+      "excerpt": "हां आपको ओपन वीडियो कॉल्स वगैरह पसंद है",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9983971710126641,
       "entropy_mean": 0.2530421775889222,
@@ -19,6 +49,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "I do chargeable video calls, will you? What is the card 300",
+      "timestamp": "0m0s",
+      "excerpt": "मैं चार्जएबल वीडियो कॉल करती हूँ करेंगे आप कार्ड क्या है 300",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9999989072523383,
       "entropy_mean": 0.13048807145991967,

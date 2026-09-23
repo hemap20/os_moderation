@@ -22,15 +22,35 @@ Matching rule (per user's explicit spec):
   truth positive but no matched flag. FP if ground truth negative but
   model raised >=1 flag. TN if ground truth negative and model raised none.
 
-Matching is done ENTIRELY by Gemini, no Python shortcut: every file's
-full ground-truth flag list and model flag list (category + translation)
-is sent to Gemini, batched 5 files per call, and Gemini alone decides
-which specific flags correspond to the same incident (same category AND
-same semantic content) — including the trivial one-vs-one case, which
-used to be auto-matched locally but is now judged by the model like
-everything else. Python only turns Gemini's returned (gt_index,
-model_index) pairs into TP/FP/FN counts — no arithmetic judgment calls
-are made by Gemini, only the matching decision.
+MATCHING — a deterministic pre-pass plus a single-file Gemini leftover call,
+adopted after an isolated-vs-batched audit found an earlier all-Gemini,
+5-files-per-call approach disagreed with a single-file rematch on 13% of a
+100-file sample (that earlier approach and its output are no longer kept
+around):
+
+  1. DETERMINISTIC PRE-PASS (deterministic_prematch, pure Python, zero LLM
+     calls, 100% reproducible by construction): a ground-truth flag and a
+     model flag are auto-paired if they share the SAME category, their
+     timestamps are within +-15s of each other, AND their native-language
+     excerpts have high text similarity (difflib ratio). This resolves the
+     easy, unambiguous majority of matches without ever asking Gemini, which
+     both cuts cost and removes the LLM's main source of variance for them.
+  2. Only the LEFTOVER flags neither side of the pre-pass could pair are
+     sent to Gemini — ONE FILE PER CALL (batch size 1 by default, temperature
+     0, model config.GEMINI_MATCH_MODEL — a stronger tier than the
+     ground-truth generator, not the same size/generation), for whichever
+     files still have genuine ambiguity on BOTH sides after the pre-pass.
+     Gemini decides which LEFTOVER GT item and LEFTOVER MODEL item refer to
+     the same incident (same category AND same semantic content, judged by
+     translation) — this is where real judgment calls remain, and only
+     there. If --match-runs > 1, each such file's leftover set is matched
+     that many times independently and resolved by majority vote per pair,
+     with the per-run agreement recorded as that file's match_reliability
+     (1.0 for files with no leftovers, or for --match-runs 1).
+  3. Python only turns the pre-pass + Gemini pairs into TP/FP/FN counts — no
+     arithmetic judgment calls are made by Gemini, only the matching
+     decision, and only on the flags the deterministic pass couldn't
+     resolve on its own.
 
 Confidence-bucket precision (flag level, discrete bins, precision only —
 per your choice): each model flag is binned by its confidence — once using
@@ -54,11 +74,12 @@ Usage:
 """
 import argparse
 import csv
+import difflib
 import json
 import threading
 import time
 import traceback
-from collections import defaultdict
+from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
@@ -68,18 +89,47 @@ import dataset_v2 as dsv2
 import gemini_client
 from pipeline_logging import StageLogger
 
-MODEL_DIRS: Dict[str, Path] = {
-    "e2b_thinking": config.PROJECT_ROOT / "gemma_results" / "e2b_thinking",
-    "e2b_nothinking": config.PROJECT_ROOT / "gemma_results" / "e2b_nothinking",
-    "e4b_thinking": config.PROJECT_ROOT / "gemma_results" / "e4b_thinking",
-    "e4b_nothinking": config.PROJECT_ROOT / "gemma_results" / "e4b_nothinking",
-    "12b_nothinking": config.PROJECT_ROOT / "gemma_results" / "12b_nothinking",
-    "e2b_conformer5s_text_nothinking": config.PROJECT_ROOT / "gemma_results" / "e2b_conformer5s_text_nothinking",
-    "e4b_conformer5s_text_nothinking": config.PROJECT_ROOT / "gemma_results" / "e4b_conformer5s_text_nothinking",
-    "gemini-3.5-flash-lite": config.PROJECT_ROOT / "gemini_results" / "gemini-3.5-flash-lite",
-}
+# --- Deterministic pre-pass thresholds (see module docstring, MATCHING) ---
+PREMATCH_MAX_TS_DIFF_SEC = 15.0
+PREMATCH_MIN_TEXT_SIMILARITY = 0.5
 
-OUTPUT_DIR = config.PROJECT_ROOT / "analysis_results"
+def _build_model_dirs(gemma_results_dir: Path, gemini_results_dir: Path) -> Dict[str, Path]:
+    return {
+        "e2b_thinking": gemma_results_dir / "e2b_thinking",
+        "e2b_nothinking": gemma_results_dir / "e2b_nothinking",
+        "e4b_thinking": gemma_results_dir / "e4b_thinking",
+        "e4b_nothinking": gemma_results_dir / "e4b_nothinking",
+        "12b_nothinking": gemma_results_dir / "12b_nothinking",
+        "e2b_conformer5s_text_nothinking": gemma_results_dir / "e2b_conformer5s_text_nothinking",
+        "e4b_conformer5s_text_nothinking": gemma_results_dir / "e4b_conformer5s_text_nothinking",
+        "gemini-3.5-flash-lite": gemini_results_dir / "gemini-3.5-flash-lite",
+    }
+
+
+# DATASET_DIR / MODEL_DIRS / OUTPUT_DIR are mutable module globals, not
+# frozen constants: configure_dataset_root() below repoints them at an
+# alternate dataset root's OWN result directories (see config.dataset_paths)
+# when --dataset-root is passed. Every function in this module (and
+# classify_fps.py, which imports this module and reads these same names)
+# looks these up at CALL time via attribute access, so calling
+# configure_dataset_root() once at the top of main() — before anything else
+# runs — is sufficient; no other function needs to change.
+DATASET_DIR: Path = config.DOSTT_DIR
+MODEL_DIRS: Dict[str, Path] = _build_model_dirs(config.PROJECT_ROOT / "gemma_results", config.PROJECT_ROOT / "gemini_results")
+OUTPUT_DIR: Path = config.PROJECT_ROOT / "analysis_results"
+
+
+def configure_dataset_root(dataset_root: Optional[str] = None):
+    """Repoints DATASET_DIR/MODEL_DIRS/OUTPUT_DIR at dataset_root's own
+    result directories. Call once, first thing, in any script's main() that
+    accepts --dataset-root — including classify_fps.py, via
+    analyze_results.configure_dataset_root(args.dataset_root), so both
+    scripts resolve to the same dev/prod directories for the same value."""
+    global DATASET_DIR, MODEL_DIRS, OUTPUT_DIR
+    paths = config.dataset_paths(dataset_root)
+    DATASET_DIR = paths["dataset_dir"]
+    MODEL_DIRS = _build_model_dirs(paths["gemma_results_dir"], paths["gemini_results_dir"])
+    OUTPUT_DIR = paths["analysis_results_dir"]
 
 CONFIDENCE_BINS = [(0.0, 0.2), (0.2, 0.4), (0.4, 0.6), (0.6, 0.8), (0.8, 1.0001)]
 
@@ -145,7 +195,13 @@ def load_ground_truth(record: dsv2.FileRecordV2) -> Optional[List[dict]]:
     if cls.get("status") != "success":
         return None
     return [
-        {"category": f["ground_truth_category"], "translation": f["ground_truth_translation"]}
+        {
+            "category": f["ground_truth_category"],
+            "translation": f["ground_truth_translation"],
+            "timestamp": f.get("ground_truth_timestamp", ""),
+            "excerpt": f.get("ground_truth_excerpt", ""),
+            "confidence": f.get("ground_truth_confidence"),
+        }
         for f in cls.get("ground_truth_flags", [])
     ]
 
@@ -163,6 +219,8 @@ def load_model_flags(model_dir: Path, file_id: str) -> Optional[List[dict]]:
         out.append({
             "category": f.get("model_category", ""),
             "translation": f.get("model_translation", ""),
+            "timestamp": f.get("model_timestamp", ""),
+            "excerpt": f.get("model_excerpt", ""),
             "model_confidence": f.get("model_confidence"),
             "logprob_derived_confidence": f.get("logprob_derived_confidence"),
             "entropy_mean": entropy.get("mean"),
@@ -170,7 +228,59 @@ def load_model_flags(model_dir: Path, file_id: str) -> Optional[List[dict]]:
     return out
 
 
-def match_files_batch(client, batch_items: List[dict], logger: StageLogger) -> Dict[str, List[Tuple[int, int]]]:
+def _parse_ts_sec(ts: str) -> Optional[float]:
+    try:
+        parts = [float(p) for p in ts.strip().split(":")]
+        if len(parts) == 2:
+            return parts[0] * 60 + parts[1]
+        if len(parts) == 3:
+            return parts[0] * 3600 + parts[1] * 60 + parts[2]
+    except Exception:
+        return None
+    return None
+
+
+def text_similarity(a: str, b: str) -> float:
+    return difflib.SequenceMatcher(None, a or "", b or "").ratio()
+
+
+def deterministic_prematch(gt_flags: List[dict], model_flags: List[dict]) -> List[Tuple[int, int]]:
+    """Zero-LLM, fully reproducible pairing: same category, timestamps within
+    PREMATCH_MAX_TS_DIFF_SEC, and native-excerpt text similarity above
+    PREMATCH_MIN_TEXT_SIMILARITY. Greedy, highest-similarity-first assignment
+    so each flag is used at most once. Deliberately conservative (misses are
+    fine — they just fall through to the LLM leftover pass) since a WRONG
+    deterministic pair here would silently corrupt the baseline with no
+    judgment call to catch it."""
+    candidates = []
+    for gi, g in enumerate(gt_flags):
+        g_ts = _parse_ts_sec(g.get("timestamp", ""))
+        if g_ts is None:
+            continue
+        for mi, m in enumerate(model_flags):
+            if g.get("category") != m.get("category"):
+                continue
+            m_ts = _parse_ts_sec(m.get("timestamp", ""))
+            if m_ts is None or abs(g_ts - m_ts) > PREMATCH_MAX_TS_DIFF_SEC:
+                continue
+            sim = text_similarity(g.get("excerpt", ""), m.get("excerpt", ""))
+            if sim < PREMATCH_MIN_TEXT_SIMILARITY:
+                continue
+            candidates.append((sim, gi, mi))
+
+    candidates.sort(key=lambda c: -c[0])
+    used_gt, used_model, pairs = set(), set(), []
+    for sim, gi, mi in candidates:
+        if gi in used_gt or mi in used_model:
+            continue
+        used_gt.add(gi)
+        used_model.add(mi)
+        pairs.append((gi, mi))
+    return pairs
+
+
+def match_files_batch(client, batch_items: List[dict], logger: StageLogger,
+                       model: str = config.GEMINI_MATCH_MODEL) -> Dict[str, List[Tuple[int, int]]]:
     """batch_items: list of {file_id, gt_flags, model_flags}. Returns file_id -> matched (gt_idx, model_idx) pairs.
     Files with no flags on either side are skipped locally (nothing to match)."""
     scoreable = [it for it in batch_items if it["gt_flags"] or it["model_flags"]]
@@ -186,7 +296,7 @@ def match_files_batch(client, batch_items: List[dict], logger: StageLogger) -> D
     prompt_content = f"{BATCH_MATCH_INSTRUCTION}\n\n" + "\n\n".join(file_blocks)
 
     def do_call():
-        return gemini_client.generate_text(client, config.GEMINI_MODEL, contents=[prompt_content], response_json_schema=BATCH_MATCH_SCHEMA)
+        return gemini_client.generate_text(client, model, contents=[prompt_content], response_json_schema=BATCH_MATCH_SCHEMA)
 
     def on_retry(attempt, max_retries, delay, exc):
         file_ids = ", ".join(it["file_id"] for it in scoreable)
@@ -217,7 +327,7 @@ def match_files_batch(client, batch_items: List[dict], logger: StageLogger) -> D
 
 def unique_records():
     seen = set()
-    for r in dsv2.load_dataset_v2():
+    for r in dsv2.load_dataset_v2(DATASET_DIR):
         if r.file_id in seen:
             continue
         seen.add(r.file_id)
@@ -232,7 +342,126 @@ def build_score_input(record: dsv2.FileRecordV2, model_dir: Path) -> Optional[di
     return {"file_id": record.file_id, "language": record.language, "gt_flags": gt_flags, "model_flags": model_flags}
 
 
-def score_file(item: dict, matched_pairs: List[Tuple[int, int]]) -> dict:
+def resolve_matches(client, batch_items: List[dict], match_model: str, match_runs: int,
+                     logger: StageLogger) -> Tuple[Dict[str, List[Tuple[int, int]]], Dict[str, float]]:
+    """For each item in batch_items ({file_id, gt_flags, model_flags}): run the
+    deterministic pre-pass first, then send ONLY the leftover flags neither
+    side of the pre-pass paired to Gemini — one call for the whole
+    batch_items list (batch_items is normally length 1, since analyze_results
+    defaults --batch-size to 1; kept generic since match_files_batch already
+    supports N files per call).
+
+    If match_runs > 1, the leftover set for each file is matched that many
+    times independently and pairs are kept by majority vote (accepted if
+    proposed in > half the runs); match_reliability records, per file, the
+    fraction of the match_runs whose raw pair-SET exactly equalled the
+    majority result (1.0 for files with no leftovers, or when match_runs==1
+    — nothing to compare against without a repeat).
+
+    Returns (pairs_by_file, reliability_by_file), both keyed by file_id, with
+    every batch_items file_id present in both (reliability defaults to 1.0)."""
+    pairs_by_file: Dict[str, List[Tuple[int, int]]] = {}
+    reliability_by_file: Dict[str, float] = {}
+    leftover_items = []
+    leftover_maps: Dict[str, dict] = {}
+
+    for item in batch_items:
+        pre_pairs = deterministic_prematch(item["gt_flags"], item["model_flags"])
+        pairs_by_file[item["file_id"]] = list(pre_pairs)
+        reliability_by_file[item["file_id"]] = 1.0
+
+        used_gt = {p[0] for p in pre_pairs}
+        used_model = {p[1] for p in pre_pairs}
+        gt_map = [i for i in range(len(item["gt_flags"])) if i not in used_gt]
+        model_map = [i for i in range(len(item["model_flags"])) if i not in used_model]
+        if gt_map and model_map:  # genuine ambiguity remains on BOTH sides — needs the LLM
+            leftover_items.append({
+                "file_id": item["file_id"],
+                "gt_flags": [item["gt_flags"][i] for i in gt_map],
+                "model_flags": [item["model_flags"][i] for i in model_map],
+            })
+            leftover_maps[item["file_id"]] = {"gt": gt_map, "model": model_map}
+
+    if not leftover_items:
+        return pairs_by_file, reliability_by_file
+
+    def safe_match_call():
+        try:
+            return match_files_batch(client, leftover_items, logger, model=match_model), True
+        except Exception as exc:  # noqa: BLE001 — a blocked/failed leftover-match call (e.g.
+            # PROHIBITED_CONTENT, or any other API failure) must never crash the whole run;
+            # falling back to prepass-only pairs for these files (reliability 0.0, logged
+            # loudly) is far safer than an unhandled crash mid-batch.
+            file_ids = ", ".join(it["file_id"] for it in leftover_items)
+            logger.error(f"leftover match call failed for [{file_ids}]: {exc} — "
+                         f"falling back to prepass-only pairs for these file(s), match_reliability=0.0")
+            return {}, False
+
+    n_runs = max(1, match_runs)
+    if n_runs == 1:
+        run_results = [safe_match_call()]
+    else:
+        with ThreadPoolExecutor(max_workers=n_runs) as run_pool:
+            run_results = list(run_pool.map(lambda _: safe_match_call(), range(n_runs)))
+    runs = [r for r, _ in run_results]
+    any_call_failed = any(not ok for _, ok in run_results)
+
+    for file_id, maps in leftover_maps.items():
+        gt_map, model_map = maps["gt"], maps["model"]
+        run_pair_sets = [frozenset(runs[r].get(file_id, [])) for r in range(len(runs))]
+
+        if any_call_failed:
+            majority_pairs = frozenset()
+            for pair_set, (_, ok) in zip(run_pair_sets, run_results):
+                if ok:  # keep pairs from whichever runs DID succeed, rather than discarding them
+                    majority_pairs = pair_set
+                    break
+            reliability_by_file[file_id] = 0.0
+        elif len(runs) == 1:
+            majority_pairs = run_pair_sets[0]
+            reliability_by_file[file_id] = 1.0
+        else:
+            vote_counts = Counter()
+            for pair_set in run_pair_sets:
+                for pair in pair_set:
+                    vote_counts[pair] += 1
+            threshold = len(runs) / 2.0
+            # Greedy, highest-vote-first so majority-approved pairs still can't double-use a flag.
+            used_gt_local, used_model_local, majority_list = set(), set(), []
+            for (a_i, b_i), votes in sorted(vote_counts.items(), key=lambda kv: -kv[1]):
+                if votes <= threshold or a_i in used_gt_local or b_i in used_model_local:
+                    continue
+                used_gt_local.add(a_i)
+                used_model_local.add(b_i)
+                majority_list.append((a_i, b_i))
+            majority_pairs = frozenset(majority_list)
+            reliability_by_file[file_id] = sum(1 for ps in run_pair_sets if ps == majority_pairs) / len(runs)
+
+        remapped = [(gt_map[a_i], model_map[b_i]) for a_i, b_i in majority_pairs]
+        pairs_by_file[file_id].extend(remapped)
+
+    return pairs_by_file, reliability_by_file
+
+
+# Additive file-level bucket (does NOT replace file_bucket — explicit user
+# decision): TP if EVERY ground-truth flag in these two categories, at
+# confidence >= QUALIFYING_MIN_CONFIDENCE, has a matched model flag;
+# SuspiciousActivity is ignored entirely for this rule (also explicit). Every
+# other case (no qualifying GT flags at all, e.g. SA-only or low-confidence
+# files; GT empty; a qualifying set that's only PARTIALLY caught) falls back
+# to the exact same rule file_bucket already uses — confirmed by explicit
+# user answer that a partial catch of qualifying flags should still be TP
+# via the old any-match rule, not downgraded to FN. Net effect (verified
+# empirically, not just by inspection): identical to file_bucket in every
+# case, because "all qualifying flags matched" always implies flag_tp>0
+# (already old-rule TP), and the fallback for every other case IS the old
+# rule. Kept as its own field/CSV anyway, per explicit request to compute
+# and save it, and as a place to plug in a genuinely different rule later.
+QUALIFYING_CATEGORIES = {"PlatformMove", "Explicit-Flirting"}
+QUALIFYING_MIN_CONFIDENCE = 0.8
+
+
+def score_file(item: dict, matched_pairs: List[Tuple[int, int]], match_reliability: float = 1.0) -> dict:
     gt_flags, model_flags, record_language = item["gt_flags"], item["model_flags"], item["language"]
     matched_gt = {p[0] for p in matched_pairs}
     matched_model = {p[1] for p in matched_pairs}
@@ -252,6 +481,19 @@ def score_file(item: dict, matched_pairs: List[Tuple[int, int]]) -> dict:
     else:
         file_bucket = "TN"
 
+    qualifying_idx = [
+        i for i, f in enumerate(gt_flags)
+        if f.get("category") in QUALIFYING_CATEGORIES and (f.get("confidence") or 0) >= QUALIFYING_MIN_CONFIDENCE
+    ]
+    if qualifying_idx and all(i in matched_gt for i in qualifying_idx):
+        qualifying_pm_ef_bucket = "TP"
+    else:
+        qualifying_pm_ef_bucket = file_bucket  # fallback = the exact same rule as file_bucket
+
+    gt_flags_detail = []
+    for i, f in enumerate(gt_flags):
+        gt_flags_detail.append({**f, "matched": i in matched_gt})
+
     flags_detail = []
     for i, f in enumerate(model_flags):
         flags_detail.append({**f, "matched": i in matched_model})
@@ -265,6 +507,9 @@ def score_file(item: dict, matched_pairs: List[Tuple[int, int]]) -> dict:
         "flag_fn": flag_fn,
         "flag_fp": flag_fp,
         "file_bucket": file_bucket,
+        "qualifying_pm_ef_bucket": qualifying_pm_ef_bucket,
+        "match_reliability": r2(match_reliability),
+        "gt_flags": gt_flags_detail,
         "model_flags": flags_detail,
     }
 
@@ -285,11 +530,11 @@ def confusion_metrics(tp: int, fp: int, fn: int, tn: Optional[int] = None) -> di
     return out
 
 
-def aggregate_file_level(rows: List[dict]) -> dict:
-    tp = sum(1 for r in rows if r["file_bucket"] == "TP")
-    fp = sum(1 for r in rows if r["file_bucket"] == "FP")
-    fn = sum(1 for r in rows if r["file_bucket"] == "FN")
-    tn = sum(1 for r in rows if r["file_bucket"] == "TN")
+def aggregate_file_level(rows: List[dict], bucket_key: str = "file_bucket") -> dict:
+    tp = sum(1 for r in rows if r[bucket_key] == "TP")
+    fp = sum(1 for r in rows if r[bucket_key] == "FP")
+    fn = sum(1 for r in rows if r[bucket_key] == "FN")
+    tn = sum(1 for r in rows if r[bucket_key] == "TN")
     return {"n_files": len(rows), **confusion_metrics(tp, fp, fn, tn)}
 
 
@@ -368,6 +613,72 @@ def merge_and_write_csv(path: Path, new_rows: List[dict], fieldnames: List[str],
     write_csv(path, kept + new_rows, fieldnames)
 
 
+def run_stability_check(client, records, model_key: str, match_model: str, sample_size: int, logger: StageLogger):
+    """Samples files that have >=1 leftover flag after the deterministic
+    pre-pass (files fully resolved by the pre-pass are 100% reproducible by
+    construction and would trivially inflate the agreement rate), runs the
+    leftover LLM matching TWICE independently, and reports how often the two
+    runs produce the EXACT same pair-set per file. Decides whether a
+    production run should use --match-runs 1 (>=98% agreement) or 3
+    (majority vote) — writes nothing to analysis_results/."""
+    import random
+
+    model_dir = MODEL_DIRS[model_key]
+    candidates = []
+    for record in records:
+        item = build_score_input(record, model_dir)
+        if item is None:
+            continue
+        pre_pairs = deterministic_prematch(item["gt_flags"], item["model_flags"])
+        used_gt = {p[0] for p in pre_pairs}
+        used_model = {p[1] for p in pre_pairs}
+        has_leftover = any(i not in used_gt for i in range(len(item["gt_flags"]))) and \
+                        any(i not in used_model for i in range(len(item["model_flags"])))
+        if has_leftover:
+            candidates.append(item)
+
+    logger.info(f"[stability-check] {len(candidates)} file(s) have a genuine post-prepass leftover "
+                f"(out of {len(records)} total) — sampling up to {sample_size}")
+    random.seed(42)
+    sample = random.sample(candidates, min(sample_size, len(candidates)))
+
+    # One file per call, matching real production behavior (--batch-size 1
+    # default) — NOT one resolve_matches(sample) call, which would silently
+    # re-bundle all sampled files into a single multi-file match call and
+    # reintroduce exactly the batching dilution this fix is meant to remove.
+    def run_once(item):
+        pairs, _ = resolve_matches(client, [item], match_model, 1, logger)
+        return frozenset(pairs.get(item["file_id"], []))
+
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        run1 = dict(zip((it["file_id"] for it in sample), pool.map(run_once, sample)))
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        run2 = dict(zip((it["file_id"] for it in sample), pool.map(run_once, sample)))
+
+    agree = 0
+    disagreements = []
+    for item in sample:
+        fid = item["file_id"]
+        s1, s2 = run1.get(fid, frozenset()), run2.get(fid, frozenset())
+        if s1 == s2:
+            agree += 1
+        else:
+            disagreements.append((fid, sorted(s1), sorted(s2)))
+
+    rate = 100 * agree / len(sample) if sample else 100.0
+    print(f"\nSTABILITY CHECK: {len(sample)} file(s) with genuine leftover ambiguity, model={match_model}")
+    print(f"Run 1 vs run 2 exact-pairset agreement: {agree}/{len(sample)} ({rate:.1f}%)")
+    if disagreements:
+        print(f"\n{len(disagreements)} disagreement(s):")
+        for fid, s1, s2 in disagreements[:20]:
+            print(f"  {fid}: run1={s1} run2={s2}")
+    if rate >= 98.0:
+        print("\n>=98% agreement -> --match-runs 1 (single run) is fine for the real re-score.")
+    else:
+        print(f"\n<98% agreement -> use --match-runs 3 (majority vote) for the real re-score.")
+    logger.info(f"[stability-check] agreement={rate:.1f}% over {len(sample)} sampled file(s), {len(disagreements)} disagreement(s)")
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--models", type=str, default=None, help="Comma-separated subset of model keys; default = all")
@@ -375,8 +686,17 @@ def main():
     parser.add_argument("--dry-run-limit", type=int, default=config.DEFAULT_DRY_RUN_LIMIT)
     parser.add_argument("--force", action="store_true", help="Recompute per-file scoring even if a cached per-file result exists")
     parser.add_argument("--workers", type=int, default=6)
-    parser.add_argument("--batch-size", type=int, default=5, help="Files' worth of GT+model flags sent to Gemini per matching call")
+    parser.add_argument("--batch-size", type=int, default=1, help="Files' worth of LEFTOVER (post-deterministic-prepass) GT+model flags sent to Gemini per matching call (default: one file per call)")
+    parser.add_argument("--match-model", type=str, default=config.GEMINI_MATCH_MODEL, help="Gemini model for the leftover matching call")
+    parser.add_argument("--match-runs", type=int, default=1, help="Independent leftover-matching runs per file, majority-voted if >1 (see --stability-check to decide this)")
+    parser.add_argument("--stability-check", action="store_true", help="Sample --stability-sample files, run leftover matching twice, report per-file agreement rate; writes nothing to analysis_results/")
+    parser.add_argument("--stability-sample", type=int, default=100)
+    parser.add_argument("--dataset-root", type=str, default=None,
+                         help="Alternate dataset root, e.g. Dostt_dev — routes results to "
+                              "analysis_results_<suffix>/ (and reads gemma/gemini_results_<suffix>/) "
+                              "automatically; default (unset) uses the full Dostt/ dataset")
     args = parser.parse_args()
+    configure_dataset_root(args.dataset_root)  # first thing — everything below reads MODEL_DIRS/OUTPUT_DIR/DATASET_DIR
 
     model_keys = args.models.split(",") if args.models else list(MODEL_DIRS)
     logger = StageLogger("analyze_results")
@@ -386,10 +706,16 @@ def main():
     if args.dry_run:
         records = records[: args.dry_run_limit]
 
+    if args.stability_check:
+        run_stability_check(client, records, model_keys[0], args.match_model, args.stability_sample, logger)
+        return
+
     overall_file_rows = []
     overall_flag_rows = []
     by_language_file_rows = []
     by_language_flag_rows = []
+    qualifying_overall_rows = []
+    qualifying_by_language_rows = []
     bucket_rows_model_conf = []
     bucket_rows_logprob_conf = []
     entropy_rows = []
@@ -425,9 +751,9 @@ def main():
             nonlocal n_scored
             file_ids = ", ".join(it["file_id"] for it in batch_items)
             logger.info(f"[{model_key} batch {b_idx}/{len(batches)}] {len(batch_items)} file(s): {file_ids}")
-            pairs_by_file = match_files_batch(client, batch_items, logger)
+            pairs_by_file, reliability_by_file = resolve_matches(client, batch_items, args.match_model, args.match_runs, logger)
             for item in batch_items:
-                result = score_file(item, pairs_by_file.get(item["file_id"], []))
+                result = score_file(item, pairs_by_file.get(item["file_id"], []), reliability_by_file.get(item["file_id"], 1.0))
                 if not args.dry_run:
                     cache_path = per_file_dir / f"{item['file_id']}.json"
                     cache_path.parent.mkdir(parents=True, exist_ok=True)
@@ -466,6 +792,7 @@ def main():
         overall_entropy = entropy_by_correctness(scored_rows)
         overall_file_rows.append({"model": model_key, **aggregate_file_level(scored_rows), **overall_entropy})
         overall_flag_rows.append({"model": model_key, **aggregate_flag_level(scored_rows), **overall_entropy})
+        qualifying_overall_rows.append({"model": model_key, **aggregate_file_level(scored_rows, "qualifying_pm_ef_bucket")})
 
         by_lang = defaultdict(list)
         for r in scored_rows:
@@ -477,6 +804,7 @@ def main():
             lang_entropy = entropy_by_correctness(lang_rows)
             by_language_file_rows.append({"model": model_key, "language": lang, **aggregate_file_level(lang_rows), **lang_entropy})
             by_language_flag_rows.append({"model": model_key, "language": lang, **aggregate_flag_level(lang_rows), **lang_entropy})
+            qualifying_by_language_rows.append({"model": model_key, "language": lang, **aggregate_file_level(lang_rows, "qualifying_pm_ef_bucket")})
             for row in confidence_bucket_table(lang_rows, "model_confidence"):
                 bucket_rows_model_conf.append({"model": model_key, "language": lang, **row})
             for row in confidence_bucket_table(lang_rows, "logprob_derived_confidence"):
@@ -507,6 +835,10 @@ def main():
               ["model", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"] + FILE_LEVEL_FIELDS_EXTRA, model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confusion_file_level_by_language.csv", by_language_file_rows,
               ["model", "language", "n_files", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"] + FILE_LEVEL_FIELDS_EXTRA, model_keys)
+    merge_and_write_csv(OUTPUT_DIR / "confusion_file_level_qualifying_pm_ef_overall.csv", qualifying_overall_rows,
+              ["model", "n_files", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"], model_keys)
+    merge_and_write_csv(OUTPUT_DIR / "confusion_file_level_qualifying_pm_ef_by_language.csv", qualifying_by_language_rows,
+              ["model", "language", "n_files", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"], model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confusion_flag_level_by_language.csv", by_language_flag_rows,
               ["model", "language", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"] + FILE_LEVEL_FIELDS_EXTRA, model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confidence_buckets_model_confidence.csv", bucket_rows_model_conf,

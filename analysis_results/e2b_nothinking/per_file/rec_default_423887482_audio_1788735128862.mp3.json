@@ -7,10 +7,40 @@
   "flag_fn": 2,
   "flag_fp": 2,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "I am saying your boobs are nice",
+      "timestamp": "01:39",
+      "excerpt": "मैं बोल रहा हूं आपके बूब्स अच्छे हैं",
+      "confidence": 0.4,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "We also do that on WhatsApp etc.",
+      "timestamp": "02:01",
+      "excerpt": "हम व्हाट्सएप वगैरह पे भी वो करते हैं",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will give it sir, you will have to send payment on WhatsApp",
+      "timestamp": "02:17",
+      "excerpt": "मैं दे दूंगी सर व्हाट्सएप पे पेमेंट डालना पड़ेगा आपको",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "we can talk on WhatsApp or at night too",
+      "timestamp": "0s",
+      "excerpt": "hum whatsapp pe ya ratri bhi baat karte hain",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9679043779316068,
       "entropy_mean": 0.40639540046515776,
@@ -19,6 +49,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "Uhm hmm. What did you think, you can put yourself in, it feels good in the sentiment.",
+      "timestamp": "02:20",
+      "excerpt": "उह हम्म। क्या सोचा, तुम तो आपको डालना डाल सकते हो अच्छा लगता है सेंटी में सब सकते हो।",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9960673631924293,
       "entropy_mean": 0.4492865947308287,
@@ -27,6 +59,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Stay lazy later, then call and put it in the call, only then I can hear the sell out.",
+      "timestamp": "0.0",
+      "excerpt": "लामी रहना बाद में कर लीजिए फिर कॉल करके कॉल होते में डालोगे तभी करता है मैं सेल आउट कैसे सुन सकता हूँ",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.7110102296867217,
       "entropy_mean": 0.24411256494697453,

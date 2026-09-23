@@ -3,14 +3,44 @@
   "language": "malayalam",
   "gt_flag_count": 3,
   "model_flag_count": 7,
-  "flag_tp": 3,
-  "flag_fn": 0,
-  "flag_fp": 4,
+  "flag_tp": 2,
+  "flag_fn": 1,
+  "flag_fp": 5,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "WhatsApp number",
+      "timestamp": "00:40",
+      "excerpt": "വാട്സാപ്പ് നമ്പർ",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Can you tell me the number, I will send a message on WhatsApp",
+      "timestamp": "01:16",
+      "excerpt": "നമ്പർ പറയാവോ ഞാൻ വാട്സാപ്പിൽ മെസ്സേജ് അയക്കാം",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "79 07 29 51 35",
+      "timestamp": "01:42",
+      "excerpt": "79 07 29 51 35",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "Will you give me the WhatsApp number?",
+      "timestamp": "00:33",
+      "excerpt": "लियाटो पट्टुंगा WhatsApp नंबर?",
       "model_confidence": 0.98,
       "logprob_derived_confidence": 0.9999999523162967,
       "entropy_mean": 2.2280635691360184e-06,
@@ -19,6 +49,8 @@
     {
       "category": "PlatformMove",
       "translation": "Shall I tell the number? Shall I message on WhatsApp?",
+      "timestamp": "01:31",
+      "excerpt": "நம்பர் പറയാவோ? நான் WhatsApp-ல மெசேக்க?",
       "model_confidence": 1.0,
       "logprob_derived_confidence": 0.9999999761581452,
       "entropy_mean": 0.033238355864533706,
@@ -27,14 +59,18 @@
     {
       "category": "PlatformMove",
       "translation": "79 79 07 07 79 07 29",
+      "timestamp": "01:24",
+      "excerpt": "79 79 07 07 79 07 29",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.1766778557210955,
-      "matched": true
+      "matched": false
     },
     {
       "category": "PlatformMove",
       "translation": "WhatsApp, message on WhatsApp.",
+      "timestamp": "01:52",
+      "excerpt": "WhatsApp WhatsApp eollu to WhatsApp lo message cheykenay.",
       "model_confidence": 0.98,
       "logprob_derived_confidence": 0.9999999761581452,
       "entropy_mean": 0.18753648324232075,
@@ -43,6 +79,8 @@
     {
       "category": "PlatformMove",
       "translation": "Then where should I give my number? Should I tell you on WhatsApp?",
+      "timestamp": "02:20",
+      "excerpt": "pinne endine ente number iseyipo adi peppaloni niki ulukeyalla",
       "model_confidence": null,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.1373677959760098,
@@ -51,6 +89,8 @@
     {
       "category": "PlatformMove",
       "translation": "where should I give my number?",
+      "timestamp": "02:20",
+      "excerpt": "where should I give my number?",
       "model_confidence": null,
       "logprob_derived_confidence": 0.992352075421409,
       "entropy_mean": 0.35696808932295265,
@@ -59,6 +99,8 @@
     {
       "category": "PlatformMove",
       "translation": "Give the number.",
+      "timestamp": "03:33",
+      "excerpt": "एन नंबरु तन्नित्ते।",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999999403953741,
       "entropy_mean": 4.166794186677425e-06,

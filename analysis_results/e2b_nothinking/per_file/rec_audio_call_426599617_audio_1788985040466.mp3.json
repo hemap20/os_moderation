@@ -7,10 +7,48 @@
   "flag_fn": 2,
   "flag_fp": 1,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I do video calls on WhatsApp for charges, will you do it?",
+      "timestamp": "00:50",
+      "excerpt": "मैं व्हाट्सएप पे वीडियो कॉल्स वगैरह करती हूं चार्जेस लेके आप करोगे",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I do open video calls for charges, will you do it?",
+      "timestamp": "01:04",
+      "excerpt": "मैं ओपन वीडियो कॉल्स वगैरह करती हूं चार्जेस लेके आप करोगे",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Dude, so should I masturbate here by opening it?",
+      "timestamp": "01:12",
+      "excerpt": "यार तो मैं इतनी बार मुट्ठी मारूं इधर ओपन करके",
+      "confidence": 0.7,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "250",
+      "timestamp": "01:24",
+      "excerpt": "250",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "I do open video calls etc. and you will charge for it?",
+      "timestamp": "00:56",
+      "excerpt": "मैं ओपन वीडियो कॉल्स वगैरह करती हूं चार्जेस लेके आप करोगे क्या",
       "model_confidence": 0.3,
       "logprob_derived_confidence": 0.999996443633748,
       "entropy_mean": 0.21143468959626027,
@@ -19,6 +57,8 @@
     {
       "category": "Explicit-Flirting",
       "translation": "And you, how many times should I fuck here open it",
+      "timestamp": "01:01",
+      "excerpt": "और तुम मैं इतनी बार मुट्ठी मारूं इधर ओपन करके",
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9996169098294306,
       "entropy_mean": 0.1592116378848363,
@@ -27,6 +67,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "How much are you giving? Half an hour. Oh man, in half an hour, mine will go out ten times.",
+      "timestamp": "01:24",
+      "excerpt": "कितनी दे रखा। आधे घंटे का। अरे यार आधे घंटे में तो मेरा दस बार निकल जाएगा।",
       "model_confidence": 0.3,
       "logprob_derived_confidence": 0.9994357461059522,
       "entropy_mean": 0.19631380857723008,

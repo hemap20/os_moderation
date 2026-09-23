@@ -7,10 +7,32 @@
   "flag_fn": 0,
   "flag_fp": 1,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "If you want any personal chat, I will do it if you pay, or video calls if you want that.",
+      "timestamp": "00:29",
+      "excerpt": "మీకు ఏమైనా పర్సనల్ చాట్ కావాలి అంటే పేమెంట్ చేస్తే చేస్తానండి వీడియో కాల్స్ అలా ఏమైనా కావాలి అంటే",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Demo is 100, video call is 300.",
+      "timestamp": "00:42",
+      "excerpt": "డెమో అయితే 100 అండి వీడియో కాల్ అయితే 300",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "If you want any personal chat, I will do it if you pay for video calls",
+      "timestamp": "00:30",
+      "excerpt": "ఏమైనా పర్సనల్ షట్ కావాలి అంటే పేమెంట్ చేస్తే చేస్తానండి వీడియో కాల్స్ అ",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9157569564595432,
       "entropy_mean": 0.03728505507166068,
@@ -19,6 +41,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "How much is it?",
+      "timestamp": "00:35",
+      "excerpt": "ఎంత అండి",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.999934946362679,
       "entropy_mean": 0.2728823131706122,
@@ -27,6 +51,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "For a demo it is a hundred, for video call it is three",
+      "timestamp": "00:40",
+      "excerpt": "డెమో అయితే హండ్రెడ్ అండి వడియో కాల్ అయితే త్ర",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9999345887583525,
       "entropy_mean": 0.004284046499249072,

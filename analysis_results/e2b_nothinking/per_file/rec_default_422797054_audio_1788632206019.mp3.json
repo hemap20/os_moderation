@@ -7,10 +7,48 @@
   "flag_fn": 2,
   "flag_fp": 3,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Do you have Snapchat?",
+      "timestamp": "02:01",
+      "excerpt": "आपका स्नैपचैट है क्या",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Share your number.",
+      "timestamp": "02:10",
+      "excerpt": "नंबर शेयर कर लो",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "You will have to pay on the number.",
+      "timestamp": "02:19",
+      "excerpt": "नंबर पे पेमेंट करना पड़ेगा",
+      "confidence": 0.8,
+      "matched": true
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Yes, show me once, baby, just once.",
+      "timestamp": "03:18",
+      "excerpt": "हां एक बार दिखा दो बेबी एक बार",
+      "confidence": 0.4,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "um share the number, what will you do with this snapchat",
+      "timestamp": "01:55",
+      "excerpt": "um number share kar lo kis snapchat ka kya karoge",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.1042553285571694,
@@ -19,6 +57,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "I will have to pay on the number",
+      "timestamp": "0s",
+      "excerpt": "नंबर पे पेमेंट करना पड़ेगा",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9999996821089149,
       "entropy_mean": 0.01892952244965655,
@@ -27,6 +67,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "You will have to pay on this room's number",
+      "timestamp": "10s",
+      "excerpt": "ये वोरूम के नंबर पे पेमेंट करना पड़ेगा आपको",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9999996821089149,
       "entropy_mean": 0.28734893491275854,
@@ -35,6 +77,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "I will have to pay on the number",
+      "timestamp": "30s",
+      "excerpt": "नंबर पे पेमेंट करना पड़ेगा",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9999996821089149,
       "entropy_mean": 0.01892952244965655,
@@ -43,6 +87,8 @@
     {
       "category": "PlatformMove",
       "translation": "Show me once, okay, how do I know this?",
+      "timestamp": "0s",
+      "excerpt": "अभी एक बार दिखा दो अच्छा ये ना मुझे कैसे पता",
       "model_confidence": 0.0,
       "logprob_derived_confidence": 0.7625544992802447,
       "entropy_mean": 0.2263352770026721,

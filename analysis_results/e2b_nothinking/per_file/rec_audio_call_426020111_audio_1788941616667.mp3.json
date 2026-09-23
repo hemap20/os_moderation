@@ -7,10 +7,40 @@
   "flag_fn": 0,
   "flag_fp": 0,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Madam, are you interested in a video call on WhatsApp?",
+      "timestamp": "00:09",
+      "excerpt": "ఇదే మేడం వాట్సాప్ లో వీడియో కాల్ ఇంట్రెస్ట్ ఉందా",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "If you want it until you are satisfied, it's 300",
+      "timestamp": "00:22",
+      "excerpt": "మీకు సాటిస్ఫై అయ్యేదాకా కావాలి అంటే 300",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "If you want extra time, it's 400",
+      "timestamp": "00:35",
+      "excerpt": "ఇంకా ఎక్స్ట్రా టైం కూడా కావాలి అంటే 400",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "There is interest in a WhatsApp video call",
+      "timestamp": "00:15",
+      "excerpt": "whatsapp la video call interest hai na",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9999990463279573,
       "entropy_mean": 0.2370234381976855,
@@ -19,6 +49,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Miku wants it for satisfaction, that is 300",
+      "timestamp": "00:28",
+      "excerpt": "मीकू सॅटिसफाय అయ్యेदाक కావాలి अंते ३००",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9999996622407443,
       "entropy_mean": 0.39873428937345223,
@@ -27,6 +59,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Extra time also wants to be 400",
+      "timestamp": "00:31",
+      "excerpt": "इंस्टाक्स्टा टाइम पुरा కావాలి अंते ४००",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9999996622407443,
       "entropy_mean": 0.5400575633848698,

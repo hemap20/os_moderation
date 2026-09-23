@@ -7,10 +7,32 @@
   "flag_fn": 1,
   "flag_fp": 1,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Call me on WhatsApp",
+      "timestamp": "04:42",
+      "excerpt": "கால் பண்ணிட்டா வாட்ஸ்அப்ல",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Should I tell you the details here, 5 minutes will cost 300",
+      "timestamp": "05:17",
+      "excerpt": "டீடைல் இதுலயே சொல்லிடுவா கிட்ட 5 மினிட்ஸ் ஆனா 300 வரும்",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "aa rani shita number 987654321",
+      "timestamp": "03:21",
+      "excerpt": "aa rani shita number 987654321",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999998807907318,
       "entropy_mean": 0.23990465243800177,
@@ -19,6 +41,8 @@
     {
       "category": "PlatformMove",
       "translation": "Call Pankaj on WhatsApp.",
+      "timestamp": "04:40",
+      "excerpt": "कॉल पंकज WhatsApp पर।",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.3026815210709174,

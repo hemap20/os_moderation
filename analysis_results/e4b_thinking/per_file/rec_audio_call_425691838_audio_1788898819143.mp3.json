@@ -3,14 +3,44 @@
   "language": "hindi",
   "gt_flag_count": 3,
   "model_flag_count": 5,
-  "flag_tp": 2,
-  "flag_fn": 1,
-  "flag_fp": 3,
+  "flag_tp": 1,
+  "flag_fn": 2,
+  "flag_fp": 4,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "My name is Gajanan, I want to f*** you",
+      "timestamp": "00:06",
+      "excerpt": "मेरा नाम गजानन है यार मैं तुम्हें चोदना चाहता हूं",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Okay, do you have WhatsApp?",
+      "timestamp": "00:10",
+      "excerpt": "ओके व्हाट्सएप है आपका",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Do you want to provide service on WhatsApp?",
+      "timestamp": "00:25",
+      "excerpt": "व्हाट्सएप पर सर्विस देनी है क्या",
+      "confidence": 0.8,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "Okay, is your WhatsApp?",
+      "timestamp": "00:08",
+      "excerpt": "ओके WhatsApp है आपका?",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9621315700807743,
       "entropy_mean": 0.28363228691741826,
@@ -19,6 +49,8 @@
     {
       "category": "PlatformMove",
       "translation": "Hello, tell me your WhatsApp.",
+      "timestamp": "00:14",
+      "excerpt": "जरा हेलो WhatsApp बताइए।",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.8063968027619473,
       "entropy_mean": 0.5798575785505818,
@@ -27,6 +59,8 @@
     {
       "category": "PlatformMove",
       "translation": "We will send everything on WhatsApp.",
+      "timestamp": "00:18",
+      "excerpt": "WhatsApp पर सब भेज देंगे।",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9630278144533336,
       "entropy_mean": 0.1525218517230762,
@@ -35,14 +69,18 @@
     {
       "category": "PlatformMove",
       "translation": "Will you give service on WhatsApp?",
+      "timestamp": "00:28",
+      "excerpt": "WhatsApp pe service dengi kya?",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.931794965239202,
       "entropy_mean": 0.2206660350684615,
-      "matched": true
+      "matched": false
     },
     {
       "category": "PlatformMove",
       "translation": "Tell me your WhatsApp.",
+      "timestamp": "00:28",
+      "excerpt": "Bolo WhatsApp apna.",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.6784827526256559,
       "entropy_mean": 0.2768327489451622,

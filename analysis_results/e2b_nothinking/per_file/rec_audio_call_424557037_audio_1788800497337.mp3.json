@@ -7,10 +7,40 @@
   "flag_fn": 1,
   "flag_fp": 1,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I need a phone number, how do I contact you?",
+      "timestamp": "00:27",
+      "excerpt": "போன் நம்பர் வேணுமே இப்ப நான் எப்படி நான் உங்களை காண்டாக்ட் பண்ணிட்டு வர்றது?",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I shouldn't ask for money, but I will give you 1500 or 2000 in hand when we meet.",
+      "timestamp": "00:40",
+      "excerpt": "நான் காசு கேட்கக்கூடாது ஆனா நேர்ல வந்து உனக்கு 1500 இல்லனா 2000 கையில தரேன்",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will give you money in your hand, then we can go into a room.",
+      "timestamp": "01:30",
+      "excerpt": "உன் கையில காசு தரேன் அதுக்கப்புறம் நம்ம ரூம்குள்ள போலாம்",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "Talk for a while, I will give the phone number, what do you want to talk about",
+      "timestamp": "00:28",
+      "excerpt": "கொஞ்ச நாள் பேசுங்க நானே தரேன் போன் நம்பர் தரேன் என்ன பேசணும்",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.999975682782943,
       "entropy_mean": 0.20693038804650618,
@@ -19,6 +49,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "But if you come in person, I will give you 1500 or 2000 rupees",
+      "timestamp": "00:34",
+      "excerpt": "ஆனா நேர்ல வந்து உனக்கு 1500 இல்லனா 2000 கைல தரேன்",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9999949535625399,
       "entropy_mean": 0.12795200136102663,
@@ -27,6 +59,8 @@
     {
       "category": "PlatformMove",
       "translation": "Sher, give me the phone number?",
+      "timestamp": "01:11",
+      "excerpt": "शेर अप फोन नंबर तरिया?",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.7418975347569992,
       "entropy_mean": 0.7175021699677018,

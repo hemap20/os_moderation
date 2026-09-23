@@ -7,10 +7,40 @@
   "flag_fn": 1,
   "flag_fp": 0,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "How much amount?",
+      "timestamp": "01:50",
+      "excerpt": "எவ்வளவு அமௌன்ட்?",
+      "confidence": 0.8,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Will you give your WhatsApp number?",
+      "timestamp": "03:50",
+      "excerpt": "இது வாட்ஸ்அப் நம்பர் குடுப்பீங்களா?",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "This is double eight.",
+      "timestamp": "06:42",
+      "excerpt": "இது டபுள் எய்ட்.",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "Okay, if so, I will give WhatsApp number, okay, how much will you do for me?",
+      "timestamp": "04:10",
+      "excerpt": "ஓகேன்னா நான் வாட்ஸ்அப் நம்பர் கொடுக்க ரெட்ட ஓகே எவ்வளோ பண்ணுவீங்க எனக்கு அப்பல்லான்",
       "model_confidence": null,
       "logprob_derived_confidence": 0.7330799701815294,
       "entropy_mean": 0.009372119039731333,
@@ -19,6 +49,8 @@
     {
       "category": "PlatformMove",
       "translation": "You are talking, you pay, okay, then I will give WhatsApp number",
+      "timestamp": "04:05",
+      "excerpt": "பேசனும்ல நீங்க பே பண்ணும் ஓகேன்னா நான் வாட்ஸ்அப் நம்பர்",
       "model_confidence": null,
       "logprob_derived_confidence": 0.9711315421987881,
       "entropy_mean": 0.0002362705302723177,

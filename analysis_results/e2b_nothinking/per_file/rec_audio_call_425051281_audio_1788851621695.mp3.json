@@ -3,14 +3,52 @@
   "language": "hindi",
   "gt_flag_count": 4,
   "model_flag_count": 13,
-  "flag_tp": 3,
-  "flag_fn": 1,
-  "flag_fp": 10,
+  "flag_tp": 4,
+  "flag_fn": 0,
+  "flag_fp": 9,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I provide video call service on contact number, meaning on WhatsApp",
+      "timestamp": "02:37",
+      "excerpt": "मी व्हिडिओ कॉल सर्विस देते कॉन्टॅक्ट नंबरवर म्हणजे व्हॉट्सॲपला",
+      "confidence": 1.0,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Then I will give you 300 charges",
+      "timestamp": "02:45",
+      "excerpt": "तर मी तुला देते 300 चार्जेस",
+      "confidence": 1.0,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Tell me your number, I will send you a hi",
+      "timestamp": "02:53",
+      "excerpt": "सांग नंबर तुझा मी तुला हाय टाकते",
+      "confidence": 1.0,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I give video call open shows, that has a rate",
+      "timestamp": "05:12",
+      "excerpt": "व्हिडिओ कॉल ओपन शो देते त्याचा रेट आहे",
+      "confidence": 1.0,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "I do video calls etc. Video call will be shown on budget. I do video calls.",
+      "timestamp": "01:39",
+      "excerpt": "मैं वीडियो कॉल वगैरह करते हैं वीडियो कॉल शो होगा बजट पे। वीडियो कॉल करते हैं।",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9989262794971885,
       "entropy_mean": 0.2012562799193568,
@@ -19,6 +57,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "It also costs more coins for a video call with you by paying money",
+      "timestamp": "02:33",
+      "excerpt": "इते पण तुला पैसे लावून व्हिडिओ कॉलवर जास्त कॉइन लागतो",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9999999205271625,
       "entropy_mean": 0.1579915855675324,
@@ -27,14 +67,18 @@
     {
       "category": "PlatformMove",
       "translation": "Just WhatsApp",
+      "timestamp": "02:43",
+      "excerpt": "मजे हे WhatsApp ला",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9998069145973386,
       "entropy_mean": 0.47814068868756293,
-      "matched": false
+      "matched": true
     },
     {
       "category": "SuspiciousActivity",
       "translation": "Then I will give you 300 charge",
+      "timestamp": "02:45",
+      "excerpt": "तर मी तुला देते 300 चार्ज",
       "model_confidence": 0.75,
       "logprob_derived_confidence": 0.9999999205271625,
       "entropy_mean": 0.20073720093725772,
@@ -43,6 +87,8 @@
     {
       "category": "PlatformMove",
       "translation": "Wait a minute, give me your number",
+      "timestamp": "0s",
+      "excerpt": "एक मिनट हमारा नंबर घेऊ दे तुझा",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.94724951911781,
       "entropy_mean": 0.22359954727517106,
@@ -51,6 +97,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "It is song, do you want it or not",
+      "timestamp": "0s",
+      "excerpt": "इट इज सांग मला तुला पाहिजे की नाही",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9994635535899256,
       "entropy_mean": 0.3547500947388471,
@@ -59,6 +107,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "What is the rate",
+      "timestamp": "3s",
+      "excerpt": "रेट काय",
       "model_confidence": 0.2,
       "logprob_derived_confidence": 0.9994635535899256,
       "entropy_mean": 0.20860962173901498,
@@ -67,6 +117,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "300",
+      "timestamp": "5s",
+      "excerpt": "300",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9994635535899256,
       "entropy_mean": 0.27829696813546434,
@@ -75,6 +127,8 @@
     {
       "category": "PlatformMove",
       "translation": "Is it an audio call",
+      "timestamp": "10s",
+      "excerpt": "ऑडिओ कॉल आहे का",
       "model_confidence": 0.0,
       "logprob_derived_confidence": 0.9861854913745819,
       "entropy_mean": 0.009582886652651723,
@@ -83,6 +137,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Hey Tani, I was looking for an open video call, what is the rate for that?",
+      "timestamp": "0s",
+      "excerpt": "अरे टानी बोलायचा थोडीतने व्हिडिओ कॉल ओपन शोधते तेचा रेट आहे",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999999801317865,
       "entropy_mean": 0.19975441063691549,
@@ -91,6 +147,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "And for the open call that I want to talk about, what, I don't need that much special, why are you taking money from Jeti here, just send it to me there.",
+      "timestamp": "3s",
+      "excerpt": "आणि ओपन कॉल बाय जे बोलायसाठी बोलायसाठी पाहिजे तत काय मला एवढं विशेष नाही तु जेतिला इथे रिचार्जпля पैसे काकतो तू एवढै तिकडे मला टाकून दे",
       "model_confidence": 0.65,
       "logprob_derived_confidence": 0.9999999801317865,
       "entropy_mean": 0.2844875802766394,
@@ -99,6 +157,8 @@
     {
       "category": "PlatformMove",
       "translation": "Is that the number? I'll pay via Paytm.",
+      "timestamp": "6s",
+      "excerpt": "नंबर तेच आहे का? पेटीएम दिलू",
       "model_confidence": 0.75,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.4250539568587556,
@@ -107,6 +167,8 @@
     {
       "category": "PlatformMove",
       "translation": "Is that the payment number? I will put it on the channel, listen. Scanner and work? How do I put the number? I will put a picture of my face. Okay, right, I will show my face. Hmm, okay, put this photo. And put the scanner support photo. Let's see, I will put it.",
+      "timestamp": "0.0",
+      "excerpt": "पेमेंटला नंबर तोच है का? मैं चैनल पर टाकूँ लिसना। स्कैनर और वर्क? कशावर टाकूँ देता नंबर वो? मला पुतये एकदम फेस तो फोटो टाकई। ठीक है ना फेस दाखोते ना। हम्म चल तो, ये फोटो टाक। और स्कैनर सपोर्ट फोटो टाक। बघू, टाक तो मैं।",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.866999077392807,
       "entropy_mean": 0.36527927899259005,

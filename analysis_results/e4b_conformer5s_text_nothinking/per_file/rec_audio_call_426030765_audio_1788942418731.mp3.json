@@ -7,10 +7,48 @@
   "flag_fn": 2,
   "flag_fp": 2,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Normal show 300, romantic with vulgarity 500, if okay I'll give number, don't take for time pass",
+      "timestamp": "00:20",
+      "excerpt": "నార్మల్ షో 300 రొమాంటిక్ బూతులతోని 500 ఓకే అంటే నెంబర్ ఇస్తా టైం పాస్ కి మాత్రం తీసుకోకు",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will pay only after you show first, I won't do it normally",
+      "timestamp": "00:28",
+      "excerpt": "అను ఫస్ట్ చూపించిన తర్వాతే పేమెంట్ చేస్తాను మామూలుగా అయితే నేను చేయను",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "I will take off clothes",
+      "timestamp": "00:40",
+      "excerpt": "బట్టలు విప్పేస్తాను",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "9848 51 46 45",
+      "timestamp": "01:02",
+      "excerpt": "9848 51 46 45",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "Normal show three hundred, with romantic booths five hundred, okay, if so I will give the number",
+      "timestamp": "00:20",
+      "excerpt": "నార్మల్ షో త్రీ హండ్రెడ్ రొమాంటిక్ బూతుల తో ఫైవ్ హండ్రెడ్ ఓకే అంటే నెంబర్ ఇస్తాై",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.962346816075597,
       "entropy_mean": 0.0010322931650049026,
@@ -19,6 +57,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "I will take off clothes, madam",
+      "timestamp": "00:40",
+      "excerpt": "బట్టలు విప్పేస్తాను మత్తం",
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9735472056342325,
       "entropy_mean": 0.0002827151496033893,
@@ -27,6 +67,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "I will take money only after showing, last nine hundred put",
+      "timestamp": "00:45",
+      "excerpt": "చూపించిన తర్వాతే నేను డబ్బు కొడుతాను లాస్ట్ నలల అల పెట్",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9735472056342325,
       "entropy_mean": 0.0015184203158849386,
@@ -35,6 +77,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "I will also take off clothes while calling",
+      "timestamp": "00:50",
+      "excerpt": "తున్నా నేను కూడ కాల్చ బట్టలు ఇప్పేసేస్తా",
       "model_confidence": 0.88,
       "logprob_derived_confidence": 0.9735469735226155,
       "entropy_mean": 0.0011408290912813257,

@@ -3,34 +3,68 @@
   "language": "telugu",
   "gt_flag_count": 3,
   "model_flag_count": 3,
-  "flag_tp": 3,
-  "flag_fn": 0,
-  "flag_fp": 0,
-  "file_bucket": "TP",
+  "flag_tp": 0,
+  "flag_fn": 3,
+  "flag_fp": 3,
+  "file_bucket": "FN",
+  "qualifying_pm_ef_bucket": "FN",
+  "match_reliability": 0.67,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Not in this, on WhatsApp",
+      "timestamp": "02:44",
+      "excerpt": "ఇందులో కాదు వాట్సాప్ లో",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "9030489785",
+      "timestamp": "08:06",
+      "excerpt": "9030489785",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will pay 500, talk for half an hour",
+      "timestamp": "10:57",
+      "excerpt": "500 వేస్తా హాఫ్ ఆన్ అవర్ మాట్లాడు",
+      "confidence": 0.8,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "If you send money on WhatsApp",
+      "timestamp": "06:50",
+      "excerpt": "ంటే వాట్ప్ లో డబ్బులు వేస్తా",
       "model_confidence": 0.3,
       "logprob_derived_confidence": 0.5007488878754833,
       "entropy_mean": 2.9533498924194656e-05,
-      "matched": true
+      "matched": false
     },
     {
       "category": "PlatformMove",
       "translation": "Give the number",
+      "timestamp": "07:40",
+      "excerpt": "చె స నంబ చె",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.5005378962243532,
       "entropy_mean": 0.0018180585764980607,
-      "matched": true
+      "matched": false
     },
     {
       "category": "PlatformMove",
       "translation": "Tell me the number, I will tell you there",
+      "timestamp": "08:00",
+      "excerpt": "నెంబర్ చెప్పు చెప్తా అక్కడ చెప్తా నేను",
       "model_confidence": 0.98,
       "logprob_derived_confidence": 0.5005378962243532,
       "entropy_mean": 6.344123741827111e-06,
-      "matched": true
+      "matched": false
     }
   ]
 }

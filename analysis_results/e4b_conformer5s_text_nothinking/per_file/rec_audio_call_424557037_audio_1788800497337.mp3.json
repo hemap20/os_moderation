@@ -7,10 +7,40 @@
   "flag_fn": 1,
   "flag_fp": 1,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I need a phone number, how do I contact you?",
+      "timestamp": "00:27",
+      "excerpt": "போன் நம்பர் வேணுமே இப்ப நான் எப்படி நான் உங்களை காண்டாக்ட் பண்ணிட்டு வர்றது?",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I shouldn't ask for money, but I will give you 1500 or 2000 in hand when we meet.",
+      "timestamp": "00:40",
+      "excerpt": "நான் காசு கேட்கக்கூடாது ஆனா நேர்ல வந்து உனக்கு 1500 இல்லனா 2000 கையில தரேன்",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will give you money in your hand, then we can go into a room.",
+      "timestamp": "01:30",
+      "excerpt": "உன் கையில காசு தரேன் அதுக்கப்புறம் நம்ம ரூம்குள்ள போலாம்",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "Talk for a while, I will give the phone number",
+      "timestamp": "00:30",
+      "excerpt": "கொஞ்ச நேரம் பேசுங்க நானே தரேன் போன் நம்பர்",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9206227796460652,
       "entropy_mean": 0.0007530688926689066,
@@ -19,6 +49,8 @@
     {
       "category": "SuspiciousActivity",
       "translation": "Oh, I shouldn't ask for money, but I will give you 1005 in cash, I will take care of the room.",
+      "timestamp": "00:40",
+      "excerpt": "ஆ காசு கேக்கக் கூடாது ஆனா நேல வந்து உனக்கு தௌசண்ட் பைவ் ண்ட்ர் இல்ாடூ த ட தச் கையில தரேன் ரூம் நான் பாத்துக்கறேன்",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9819370306415843,
       "entropy_mean": 0.024910942473119757,
@@ -27,6 +59,8 @@
     {
       "category": "PlatformMove",
       "translation": "Otherwise, if you come to Trichy, I will give you everything, bus fare and everything, what can we do?",
+      "timestamp": "00:50",
+      "excerpt": "இல்ல அப்பனா நீ திருச்சிக்கு வர்றனா நான் எல்லாமே உனக்கு நான் பஸ் காசுலந்து ந எல்ல ம குடுத்துடுறேன் என்ன பண்ணலாம்",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.981302495237613,
       "entropy_mean": 0.012754935260816083,

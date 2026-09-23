@@ -7,10 +7,40 @@
   "flag_fn": 2,
   "flag_fp": 0,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "What do you charge for the night?",
+      "timestamp": "00:27",
+      "excerpt": "మీరు అంటే లైక్ వాట్ డు యు ఛార్జ్ ఫర్ నైట్?",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "500 for half an hour",
+      "timestamp": "00:44",
+      "excerpt": "అరగంటకి 500",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Okay give me your number",
+      "timestamp": "00:49",
+      "excerpt": "ఓకే గివ్ మీ యువర్ నంబర్",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "Hey, like what do you charge for night?",
+      "timestamp": "00:28",
+      "excerpt": "నే అంటే లైక్ వాట్ డు యు చార్జ్ ఫర్ నైట్",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.8118878547486865,
       "entropy_mean": 0.23363132893299574,

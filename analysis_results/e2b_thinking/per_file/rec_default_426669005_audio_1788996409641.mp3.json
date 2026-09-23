@@ -3,14 +3,36 @@
   "language": "malayalam",
   "gt_flag_count": 2,
   "model_flag_count": 2,
-  "flag_tp": 1,
-  "flag_fn": 1,
-  "flag_fp": 1,
+  "flag_tp": 2,
+  "flag_fn": 0,
+  "flag_fp": 0,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I will give you Telegram, can we connect there?",
+      "timestamp": "00:22",
+      "excerpt": "ഞാൻ ടെലഗ്രാം ആയിട്ട് തരാം അതിലേക്ക് കണക്ട് ആക്കാമോ",
+      "confidence": 0.95,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "WhatsApp",
+      "timestamp": "00:27",
+      "excerpt": "വാട്സാപ്പ്",
+      "confidence": 0.95,
+      "matched": true
+    }
+  ],
   "model_flags": [
     {
       "category": "PlatformMove",
       "translation": "I will give Telegram ID, I can connect with that.",
+      "timestamp": "00:25",
+      "excerpt": "Main Telegram ID doon, usse connect kar sakta hoon.",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.14584444014619358,
@@ -19,10 +41,12 @@
     {
       "category": "PlatformMove",
       "translation": "WhatsApp or Telegram?",
+      "timestamp": "00:28",
+      "excerpt": "Engane WhatsApp pehlu Telegramlla?",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999999205271483,
       "entropy_mean": 0.20522820833462496,
-      "matched": false
+      "matched": true
     }
   ]
 }

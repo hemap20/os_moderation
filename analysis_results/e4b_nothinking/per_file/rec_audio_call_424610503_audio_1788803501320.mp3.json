@@ -7,10 +7,40 @@
   "flag_fn": 2,
   "flag_fp": 0,
   "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Do you like open video calls etc.?",
+      "timestamp": "00:23",
+      "excerpt": "आपको ओपन वीडियो कॉल्स वगैरह पसंद है?",
+      "confidence": 0.4,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I do chargeable video calls, will you do it?",
+      "timestamp": "00:39",
+      "excerpt": "मैं चार्जेबल वीडियो कॉल करती हूं करेंगे आप?",
+      "confidence": 0.8,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "300",
+      "timestamp": "00:44",
+      "excerpt": "300",
+      "confidence": 0.8,
+      "matched": false
+    }
+  ],
   "model_flags": [
     {
       "category": "SuspiciousActivity",
       "translation": "I do chargeable video calls, will you? What is the charge?",
+      "timestamp": "00:28",
+      "excerpt": "मैं चार्जएबल वीडियो कॉल करती हूं, करेंगे आप? चार्ज क्या है?",
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.7577773093621606,
       "entropy_mean": 0.3106813388549199,
