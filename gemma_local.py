@@ -454,11 +454,11 @@ def parse_and_score_flags(answer_text: str, token_infos: list, chunk_offset_sec:
             )
             global_ts = flag.get("t", "")
         flags.append(GemmaChunkFlag(
-            model_category=flag.get("f", ""),
+            model_category=flag.get("f") or "",
             model_timestamp=global_ts,
-            model_excerpt=flag.get("seg", ""),
-            model_translation=flag.get("tr", ""),
-            model_justification=flag.get("j", ""),
+            model_excerpt=flag.get("seg") or "",
+            model_translation=flag.get("tr") or "",
+            model_justification=flag.get("j") or "",
             model_confidence=flag.get("c"),
             model_speech_act=flag.get("speech_act"),
             model_quote_type=flag.get("quote_type"),
