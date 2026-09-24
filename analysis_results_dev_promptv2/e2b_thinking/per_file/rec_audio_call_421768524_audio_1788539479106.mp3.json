@@ -1,0 +1,41 @@
+{
+  "file_id": "rec_audio_call_421768524_audio_1788539479106.mp3",
+  "language": "hindi",
+  "gt_flag_count": 0,
+  "model_flag_count": 1,
+  "flag_tp": 0,
+  "flag_fn": 0,
+  "flag_fp": 1,
+  "file_bucket": "FP",
+  "qualifying_pm_ef_bucket": "FP",
+  "match_reliability": 1.0,
+  "gt_flags": [],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Give me the number on WhatsApp for everyone in Kolkata.",
+      "timestamp": "0s",
+      "excerpt": "WhatsApp pe sab Kolkata mein ditey chai number",
+      "model_confidence": 0.95,
+      "logprob_derived_confidence": 0.9999998410543122,
+      "entropy_mean": 0.1625453279385392,
+      "matched": false,
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged a sentence that does not exist in the transcript. The transcript shows the user saying 'WhatsApp' but not requesting a number or giving one. This is a FABRICATION.",
+        "fp_type": "FABRICATION",
+        "fp_reason": "The quoted text does not appear in the transcript.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:13+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "file_id": "rec_default_425942168_audio_1788935504071.mp3",
+  "language": "kannada",
+  "gt_flag_count": 4,
+  "model_flag_count": 4,
+  "flag_tp": 2,
+  "flag_fn": 2,
+  "flag_fp": 2,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "What do you like about sex, tell me?",
+      "timestamp": "01:35",
+      "excerpt": "ಸೆಕ್ಸ್ ಬಗ್ಗೆ ಏನ್ ಇಷ್ಟ ಅಂದ್ರೆ ಏನ್ ಹೇಳಿ?",
+      "confidence": 0.8,
+      "matched": false
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Doggy style",
+      "timestamp": "02:24",
+      "excerpt": "ಡಾಗ್ ಸ್ಟೈಲ್",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "WhatsApp?",
+      "timestamp": "03:42",
+      "excerpt": "ವಾಟ್ಸಪ್?",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Show your boobs",
+      "timestamp": "04:03",
+      "excerpt": "ಅದು ನಿಮ್ಮ ಬೂಬ್ಸ್ ನೇ ತೋರಿಸಿ",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Sex bag food worker. Sex bag Nishanth nenelli. Normal one sex in mathara agreed.",
+      "timestamp": "0s",
+      "excerpt": "సెక్స్ బగే ఫుడ్ వర్కర్. సెక్స్ బగే నిశాంత్ నేనెల్లి. నార్మల్ ఒక సెక్స్ ఇన్ మతర అంగీచా.",
+      "model_confidence": 0.45,
+      "logprob_derived_confidence": 0.9999997168780387,
+      "entropy_mean": 0.12084958494999994,
+      "matched": false,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a phrase as Explicit-Flirting. The quote provided is not a verbatim match to the transcript. The transcript shows the user asking about preferences ('What do you like about sex'), which is already covered by GT[0]. This is a duplicate of the violation already captured by GT[0].\n[CODE OVERRIDE] related_gt_flag_index=0 is not in this file's matched-GT set [2, 3] — DUPLICATE_OR_EXTRA_INSTANCE requires pointing at an ALREADY-matched GT flag, so this is a MATCHER_MISS instead (the content is real ground truth, the scorer just failed to pair it).",
+        "fp_type": "MATCHER_MISS",
+        "fp_reason": "The model flagged a variation of a violation already captured by a ground-truth flag. [code override: related_gt_flag_index=0 is not in this file's matched-GT set [2, 3] — DUPLICATE_OR_EXTRA_INSTANCE requires pointing at an ALREADY-matched GT flag, so this is a MATCHER_MISS instead (the content is real ground truth, the scorer just failed to pair it).]",
+        "evidence_transcript_quote": "సెక్స్ గురించి ఏన్ ఇష్ట అಂದ್ರె ఏన్ చెప్పి",
+        "evidence_timestamp": "01:35",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Sex, what kind of strength do you have?",
+      "timestamp": "01:56",
+      "excerpt": "Sexl nimge yav tar strength",
+      "model_confidence": 0.45,
+      "logprob_derived_confidence": 0.9999981075675156,
+      "entropy_mean": 0.28620605016885176,
+      "matched": false,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Sexl nimge yav tar strength' as Explicit-Flirting. This is a mishearing of the Kannada transcript where the user asks 'ಸೆಕ್ಸ್ ಅಲ್ಲಿ ನಿಮಗೆ ಯಾವ ತರ ಇಷ್ಟ ಅಂತ?' (What kind of sex do you like?). This is a duplicate of the violation already captured by GT[0].\n[CODE OVERRIDE] related_gt_flag_index=0 is not in this file's matched-GT set [2, 3] — DUPLICATE_OR_EXTRA_INSTANCE requires pointing at an ALREADY-matched GT flag, so this is a MATCHER_MISS instead (the content is real ground truth, the scorer just failed to pair it).",
+        "fp_type": "MATCHER_MISS",
+        "fp_reason": "The model flagged a variation of a violation already captured by a ground-truth flag. [code override: related_gt_flag_index=0 is not in this file's matched-GT set [2, 3] — DUPLICATE_OR_EXTRA_INSTANCE requires pointing at an ALREADY-matched GT flag, so this is a MATCHER_MISS instead (the content is real ground truth, the scorer just failed to pair it).]",
+        "evidence_transcript_quote": "ಸೆಕ್ಸ್ ಅಲ್ಲಿ ನಿಮಗೆ ಯಾವ ತರ ಇಷ್ಟ ಅಂತ?",
+        "evidence_timestamp": "02:14",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Oh, how do WhatsApp?",
+      "timestamp": "03:51",
+      "excerpt": "ओ इन हाउ दो व्हाट्सअपो",
+      "model_confidence": 0.95,
+      "logprob_derived_confidence": 0.9999999801317865,
+      "entropy_mean": 0.42050287424945054,
+      "matched": true,
+      "dataset_origin_label": "TP"
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "what are you doing with your boobs",
+      "timestamp": "03:44",
+      "excerpt": "ein boob ne torshi",
+      "model_confidence": 0.4,
+      "logprob_derived_confidence": 0.9999596979199005,
+      "entropy_mean": 0.0050782287539643325,
+      "matched": true,
+      "dataset_origin_label": "TP"
+    }
+  ]
+}

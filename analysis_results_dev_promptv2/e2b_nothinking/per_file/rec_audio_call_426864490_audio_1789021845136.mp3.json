@@ -1,0 +1,67 @@
+{
+  "file_id": "rec_audio_call_426864490_audio_1789021845136.mp3",
+  "language": "kannada",
+  "gt_flag_count": 0,
+  "model_flag_count": 2,
+  "flag_tp": 0,
+  "flag_fn": 0,
+  "flag_fp": 2,
+  "file_bucket": "FP",
+  "qualifying_pm_ef_bucket": "FP",
+  "match_reliability": 1.0,
+  "gt_flags": [],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "why so break up instagram",
+      "timestamp": "01:53",
+      "excerpt": "why so break up instagram",
+      "model_confidence": 0.95,
+      "logprob_derived_confidence": 0.8374936268094048,
+      "entropy_mean": 0.4534055919284583,
+      "matched": false,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'instagram' as a PlatformMove. Looking at the transcript, the user says 'why so break up instagram' (likely 'voice break up' and 'instagram'). The user is not suggesting moving the conversation to Instagram; they are complaining about voice quality and mentioning Instagram in a different context. This is a mishearing/context confusion error.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The user is not suggesting a platform move; the mention of Instagram is unrelated to moving the conversation.",
+        "evidence_transcript_quote": "ವಾಯ್ಸ್ ಬ್ರೇಕ್ ಆಗ್ತಿದೆ",
+        "evidence_timestamp": "01:56",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:23+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "If we talk for 5 minutes, it costs 5 rupees.",
+      "timestamp": "05:43",
+      "excerpt": "दिमदिल ल 5 मिन्टे माटडदरो 5 रुपे बरुते अश्ते",
+      "model_confidence": 0.95,
+      "logprob_derived_confidence": 0.9998974175095112,
+      "entropy_mean": 0.6586075191045049,
+      "matched": false,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a discussion about earning money on the app. The policy states: 'Do NOT Trigger for: ... general talk about money'. The user is discussing how much they earn on the app, which is general money talk, not a suspicious transaction for sexual services.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The user is discussing general earnings on the platform, which is explicitly excluded from the SuspiciousActivity policy.",
+        "evidence_transcript_quote": "ದಿನದಲ್ಲಿ ಒಂದು ಐದು ನಿಮಿಷ ಮಾತಾಡಿದ್ರು ಐದು ರೂಪಾಯಿ ಬರುತ್ತೆ ಅಷ್ಟೇ",
+        "evidence_timestamp": "05:30",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:23+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    }
+  ]
+}

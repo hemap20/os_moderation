@@ -1,0 +1,41 @@
+{
+  "file_id": "rec_default_426865848_audio_1789021942575.mp3",
+  "language": "kannada",
+  "gt_flag_count": 0,
+  "model_flag_count": 1,
+  "flag_tp": 0,
+  "flag_fn": 0,
+  "flag_fp": 1,
+  "file_bucket": "FP",
+  "qualifying_pm_ef_bucket": "FP",
+  "match_reliability": 1.0,
+  "gt_flags": [],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Please share your phone number",
+      "timestamp": "02:37",
+      "excerpt": "aargo phone number semo share madila neevu",
+      "model_confidence": 0.95,
+      "logprob_derived_confidence": 1.0,
+      "entropy_mean": 0.19175327080258728,
+      "matched": false,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flags a PlatformMove violation at 02:37. However, the transcript shows the user is actually saying they have NOT shared their phone number ('ನಾನು ಫೋನ್ ನಂಬರ್ ಕೊಟ್ಟಿಲ್ಲ'). This is a denial of sharing contact info, which is explicitly excluded from being a violation.",
+        "fp_type": "EXCEPTION_IGNORED",
+        "fp_reason": "The user is explicitly stating they have not shared their phone number, which is an exception to the PlatformMove policy.",
+        "evidence_transcript_quote": "ನಾನು ಫೋನ್ ನಂಬರ್ ಕೊಟ್ಟಿಲ್ಲ",
+        "evidence_timestamp": "02:25",
+        "fp_exception_matched": "Any statement where a user DENIES having or REFUSES to share contact information is explicitly NOT a violation and MUST be ignored.",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:18+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    }
+  ]
+}

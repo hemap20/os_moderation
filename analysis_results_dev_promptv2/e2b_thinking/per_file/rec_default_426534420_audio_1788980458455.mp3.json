@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_426534420_audio_1788980458455.mp3",
+  "language": "telugu",
+  "gt_flag_count": 3,
+  "model_flag_count": 1,
+  "flag_tp": 0,
+  "flag_fn": 3,
+  "flag_fp": 1,
+  "file_bucket": "FN",
+  "qualifying_pm_ef_bucket": "FN",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Will you come to WhatsApp?",
+      "timestamp": "00:14",
+      "excerpt": "వాట్సాప్ కి వస్తారా",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "I will show my body",
+      "timestamp": "00:14",
+      "excerpt": "బాడీ చూపిస్తాను",
+      "confidence": 0.4,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will show for 200",
+      "timestamp": "00:24",
+      "excerpt": "200 కి చూపిస్తాను",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Are you showing all body parts on WhatsApp?",
+      "timestamp": "00:08",
+      "excerpt": "WhatsApp ka sara body chupistano?",
+      "model_confidence": 0.45,
+      "logprob_derived_confidence": 0.9999983757845331,
+      "entropy_mean": 0.19712700084905596,
+      "matched": false,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'WhatsApp ka sara body chupistano?' as Explicit-Flirting. The transcript shows the user saying 'వాట్సాప్ కి వస్తారా బాడీ చూపిస్తాను' (Will you come to WhatsApp, I will show my body). This is a combination of a PlatformMove and an Explicit-Flirting violation. Since the model flagged it as Explicit-Flirting, and the ground truth has a separate flag for Explicit-Flirting (GT[1]) at the same timestamp, this is a duplicate of the ground truth instance.\n[CODE OVERRIDE] related_gt_flag_index=1 is not in this file's matched-GT set [] — DUPLICATE_OR_EXTRA_INSTANCE requires pointing at an ALREADY-matched GT flag, so this is a MATCHER_MISS instead (the content is real ground truth, the scorer just failed to pair it).",
+        "fp_type": "MATCHER_MISS",
+        "fp_reason": "The model flagged a violation that is already covered by a ground-truth flag at the same timestamp. [code override: related_gt_flag_index=1 is not in this file's matched-GT set [] — DUPLICATE_OR_EXTRA_INSTANCE requires pointing at an ALREADY-matched GT flag, so this is a MATCHER_MISS instead (the content is real ground truth, the scorer just failed to pair it).]",
+        "evidence_transcript_quote": "బాడీ చూపిస్తాను",
+        "evidence_timestamp": "00:14",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    }
+  ]
+}

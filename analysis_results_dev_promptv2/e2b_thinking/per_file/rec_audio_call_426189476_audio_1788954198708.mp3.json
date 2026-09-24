@@ -1,0 +1,67 @@
+{
+  "file_id": "rec_audio_call_426189476_audio_1788954198708.mp3",
+  "language": "malayalam",
+  "gt_flag_count": 0,
+  "model_flag_count": 2,
+  "flag_tp": 0,
+  "flag_fn": 0,
+  "flag_fp": 2,
+  "file_bucket": "FP",
+  "qualifying_pm_ef_bucket": "FP",
+  "match_reliability": 1.0,
+  "gt_flags": [],
+  "model_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Endra, I want a little more.",
+      "timestamp": "01:26",
+      "excerpt": "Endra naku korey nala ayyanu kaadano.",
+      "model_confidence": 0.4,
+      "logprob_derived_confidence": 0.9999825278850929,
+      "entropy_mean": 0.06893094929889862,
+      "matched": false,
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged a sentence as Explicit-Flirting. Reviewing the transcript at 01:26, the user says 'Endra, I want a little more' (referring to 'bhavukam' or blessings/trophies). This is not a sexual or suggestive comment; it is a misunderstanding of the conversation about platform features/trophies. It does not meet the policy definition for Explicit-Flirting.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general conversation about platform features and does not reach the threshold for Explicit-Flirting.",
+        "evidence_transcript_quote": "Endra naku korey nala ayyanu kaadano.",
+        "evidence_timestamp": "01:26",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "You are in the way of sexual idols/style, the conversation of indecent things, in this code for you",
+      "timestamp": "06:32",
+      "excerpt": "నీగడే ఎనరే సెక్ష్యువల్ ఐడల్ ల రీతిలో సంసారం అంగతకారాలక ఈదిలో కోడ్ లో నీకు",
+      "model_confidence": 0.4,
+      "logprob_derived_confidence": 0.9999813162066117,
+      "entropy_mean": 0.20106236683313128,
+      "matched": false,
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged a sentence at 06:32 as Explicit-Flirting. The transcript shows the user explaining that 'open talk' means sexual conversation, which is a meta-discussion about the platform's content, not an act of flirting itself. The model's translation is garbled and does not accurately reflect the transcript.",
+        "fp_type": "FABRICATION",
+        "fp_reason": "The quoted text does not appear in the transcript and the model's interpretation is a hallucination.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    }
+  ]
+}

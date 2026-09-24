@@ -1,0 +1,77 @@
+{
+  "file_id": "rec_audio_call_425877181_audio_1788930106387.mp3",
+  "language": "telugu",
+  "gt_flag_count": 3,
+  "model_flag_count": 2,
+  "flag_tp": 1,
+  "flag_fn": 2,
+  "flag_fp": 1,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Not in this, WhatsApp",
+      "timestamp": "00:34",
+      "excerpt": "దీంట్లో కాదు వాట్సాప్",
+      "confidence": 1.0,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "300",
+      "timestamp": "00:38",
+      "excerpt": "300",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Half an hour",
+      "timestamp": "00:42",
+      "excerpt": "హాఫ్ ఆన్ అవర్",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Let's do a video call, pay for it",
+      "timestamp": "00:28",
+      "excerpt": "दीintlho video call ko kooda payment karwaa lo",
+      "model_confidence": 0.95,
+      "logprob_derived_confidence": 0.9999984264504429,
+      "entropy_mean": 0.16642760784928098,
+      "matched": false,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'दीintlho video call ko kooda payment karwaa lo' as SuspiciousActivity. Comparing this to the GT flags, GT[1] and GT[2] are unmatched and cover the same topic of paying for a video call (300 for half an hour). The model's flag is a paraphrase of the same conversation topic as the unmatched GT flags. Since the GT flags are unmatched, this is a MATCHER_MISS.",
+        "fp_type": "MATCHER_MISS",
+        "fp_reason": "The model flag describes the same transactional request as the unmatched ground-truth flags.",
+        "evidence_transcript_quote": "దీంట్లో వీడియో కాల్ కి కూడా పేమెంట్ కావాలా?",
+        "evidence_timestamp": "00:31",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Let's do it on WhatsApp",
+      "timestamp": "00:31",
+      "excerpt": "दीintlho kaar WhatsApp",
+      "model_confidence": 0.98,
+      "logprob_derived_confidence": 0.5265870695550892,
+      "entropy_mean": 0.702239921959214,
+      "matched": true,
+      "dataset_origin_label": "TP"
+    }
+  ]
+}

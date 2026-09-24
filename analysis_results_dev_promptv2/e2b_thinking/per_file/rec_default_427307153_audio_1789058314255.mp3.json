@@ -1,0 +1,67 @@
+{
+  "file_id": "rec_default_427307153_audio_1789058314255.mp3",
+  "language": "telugu",
+  "gt_flag_count": 0,
+  "model_flag_count": 2,
+  "flag_tp": 0,
+  "flag_fn": 0,
+  "flag_fp": 2,
+  "file_bucket": "FP",
+  "qualifying_pm_ef_bucket": "FP",
+  "match_reliability": 1.0,
+  "gt_flags": [],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "My phone number is 78901234, should I do it on their phone?",
+      "timestamp": "01:41",
+      "excerpt": "మే ఫోన్ నంబర్ 78901234, వాళ్ళ ఫోన్ లోనే చేయమంటారా అంటానా.",
+      "model_confidence": 0.98,
+      "logprob_derived_confidence": 0.9999999642372195,
+      "entropy_mean": 0.05628068503209835,
+      "matched": false,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about sharing phone numbers. However, the speaker is actually advising the other person NOT to share personal numbers or make payments, which is a safety warning, not a violation. This falls under CONTEXT_CONFUSION as it is a description of a general practice/warning.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The user is providing safety advice to not share personal numbers, not sharing their own.",
+        "evidence_transcript_quote": "మీ ఫోన్ నెంబర్స్ అవి ఇవ్వకండి",
+        "evidence_timestamp": "01:17",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:20+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "They will ask for our money to do such things.",
+      "timestamp": "02:37",
+      "excerpt": "డబ్బులు అడుగుతారు అలాంటి ఇట్లా అంగరచ చేయొండని అంటున్నా.",
+      "model_confidence": 0.95,
+      "logprob_derived_confidence": 0.9999581516847761,
+      "entropy_mean": 0.14434194438462677,
+      "matched": false,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about people asking for money. The speaker is warning the user about potential scams on the app, which is a safety warning and not a violation. This is CONTEXT_CONFUSION.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The user is warning the other person about potential scams, not engaging in suspicious activity themselves.",
+        "evidence_transcript_quote": "మళ్ళీ డబ్బులు అడుగుతారు, అలాంటివి ఎంకరేజ్ చేయకండి అంటున్నాను",
+        "evidence_timestamp": "02:16",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:20+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "file_id": "rec_default_427307153_audio_1789058314255.mp3",
+  "language": "telugu",
+  "gt_flag_count": 0,
+  "model_flag_count": 3,
+  "flag_tp": 0,
+  "flag_fn": 0,
+  "flag_fp": 3,
+  "file_bucket": "FP",
+  "qualifying_pm_ef_bucket": "FP",
+  "match_reliability": 1.0,
+  "gt_flags": [],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I will share my phone number 7, and you can call me on the phone.",
+      "timestamp": "00:56",
+      "excerpt": "ಮೇ ಫೋನ್ ನಂಬರ್ 7 ಇರ್ವಕಂಡೆ ವಾಲ್ ಫೋನ್ ಪေါ်ಲವೆ ಚೆಯಮಂಟಾರ ಅಂತನಾನು",
+      "model_confidence": 0.95,
+      "logprob_derived_confidence": 1.0,
+      "entropy_mean": 0.6187346265798623,
+      "matched": false,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about sharing a phone number. However, the transcript shows the speaker is actually warning the user NOT to share their phone number or engage in external payments, which is the opposite of a violation. This is context confusion.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is explicitly warning the user against sharing contact information and external payments, not suggesting it.",
+        "evidence_transcript_quote": "మీ ఫోన్ నెంబర్స్ అవి ఇవ్వకండి, వాళ్ళు ఫోన్ పేలు అవి చేయమంటారా అంటున్నాను",
+        "evidence_timestamp": "01:17",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:25+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "which coins are for the weera calls, where are the calls going?",
+      "timestamp": "02:20",
+      "excerpt": "weera calls nite konse coins kade wala call gae konsto kote",
+      "model_confidence": 0.1,
+      "logprob_derived_confidence": 0.8882293066167164,
+      "entropy_mean": 1.1861296075696468,
+      "matched": false,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a discussion about platform coins and call types. This is a discussion of platform features, not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The user is discussing platform-specific features like coins and call types, which is not a violation.",
+        "evidence_transcript_quote": "మీరు ఎలాగూ వీడియో కాల్స్ అయితే కాయిన్స్ ఎక్కువ అవుతాయి, ఆడియో కాల్స్ అయితే కాయిన్స్ తక్కువ అవుతాయి",
+        "evidence_timestamp": "02:23",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:25+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "if you want to get an app and you don't want to talk on weera call, then there are many problems, weera calls too",
+      "timestamp": "02:25",
+      "excerpt": "imey panna app na aapko pane angu mere weera call alage gani matladagi endka rona mushkilo weera call alado",
+      "model_confidence": 0.1,
+      "logprob_derived_confidence": 0.8882293066167164,
+      "entropy_mean": 1.0097671366191154,
+      "matched": false,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a discussion about call difficulties on the platform. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The user is discussing platform call functionality, which is not a violation.",
+        "evidence_transcript_quote": "ఇప్పుడు ఎలాగూ అయిపోయింది, యాప్ ఆపకపోయినా ఇంకా మీకు వేరే కాల్ వెళ్ళదు కానీ",
+        "evidence_timestamp": "02:30",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:25+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    }
+  ]
+}

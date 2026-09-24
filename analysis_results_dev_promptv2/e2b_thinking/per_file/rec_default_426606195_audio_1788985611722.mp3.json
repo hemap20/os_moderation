@@ -1,0 +1,115 @@
+{
+  "file_id": "rec_default_426606195_audio_1788985611722.mp3",
+  "language": "malayalam",
+  "gt_flag_count": 5,
+  "model_flag_count": 4,
+  "flag_tp": 3,
+  "flag_fn": 2,
+  "flag_fp": 1,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Is it enough to show here, no need for WhatsApp?",
+      "timestamp": "1:16",
+      "excerpt": "ഇതിൽ കാണിച്ചാൽ മതിയോ വാട്സാപ്പിൽ ഒന്നും വേണ്ടല്ലോ",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Give me the number, the number",
+      "timestamp": "1:24",
+      "excerpt": "നമ്പർ താ നമ്പർ",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "95 62 99 85 34",
+      "timestamp": "1:44",
+      "excerpt": "95 62 99 85 34",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will take off all my clothes, then you have to pay me 500 rupees to that number",
+      "timestamp": "4:41",
+      "excerpt": "ഡ്രസ്സ് എല്ലാം ഊരും അപ്പൊ നീ 500 റുപ്പീസ് എനിക്ക് പേ ചെയ്യണം ആ നമ്പറിൽ",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "I will take everything off, the video is 500 rupees, then I will show everything",
+      "timestamp": "5:19",
+      "excerpt": "എല്ലാം ഊരി ഞാൻ തന്നെ വീഡിയോ 500 രൂപയാണ് അന്നേരം ഞാൻ എല്ലാം കാണിക്കും",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "I want to see this, on WhatsApp, okay? No number. I want to see this, on WhatsApp, okay? Give me the number.",
+      "timestamp": "00:06.000-00:12.000",
+      "excerpt": "idhe kaancham adhe whatsapplona venda le. number venda. idhe kaancham adhe whatsapplona venda. number dai namko.",
+      "model_confidence": null,
+      "logprob_derived_confidence": 0.9999999801317865,
+      "entropy_mean": 0.21494953287434804,
+      "matched": true,
+      "dataset_origin_label": "TP"
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Now I will pay 500 rupees in advance. By video call, this all will be paid.",
+      "timestamp": "04:40",
+      "excerpt": "अब मैं 500 rupees आगे पे करियना। वीडियो कॉल से येद अल्ला उरीट पे पे करया दबो रे।",
+      "model_confidence": 0.95,
+      "logprob_derived_confidence": 0.9999761443086871,
+      "entropy_mean": 0.1843889312612633,
+      "matched": false,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a payment offer. The ground truth already has a flag (GT[3]) for the exact same violation at the same timestamp (04:41). Since the model's flag is for the same utterance as GT[3], and GT[3] is matched=True, this is a duplicate.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate of an existing ground-truth flag (GT[3]) for the same violation.",
+        "evidence_transcript_quote": "ഡ്രസ്സ് എല്ലാം ഊരും അപ്പൊ നീ 500 റുപ്പീസ് എനിക്ക് പേ ചെയ്യണം ആ നമ്പറിൽ",
+        "evidence_timestamp": "04:41",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 3,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Here is the number.",
+      "timestamp": "04:45",
+      "excerpt": "आ नंबर री।",
+      "model_confidence": 1.0,
+      "logprob_derived_confidence": 0.9413621854346569,
+      "entropy_mean": 0.0046943069662622365,
+      "matched": true,
+      "dataset_origin_label": "TP"
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "If you give me 500 for a video call, then I will sing everything.",
+      "timestamp": "05:43",
+      "excerpt": "video 500 vana analē nenu ellaam gaane kanam",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": 0.9999998658895733,
+      "entropy_mean": 0.1699125377540715,
+      "matched": true,
+      "dataset_origin_label": "TP"
+    }
+  ]
+}

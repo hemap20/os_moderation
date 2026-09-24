@@ -1,0 +1,140 @@
+{
+  "file_id": "rec_audio_call_425933838_audio_1788934868635.mp3",
+  "language": "hindi",
+  "gt_flag_count": 3,
+  "model_flag_count": 5,
+  "flag_tp": 2,
+  "flag_fn": 1,
+  "flag_fp": 3,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "I am asking to have sex",
+      "timestamp": "01:06",
+      "excerpt": "सेक्स करने बोल रहा हूँ",
+      "confidence": 0.8,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Show everything and then I will keep sending you money every day, okay?",
+      "timestamp": "02:14",
+      "excerpt": "पूरी दूध और फिर मैं आपको पैसे भेजते जाऊंगा रोज रोज रोज रोज ठीक है",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "First, first show me by depositing 300 rupees.",
+      "timestamp": "02:47",
+      "excerpt": "पहले पहले मुझे ₹300 डाल के दिखाओ",
+      "confidence": 0.9,
+      "matched": true
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "How do I give this? Yes? How will I get it? Should I give a number? How should I give it? I will have to show it by video call every day every day every day every day okay. What did you see?",
+      "timestamp": "01:52",
+      "excerpt": "कैसे दो ये पता? हां? कैसे मिलेगी मुझे? नंबर दूँ? कैसे दूँ ना। वीडियो कॉल करके दिखाना पड़ेगा रोज रोज रोज रोज रोज ठीक है। क्या देखा भी?",
+      "model_confidence": 0.95,
+      "logprob_derived_confidence": 1.0,
+      "entropy_mean": 0.2861466197776563,
+      "matched": false,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a request to show something on a video call. While the conversation is highly suspicious and involves sexual solicitation, the specific quote flagged is about using the platform's video call feature. Since the platform's video call feature is not a violation, and this specific quote does not contain the external move or contact details, it is not a PlatformMove violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote refers to using the platform's built-in video call feature, which is explicitly excluded from being a PlatformMove violation.",
+        "evidence_transcript_quote": "वीडियो कॉल करके दिखाना पड़ेगा",
+        "evidence_timestamp": "02:12",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:19+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Go and pay me daily",
+      "timestamp": "02:20",
+      "excerpt": "रोज मेरे को चुका के जाना",
+      "model_confidence": 0.85,
+      "logprob_derived_confidence": 0.9999998807907555,
+      "entropy_mean": 0.28065768361557275,
+      "matched": false,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a quote about paying daily. This quote is part of a larger transactional exchange that is already covered by GT[1] and GT[2]. Since this is a distinct part of the same ongoing transactional negotiation already captured by ground truth, it is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a redundant instance of a transactional request already captured by existing ground-truth flags.",
+        "evidence_transcript_quote": "रोज मेरे को चुका के जाना",
+        "evidence_timestamp": "02:37",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:19+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Let me show you three hundred rupees, then I will go every day",
+      "timestamp": "02:48",
+      "excerpt": "ले मुझे तीन शुरू रुपये डाल के दिखाओ फिर मैं क्या कहती हूं रोज जाऊंगी",
+      "model_confidence": 0.85,
+      "logprob_derived_confidence": 0.9999725249014542,
+      "entropy_mean": 0.3045545006423989,
+      "matched": true,
+      "dataset_origin_label": "TP"
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "If I show you by doing a video call, I will put two thousand rupees for you every day",
+      "timestamp": "02:53",
+      "excerpt": "मुझे सोच वीडियो कॉल करके दिखाना तो मैं आपको दो हजार रुपये डाल दूंगी मेरे रोज",
+      "model_confidence": 0.95,
+      "logprob_derived_confidence": 0.9999725249014542,
+      "entropy_mean": 0.05497629652350421,
+      "matched": true,
+      "dataset_origin_label": "TP"
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Yes, so first see, first show me by putting it",
+      "timestamp": "03:03",
+      "excerpt": "हां तो पहले देख पहले डाल के दिखाओ",
+      "model_confidence": 0.75,
+      "logprob_derived_confidence": 0.9999725249014542,
+      "entropy_mean": 0.08667368791585359,
+      "matched": false,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a quote about paying for a service. This is part of the same transactional negotiation already captured by GT[2]. It is a duplicate instance of the same violation.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a redundant instance of a transactional request already captured by existing ground-truth flags.",
+        "evidence_transcript_quote": "हां तो पहले देख पहले डाल के दिखाओ",
+        "evidence_timestamp": "03:00",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:19+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    }
+  ]
+}

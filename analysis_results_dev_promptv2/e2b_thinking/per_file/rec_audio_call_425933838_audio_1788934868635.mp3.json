@@ -1,0 +1,77 @@
+{
+  "file_id": "rec_audio_call_425933838_audio_1788934868635.mp3",
+  "language": "hindi",
+  "gt_flag_count": 3,
+  "model_flag_count": 2,
+  "flag_tp": 1,
+  "flag_fn": 2,
+  "flag_fp": 1,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "I am asking to have sex",
+      "timestamp": "01:06",
+      "excerpt": "सेक्स करने बोल रहा हूँ",
+      "confidence": 0.8,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Show everything and then I will keep sending you money every day, okay?",
+      "timestamp": "02:14",
+      "excerpt": "पूरी दूध और फिर मैं आपको पैसे भेजते जाऊंगा रोज रोज रोज रोज ठीक है",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "First, first show me by depositing 300 rupees.",
+      "timestamp": "02:47",
+      "excerpt": "पहले पहले मुझे ₹300 डाल के दिखाओ",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Can you give me your number?",
+      "timestamp": "0s",
+      "excerpt": "कैन मुझे एक नंबर दो ना अपना?",
+      "model_confidence": 0.95,
+      "logprob_derived_confidence": 0.9999998807907318,
+      "entropy_mean": 0.3607256134146913,
+      "matched": false,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'कैन मुझे एक नंबर दो ना अपना?' as PlatformMove. The user is asking for a phone number, which is a clear violation of the PlatformMove policy. However, there is no GT flag for this specific request in the file. This is a clear violation that the ground truth missed.",
+        "fp_type": "GT_MISS",
+        "fp_reason": "The user explicitly asks for a phone number, which is a clear violation of the PlatformMove policy that ground truth missed.",
+        "evidence_transcript_quote": "नंबर दो ना अपना",
+        "evidence_timestamp": "01:56",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "If you show me by doing a video call, then I will put two thousand rupees for you daily",
+      "timestamp": "00:00:00-00:00:10",
+      "excerpt": "मुझे सोच वीडियो कॉल करके दिखाना तो मैं आपको दो हजार रुपये डाल दूंगी मेरे रोज",
+      "model_confidence": 0.95,
+      "logprob_derived_confidence": 0.9999990889064329,
+      "entropy_mean": 0.10542558592527843,
+      "matched": true,
+      "dataset_origin_label": "TP"
+    }
+  ]
+}

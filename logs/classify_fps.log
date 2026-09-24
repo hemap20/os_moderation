@@ -43,3 +43,35 @@
 [2026-09-23T14:44:05] [WARN] e2b_thinking::rec_default_423887482_audio_1788735128862.mp3::1: classifier said DUPLICATE_OR_EXTRA_INSTANCE pointing at unmatched GT[2] — overridden to MATCHER_MISS
 [2026-09-23T14:44:05] [WARN] e2b_thinking::rec_default_425134890_audio_1788857770816.mp3::1: classifier said DUPLICATE_OR_EXTRA_INSTANCE pointing at unmatched GT[2] — overridden to MATCHER_MISS
 [2026-09-23T14:44:10] [INFO] Classified 54 flag(s); reports written to /Users/hemapunyamoorty/Desktop/os_moderation/analysis_results/fp_classification/
+[2026-09-23T21:37:52] [INFO] prompt_hash=b6d4ec9fe158ef34 classifier_model=gemini-3.1-flash-lite
+[2026-09-23T21:37:52] [INFO] [e2b_thinking] eligibility check: 39 flag(s) with matched==False strictly, vs flag_fp sum 39 over 50 checked file(s)
+[2026-09-23T21:37:52] [INFO] [e2b_nothinking] eligibility check: 55 flag(s) with matched==False strictly, vs flag_fp sum 55 over 50 checked file(s)
+[2026-09-23T21:37:52] [INFO] recomputing matched-GT indices for 49 file(s) with pending work
+[2026-09-23T21:38:03] [WARN] 5 file(s) disagreed with cached flag_tp after batched matched-GT recompute — retrying each in isolation
+[2026-09-23T21:38:09] [ERROR] e2b_nothinking::rec_audio_call_425205242_audio_1788862499869.mp3: matched-GT recompute STILL disagrees with cached flag_tp (2 vs 1) after isolated retry — marking UNVERIFIED, MATCHER_MISS/DUPLICATE code-level enforcement disabled for its flags
+[2026-09-23T21:38:09] [INFO] 94 flag(s) need classification across 100 file(s)
+[2026-09-23T21:38:09] [INFO] classifying 94 flag(s) in 19 batch(es) of up to 5 via gemini-3.1-flash-lite
+[2026-09-23T21:38:09] [INFO] [classify batch 1/19] 5 flag(s)
+[2026-09-23T21:38:09] [INFO] [classify batch 2/19] 5 flag(s)
+[2026-09-23T21:38:09] [INFO] [classify batch 3/19] 5 flag(s)
+[2026-09-23T21:38:09] [INFO] [classify batch 4/19] 5 flag(s)
+[2026-09-23T21:38:09] [INFO] [classify batch 5/19] 5 flag(s)
+[2026-09-23T21:38:09] [INFO] [classify batch 6/19] 5 flag(s)
+[2026-09-23T21:38:13] [INFO] [classify batch 7/19] 5 flag(s)
+[2026-09-23T21:38:14] [WARN] e2b_thinking::rec_default_425942168_audio_1788935504071.mp3::0: classifier said DUPLICATE_OR_EXTRA_INSTANCE pointing at unmatched GT[0] — overridden to MATCHER_MISS
+[2026-09-23T21:38:14] [WARN] e2b_thinking::rec_default_425942168_audio_1788935504071.mp3::1: classifier said DUPLICATE_OR_EXTRA_INSTANCE pointing at unmatched GT[0] — overridden to MATCHER_MISS
+[2026-09-23T21:38:14] [WARN] e2b_thinking::rec_default_426534420_audio_1788980458455.mp3::0: classifier said DUPLICATE_OR_EXTRA_INSTANCE pointing at unmatched GT[1] — overridden to MATCHER_MISS
+[2026-09-23T21:38:14] [INFO] [classify batch 8/19] 5 flag(s)
+[2026-09-23T21:38:14] [INFO] [classify batch 9/19] 5 flag(s)
+[2026-09-23T21:38:14] [INFO] [classify batch 10/19] 5 flag(s)
+[2026-09-23T21:38:14] [INFO] [classify batch 11/19] 5 flag(s)
+[2026-09-23T21:38:14] [INFO] [classify batch 12/19] 5 flag(s)
+[2026-09-23T21:38:18] [WARN] [classify batch 8] 1 flag(s) missing/invalid — retrying individually
+[2026-09-23T21:38:18] [INFO] [classify batch 13/19] 5 flag(s)
+[2026-09-23T21:38:18] [INFO] [classify batch 14/19] 5 flag(s)
+[2026-09-23T21:38:18] [INFO] [classify batch 15/19] 5 flag(s)
+[2026-09-23T21:38:18] [INFO] [classify batch 16/19] 5 flag(s)
+[2026-09-23T21:38:19] [INFO] [classify batch 17/19] 5 flag(s)
+[2026-09-23T21:38:20] [INFO] [classify batch 18/19] 5 flag(s)
+[2026-09-23T21:38:23] [INFO] [classify batch 19/19] 4 flag(s)
+[2026-09-23T21:38:27] [INFO] Classified 94 flag(s); reports written to /Users/hemapunyamoorty/Desktop/os_moderation/analysis_results_dev_promptv2/fp_classification/

@@ -1,0 +1,41 @@
+{
+  "file_id": "rec_default_427314573_audio_1789058813038.mp3",
+  "language": "tamil",
+  "gt_flag_count": 0,
+  "model_flag_count": 1,
+  "flag_tp": 0,
+  "flag_fn": 0,
+  "flag_fp": 1,
+  "file_bucket": "FP",
+  "qualifying_pm_ef_bucket": "FP",
+  "match_reliability": 1.0,
+  "gt_flags": [],
+  "model_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Do you love me or not?",
+      "timestamp": "01:24",
+      "excerpt": "नींगल लवला इदों पनला या",
+      "model_confidence": 0.1,
+      "logprob_derived_confidence": 0.9999964535790442,
+      "entropy_mean": 0.5917635595219003,
+      "matched": false,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a question about love. According to the policy, general romantic talk and relationship questions are explicitly excluded from the Explicit-Flirting category.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is general romantic talk which is explicitly excluded from the Explicit-Flirting category.",
+        "evidence_transcript_quote": "நீங்க லவ்ல எதுவும் பண்ணலையா என்கிட்ட?",
+        "evidence_timestamp": "01:33",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:27+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    }
+  ]
+}

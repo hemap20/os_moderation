@@ -1,0 +1,92 @@
+{
+  "file_id": "rec_audio_call_426339629_audio_1788968889098.mp3",
+  "language": "malayalam",
+  "gt_flag_count": 3,
+  "model_flag_count": 2,
+  "flag_tp": 0,
+  "flag_fn": 3,
+  "flag_fp": 2,
+  "file_bucket": "FN",
+  "qualifying_pm_ef_bucket": "FN",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Open talk service",
+      "timestamp": "00:17",
+      "excerpt": "ഓപ്പൺ ടോക്ക് സർവീസ്",
+      "confidence": 0.4,
+      "matched": false
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "On WhatsApp? Telegram",
+      "timestamp": "00:29",
+      "excerpt": "വാട്സാപ്പിലോ? ടെലഗ്രാം",
+      "confidence": 0.9,
+      "matched": false
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "250 for 40 minutes",
+      "timestamp": "00:41",
+      "excerpt": "40 മിനിറ്റിന് 250",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "What is the rate? What is the amount today? Pay for 40 minutes. Ah, for 40 minutes, 250.",
+      "timestamp": "00:28",
+      "excerpt": "എന്താ റേറ്റ്? ഇന്ന അ amount എത്രയാണ്? പേട 40 മിനിറ്റ്. ആ അത്ര 40 മിനിറ്റിന് 250.",
+      "model_confidence": 0.6,
+      "logprob_derived_confidence": 0.9945506002318086,
+      "entropy_mean": 0.4285158344366806,
+      "matched": false,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag is for a PlatformMove/SuspiciousActivity violation. Comparing the model's quote to the GT flags, the model's quote '40 minutes 250' is a direct paraphrase of GT[2] ('40 മിനിറ്റിന് 250'). Since GT[2] is marked matched=false, this is a MATCHER_MISS.",
+        "fp_type": "MATCHER_MISS",
+        "fp_reason": "The model flag is a direct paraphrase of an existing ground-truth flag that was not matched by the scorer.",
+        "evidence_transcript_quote": "40 മിനിറ്റിന് 250",
+        "evidence_timestamp": "00:41",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:23+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "It is a video call. Video call. You can do it super.",
+      "timestamp": "00:33",
+      "excerpt": "വീഡിയോ കോൾ ആണ്. വീഡിയോ കോൾ. సూపర్ ഒക്കെ നീ പരിയോ.",
+      "model_confidence": 0.0,
+      "logprob_derived_confidence": 0.9945506002318086,
+      "entropy_mean": 0.3124394499516047,
+      "matched": false,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a video call request. The policy explicitly states that video call requests (in-platform feature) are not violations. The model correctly identified this in its own justification but flagged it anyway. This is an over-sensitivity error.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The model flagged a request for an in-platform video call, which is explicitly permitted by the policy.",
+        "evidence_transcript_quote": "വീഡിയോ കോൾ ആണോ?",
+        "evidence_timestamp": "00:44",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:23+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "file_id": "rec_default_426603278_audio_1788985350942.mp3",
+  "language": "kannada",
+  "gt_flag_count": 2,
+  "model_flag_count": 4,
+  "flag_tp": 1,
+  "flag_fn": 1,
+  "flag_fp": 3,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Insta",
+      "timestamp": "04:19",
+      "excerpt": "ಇನ್ಸ್ಟಾ",
+      "confidence": 0.9,
+      "matched": true
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "WhatsApp number",
+      "timestamp": "04:20",
+      "excerpt": "ವಾಟ್ಸಪ್ ನಂಬರ್",
+      "confidence": 0.9,
+      "matched": false
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Give me Instagram WhatsApp number.",
+      "timestamp": "04:17",
+      "excerpt": "इंस्टा व्हाट्सअप नंबर दे।",
+      "model_confidence": 1.0,
+      "logprob_derived_confidence": 1.0,
+      "entropy_mean": 0.48012329991607317,
+      "matched": true,
+      "dataset_origin_label": "TP"
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "I will go to WhatsApp",
+      "timestamp": "05:15",
+      "excerpt": "आई तो आगरे व्हाट्सएप",
+      "model_confidence": 0.95,
+      "logprob_derived_confidence": 1.0,
+      "entropy_mean": 0.5268602896481752,
+      "matched": false,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a mention of WhatsApp. The user is discussing moving to WhatsApp, which is a PlatformMove. However, this specific instance is a duplicate of the violation already captured by GT[1] (which is matched=True). Therefore, this is a DUPLICATE_OR_EXTRA_INSTANCE.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a PlatformMove violation already captured by a ground-truth flag.",
+        "evidence_transcript_quote": "ವಾಟ್ಸಪ್",
+        "evidence_timestamp": "05:03",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:23+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Hello, you call me",
+      "timestamp": "05:25",
+      "excerpt": "हलो नीनगे कॉल मडको को",
+      "model_confidence": null,
+      "logprob_derived_confidence": 1.0,
+      "entropy_mean": 0.6409012675285339,
+      "matched": false,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Hello, you call me' as PlatformMove. The user is simply initiating a call on the platform, which is a standard feature and not a move to an external app. This is over-sensitivity to the word 'call'.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Initiating a call on the platform is not a violation of the PlatformMove policy.",
+        "evidence_transcript_quote": "ಹಲೋ ನಿನಗೇನು ಕಾಲ್ ಮಾಡ್ಕೊಂಡು ಕೂತ್ಕೊಳ್ಳೋಕೆ ಪುರುಸೊತ್ತು ನನಗೂ ಇಲ್ಲ",
+        "evidence_timestamp": "05:06",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:23+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "I don't want you, you, you will not be allowed, freedom, freedom, I have called, after closing just text is coming, free will be, otherwise wait, I am you inside you, I am you, I don't want to be touched by you.",
+      "timestamp": "05:08",
+      "excerpt": "nenu ningu illē nīnu nīnu vidukōbaḍa astradha astradha freedom ikōbaḍa call muduṁ kutkōlida lēni āḷi bandhaga just text āktini free lēdē sikbōtō māmalāgi illanḍrē vēkaṇṭini nīndara nīṅgē andarī naniṅgē aam namgē heṅgē uḍgira hinte bīḷabēk anna nēnu pasē naniṅgilla",
+      "model_confidence": null,
+      "logprob_derived_confidence": 0.99224886198683,
+      "entropy_mean": 0.437293141780053,
+      "matched": false,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a long segment as Explicit-Flirting. The quote 'I don't want to be touched by you' is a misinterpretation of the transcript where the user is actually discussing their boundaries and refusing to share contact info or engage in excessive calling. It does not meet the threshold for Explicit-Flirting.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a statement of personal boundaries and does not contain sexual undertones or suggestive content.",
+        "evidence_transcript_quote": "ನನಗೆ ಹೆಂಗೆ ಹುಡುಗಿ ಇಷ್ಟೇ ಬೀಳಬೇಕು ಅನ್ನೋ ಹಠ ನನಗೆ ಇಲ್ಲ",
+        "evidence_timestamp": "05:23",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:23+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    }
+  ]
+}

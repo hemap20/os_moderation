@@ -1,0 +1,41 @@
+{
+  "file_id": "rec_default_426608730_audio_1788985842618.mp3",
+  "language": "malayalam",
+  "gt_flag_count": 0,
+  "model_flag_count": 1,
+  "flag_tp": 0,
+  "flag_fn": 0,
+  "flag_fp": 1,
+  "file_bucket": "FP",
+  "qualifying_pm_ef_bucket": "FP",
+  "match_reliability": 1.0,
+  "gt_flags": [],
+  "model_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Are you for a personal video call?",
+      "timestamp": "00:03",
+      "excerpt": "क्या तुम वीडियो कॉल पर्सनल बात करने का है?",
+      "model_confidence": 0.7,
+      "logprob_derived_confidence": 0.9398880978191335,
+      "entropy_mean": 0.6126859217009042,
+      "matched": false,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged an inquiry about a personal video call as SuspiciousActivity. The user is asking about the rate for a video call. Per policy, asking about rates for video calls is only a violation if it is in a suggestive context or for sexual services. This is a general inquiry about platform services.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Asking about rates for video calls is not a violation unless it is explicitly linked to sexual services.",
+        "evidence_transcript_quote": "എനിക്ക് ഒരു വീഡിയോ കോൾസിന് താല്പര്യമുണ്ടോ",
+        "evidence_timestamp": "00:06",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:23+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    }
+  ]
+}

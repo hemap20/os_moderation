@@ -1,0 +1,67 @@
+{
+  "file_id": "rec_default_427308167_audio_1789058388570.mp3",
+  "language": "tamil",
+  "gt_flag_count": 0,
+  "model_flag_count": 2,
+  "flag_tp": 0,
+  "flag_fn": 0,
+  "flag_fp": 2,
+  "file_bucket": "FP",
+  "qualifying_pm_ef_bucket": "FP",
+  "match_reliability": 1.0,
+  "gt_flags": [],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Giving WhatsApp number and asking to pay amount",
+      "timestamp": "03:16",
+      "excerpt": "WhatsApp நம்பர் கொடுத்து amount pay பண்ண சொல்லி",
+      "model_confidence": 0.95,
+      "logprob_derived_confidence": 0.9999999403953606,
+      "entropy_mean": 0.16193277431916256,
+      "matched": false,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about WhatsApp numbers. The speaker is warning the user about the dangers of moving to WhatsApp, which is a safety warning and not a violation. This is CONTEXT_CONFUSION.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The user is advising against moving to WhatsApp for safety reasons, not suggesting it.",
+        "evidence_transcript_quote": "வாட்ஸ்அப் நம்பர் அந்த மாதிரி கொடுத்து அமௌன்ட் பே பண்ண சொல்லி, அது ஒரு சிலர் பேசுவாங்களாமா.",
+        "evidence_timestamp": "03:18",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:20+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "WhatsApp and madri",
+      "timestamp": "04:12",
+      "excerpt": "whatsapp an madri",
+      "model_confidence": 0.95,
+      "logprob_derived_confidence": 0.9999998807907318,
+      "entropy_mean": 0.0022609646471967912,
+      "matched": false,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a mention of WhatsApp. The speaker is discussing the risks of moving to WhatsApp as part of a safety warning. This is CONTEXT_CONFUSION.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The user is discussing the risks of moving to WhatsApp as part of a safety warning.",
+        "evidence_transcript_quote": "வாட்ஸ்அப் அந்த மாதிரி ரெண்டுலயுமே வருமாமா.",
+        "evidence_timestamp": "04:12",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-09-23T16:08:20+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
+    }
+  ]
+}
