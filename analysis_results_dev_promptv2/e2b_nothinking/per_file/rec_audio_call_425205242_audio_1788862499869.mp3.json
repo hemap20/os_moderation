@@ -44,112 +44,47 @@
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9999929866920629,
       "entropy_mean": 0.11356167123512693,
-      "matched": true,
-      "dataset_origin_label": "TP"
+      "matched": true
     },
     {
       "category": "PlatformMove",
       "translation": "Capital F, then small letter ID HA, ID HN one two zero.",
-      "timestamp": "0s",
+      "timestamp": "01:24",
       "excerpt": "कैपिटल एफ, फिर स्मॉल लेटर आईडी एच ए, आईडी एच एन वन टू जीरो।",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999950528758335,
       "entropy_mean": 0.30014620753754573,
-      "matched": false,
-      "dataset_origin_label": "TP",
-      "fp_classification": {
-        "reasoning": "The model flagged PlatformMove for sharing an ID. This ID is part of the Telegram contact details being shared to move the conversation off-platform. This is a duplicate of the violation already captured by GT[2]. Therefore, it is DUPLICATE_OR_EXTRA_INSTANCE.",
-        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
-        "fp_reason": "This is a duplicate instance of the PlatformMove violation already captured by the ground truth flag at 1:15. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
-        "evidence_transcript_quote": "கேபிடல் லெட்டர் எஃப் அடிக்கும்",
-        "evidence_timestamp": "01:20",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": 2,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "low",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:18+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     },
     {
       "category": "PlatformMove",
       "translation": "Black profile kitiyo?",
-      "timestamp": "5s",
+      "timestamp": "01:29",
       "excerpt": "ब्लैक प्रोफाइल कितियो?",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9999950528758335,
       "entropy_mean": 0.5733476032231314,
-      "matched": false,
-      "dataset_origin_label": "TP",
-      "fp_classification": {
-        "reasoning": "The model flagged PlatformMove for 'Black profile kitiyo?'. This is a question about finding a profile on the external app, not a violation itself, and it does not meet the threshold for a new violation. It is OVER_SENSITIVITY.",
-        "fp_type": "OVER_SENSITIVITY",
-        "fp_reason": "Asking if a profile was found on an external app is not a policy violation in itself.",
-        "evidence_transcript_quote": "ബ്ലാക്ക് പ്രൊഫൈൽ കിട്ടിയോ",
-        "evidence_timestamp": "01:40",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": null,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "high",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:18+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     },
     {
       "category": "PlatformMove",
       "translation": "Capital F adicho.",
-      "timestamp": "8s",
+      "timestamp": "01:32",
       "excerpt": "कैपिटल एफ अदिचो।",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9999950528758335,
       "entropy_mean": 0.4906769317232463,
-      "matched": false,
-      "dataset_origin_label": "TP",
-      "fp_classification": {
-        "reasoning": "The model flagged 'Capital F adicho' as a PlatformMove. This is part of the user sharing their Telegram ID, which is already covered by GT[2] (matched=UNVERIFIED). Since the GT flag is unmatched, this is a MATCHER_MISS.",
-        "fp_type": "MATCHER_MISS",
-        "fp_reason": "This is a duplicate of the information covered by the unmatched ground-truth flag at 1:15. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this MATCHER_MISS call is unconfirmed, needs human review]",
-        "evidence_transcript_quote": "ക്യാപിറ്റൽ ലെറ്റർ എഫ് അടിക്കും",
-        "evidence_timestamp": "1:20",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": 2,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "low",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:18+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     },
     {
       "category": "PlatformMove",
       "translation": "A small letter ID HA",
-      "timestamp": "11s",
+      "timestamp": "01:35",
       "excerpt": "अ स्मॉल लेटर आई डी एच ए",
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9999950528758335,
       "entropy_mean": 0.0924673340217268,
-      "matched": false,
-      "dataset_origin_label": "TP",
-      "fp_classification": {
-        "reasoning": "The model flagged 'small letter ID HA' as a PlatformMove. This is part of the user sharing their Telegram ID, which is already covered by GT[2] (matched=UNVERIFIED). Since the GT flag is unmatched, this is a MATCHER_MISS.",
-        "fp_type": "MATCHER_MISS",
-        "fp_reason": "This is a duplicate of the information covered by the unmatched ground-truth flag at 1:15. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this MATCHER_MISS call is unconfirmed, needs human review]",
-        "evidence_transcript_quote": "സ്മോൾ ലെറ്റർ ഐ ഡി എച്ച് എ",
-        "evidence_timestamp": "1:29",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": 2,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "low",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:18+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     }
   ]
 }

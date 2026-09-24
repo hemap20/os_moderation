@@ -35,6 +35,7 @@ Usage:
 """
 import argparse
 import json
+import re
 import time
 import traceback
 from pathlib import Path
@@ -399,14 +400,37 @@ def _find_flag_entry_char_offsets(text: str, n_flags: int) -> List[int]:
     return offsets
 
 
+_BARE_SECONDS_RE = re.compile(r"^\d+(\.\d+)?s$")
+
+
 def _parse_mmss(ts: str) -> Optional[float]:
-    parts = ts.strip().split(":")
-    parts = [float(p) for p in parts]
-    if len(parts) == 2:
-        return parts[0] * 60 + parts[1]
-    if len(parts) == 3:
-        return parts[0] * 3600 + parts[1] * 60 + parts[2]
-    return None
+    """Accepts MM:SS, H:MM:SS (original), plus two malformed-but-common
+    model outputs observed in practice: "Ns" (bare seconds with an 's'
+    suffix, e.g. "5s", "84.0s") and bare "N" (a plain number, no colon, no
+    suffix, e.g. "0", "11"). All of these previously fell through to
+    returning None, which meant the caller skipped the chunk-offset
+    correction entirely and kept the model's chunk-relative value as if it
+    were already file-relative — silently losing real catches whenever the
+    model wrote a non-MM:SS timestamp in a chunk beyond the first."""
+    ts = ts.strip()
+    if not ts:
+        return None
+    if _BARE_SECONDS_RE.match(ts):
+        return float(ts[:-1])
+    if ":" in ts:
+        try:
+            parts = [float(p) for p in ts.split(":")]
+        except ValueError:
+            return None
+        if len(parts) == 2:
+            return parts[0] * 60 + parts[1]
+        if len(parts) == 3:
+            return parts[0] * 3600 + parts[1] * 60 + parts[2]
+        return None
+    try:
+        return float(ts)
+    except ValueError:
+        return None
 
 
 def _format_mmss(sec: float) -> str:

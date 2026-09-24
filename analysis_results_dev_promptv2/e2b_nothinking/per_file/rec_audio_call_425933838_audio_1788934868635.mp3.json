@@ -44,23 +44,7 @@
       "model_confidence": 0.95,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.2861466197776563,
-      "matched": false,
-      "dataset_origin_label": "TP",
-      "fp_classification": {
-        "reasoning": "The model flagged a request to show something on a video call. While the conversation is highly suspicious and involves sexual solicitation, the specific quote flagged is about using the platform's video call feature. Since the platform's video call feature is not a violation, and this specific quote does not contain the external move or contact details, it is not a PlatformMove violation.",
-        "fp_type": "OVER_SENSITIVITY",
-        "fp_reason": "The quote refers to using the platform's built-in video call feature, which is explicitly excluded from being a PlatformMove violation.",
-        "evidence_transcript_quote": "वीडियो कॉल करके दिखाना पड़ेगा",
-        "evidence_timestamp": "02:12",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": null,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "high",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:19+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     },
     {
       "category": "SuspiciousActivity",
@@ -70,23 +54,7 @@
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9999998807907555,
       "entropy_mean": 0.28065768361557275,
-      "matched": false,
-      "dataset_origin_label": "TP",
-      "fp_classification": {
-        "reasoning": "The model flagged a quote about paying daily. This quote is part of a larger transactional exchange that is already covered by GT[1] and GT[2]. Since this is a distinct part of the same ongoing transactional negotiation already captured by ground truth, it is a duplicate instance.",
-        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
-        "fp_reason": "This is a redundant instance of a transactional request already captured by existing ground-truth flags.",
-        "evidence_transcript_quote": "रोज मेरे को चुका के जाना",
-        "evidence_timestamp": "02:37",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": 1,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "high",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:19+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     },
     {
       "category": "SuspiciousActivity",
@@ -96,8 +64,7 @@
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9999725249014542,
       "entropy_mean": 0.3045545006423989,
-      "matched": true,
-      "dataset_origin_label": "TP"
+      "matched": true
     },
     {
       "category": "SuspiciousActivity",
@@ -107,8 +74,7 @@
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999725249014542,
       "entropy_mean": 0.05497629652350421,
-      "matched": true,
-      "dataset_origin_label": "TP"
+      "matched": true
     },
     {
       "category": "SuspiciousActivity",
@@ -118,23 +84,7 @@
       "model_confidence": 0.75,
       "logprob_derived_confidence": 0.9999725249014542,
       "entropy_mean": 0.08667368791585359,
-      "matched": false,
-      "dataset_origin_label": "TP",
-      "fp_classification": {
-        "reasoning": "The model flagged a quote about paying for a service. This is part of the same transactional negotiation already captured by GT[2]. It is a duplicate instance of the same violation.",
-        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
-        "fp_reason": "This is a redundant instance of a transactional request already captured by existing ground-truth flags.",
-        "evidence_transcript_quote": "हां तो पहले देख पहले डाल के दिखाओ",
-        "evidence_timestamp": "03:00",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": 2,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "high",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:19+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     }
   ]
 }

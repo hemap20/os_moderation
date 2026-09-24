@@ -36,8 +36,7 @@
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9999684656698843,
       "entropy_mean": 0.15279397206550496,
-      "matched": true,
-      "dataset_origin_label": "FN"
+      "matched": true
     },
     {
       "category": "Explicit-Flirting",
@@ -47,8 +46,7 @@
       "model_confidence": 0.35,
       "logprob_derived_confidence": 0.9999984900299963,
       "entropy_mean": 0.17433989506430203,
-      "matched": true,
-      "dataset_origin_label": "FN"
+      "matched": true
     },
     {
       "category": "PlatformMove",
@@ -58,23 +56,7 @@
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9169091348016567,
       "entropy_mean": 0.1423726952376051,
-      "matched": false,
-      "dataset_origin_label": "FN",
-      "fp_classification": {
-        "reasoning": "The model flagged 'चलिए कॉल कट कर, हां किसी और से बात कर लो ठीक है' as PlatformMove. This is a suggestion to end the call, not a move to an external platform. The policy explicitly states that 'Please disconnect the call' or similar phrases are not violations.",
-        "fp_type": "OVER_SENSITIVITY",
-        "fp_reason": "The quote is a suggestion to end the call, which is not a violation of the PlatformMove policy.",
-        "evidence_transcript_quote": "चलिए कॉल कट कर, हां किसी और से बात कर लो ठीक है।",
-        "evidence_timestamp": "02:28",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": null,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "high",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:14+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     }
   ]
 }

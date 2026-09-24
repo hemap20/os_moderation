@@ -36,8 +36,7 @@
       "model_confidence": 1.0,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.48012329991607317,
-      "matched": true,
-      "dataset_origin_label": "TP"
+      "matched": true
     },
     {
       "category": "PlatformMove",
@@ -47,23 +46,7 @@
       "model_confidence": 0.95,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.5268602896481752,
-      "matched": false,
-      "dataset_origin_label": "TP",
-      "fp_classification": {
-        "reasoning": "The model flagged a mention of WhatsApp. The user is discussing moving to WhatsApp, which is a PlatformMove. However, this specific instance is a duplicate of the violation already captured by GT[1] (which is matched=True). Therefore, this is a DUPLICATE_OR_EXTRA_INSTANCE.",
-        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
-        "fp_reason": "This is a duplicate instance of a PlatformMove violation already captured by a ground-truth flag.",
-        "evidence_transcript_quote": "ವಾಟ್ಸಪ್",
-        "evidence_timestamp": "05:03",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": 1,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "high",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:23+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     },
     {
       "category": "PlatformMove",
@@ -73,23 +56,7 @@
       "model_confidence": null,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.6409012675285339,
-      "matched": false,
-      "dataset_origin_label": "TP",
-      "fp_classification": {
-        "reasoning": "The model flagged 'Hello, you call me' as PlatformMove. The user is simply initiating a call on the platform, which is a standard feature and not a move to an external app. This is over-sensitivity to the word 'call'.",
-        "fp_type": "OVER_SENSITIVITY",
-        "fp_reason": "Initiating a call on the platform is not a violation of the PlatformMove policy.",
-        "evidence_transcript_quote": "ಹಲೋ ನಿನಗೇನು ಕಾಲ್ ಮಾಡ್ಕೊಂಡು ಕೂತ್ಕೊಳ್ಳೋಕೆ ಪುರುಸೊತ್ತು ನನಗೂ ಇಲ್ಲ",
-        "evidence_timestamp": "05:06",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": null,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "high",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:23+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     },
     {
       "category": "Explicit-Flirting",
@@ -99,23 +66,7 @@
       "model_confidence": null,
       "logprob_derived_confidence": 0.99224886198683,
       "entropy_mean": 0.437293141780053,
-      "matched": false,
-      "dataset_origin_label": "TP",
-      "fp_classification": {
-        "reasoning": "The model flagged a long segment as Explicit-Flirting. The quote 'I don't want to be touched by you' is a misinterpretation of the transcript where the user is actually discussing their boundaries and refusing to share contact info or engage in excessive calling. It does not meet the threshold for Explicit-Flirting.",
-        "fp_type": "OVER_SENSITIVITY",
-        "fp_reason": "The quote is a statement of personal boundaries and does not contain sexual undertones or suggestive content.",
-        "evidence_transcript_quote": "ನನಗೆ ಹೆಂಗೆ ಹುಡುಗಿ ಇಷ್ಟೇ ಬೀಳಬೇಕು ಅನ್ನೋ ಹಠ ನನಗೆ ಇಲ್ಲ",
-        "evidence_timestamp": "05:23",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": null,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "high",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:23+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     }
   ]
 }

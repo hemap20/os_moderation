@@ -60,8 +60,7 @@
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9962577344356044,
       "entropy_mean": 0.7379436774955441,
-      "matched": true,
-      "dataset_origin_label": "TP"
+      "matched": true
     },
     {
       "category": "SuspiciousActivity",
@@ -71,8 +70,7 @@
       "model_confidence": 0.65,
       "logprob_derived_confidence": 0.9999904039747197,
       "entropy_mean": 0.4972377355298008,
-      "matched": true,
-      "dataset_origin_label": "TP"
+      "matched": true
     },
     {
       "category": "PlatformMove",
@@ -82,23 +80,7 @@
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9160285601435197,
       "entropy_mean": 0.44812948199230507,
-      "matched": false,
-      "dataset_origin_label": "TP",
-      "fp_classification": {
-        "reasoning": "The model flagged a request for a video call as PlatformMove. Video calls are a built-in platform feature and explicitly excluded from the PlatformMove policy.",
-        "fp_type": "EXCEPTION_IGNORED",
-        "fp_reason": "Video call requests are explicitly allowed as they are an in-platform feature.",
-        "evidence_transcript_quote": "വീഡിയോ കോൾ ചെയ്ത് എല്ലാം ഊരിയിട്ട് പേ ചെയ്താൽ പോരെ",
-        "evidence_timestamp": "04:58",
-        "fp_exception_matched": "NEVER FLAG - Video call requests",
-        "related_gt_flag_index": null,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "high",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:23+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     },
     {
       "category": "PlatformMove",
@@ -108,23 +90,7 @@
       "model_confidence": null,
       "logprob_derived_confidence": 0.9995644666715394,
       "entropy_mean": 0.9651438000490155,
-      "matched": false,
-      "dataset_origin_label": "TP",
-      "fp_classification": {
-        "reasoning": "The model flagged a segment as PlatformMove. The content is about payment for a video call, not moving to an external app. This is a misclassification of the context.",
-        "fp_type": "OVER_SENSITIVITY",
-        "fp_reason": "The user is discussing payment for a platform feature, not moving to an external app.",
-        "evidence_transcript_quote": "വീഡിയോ കോൾ ചെയ്തിട്ട് എല്ലാം ഊരിയിട്ട് പേ ചെയ്താൽ പോരെ അപ്പൊ തന്നെ",
-        "evidence_timestamp": "05:08",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": null,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "high",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:23+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     }
   ]
 }

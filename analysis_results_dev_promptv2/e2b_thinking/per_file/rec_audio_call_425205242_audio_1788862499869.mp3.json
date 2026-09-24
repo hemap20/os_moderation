@@ -44,8 +44,7 @@
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999999701976798,
       "entropy_mean": 0.14108577227402747,
-      "matched": true,
-      "dataset_origin_label": "TP"
+      "matched": true
     },
     {
       "category": "SuspiciousActivity",
@@ -55,23 +54,7 @@
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9367068674335549,
       "entropy_mean": 0.4695218287911425,
-      "matched": false,
-      "dataset_origin_label": "TP",
-      "fp_classification": {
-        "reasoning": "The model flagged a quote about rates for a video call. This quote is part of a conversation where the user is explaining the service details. However, the policy states that if the context is about the platform's features or if it is ambiguous, it should not be flagged. Since this is a direct quote of a rate for a service, it is a violation, but it is already covered by the ground truth flag at 00:45 which is marked as matched=false. This is a matcher miss.",
-        "fp_type": "MATCHER_MISS",
-        "fp_reason": "The quote is a direct reference to service rates, which is a violation, but it is part of the same transaction described in the ground truth flag at 00:45.",
-        "evidence_transcript_quote": "20 മിനിറ്റ് 250 രൂപയാണ് വീഡിയോ കോൾ ആണ്",
-        "evidence_timestamp": "01:02",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": 0,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "high",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:14+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     }
   ]
 }

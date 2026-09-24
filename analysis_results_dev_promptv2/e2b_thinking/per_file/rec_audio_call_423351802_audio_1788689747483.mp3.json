@@ -19,23 +19,7 @@
       "model_confidence": 0.4,
       "logprob_derived_confidence": 0.9999998509884152,
       "entropy_mean": 0.2159565753656912,
-      "matched": false,
-      "dataset_origin_label": "FP",
-      "fp_classification": {
-        "reasoning": "The user compliments the voice as 'sexy'. According to the policy, mild romanticism and compliments are allowed and should not be flagged as Explicit-Flirting. This is OVER_SENSITIVITY.",
-        "fp_type": "OVER_SENSITIVITY",
-        "fp_reason": "Compliments about a voice are considered mild romanticism and are explicitly excluded from the Explicit-Flirting policy.",
-        "evidence_transcript_quote": "आवाज तो बहुत सेक्सी है तुम्हारी",
-        "evidence_timestamp": "00:53",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": null,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "high",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:13+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     },
     {
       "category": "Explicit-Flirting",
@@ -45,23 +29,7 @@
       "model_confidence": 0.35,
       "logprob_derived_confidence": 0.9999976009375412,
       "entropy_mean": 0.2690423801852882,
-      "matched": false,
-      "dataset_origin_label": "FP",
-      "fp_classification": {
-        "reasoning": "The model flagged a compliment about the user's voice as 'Explicit-Flirting'. According to the policy, general compliments and romantic talk are not violations. This is a mild compliment that does not reach the threshold for 'Explicit-Flirting'.",
-        "fp_type": "OVER_SENSITIVITY",
-        "fp_reason": "The quote is a mild compliment about the user's voice, which does not meet the threshold for a policy violation.",
-        "evidence_transcript_quote": "आवाज तो बहुत सेक्सी है तुम्हारी",
-        "evidence_timestamp": "00:53",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": null,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "high",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:14+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     }
   ]
 }

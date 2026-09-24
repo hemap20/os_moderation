@@ -44,8 +44,7 @@
       "model_confidence": 0.95,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.48217700847557615,
-      "matched": true,
-      "dataset_origin_label": "TP"
+      "matched": true
     },
     {
       "category": "PlatformMove",
@@ -55,8 +54,7 @@
       "model_confidence": 0.95,
       "logprob_derived_confidence": 1.0,
       "entropy_mean": 0.7054574005305767,
-      "matched": true,
-      "dataset_origin_label": "TP"
+      "matched": true
     },
     {
       "category": "PlatformMove",
@@ -66,23 +64,7 @@
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9999925793593074,
       "entropy_mean": 1.090835224284092,
-      "matched": false,
-      "dataset_origin_label": "TP",
-      "fp_classification": {
-        "reasoning": "The model flagged this as PlatformMove, but the user is complaining about not being able to reach the other person on WhatsApp. This is a frustration with the platform's connectivity or the other user's availability, not an attempt to move the conversation off-platform or share contact details. It does not meet the policy definition for PlatformMove.",
-        "fp_type": "OVER_SENSITIVITY",
-        "fp_reason": "The user is expressing frustration with connectivity, not attempting to move the conversation to an external platform.",
-        "evidence_transcript_quote": "అంత పెద్ద డాక్టర్ ఉండి వాట్సాప్ కి రాలేకపోతున్నావా?",
-        "evidence_timestamp": "04:04",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": null,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "high",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:23+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     },
     {
       "category": "PlatformMove",
@@ -92,23 +74,7 @@
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9999925793593074,
       "entropy_mean": 0.6588887815056036,
-      "matched": false,
-      "dataset_origin_label": "TP",
-      "fp_classification": {
-        "reasoning": "The model flagged this as PlatformMove, but the user is asking about the status of a video call. Video calls are an in-platform feature, and the policy explicitly states not to flag video call requests or discussions about them.",
-        "fp_type": "EXCEPTION_IGNORED",
-        "fp_reason": "The user is discussing an in-platform video call feature, which is explicitly excluded from being a violation.",
-        "evidence_transcript_quote": "ఏం లేదు కొంతమంది వీడియో కాల్ సరిగ్గా చేయరని",
-        "evidence_timestamp": "04:09",
-        "fp_exception_matched": "Do NOT trigger for: Any mention of video call (this is an in-platform feature)",
-        "related_gt_flag_index": null,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "high",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:23+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     }
   ]
 }

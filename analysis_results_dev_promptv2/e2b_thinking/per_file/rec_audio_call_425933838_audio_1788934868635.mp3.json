@@ -39,28 +39,12 @@
     {
       "category": "PlatformMove",
       "translation": "Can you give me your number?",
-      "timestamp": "0s",
+      "timestamp": "01:52",
       "excerpt": "कैन मुझे एक नंबर दो ना अपना?",
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999998807907318,
       "entropy_mean": 0.3607256134146913,
-      "matched": false,
-      "dataset_origin_label": "TP",
-      "fp_classification": {
-        "reasoning": "The model flagged 'कैन मुझे एक नंबर दो ना अपना?' as PlatformMove. The user is asking for a phone number, which is a clear violation of the PlatformMove policy. However, there is no GT flag for this specific request in the file. This is a clear violation that the ground truth missed.",
-        "fp_type": "GT_MISS",
-        "fp_reason": "The user explicitly asks for a phone number, which is a clear violation of the PlatformMove policy that ground truth missed.",
-        "evidence_transcript_quote": "नंबर दो ना अपना",
-        "evidence_timestamp": "01:56",
-        "fp_exception_matched": "",
-        "related_gt_flag_index": null,
-        "transcript_reliability": "ok",
-        "classifier_confidence": "high",
-        "classifier_model": "gemini-3.1-flash-lite",
-        "taxonomy_version": "fp_v1",
-        "classified_at": "2026-09-23T16:08:14+00:00",
-        "prompt_hash": "b6d4ec9fe158ef34"
-      }
+      "matched": false
     },
     {
       "category": "SuspiciousActivity",
@@ -70,8 +54,7 @@
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999990889064329,
       "entropy_mean": 0.10542558592527843,
-      "matched": true,
-      "dataset_origin_label": "TP"
+      "matched": true
     }
   ]
 }
