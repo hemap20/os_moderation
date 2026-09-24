@@ -35,11 +35,13 @@ import dataset_v2 as dsv2
 import gemini_client
 import prompt_loader
 from pipeline_logging import StageLogger
-from schemas import RawModelOutput, raw_model_output_json_schema
 from schemas_gemma import GemmaChunkFlag, GemmaFileResult
 
-RAW_SCHEMA_STR = json.dumps(raw_model_output_json_schema())
-
+# Fields tracked as "missing" per flag — mirrors gemma_local.py's
+# _MISSING_TRACKED_FIELDS. Gemini's API has no logprobs (see module
+# docstring), so this is the only per-field reliability signal available
+# for it.
+_MISSING_TRACKED_FIELDS = ["c", "speech_act", "quote_type", "violation"]
 
 # Mutable module globals (not frozen constants) — reassigned by main() from
 # --dataset-root via config.dataset_paths(), same pattern as gemma_local.py.
@@ -48,6 +50,9 @@ GEMINI_RESULTS_DIR: Path = config.PROJECT_ROOT / "gemini_results"
 # Reassigned by main() from --prompt-path — see gemma_local.py's PROMPT_PATH
 # for why this is separate from what generated ground truth.
 PROMPT_PATH: Path = config.CLASSIFICATION_PROMPT_PATH
+# Reassigned by main() alongside PROMPT_PATH — see gemma_local.py's
+# equivalent global for why this must track the active prompt's schema.
+RAW_SCHEMA_STR = json.dumps(prompt_loader.schema_module_for_prompt(PROMPT_PATH).raw_model_output_json_schema())
 
 
 def output_dir(model: str) -> Path:
@@ -68,25 +73,52 @@ def call_classification(client, model: str, record: dsv2.FileRecordV2, logger: S
     return gemini_client.call_with_retries(do_call, on_retry=on_retry)
 
 
-def parse_classification(raw_text: str) -> list:
+def parse_classification(raw_text: str) -> tuple:
+    """Returns (flags, missing_field_counts). Schema-aware: builds
+    RawModelOutputV4 (with the extra speech_act/quote_type/violation
+    fields, all Optional) when PROMPT_PATH maps to schemas_v4, else the
+    original RawModelOutput — same mapping gemma_local.py uses, so both
+    runners can never disagree about which prompt uses which schema.
+    Gemini has no logprobs (see module docstring), so the v4
+    logprob_violation/p_violation_yes/p_violation_method/
+    violation_token_topk fields always stay None here — only the
+    categorical speech_act/quote_type/violation fields are populated."""
+    schema_module = prompt_loader.schema_module_for_prompt(PROMPT_PATH)
+    is_v4 = schema_module is not None and hasattr(schema_module, "RawModelOutputV4")
     parsed = gemini_client.parse_json_lenient(raw_text)
-    raw_output = RawModelOutput(**parsed)
+    raw_output = schema_module.RawModelOutputV4(**parsed) if is_v4 else schema_module.RawModelOutput(**parsed)
+
+    missing_counts = {k: 0 for k in _MISSING_TRACKED_FIELDS}
     flags = []
     for f in raw_output.d:
+        if f.confidence is None:
+            missing_counts["c"] += 1
+        speech_act = getattr(f, "speech_act", None)
+        quote_type = getattr(f, "quote_type", None)
+        violation = getattr(f, "violation", None)
+        if is_v4:
+            if speech_act is None:
+                missing_counts["speech_act"] += 1
+            if quote_type is None:
+                missing_counts["quote_type"] += 1
+            if violation is None:
+                missing_counts["violation"] += 1
         flags.append(GemmaChunkFlag(
-            model_category=f.flag, model_timestamp=f.timestamp, model_excerpt="",
-            model_translation=f.translation, model_justification="",
+            model_category=f.flag, model_timestamp=f.timestamp, model_excerpt=f.excerpt,
+            model_translation=f.translation, model_justification=f.justification,
             model_confidence=f.confidence,
+            model_speech_act=speech_act, model_quote_type=quote_type, model_violation=violation,
         ))
-    return flags
+    return flags, missing_counts
 
 
 def process_file(client, model: str, record: dsv2.FileRecordV2, logger: StageLogger):
     raw_text = call_classification(client, model, record, logger)
-    flags = parse_classification(raw_text)
+    flags, missing_counts = parse_classification(raw_text)
     result = GemmaFileResult(
         file_id=record.file_id, model=model, thinking=False, chunk_seconds=0.0,
         flags=flags, chunks_total=1, chunks_failed=0, status="success",
+        missing_field_counts=missing_counts,
     )
     return result, raw_text
 
@@ -144,13 +176,14 @@ def main():
                               "does NOT affect ground truth, which always used prompt.py")
     args = parser.parse_args()
 
-    global DATASET_DIR, GEMINI_RESULTS_DIR, PROMPT_PATH
+    global DATASET_DIR, GEMINI_RESULTS_DIR, PROMPT_PATH, RAW_SCHEMA_STR
     paths = config.dataset_paths(args.dataset_root, args.results_tag)
     DATASET_DIR = paths["dataset_dir"]
     GEMINI_RESULTS_DIR = paths["gemini_results_dir"]
     if args.prompt_path:
         p = Path(args.prompt_path)
         PROMPT_PATH = p if p.is_absolute() else config.PROJECT_ROOT / p
+    RAW_SCHEMA_STR = json.dumps(prompt_loader.schema_module_for_prompt(PROMPT_PATH).raw_model_output_json_schema())
 
     logger = StageLogger(f"gemini_model_eval_{args.model.replace('/', '_')}")
 
@@ -174,6 +207,7 @@ def main():
 
     client = gemini_client.get_client()
     n_success, n_error = 0, 0
+    total_missing_counts = {k: 0 for k in _MISSING_TRACKED_FIELDS}
     counts_lock = threading.Lock()
     t0 = time.time()
 
@@ -184,6 +218,8 @@ def main():
             result, raw_text = process_file(client, args.model, record, logger)
             with counts_lock:
                 n_success += 1
+                for key, n in result.missing_field_counts.items():
+                    total_missing_counts[key] = total_missing_counts.get(key, 0) + n
             if args.dry_run:
                 print(result.model_dump_json(indent=2))
             else:
@@ -200,7 +236,8 @@ def main():
         for fut in as_completed(futures):
             fut.result()  # re-raise anything that escaped process_one's own try/except
 
-    logger.info(f"Done in {time.time() - t0:.1f}s — success={n_success} error={n_error}")
+    missing_summary = ", ".join(f"{k}={v}" for k, v in total_missing_counts.items())
+    logger.info(f"Done in {time.time() - t0:.1f}s — success={n_success} error={n_error} — missing fields (count of flags lacking each): {missing_summary}")
 
 
 if __name__ == "__main__":

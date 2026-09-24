@@ -24,6 +24,19 @@ import gemini_client
 import prompt_loader
 from pipeline_logging import StageLogger
 from schemas import RawModelOutput, raw_model_output_json_schema, raw_to_ground_truth
+import schemas as _ground_truth_schema_module
+
+# Ground truth must ALWAYS be generated with the original schema, regardless
+# of whatever experimental prompt version (e.g. prompt_v4.py) candidate
+# models are being run against — this assertion catches it immediately if
+# config.STAGE2_PROMPT_PATH is ever pointed at a prompt that prompt_loader's
+# mapping resolves to a different schema module (see prompt_loader.
+# schema_module_for_prompt), rather than silently generating ground truth
+# with an experimental output schema.
+assert prompt_loader.schema_module_for_prompt(config.STAGE2_PROMPT_PATH) is _ground_truth_schema_module, (
+    f"config.STAGE2_PROMPT_PATH ({config.STAGE2_PROMPT_PATH}) maps to a non-ground-truth schema module — "
+    "ground truth must always use schemas.py. Check prompt_loader._SCHEMA_MODULE_BY_PROMPT_NAME."
+)
 
 RAW_SCHEMA_STR = json.dumps(raw_model_output_json_schema())
 

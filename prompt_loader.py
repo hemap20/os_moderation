@@ -18,9 +18,32 @@ import importlib.util
 from pathlib import Path
 from typing import Optional
 
+import schemas
+import schemas_v4
 
 PLACEHOLDER_JSON_SCHEMA = "{json_schema_str}"
 PLACEHOLDER_TRANSCRIPT = "{transcript}"
+
+# Prompt file name -> output schema module. New prompt versions that need
+# new output fields get added here, not hardcoded ad hoc in each caller
+# (gemma_local.py, gemini_model_eval.py) — this is the ONE place a prompt
+# experiment's schema is chosen, so it can never silently drift between the
+# two runners. Every prompt NOT listed here (including prompt.py and every
+# earlier version) uses the original `schemas` module — ground truth
+# (stage2_classify.py / stage12_v2.py) always uses config.STAGE2_PROMPT_PATH
+# (prompt.py), which is never in this map, so it always resolves to
+# `schemas` — see those scripts' own assertions for the enforced guarantee.
+_SCHEMA_MODULE_BY_PROMPT_NAME = {
+    "prompt_v4.py": schemas_v4,
+}
+
+
+def schema_module_for_prompt(prompt_path):
+    """Returns the schema module (schemas or schemas_v4) a given prompt
+    file's output should be generated/parsed against. Looked up by
+    filename, not full path, so it works regardless of where the prompt
+    file lives (repo root, a synced RunPod copy, etc.)."""
+    return _SCHEMA_MODULE_BY_PROMPT_NAME.get(Path(prompt_path).name, schemas)
 
 
 def _load_py_prompt(path: Path) -> str:

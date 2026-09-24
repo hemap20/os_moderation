@@ -218,6 +218,7 @@ def load_model_flags(model_dir: Path, file_id: str) -> Optional[List[dict]]:
     out = []
     for f in data.get("flags", []):
         entropy = f.get("excerpt_token_entropy") or {}
+        entropy_mean = entropy.get("mean")
         out.append({
             "category": f.get("model_category", ""),
             "translation": f.get("model_translation", ""),
@@ -225,7 +226,20 @@ def load_model_flags(model_dir: Path, file_id: str) -> Optional[List[dict]]:
             "excerpt": f.get("model_excerpt", ""),
             "model_confidence": f.get("model_confidence"),
             "logprob_derived_confidence": f.get("logprob_derived_confidence"),
-            "entropy_mean": entropy.get("mean"),
+            "entropy_mean": entropy_mean,
+            # Ranking by "confidence" via entropy means LOWER entropy is
+            # better, opposite of every other signal here — pre-negating it
+            # once, at load time, lets every ranking function treat "higher
+            # score = more confident" uniformly across all four signals
+            # instead of special-casing entropy's sign everywhere it's used.
+            "neg_entropy": -entropy_mean if entropy_mean is not None else None,
+            # v4-only fields (prompt_v4.py) — None for every pre-v4 result,
+            # which is correct (the model was never asked for them, not
+            # "missing" in the reliability-tracking sense).
+            "model_speech_act": f.get("model_speech_act"),
+            "model_quote_type": f.get("model_quote_type"),
+            "model_violation": f.get("model_violation"),
+            "p_violation_yes": f.get("p_violation_yes"),
         })
     return out
 
@@ -606,46 +620,78 @@ RECALL_AT_FP_BUDGETS = [10, 25, 50, 100]
 def auprc_and_recall_at_fp_budget(rows: List[dict], confidence_key: str) -> dict:
     """Ranks every RAISED model flag by confidence_key (descending) and
     treats "matched" as the positive-detection label, building the standard
-    retrieval-style precision-recall curve: recall's denominator is the
-    FIXED total of real ground-truth flags (sum of gt_flag_count across
-    files) — missed GT flags never had a confidence score to threshold on,
-    so they're simply "not retrieved" at every threshold and never enter
-    the ranking; only flags the model actually raised participate in it.
+    retrieval-style precision-recall curve (for AUPRC/recall@budget) and the
+    standard ROC curve (for AUROC) over that ranking.
+
+    EXPLICIT CHOICE — flags missing this confidence signal (confidence_key
+    is None) are NOT excluded from the ranking. They are ranked BELOW every
+    flag that has a real score, i.e. treated as the lowest-confidence tier
+    (equivalent to giving them a score of -infinity; ties among themselves
+    are grouped, same as any other tied score). This is a deliberate,
+    data-driven decision, not a default: on this dataset a missing
+    model_confidence is itself informative — 41/43 (95%) of such flags on
+    e2b_nothinking/prompt_v3 are false positives (worse than even the
+    lowest real confidence bucket), and about half of their justifications
+    read as "not actually a violation." Silently excluding them (the
+    previous behavior) would both inflate AUPRC/AUROC by removing exactly
+    the flags that most look like noise, AND hide a real, reportable
+    model-reliability signal (see n_flags_missing_confidence below).
+
+    Recall's denominator (AUPRC path) is the FIXED total of real
+    ground-truth flags (sum of gt_flag_count across files) — missed GT
+    flags never had a confidence score to threshold on, so they're simply
+    "not retrieved" at every threshold and never enter the ranking; only
+    flags the model actually raised (matched or not, scored or not)
+    participate.
+
+    AUROC is the standard ranking-based area under the ROC curve — the
+    probability a random matched flag outranks a random unmatched flag —
+    computed via the Mann-Whitney rank-sum identity (no explicit threshold
+    sweep needed), with tied scores given the average rank of their group.
+    Only defined when at least one matched AND one unmatched flag exist.
 
     AUPRC is the standard ranking-based average precision (the same
     definition sklearn's average_precision_score uses): AP = sum_k (R_k -
-    R_{k-1}) * P_k over points swept from highest to lowest confidence,
-    with EQUAL-confidence flags grouped into one step (not swept one at a
-    time) so ties don't inflate the estimate depending on arbitrary sort
+    R_{k-1}) * P_k over points swept from highest to lowest score, with
+    EQUAL-score flags (including the missing-confidence tier) grouped into
+    one step so ties don't inflate the estimate depending on arbitrary sort
     order within a tie.
 
     recall_at_fp_budget[N] = the best recall achievable while allowing at
-    most N false positives among the raised, confidence-ranked flags —
-    i.e. "if review capacity covers N false alarms, what fraction of real
-    violations does ranking by this signal surface first."
+    most N false positives among the raised, ranked flags — i.e. "if review
+    capacity covers N false alarms, what fraction of real violations does
+    ranking by this signal surface first."
 
-    None values throughout mean "undefined for this row" (no flags with
-    this confidence signal, or zero ground-truth flags to recall at all),
-    not zero — callers must not treat None as 0."""
+    None values throughout mean "undefined for this row" (no flags raised
+    at all, or zero ground-truth flags to recall at all), not zero —
+    callers must not treat None as 0."""
     total_gt = sum(r["gt_flag_count"] for r in rows)
-    flags = [f for r in rows for f in r["model_flags"] if f.get(confidence_key) is not None]
+    flags = [f for r in rows for f in r["model_flags"]]  # ALL raised flags — missing-confidence ones are ranked, not dropped
+    n_missing = sum(1 for f in flags if f.get(confidence_key) is None)
+
     if not flags or total_gt == 0:
-        return {"auprc": None, "n_flags_ranked": len(flags),
+        return {"auroc": None, "auprc": None, "n_flags_ranked": len(flags), "n_flags_missing_confidence": n_missing,
                 **{f"recall_at_fp_{b}": None for b in RECALL_AT_FP_BUDGETS}}
 
-    flags_sorted = sorted(flags, key=lambda f: -f[confidence_key])
+    NEG_INF = float("-inf")
+
+    def rank_score(f: dict) -> float:
+        v = f.get(confidence_key)
+        return v if v is not None else NEG_INF
+
+    # --- AUPRC + recall@FP-budget: sweep high to low, tied scores grouped ---
+    flags_desc = sorted(flags, key=lambda f: -rank_score(f))
     tp = fp = 0
     auprc = 0.0
     prev_recall = 0.0
     recall_at_budget = {b: 0.0 for b in RECALL_AT_FP_BUDGETS}
-
     i = 0
-    while i < len(flags_sorted):
+    while i < len(flags_desc):
         j = i
-        conf = flags_sorted[i][confidence_key]
-        while j < len(flags_sorted) and flags_sorted[j][confidence_key] == conf:
+        score = rank_score(flags_desc[i])
+        while j < len(flags_desc) and rank_score(flags_desc[j]) == score:
             j += 1
-        group = flags_sorted[i:j]
+        group = flags_desc[i:j]
         tp += sum(1 for f in group if f["matched"])
         fp += sum(1 for f in group if not f["matched"])
         precision = tp / (tp + fp)
@@ -657,11 +703,77 @@ def auprc_and_recall_at_fp_budget(rows: List[dict], confidence_key: str) -> dict
                 recall_at_budget[b] = recall
         i = j
 
+    # --- AUROC via Mann-Whitney rank-sum: ascending ranks, ties averaged ---
+    n_pos = sum(1 for f in flags if f["matched"])
+    n_neg = len(flags) - n_pos
+    auroc = None
+    if n_pos and n_neg:
+        flags_asc = sorted(flags, key=rank_score)
+        rank_by_id: Dict[int, float] = {}
+        i = 0
+        while i < len(flags_asc):
+            j = i
+            score = rank_score(flags_asc[i])
+            while j < len(flags_asc) and rank_score(flags_asc[j]) == score:
+                j += 1
+            avg_rank = (i + 1 + j) / 2.0  # 1-indexed average rank across the tied group
+            for k in range(i, j):
+                rank_by_id[id(flags_asc[k])] = avg_rank
+            i = j
+        rank_sum_pos = sum(rank_by_id[id(f)] for f in flags if f["matched"])
+        auroc = (rank_sum_pos - n_pos * (n_pos + 1) / 2.0) / (n_pos * n_neg)
+
     return {
+        "auroc": r2(auroc),
         "auprc": r2(auprc),
         "n_flags_ranked": len(flags),
+        "n_flags_missing_confidence": n_missing,
         **{f"recall_at_fp_{b}": r2(recall_at_budget[b]) for b in RECALL_AT_FP_BUDGETS},
     }
+
+
+# The four rankable confidence-style signals — every flag counts toward
+# TP/FP/FN regardless of its own "violation" self-label (a violation="no"
+# flag is still a real raised flag, still either matched or not; nothing in
+# this pipeline filters flags by that field), so these rankings are always
+# computed over the SAME flag population the confusion matrix uses.
+RANKING_SIGNALS = ["model_confidence", "logprob_derived_confidence", "neg_entropy", "p_violation_yes"]
+
+
+def tp_rate_by_field(rows: List[dict], field_key: str) -> List[dict]:
+    """TP rate (fraction matched) grouped by one of the model's own
+    categorical self-labels (speech_act, quote_type, violation) — shows
+    whether that label carries any real information about correctness.
+    Missing values get their own explicit "(missing)" bucket rather than
+    being dropped, for the same reason confidence is ranked (not excluded)
+    when missing elsewhere in this module."""
+    by_value: Dict[str, List[int]] = defaultdict(lambda: [0, 0])  # [n_matched, n_total]
+    for r in rows:
+        for f in r["model_flags"]:
+            v = f.get(field_key)
+            v = v if v is not None else "(missing)"
+            by_value[v][1] += 1
+            if f["matched"]:
+                by_value[v][0] += 1
+    return [
+        {"value": v, "n": total, "n_matched": matched, "tp_rate": r2(matched / total) if total else None}
+        for v, (matched, total) in sorted(by_value.items())
+    ]
+
+
+def violation_vs_matched_2x2(rows: List[dict]) -> List[dict]:
+    """2x2 (really up-to-3x2, "(missing)" included) of the model's own
+    violation="yes"/"no" self-label against whether the flag actually
+    matched ground truth — the direct test of whether that self-label
+    predicts correctness, independent of confidence."""
+    table: Dict[tuple, int] = defaultdict(int)
+    for r in rows:
+        for f in r["model_flags"]:
+            v = f.get("model_violation")
+            v = v if v is not None else "(missing)"
+            bucket = "TP" if f["matched"] else "FP"
+            table[(v, bucket)] += 1
+    return [{"violation": v, "matched_bucket": b, "n": n} for (v, b), n in sorted(table.items())]
 
 
 def write_csv(path: Path, rows: List[dict], fieldnames: List[str]):
@@ -792,6 +904,10 @@ def main():
     qualifying_overall_rows = []
     qualifying_by_language_rows = []
     ranking_rows = []
+    tp_rate_speech_act_rows = []
+    tp_rate_quote_type_rows = []
+    tp_rate_violation_rows = []
+    violation_2x2_rows = []
     bucket_rows_model_conf = []
     bucket_rows_logprob_conf = []
     entropy_rows = []
@@ -863,11 +979,22 @@ def main():
                     "logprob_derived_confidence": confidence_bucket_table(lang_rows, "logprob_derived_confidence"),
                 },
                 "entropy_by_correctness": entropy_by_correctness(lang_rows),
-                "ranking_metrics": {
-                    "model_confidence": auprc_and_recall_at_fp_budget(lang_rows, "model_confidence"),
-                    "logprob_derived_confidence": auprc_and_recall_at_fp_budget(lang_rows, "logprob_derived_confidence"),
-                },
+                "ranking_metrics": {signal: auprc_and_recall_at_fp_budget(lang_rows, signal) for signal in RANKING_SIGNALS},
             }
+
+        def filter_rows_by_category(rows_in: List[dict], category: str) -> List[dict]:
+            """Scopes both sides of the ranking computation to one
+            category: GT count becomes "how many GT flags of this category
+            existed" (from the per-flag "category" on the gt_flags detail
+            score_file already stores) and the flag population becomes
+            "this model's flags of this category" — everything else about
+            auprc_and_recall_at_fp_budget/tp_rate_by_field is unchanged."""
+            out = []
+            for r in rows_in:
+                gt_of_cat = [g for g in r.get("gt_flags", []) if g.get("category") == category]
+                model_of_cat = [f for f in r["model_flags"] if f.get("category") == category]
+                out.append({**r, "gt_flag_count": len(gt_of_cat), "model_flags": model_of_cat})
+            return out
 
         overall_entropy = entropy_by_correctness(scored_rows)
         overall_file_rows.append({"model": model_key, **aggregate_file_level(scored_rows), **overall_entropy})
@@ -890,8 +1017,8 @@ def main():
             for row in confidence_bucket_table(lang_rows, "logprob_derived_confidence"):
                 bucket_rows_logprob_conf.append({"model": model_key, "language": lang, **row})
             entropy_rows.append({"model": model_key, "language": lang, **lang_entropy})
-            for signal in ("model_confidence", "logprob_derived_confidence"):
-                ranking_rows.append({"model": model_key, "language": lang, "signal": signal,
+            for signal in RANKING_SIGNALS:
+                ranking_rows.append({"model": model_key, "language": lang, "category": "ALL", "signal": signal,
                                       **auprc_and_recall_at_fp_budget(lang_rows, signal)})
             model_summary["by_language"][lang] = language_block(lang_rows)
 
@@ -900,9 +1027,29 @@ def main():
         for row in confidence_bucket_table(scored_rows, "logprob_derived_confidence"):
             bucket_rows_logprob_conf.append({"model": model_key, "language": "ALL", **row})
         entropy_rows.append({"model": model_key, "language": "ALL", **overall_entropy})
-        for signal in ("model_confidence", "logprob_derived_confidence"):
-            ranking_rows.append({"model": model_key, "language": "ALL", "signal": signal,
+        for signal in RANKING_SIGNALS:
+            ranking_rows.append({"model": model_key, "language": "ALL", "category": "ALL", "signal": signal,
                                   **auprc_and_recall_at_fp_budget(scored_rows, signal)})
+
+        # Per-category ranking metrics (overall across languages, per category).
+        for category in config.CATEGORY_LABELS.values():
+            cat_rows = filter_rows_by_category(scored_rows, category)
+            for signal in RANKING_SIGNALS:
+                ranking_rows.append({"model": model_key, "language": "ALL", "category": category, "signal": signal,
+                                      **auprc_and_recall_at_fp_budget(cat_rows, signal)})
+
+        # v4 categorical-label breakdowns — trivial/empty for pre-v4 runs
+        # (every flag's speech_act/quote_type/violation is None, so these
+        # collapse to a single "(missing)" row), which is the correct,
+        # honest result rather than something to special-case away.
+        for row in tp_rate_by_field(scored_rows, "model_speech_act"):
+            tp_rate_speech_act_rows.append({"model": model_key, **row})
+        for row in tp_rate_by_field(scored_rows, "model_quote_type"):
+            tp_rate_quote_type_rows.append({"model": model_key, **row})
+        for row in tp_rate_by_field(scored_rows, "model_violation"):
+            tp_rate_violation_rows.append({"model": model_key, **row})
+        for row in violation_vs_matched_2x2(scored_rows):
+            violation_2x2_rows.append({"model": model_key, **row})
 
         all_summary[model_key] = model_summary
         (OUTPUT_DIR / model_key).mkdir(parents=True, exist_ok=True)
@@ -936,8 +1083,16 @@ def main():
                "mean_entropy_tp_flags", "n_tp_flags_with_entropy",
                "mean_entropy_fp_flags", "n_fp_flags_with_entropy"], model_keys)
     merge_and_write_csv(OUTPUT_DIR / "auprc_recall_at_fp_budget.csv", ranking_rows,
-              ["model", "language", "signal", "auprc", "n_flags_ranked"]
+              ["model", "language", "category", "signal", "auroc", "auprc", "n_flags_ranked", "n_flags_missing_confidence"]
               + [f"recall_at_fp_{b}" for b in RECALL_AT_FP_BUDGETS], model_keys)
+    merge_and_write_csv(OUTPUT_DIR / "tp_rate_by_speech_act.csv", tp_rate_speech_act_rows,
+              ["model", "value", "n", "n_matched", "tp_rate"], model_keys)
+    merge_and_write_csv(OUTPUT_DIR / "tp_rate_by_quote_type.csv", tp_rate_quote_type_rows,
+              ["model", "value", "n", "n_matched", "tp_rate"], model_keys)
+    merge_and_write_csv(OUTPUT_DIR / "tp_rate_by_violation.csv", tp_rate_violation_rows,
+              ["model", "value", "n", "n_matched", "tp_rate"], model_keys)
+    merge_and_write_csv(OUTPUT_DIR / "violation_vs_matched_2x2.csv", violation_2x2_rows,
+              ["model", "violation", "matched_bucket", "n"], model_keys)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     (OUTPUT_DIR / "summary.json").write_text(json.dumps(all_summary, ensure_ascii=False, indent=2))

@@ -45,7 +45,6 @@ import config
 import dataset_v2 as dsv2
 import prompt_loader
 from pipeline_logging import StageLogger
-from schemas import raw_model_output_json_schema
 from schemas_gemma import GemmaChunkFlag, GemmaFileResult
 
 MODEL_IDS = {
@@ -58,7 +57,11 @@ CHUNK_SECONDS_MAX = 30.0
 DEFAULT_CHUNK_SECONDS = 28.0  # headroom under the 30s hard cap
 TOP_K_LOGPROBS = 20
 
-RAW_SCHEMA_STR = json.dumps(raw_model_output_json_schema())
+# Reassigned by main() alongside PROMPT_PATH — the schema sent to the model
+# must match whichever prompt is active (see prompt_loader.
+# schema_module_for_prompt). Default here is schemas.py's (v1) schema, same
+# as PROMPT_PATH's default.
+RAW_SCHEMA_STR = json.dumps(prompt_loader.schema_module_for_prompt(config.CLASSIFICATION_PROMPT_PATH).raw_model_output_json_schema())
 
 
 # Mutable module globals (not frozen constants) — reassigned by main() from
@@ -231,6 +234,82 @@ def compute_flag_confidence_and_entropy(token_infos: list, full_text: str, flag_
     }
 
 
+def find_violation_token_index(token_infos: list, full_text: str, flag_start_char: int, flag_end_char: int) -> Optional[int]:
+    """Locate the token covering the FIRST character of the "violation"
+    field's value, within THIS flag's own JSON object only (bounded by
+    flag_start_char/flag_end_char from _find_flag_entry_char_spans, so a
+    "violation" key belonging to a later flag can never be matched here) —
+    same span-bounding principle as the category lookup in
+    compute_flag_confidence_and_entropy, just anchored on a literal key
+    name instead of a value substring, since the value itself ("yes"/"no")
+    is exactly what we're trying to locate the token for."""
+    segment = full_text[flag_start_char:flag_end_char + 1]
+    key_idx = segment.find('"violation"')
+    if key_idx == -1:
+        return None
+    colon_idx = segment.find(":", key_idx)
+    if colon_idx == -1:
+        return None
+    quote_idx = segment.find('"', colon_idx)
+    if quote_idx == -1:
+        return None
+    value_start_abs = flag_start_char + quote_idx + 1  # first char of yes/no, right after the opening quote
+
+    cursor = 0
+    for i, info in enumerate(token_infos):
+        tok_end = cursor + len(info["token"])
+        if tok_end > value_start_abs:
+            return i
+        cursor = tok_end
+    return None
+
+
+def compute_violation_probability(token_infos: list, idx: Optional[int]) -> dict:
+    """Given the violation-token index (or None if not found), returns
+    {logprob_violation, p_violation_yes, p_violation_method,
+    violation_token_topk}. Three ways p_violation_yes can be derived (see
+    schemas_gemma.GemmaChunkFlag.p_violation_method for the exact
+    semantics of each) — token text is matched leniently (stripped of
+    surrounding quote/space characters, case-insensitive prefix check)
+    since exact subword tokenization of `"yes`/`"no` at a JSON quote
+    boundary isn't guaranteed to isolate the bare word cleanly."""
+    import math
+
+    if idx is None or idx >= len(token_infos):
+        return {"logprob_violation": None, "p_violation_yes": None,
+                "p_violation_method": None, "violation_token_topk": None}
+
+    info = token_infos[idx]
+    logprob_violation = info["logprob"]
+    topk = info.get("topk", [])
+    token_text = info["token"].strip(" \"'").lower()
+
+    if token_text.startswith("yes"):
+        p_yes = math.exp(logprob_violation)
+        method = "direct"
+    elif token_text.startswith("no"):
+        yes_entry = next(
+            (t for t in topk if t["token"].strip(" \"'").lower().startswith("yes")), None
+        )
+        if yes_entry is not None:
+            p_yes = math.exp(yes_entry["logprob"])
+            method = "topk_yes"
+        else:
+            p_yes = 1.0 - math.exp(logprob_violation)
+            method = "complement"
+    else:
+        # Unexpected token text at the located position — don't guess.
+        p_yes = None
+        method = "unknown_token"
+
+    return {
+        "logprob_violation": logprob_violation,
+        "p_violation_yes": p_yes,
+        "p_violation_method": method,
+        "violation_token_topk": topk,
+    }
+
+
 # ---------------------------------------------------------------------------
 # Per-chunk classification call
 # ---------------------------------------------------------------------------
@@ -307,12 +386,24 @@ def parse_json_lenient(text: str) -> dict:
             raise exc
 
 
-def parse_and_score_flags(answer_text: str, token_infos: list, chunk_offset_sec: float, logger: StageLogger) -> List[GemmaChunkFlag]:
+# Fields whose absence is tracked per-file (see GemmaFileResult.
+# missing_field_counts) — "c" pre-dates v4 (already ~10% missing on
+# e2b_nothinking across every prompt version); the other three only ever
+# appear under prompt_v4.py's schema, but tracking them unconditionally is
+# harmless (they're just never present, hence never "missing" in a
+# meaningful sense, for older prompts — see GemmaFileResult's docstring on
+# a field being counted with 0 vs not present in the dict at all).
+_MISSING_TRACKED_FIELDS = ["c", "speech_act", "quote_type", "violation"]
+
+
+def parse_and_score_flags(answer_text: str, token_infos: list, chunk_offset_sec: float, logger: StageLogger) -> tuple:
+    """Returns (flags, missing_field_counts) — see _MISSING_TRACKED_FIELDS."""
+    missing_counts = {k: 0 for k in _MISSING_TRACKED_FIELDS}
     try:
         parsed = parse_json_lenient(answer_text)
     except Exception as exc:
         logger.warn(f"chunk classification JSON parse failed: {exc}")
-        return []
+        return [], missing_counts
 
     flags = []
     # The model occasionally returns a bare JSON array (the "d" list itself)
@@ -325,11 +416,19 @@ def parse_and_score_flags(answer_text: str, token_infos: list, chunk_offset_sec:
     else:
         logger.warn(f"model returned unexpected JSON top-level type {type(parsed).__name__}, treating as no flags")
         raw_flags = []
-    entry_starts = _find_flag_entry_char_offsets(answer_text, len(raw_flags))
-    for flag, start_char in zip(raw_flags, entry_starts):
+    entry_spans = _find_flag_entry_char_spans(answer_text, len(raw_flags))
+    for flag, (start_char, end_char) in zip(raw_flags, entry_spans):
         scoring = compute_flag_confidence_and_entropy(
             token_infos, answer_text, start_char, flag.get("f", ""), flag.get("seg", "")
         )
+
+        for key in _MISSING_TRACKED_FIELDS:
+            if flag.get(key) is None:
+                missing_counts[key] += 1
+
+        violation_idx = find_violation_token_index(token_infos, answer_text, start_char, end_char)
+        violation_scoring = compute_violation_probability(token_infos, violation_idx)
+
         try:
             t_sec = _parse_mmss(flag.get("t", ""))
         except Exception:
@@ -350,31 +449,43 @@ def parse_and_score_flags(answer_text: str, token_infos: list, chunk_offset_sec:
             model_translation=flag.get("tr", ""),
             model_justification=flag.get("j", ""),
             model_confidence=flag.get("c"),
+            model_speech_act=flag.get("speech_act"),
+            model_quote_type=flag.get("quote_type"),
+            model_violation=flag.get("violation"),
+            logprob_violation=violation_scoring["logprob_violation"],
+            p_violation_yes=violation_scoring["p_violation_yes"],
+            p_violation_method=violation_scoring["p_violation_method"],
+            violation_token_topk=violation_scoring["violation_token_topk"],
             logprob_decision=scoring["decision_logprob"],
             logprob_category=scoring["category_logprob"],
             logprob_derived_confidence=scoring["logprob_derived_confidence"],
             excerpt_token_entropy=scoring["excerpt_token_entropy"],
         ))
-    return flags
+    return flags, missing_counts
 
 
-def _find_flag_entry_char_offsets(text: str, n_flags: int) -> List[int]:
-    """Char offset of each '{' that opens an entry inside the top-level "d"
-    array, via a simple bracket-depth scan (avoids re-parsing with a
-    position-tracking JSON decoder)."""
+def _find_flag_entry_char_spans(text: str, n_flags: int) -> List[tuple]:
+    """(start, end) char offsets of each '{'...'}' entry inside the top-level
+    "d" array, via a simple bracket-depth scan (avoids re-parsing with a
+    position-tracking JSON decoder). end is the index of the matching '}',
+    inclusive — used both as the "flag start" anchor for the decision-token
+    lookup and to BOUND the violation-token search to this flag's own
+    object (so a "violation" key value from a LATER flag can never be
+    mistaken for this one's)."""
     d_idx = text.find('"d"')
     if d_idx == -1:
-        return [0] * n_flags
+        return [(0, len(text) - 1)] * n_flags
     arr_start = text.find("[", d_idx)
     if arr_start == -1:
-        return [0] * n_flags
+        return [(0, len(text) - 1)] * n_flags
 
-    offsets = []
+    spans = []
     depth = 0
+    cur_start = None
     i = arr_start
     in_string = False
     escape = False
-    while i < len(text) and len(offsets) < n_flags:
+    while i < len(text) and len(spans) < n_flags:
         ch = text[i]
         if in_string:
             if escape:
@@ -388,16 +499,26 @@ def _find_flag_entry_char_offsets(text: str, n_flags: int) -> List[int]:
                 in_string = True
             elif ch == "{":
                 if depth == 0:
-                    offsets.append(i)
+                    cur_start = i
                 depth += 1
             elif ch == "}":
                 depth -= 1
+                if depth == 0 and cur_start is not None:
+                    spans.append((cur_start, i))
+                    cur_start = None
             elif ch == "]" and depth == 0:
                 break
         i += 1
-    while len(offsets) < n_flags:
-        offsets.append(offsets[-1] if offsets else arr_start)
-    return offsets
+    while len(spans) < n_flags:
+        spans.append(spans[-1] if spans else (arr_start, len(text) - 1))
+    return spans
+
+
+def _find_flag_entry_char_offsets(text: str, n_flags: int) -> List[int]:
+    """Back-compat wrapper: just the start offsets from
+    _find_flag_entry_char_spans, for callers that only need the decision-
+    token anchor and don't need the end bound."""
+    return [s for s, _e in _find_flag_entry_char_spans(text, n_flags)]
 
 
 _BARE_SECONDS_RE = re.compile(r"^\d+(\.\d+)?s$")
@@ -446,6 +567,7 @@ def process_file(model, processor, record, model_key: str, thinking: bool, chunk
     all_flags: List[GemmaChunkFlag] = []
     raw_responses = []
     n_failed = 0
+    file_missing_counts = {k: 0 for k in _MISSING_TRACKED_FIELDS}
 
     for chunk_path, offset_sec in chunks:
         chunk_t0 = time.time()
@@ -465,8 +587,10 @@ def process_file(model, processor, record, model_key: str, thinking: bool, chunk
                     f"likely system memory pressure (check for other concurrent model processes), not a bug in this chunk."
                 )
             raw_responses.append({"chunk_offset_sec": offset_sec, "raw": raw_response, "thinking": thinking_text})
-            flags = parse_and_score_flags(answer_text, token_infos, offset_sec, logger)
+            flags, chunk_missing_counts = parse_and_score_flags(answer_text, token_infos, offset_sec, logger)
             all_flags.extend(flags)
+            for key, n in chunk_missing_counts.items():
+                file_missing_counts[key] += n
         except Exception as exc:  # noqa: BLE001
             n_failed += 1
             logger.error(f"{record.file_id} chunk@{offset_sec}s failed: {exc}\n{traceback.format_exc()}")
@@ -493,6 +617,7 @@ def process_file(model, processor, record, model_key: str, thinking: bool, chunk
         chunks_failed=n_failed,
         status=status,
         error=error,
+        missing_field_counts=file_missing_counts,
     ), raw_responses
 
 
@@ -544,12 +669,14 @@ def main():
                               "default (unset) uses config.CLASSIFICATION_PROMPT_PATH (prompt.py)")
     args = parser.parse_args()
 
-    global DATASET_DIR, GEMMA_RESULTS_DIR, PROMPT_PATH
+    global DATASET_DIR, GEMMA_RESULTS_DIR, PROMPT_PATH, RAW_SCHEMA_STR
     paths = config.dataset_paths(args.dataset_root, args.results_tag)
     DATASET_DIR = paths["dataset_dir"]
     if args.prompt_path:
         p = Path(args.prompt_path)
         PROMPT_PATH = p if p.is_absolute() else config.PROJECT_ROOT / p
+    schema_module = prompt_loader.schema_module_for_prompt(PROMPT_PATH)
+    RAW_SCHEMA_STR = json.dumps(schema_module.raw_model_output_json_schema())
     GEMMA_RESULTS_DIR = paths["gemma_results_dir"]
 
     logger = StageLogger(f"gemma_local_{args.model}_{'thinking' if args.thinking else 'nothinking'}")
@@ -577,6 +704,7 @@ def main():
     # errors from a chunk truncated mid-write by the other process).
     tmp_dir = output_dir(args.model, args.thinking) / "_chunks_tmp"
     n_success, n_error = 0, 0
+    total_missing_counts = {k: 0 for k in _MISSING_TRACKED_FIELDS}
     t0 = time.time()
 
     for i, record in enumerate(records, 1):
@@ -587,6 +715,8 @@ def main():
                 n_success += 1
             else:
                 n_error += 1
+            for key, n in result.missing_field_counts.items():
+                total_missing_counts[key] = total_missing_counts.get(key, 0) + n
             if args.dry_run:
                 print(result.model_dump_json(indent=2))
             else:
@@ -597,7 +727,8 @@ def main():
             if not args.dry_run:
                 write_error(args.model, args.thinking, record.file_id, str(exc))
 
-    logger.info(f"Done in {time.time() - t0:.1f}s — success={n_success} error={n_error}")
+    missing_summary = ", ".join(f"{k}={v}" for k, v in total_missing_counts.items())
+    logger.info(f"Done in {time.time() - t0:.1f}s — success={n_success} error={n_error} — missing fields (count of flags lacking each): {missing_summary}")
 
 
 if __name__ == "__main__":

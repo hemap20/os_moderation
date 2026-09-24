@@ -41,6 +41,7 @@ import gemini_client
 import prompt_loader
 from pipeline_logging import StageLogger
 from schemas import GroundTruthFlag, RawModelOutput, raw_model_output_json_schema, raw_to_ground_truth
+import schemas as _ground_truth_schema_module
 from schemas_v2 import ClassificationBlock, CombinedResult, Determination, TranscriptBlock
 from stage1_transcribe import (
     TRANSCRIPTION_INSTRUCTION,
@@ -48,6 +49,13 @@ from stage1_transcribe import (
     get_audio_duration_sec,
     sanitize_segments,
     _parse_mmss_to_sec,
+)
+
+# See stage2_classify.py's identical assertion — ground truth must always
+# use schemas.py regardless of what experimental prompt candidate models use.
+assert prompt_loader.schema_module_for_prompt(config.STAGE2_PROMPT_PATH) is _ground_truth_schema_module, (
+    f"config.STAGE2_PROMPT_PATH ({config.STAGE2_PROMPT_PATH}) maps to a non-ground-truth schema module — "
+    "ground truth must always use schemas.py. Check prompt_loader._SCHEMA_MODULE_BY_PROMPT_NAME."
 )
 
 RAW_SCHEMA_STR = json.dumps(raw_model_output_json_schema())
