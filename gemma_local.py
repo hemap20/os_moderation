@@ -407,9 +407,52 @@ def parse_json_lenient(text: str) -> dict:
 _MISSING_TRACKED_FIELDS = ["c", "speech_act", "quote_type", "violation"]
 
 
+def _slice_content_token_infos(token_infos: list, content_text: str) -> list:
+    """token_infos spans the model's ENTIRE generation. In thinking mode
+    that's the <think>...</think> preamble followed by the JSON answer, but
+    every char-offset walk downstream (compute_flag_confidence_and_entropy,
+    find_violation_token_index, find_token_span_for_substring) assumes
+    token_infos[0] is the first token of `content_text` (the answer alone,
+    thinking already stripped by processor.parse_response). That's only
+    true in non-thinking mode. In thinking mode the thinking-preamble
+    tokens throw every downstream char offset off by the length of the
+    thinking text, silently mis-locating the violation token (and the
+    category/excerpt spans) — this is why self-reported vs logprob-derived
+    confidence looked unreliable specifically on thinking models.
+
+    Fix: locate where the answer actually starts within the raw token
+    stream and drop everything before it, so callers can keep doing simple
+    cursor=0 walks against `content_text`."""
+    if not content_text:
+        return token_infos
+    full_token_text = "".join(info["token"] for info in token_infos)
+    anchor = content_text[:60].strip()
+    if not anchor:
+        return token_infos
+    # rfind, not find: the thinking text can plausibly contain the same
+    # substring (e.g. the model quoting its own planned JSON while
+    # reasoning) — the LAST occurrence is the real answer.
+    start_char = full_token_text.rfind(anchor)
+    if start_char == -1:
+        anchor = content_text[:20].strip()
+        start_char = full_token_text.rfind(anchor) if anchor else -1
+    if start_char == -1:
+        # Couldn't align — fail safe to the original (pre-fix) behavior
+        # rather than silently discarding everything.
+        return token_infos
+    cursor = 0
+    for i, info in enumerate(token_infos):
+        tok_end = cursor + len(info["token"])
+        if tok_end > start_char:
+            return token_infos[i:]
+        cursor = tok_end
+    return token_infos
+
+
 def parse_and_score_flags(answer_text: str, token_infos: list, chunk_offset_sec: float, logger: StageLogger) -> tuple:
     """Returns (flags, missing_field_counts) — see _MISSING_TRACKED_FIELDS."""
     missing_counts = {k: 0 for k in _MISSING_TRACKED_FIELDS}
+    token_infos = _slice_content_token_infos(token_infos, answer_text)
     try:
         parsed = parse_json_lenient(answer_text)
     except Exception as exc:
