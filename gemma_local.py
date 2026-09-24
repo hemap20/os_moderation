@@ -93,7 +93,18 @@ def load_model(model_key: str):
     model_id = MODEL_IDS[model_key]
     processor = AutoProcessor.from_pretrained(model_id)
     device_map = "mps" if torch.backends.mps.is_available() else "auto"
-    model = AutoModelForMultimodalLM.from_pretrained(model_id, dtype="auto", device_map=device_map)
+    # SDPA dispatches to a fused/flash-equivalent CUDA kernel automatically
+    # (PyTorch 2.0+, no extra package) — pure speedup, mathematically
+    # equivalent output to eager attention, so it can't affect any of the
+    # logprob/entropy/confidence extraction downstream. Not available on
+    # MPS (Apple's backend doesn't implement the fused kernel), so only
+    # requested on CUDA — "auto" (the default) picks eager there, which is
+    # the correct, working fallback we've already validated on Mac.
+    attn_kwargs = {} if torch.backends.mps.is_available() else {"attn_implementation": "sdpa"}
+    model = AutoModelForMultimodalLM.from_pretrained(model_id, dtype="auto", device_map=device_map, **attn_kwargs)
+    if attn_kwargs:
+        actual = getattr(model.config, "_attn_implementation", "unknown")
+        print(f"[load_model] requested attn_implementation={attn_kwargs['attn_implementation']!r}, model reports {actual!r}", flush=True)
     return model, processor
 
 
