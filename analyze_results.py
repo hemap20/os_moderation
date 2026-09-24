@@ -595,6 +595,75 @@ def entropy_by_correctness(rows: List[dict]) -> dict:
     }
 
 
+# Absolute false-positive counts, not a rate — this dataset's whole framing
+# is "how many false alarms would a human reviewer have to sit through to
+# get this much recall," so an absolute budget is the operationally
+# meaningful unit, not FP/(FP+TN) (which would obscure how that scales with
+# a model's raw flag volume, from 18 FPs total up to 811 across models here).
+RECALL_AT_FP_BUDGETS = [10, 25, 50, 100]
+
+
+def auprc_and_recall_at_fp_budget(rows: List[dict], confidence_key: str) -> dict:
+    """Ranks every RAISED model flag by confidence_key (descending) and
+    treats "matched" as the positive-detection label, building the standard
+    retrieval-style precision-recall curve: recall's denominator is the
+    FIXED total of real ground-truth flags (sum of gt_flag_count across
+    files) — missed GT flags never had a confidence score to threshold on,
+    so they're simply "not retrieved" at every threshold and never enter
+    the ranking; only flags the model actually raised participate in it.
+
+    AUPRC is the standard ranking-based average precision (the same
+    definition sklearn's average_precision_score uses): AP = sum_k (R_k -
+    R_{k-1}) * P_k over points swept from highest to lowest confidence,
+    with EQUAL-confidence flags grouped into one step (not swept one at a
+    time) so ties don't inflate the estimate depending on arbitrary sort
+    order within a tie.
+
+    recall_at_fp_budget[N] = the best recall achievable while allowing at
+    most N false positives among the raised, confidence-ranked flags —
+    i.e. "if review capacity covers N false alarms, what fraction of real
+    violations does ranking by this signal surface first."
+
+    None values throughout mean "undefined for this row" (no flags with
+    this confidence signal, or zero ground-truth flags to recall at all),
+    not zero — callers must not treat None as 0."""
+    total_gt = sum(r["gt_flag_count"] for r in rows)
+    flags = [f for r in rows for f in r["model_flags"] if f.get(confidence_key) is not None]
+    if not flags or total_gt == 0:
+        return {"auprc": None, "n_flags_ranked": len(flags),
+                **{f"recall_at_fp_{b}": None for b in RECALL_AT_FP_BUDGETS}}
+
+    flags_sorted = sorted(flags, key=lambda f: -f[confidence_key])
+    tp = fp = 0
+    auprc = 0.0
+    prev_recall = 0.0
+    recall_at_budget = {b: 0.0 for b in RECALL_AT_FP_BUDGETS}
+
+    i = 0
+    while i < len(flags_sorted):
+        j = i
+        conf = flags_sorted[i][confidence_key]
+        while j < len(flags_sorted) and flags_sorted[j][confidence_key] == conf:
+            j += 1
+        group = flags_sorted[i:j]
+        tp += sum(1 for f in group if f["matched"])
+        fp += sum(1 for f in group if not f["matched"])
+        precision = tp / (tp + fp)
+        recall = tp / total_gt
+        auprc += (recall - prev_recall) * precision
+        prev_recall = recall
+        for b in RECALL_AT_FP_BUDGETS:
+            if fp <= b:
+                recall_at_budget[b] = recall
+        i = j
+
+    return {
+        "auprc": r2(auprc),
+        "n_flags_ranked": len(flags),
+        **{f"recall_at_fp_{b}": r2(recall_at_budget[b]) for b in RECALL_AT_FP_BUDGETS},
+    }
+
+
 def write_csv(path: Path, rows: List[dict], fieldnames: List[str]):
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", newline="") as f:
@@ -722,6 +791,7 @@ def main():
     by_language_flag_rows = []
     qualifying_overall_rows = []
     qualifying_by_language_rows = []
+    ranking_rows = []
     bucket_rows_model_conf = []
     bucket_rows_logprob_conf = []
     entropy_rows = []
@@ -793,6 +863,10 @@ def main():
                     "logprob_derived_confidence": confidence_bucket_table(lang_rows, "logprob_derived_confidence"),
                 },
                 "entropy_by_correctness": entropy_by_correctness(lang_rows),
+                "ranking_metrics": {
+                    "model_confidence": auprc_and_recall_at_fp_budget(lang_rows, "model_confidence"),
+                    "logprob_derived_confidence": auprc_and_recall_at_fp_budget(lang_rows, "logprob_derived_confidence"),
+                },
             }
 
         overall_entropy = entropy_by_correctness(scored_rows)
@@ -816,6 +890,9 @@ def main():
             for row in confidence_bucket_table(lang_rows, "logprob_derived_confidence"):
                 bucket_rows_logprob_conf.append({"model": model_key, "language": lang, **row})
             entropy_rows.append({"model": model_key, "language": lang, **lang_entropy})
+            for signal in ("model_confidence", "logprob_derived_confidence"):
+                ranking_rows.append({"model": model_key, "language": lang, "signal": signal,
+                                      **auprc_and_recall_at_fp_budget(lang_rows, signal)})
             model_summary["by_language"][lang] = language_block(lang_rows)
 
         for row in confidence_bucket_table(scored_rows, "model_confidence"):
@@ -823,6 +900,9 @@ def main():
         for row in confidence_bucket_table(scored_rows, "logprob_derived_confidence"):
             bucket_rows_logprob_conf.append({"model": model_key, "language": "ALL", **row})
         entropy_rows.append({"model": model_key, "language": "ALL", **overall_entropy})
+        for signal in ("model_confidence", "logprob_derived_confidence"):
+            ranking_rows.append({"model": model_key, "language": "ALL", "signal": signal,
+                                  **auprc_and_recall_at_fp_budget(scored_rows, signal)})
 
         all_summary[model_key] = model_summary
         (OUTPUT_DIR / model_key).mkdir(parents=True, exist_ok=True)
@@ -855,6 +935,9 @@ def main():
               ["model", "language", "mean_entropy_overall", "n_flags_with_entropy",
                "mean_entropy_tp_flags", "n_tp_flags_with_entropy",
                "mean_entropy_fp_flags", "n_fp_flags_with_entropy"], model_keys)
+    merge_and_write_csv(OUTPUT_DIR / "auprc_recall_at_fp_budget.csv", ranking_rows,
+              ["model", "language", "signal", "auprc", "n_flags_ranked"]
+              + [f"recall_at_fp_{b}" for b in RECALL_AT_FP_BUDGETS], model_keys)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     (OUTPUT_DIR / "summary.json").write_text(json.dumps(all_summary, ensure_ascii=False, indent=2))
