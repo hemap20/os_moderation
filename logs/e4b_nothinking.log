@@ -1,0 +1,10 @@
+[2026-09-24T11:27:33] [INFO] Loading google/gemma-4-E4B-it (thinking=False)...
+Traceback (most recent call last):
+  File "/workspace/os_moderation/gemma_local.py", line 746, in <module>
+    main()
+  File "/workspace/os_moderation/gemma_local.py", line 695, in main
+    model, processor = load_model(args.model)
+                       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/os_moderation/gemma_local.py", line 91, in load_model
+    from transformers import AutoModelForMultimodalLM, AutoProcessor
+ModuleNotFoundError: No module named 'transformers'
