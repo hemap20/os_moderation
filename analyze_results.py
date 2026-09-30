@@ -481,6 +481,12 @@ def score_file(item: dict, matched_pairs: List[Tuple[int, int]], match_reliabili
     gt_flags, model_flags, record_language = item["gt_flags"], item["model_flags"], item["language"]
     matched_gt = {p[0] for p in matched_pairs}
     matched_model = {p[1] for p in matched_pairs}
+    # gt_idx -> model_idx and the reverse, so each side can record which
+    # SPECIFIC flag (and category) it paired with — needed for per-category
+    # strict TP (a model PlatformMove flag matched to a GT Explicit-Flirting
+    # flag must not count as a PlatformMove TP).
+    model_idx_by_gt_idx = {p[0]: p[1] for p in matched_pairs}
+    gt_idx_by_model_idx = {p[1]: p[0] for p in matched_pairs}
 
     flag_tp = len(matched_pairs)
     flag_fn = len(gt_flags) - len(matched_gt)
@@ -508,11 +514,19 @@ def score_file(item: dict, matched_pairs: List[Tuple[int, int]], match_reliabili
 
     gt_flags_detail = []
     for i, f in enumerate(gt_flags):
-        gt_flags_detail.append({**f, "matched": i in matched_gt})
+        matched_model_idx = model_idx_by_gt_idx.get(i)
+        gt_flags_detail.append({
+            **f, "matched": i in matched_gt,
+            "matched_model_category": model_flags[matched_model_idx]["category"] if matched_model_idx is not None else None,
+        })
 
     flags_detail = []
     for i, f in enumerate(model_flags):
-        flags_detail.append({**f, "matched": i in matched_model})
+        matched_gt_idx = gt_idx_by_model_idx.get(i)
+        flags_detail.append({
+            **f, "matched": i in matched_model,
+            "matched_gt_category": gt_flags[matched_gt_idx]["category"] if matched_gt_idx is not None else None,
+        })
 
     return {
         "file_id": item["file_id"],
@@ -1030,7 +1044,6 @@ def main():
         for signal in RANKING_SIGNALS:
             ranking_rows.append({"model": model_key, "language": "ALL", "category": "ALL", "signal": signal,
                                   **auprc_and_recall_at_fp_budget(scored_rows, signal)})
-
         # Per-category ranking metrics (overall across languages, per category).
         for category in config.CATEGORY_LABELS.values():
             cat_rows = filter_rows_by_category(scored_rows, category)
