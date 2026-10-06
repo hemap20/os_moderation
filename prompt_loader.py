@@ -20,6 +20,7 @@ from typing import Optional
 
 import schemas
 import schemas_v4
+import schemas_v6
 
 PLACEHOLDER_JSON_SCHEMA = "{json_schema_str}"
 PLACEHOLDER_TRANSCRIPT = "{transcript}"
@@ -35,6 +36,7 @@ PLACEHOLDER_TRANSCRIPT = "{transcript}"
 # `schemas` — see those scripts' own assertions for the enforced guarantee.
 _SCHEMA_MODULE_BY_PROMPT_NAME = {
     "prompt_v4.py": schemas_v4,
+    "prompt_v6.py": schemas_v6,
 }
 
 

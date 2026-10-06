@@ -404,7 +404,7 @@ def parse_json_lenient(text: str) -> dict:
 # harmless (they're just never present, hence never "missing" in a
 # meaningful sense, for older prompts — see GemmaFileResult's docstring on
 # a field being counted with 0 vs not present in the dict at all).
-_MISSING_TRACKED_FIELDS = ["c", "speech_act", "quote_type", "violation"]
+_MISSING_TRACKED_FIELDS = ["c", "speech_act", "quote_type", "violation", "spk", "ctx"]
 
 
 def _slice_content_token_infos(token_infos: list, content_text: str) -> list:
@@ -510,6 +510,8 @@ def parse_and_score_flags(answer_text: str, token_infos: list, chunk_offset_sec:
             model_speech_act=flag.get("speech_act"),
             model_quote_type=flag.get("quote_type"),
             model_violation=flag.get("violation"),
+            model_speaker=flag.get("spk"),
+            model_context=flag.get("ctx"),
             logprob_violation=violation_scoring["logprob_violation"],
             p_violation_yes=violation_scoring["p_violation_yes"],
             p_violation_method=violation_scoring["p_violation_method"],

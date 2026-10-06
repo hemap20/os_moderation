@@ -6,7 +6,13 @@ confusion_flag_level_overall.csv, etc.) or its scoring behavior.
 Read-only over analyze_results.py's ALREADY-SCORED per-file cache
 (analysis_results*/{model}/per_file/*.json) — this script never re-runs
 matching, never calls Gemini, and never touches gemma_results/gemini_results.
-It only adds ONE new file per output directory: threshold_metrics_by_category.csv.
+
+Runs the SAME threshold-table logic against three different per-flag
+confidence signals (see SIGNALS), each to its own new CSV — no existing
+file is ever touched:
+  - model_confidence              -> threshold_metrics_by_category.csv
+  - logprob_derived_confidence    -> threshold_metrics_by_category_logprob.csv
+  - neg_entropy (= -entropy_mean) -> threshold_metrics_by_category_entropy.csv
 
 Definitions (exact):
   - Thresholds: --thresholds, default 0.0..0.9 step 0.1, plus an always-added
@@ -42,6 +48,7 @@ from typing import List, Optional
 
 import config
 from analyze_results import (
+    _is_redundant,
     aggregate_file_level,
     aggregate_flag_level,
     configure_dataset_root,
@@ -52,23 +59,51 @@ import analyze_results as ar
 from pipeline_logging import StageLogger
 
 DEFAULT_THRESHOLDS = [round(i * 0.1, 1) for i in range(10)]  # 0.0, 0.1, ..., 0.9
+# Token entropy (entropy_mean) ranges roughly 0..4 in this dataset, and LOWER
+# entropy means MORE confident — the opposite direction of model_confidence/
+# logprob_derived_confidence. To keep one "higher score = more confident"
+# convention across every signal (so _passes_threshold's ">=" comparison and
+# the monotonicity checks below mean the same thing for all three), entropy
+# is read as neg_entropy = -entropy_mean (same convention analyze_results.py
+# itself uses) — entropy_mean isn't persisted in the per-file cache under
+# that name, so it's derived on the fly in _signal_value, never written back.
+ENTROPY_THRESHOLDS = [-4.0, -2.0, -1.0, -0.5, -0.25, -0.1, -0.05, -0.02, -0.01, 0.0]
 THRESHOLD_TABLE_CATEGORIES = list(config.CATEGORY_LABELS.values()) + ["ALL"]
 
+# (signal key, default thresholds, output CSV filename) — one full
+# threshold_metrics_by_category pass per signal, each its own file.
+SIGNALS = [
+    ("model_confidence", DEFAULT_THRESHOLDS, "threshold_metrics_by_category.csv"),
+    ("logprob_derived_confidence", DEFAULT_THRESHOLDS, "threshold_metrics_by_category_logprob.csv"),
+    ("neg_entropy", ENTROPY_THRESHOLDS, "threshold_metrics_by_category_entropy.csv"),
+]
 
-def _passes_threshold(flag: dict, threshold: Optional[float]) -> bool:
+
+def _signal_value(flag: dict, signal_key: str) -> Optional[float]:
+    """neg_entropy isn't a real stored key (see ENTROPY_THRESHOLDS comment
+    above) — derive it from entropy_mean on the fly. Every other signal is
+    read directly off the flag dict."""
+    if signal_key == "neg_entropy":
+        entropy_mean = flag.get("entropy_mean")
+        return -entropy_mean if entropy_mean is not None else None
+    return flag.get(signal_key)
+
+
+def _passes_threshold(flag: dict, threshold: Optional[float], signal_key: str = "model_confidence") -> bool:
     """threshold=None means the 'none' row: every flag counts, including
-    missing-confidence ones (matches confusion_file_level_overall's raw
-    behavior). Otherwise a missing model_confidence counts as below EVERY
+    missing-signal ones (matches confusion_file_level_overall's raw
+    behavior). Otherwise a missing signal value counts as below EVERY
     threshold, per spec — never treated as passing."""
     if threshold is None:
         return True
-    c = flag.get("model_confidence")
+    c = _signal_value(flag, signal_key)
     if c is None:
         return False
     return c >= threshold
 
 
-def threshold_metrics_for_group(rows: List[dict], category: str, threshold: Optional[float]) -> dict:
+def threshold_metrics_for_group(rows: List[dict], category: str, threshold: Optional[float],
+                                 signal_key: str = "model_confidence") -> dict:
     """One row of threshold_metrics_by_category.csv, for one (language,
     category, threshold) triple — `rows` is already scoped to one language
     (or all languages, for the "ALL" language row) by the caller.
@@ -91,6 +126,7 @@ def threshold_metrics_for_group(rows: List[dict], category: str, threshold: Opti
     n_gt_neg = 0
     flag_tp = 0
     flag_fp = 0
+    flag_redundant = 0
     n_flags_missing_confidence = 0
     total_gt_of_cat = 0
 
@@ -106,15 +142,15 @@ def threshold_metrics_for_group(rows: List[dict], category: str, threshold: Opti
             model_of_cat_any_conf = [f for f in model_flags if f.get("category") == category]
 
         total_gt_of_cat += len(gt_of_cat)
-        n_flags_missing_confidence += sum(1 for f in model_of_cat_any_conf if f.get("model_confidence") is None)
+        n_flags_missing_confidence += sum(1 for f in model_of_cat_any_conf if _signal_value(f, signal_key) is None)
 
-        model_of_cat = [f for f in model_of_cat_any_conf if _passes_threshold(f, threshold)]
+        model_of_cat = [f for f in model_of_cat_any_conf if _passes_threshold(f, threshold, signal_key)]
         # Strict population is threshold-gated but NOT category-gated on the
         # model's own label — for a named category, a model flag of ANY
         # category that matched a GT flag OF THIS category still counts
         # (the model's own mislabeled category shouldn't hide a real catch);
         # for ALL, any matched flag counts, exactly file_bucket's rule.
-        strict_pool = [f for f in model_flags if _passes_threshold(f, threshold)]
+        strict_pool = [f for f in model_flags if _passes_threshold(f, threshold, signal_key)]
 
         gt_pos = len(gt_of_cat) > 0
         loose_pos = len(model_of_cat) > 0
@@ -142,7 +178,8 @@ def threshold_metrics_for_group(rows: List[dict], category: str, threshold: Opti
             loose_tp += 1
 
         flag_tp += sum(1 for f in model_of_cat if f.get("matched"))
-        flag_fp += sum(1 for f in model_of_cat if not f.get("matched"))
+        flag_redundant += sum(1 for f in model_of_cat if not f.get("matched") and _is_redundant(f))
+        flag_fp += sum(1 for f in model_of_cat if not f.get("matched") and not _is_redundant(f))
 
     flag_fn = total_gt_of_cat - flag_tp
 
@@ -153,7 +190,11 @@ def threshold_metrics_for_group(rows: List[dict], category: str, threshold: Opti
     accuracy = (tp + tn) / total if total else None
     f1 = (2 * precision * recall / (precision + recall)) if (precision and recall and (precision + recall)) else None
     loose_recall = loose_tp / n_gt_pos if n_gt_pos else None
-    flag_precision = flag_tp / (flag_tp + flag_fp) if (flag_tp + flag_fp) else None
+    # precision credits redundant flags (verified extra-instance catches of
+    # an already-matched violation) as not-errors, per the scoring decision —
+    # recall is UNCHANGED, since a redundant flag never corresponds to a
+    # newly-matched GT flag.
+    flag_precision = (flag_tp + flag_redundant) / (flag_tp + flag_fp + flag_redundant) if (flag_tp + flag_fp + flag_redundant) else None
     flag_recall = flag_tp / (flag_tp + flag_fn) if (flag_tp + flag_fn) else None
 
     assert tp + fn == n_gt_pos, f"category={category} threshold={threshold}: TP+FN={tp + fn} != n_gt_pos={n_gt_pos}"
@@ -169,21 +210,22 @@ def threshold_metrics_for_group(rows: List[dict], category: str, threshold: Opti
         "precision": r2(precision), "recall": r2(recall),
         "specificity": r2(specificity), "accuracy": r2(accuracy), "f1": r2(f1),
         "loose_tp": loose_tp, "loose_recall": r2(loose_recall),
-        "flag_tp": flag_tp, "flag_fp": flag_fp, "flag_fn": flag_fn,
+        "flag_tp": flag_tp, "flag_fp": flag_fp, "flag_redundant": flag_redundant, "flag_fn": flag_fn,
         "flag_precision": r2(flag_precision), "flag_recall": r2(flag_recall),
         "n_flags_missing_confidence": n_flags_missing_confidence,
     }
 
 
-def threshold_metrics_table(rows: List[dict], thresholds: List[float], logger: Optional[StageLogger] = None) -> List[dict]:
+def threshold_metrics_table(rows: List[dict], thresholds: List[float], logger: Optional[StageLogger] = None,
+                             signal_key: str = "model_confidence") -> List[dict]:
     """Builds every (category, threshold) row for one language-scoped `rows`
     list, including the "none" row, and runs the cross-threshold/consistency
     checks from the spec. Returns the rows (without model/language — caller
     adds those); raises AssertionError if a monotonicity/count check fails."""
     out = []
     for category in THRESHOLD_TABLE_CATEGORIES:
-        group_rows = [threshold_metrics_for_group(rows, category, t) for t in thresholds] + \
-                     [threshold_metrics_for_group(rows, category, None)]
+        group_rows = [threshold_metrics_for_group(rows, category, t, signal_key) for t in thresholds] + \
+                     [threshold_metrics_for_group(rows, category, None, signal_key)]
         # Monotonicity as threshold rises (the "none" row excluded — it's
         # not part of the rising-threshold sequence, it's the unfiltered
         # baseline): TP/FP never increase, TN never decreases.
@@ -207,6 +249,8 @@ def threshold_metrics_table(rows: List[dict], thresholds: List[float], logger: O
         mismatches.append(f"flag_tp: threshold-table={none_all['flag_tp']} vs confusion={expected_flag['tp']}")
     if none_all["flag_fp"] != expected_flag["fp"]:
         mismatches.append(f"flag_fp: threshold-table={none_all['flag_fp']} vs confusion={expected_flag['fp']}")
+    if none_all["flag_redundant"] != expected_flag["redundant"]:
+        mismatches.append(f"flag_redundant: threshold-table={none_all['flag_redundant']} vs confusion={expected_flag['redundant']}")
     if none_all["flag_fn"] != expected_flag["fn"]:
         mismatches.append(f"flag_fn: threshold-table={none_all['flag_fn']} vs confusion={expected_flag['fn']}")
     if mismatches:
@@ -237,11 +281,16 @@ def main():
                          help="Alternate dataset root, e.g. Dostt_dev — same convention as analyze_results.py")
     parser.add_argument("--results-tag", type=str, default=None,
                          help="Extra results-directory suffix, e.g. promptA — same convention as analyze_results.py")
-    parser.add_argument("--thresholds", type=str, default=",".join(str(t) for t in DEFAULT_THRESHOLDS),
-                         help="Comma-separated model_confidence thresholds (default: 0.0,0.1,...,0.9). "
-                              "A 'none' row (every flag, missing confidence included) is always added on top.")
+    parser.add_argument("--thresholds", type=str, default=None,
+                         help="Comma-separated thresholds, applied to EVERY signal (overrides each signal's own "
+                              "default grid — see SIGNALS/DEFAULT_THRESHOLDS/ENTROPY_THRESHOLDS). "
+                              "A 'none' row (every flag, missing value included) is always added on top.")
+    parser.add_argument("--signals", type=str, default=None,
+                         help="Comma-separated subset of signals to run: model_confidence, "
+                              "logprob_derived_confidence, neg_entropy (default: all three)")
     args = parser.parse_args()
-    thresholds = [float(t) for t in args.thresholds.split(",") if t.strip()]
+    override_thresholds = [float(t) for t in args.thresholds.split(",") if t.strip()] if args.thresholds else None
+    signal_names = args.signals.split(",") if args.signals else None
 
     configure_dataset_root(args.dataset_root, args.results_tag)
     output_dir = ar.OUTPUT_DIR
@@ -257,34 +306,47 @@ def main():
                     f"dataset-root/results-tag first (this script never scores files itself).")
         return
 
-    threshold_rows = []
+    # Load every model's cached rows once, reuse across all three signal passes.
+    rows_by_model = {}
     for model_key in model_keys:
         rows = load_cached_rows(output_dir, model_key)
         if not rows:
             logger.warn(f"[{model_key}] no cached per_file rows found — skipping")
             continue
+        rows_by_model[model_key] = rows
 
-        for row in threshold_metrics_table(rows, thresholds, logger):
-            threshold_rows.append({"model": model_key, "language": "ALL", **row})
+    # All three signals' tables stacked into ONE file (a "signal" column
+    # tells them apart) — each signal keeps its own threshold grid, since
+    # model_confidence/logprob_derived_confidence are 0..1 probabilities but
+    # neg_entropy's natural range is different (see ENTROPY_THRESHOLDS).
+    threshold_rows = []
+    for signal_key, default_thresholds, _unused_filename in SIGNALS:
+        if signal_names and signal_key not in signal_names:
+            continue
+        thresholds = override_thresholds if override_thresholds is not None else default_thresholds
 
-        by_lang: dict = {}
-        for r in rows:
-            by_lang.setdefault(r["language"], []).append(r)
-        for lang, lang_rows in sorted(by_lang.items()):
-            for row in threshold_metrics_table(lang_rows, thresholds, logger):
-                threshold_rows.append({"model": model_key, "language": lang, **row})
+        for model_key, rows in rows_by_model.items():
+            for row in threshold_metrics_table(rows, thresholds, logger, signal_key):
+                threshold_rows.append({"model": model_key, "language": "ALL", "signal": signal_key, **row})
 
-        logger.info(f"[{model_key}] {len(rows)} cached file(s) scored into threshold_metrics_by_category.csv")
+            by_lang: dict = {}
+            for r in rows:
+                by_lang.setdefault(r["language"], []).append(r)
+            for lang, lang_rows in sorted(by_lang.items()):
+                for row in threshold_metrics_table(lang_rows, thresholds, logger, signal_key):
+                    threshold_rows.append({"model": model_key, "language": lang, "signal": signal_key, **row})
+
+            logger.info(f"[{signal_key}/{model_key}] {len(rows)} cached file(s) scored")
 
     merge_and_write_csv(
         output_dir / "threshold_metrics_by_category.csv", threshold_rows,
-        ["model", "language", "category", "threshold", "n_gt_pos", "n_gt_neg", "tp", "fp", "fn", "tn",
+        ["model", "language", "category", "signal", "threshold", "n_gt_pos", "n_gt_neg", "tp", "fp", "fn", "tn",
          "precision", "recall", "specificity", "accuracy", "f1", "loose_tp", "loose_recall",
-         "flag_tp", "flag_fp", "flag_fn", "flag_precision", "flag_recall", "n_flags_missing_confidence"],
-        model_keys,
+         "flag_tp", "flag_fp", "flag_redundant", "flag_fn", "flag_precision", "flag_recall", "n_flags_missing_confidence"],
+        list(rows_by_model.keys()),
     )
-    print(f"threshold_metrics_by_category.csv written to {output_dir}/ for {len(model_keys)} model(s) — "
-          f"no other file in that directory was touched.")
+    print(f"threshold_metrics_by_category.csv written to {output_dir}/ for {len(rows_by_model)} model(s), "
+          f"{len(SIGNALS) if not signal_names else len(signal_names)} signal(s) — no other file in that directory was touched.")
 
 
 if __name__ == "__main__":

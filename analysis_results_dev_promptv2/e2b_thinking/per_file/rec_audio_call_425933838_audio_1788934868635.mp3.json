@@ -3,11 +3,11 @@
   "language": "hindi",
   "gt_flag_count": 3,
   "model_flag_count": 2,
-  "flag_tp": 1,
-  "flag_fn": 2,
-  "flag_fp": 1,
-  "file_bucket": "TP",
-  "qualifying_pm_ef_bucket": "TP",
+  "flag_tp": 0,
+  "flag_fn": 3,
+  "flag_fp": 2,
+  "file_bucket": "FN",
+  "qualifying_pm_ef_bucket": "FN",
   "match_reliability": 1.0,
   "gt_flags": [
     {
@@ -25,8 +25,8 @@
       "timestamp": "02:14",
       "excerpt": "पूरी दूध और फिर मैं आपको पैसे भेजते जाऊंगा रोज रोज रोज रोज ठीक है",
       "confidence": 0.9,
-      "matched": true,
-      "matched_model_category": "SuspiciousActivity"
+      "matched": false,
+      "matched_model_category": null
     },
     {
       "category": "SuspiciousActivity",
@@ -47,6 +47,11 @@
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999998807907318,
       "entropy_mean": 0.3607256134146913,
+      "neg_entropy": -0.3607256134146913,
+      "model_speech_act": null,
+      "model_quote_type": null,
+      "model_violation": null,
+      "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null
     },
@@ -58,8 +63,13 @@
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999990889064329,
       "entropy_mean": 0.10542558592527843,
-      "matched": true,
-      "matched_gt_category": "SuspiciousActivity"
+      "neg_entropy": -0.10542558592527843,
+      "model_speech_act": null,
+      "model_quote_type": null,
+      "model_violation": null,
+      "p_violation_yes": null,
+      "matched": false,
+      "matched_gt_category": null
     }
   ]
 }

@@ -3,11 +3,11 @@
   "language": "malayalam",
   "gt_flag_count": 3,
   "model_flag_count": 5,
-  "flag_tp": 1,
-  "flag_fn": 2,
-  "flag_fp": 4,
-  "file_bucket": "TP",
-  "qualifying_pm_ef_bucket": "TP",
+  "flag_tp": 0,
+  "flag_fn": 3,
+  "flag_fp": 5,
+  "file_bucket": "FN",
+  "qualifying_pm_ef_bucket": "FN",
   "match_reliability": 1.0,
   "gt_flags": [
     {
@@ -16,8 +16,8 @@
       "timestamp": "00:45",
       "excerpt": "എനിക്ക് ഓപ്പൺ ടോക്ക് സർവീസ് എടുക്കാൻ താല്പര്യം ഉണ്ടോ",
       "confidence": 0.9,
-      "matched": true,
-      "matched_model_category": "SuspiciousActivity"
+      "matched": false,
+      "matched_model_category": null
     },
     {
       "category": "PlatformMove",
@@ -47,8 +47,13 @@
       "model_confidence": 0.85,
       "logprob_derived_confidence": 0.9999929866920629,
       "entropy_mean": 0.11356167123512693,
-      "matched": true,
-      "matched_gt_category": "SuspiciousActivity"
+      "neg_entropy": -0.11356167123512693,
+      "model_speech_act": null,
+      "model_quote_type": null,
+      "model_violation": null,
+      "p_violation_yes": null,
+      "matched": false,
+      "matched_gt_category": null
     },
     {
       "category": "PlatformMove",
@@ -58,6 +63,11 @@
       "model_confidence": 0.95,
       "logprob_derived_confidence": 0.9999950528758335,
       "entropy_mean": 0.30014620753754573,
+      "neg_entropy": -0.30014620753754573,
+      "model_speech_act": null,
+      "model_quote_type": null,
+      "model_violation": null,
+      "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null
     },
@@ -69,6 +79,11 @@
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9999950528758335,
       "entropy_mean": 0.5733476032231314,
+      "neg_entropy": -0.5733476032231314,
+      "model_speech_act": null,
+      "model_quote_type": null,
+      "model_violation": null,
+      "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null
     },
@@ -80,6 +95,11 @@
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9999950528758335,
       "entropy_mean": 0.4906769317232463,
+      "neg_entropy": -0.4906769317232463,
+      "model_speech_act": null,
+      "model_quote_type": null,
+      "model_violation": null,
+      "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null
     },
@@ -91,6 +111,11 @@
       "model_confidence": 0.1,
       "logprob_derived_confidence": 0.9999950528758335,
       "entropy_mean": 0.0924673340217268,
+      "neg_entropy": -0.0924673340217268,
+      "model_speech_act": null,
+      "model_quote_type": null,
+      "model_violation": null,
+      "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null
     }

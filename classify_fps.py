@@ -397,7 +397,7 @@ class EligibilityMismatch(RuntimeError):
 def collect_work_items(model_keys: List[str], languages: Optional[List[str]],
                         force: bool, cur_prompt_hash: str, classifier_model: str,
                         client, match_batch_size: int, workers: int,
-                        logger: StageLogger) -> Dict[str, dict]:
+                        logger: StageLogger, file_ids: Optional[set] = None) -> Dict[str, dict]:
     """Returns (file_state, work_items). file_state maps
     (model_key, file_id) -> {"path": Path, "data": dict} for every file
     touched (even ones with zero pending flags, since excerpt/timestamp
@@ -436,6 +436,8 @@ def collect_work_items(model_keys: List[str], languages: Optional[List[str]],
             if record is None:
                 continue
             if languages and record.language not in languages:
+                continue
+            if file_ids is not None and (model_key, file_id) not in file_ids:
                 continue
 
             raw_flags = load_raw_model_flags(model_dir, file_id)
@@ -1086,7 +1088,16 @@ def main():
                               "must match whatever root was used for the analyze_results.py run being classified")
     parser.add_argument("--results-tag", type=str, default=None,
                          help="Must match the --results-tag used for the analyze_results.py run being classified")
+    parser.add_argument("--file-ids", type=str, default=None,
+                         help="Comma-separated model:file_id pairs to restrict classification to (e.g. for "
+                              "re-auditing a specific slice found by another analysis) — default: every file")
     args = parser.parse_args()
+    file_ids = None
+    if args.file_ids:
+        file_ids = set()
+        for pair in args.file_ids.split(","):
+            m, fid = pair.split(":", 1)
+            file_ids.add((m, fid))
 
     if args.score_review:
         score_review(args.score_review)
@@ -1108,7 +1119,7 @@ def main():
 
     file_state, work_items = collect_work_items(
         model_keys, languages, args.force, cur_prompt_hash, args.classifier_model,
-        client, args.batch_size, args.workers, logger,
+        client, args.batch_size, args.workers, logger, file_ids,
     )
     logger.info(f"{len(work_items)} flag(s) need classification across {len(file_state)} file(s)")
 

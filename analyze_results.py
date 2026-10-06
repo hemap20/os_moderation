@@ -144,18 +144,28 @@ BATCH_MATCH_INSTRUCTION = """
 You are matching ground-truth policy-violation flags against a candidate
 model's flags, across SEVERAL different audio calls at once. For each
 call (identified by file_id), you are given a GT list and a MODEL list,
-each item being {category, translation} describing a possible violation
-in that call.
+each item being {category, timestamp, native, translation} describing a
+possible violation in that call.
+
+IMPORTANT: the MODEL side's "native" text is the CANDIDATE MODEL'S OWN
+transcription of the audio, which is frequently unreliable — it is
+sometimes garbled, or written in the WRONG SCRIPT entirely (e.g. Malayalam
+audio transcribed using Bengali, Telugu or Latin characters). Never rule
+out a match just because the native text looks unrelated or is in an
+unexpected script — the English "translation" field and the "timestamp"
+are your most reliable signals for whether two items describe the same
+incident. Use all four fields together; weigh native-text similarity only
+when it actually looks reliable.
 
 For each file, decide which GT item and MODEL item refer to the SAME
 underlying incident: they must share the SAME category AND describe the
 same specific quote/moment (semantically — translation wording may
 differ, but it must be the same thing being said, not just the same
-category in general). Each GT item may match AT MOST one MODEL item and
-vice versa. Do not force a match — a genuine miss (a GT flag nothing in
-MODEL corresponds to) or a genuine extra/wrong flag (a MODEL flag nothing
-in GT corresponds to) are valid, expected outcomes and should be left
-unmatched.
+category or general topic, and not just a nearby moment in the same
+conversation). Each GT item may match AT MOST one MODEL item and vice
+versa. Do not force a match — a genuine miss (a GT flag nothing in MODEL
+corresponds to) or a genuine extra/wrong flag (a MODEL flag nothing in GT
+corresponds to) are valid, expected outcomes and should be left unmatched.
 
 Return ONE raw, minified JSON object:
 {"results": [{"file_id": "...", "pairs": [[gt_index, model_index], ...]}]}
@@ -262,12 +272,18 @@ def text_similarity(a: str, b: str) -> float:
 
 def deterministic_prematch(gt_flags: List[dict], model_flags: List[dict]) -> List[Tuple[int, int]]:
     """Zero-LLM, fully reproducible pairing: same category, timestamps within
-    PREMATCH_MAX_TS_DIFF_SEC, and native-excerpt text similarity above
-    PREMATCH_MIN_TEXT_SIMILARITY. Greedy, highest-similarity-first assignment
-    so each flag is used at most once. Deliberately conservative (misses are
-    fine — they just fall through to the LLM leftover pass) since a WRONG
-    deterministic pair here would silently corrupt the baseline with no
-    judgment call to catch it."""
+    PREMATCH_MAX_TS_DIFF_SEC, and EITHER native-excerpt text similarity OR
+    translation text similarity above PREMATCH_MIN_TEXT_SIMILARITY (whichever
+    is higher is used as the candidate's score) — the model's own native-
+    script transcription is frequently garbled or in the wrong script
+    entirely, so native-text similarity alone misses real matches that the
+    English translation would have caught; this is a real scoring fix, not a
+    workaround, since ground truth has a reliable English translation for
+    every flag regardless of native-script quality. Greedy, highest-
+    similarity-first assignment so each flag is used at most once.
+    Deliberately conservative (misses are fine — they just fall through to
+    the LLM leftover pass) since a WRONG deterministic pair here would
+    silently corrupt the baseline with no judgment call to catch it."""
     candidates = []
     for gi, g in enumerate(gt_flags):
         g_ts = _parse_ts_sec(g.get("timestamp", ""))
@@ -279,7 +295,9 @@ def deterministic_prematch(gt_flags: List[dict], model_flags: List[dict]) -> Lis
             m_ts = _parse_ts_sec(m.get("timestamp", ""))
             if m_ts is None or abs(g_ts - m_ts) > PREMATCH_MAX_TS_DIFF_SEC:
                 continue
-            sim = text_similarity(g.get("excerpt", ""), m.get("excerpt", ""))
+            native_sim = text_similarity(g.get("excerpt", ""), m.get("excerpt", ""))
+            translation_sim = text_similarity((g.get("translation") or "").lower(), (m.get("translation") or "").lower())
+            sim = max(native_sim, translation_sim)
             if sim < PREMATCH_MIN_TEXT_SIMILARITY:
                 continue
             candidates.append((sim, gi, mi))
@@ -306,8 +324,16 @@ def match_files_batch(client, batch_items: List[dict], logger: StageLogger,
 
     file_blocks = []
     for it in scoreable:
-        gt_lines = "\n".join(f'  GT[{i}] category={f["category"]} translation="{f["translation"]}"' for i, f in enumerate(it["gt_flags"]))
-        model_lines = "\n".join(f'  MODEL[{i}] category={f["category"]} translation="{f["translation"]}"' for i, f in enumerate(it["model_flags"]))
+        gt_lines = "\n".join(
+            f'  GT[{i}] category={f["category"]} timestamp={f.get("timestamp", "")} '
+            f'native="{f.get("excerpt", "")}" translation="{f["translation"]}"'
+            for i, f in enumerate(it["gt_flags"])
+        )
+        model_lines = "\n".join(
+            f'  MODEL[{i}] category={f["category"]} timestamp={f.get("timestamp", "")} '
+            f'native="{f.get("excerpt", "")}" translation="{f["translation"]}"'
+            for i, f in enumerate(it["model_flags"])
+        )
         file_blocks.append(f'[FILE file_id="{it["file_id"]}"]\nGT:\n{gt_lines or "  (none)"}\nMODEL:\n{model_lines or "  (none)"}')
     prompt_content = f"{BATCH_MATCH_INSTRUCTION}\n\n" + "\n\n".join(file_blocks)
 
@@ -360,102 +386,32 @@ def build_score_input(record: dsv2.FileRecordV2, model_dir: Path) -> Optional[di
 
 def resolve_matches(client, batch_items: List[dict], match_model: str, match_runs: int,
                      logger: StageLogger) -> Tuple[Dict[str, List[Tuple[int, int]]], Dict[str, float]]:
-    """For each item in batch_items ({file_id, gt_flags, model_flags}): run the
-    deterministic pre-pass first, then send ONLY the leftover flags neither
-    side of the pre-pass paired to Gemini — one call for the whole
-    batch_items list (batch_items is normally length 1, since analyze_results
-    defaults --batch-size to 1; kept generic since match_files_batch already
-    supports N files per call).
+    """Delegates to global_matcher's full redesign (see that module's
+    docstring for why the old deterministic-prepass + pairwise-LLM-leftover
+    approach was replaced): for each file, score every in-window (GT,
+    model) pair, assign globally via the Hungarian algorithm so each GT
+    flag gets its single best candidate, then verify each assigned pair
+    with an LLM (given native text, translation, AND timestamps for both
+    sides — the old leftover matcher only ever saw translations), re-
+    assigning anything rejected so a GT flag isn't left unmatched just
+    because its first-best candidate was wrong.
 
-    If match_runs > 1, the leftover set for each file is matched that many
-    times independently and pairs are kept by majority vote (accepted if
-    proposed in > half the runs); match_reliability records, per file, the
-    fraction of the match_runs whose raw pair-SET exactly equalled the
-    majority result (1.0 for files with no leftovers, or when match_runs==1
-    — nothing to compare against without a repeat).
+    match_runs is no longer used for majority-voting (the LLM-verify step
+    already runs once per pair deterministically at temperature=0) — kept
+    as a parameter only so existing callers do not need to change.
 
-    Returns (pairs_by_file, reliability_by_file), both keyed by file_id, with
-    every batch_items file_id present in both (reliability defaults to 1.0)."""
-    pairs_by_file: Dict[str, List[Tuple[int, int]]] = {}
+    Returns (pairs_by_file, reliability_by_file), both keyed by file_id —
+    reliability is the fraction of this file's assigned pairs the LLM
+    confirmed on first try (1.0 for a file with no pairs to confirm)."""
+    import global_matcher
+
+    pairs_by_file, detail_by_file = global_matcher.resolve_matches_global(client, match_model, batch_items, logger)
     reliability_by_file: Dict[str, float] = {}
-    leftover_items = []
-    leftover_maps: Dict[str, dict] = {}
-
-    for item in batch_items:
-        pre_pairs = deterministic_prematch(item["gt_flags"], item["model_flags"])
-        pairs_by_file[item["file_id"]] = list(pre_pairs)
-        reliability_by_file[item["file_id"]] = 1.0
-
-        used_gt = {p[0] for p in pre_pairs}
-        used_model = {p[1] for p in pre_pairs}
-        gt_map = [i for i in range(len(item["gt_flags"])) if i not in used_gt]
-        model_map = [i for i in range(len(item["model_flags"])) if i not in used_model]
-        if gt_map and model_map:  # genuine ambiguity remains on BOTH sides — needs the LLM
-            leftover_items.append({
-                "file_id": item["file_id"],
-                "gt_flags": [item["gt_flags"][i] for i in gt_map],
-                "model_flags": [item["model_flags"][i] for i in model_map],
-            })
-            leftover_maps[item["file_id"]] = {"gt": gt_map, "model": model_map}
-
-    if not leftover_items:
-        return pairs_by_file, reliability_by_file
-
-    def safe_match_call():
-        try:
-            return match_files_batch(client, leftover_items, logger, model=match_model), True
-        except Exception as exc:  # noqa: BLE001 — a blocked/failed leftover-match call (e.g.
-            # PROHIBITED_CONTENT, or any other API failure) must never crash the whole run;
-            # falling back to prepass-only pairs for these files (reliability 0.0, logged
-            # loudly) is far safer than an unhandled crash mid-batch.
-            file_ids = ", ".join(it["file_id"] for it in leftover_items)
-            logger.error(f"leftover match call failed for [{file_ids}]: {exc} — "
-                         f"falling back to prepass-only pairs for these file(s), match_reliability=0.0")
-            return {}, False
-
-    n_runs = max(1, match_runs)
-    if n_runs == 1:
-        run_results = [safe_match_call()]
-    else:
-        with ThreadPoolExecutor(max_workers=n_runs) as run_pool:
-            run_results = list(run_pool.map(lambda _: safe_match_call(), range(n_runs)))
-    runs = [r for r, _ in run_results]
-    any_call_failed = any(not ok for _, ok in run_results)
-
-    for file_id, maps in leftover_maps.items():
-        gt_map, model_map = maps["gt"], maps["model"]
-        run_pair_sets = [frozenset(runs[r].get(file_id, [])) for r in range(len(runs))]
-
-        if any_call_failed:
-            majority_pairs = frozenset()
-            for pair_set, (_, ok) in zip(run_pair_sets, run_results):
-                if ok:  # keep pairs from whichever runs DID succeed, rather than discarding them
-                    majority_pairs = pair_set
-                    break
-            reliability_by_file[file_id] = 0.0
-        elif len(runs) == 1:
-            majority_pairs = run_pair_sets[0]
+    for file_id, details in detail_by_file.items():
+        if not details:
             reliability_by_file[file_id] = 1.0
         else:
-            vote_counts = Counter()
-            for pair_set in run_pair_sets:
-                for pair in pair_set:
-                    vote_counts[pair] += 1
-            threshold = len(runs) / 2.0
-            # Greedy, highest-vote-first so majority-approved pairs still can't double-use a flag.
-            used_gt_local, used_model_local, majority_list = set(), set(), []
-            for (a_i, b_i), votes in sorted(vote_counts.items(), key=lambda kv: -kv[1]):
-                if votes <= threshold or a_i in used_gt_local or b_i in used_model_local:
-                    continue
-                used_gt_local.add(a_i)
-                used_model_local.add(b_i)
-                majority_list.append((a_i, b_i))
-            majority_pairs = frozenset(majority_list)
-            reliability_by_file[file_id] = sum(1 for ps in run_pair_sets if ps == majority_pairs) / len(runs)
-
-        remapped = [(gt_map[a_i], model_map[b_i]) for a_i, b_i in majority_pairs]
-        pairs_by_file[file_id].extend(remapped)
-
+            reliability_by_file[file_id] = sum(1 for d in details if d.get("llm_confirmed")) / len(details)
     return pairs_by_file, reliability_by_file
 
 
@@ -568,16 +524,42 @@ def aggregate_file_level(rows: List[dict], bucket_key: str = "file_bucket") -> d
     return {"n_files": len(rows), **confusion_metrics(tp, fp, fn, tn)}
 
 
+def _is_redundant(flag: dict) -> bool:
+    """A flag is 'redundant' (not an error, but not a new catch either) when
+    classify_fps.py's stronger classifier has verified — via its code-level
+    check that a duplicate must point at an ALREADY-matched GT flag, not
+    just an unmatched one with the same category — that this unmatched flag
+    is an extra correct instance of a violation some OTHER model flag
+    already caught in this file. Flags classify_fps.py hasn't reached yet
+    have no "fp_classification" and default to counting as a plain FP,
+    the same as before this distinction existed."""
+    fpc = flag.get("fp_classification")
+    return bool(fpc) and fpc.get("fp_type") == "DUPLICATE_OR_EXTRA_INSTANCE"
+
+
 def aggregate_flag_level(rows: List[dict]) -> dict:
     """Per your spec: TP/FP/FN are counted per flag (matched pair = TP, unmatched
     ground-truth flag = FN, unmatched model flag = FP). TN isn't a per-flag
     thing (a flag has to be raised to exist) — it's counted once per FILE,
-    when a file has zero ground-truth flags AND zero model flags."""
+    when a file has zero ground-truth flags AND zero model flags.
+
+    FP/precision here exclude verified-redundant flags (see _is_redundant):
+    precision = (TP + redundant) / all flags — a redundant flag isn't a
+    model error, it's a duplicate catch of a violation already credited to
+    a different flag. flag_recall is UNCHANGED by this (redundant flags
+    never raise it — they don't correspond to a newly-matched GT flag).
+    "redundant" is reported as its own count, not folded into tp or fp,
+    since in production each one is still an extra item a reviewer has to
+    see before de-duplication, not a model-quality signal."""
     tp = sum(r["flag_tp"] for r in rows)
-    fp = sum(r["flag_fp"] for r in rows)
     fn = sum(r["flag_fn"] for r in rows)
     tn = sum(1 for r in rows if r["gt_flag_count"] == 0 and r["model_flag_count"] == 0)
-    return confusion_metrics(tp, fp, fn, tn)
+    redundant = sum(1 for r in rows for f in r["model_flags"] if not f.get("matched") and _is_redundant(f))
+    fp = sum(r["flag_fp"] for r in rows) - redundant
+    out = confusion_metrics(tp, fp, fn, tn)
+    out["redundant"] = redundant
+    out["precision"] = r2((tp + redundant) / (tp + fp + redundant) if (tp + fp + redundant) else None)
+    return out
 
 
 def _mean_entropy(flags: List[dict]) -> Optional[float]:
@@ -1078,7 +1060,7 @@ def main():
     merge_and_write_csv(OUTPUT_DIR / "confusion_file_level_overall.csv", overall_file_rows,
               ["model", "n_files", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"] + FILE_LEVEL_FIELDS_EXTRA, model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confusion_flag_level_overall.csv", overall_flag_rows,
-              ["model", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"] + FILE_LEVEL_FIELDS_EXTRA, model_keys)
+              ["model", "tp", "fp", "redundant", "fn", "tn", "precision", "recall", "specificity", "accuracy"] + FILE_LEVEL_FIELDS_EXTRA, model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confusion_file_level_by_language.csv", by_language_file_rows,
               ["model", "language", "n_files", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"] + FILE_LEVEL_FIELDS_EXTRA, model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confusion_file_level_qualifying_pm_ef_overall.csv", qualifying_overall_rows,
@@ -1086,7 +1068,7 @@ def main():
     merge_and_write_csv(OUTPUT_DIR / "confusion_file_level_qualifying_pm_ef_by_language.csv", qualifying_by_language_rows,
               ["model", "language", "n_files", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"], model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confusion_flag_level_by_language.csv", by_language_flag_rows,
-              ["model", "language", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"] + FILE_LEVEL_FIELDS_EXTRA, model_keys)
+              ["model", "language", "tp", "fp", "redundant", "fn", "tn", "precision", "recall", "specificity", "accuracy"] + FILE_LEVEL_FIELDS_EXTRA, model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confidence_buckets_model_confidence.csv", bucket_rows_model_conf,
               ["model", "language", "bucket", "n_flags", "tp", "fp", "precision", "mean_entropy_overall", "mean_entropy_tp", "mean_entropy_fp"], model_keys)
     merge_and_write_csv(OUTPUT_DIR / "confidence_buckets_logprob_confidence.csv", bucket_rows_logprob_conf,

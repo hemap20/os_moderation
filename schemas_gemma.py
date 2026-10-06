@@ -43,8 +43,12 @@ class GemmaChunkFlag(BaseModel):
     # load fine; None here means "the model didn't emit this," never
     # imputed to any other value.
     model_speech_act: Optional[str] = None  # "direct" | "reported" | "hypothetical" | "denial"
-    model_quote_type: Optional[str] = None  # "verbatim" | "paraphrase"
+    model_quote_type: Optional[str] = None  # "verbatim" | "paraphrase" — v4 only, never emitted by v6
     model_violation: Optional[str] = None  # "yes" | "no", the model's own raw string
+
+    # --- v6-only fields (prompt_v6.py's spk/ctx) ---
+    model_speaker: Optional[str] = None  # "expert" | "user" | "unclear"
+    model_context: Optional[str] = None  # words just before/after the quote + how the other person responded
 
     # logprob of the model's chosen first token of the "violation" value,
     # located the same way logprob_category locates the category span (see

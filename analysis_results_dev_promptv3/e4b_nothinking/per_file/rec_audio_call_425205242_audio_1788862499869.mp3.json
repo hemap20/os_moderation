@@ -3,11 +3,11 @@
   "language": "malayalam",
   "gt_flag_count": 3,
   "model_flag_count": 3,
-  "flag_tp": 0,
-  "flag_fn": 3,
-  "flag_fp": 3,
-  "file_bucket": "FN",
-  "qualifying_pm_ef_bucket": "FN",
+  "flag_tp": 2,
+  "flag_fn": 1,
+  "flag_fp": 1,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
   "match_reliability": 1.0,
   "gt_flags": [
     {
@@ -16,7 +16,8 @@
       "timestamp": "00:45",
       "excerpt": "എനിക്ക് ഓപ്പൺ ടോക്ക് സർവീസ് എടുക്കാൻ താല്പര്യം ഉണ്ടോ",
       "confidence": 0.9,
-      "matched": false
+      "matched": true,
+      "matched_model_category": "Explicit-Flirting"
     },
     {
       "category": "PlatformMove",
@@ -24,7 +25,8 @@
       "timestamp": "00:57",
       "excerpt": "വീഡിയോ കോൾ സർവീസ് ആണ് ടെലഗ്രാമിൽ കൂടി ആണ്",
       "confidence": 0.9,
-      "matched": false
+      "matched": true,
+      "matched_model_category": "PlatformMove"
     },
     {
       "category": "PlatformMove",
@@ -32,7 +34,8 @@
       "timestamp": "1:15",
       "excerpt": "ഓക്കെ ഞാൻ ടെലഗ്രാം ഐഡി അറിയാം ഒരു ഹായ് അയക്കും",
       "confidence": 0.9,
-      "matched": false
+      "matched": false,
+      "matched_model_category": null
     }
   ],
   "model_flags": [
@@ -44,7 +47,13 @@
       "model_confidence": 0.8,
       "logprob_derived_confidence": 0.7762672688077191,
       "entropy_mean": 0.8083872121280512,
-      "matched": false
+      "neg_entropy": -0.8083872121280512,
+      "model_speech_act": null,
+      "model_quote_type": null,
+      "model_violation": null,
+      "p_violation_yes": null,
+      "matched": false,
+      "matched_gt_category": null
     },
     {
       "category": "Explicit-Flirting",
@@ -54,7 +63,13 @@
       "model_confidence": 0.9,
       "logprob_derived_confidence": 0.9999553051016092,
       "entropy_mean": 0.5660851394447187,
-      "matched": false
+      "neg_entropy": -0.5660851394447187,
+      "model_speech_act": null,
+      "model_quote_type": null,
+      "model_violation": null,
+      "p_violation_yes": null,
+      "matched": true,
+      "matched_gt_category": "SuspiciousActivity"
     },
     {
       "category": "PlatformMove",
@@ -64,7 +79,13 @@
       "model_confidence": 0.6,
       "logprob_derived_confidence": 0.9953718200459737,
       "entropy_mean": 0.5149930114960571,
-      "matched": false
+      "neg_entropy": -0.5149930114960571,
+      "model_speech_act": null,
+      "model_quote_type": null,
+      "model_violation": null,
+      "p_violation_yes": null,
+      "matched": true,
+      "matched_gt_category": "PlatformMove"
     }
   ]
 }
