@@ -1,0 +1,97 @@
+{
+  "file_id": "rec_default_426534420_audio_1788980458455.mp3",
+  "language": "telugu",
+  "gt_flag_count": 3,
+  "model_flag_count": 3,
+  "flag_tp": 2,
+  "flag_fn": 1,
+  "flag_fp": 1,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Will you come to WhatsApp?",
+      "timestamp": "00:14",
+      "excerpt": "వాట్సాప్ కి వస్తారా",
+      "confidence": 0.9,
+      "matched": true,
+      "matched_model_category": "PlatformMove"
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "I will show my body",
+      "timestamp": "00:14",
+      "excerpt": "బాడీ చూపిస్తాను",
+      "confidence": 0.4,
+      "matched": false,
+      "matched_model_category": null
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will show for 200",
+      "timestamp": "00:24",
+      "excerpt": "200 కి చూపిస్తాను",
+      "confidence": 0.9,
+      "matched": true,
+      "matched_model_category": "Explicit-Flirting"
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Do you show the whole body on WhatsApp",
+      "timestamp": "00:00",
+      "excerpt": "whatsapp ka sara body chhope stano",
+      "model_confidence": 0.6,
+      "logprob_derived_confidence": 0.9968203463630377,
+      "entropy_mean": 0.33935790223505236,
+      "neg_entropy": -0.33935790223505236,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "no",
+      "p_violation_yes": 0.000139822025552885,
+      "model_speaker": "user",
+      "model_context": "The user is asking about what kind of body content is shared on WhatsApp. The expert responds by specifying the area.",
+      "matched": true,
+      "matched_gt_category": "PlatformMove"
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "at the bottom",
+      "timestamp": "00:06",
+      "excerpt": "ap the bottom",
+      "model_confidence": 0.6,
+      "logprob_derived_confidence": 0.9999685778955718,
+      "entropy_mean": 0.02938060647222211,
+      "neg_entropy": -0.02938060647222211,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "no",
+      "p_violation_yes": 0.00037998452140618124,
+      "model_speaker": "expert",
+      "model_context": "The expert is specifying the body part being referred to in response to the user's question about what is shown. The user then asks again.",
+      "matched": false,
+      "matched_gt_category": null
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "and do you show body 200 or what",
+      "timestamp": "00:11",
+      "excerpt": "ante body chhope stano 200 te chhope stano",
+      "model_confidence": 0.6,
+      "logprob_derived_confidence": 0.9999685778955718,
+      "entropy_mean": 0.05661760767997367,
+      "neg_entropy": -0.05661760767997367,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "no",
+      "p_violation_yes": 0.00857746857023574,
+      "model_speaker": "user",
+      "model_context": "The user is continuing the line of questioning about the extent of the body shown. This is a direct inquiry about explicit content.",
+      "matched": true,
+      "matched_gt_category": "SuspiciousActivity"
+    }
+  ]
+}
