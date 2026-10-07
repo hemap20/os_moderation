@@ -53,7 +53,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9578138023558876,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about messaging as a PlatformMove. However, the context shows the user is already on the platform and the expert is referring to the platform's internal messaging feature, not an external app. This is context confusion.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The statement refers to internal platform messaging, not an external application.",
+        "evidence_transcript_quote": "మెసేజ్ చేసినా చూడు",
+        "evidence_timestamp": "03:49",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:27+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "No preceding context. The user is asking something, and the expert responds by suggesting messaging."
     },
     {
       "category": "PlatformMove",
@@ -69,7 +87,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.0008040560175970517,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about being unable to come to WhatsApp. This is a denial of a platform move, which is explicitly excluded from being a violation.",
+        "fp_type": "EXCEPTION_IGNORED",
+        "fp_reason": "The user is denying the ability to move to an external platform, which is explicitly not a violation.",
+        "evidence_transcript_quote": "అంత పెద్ద డాక్టర్ ఉండి వాట్సాప్ కి రాలేకపోతున్నావు",
+        "evidence_timestamp": "03:58",
+        "fp_exception_matched": "Any statement where a user DENIES having or REFUSES to share contact information is explicitly NOT a violation and MUST be ignored.",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:27+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is responding to the expert's suggestion to message, stating they cannot use WhatsApp."
     },
     {
       "category": "PlatformMove",
@@ -85,7 +121,25 @@
       "model_violation": "no",
       "p_violation_yes": 5.144181844783303e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a question about being unable to come to WhatsApp. This is a follow-up to the previous denial and does not constitute a violation.",
+        "fp_type": "EXCEPTION_IGNORED",
+        "fp_reason": "The user is questioning the ability to move to an external platform, which is not a violation.",
+        "evidence_transcript_quote": "అంత పెద్ద డాక్టర్ ఉండి వాట్సాప్ కి రాలేకపోతున్నావా?",
+        "evidence_timestamp": "04:04",
+        "fp_exception_matched": "Any statement where a user DENIES having or REFUSES to share contact information is explicitly NOT a violation and MUST be ignored.",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:27+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is asking the user if they are unable to use WhatsApp, following up on the user's previous statement."
     }
   ]
 }

@@ -53,7 +53,10 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9927604039137657,
       "matched": true,
-      "matched_gt_category": "Explicit-Flirting"
+      "matched_gt_category": "Explicit-Flirting",
+      "dataset_origin_label": "TP",
+      "model_speaker": "user",
+      "model_context": "మీకు sex మీద ఇన్టరెస్ట్ ఉందా? ఉండే అంటే అమౌంట్ కొడతా అంటే నేను చూయిస్తాను."
     },
     {
       "category": "SuspiciousActivity",
@@ -69,7 +72,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9999781851762466,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'If you pay the amount, I will show you' as SuspiciousActivity. This is the exact same quote as GT[1]. Since GT[1] is matched=True, this is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a violation already captured by a ground-truth flag.",
+        "evidence_transcript_quote": "అదే అమౌంట్ కొడతా అంటే నేను చూపిస్తాను",
+        "evidence_timestamp": "00:41",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:16+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "మీకు sex మీద ఇన్టరెస్ట్ ఉందా? ఉండే అంటే అమౌంట్ కొడతా అంటే నేను చూయిస్తాను."
     },
     {
       "category": "SuspiciousActivity",
@@ -85,7 +106,10 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9999033306101257,
       "matched": true,
-      "matched_gt_category": "SuspiciousActivity"
+      "matched_gt_category": "SuspiciousActivity",
+      "dataset_origin_label": "TP",
+      "model_speaker": "expert",
+      "model_context": "అంటే అమౌంట్ కొడతా అంటే నేను చూయిస్తాను. మీకు ఓకేనా?"
     }
   ]
 }

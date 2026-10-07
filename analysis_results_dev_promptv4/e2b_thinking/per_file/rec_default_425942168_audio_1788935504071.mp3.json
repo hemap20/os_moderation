@@ -63,7 +63,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag refers to sex workers. This is a duplicate of the content covered by GT[0], which is already flagged as Explicit-Flirting. Since GT[0] is present in the file, this is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a violation already covered by a ground-truth flag. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "ಸೆಕ್ಸ್ ಬಗ್ಗೆ ಏನ್ ಇಷ್ಟ ಅಂದ್ರೆ ಏನ್ ಹೇಳಿ?",
+        "evidence_timestamp": "01:35",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:56+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -80,7 +95,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag refers to an instant request. This is not a clear violation and is part of the ongoing conversation already covered by other flags.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote does not reach the threshold for a SuspiciousActivity violation.",
+        "evidence_transcript_quote": "ನಮಗೆ ಇನ್ಸೆನ್ಸಿಟಿವ್",
+        "evidence_timestamp": "03:27",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "medium",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:56+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -114,7 +144,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag is empty and has no timestamp. This is an invalid flag.",
+        "fp_type": "UNCLEAR",
+        "fp_reason": "The flag is missing both a timestamp and a quote.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:56+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "",
@@ -131,7 +176,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag is empty and has no timestamp. This is an invalid flag.",
+        "fp_type": "UNCLEAR",
+        "fp_reason": "The flag is missing both a timestamp and a quote.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:56+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -182,7 +242,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag refers to sex movies. This is a duplicate of the content covered by GT[0] and GT[1], which are already flagged as Explicit-Flirting. Since these are present in the file, this is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a violation already covered by a ground-truth flag. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "ಏನ್ ಸೆಕ್ಸ್ ಮೂವೀಸ್ ಎಲ್ಲಾ ನೋಡ್ತೀರಾ?",
+        "evidence_timestamp": "04:08",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:56+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -199,7 +274,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Sex on nodu kelo kēlidu' as Explicit-Flirting. Looking at the transcript, the user is asking about sexual experiences ('Sex on this thing, have you tried it'). This is a direct inquiry about sexual activity, which falls under the Explicit-Flirting policy. However, the ground truth already contains multiple flags for Explicit-Flirting (GT[0], GT[1], GT[3]). The model's flag is a distinct instance of sexual talk, but it is not a violation that reaches the threshold of an explicit request for sexual acts or nudity, and it is not a clear violation compared to the existing GT flags. It is better classified as OVER_SENSITIVITY as it is a general inquiry about sexual experience rather than a direct sexual request.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general inquiry about sexual experience and does not reach the threshold for an explicit violation.",
+        "evidence_transcript_quote": "Sex on nodu kelo kēlidu",
+        "evidence_timestamp": "04:12",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "medium",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:56+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

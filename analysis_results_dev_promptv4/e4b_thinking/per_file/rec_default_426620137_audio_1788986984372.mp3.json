@@ -62,7 +62,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Anna rate?' as SuspiciousActivity. The user is asking about 'rate' in a context where the other person is talking about their work (tailoring/trading). While 'rate' can be suspicious, the policy states to not flag if it's ambiguous or general money talk. Given the context of the conversation, this is a mild violation or ambiguous, and the model's confidence is high, but it doesn't reach the threshold of a clear transactional request for sexual services. It is better classified as OVER_SENSITIVITY.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The request for 'rate' is ambiguous and does not clearly link to sexual services, making it an over-sensitive flag.",
+        "evidence_transcript_quote": "Anna rate?",
+        "evidence_timestamp": "01:32",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:39+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -79,7 +94,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Ne open talk pesreya?' as Explicit-Flirting. This is the same utterance as GT[0] ('ஓபன் டாக் பேசுவியா?'), which is already matched=true. Therefore, this is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate of the violation already captured by GT[0].",
+        "evidence_transcript_quote": "ஓபன் டாக் பேசுவியா?",
+        "evidence_timestamp": "01:36",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:39+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -96,7 +126,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Andha edhu mattum kaatta mudiyuma?' as Explicit-Flirting. This is the same utterance as GT[1] ('அந்த இடுப்ப மட்டும் காட்ட முடியுமா?'), which is already matched=true. Therefore, this is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate of the violation already captured by GT[1].",
+        "evidence_transcript_quote": "அந்த இடுப்ப மட்டும் காட்ட முடியுமா?",
+        "evidence_timestamp": "02:41",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:39+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -130,7 +175,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'இடுப்பு மட்டும் போடு.' as Explicit-Flirting. This is another instance of the same request for the waist/hip already captured by GT[1].",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate of the violation already captured by GT[1].",
+        "evidence_transcript_quote": "அந்த இடுப்ப மட்டும் காட்ட முடியுமா?",
+        "evidence_timestamp": "02:41",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:39+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

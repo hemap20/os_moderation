@@ -72,7 +72,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag is a duplicate of OTHER_MODEL_FLAG[0] which is already matched to GT[1].",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate of an already matched instance.",
+        "evidence_transcript_quote": "നമ്പർ താ നമ്പർ",
+        "evidence_timestamp": "01:24",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:55+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -106,7 +121,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag is a duplicate of OTHER_MODEL_FLAG[1] which is already matched to GT[1].",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate of an already matched instance.",
+        "evidence_transcript_quote": "നമ്പർ താ നമ്പർ",
+        "evidence_timestamp": "01:24",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:55+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -123,7 +153,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag is a duplicate of OTHER_MODEL_FLAG[2] which is already matched to GT[3].\n[CODE OVERRIDE] related_gt_flag_index=3 is not in this file's matched-GT set [1] — DUPLICATE_OR_EXTRA_INSTANCE requires pointing at an ALREADY-matched GT flag, so this is a MATCHER_MISS instead (the content is real ground truth, the scorer just failed to pair it).",
+        "fp_type": "MATCHER_MISS",
+        "fp_reason": "This is a duplicate of an already matched instance. [code override: related_gt_flag_index=3 is not in this file's matched-GT set [1] — DUPLICATE_OR_EXTRA_INSTANCE requires pointing at an ALREADY-matched GT flag, so this is a MATCHER_MISS instead (the content is real ground truth, the scorer just failed to pair it).]",
+        "evidence_transcript_quote": "ഡ്രസ്സ് എല്ലാം ഊരും അപ്പൊ നീ 500 റുപ്പീസ് എനിക്ക് പേ ചെയ്യണം ആ നമ്പറിൽ",
+        "evidence_timestamp": "04:41",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 3,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:55+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

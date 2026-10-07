@@ -53,7 +53,25 @@
       "model_violation": "no",
       "p_violation_yes": 8.071593559922058e-10,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Hi' as PlatformMove. This is a standard greeting and not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "A standard greeting is not a policy violation.",
+        "evidence_transcript_quote": "ಹಾಯ್",
+        "evidence_timestamp": "00:03",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:37+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user initiates the call."
     },
     {
       "category": "PlatformMove",
@@ -69,7 +87,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.0783315381988142e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'I gonna start that now' as PlatformMove. This is not a clear request to move platforms.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is ambiguous and does not constitute a clear request to move platforms.",
+        "evidence_transcript_quote": "ಎక్కడికి స్టార్ಟ್ అవుతారు?",
+        "evidence_timestamp": "00:06",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:37+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is indicating intent to start the service."
     },
     {
       "category": "PlatformMove",
@@ -85,7 +121,25 @@
       "model_violation": "no",
       "p_violation_yes": 8.953243214184171e-09,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'What are you talking about' as PlatformMove. This is a generic conversational phrase and does not meet the policy definition for a platform move (sharing contact info or naming an external app). It is over-sensitive.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged phrase is a generic conversational filler and does not constitute a platform move.",
+        "evidence_transcript_quote": "ఎక్కడికి స్టార్ట్ అవుతారు?",
+        "evidence_timestamp": "00:06",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:41+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is asking for clarification on the topic."
     },
     {
       "category": "PlatformMove",
@@ -101,7 +155,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.8660161251594532e-08,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Heyderabad enjestu ontaru' (Hyderabad, what are you doing?) as a PlatformMove. This is a general inquiry about location/activity and does not contain any request to move to an external platform, share contact details, or payment information. It does not meet the policy definition for PlatformMove.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general conversational inquiry about location and does not constitute a platform move request.",
+        "evidence_transcript_quote": "హైదరాబాద్ ఏం చేస్తూ ఉంటారు?",
+        "evidence_timestamp": "00:09",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:41+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is addressing the expert geographically."
     },
     {
       "category": "SuspiciousActivity",
@@ -117,7 +189,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9999446899472569,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Send all the body on WhatsApp' as SuspiciousActivity. This quote is a paraphrase of the user's request to move to WhatsApp and show their body. The specific quote 'వాట్సాప్ కి వస్తారా బాడీ చూపిస్తాను' is already covered by GT[0] (PlatformMove) and GT[1] (Explicit-Flirting). Since it is a duplicate of the violation already captured by GT[0], it is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a violation already captured by ground truth.",
+        "evidence_transcript_quote": "వాట్సాప్ కి వస్తారా బాడీ చూపిస్తాను",
+        "evidence_timestamp": "00:14",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:41+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is explicitly requesting content to be sent via WhatsApp."
     },
     {
       "category": "Explicit-Flirting",
@@ -133,7 +223,10 @@
       "model_violation": "no",
       "p_violation_yes": 0.06008639097012588,
       "matched": true,
-      "matched_gt_category": "Explicit-Flirting"
+      "matched_gt_category": "Explicit-Flirting",
+      "dataset_origin_label": "TP",
+      "model_speaker": "expert",
+      "model_context": "The expert is responding to the request about the body."
     },
     {
       "category": "Explicit-Flirting",
@@ -149,7 +242,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.025854260514457352,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Up the bottom' as Explicit-Flirting. This is a translation of 'టాప్ టు బాటమ్' (Top to bottom). This is a suggestive comment about body parts, which is already covered by GT[1] (Explicit-Flirting).\n[CODE OVERRIDE] related_gt_flag_index=1 is not in this file's matched-GT set [0, 2] — DUPLICATE_OR_EXTRA_INSTANCE requires pointing at an ALREADY-matched GT flag, so this is a MATCHER_MISS instead (the content is real ground truth, the scorer just failed to pair it).",
+        "fp_type": "MATCHER_MISS",
+        "fp_reason": "This is a duplicate instance of a violation already captured by ground truth. [code override: related_gt_flag_index=1 is not in this file's matched-GT set [0, 2] — DUPLICATE_OR_EXTRA_INSTANCE requires pointing at an ALREADY-matched GT flag, so this is a MATCHER_MISS instead (the content is real ground truth, the scorer just failed to pair it).]",
+        "evidence_transcript_quote": "టాప్ టు బాటమ్",
+        "evidence_timestamp": "00:20",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:41+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is specifying the area."
     },
     {
       "category": "SuspiciousActivity",
@@ -165,7 +276,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9999992847447459,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Send the body' as SuspiciousActivity. This is a paraphrase of the user's offer to show their body for 200, which is already covered by GT[2] (SuspiciousActivity).",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a violation already captured by ground truth.",
+        "evidence_transcript_quote": "200 కి చూపిస్తాను",
+        "evidence_timestamp": "00:24",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:41+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is reiterating the request for the body."
     },
     {
       "category": "SuspiciousActivity",
@@ -181,7 +310,10 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9998965370444355,
       "matched": true,
-      "matched_gt_category": "SuspiciousActivity"
+      "matched_gt_category": "SuspiciousActivity",
+      "dataset_origin_label": "TP",
+      "model_speaker": "user",
+      "model_context": "The user is specifying a price for the service."
     }
   ]
 }

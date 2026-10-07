@@ -54,7 +54,22 @@
       "p_violation_yes": 0.7310516719329333,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a question about payment for video calls. This is a SuspiciousActivity violation. It is already covered by GT[1] and GT[2] which are matched=True. This is a duplicate.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate of the suspicious activity violation already covered by the ground truth.",
+        "evidence_transcript_quote": "దీంట్లో వీడియో కాల్ కి కూడా పేమెంట్ కావాలా?",
+        "evidence_timestamp": "00:31",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:09+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",

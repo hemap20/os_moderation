@@ -26,7 +26,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement where the speaker explicitly says they do NOT want to talk sexually. This is a negation of a violation, not a violation itself.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is explicitly stating they do not want to talk sexually, which is the opposite of a violation.",
+        "evidence_transcript_quote": "ಅದು ಬಿಟ್ಟು ನನಗೆ ಸೆಕ್ಷುವಲ್ ಮಾತಾಡಕ್ಕೆ ಅವೆಲ್ಲ ಇಂಟರೆಸ್ಟ್ ಇಲ್ವಲ್ಲ",
+        "evidence_timestamp": "03:30",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -43,7 +58,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The speaker is asking a rhetorical question about whether the app is a dating app, which is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Asking if the app is a dating app is not a policy violation.",
+        "evidence_transcript_quote": "ಇದರಲ್ಲಿ ಸೆಕ್ಷುವಲ್ ಆಗಿ ಮಾತಾಡಬೇಕು ಹಿಂಗೆ ಇರಬೇಕು ಅಂತ ಏನಾದ್ರೂ ಡೇಟಿಂಗ್ ಆಪ್ ಅಂತ ಏನಾದ್ರೂ ಕೊಟ್ಟಿದ್ದಾರಾ",
+        "evidence_timestamp": "03:39",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

@@ -26,7 +26,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a request for a phone number as a PlatformMove. However, the transcript shows the user is asking about 'breakup phone' in a context that is unclear and garbled. It does not clearly constitute a request for contact details to move off-platform.",
+        "fp_type": "UNCLEAR",
+        "fp_reason": "The transcript is garbled and the intent behind the request for a phone number is unclear.",
+        "evidence_transcript_quote": "Please so please tell us the breakup phone.",
+        "evidence_timestamp": "02:22",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "suspect",
+        "classifier_confidence": "medium",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:49+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -43,7 +58,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a discussion about earning money on the app as SuspiciousActivity. The policy states that general talk about money or platform features like coins/earnings should not be flagged. This is a general discussion about how the app works.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "General discussion about app earnings is not a violation.",
+        "evidence_transcript_quote": "ನಿಮಿದెలನ ಐದು ನಿಮಿಷಂ మాట్లాడదరు ఐదు రూపే బరత అశ్తే",
+        "evidence_timestamp": "05:53",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:49+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

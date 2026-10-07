@@ -63,7 +63,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag refers to 'hard video call open call'. This is a variation of the explicit content already covered by GT[0] ('Nude calls') and GT[3] ('Fully nude'). Since the core violation is already captured by existing GT flags, this is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a violation already covered by a ground-truth flag. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "ಆಡಿಯೋ ಕಾಲ್ ಓಪನ್ ಕಾಲ್",
+        "evidence_timestamp": "00:33",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:56+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",

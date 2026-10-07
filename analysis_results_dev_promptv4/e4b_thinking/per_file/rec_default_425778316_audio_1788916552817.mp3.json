@@ -63,7 +63,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Are you comfortable for that?' as Explicit-Flirting. This is part of the same exchange as GT[0] (00:41) and GT[3] (00:50), which are already matched=True. This is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a violation already covered by a matched ground-truth flag.",
+        "evidence_transcript_quote": "आर यू कंफर्टेबल फॉर दैट?",
+        "evidence_timestamp": "00:37",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:36+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -148,7 +163,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'How tall?' as Explicit-Flirting. This phrase does not appear in the transcript. The user is discussing nude calls and payment.",
+        "fp_type": "FABRICATION",
+        "fp_reason": "The quoted content does not appear in the transcript.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:36+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

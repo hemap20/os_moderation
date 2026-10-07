@@ -53,7 +53,10 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9999417100552707,
       "matched": true,
-      "matched_gt_category": "Explicit-Flirting"
+      "matched_gt_category": "Explicit-Flirting",
+      "dataset_origin_label": "TP",
+      "model_speaker": "user",
+      "model_context": "क्या जरूरी है? सेक्स करने दो"
     },
     {
       "category": "Explicit-Flirting",
@@ -69,7 +72,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9999935627400018,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'सेक्स करोगी?' (Will you do sex?) at 01:03. The ground truth has a flag at 01:06 for 'सेक्स करने बोल रहा हूँ' (I am asking to have sex). These are distinct but very similar utterances in the same conversation. Since the GT flag at 01:06 is matched=True, this is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a violation already captured by a ground-truth flag.",
+        "evidence_transcript_quote": "सेक्स करोगे",
+        "evidence_timestamp": "01:08",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:36+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "सेक्स करने दो सेक्स करोगी?"
     },
     {
       "category": "SuspiciousActivity",
@@ -85,7 +106,25 @@
       "model_violation": "no",
       "p_violation_yes": 6.20502040897048e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'कैसी दूवी पता?' (How do you know?) at 01:52. This is a general conversational question and does not meet the threshold for any policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general conversational question and does not reach the violation threshold.",
+        "evidence_transcript_quote": "कैसे दोगी बताओ",
+        "evidence_timestamp": "02:03",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:36+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking how the expert knows something, likely related to the service or payment."
     },
     {
       "category": "PlatformMove",
@@ -101,7 +140,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9999982118638471,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a request for a number. While this is a PlatformMove attempt, the ground truth does not have a flag for this specific moment. However, the user is clearly asking for contact details, which is a violation.",
+        "fp_type": "GT_MISS",
+        "fp_reason": "The model correctly identified a PlatformMove attempt that was missed by the ground truth.",
+        "evidence_transcript_quote": "नंबर दो ना अपना",
+        "evidence_timestamp": "01:56",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:36+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is directly asking for a contact number."
     },
     {
       "category": "PlatformMove",
@@ -117,7 +174,25 @@
       "model_violation": "yes",
       "p_violation_yes": 1.0,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged another request for a number at 02:00. This is a duplicate of the previous PlatformMove attempt.\n[CODE OVERRIDE] related_gt_flag_index=None is not in this file's matched-GT set [0, 1, 2] — DUPLICATE_OR_EXTRA_INSTANCE requires pointing at an ALREADY-matched GT flag, so this is a MATCHER_MISS instead (the content is real ground truth, the scorer just failed to pair it).",
+        "fp_type": "MATCHER_MISS",
+        "fp_reason": "This is a duplicate instance of a PlatformMove attempt already identified. [code override: related_gt_flag_index=None is not in this file's matched-GT set [0, 1, 2] — DUPLICATE_OR_EXTRA_INSTANCE requires pointing at an ALREADY-matched GT flag, so this is a MATCHER_MISS instead (the content is real ground truth, the scorer just failed to pair it).]",
+        "evidence_transcript_quote": "नंबर दो",
+        "evidence_timestamp": "01:59",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:36+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is insisting on receiving a number."
     },
     {
       "category": "SuspiciousActivity",
@@ -133,7 +208,10 @@
       "model_violation": "no",
       "p_violation_yes": 0.49998381664852287,
       "matched": true,
-      "matched_gt_category": "SuspiciousActivity"
+      "matched_gt_category": "SuspiciousActivity",
+      "dataset_origin_label": "TP",
+      "model_speaker": "expert",
+      "model_context": "The expert is describing a recurring requirement involving video calls."
     },
     {
       "category": "SuspiciousActivity",
@@ -149,7 +227,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.00029595693836720663,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'ये लेना पड़ेगा' (This will have to be taken) at 02:20. This is vague and does not constitute a clear policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is too vague to be considered a policy violation.",
+        "evidence_transcript_quote": "पहले देना पड़ेगा",
+        "evidence_timestamp": "02:23",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:36+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking about something that needs to be taken, likely related to the service or payment."
     },
     {
       "category": "SuspiciousActivity",
@@ -165,7 +261,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.999480279338763,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a payment discussion at 02:26. This is part of the same suspicious transaction already captured by GT[1] and GT[2].",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a SuspiciousActivity violation already captured by ground-truth flags.",
+        "evidence_transcript_quote": "आपको रोज दो-दो सौ रुपए डालते जाऊंगा रोज",
+        "evidence_timestamp": "02:37",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:36+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is explicitly stating a daily payment amount (200 rupees) for a service."
     },
     {
       "category": "SuspiciousActivity",
@@ -181,7 +295,25 @@
       "model_violation": "yes",
       "p_violation_yes": 1.0,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Pay me daily' at 02:31. This is a duplicate of the payment discussion already captured.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a SuspiciousActivity violation already captured.",
+        "evidence_transcript_quote": "आपको रोज दो-दो सौ रुपए डालते जाऊंगा रोज",
+        "evidence_timestamp": "02:37",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:36+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is reiterating the demand for daily payment."
     },
     {
       "category": "SuspiciousActivity",
@@ -197,7 +329,10 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9996197477942644,
       "matched": true,
-      "matched_gt_category": "SuspiciousActivity"
+      "matched_gt_category": "SuspiciousActivity",
+      "dataset_origin_label": "TP",
+      "model_speaker": "user",
+      "model_context": "The user is requesting a demonstration involving a payment ('three starting rupees') in exchange for a service."
     },
     {
       "category": "SuspiciousActivity",
@@ -213,7 +348,25 @@
       "model_violation": "yes",
       "p_violation_yes": 1.0,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a payment offer at 02:54. This is a duplicate of the suspicious transaction already captured by GT[2].",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a SuspiciousActivity violation already captured.",
+        "evidence_transcript_quote": "पहले पहले मुझे ₹300 डाल के दिखाओ",
+        "evidence_timestamp": "02:47",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:36+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is explicitly offering a larger payment ('two thousand rupees') tied to a recurring service (daily video call)."
     },
     {
       "category": "SuspiciousActivity",
@@ -229,7 +382,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.8354812873360025,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a payment confirmation at 03:01. This is a duplicate of the suspicious transaction already captured.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a SuspiciousActivity violation already captured.",
+        "evidence_transcript_quote": "पहले पहले मुझे ₹300 डाल के दिखाओ",
+        "evidence_timestamp": "02:47",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:36+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is responding to the user's request to demonstrate the payment."
     },
     {
       "category": "PlatformMove",
@@ -245,7 +416,25 @@
       "model_violation": "no",
       "p_violation_yes": 6.041735480699455e-14,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a mention of video call at 03:16. Per policy, video call requests on the platform are not violations.",
+        "fp_type": "EXCEPTION_IGNORED",
+        "fp_reason": "Video call requests on the platform are explicitly excluded from policy violations.",
+        "evidence_transcript_quote": "वीडियो कॉल के बाद",
+        "evidence_timestamp": "03:17",
+        "fp_exception_matched": "NEVER FLAG - Video call requests",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:36+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is initiating or confirming a video call."
     },
     {
       "category": "SuspiciousActivity",
@@ -261,7 +450,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.5424419577751747,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as SuspiciousActivity, but the quote 'I can call anyone, I can see' is a vague statement about the user's ability to make calls or view content, not a specific offer or request for sexual services or payment. It does not meet the threshold for SuspiciousActivity.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The statement is too vague and does not constitute a policy violation.",
+        "evidence_transcript_quote": "मैं पैसे के सामने कई गाड़ी लिए। किसी को भी कॉल कर सकता हूँ, देख सकता हूँ।",
+        "evidence_timestamp": "03:21",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:39+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is making a statement about transactions involving money and viewing."
     }
   ]
 }

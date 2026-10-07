@@ -54,7 +54,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Deenga daani ki WhatsApp lo raavala.' as PlatformMove. This is the same utterance as GT[0] ('దిగడానికి వాట్సాప్ లో రావాలా?'). Since the GT flag is present, this is a duplicate.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate of the violation already captured by GT[0]. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "దిగడానికి వాట్సాప్ లో రావాలా?",
+        "evidence_timestamp": "00:43",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:39+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -71,7 +86,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Cheera di ela te WhatsApp lo nediyalandi...' as PlatformMove. This is a variation of the conversation about moving to WhatsApp already covered by GT[0].",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate of the violation already captured by GT[0]. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "దిగడానికి వాట్సాప్ లో రావాలా?",
+        "evidence_timestamp": "00:43",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:39+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -88,7 +118,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Cheera di ela te WhatsApp lo nediyalandi...' as Explicit-Flirting. This is a miscategorization of a PlatformMove request.",
+        "fp_type": "WRONG_CATEGORY",
+        "fp_reason": "The content is a request to move to WhatsApp, not explicit flirting.",
+        "evidence_transcript_quote": "దిగడానికి వాట్సాప్ లో రావాలా?",
+        "evidence_timestamp": "00:43",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:39+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -105,7 +150,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Ah, osil darini na baagundaru...' as Explicit-Flirting. This is a suggestive comment about the person's appearance, which is a mild violation, but it is not clearly sexualized enough to be a high-confidence Explicit-Flirting violation. It is better classified as OVER_SENSITIVITY.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The comment is a mild suggestive remark that does not reach the threshold for Explicit-Flirting.",
+        "evidence_transcript_quote": "ముసలిదానివైనా బాగుంటావు",
+        "evidence_timestamp": "01:20",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:39+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -122,7 +182,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The speaker is discussing age and then mentions money in a vague context. This does not meet the threshold for a SuspiciousActivity violation as it is not a direct offer or request for sexual services for money.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is general talk about money and does not reach the threshold for a SuspiciousActivity violation.",
+        "evidence_transcript_quote": "దేనికి ముసలిదాని?",
+        "evidence_timestamp": "01:32",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:41+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -139,7 +214,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The speaker is discussing age and numbers, which is not a violation. It does not meet the criteria for SuspiciousActivity.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is general talk about age and numbers, not a transactional violation.",
+        "evidence_transcript_quote": "ఉంటాయి నీకు 50 పైన",
+        "evidence_timestamp": "01:35",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:41+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -156,7 +246,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The speaker is discussing age and numbers, which is not a violation. It does not meet the criteria for SuspiciousActivity.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is general talk about age and numbers, not a transactional violation.",
+        "evidence_transcript_quote": "30 అండి ఎవరికి ఉంటది చెప్పు",
+        "evidence_timestamp": "01:43",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:41+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -173,7 +278,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The speaker is mentioning WhatsApp, but in the context of the current platform conversation. This is not a platform move violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The mention of WhatsApp is in the context of the current conversation and does not constitute a platform move violation.",
+        "evidence_transcript_quote": "మరి రా అంటున్నా కదా వాట్సాప్ కి",
+        "evidence_timestamp": "02:11",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:41+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -190,7 +310,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The speaker is mentioning WhatsApp, but in the context of the current platform conversation. This is not a platform move violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The mention of WhatsApp is in the context of the current conversation and does not constitute a platform move violation.",
+        "evidence_transcript_quote": "మెసేజ్ చేసినా చూడు",
+        "evidence_timestamp": "03:49",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:41+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -207,7 +342,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The speaker is mentioning WhatsApp, but in the context of the current platform conversation. This is not a platform move violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The mention of WhatsApp is in the context of the current conversation and does not constitute a platform move violation.",
+        "evidence_transcript_quote": "చేయ్ వాట్సాప్ కి",
+        "evidence_timestamp": "03:54",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:41+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

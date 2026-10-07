@@ -36,7 +36,22 @@
       "p_violation_yes": 0.042087198197962424,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged a comment about feeling bored and liking to talk on the app as Explicit-Flirting. This is general conversation and does not reach the threshold for Explicit-Flirting.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged content is general conversation and does not reach the threshold for Explicit-Flirting.",
+        "evidence_transcript_quote": "अच्छा इस एप्स में क्या है देखो रात के टाइम में क्या है काम ना शिफ्ट होने के बाद ना बहुत बोरिंग फील होता है तो इस एप्स में क्या है ना थोड़ा बात-बात करके अच्छा लगता है ऐसा",
+        "evidence_timestamp": "04:40",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:24+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",

@@ -71,7 +71,10 @@
       "model_violation": "yes",
       "p_violation_yes": 0.8670214839755556,
       "matched": true,
-      "matched_gt_category": "SuspiciousActivity"
+      "matched_gt_category": "SuspiciousActivity",
+      "dataset_origin_label": "TP",
+      "model_speaker": "user",
+      "model_context": "na 300 kya tha. ha bolo. poora 30 minutes ko 30 minutes ka toya."
     },
     {
       "category": "PlatformMove",
@@ -87,7 +90,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.99970218472453,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a request for an Instagram ID as PlatformMove. This is a direct request to move the conversation to an external platform, which is a violation of the PlatformMove policy.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a PlatformMove violation already covered by GT[3]. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "இன்ஸ்டா ஐடி சொல்லவா?",
+        "evidence_timestamp": "01:07",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 3,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:23+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "30 minutes ka toya. insta id batao. ramya."
     },
     {
       "category": "PlatformMove",
@@ -103,7 +124,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.0005527772086482937,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged the name 'Ramya' as a PlatformMove. Stating a name is not a violation of the PlatformMove policy.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Stating a name is not a violation of the PlatformMove policy.",
+        "evidence_transcript_quote": "ரம்யா",
+        "evidence_timestamp": "01:12",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:23+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "ramya. marabdiya ramya. na apra."
     },
     {
       "category": "PlatformMove",
@@ -119,7 +158,10 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9770109261041557,
       "matched": true,
-      "matched_gt_category": "PlatformMove"
+      "matched_gt_category": "PlatformMove",
+      "dataset_origin_label": "TP",
+      "model_speaker": "expert",
+      "model_context": "na apra. aur e a m y a."
     }
   ]
 }

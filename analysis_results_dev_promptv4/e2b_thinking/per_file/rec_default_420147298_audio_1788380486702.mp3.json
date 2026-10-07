@@ -36,7 +36,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as SuspiciousActivity. The speaker is asking about a birth year ('2003'). This is not a transactional request or suspicious activity. It is OVER_SENSITIVITY.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a simple question about birth year and does not constitute suspicious activity.",
+        "evidence_transcript_quote": "आप क्या 2000, कितने की बोर्न हो?",
+        "evidence_timestamp": "01:02",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:51+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -53,7 +68,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Explicit-Flirting. The speaker is asking 'Are you not feeling hot/excited?'. This is a mild comment and does not reach the threshold for Explicit-Flirting as defined in the policy. It is OVER_SENSITIVITY.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a mild comment that does not reach the threshold for Explicit-Flirting.",
+        "evidence_transcript_quote": "बड़े लग रहे हैं?",
+        "evidence_timestamp": "01:14",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:51+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -70,7 +100,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Explicit-Flirting. The speaker is making a comment about their face being visible at night. This is not suggestive or sexual in nature. It is OVER_SENSITIVITY.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a neutral observation and does not constitute Explicit-Flirting.",
+        "evidence_transcript_quote": "मुझे से कहनी आती है कि उसमें नाइट हमारा चेहरा दिख रहा",
+        "evidence_timestamp": "02:20",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:51+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -87,7 +132,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as PlatformMove. The speaker is discussing the app's function and why they use it. This is not a request to move to an external platform. It is CONTEXT_CONFUSION.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The quote is a general discussion about the app's purpose and does not constitute a request to move to an external platform.",
+        "evidence_transcript_quote": "अरे इस एप्स में क्या है देखो, रात के टाइम में क्या है काम-वाम खत्म होने के बाद ना बहुत बोरिंग फील होता है, तो इस एप्स में क्या है ना थोड़ा बात-बात करके अच्छा लगता है, ऐसा।",
+        "evidence_timestamp": "04:41",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:51+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",

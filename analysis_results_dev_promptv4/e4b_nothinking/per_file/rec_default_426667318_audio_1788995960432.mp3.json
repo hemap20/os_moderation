@@ -63,7 +63,22 @@
       "p_violation_yes": 0.9859081058847232,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'open panna ma' as a PlatformMove. Reviewing the transcript, this phrase is part of a conversation where the user is asking if the other person will 'open' (likely referring to a feature or a specific action on the platform). It does not explicitly suggest moving to an external app or sharing contact details. Therefore, it is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The phrase does not meet the criteria for a PlatformMove as it does not suggest moving to an external platform or sharing contact details.",
+        "evidence_transcript_quote": "ഓപ്പൺ ചെയ്യുമോ",
+        "evidence_timestamp": "01:06",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:24+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",

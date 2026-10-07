@@ -26,7 +26,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag is a fabrication as the quote does not exist in the transcript.",
+        "fp_type": "FABRICATION",
+        "fp_reason": "The quoted content does not appear in the transcript.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:55+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -43,7 +58,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag is a fabrication as the quote does not exist in the transcript.",
+        "fp_type": "FABRICATION",
+        "fp_reason": "The quoted content does not appear in the transcript.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:55+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -60,7 +90,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'हाय हंड्रेड' (Hi hundred) as SuspiciousActivity. Looking at the transcript, the speaker actually says '500' at 00:12, not 'hundred' at 00:05. The model misheard the content and the timestamp is incorrect. Since the quote does not appear in the transcript at the specified timestamp, this is a mishearing of the actual price mentioned later.",
+        "fp_type": "MISHEARING",
+        "fp_reason": "The model misheard the price mentioned in the transcript and attributed it to the wrong timestamp.",
+        "evidence_transcript_quote": "500",
+        "evidence_timestamp": "00:12",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:01+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

@@ -26,7 +26,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Okay, let's do the app number' as PlatformMove. The speaker is suggesting an exchange of contact info to move off-platform.",
+        "fp_type": "GT_MISS",
+        "fp_reason": "The speaker is explicitly suggesting moving the conversation to another app.",
+        "evidence_transcript_quote": "சரி அப்போ நம்ப பண்ணலாம்",
+        "evidence_timestamp": "01:44",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:04+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

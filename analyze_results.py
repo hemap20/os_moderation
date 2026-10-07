@@ -250,6 +250,10 @@ def load_model_flags(model_dir: Path, file_id: str) -> Optional[List[dict]]:
             "model_quote_type": f.get("model_quote_type"),
             "model_violation": f.get("model_violation"),
             "p_violation_yes": f.get("p_violation_yes"),
+            # v6-only fields (prompt_v6.py's spk/ctx) — None for every
+            # pre-v6 result, same "never asked" semantics as above.
+            "model_speaker": f.get("model_speaker"),
+            "model_context": f.get("model_context"),
         })
     return out
 
@@ -903,6 +907,7 @@ def main():
     tp_rate_speech_act_rows = []
     tp_rate_quote_type_rows = []
     tp_rate_violation_rows = []
+    tp_rate_speaker_rows = []
     violation_2x2_rows = []
     bucket_rows_model_conf = []
     bucket_rows_logprob_conf = []
@@ -1043,6 +1048,10 @@ def main():
             tp_rate_quote_type_rows.append({"model": model_key, **row})
         for row in tp_rate_by_field(scored_rows, "model_violation"):
             tp_rate_violation_rows.append({"model": model_key, **row})
+        # v6 categorical-label breakdown — same "(missing)" collapse for
+        # pre-v6 runs as the v4 fields above.
+        for row in tp_rate_by_field(scored_rows, "model_speaker"):
+            tp_rate_speaker_rows.append({"model": model_key, **row})
         for row in violation_vs_matched_2x2(scored_rows):
             violation_2x2_rows.append({"model": model_key, **row})
 
@@ -1085,6 +1094,8 @@ def main():
     merge_and_write_csv(OUTPUT_DIR / "tp_rate_by_quote_type.csv", tp_rate_quote_type_rows,
               ["model", "value", "n", "n_matched", "tp_rate"], model_keys)
     merge_and_write_csv(OUTPUT_DIR / "tp_rate_by_violation.csv", tp_rate_violation_rows,
+              ["model", "value", "n", "n_matched", "tp_rate"], model_keys)
+    merge_and_write_csv(OUTPUT_DIR / "tp_rate_by_speaker.csv", tp_rate_speaker_rows,
               ["model", "value", "n", "n_matched", "tp_rate"], model_keys)
     merge_and_write_csv(OUTPUT_DIR / "violation_vs_matched_2x2.csv", violation_2x2_rows,
               ["model", "violation", "matched_bucket", "n"], model_keys)

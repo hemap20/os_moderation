@@ -26,7 +26,22 @@
       "p_violation_yes": 1.4828213355760042e-17,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a standard greeting as 'Not a violation'. This is an unnecessary flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "A standard greeting is not a policy violation.",
+        "evidence_transcript_quote": "హలో",
+        "evidence_timestamp": "00:00",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -43,7 +58,22 @@
       "p_violation_yes": 1.463778514125909e-12,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a standard greeting as 'Not a violation'. This is an unnecessary flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "A standard greeting is not a policy violation.",
+        "evidence_transcript_quote": "హాయ్",
+        "evidence_timestamp": "00:07",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -60,7 +90,22 @@
       "p_violation_yes": 5.7719203181289734e-06,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as PlatformMove. The phrase 'Brother, in my phone' is not a violation as it does not share contact info or suggest moving to an external app.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The content is vague and does not constitute a platform move violation.",
+        "evidence_transcript_quote": "బ్రేక్ అవుతుంది మీ వాయిస్.",
+        "evidence_timestamp": "00:23",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -77,7 +122,22 @@
       "p_violation_yes": 7.05287985111216e-11,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as 'Not a violation'. This is an unnecessary flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The content is not a policy violation.",
+        "evidence_transcript_quote": "హలో",
+        "evidence_timestamp": "00:05",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -94,7 +154,22 @@
       "p_violation_yes": 8.423463754468647e-12,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as 'Not a violation'. This is an unnecessary flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The content is not a policy violation.",
+        "evidence_transcript_quote": "బ్రేక్ అవుతుంది మీ వాయిస్.",
+        "evidence_timestamp": "00:23",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -111,7 +186,22 @@
       "p_violation_yes": 2.4374100555808313e-11,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'I am listening' as a non-violation. This is not a violation, and the model correctly identified it as such. However, since it was flagged as a 'Not a violation' category, it is an unnecessary flag. Given the context, it is an over-sensitivity to conversational filler.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged content is a neutral conversational filler and does not violate any policy.",
+        "evidence_transcript_quote": "హలో",
+        "evidence_timestamp": "00:05",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -128,7 +218,22 @@
       "p_violation_yes": 9.669209717057444e-17,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a discussion about job searching as a non-violation. This is not a violation, and the model correctly identified it as such. It is an unnecessary flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged content is a neutral discussion about employment and does not violate any policy.",
+        "evidence_transcript_quote": "జాబ్ చేస్తున్నా",
+        "evidence_timestamp": "00:30",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -145,7 +250,22 @@
       "p_violation_yes": 2.5690112979751028e-12,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged an unclear phrase as a non-violation. This is not a violation, and the model correctly identified it as such. It is an unnecessary flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged content is an unclear phrase and does not violate any policy.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "suspect",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -162,7 +282,22 @@
       "p_violation_yes": 2.911071178211687e-12,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a casual statement as a non-violation. This is not a violation, and the model correctly identified it as such. It is an unnecessary flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged content is a casual statement and does not violate any policy.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "suspect",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -179,7 +314,22 @@
       "p_violation_yes": 2.5946094982764667e-11,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a casual statement about dating as a non-violation. This is not a violation, and the model correctly identified it as such. It is an unnecessary flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged content is a casual statement and does not violate any policy.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "suspect",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -196,7 +346,22 @@
       "p_violation_yes": 1.493094676197164e-10,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged an unclear phrase as a non-violation. This is not a violation, and the model correctly identified it as such. It is an unnecessary flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged content is an unclear phrase and does not violate any policy.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "suspect",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -213,7 +378,22 @@
       "p_violation_yes": 6.625567462588725e-11,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a casual greeting as a non-violation. This is not a violation, and the model correctly identified it as such. It is an unnecessary flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged content is a casual greeting and does not violate any policy.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "suspect",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -230,7 +410,22 @@
       "p_violation_yes": 5.175555005801869e-17,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a casual greeting as a non-violation. This is not a violation, and the model correctly identified it as such. It is an unnecessary flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged content is a casual greeting and does not violate any policy.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "suspect",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -247,7 +442,22 @@
       "p_violation_yes": 1.2015425731771786e-13,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a discussion about property as a non-violation. This is not a violation, and the model correctly identified it as such. It is an unnecessary flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged content is a discussion about property and does not violate any policy.",
+        "evidence_transcript_quote": "అపార్ట్మెంట్, ఓన్ హౌస్",
+        "evidence_timestamp": "01:19",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -264,7 +474,22 @@
       "p_violation_yes": 4.910429870159115e-16,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about time and subscribers as a PlatformMove violation. This is not a violation, and the model incorrectly categorized it. It is an unnecessary flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged content is a statement about time and subscribers and does not violate any policy.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "suspect",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -281,7 +506,22 @@
       "p_violation_yes": 2.0879679116459336e-14,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a neutral statement 'I can do it' as a violation. This is a simple conversational filler and does not meet any policy violation criteria.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The statement is a neutral conversational remark and does not violate any policy.",
+        "evidence_transcript_quote": "ఏ ఊరు చేస్తారు?",
+        "evidence_timestamp": "01:25",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:45+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -298,7 +538,22 @@
       "p_violation_yes": 8.423463754468647e-12,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about work status. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The statement is a factual description of work status and does not violate any policy.",
+        "evidence_transcript_quote": "నేను జాబ్ చేస్తున్నాను అండి.",
+        "evidence_timestamp": "01:31",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:45+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -315,7 +570,22 @@
       "p_violation_yes": 1.675205799218013e-11,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about availability. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The statement is a neutral comment about availability and does not violate any policy.",
+        "evidence_transcript_quote": "నేను ఖాళీనే.",
+        "evidence_timestamp": "01:36",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:45+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -332,7 +602,22 @@
       "p_violation_yes": 2.020683909022217e-11,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a casual statement. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The statement is a casual remark and does not violate any policy.",
+        "evidence_transcript_quote": "అప్పుడప్పుడు ఏదైనా వర్క్ ఉంటే చేస్తాను.",
+        "evidence_timestamp": "01:44",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:45+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -349,7 +634,22 @@
       "p_violation_yes": 5.4927883509546835e-11,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a casual statement about work. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The statement is a casual remark about work and does not violate any policy.",
+        "evidence_transcript_quote": "అప్పుడప్పుడు ఏదైనా వర్క్ ఉంటే చేస్తాను.",
+        "evidence_timestamp": "01:44",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:45+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -366,7 +666,22 @@
       "p_violation_yes": 2.7894680928689246e-10,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a casual statement about work. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The statement is a casual remark about work and does not violate any policy.",
+        "evidence_transcript_quote": "అప్పుడప్పుడు వర్క్ చేస్తే ఇట్లా సరిపోతుందా శాలరీ మీకు?",
+        "evidence_timestamp": "01:49",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:45+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

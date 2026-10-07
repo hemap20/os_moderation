@@ -54,7 +54,22 @@
       "p_violation_yes": 1.873873533863877e-06,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Hi' as Explicit-Flirting. A simple greeting is not a violation of any policy.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "A simple greeting is not a policy violation.",
+        "evidence_transcript_quote": "ಹಾಯ್",
+        "evidence_timestamp": "00:03",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:27+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -71,7 +86,22 @@
       "p_violation_yes": 2.561281443046568e-06,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Hi, are you from Hyderabad?' as Explicit-Flirting. Asking about location is a general social question and not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Asking about location is a general social question and not a violation.",
+        "evidence_transcript_quote": "ಹೈದರಾಬಾದ್ ಏನು ಮಾಡುತ್ತಾ ಇರುತ್ತಾರೆ",
+        "evidence_timestamp": "00:09",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:27+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",

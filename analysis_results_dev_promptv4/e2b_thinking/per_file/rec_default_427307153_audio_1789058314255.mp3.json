@@ -26,7 +26,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a question about sharing personal numbers as PlatformMove. However, the speaker is explicitly advising the other person NOT to share their number ('పర్సనల్ నెంబర్స్ ఎవరికీ షేర్ చేయకండి' - 'Do not share personal numbers with anyone'). This falls under the 'CRITICAL OVERRIDE' rule: statements where a user denies or refuses to share contact information are not violations.",
+        "fp_type": "EXCEPTION_IGNORED",
+        "fp_reason": "The speaker is explicitly advising against sharing contact information, which is an override condition.",
+        "evidence_transcript_quote": "పర్సనల్ నెంబర్స్ ఎవరికీ షేర్ చేయకండి",
+        "evidence_timestamp": "01:10",
+        "fp_exception_matched": "CRITICAL OVERRIDE: Any statement where a user DENIES having or REFUSES to share contact information",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:06+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -43,7 +58,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a question about sharing phone numbers. Similar to the previous item, the speaker is advising the other person not to share their number ('మీ ఫోన్ నెంబర్స్ అవి ఇవ్వకండి' - 'Do not give your phone numbers'). This is an explicit refusal/advice against sharing contact info, which is an override.",
+        "fp_type": "EXCEPTION_IGNORED",
+        "fp_reason": "The speaker is advising against sharing contact information, which is an override condition.",
+        "evidence_transcript_quote": "మీ ఫోన్ నెంబర్స్ అవి ఇవ్వకండి",
+        "evidence_timestamp": "01:17",
+        "fp_exception_matched": "CRITICAL OVERRIDE: Any statement where a user DENIES having or REFUSES to share contact information",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:06+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

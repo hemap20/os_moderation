@@ -26,7 +26,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Nee pair?' as Explicit-Flirting. The transcript shows the user is asking 'మీ పేరు?' (What is your name?). The model misheard 'name' as 'feet'.",
+        "fp_type": "MISHEARING",
+        "fp_reason": "The model misheard the question 'What is your name?' as a question about feet.",
+        "evidence_transcript_quote": "మీ పేరు?",
+        "evidence_timestamp": "00:38",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:36+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

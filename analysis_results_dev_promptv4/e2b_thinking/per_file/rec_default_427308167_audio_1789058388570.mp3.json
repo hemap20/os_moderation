@@ -26,7 +26,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a mention of 'commission/fee' as SuspiciousActivity. The speaker is discussing the app's mechanics. This is general talk about the platform and does not constitute a request for sexual services or suspicious transactional behavior.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general discussion about the platform's mechanics, not a suspicious transaction.",
+        "evidence_transcript_quote": "ఇన్ యాప్ పే అతే ఫెరిస్ కోనోమా ఎన్",
+        "evidence_timestamp": "02:54",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:06+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -43,7 +58,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a description of how scammers operate (asking for WhatsApp and payment). The speaker is warning the other person about these scams. This is not a violation; it is an expert/user warning the other person about potential risks, which is explicitly allowed.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is warning the other person about scams, which is not a violation.",
+        "evidence_transcript_quote": "WhatsApp நம்பர் கொடுத்து amount pay பண்ண சொல்லி",
+        "evidence_timestamp": "03:16",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:06+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -60,7 +90,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a warning against moving to WhatsApp. The speaker is advising the other person NOT to move to WhatsApp. This is not a PlatformMove violation; it is a safety warning.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is advising the other person not to move to an external platform, which is a safety warning, not a violation.",
+        "evidence_transcript_quote": "சோ நீங்க WhatsApp நம்பர் கொடுத்து போ, வர வாப்டா சொன்னாங்கனா, இது பண்ணாதீங்க.",
+        "evidence_timestamp": "03:21",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:06+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -77,7 +122,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a discussion about payment. The speaker is explaining that they should stay on the platform to be safe. This is not a violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is discussing platform safety, not engaging in suspicious transactional behavior.",
+        "evidence_transcript_quote": "பட் டோன்ட் பே, டோன்ட் பே நவ், வி வில் பே ஃபார் திஸ்",
+        "evidence_timestamp": "03:44",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:06+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -94,7 +154,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'If you do this on WhatsApp' as PlatformMove. Reviewing the transcript, the speaker is actually advising against moving to WhatsApp, citing safety concerns and potential for being cheated. This is a discussion about platform safety, not a solicitation to move. Therefore, it is over-sensitive.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The speaker is warning against moving to WhatsApp, not suggesting it.",
+        "evidence_transcript_quote": "வாட்ஸ்அப் எல்லாம் இது பண்ணி நிறைய பேர் சொல்லி இருக்காங்க. சீட் பண்ணிட்டு போயிறாங்க.",
+        "evidence_timestamp": "03:49",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:04+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -111,7 +186,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Give the number' as PlatformMove. The speaker is discussing how others might ask for a number, not requesting one themselves. This is context-dependent and not a violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is describing how others behave, not making a request.",
+        "evidence_transcript_quote": "ஆடியோ கால்லயும் சம்டைம்ஸ் வந்து நம்பர் கொடுத்து",
+        "evidence_timestamp": "04:08",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:04+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -128,7 +218,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a discussion about audio/video call connectivity as PlatformMove. This is a technical discussion about the platform's features, not a move to an external app.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The speaker is explaining the platform's call connectivity features.",
+        "evidence_transcript_quote": "ஆடியோ கால்ல நான் ஆன்லைன்ல இருந்தேன்னா எனக்கு ஆடியோ கால் கனெக்ட் ஆகும்.",
+        "evidence_timestamp": "04:39",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:04+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -145,7 +250,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Oh, or you come on the big app' as PlatformMove. This is a vague reference and does not name an external communication app or share contact details, failing the decision heuristic.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The phrase is vague and does not meet the criteria for a platform move.",
+        "evidence_transcript_quote": "ஓ அப்படிங்களா. வெளியில ஆப்ல போயிட்டு வரணுமா?",
+        "evidence_timestamp": "05:04",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:04+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -162,7 +282,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a warning about WhatsApp as a PlatformMove. The speaker is explicitly advising against using WhatsApp, which is the opposite of a platform move violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The speaker is advising against using WhatsApp.",
+        "evidence_transcript_quote": "மோஸ்ட்லி வாட்ஸ்அப்ல போறத மட்டும் அவாய்ட் பண்ணிக்கோங்க.",
+        "evidence_timestamp": "05:23",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:04+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -179,7 +314,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a comment about WhatsApp being uncomfortable as a PlatformMove. This is a discussion about platform preference and safety, not a move.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The speaker is expressing a preference for the current platform over WhatsApp.",
+        "evidence_transcript_quote": "பட் வாட்ஸ்அப்ங்கறது உங்களுக்கு கொஞ்சம் டிஸ்கம்பர்ட்.",
+        "evidence_timestamp": "05:37",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:04+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

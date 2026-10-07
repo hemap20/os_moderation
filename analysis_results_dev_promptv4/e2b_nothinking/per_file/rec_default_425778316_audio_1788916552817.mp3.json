@@ -63,7 +63,22 @@
       "p_violation_yes": 4.420228103641173e-14,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as PlatformMove. The quote is just stating locations, which is not a violation. It is OVER_SENSITIVITY.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is just stating locations and does not reach the threshold for any policy violation.",
+        "evidence_transcript_quote": "ಆಪ್ ಕಿಧರ್ ಸೆ ಹ?",
+        "evidence_timestamp": "00:08",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:59+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not Applicable",
@@ -80,7 +95,22 @@
       "p_violation_yes": 6.846183213793546e-14,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Not Applicable. It is not a violation. It is OVER_SENSITIVITY.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is not a violation.",
+        "evidence_transcript_quote": "ಓ ದೋ ದಿನ್ ಪಹಲೆ",
+        "evidence_timestamp": "00:20",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:59+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not Applicable",
@@ -97,7 +127,22 @@
       "p_violation_yes": 4.8473687062702556e-11,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Not Applicable. It is not a violation. It is OVER_SENSITIVITY.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is not a violation.",
+        "evidence_transcript_quote": "ಬಾತ್ ಕರ್ನೆ ಕೆ ಲಿಯೇ",
+        "evidence_timestamp": "00:26",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:59+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -114,7 +159,22 @@
       "p_violation_yes": 5.847042763599827e-11,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as PlatformMove. The quote is asking about the purpose of the call, which is not a violation. It is OVER_SENSITIVITY.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is not a violation.",
+        "evidence_transcript_quote": "ಕೌನ್ ಸಾ ಪರ್ಪಸ್ ಮೇ ಆಯೇ ಹ?",
+        "evidence_timestamp": "00:30",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:59+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -131,7 +191,22 @@
       "p_violation_yes": 1.522997974471263e-08,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'audio call open call' as a PlatformMove. However, the policy explicitly states that video call requests (in-platform feature) are not violations. The phrase refers to the platform's built-in features, not an external app.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The quote refers to an in-platform feature, which is explicitly excluded from the PlatformMove policy.",
+        "evidence_transcript_quote": "ऑडियो कॉल ओपन कॉल",
+        "evidence_timestamp": "00:33",
+        "fp_exception_matched": "NEVER FLAG - Video call requests",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:58+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -148,7 +223,22 @@
       "p_violation_yes": 0.05190933076223956,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'are you comfortable for that' as Explicit-Flirting. This is a general question about comfort and does not reach the threshold for a violation, nor is it an explicit sexual request.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general question about comfort and does not meet the threshold for an Explicit-Flirting violation.",
+        "evidence_transcript_quote": "आर यू कंफर्टेबल फॉर दैट?",
+        "evidence_timestamp": "00:37",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:58+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",

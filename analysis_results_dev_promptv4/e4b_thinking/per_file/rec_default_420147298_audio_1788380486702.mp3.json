@@ -36,7 +36,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Aa jao koi baat le' as PlatformMove. The context is a casual conversation where the user is joking about coming over. It does not meet the threshold for a platform move violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a casual, non-serious remark that does not constitute a platform move.",
+        "evidence_transcript_quote": "आ जाओ, कोई बात नहीं।",
+        "evidence_timestamp": "03:37",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:36+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",

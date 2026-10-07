@@ -26,7 +26,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a comment as Explicit-Flirting. The transcript is garbled and the translation provided by the model is highly speculative and does not match the transcript content clearly. The evidence is insufficient.",
+        "fp_type": "UNCLEAR",
+        "fp_reason": "The transcript is garbled and the model's translation is speculative and not supported by the transcript.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "suspect",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -43,7 +58,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a phrase as Explicit-Flirting. Reviewing the transcript, the speaker is using vulgar language ('oombiya varthamanam' - slang for oral sex/vulgar talk) to describe the platform's environment. This is a violation of the Explicit-Flirting policy as it constitutes suggestive/sexualized remarks. Since no ground truth exists, this is a GT_MISS.",
+        "fp_type": "GT_MISS",
+        "fp_reason": "The model correctly identified a vulgar, sexually suggestive remark that the ground truth missed.",
+        "evidence_transcript_quote": "ഇതിനകത്ത് ഇതിനകത്ത് എല്ലാം ഊമ്പിയ വർത്തമാനം കൊണ്ട് വരും",
+        "evidence_timestamp": "02:32",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:06+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -60,7 +90,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flag claims the speaker is referencing genitals at 01:10. Reviewing the transcript at 01:10, the speaker says 'അല്ല അതല്ല കൊള്ളാം അടിപൊളി ആണെന്ന് പറഞ്ഞതാ' (No, that's not it, I said it's great/awesome). The model's excerpt 'అలే అదల్ల కన్న ఆదిబళియానో నార్కం' is not present in the Malayalam transcript, nor is there any sexual content at that timestamp. The model has hallucinated both the quote and the content.",
+        "fp_type": "FABRICATION",
+        "fp_reason": "The model hallucinated a sexual quote that does not exist in the transcript at the specified timestamp.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:06+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "",
@@ -77,7 +122,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "This flag has no category, timestamp, or quote. It is an empty flag.",
+        "fp_type": "UNCLEAR",
+        "fp_reason": "The flag contains no information to evaluate.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:06+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

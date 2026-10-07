@@ -26,7 +26,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The speaker is reporting what others do on the platform, which is not a violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is describing others' behavior as part of a general conversation about the app, not engaging in it themselves.",
+        "evidence_transcript_quote": "ஒவ்வொருத்தரும் ஜாலியா பேசுறாங்க",
+        "evidence_timestamp": "01:15",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:28+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -43,7 +58,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The speaker is reporting what others do on the platform, which is not a violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is describing others' behavior as part of a general conversation about the app, not engaging in it themselves.",
+        "evidence_transcript_quote": "ஒவ்வொருத்தரும் செக்ஸியா பேசுறாங்க",
+        "evidence_timestamp": "01:15",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:28+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -60,7 +90,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Explicit-Flirting. Looking at the transcript, the speaker is asking if the other person prefers 'fun' or 'sexy' talk. This is a suggestive comment about the nature of the conversation, which falls under the Explicit-Flirting category. Since there are no ground-truth flags in this file, this is a missed violation.",
+        "fp_type": "GT_MISS",
+        "fp_reason": "The model correctly identified a suggestive sexual remark that was missed by the ground truth.",
+        "evidence_transcript_quote": "அவங்களுக்கு ஜாலியா பேசுறது பிடிச்சிருக்கா இல்ல செக்ஸியா பேசுறது பிடிச்சிருக்கா?",
+        "evidence_timestamp": "01:27",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:31+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

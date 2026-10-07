@@ -54,7 +54,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as SuspiciousActivity. The speaker is asking if the video call service on the platform is paid. This is a general inquiry about platform features and does not constitute a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The speaker is asking about platform features, not offering or requesting payment for sexual services.",
+        "evidence_transcript_quote": "దీంట్లో వీడియో కాల్ కి కూడా పేమెంట్ కావాలా?",
+        "evidence_timestamp": "00:31",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -122,7 +137,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as PlatformMove. The speaker is asking if there is a 'direct option' for video calls, which is a feature-related question, not a request to move to an external platform.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The speaker is asking about platform features, not requesting to move to an external platform.",
+        "evidence_transcript_quote": "డైరెక్ట్ గా ఆప్షన్ లేదా?",
+        "evidence_timestamp": "00:45",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -139,7 +169,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as PlatformMove. The speaker is stating that only video calls are available, which is a clarification of platform features, not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The speaker is clarifying platform features, not requesting to move to an external platform.",
+        "evidence_transcript_quote": "ఆ లేదు ఓన్లీ వీడియో కాల్",
+        "evidence_timestamp": "00:47",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -156,7 +201,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Explicit-Flirting. The speaker is saying 'I am not interested', which is a clear refusal of the service, not a violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is refusing the service, not engaging in flirting.",
+        "evidence_transcript_quote": "నాకు ఇంట్రెస్ట్ లేదు",
+        "evidence_timestamp": "00:49",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -173,7 +233,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as PlatformMove. The speaker is stating they are not interested in WhatsApp video calls, which is a refusal of an external platform move, not a violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is refusing to move to an external platform.",
+        "evidence_transcript_quote": "నాకు వాట్సాప్ వీడియో కాల్ ఇంట్రెస్ట్ లేదు",
+        "evidence_timestamp": "00:53",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

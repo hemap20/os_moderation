@@ -63,7 +63,22 @@
       "p_violation_yes": 5.2792096283383845e-15,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged an introduction as a PlatformMove. This is standard conversation and does not contain any request to move to an external platform.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Standard introductions are not a violation.",
+        "evidence_transcript_quote": "എന്റെ പേര് കിരൺ ബാംഗ്ലൂരിൽ നിന്ന് സംസാരിക്കുകയാണ്",
+        "evidence_timestamp": "00:05",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:39:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -80,7 +95,22 @@
       "p_violation_yes": 6.224144622907783e-11,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about work location as a PlatformMove. This is not a request to move the conversation off-platform.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Sharing work location is not a violation.",
+        "evidence_transcript_quote": "ഞാൻ ഐടി ഫീൽഡിൽ വർക്ക് ചെയ്യുന്നുണ്ട്",
+        "evidence_timestamp": "00:20",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:39:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -97,7 +127,22 @@
       "p_violation_yes": 1.748234128271057e-13,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about not having a girlfriend as Explicit-Flirting. This is a neutral statement about relationship status and does not contain sexual undertones.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Stating relationship status is not a violation.",
+        "evidence_transcript_quote": "ഗേൾഫ്രണ്ട് ഇല്ല",
+        "evidence_timestamp": "00:31",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:39:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -114,7 +159,22 @@
       "p_violation_yes": 1.435037960133826e-14,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a casual conversation about trying something. This does not meet any policy violation criteria. It is not a miss, not a wrong category, and not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a casual statement about trying something and does not reach the threshold for any policy violation.",
+        "evidence_transcript_quote": "ഏതെങ്കിലും ട്രൈ ചെയ്യുന്നുണ്ടോ",
+        "evidence_timestamp": "00:33",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:39:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -131,7 +191,22 @@
       "p_violation_yes": 7.360340600578901e-13,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a general question about timing. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general question about timing and does not reach the threshold for any policy violation.",
+        "evidence_transcript_quote": "എപ്പോ",
+        "evidence_timestamp": "00:37",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:39:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -148,7 +223,22 @@
       "p_violation_yes": 1.898256859952468e-11,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about who is trying. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a statement about who is trying and does not reach the threshold for any policy violation.",
+        "evidence_transcript_quote": "ഒന്നെ തന്നെ ട്രൈ ചെയ്യുന്നുണ്ട്",
+        "evidence_timestamp": "00:39",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:39:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -165,7 +255,22 @@
       "p_violation_yes": 6.286163385101407e-10,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'love you da'. While this can be flirtatious, in this context it is a mild expression of affection. Per policy, mild romanticism is allowed and should not be flagged.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a mild expression of affection which is allowed on the platform.",
+        "evidence_transcript_quote": "ലവ് യു ടാ",
+        "evidence_timestamp": "00:48",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:39:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -233,7 +338,22 @@
       "p_violation_yes": 1.0,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a request for a WhatsApp number. This is a PlatformMove violation. However, this specific instance is already covered by GT[2] (matched=True). Therefore, this is a duplicate.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate of an already matched ground-truth flag.",
+        "evidence_transcript_quote": "വാട്സാപ്പ് നമ്പർ തരുമോ",
+        "evidence_timestamp": "01:10",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:39:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -250,7 +370,22 @@
       "p_violation_yes": 2.4914584052855056e-08,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'repel seven', which is a mishearing of the phone number digits being spoken. It is not a violation.",
+        "fp_type": "MISHEARING",
+        "fp_reason": "The model misheard the digits of the phone number as 'repel seven'.",
+        "evidence_transcript_quote": "777",
+        "evidence_timestamp": "01:24",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:39:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -284,7 +419,22 @@
       "p_violation_yes": 1.643785643485086e-07,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'don't cheat'. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general statement and does not reach the threshold for any policy violation.",
+        "evidence_transcript_quote": "സീറ്റ് ചെയ്യുമോ",
+        "evidence_timestamp": "01:35",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:39:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -301,7 +451,22 @@
       "p_violation_yes": 9.357622968840175e-14,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about relationship status. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a statement about relationship status and does not reach the threshold for any policy violation.",
+        "evidence_transcript_quote": "അപ്പടി ഒന്നും ഇല്ല",
+        "evidence_timestamp": "01:37",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:39:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -318,7 +483,22 @@
       "p_violation_yes": 1.0923714006028706e-10,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged garbled speech. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is garbled speech and does not reach the threshold for any policy violation.",
+        "evidence_transcript_quote": "ഇതിൽ ഇത്ര ദൂരം കാട്ടുന്നത് ഇതിൽ കാട്ടുന്നത് എന്താ",
+        "evidence_timestamp": "01:37",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:39:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

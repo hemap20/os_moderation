@@ -26,7 +26,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Only money earning' as SuspiciousActivity. The policy states that general talk about money or the platform's features (like earning coins) should not be flagged. This is a general statement about the user's purpose on the app, not a request for sexual services or transactional behavior. This is OVER_SENSITIVITY.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general statement about earning money on the platform, which does not reach the threshold for a SuspiciousActivity violation.",
+        "evidence_transcript_quote": "ఓన్లీ మనీ ఎర్నింగ్",
+        "evidence_timestamp": "02:08",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:06+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

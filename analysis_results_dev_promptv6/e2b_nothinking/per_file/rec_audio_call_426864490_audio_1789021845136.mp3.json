@@ -25,7 +25,25 @@
       "model_violation": "no",
       "p_violation_yes": 3.4125869872598793e-07,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a request for a name as PlatformMove. Asking for a name is not a violation of the PlatformMove policy, which specifically targets external communication apps or contact details.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Asking for a name is not a violation of the PlatformMove policy.",
+        "evidence_transcript_quote": "ಆದರೆ ಫುಲ್ ನೇಮ್ ಅಷ್ಟೇನಾ ಸೀತಾ ನೇಮ್",
+        "evidence_timestamp": "01:22",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:06+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking for the full name of the person they are calling."
     },
     {
       "category": "PlatformMove",
@@ -41,7 +59,25 @@
       "model_violation": "no",
       "p_violation_yes": 2.6204627647424615e-10,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a repetition of the name request as PlatformMove. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Asking for a name is not a violation of the PlatformMove policy.",
+        "evidence_transcript_quote": "ಫುಲ್ ನೇಮ್ ಅಷ್ಟೇನಾ ಸೀತಾ ನೇಮ್",
+        "evidence_timestamp": "01:22",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:06+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is confirming the name and acknowledging the call."
     },
     {
       "category": "PlatformMove",
@@ -57,7 +93,25 @@
       "model_violation": "no",
       "p_violation_yes": 3.576360456247403e-07,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a conversational closing as PlatformMove. This does not contain any request to move to an external platform.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The statement is a conversational closing and does not violate the PlatformMove policy.",
+        "evidence_transcript_quote": "ಅದ್ರೆ ಈ ಜನರೇಶನ್ ಅಲ್ಲಿ ಸೀತಾ ಅಂತ ಯಾರಿಗೂ ಇರಲ್ಲ",
+        "evidence_timestamp": "01:34",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:06+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is concluding the call and stating they are leaving."
     },
     {
       "category": "PlatformMove",
@@ -73,7 +127,25 @@
       "model_violation": "no",
       "p_violation_yes": 2.5946094982764667e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a conversational filler as PlatformMove. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The statement is a conversational filler and does not violate the PlatformMove policy.",
+        "evidence_transcript_quote": "ಆ",
+        "evidence_timestamp": "01:40",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:06+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is responding to something, possibly acknowledging the expert."
     },
     {
       "category": "PlatformMove",
@@ -89,7 +161,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.3307807990689665e-09,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Hello' as a PlatformMove. 'Hello' is a standard greeting and does not constitute a platform move or any other policy violation. This is an over-sensitive flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "A standard greeting is not a policy violation.",
+        "evidence_transcript_quote": "ಹಲೋ",
+        "evidence_timestamp": "01:44",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user initiates a greeting."
     },
     {
       "category": "PlatformMove",
@@ -105,7 +195,25 @@
       "model_violation": "no",
       "p_violation_yes": 6.032647824709456e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Hello' as a PlatformMove. 'Hello' is a standard greeting and does not constitute a platform move or any other policy violation. This is an over-sensitive flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "A standard greeting is not a policy violation.",
+        "evidence_transcript_quote": "ಹಲೋ",
+        "evidence_timestamp": "01:46",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert responds to the greeting."
     },
     {
       "category": "PlatformMove",
@@ -121,7 +229,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9999599472811979,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'bye so break up instagram' as a PlatformMove. While 'Instagram' is mentioned, the context is a fragmented, garbled sentence that does not clearly suggest moving the conversation to an external platform. It is likely a transcription error or misinterpretation of a non-violating statement.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is garbled and does not clearly constitute a platform move request.",
+        "evidence_transcript_quote": "ವಾಯ್ಸ್ ಬ್ರೇಕ್ ಆಗ್ತಿದೆ",
+        "evidence_timestamp": "01:56",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "suspect",
+        "classifier_confidence": "medium",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is suggesting moving the conversation to Instagram."
     },
     {
       "category": "PlatformMove",
@@ -137,7 +263,25 @@
       "model_violation": "yes",
       "p_violation_yes": 1.0,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'bye so please breakup phone' as a PlatformMove. This is a garbled, nonsensical phrase that does not clearly suggest moving the conversation to a phone number. It is likely a transcription error.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is garbled and does not clearly constitute a platform move request.",
+        "evidence_transcript_quote": "ವಾಯ್ಸ್ ಬ್ರೇಕ್ ಆಗ್ತಿದೆ",
+        "evidence_timestamp": "01:56",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "suspect",
+        "classifier_confidence": "medium",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is suggesting moving the conversation to a phone number."
     },
     {
       "category": "unclear",
@@ -153,7 +297,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.2415511035985842e-16,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Is that so?' as unclear. This is a standard conversational filler and does not violate any policy.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "A standard conversational query is not a policy violation.",
+        "evidence_transcript_quote": "ನಿಮ್ದು ಆಗಿದ್ಯಾ?",
+        "evidence_timestamp": "02:48",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking a question, likely initiating conversation."
     },
     {
       "category": "unclear",
@@ -169,7 +331,25 @@
       "model_violation": "no",
       "p_violation_yes": 4.508755242294825e-12,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'No.' as unclear. This is a standard response and does not violate any policy.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "A standard response is not a policy violation.",
+        "evidence_transcript_quote": "ಇಲ್ಲ",
+        "evidence_timestamp": "02:50",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is responding to the previous question."
     },
     {
       "category": "PlatformMove",
@@ -185,7 +365,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.047425772804199705,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Which area are you in Bengaluru?' as a PlatformMove. Asking about a city or general area is not a violation unless it involves sharing specific contact details or an external app. This is over-sensitive.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Asking for a general city area is not a policy violation.",
+        "evidence_transcript_quote": "ಯಾವ ಏರಿಯಾದಲ್ಲಿ ಇರೋದು ಬೆಂಗಳೂರಲ್ಲಿ?",
+        "evidence_timestamp": "02:56",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking for location details, which is personal information."
     },
     {
       "category": "PlatformMove",
@@ -201,7 +399,25 @@
       "model_violation": "no",
       "p_violation_yes": 2.8130173490442305e-06,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Ishenpura' as a PlatformMove. Stating a general neighborhood name is not a violation unless it is part of sharing specific contact details. This is over-sensitive.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Stating a general neighborhood name is not a policy violation.",
+        "evidence_transcript_quote": "ಶೆಟ್ಟಿಪುರ",
+        "evidence_timestamp": "03:00",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is providing a location."
     },
     {
       "category": "PlatformMove",
@@ -217,7 +433,25 @@
       "model_violation": "no",
       "p_violation_yes": 5.15999712815652e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Guttaifn bar' as a PlatformMove. This appears to be a transcription error for a location name and does not constitute a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a transcription error and not a policy violation.",
+        "evidence_transcript_quote": "ಶೆಟ್ಟಿಪುರ",
+        "evidence_timestamp": "03:00",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "suspect",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is providing another location."
     },
     {
       "category": "PlatformMove",
@@ -233,7 +467,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.522997974471263e-08,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'I am in Cinpura' as a PlatformMove. Stating a general location is not a violation unless it involves sharing specific contact details. This is over-sensitive.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Stating a general location is not a policy violation.",
+        "evidence_transcript_quote": "ಶೆಟ್ಟಿಪುರ",
+        "evidence_timestamp": "03:00",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is stating their location."
     },
     {
       "category": "PlatformMove",
@@ -249,7 +501,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.295078574955816e-08,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about downloading an app as a PlatformMove. The user is simply explaining their history with the app, not suggesting a move to an external platform. This is a clear case of over-sensitivity or misinterpretation of context.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The user is describing their app usage history, which is not a platform move violation.",
+        "evidence_transcript_quote": "ಇದು ಒಂದು ತಿಂಗಳ ಹಿಂದೇನೆ ಮಾಡಿದ್ದೆ ಡೌನ್ಲೋಡ್ ಮಾಡಿದ್ದೆ ಅದು ಯೂಸ್ ಮಾಡಿಲ್ಲ",
+        "evidence_timestamp": "04:11",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is discussing the download and usage of something."
     },
     {
       "category": "PlatformMove",
@@ -265,7 +535,25 @@
       "model_violation": "no",
       "p_violation_yes": 7.11243526112156e-07,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a phrase as a PlatformMove. The transcript shows the speaker is not making a platform move request; the quote is garbled and does not contain any external contact info or app names.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote does not contain any actionable platform move information.",
+        "evidence_transcript_quote": "ಅಷ್ಟೇ",
+        "evidence_timestamp": "04:16",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is responding to the user's previous statement."
     },
     {
       "category": "PlatformMove",
@@ -281,7 +569,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.0001233946226544279,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about discussing topics within the app as a PlatformMove. This is clearly not a move to an external platform; it is a discussion about the current platform's features.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The user is discussing topics within the current app, not moving to an external one.",
+        "evidence_transcript_quote": "ನಾನು ಈ ಆಪ್ ಬಂದಿದ್ದು ಅಂದ್ರೆ ಬೇರೆ ಏನು ಉದ್ದೇಶ ಇಲ್ಲ ಬಟ್ ನಮ್ಮ ಇಂಟರೆಸ್ಟ್ ಕಾನ್ಸೆಪ್ಟ್ ಗಳು ಟಾಪಿಕ್ ಗಳು ಎಲ್ಲಾ ಇತ್ತಲ್ಲ ಆಪ್ ಅಲ್ಲಿ ಸೋ ಆ ತರ ಎಲ್ಲಾ ಮಾತಾಡಬಹುದು",
+        "evidence_timestamp": "04:26",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is explaining their interest in the app's content."
     },
     {
       "category": "PlatformMove",
@@ -297,7 +603,25 @@
       "model_violation": "no",
       "p_violation_yes": 8.095930175212601e-16,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a general statement about intentions as a PlatformMove. This is a philosophical comment about user behavior and contains no policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general observation about user intentions and does not violate any policy.",
+        "evidence_transcript_quote": "ನಾಲೆಡ್ಜ್ ಇಂಪ್ರೂವ್ ಆಗುತ್ತೆ ಆ ತರ ಇಂಟೆನ್ಶನ್ ಇಟ್ಕೊಂಡು ಮಾಡಿದ್ದು ಬಟ್ ಎಲ್ಲಾ ಬೇರೆ ಏನೇನೋ ಕ್ರಿಕೆಟ್ ಇಂಟೆನ್ಶನ್ ಇಂದ ಮಾಡ್ತಾರೆ",
+        "evidence_timestamp": "04:40",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "unclear",
+      "model_context": "The user is discussing the intention behind something, and the expert is responding by stating that everyone has different intentions."
     },
     {
       "category": "Not Applicable",
@@ -313,7 +637,25 @@
       "model_violation": "no",
       "p_violation_yes": 5.675685232632723e-14,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a compliment as Not Applicable, but it is clearly not a violation. Since it was flagged as a false positive, I am classifying it as over-sensitivity.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a harmless compliment about speaking ability.",
+        "evidence_transcript_quote": "ಕೆಲವರು ಕೆಲವರು ಚೆನ್ನಾಗಿ ಮಾತಾಡ್ತಾರೆ ನಿಮ್ಮ ತರ",
+        "evidence_timestamp": "04:49",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "unclear",
+      "model_context": "This is a general compliment or observation about speaking ability."
     },
     {
       "category": "Not Applicable",
@@ -329,7 +671,25 @@
       "model_violation": "no",
       "p_violation_yes": 2.911071178211687e-12,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a continuation of a sentence as Not Applicable. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a fragment of a compliment and does not violate any policy.",
+        "evidence_transcript_quote": "ನಿಮ್ಮ ತರ",
+        "evidence_timestamp": "04:54",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "unclear",
+      "model_context": "Continuation of the previous statement."
     },
     {
       "category": "Not Applicable",
@@ -345,7 +705,25 @@
       "model_violation": "no",
       "p_violation_yes": 4.799544972039692e-12,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about current actions as Not Applicable. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a neutral statement about current actions.",
+        "evidence_transcript_quote": "ಹೇಗಿದ್ದಾರೆ ಇವರು ಇರ್ತಾರೆ",
+        "evidence_timestamp": "04:54",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "unclear",
+      "model_context": "This seems to be a statement about current action."
     },
     {
       "category": "Not Applicable",
@@ -361,7 +739,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.0160636785541307e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a concluding remark as Not Applicable. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a neutral concluding remark.",
+        "evidence_transcript_quote": "ಅಷ್ಟೇ ಅಲ್ವಾ",
+        "evidence_timestamp": "05:00",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "unclear",
+      "model_context": "This is a concluding remark or agreement."
     },
     {
       "category": "PlatformMove",
@@ -377,7 +773,25 @@
       "model_violation": "no",
       "p_violation_yes": 4.111452592548034e-15,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a question about problems as a PlatformMove. This is a standard conversational inquiry and not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a standard conversational question about problems.",
+        "evidence_transcript_quote": "ಏನೇನೋ ಅವರವರ ಪ್ರಾಬ್ಲಮ್ ಗಳು ಗೊತ್ತಿಲ್ಲ",
+        "evidence_timestamp": "05:11",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking about a problem."
     },
     {
       "category": "Explicit-Flirting",
@@ -393,7 +807,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.1496191848799524e-08,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a vague statement as Explicit-Flirting. The quote does not contain any sexual undertones or suggestive content.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is vague and does not contain any sexual or suggestive content.",
+        "evidence_transcript_quote": "ಆಲ್ಮೋಸ್ಟ್ ಹುಡುಗಿಯರೆಲ್ಲ ಬರೋದು ಇದಕ್ಕಲ್ಲ",
+        "evidence_timestamp": "05:16",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is making a statement about something being bad/wrong."
     },
     {
       "category": "SuspiciousActivity",
@@ -409,7 +841,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.8667642923581144,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as SuspiciousActivity, but the speaker is discussing general platform usage and the motivations of other users, not offering or requesting sexual services. This is general conversation about the platform's nature.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general observation about user behavior on the platform and does not reach the threshold for a SuspiciousActivity violation.",
+        "evidence_transcript_quote": "ಆಲ್ಮೋಸ್ಟ್ ಹುಡುಗಿಯರೆಲ್ಲ ಬರೋದು ಇದಕ್ಕಲ್ಲ ಅಂದ್ರೆ ಲೇಡೀಸ್ ಅವರ ಖರ್ಚಿಗೆ ಏನೋ ದುಡ್ಡು ಬರುತ್ತೆ ಅಂತ ಆಲ್ಮೋಸ್ಟ್ ಎಲ್ಲರೂ ಅದಕ್ಕೆ ಬರ್ತಾರೆ",
+        "evidence_timestamp": "05:16",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:03+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is discussing a cost related to 'ladies'."
     },
     {
       "category": "SuspiciousActivity",
@@ -425,7 +875,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9859276903345212,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as SuspiciousActivity, but the speaker is questioning the premise of earning money on the platform, which is general money talk and not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is general money talk regarding the platform's features and does not constitute a violation.",
+        "evidence_transcript_quote": "ಅಯ್ಯೋ ಇದರಲ್ಲಿ ಏನು ದುಡ್ಡು ಬರುತ್ತೆ?",
+        "evidence_timestamp": "05:27",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:03+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is responding to the user's query about the cost."
     },
     {
       "category": "SuspiciousActivity",
@@ -441,7 +909,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9999998807907247,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as SuspiciousActivity, but the speaker is describing the platform's standard earnings (5 rupees for 5 minutes), which is general talk about platform features, not a sexual service transaction.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote describes standard platform earnings and does not meet the criteria for a SuspiciousActivity violation.",
+        "evidence_transcript_quote": "ಇದರಲ್ಲಿ ಏನು ದುಡ್ಡು ಬರುತ್ತೆ ದಿನದಲ್ಲಿ ಒಂದು ಐದು ನಿಮಿಷ ಮಾತಾಡಿದ್ರು ಐದು ರೂಪಾಯಿ ಬರುತ್ತೆ ಅಷ್ಟೇ",
+        "evidence_timestamp": "05:30",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:03+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is explicitly stating a price for a duration of talk time."
     },
     {
       "category": "SuspiciousActivity",
@@ -457,7 +943,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.05865225896848967,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as SuspiciousActivity, but the speaker is relaying what others have said about earnings, which is general money talk and not a direct offer or request for sexual services.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general reference to hearsay about earnings and does not constitute a violation.",
+        "evidence_transcript_quote": "ಹೌದಾ ಏನೋ ಗೊತ್ತಿಲ್ಲ ಅವರು ಹೇಳಿದ್ದೆಲ್ಲ 200 300 ಮಾಡ್ತೀನಿ ಅಂತ",
+        "evidence_timestamp": "05:36",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:03+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is discussing something mentioned by the expert, possibly related to a service or rate."
     },
     {
       "category": "Not Applicable",
@@ -473,7 +977,25 @@
       "model_violation": "no",
       "p_violation_yes": 3.4767787164951853e-13,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Not Applicable, which is correct as it is a general discussion about hobbies and platform usage.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general discussion about platform usage and hobbies, not a policy violation.",
+        "evidence_transcript_quote": "ಅದೆಲ್ಲ ಫುಲ್ ಗಂಟಾನಗಟ್ಟಲೆ ಅದನ್ನೇ ಒಂದು ಹಾಬಿಯಾಗಿ ಮಾಡ್ಕೊಂಡು ಫುಲ್ ಮಾತಾಡಿದ್ರೆ ಅವಾಗ ವರ್ಕೌಟ್ ಆಗುತ್ತೇನೋ",
+        "evidence_timestamp": "05:40",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:03+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is responding to the user's previous statement, offering advice on fitness."
     },
     {
       "category": "Not Applicable",
@@ -489,7 +1011,25 @@
       "model_violation": "no",
       "p_violation_yes": 8.966730491527304e-12,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Not Applicable, which is correct as it is a general discussion about knowledge sharing.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general discussion about knowledge sharing and is not a policy violation.",
+        "evidence_transcript_quote": "ನಮ್ ತರ ನಮಗೊಂದು ಐದು ನಿಮಿಷ ಟೈಮ್ ಸಿಗುತ್ತೆ ಯಾರಾದ್ರೂ ಮಾತಾಡಿದ್ರೆ ಏನಾದ್ರೂ ಒಂದು ಐಡಿಯಾಸ್ ಕೊಡ್ತಾರೆ ನಾಲೆಡ್ಜ್ ಇಂಪ್ರೂವ್ ಆಗುತ್ತೆ",
+        "evidence_timestamp": "05:49",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:03+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is sharing their experience or opinion about seeking advice."
     },
     {
       "category": "Not Applicable",
@@ -505,7 +1045,25 @@
       "model_violation": "no",
       "p_violation_yes": 5.847042763599827e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Not Applicable, which is correct as it is a general observation about user intentions.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general observation about user intentions and is not a policy violation.",
+        "evidence_transcript_quote": "ಆ ತರ ಇಂಟೆನ್ಶನ್ ಇಟ್ಕೊಂಡು ಎಲ್ಲರೂ ಅದೇ ಇಂಟೆನ್ಶನ್ ಇರಲ್ಲ ಕೆಲವರಿಗೆ ಎಂಟರ್ಟೈನ್ಮೆಂಟ್",
+        "evidence_timestamp": "05:57",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:03+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is responding to the user's statement about intentions."
     },
     {
       "category": "Not Applicable",
@@ -521,7 +1079,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.1513509855710022e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Not Applicable, which is correct as it is an incomplete, non-violating phrase.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is an incomplete phrase and does not constitute a violation.",
+        "evidence_transcript_quote": "ಕೆಲವರಿಗೆ ಏನೋ",
+        "evidence_timestamp": "06:02",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:03+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is continuing the conversation."
     },
     {
       "category": "Not Applicable",
@@ -537,7 +1113,25 @@
       "model_violation": "no",
       "p_violation_yes": 7.530388099325974e-17,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Not Applicable, which is correct as it is a general social observation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general social observation and is not a policy violation.",
+        "evidence_transcript_quote": "ಕೆಲವರು ಹುಡುಗರ ಜೊತೆ ಮಾತಾಡಬೇಕು ಅಂತಲೇ ಇಷ್ಟ ಇರುತ್ತೆ ಹುಡುಗಿರುಗಳು",
+        "evidence_timestamp": "06:04",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:03+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "unclear",
+      "model_context": null
     },
     {
       "category": "Not Applicable",
@@ -553,7 +1147,25 @@
       "model_violation": "no",
       "p_violation_yes": 8.340358565590937e-13,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Not Applicable, which is correct as it is a general social observation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general social observation and is not a policy violation.",
+        "evidence_transcript_quote": "ಮತ್ತೆ ಇನ್ನೊಬ್ಬರು ಕೆಲವು ಫ್ರೆಂಡ್ ಆಗ್ತಾರಲ್ಲ ನಾರ್ಮಲ್ ಆಗಿ ಮಾತಾಡಿ",
+        "evidence_timestamp": "06:29",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:44:03+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "unclear",
+      "model_context": null
     }
   ]
 }

@@ -26,7 +26,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as PlatformMove. The speaker mentions WhatsApp and giving a number. This is a clear violation of the PlatformMove policy as it involves moving to an external app and sharing contact info.",
+        "fp_type": "GT_MISS",
+        "fp_reason": "The model correctly identified a platform move violation that was missed by the ground truth.",
+        "evidence_transcript_quote": "हेलो व्हाट्सएप दूसरा वाला तो मेरा डिलीट ही है नंबर",
+        "evidence_timestamp": "00:02",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:31+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

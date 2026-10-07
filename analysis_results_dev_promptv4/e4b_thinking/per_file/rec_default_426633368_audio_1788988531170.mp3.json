@@ -71,7 +71,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Konjam alavandhunga' as SuspiciousActivity. This phrase is vague and does not constitute a clear request for payment or sexual services. It is an over-sensitive interpretation of a conversational filler.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The phrase is too vague to be considered a suspicious transactional request.",
+        "evidence_transcript_quote": "கொஞ்சம் செக்ஸியா பேசுங்க",
+        "evidence_timestamp": "01:15",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:39+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -88,7 +103,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Allah podunga, vaai podungila' as SuspiciousActivity. This is a misinterpretation of the sexual request 'நல்லா போடுங்க வாய் போடுவீங்களா' which is already covered by GT[1].",
+        "fp_type": "WRONG_CATEGORY",
+        "fp_reason": "The content is a sexual request, not a suspicious transactional activity.",
+        "evidence_transcript_quote": "நல்லா போடுங்க வாய் போடுவீங்களா",
+        "evidence_timestamp": "01:38",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:39+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

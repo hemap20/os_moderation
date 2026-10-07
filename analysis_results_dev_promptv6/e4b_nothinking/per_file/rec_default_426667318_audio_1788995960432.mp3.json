@@ -62,7 +62,10 @@
       "model_violation": "no",
       "p_violation_yes": 0.46876991240199345,
       "matched": true,
-      "matched_gt_category": "Explicit-Flirting"
+      "matched_gt_category": "Explicit-Flirting",
+      "dataset_origin_label": "TP",
+      "model_speaker": "user",
+      "model_context": "..."
     },
     {
       "category": "PlatformMove",
@@ -78,7 +81,10 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9819191535462368,
       "matched": true,
-      "matched_gt_category": "PlatformMove"
+      "matched_gt_category": "PlatformMove",
+      "dataset_origin_label": "TP",
+      "model_speaker": "user",
+      "model_context": "..."
     },
     {
       "category": "PlatformMove",
@@ -94,7 +100,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9996577480879734,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a request for a WhatsApp number. This is a clear PlatformMove violation. Since the GT flag at index 2 covers this exact request, this is a duplicate.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate of an existing ground-truth flag. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "വാട്സാപ്പ് നമ്പർ തരുമോ",
+        "evidence_timestamp": "01:10",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:27+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "..."
     },
     {
       "category": "PlatformMove",
@@ -110,7 +134,10 @@
       "model_violation": "yes",
       "p_violation_yes": 0.999658581976812,
       "matched": true,
-      "matched_gt_category": "PlatformMove"
+      "matched_gt_category": "PlatformMove",
+      "dataset_origin_label": "TP",
+      "model_speaker": "expert",
+      "model_context": "..."
     }
   ]
 }

@@ -63,7 +63,22 @@
       "p_violation_yes": 0.5926284846662226,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Are you interested in talking again?' as PlatformMove. This is a general conversational inquiry and does not explicitly suggest moving to an external app or sharing contact details. It does not meet the policy definition for PlatformMove.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general conversational question and does not constitute a platform move request.",
+        "evidence_transcript_quote": "ಮತ್ತೆ ಮಾತಾಡೋಕೆ ಇಂಟರೆಸ್ಟ್ ಇದೆಯಾ",
+        "evidence_timestamp": "03:35",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:27+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

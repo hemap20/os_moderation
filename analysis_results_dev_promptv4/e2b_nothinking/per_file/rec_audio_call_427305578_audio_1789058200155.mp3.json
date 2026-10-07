@@ -26,7 +26,22 @@
       "p_violation_yes": 3.749159471376913e-18,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a simple greeting. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a standard greeting and does not violate any policy.",
+        "evidence_transcript_quote": "ഹലോ",
+        "evidence_timestamp": "00:00",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:38+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -43,7 +58,22 @@
       "p_violation_yes": 1.0709232382508077e-12,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a simple greeting. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a standard greeting and does not violate any policy.",
+        "evidence_transcript_quote": "ഹലോ",
+        "evidence_timestamp": "00:05",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:38+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -60,7 +90,22 @@
       "p_violation_yes": 0.075740775779776,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a phrase about money. The transcript shows the user is complaining about the other person not speaking, not offering sexual services. This is a misinterpretation of the context.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The quote is a complaint about the other person not speaking, not a transactional request.",
+        "evidence_transcript_quote": "അറ്റൻഡ് ചെയ്തിട്ട് സംസാരിക്കാൻ പറ്റുന്നില്ല",
+        "evidence_timestamp": "00:13",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:38+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -77,7 +122,22 @@
       "p_violation_yes": 0.0010322285084975614,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Aren't you giving attention money?' as SuspiciousActivity. Reviewing the transcript, the user says 'அட்டென்ட் பண்ணிட்டு பேசவே மாட்டேங்கறீங்க' (You attend but don't speak). The model's translation is a hallucination/mishearing of the Tamil audio. Since the quote does not exist in the transcript, it is a fabrication.",
+        "fp_type": "FABRICATION",
+        "fp_reason": "The quoted text does not appear in the transcript and is a misinterpretation of the audio.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

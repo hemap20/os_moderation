@@ -25,7 +25,10 @@
       "model_violation": "no",
       "p_violation_yes": 0.0002034268481403553,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "model_speaker": "user",
+      "model_context": "The user is providing some information, possibly related to an account or file number."
     },
     {
       "category": "PlatformMove",
@@ -41,7 +44,10 @@
       "model_violation": "no",
       "p_violation_yes": 0.00017952784361272426,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "model_speaker": "user",
+      "model_context": "The user is providing an update on their location or status."
     },
     {
       "category": "PlatformMove",
@@ -57,7 +63,10 @@
       "model_violation": "no",
       "p_violation_yes": 8.592166619174109e-10,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "model_speaker": "expert",
+      "model_context": "The expert is acknowledging the previous statement and signaling a pause."
     },
     {
       "category": "SuspiciousActivity",
@@ -73,7 +82,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.553497204890439e-06,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Account is working, I did it on the app' as SuspiciousActivity. This is a general statement about using the app's features and does not involve payment or sexual services. It is clearly not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The statement is a general comment about app usage and does not meet the threshold for suspicious activity.",
+        "evidence_transcript_quote": "അക്കൗണ്ട്സ് വർക്ക് ചെയ്യുവാണ്",
+        "evidence_timestamp": "00:46",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is confirming functionality related to an account."
     },
     {
       "category": "SuspiciousActivity",
@@ -89,7 +116,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.0019256678925570726,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about waiting for a few months. This is general conversation and does not relate to any policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general remark about time and does not constitute a policy violation.",
+        "evidence_transcript_quote": "ഒരു മൂന്നോ നാലോ മാസമായി കാണും",
+        "evidence_timestamp": "00:50",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is discussing a waiting period and a letter."
     },
     {
       "category": "PlatformMove",
@@ -105,7 +150,25 @@
       "model_violation": "no",
       "p_violation_yes": 6.778639342809131e-15,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a vague, non-violating statement as PlatformMove. There is no mention of external apps or contact details.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The statement is vague and does not contain any actionable contact information or external platform references.",
+        "evidence_transcript_quote": "എല്ലാം നടക്കുമല്ലോ",
+        "evidence_timestamp": "02:21",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking about something, possibly related to the call or the platform."
     },
     {
       "category": "PlatformMove",
@@ -121,7 +184,25 @@
       "model_violation": "no",
       "p_violation_yes": 3.331544542166412e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a question about a timeline as PlatformMove. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Asking about a timeline is not a policy violation.",
+        "evidence_transcript_quote": "എന്ത് നടക്കാനാ ഇതിനകത്ത്",
+        "evidence_timestamp": "02:23",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking a question about timing."
     },
     {
       "category": "PlatformMove",
@@ -137,7 +218,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.3887943864964021e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a question about a timeline as PlatformMove. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Asking about a timeline is not a policy violation.",
+        "evidence_transcript_quote": "എന്തെങ്കിലും നടക്കുമല്ലോ",
+        "evidence_timestamp": "02:25",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking a question about timing."
     },
     {
       "category": "PlatformMove",
@@ -153,7 +252,25 @@
       "model_violation": "no",
       "p_violation_yes": 3.5464107047741826e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a question about plans as PlatformMove. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Asking about plans is not a policy violation.",
+        "evidence_transcript_quote": "ഇതിനകത്ത് എന്ത് നടക്കാനാന്നാ ചോദിച്ചത്",
+        "evidence_timestamp": "02:27",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking the expert about their plans."
     },
     {
       "category": "PlatformMove",
@@ -169,7 +286,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.8010159636784437e-10,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a general comment about discussion as PlatformMove. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "General conversation about topics is not a policy violation.",
+        "evidence_transcript_quote": "എല്ലാം നടക്കും ആവശ്യമുള്ളതെല്ലാം",
+        "evidence_timestamp": "02:29",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is responding to the user's query."
     },
     {
       "category": "PlatformMove",
@@ -185,7 +320,25 @@
       "model_violation": "no",
       "p_violation_yes": 3.850741922767617e-09,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a general statement about people as PlatformMove. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "General statements about people are not policy violations.",
+        "evidence_transcript_quote": "ഇതിനകത്ത് കേറുന്ന എല്ലാവരും വേറൊന്നുമല്ല",
+        "evidence_timestamp": "02:36",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is making a statement about the activity."
     },
     {
       "category": "PlatformMove",
@@ -201,7 +354,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.4026326428368726e-10,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a general comment about discussion as PlatformMove. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "General conversation about topics is not a policy violation.",
+        "evidence_transcript_quote": "ഈ സംസാരിക്കത്തെ ഉള്ളൂ എന്ന് പറഞ്ഞാലും പിന്നെ ഊമ്പിയ വർത്തമാനം കൊണ്ട് വരും",
+        "evidence_timestamp": "02:39",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is continuing the discussion."
     },
     {
       "category": "PlatformMove",
@@ -217,7 +388,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.4026326428368726e-10,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a hypothetical statement as PlatformMove. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Hypothetical statements are not policy violations.",
+        "evidence_transcript_quote": "അത് ആരാണെന്ന് പറഞ്ഞാൽ",
+        "evidence_timestamp": "02:44",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is concluding a thought."
     }
   ]
 }

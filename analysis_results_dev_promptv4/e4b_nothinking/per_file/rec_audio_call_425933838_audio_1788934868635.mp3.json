@@ -54,7 +54,22 @@
       "p_violation_yes": 0.00132501396096776,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'What's up?' as Explicit-Flirting. This is a casual greeting and does not meet the policy threshold for a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The phrase is a casual greeting and does not constitute a sexual remark.",
+        "evidence_transcript_quote": "क्या हो रही है",
+        "evidence_timestamp": "00:56",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:09+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -88,7 +103,22 @@
       "p_violation_yes": 0.9999972581939645,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Will you have sex?'. This is a direct sexual request, which is already covered by GT[0]. This is a duplicate.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate of the sexual request violation already covered by the ground truth. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "सेक्स करोगे",
+        "evidence_timestamp": "01:08",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:09+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -105,7 +135,22 @@
       "p_violation_yes": 0.9999895096921129,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Will you have sex?'. This is a duplicate of the previous flag (item_id::2) and the ground truth GT[0].",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate of the sexual request violation already covered by the ground truth. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "सेक्स करोगे",
+        "evidence_timestamp": "01:08",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:09+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -122,7 +167,22 @@
       "p_violation_yes": 0.9999641192914955,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a request for a phone number. This is a PlatformMove violation. However, there is no ground truth flag for this specific instance in the provided list. It is a clear violation.",
+        "fp_type": "GT_MISS",
+        "fp_reason": "The user is explicitly asking for a phone number, which is a PlatformMove violation that was missed by the ground truth.",
+        "evidence_transcript_quote": "नंबर दो ना अपना",
+        "evidence_timestamp": "01:56",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:09+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -139,7 +199,22 @@
       "p_violation_yes": 0.9984940353866142,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The speaker is asking how the other person will provide their contact information. This is a request for contact details, which falls under the PlatformMove policy. Since no ground-truth flag covers this specific request for contact details, it is a GT_MISS.",
+        "fp_type": "GT_MISS",
+        "fp_reason": "The model correctly identified a request for contact information which was missed by the ground truth.",
+        "evidence_transcript_quote": "कैसे दोगी बताओ",
+        "evidence_timestamp": "02:03",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -156,7 +231,22 @@
       "p_violation_yes": 0.9999535105382235,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The speaker is asking how they will get the number. This is a request for contact details, which falls under the PlatformMove policy. Since no ground-truth flag covers this specific request for contact details, it is a GT_MISS.",
+        "fp_type": "GT_MISS",
+        "fp_reason": "The model correctly identified a request for contact information which was missed by the ground truth.",
+        "evidence_transcript_quote": "कैसे मिलेगी मुझे नंबर दोगी तो",
+        "evidence_timestamp": "02:06",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -173,7 +263,22 @@
       "p_violation_yes": 0.11919134602940405,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The speaker is asking for a video call to show something. Per policy, video call requests on the platform are not violations. This is an over-sensitive flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote refers to an in-platform video call feature which is explicitly excluded from policy violations.",
+        "evidence_transcript_quote": "वीडियो कॉल करके दिखाना पड़ेगा",
+        "evidence_timestamp": "02:12",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -190,7 +295,22 @@
       "p_violation_yes": 0.7548931443039938,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The speaker is discussing payment obligations. This is part of the ongoing transactional negotiation already covered by GT[1] and GT[2]. Since those GT flags are matched=UNVERIFIED, I must treat them as potentially matched. This is a duplicate instance of the transactional behavior already captured.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of the transactional behavior already covered by existing ground-truth flags. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "पहले देना पड़ेगा",
+        "evidence_timestamp": "02:23",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -207,7 +327,22 @@
       "p_violation_yes": 0.9940801532956463,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The speaker is asking about payment. This is part of the ongoing transactional negotiation already covered by GT[1] and GT[2]. This is a duplicate instance of the transactional behavior already captured.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of the transactional behavior already covered by existing ground-truth flags. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "पहले पैसा कहां से आएगा",
+        "evidence_timestamp": "02:30",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -224,7 +359,22 @@
       "p_violation_yes": 0.9999868871505255,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The speaker is stating a payment amount. This is part of the ongoing transactional negotiation already covered by GT[1] and GT[2]. This is a duplicate instance of the transactional behavior already captured.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of the transactional behavior already covered by existing ground-truth flags. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "आपको रोज दो-दो सौ रुपए डालते जाऊंगा रोज",
+        "evidence_timestamp": "02:37",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -241,7 +391,22 @@
       "p_violation_yes": 0.9999934435319415,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The speaker is demanding payment. This is part of the ongoing transactional negotiation already covered by GT[1] and GT[2]. This is a duplicate instance of the transactional behavior already captured.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of the transactional behavior already covered by existing ground-truth flags. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "रोज मेरे को दिखाते जाना",
+        "evidence_timestamp": "02:43",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -275,7 +440,22 @@
       "p_violation_yes": 0.9999780659713836,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The speaker is offering payment for a video call. This is part of the ongoing transactional negotiation already covered by GT[2]. This is a duplicate instance of the transactional behavior already captured.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of the transactional behavior already covered by existing ground-truth flags. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "मुझे रोज वीडियो कॉल करके दिखाना तो मैं आपको दो-दो सौ रुपए डाल दूंगा रोज",
+        "evidence_timestamp": "02:54",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -292,7 +472,22 @@
       "p_violation_yes": 0.974039683283398,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The speaker is asking for payment. This is part of the ongoing transactional negotiation already covered by GT[2]. This is a duplicate instance of the transactional behavior already captured.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of the transactional behavior already covered by existing ground-truth flags. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "हाँ तो पहले देख पहले डाल के दिखाओ",
+        "evidence_timestamp": "03:00",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -309,7 +504,22 @@
       "p_violation_yes": 0.022975893816080575,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The speaker is mentioning their time. This is not a policy violation. It is general conversation about the call duration.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is general conversation about time and does not reach the threshold for a policy violation.",
+        "evidence_transcript_quote": "तुम्हारा टाइम खत्म हो जा रही है",
+        "evidence_timestamp": "03:47",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:14+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

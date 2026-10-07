@@ -72,7 +72,22 @@
       "p_violation_yes": 0.9999250229763097,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a request to move to WhatsApp. This is a duplicate of GT[0] which is already matched=true. Therefore, this is a DUPLICATE_OR_EXTRA_INSTANCE.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate of an existing violation already captured by ground truth.",
+        "evidence_transcript_quote": "ഇതിൽ കാണിച്ചാൽ മതിയോ വാട്സാപ്പിൽ ഒന്നും വേണ്ടല്ലോ",
+        "evidence_timestamp": "01:16",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:27+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",

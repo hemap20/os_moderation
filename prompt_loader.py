@@ -37,6 +37,7 @@ PLACEHOLDER_TRANSCRIPT = "{transcript}"
 _SCHEMA_MODULE_BY_PROMPT_NAME = {
     "prompt_v4.py": schemas_v4,
     "prompt_v6.py": schemas_v6,
+    "prompt_v7.py": schemas_v6,  # same 10-field schema as v6, just refined wording
 }
 
 

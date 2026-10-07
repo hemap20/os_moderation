@@ -62,7 +62,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'rate rate what rate' as SuspiciousActivity. The ground truth already contains flags for Explicit-Flirting. The model's flag is a duplicate of the ongoing conversation about rates which is not a violation in this context. Since there is no GT flag for SuspiciousActivity, this is an extra instance of a non-violating topic.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Asking about rates in this context is not a violation and does not reach the threshold for SuspiciousActivity.",
+        "evidence_transcript_quote": "ரைட் ரைட்",
+        "evidence_timestamp": "01:49",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:01+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

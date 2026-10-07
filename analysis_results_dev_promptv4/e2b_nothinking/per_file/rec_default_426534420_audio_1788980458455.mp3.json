@@ -54,7 +54,22 @@
       "p_violation_yes": 6.983296728391707e-12,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a general greeting as PlatformMove. This is clearly not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general greeting and does not violate the policy.",
+        "evidence_transcript_quote": "ಹಾಯ್",
+        "evidence_timestamp": "00:03",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:39:07+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -88,7 +103,22 @@
       "p_violation_yes": 0.867021393538172,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag 'Body is cheap' (00:15) is not a distinct violation. The transcript at 00:14-00:24 contains the user offering to show their body for money. The model's flag is an interpretation of the ongoing conversation about showing the body, which is already covered by GT[1] (Explicit-Flirting) and GT[2] (SuspiciousActivity). Since the model's flag is not a verbatim quote of a new violation but rather a summary of the existing context, it is an extra instance of the already matched violations.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a redundant interpretation of the ongoing conversation already covered by existing ground truth flags.",
+        "evidence_transcript_quote": "బాడీ చూపిస్తాను",
+        "evidence_timestamp": "00:14",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:39:13+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -105,7 +135,22 @@
       "p_violation_yes": 0.999997854237364,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag 'Up the bottom' (00:18) refers to the phrase 'టాప్ టు బాటమ్' (Top to bottom) at 00:20. This is part of the same conversation already covered by GT[1] and GT[2]. It is not a separate violation but a descriptive part of the already flagged sexual solicitation. Therefore, it is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a redundant instance of the conversation already covered by existing ground truth flags.",
+        "evidence_transcript_quote": "టాప్ టు బాటమ్",
+        "evidence_timestamp": "00:20",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:39:13+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",

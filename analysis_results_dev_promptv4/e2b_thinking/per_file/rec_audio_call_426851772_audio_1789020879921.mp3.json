@@ -45,7 +45,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Aur, ₹2400' as SuspiciousActivity. The policy states that general money talk or ambiguous money talk should not be flagged. This is a general mention of an amount without any link to sexual services or platform transactions. Therefore, it is over-sensitive.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "General mention of a monetary amount without context of sexual services is not a violation.",
+        "evidence_transcript_quote": "Aur, ₹2400.",
+        "evidence_timestamp": "00:08",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:49+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -62,7 +77,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged the user's statement of preference for 'hot talk' as Explicit-Flirting. The policy states that general romantic talk or questions about relationship status are not to be flagged unless explicitly sexualized. The user is expressing a preference, which is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Expressing a preference for 'hot talk' is not a violation of the explicit flirting policy.",
+        "evidence_transcript_quote": "आपको कैसी बातें पसंद है? मुझे तो हॉट बात पसंद थी तभी तो लगाया था नंबर",
+        "evidence_timestamp": "02:20",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:49+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -79,7 +109,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged the user saying 'Cut the call' as a PlatformMove. The policy explicitly states that phrases like 'Please disconnect the call' or 'I can't hear you' are not violations. This is a request to end the current call, not to move to another platform.",
+        "fp_type": "EXCEPTION_IGNORED",
+        "fp_reason": "The request to end the call is explicitly excluded from the platform move policy.",
+        "evidence_transcript_quote": "कट कर चलिए अब कॉल कट कर, हां किसी और से बात कर लो ठीक है।",
+        "evidence_timestamp": "02:35",
+        "fp_exception_matched": "Please disconnect the call",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:49+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

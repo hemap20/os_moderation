@@ -25,7 +25,25 @@
       "model_violation": "no",
       "p_violation_yes": 7.484569109242154e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged the expert's warning about other users' bad behavior (asking for WhatsApp/money) as a PlatformMove violation. This is reported speech describing potential scams, not a solicitation or sharing of contact info by the speaker. It falls under context confusion as it is a warning/description of general practice.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is warning the user about scams and is not soliciting a platform move.",
+        "evidence_transcript_quote": "அண்ணா வந்து இதில ஏதேமா பேச மாட்டாங்க வாட்ஸ்அப் நம்பர் அந்த மாதிரி கொடுத்து அமௌண்ட் பே பண்ண சொல்லி",
+        "evidence_timestamp": "03:16",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:29+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "அண்ணா வந்து இதில ஏதேமா பேச மாட்டாங்க வாட்ஸ்அப் நம்பர் அந்த மாதிரி கொடுத்து அமௌண்ட் பே பண்ண சொல்லி, அது ஒரு சிலர் பேசுவாங்கலமா. ஒரு சிலர் வந்து சீட் பண்ணிட்டு போயிடுவாங்க."
     },
     {
       "category": "PlatformMove",
@@ -41,7 +59,25 @@
       "model_violation": "no",
       "p_violation_yes": 3.6898828046256017e-07,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a fragment of the expert's advice about staying on the platform. This is not a violation; it is the opposite of a platform move.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is advising the user to stay on the platform, which is not a violation.",
+        "evidence_transcript_quote": "பரவாella நீ பேசினா மட்டும் போदो அப்படியே சொன்னீங்கன்னா இதிலே பேசவாங்க.",
+        "evidence_timestamp": "03:44",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:29+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "..."
     },
     {
       "category": "PlatformMove",
@@ -57,7 +93,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.370956471489639e-06,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a neutral phrase 'Use it like that' which refers to the platform's features. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a neutral instruction about using the platform and does not reach the violation threshold.",
+        "evidence_transcript_quote": "அந்த மாதிரி யூஸ் பண்ணிக்கங்க.",
+        "evidence_timestamp": "03:48",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:29+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "..."
     },
     {
       "category": "PlatformMove",
@@ -73,7 +127,25 @@
       "model_violation": "no",
       "p_violation_yes": 6.540436342263698e-06,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged the expert's report of what others have said on WhatsApp. This is reported speech and not a violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is reporting on the experiences of others, not soliciting a move.",
+        "evidence_transcript_quote": "WhatsAppல இத பண்ணி நிறைய பேர் சொல்லிருக்காங்க.",
+        "evidence_timestamp": "03:50",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:29+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "..."
     },
     {
       "category": "PlatformMove",
@@ -89,7 +161,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.7603429545652396e-06,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged the expert's description of scammers. This is not a violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is describing the behavior of scammers, not soliciting a move.",
+        "evidence_transcript_quote": "சீட் பண்ணிட்டு போயிரறாங்க.",
+        "evidence_timestamp": "03:52",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:29+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "..."
     },
     {
       "category": "PlatformMove",
@@ -105,7 +195,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.4593755673183012e-06,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged the expert's description of scammers blocking users. This is not a violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is describing the behavior of scammers, not soliciting a move.",
+        "evidence_transcript_quote": "அப்படில ப்ளாக் பண்ணிரறாங்க அப்படியே சொல்லு.",
+        "evidence_timestamp": "03:55",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:29+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "..."
     },
     {
       "category": "Explicit-Flirting",
@@ -121,7 +229,25 @@
       "model_violation": "no",
       "p_violation_yes": 4.222831140981511e-06,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged the expert's description of how some people talk. This is not a violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is describing the behavior of others, not engaging in explicit flirting.",
+        "evidence_transcript_quote": "ஒரு சிலர் வந்து என்ன மாதிரியும் பேசவாங்க.",
+        "evidence_timestamp": "03:59",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:29+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "..."
     },
     {
       "category": "Explicit-Flirting",
@@ -137,7 +263,25 @@
       "model_violation": "no",
       "p_violation_yes": 8.85156869765038e-07,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged the expert's description of friendly talk. This is not a violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is describing the behavior of others, not engaging in explicit flirting.",
+        "evidence_transcript_quote": "ஃப்ரெண்ட்லியா மட்டும் பேசுவாங்க.",
+        "evidence_timestamp": "04:02",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:29+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "..."
     },
     {
       "category": "PlatformMove",
@@ -153,7 +297,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.0001398214921752038,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged the expert's report of others giving numbers on audio calls. This is reported speech and not a violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is reporting on the behavior of others, not soliciting a move.",
+        "evidence_transcript_quote": "ஆடியோ கால்லயும் சம்டைம்ஸ் வந்து நம்பர் குடுத்து",
+        "evidence_timestamp": "04:04",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:29+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "..."
     }
   ]
 }

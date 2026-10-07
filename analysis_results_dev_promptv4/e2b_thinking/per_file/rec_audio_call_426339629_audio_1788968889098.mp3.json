@@ -88,7 +88,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a question about the rate. This is a direct inquiry about the cost of a service, which is already covered by the ground-truth flag at 00:41 (GT[2]). Since the ground-truth flag is matched=true, this is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a violation already covered by a matched ground-truth flag.",
+        "evidence_transcript_quote": "അതിന്റെ റേറ്റ്?",
+        "evidence_timestamp": "00:33",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:48+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -105,7 +120,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a question about the amount. This is a direct inquiry about the cost of a service, which is already covered by the ground-truth flag at 00:41 (GT[2]). Since the ground-truth flag is matched=true, this is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a violation already covered by a matched ground-truth flag.",
+        "evidence_transcript_quote": "അതിന്റെ എമൗണ്ട് എത്രയാണ്?",
+        "evidence_timestamp": "00:35",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:48+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -139,7 +169,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged the price statement. This is the exact same quote as the ground-truth flag at 00:41 (GT[2]). Since the ground-truth flag is matched=true, this is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a violation already covered by a matched ground-truth flag.",
+        "evidence_transcript_quote": "40 മിനിറ്റിന് 250",
+        "evidence_timestamp": "00:41",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:48+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -156,7 +201,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a video call request. The policy explicitly states that video call requests (in-platform feature) should not be flagged. This is an override.",
+        "fp_type": "EXCEPTION_IGNORED",
+        "fp_reason": "Video call requests are an in-platform feature and are explicitly excluded from being flagged.",
+        "evidence_transcript_quote": "വീഡിയോ കോൾ",
+        "evidence_timestamp": "00:46",
+        "fp_exception_matched": "NEVER FLAG - Video call requests",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:48+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

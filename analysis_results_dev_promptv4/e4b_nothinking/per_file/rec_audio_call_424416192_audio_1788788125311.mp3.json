@@ -26,7 +26,22 @@
       "p_violation_yes": 0.999974847472739,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The speaker is describing the behavior of others on the platform as a warning/advice to the listener. This is reported speech, not an actual attempt to move the conversation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is describing the behavior of others on the platform as a warning, not engaging in a platform move themselves.",
+        "evidence_transcript_quote": "காசு குடு நான் உனக்கு இதுல பண்றேன், நான் வாட்ஸ்அப்ல நம்பர் தர்றேன், நம்ம வாட்ஸ்அப்ல பேசிக்கலாம்",
+        "evidence_timestamp": "02:21",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:08+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -43,7 +58,22 @@
       "p_violation_yes": 0.9999955892755635,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The speaker is describing the behavior of others on the platform as a warning/advice to the listener. This is reported speech, not an actual request for money.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is describing the behavior of others on the platform as a warning, not engaging in suspicious transactional behavior themselves.",
+        "evidence_transcript_quote": "இதுல வந்து என்ன பண்ணா ஒரு மணி நேரம் பேசினா 100 ரூபாய் தான் வரும், எனக்கு அந்த நீரு இனி 200 ரூபாய் எனக்கு குடு நான் அதுல பேசலாம்",
+        "evidence_timestamp": "02:26",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:08+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -60,7 +90,22 @@
       "p_violation_yes": 0.05340135051146645,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The speaker is describing the behavior of others on the platform as a warning/advice to the listener. This is reported speech, not an actual violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is describing the behavior of others on the platform as a warning, not engaging in suspicious transactional behavior themselves.",
+        "evidence_transcript_quote": "அப்படி இப்படின்னு ஏதேதோ ஏகப்பட்ட இது பண்ணி, நம்மள ஓட்டி விட்டு போயிறாங்க.",
+        "evidence_timestamp": "02:34",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:08+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

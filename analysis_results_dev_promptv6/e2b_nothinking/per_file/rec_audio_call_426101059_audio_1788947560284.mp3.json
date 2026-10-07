@@ -25,7 +25,25 @@
       "model_violation": "no",
       "p_violation_yes": 2.3195228302435696e-16,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a personal question about sleep as PlatformMove. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Personal conversation about sleep is not a policy violation.",
+        "evidence_transcript_quote": "दिन में नींद आती है",
+        "evidence_timestamp": "00:12",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:39+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "Hello. [Expert responds]."
     },
     {
       "category": "PlatformMove",
@@ -41,7 +59,25 @@
       "model_violation": "no",
       "p_violation_yes": 3.1296964622560676e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is expressing a personal feeling about the conversation. This does not meet the definition of a PlatformMove (sharing contact info or naming an external app) or any other violation. It is conversational filler.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is conversational and does not reach the threshold for a PlatformMove violation.",
+        "evidence_transcript_quote": "अच्छा ये तो मुझे तुमसे बात करना अच्छा क्यों लगता है ये बताइए मैं तो",
+        "evidence_timestamp": "00:23",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "अच्छा। [Expert responds]."
     },
     {
       "category": "Explicit-Flirting",
@@ -57,7 +93,25 @@
       "model_violation": "no",
       "p_violation_yes": 5.7719203181289734e-06,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is discussing their feelings of shyness. This is not an Explicit-Flirting violation as it does not contain sexual undertones or suggestive content as defined by the policy.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal reflection on shyness and does not constitute sexual or suggestive content.",
+        "evidence_transcript_quote": "आपसे तो मुझे शर्म नहीं लगती है आपसे तो खुल के बात करते हैं जैसे हम करते हैं वैसे और किसी शर्म क्यों लगती है",
+        "evidence_timestamp": "00:27",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is expressing a feeling about the level of comfort in the conversation."
     },
     {
       "category": "Explicit-Flirting",
@@ -73,7 +127,25 @@
       "model_violation": "no",
       "p_violation_yes": 6.153468071516805e-09,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The expert is acknowledging the user's positive sentiment. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a neutral acknowledgment of the user's feelings and does not contain sexual or suggestive content.",
+        "evidence_transcript_quote": "मुझे पता है तुमसे बात करना बहुत अच्छा लगता है सच में",
+        "evidence_timestamp": "00:44",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is acknowledging the user's feeling about the conversation."
     },
     {
       "category": "Explicit-Flirting",
@@ -89,7 +161,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.0002305064431801833,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is expressing a desire to overcome shyness. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal statement about overcoming shyness and does not meet the threshold for Explicit-Flirting.",
+        "evidence_transcript_quote": "आपसे बात करके मुझे शर्म मतलब दूर करना है मुझे",
+        "evidence_timestamp": "00:51",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user explicitly states a desire to overcome shyness through talking to the expert."
     },
     {
       "category": "SuspiciousActivity",
@@ -105,7 +195,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.06002194552569841,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is asking about the duration of the marriage. This is general conversation and not a suspicious transactional request.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general question about marriage duration and does not relate to payment or sexual services.",
+        "evidence_transcript_quote": "आपकी शादी को कितना टाइम हो गया",
+        "evidence_timestamp": "01:04",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "sab kuch theek hai pakka"
     },
     {
       "category": "SuspiciousActivity",
@@ -121,7 +229,25 @@
       "model_violation": "no",
       "p_violation_yes": 4.495180350520601e-06,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is repeating a question about the marriage duration. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general question about marriage duration and does not relate to payment or sexual services.",
+        "evidence_transcript_quote": "शादी के कितना टाइम हो गया",
+        "evidence_timestamp": "01:11",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "aapki shaadi kitna kaam ho gaya"
     },
     {
       "category": "PlatformMove",
@@ -137,7 +263,25 @@
       "model_violation": "no",
       "p_violation_yes": 2.4300251889270138e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is asking about the number of children. This is personal information but does not constitute a PlatformMove violation as it does not involve sharing contact details or external apps.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal question that does not involve sharing contact information or moving to an external platform.",
+        "evidence_transcript_quote": "बच्चे कितने हैं ये बताओ",
+        "evidence_timestamp": "01:30",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking the expert about the number of children."
     },
     {
       "category": "PlatformMove",
@@ -153,7 +297,25 @@
       "model_violation": "no",
       "p_violation_yes": 3.1011329918415774e-07,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The expert is answering a personal question. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal answer to a question and does not involve sharing contact information or moving to an external platform.",
+        "evidence_transcript_quote": "बच्चे तो दो हैं",
+        "evidence_timestamp": "01:34",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is answering the question about the number of children."
     },
     {
       "category": "PlatformMove",
@@ -169,7 +331,25 @@
       "model_violation": "no",
       "p_violation_yes": 8.494600649484895e-08,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is repeating a personal question. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal question that does not involve sharing contact information or moving to an external platform.",
+        "evidence_transcript_quote": "हैं कितने बच्चे हैं",
+        "evidence_timestamp": "01:36",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is repeating the question about the number of children."
     },
     {
       "category": "PlatformMove",
@@ -185,7 +365,25 @@
       "model_violation": "no",
       "p_violation_yes": 3.541076383106643e-08,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is asking about the marriage duration again. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general question about marriage duration and does not involve sharing contact information or moving to an external platform.",
+        "evidence_transcript_quote": "सच में तो कितनी साल हो गई शादी को ये बताइए ना अच्छा लगता है तुमसे बात करने में",
+        "evidence_timestamp": "01:41",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking a personal question about the duration of the marriage and expressing liking to talk."
     },
     {
       "category": "Explicit-Flirting",
@@ -201,7 +399,25 @@
       "model_violation": "no",
       "p_violation_yes": 7.21582401942292e-15,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is asking about clothing habits. This is a general conversation topic and does not meet the threshold for Explicit-Flirting or any other violation category. It is not sexual or suggestive.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general question about clothing and does not reach the threshold for a policy violation.",
+        "evidence_transcript_quote": "अच्छा तुम दिल्ली में क्या पहनती हो सूट पहनती है साड़ी पहनती है क्या पहनती हो",
+        "evidence_timestamp": "01:52",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking the expert about clothing choices in Delhi."
     },
     {
       "category": "Explicit-Flirting",
@@ -217,7 +433,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.00017952698755929758,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is expressing comfort in talking on the phone versus in person. This is a personal disclosure about social anxiety/shyness and does not constitute a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal reflection on social comfort and does not violate any policy.",
+        "evidence_transcript_quote": "तो मुझे तुमसे अच्छा लगता है जैसे फोन पे बात करते हैं तो शर्म नहीं लगती है जैसे कोई आ जाता है सामने तो मुझे फीलिंग नहीं आती है वो",
+        "evidence_timestamp": "02:03",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is expressing a feeling of comfort and lack of shyness when talking to the expert on the phone."
     },
     {
       "category": "PlatformMove",
@@ -233,7 +467,25 @@
       "model_violation": "no",
       "p_violation_yes": 9.450864406622024e-13,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The quote is a conversational filler or stuttering, not a request to move to an external platform.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is conversational filler and does not contain any request to move to an external platform.",
+        "evidence_transcript_quote": "मतलब अच्छा छट्टू मतलब छट्ट",
+        "evidence_timestamp": "02:17",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "unclear",
+      "model_context": "The conversation seems to be shifting to an unclear topic or a name."
     },
     {
       "category": "Explicit-Flirting",
@@ -249,7 +501,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.004526048703832e-09,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is discussing their shyness and inability to act in person. This is a personal disclosure about social anxiety, not a sexual or suggestive remark.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal disclosure about social anxiety and does not reach the threshold for a policy violation.",
+        "evidence_transcript_quote": "नहीं जैसे मतलब फोन पे बात करते हैं तो शर्म नहीं लगती है जैसे कोई सामने आ जाता है तो मैं कुछ कर भी नहीं पाऊंगा सच में इतना बता रहा हूं मैं",
+        "evidence_timestamp": "02:27",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is responding to a previous question, expressing a feeling about being shy on the phone."
     },
     {
       "category": "Explicit-Flirting",
@@ -265,7 +535,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.0024726076971737466,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is asking for advice on how to overcome shyness, mentioning a massage parlor. While the context is awkward, it is a request for advice on social anxiety, not a solicitation for sexual services.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a request for advice on social anxiety and does not constitute a solicitation for sexual services.",
+        "evidence_transcript_quote": "अरे यार मतलब मैं तो ठीक हूं ये अच्छा ये बताइए जैसे क्या कहा था मैं मतलब कैसे अपनी शर्म दूर करूंगा ये बताओ कहां पे जाके मसाज पार्लर",
+        "evidence_timestamp": "02:47",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking the expert for advice on how to remove shyness by going to a massage parlor."
     },
     {
       "category": "Explicit-Flirting",
@@ -281,7 +569,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.0004305569043685425,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is asking for help with their shyness. This is a personal request for advice and does not violate the policy.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal request for advice and does not violate the policy.",
+        "evidence_transcript_quote": "शर्म गंगा जी में फंसा दीजिए जाके",
+        "evidence_timestamp": "03:00",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is pleading with the expert to help remove their shyness."
     },
     {
       "category": "Explicit-Flirting",
@@ -297,7 +603,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.00048785604343136153,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is asking for advice on how to interact with women due to their shyness. This is a general question about social interaction and does not reach the threshold for a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general question about social interaction and does not reach the threshold for a violation.",
+        "evidence_transcript_quote": "अच्छा तो मैं चेक कैसे करूं मैं मतलब चेक कैसे करूं कि हां कुछ कर सकते हैं किसी लड़की के साथ ये बताइए",
+        "evidence_timestamp": "03:20",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The expert is responding to the user's question about how to check if something can be done with a girl."
     },
     {
       "category": "Explicit-Flirting",
@@ -313,7 +637,25 @@
       "model_violation": "no",
       "p_violation_yes": 2.4300251889270138e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is expressing feelings of shame. This is a personal emotional disclosure and not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal emotional disclosure and not a policy violation.",
+        "evidence_transcript_quote": "उन्होंने ऐसे बोला और मैंने कुछ किया नहीं तो बताओ मतलब कितना",
+        "evidence_timestamp": "04:13",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is expressing feeling ashamed after a statement made by the expert."
     },
     {
       "category": "Explicit-Flirting",
@@ -329,7 +671,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.0004878551129206915,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is describing their emotional state. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal emotional disclosure and not a policy violation.",
+        "evidence_transcript_quote": "उन्होंने इतना बोला और मैंने कुछ किया नहीं तो बताओ कितना ज्यादा अब ज्यादा फील हो रहा है मुझे",
+        "evidence_timestamp": "04:19",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user continues to express physical reaction (shaking) in response to the previous statement."
     },
     {
       "category": "Explicit-Flirting",
@@ -345,7 +705,25 @@
       "model_violation": "no",
       "p_violation_yes": 7.031182455789338e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The expert is providing advice on shyness. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a neutral response from the expert and not a policy violation.",
+        "evidence_transcript_quote": "शर्म करना अच्छी बात है यार",
+        "evidence_timestamp": "04:32",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:40+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is responding to the user's expression of shame with a comment about being ashamed."
     },
     {
       "category": "Explicit-Flirting",
@@ -361,7 +739,25 @@
       "model_violation": "no",
       "p_violation_yes": 3.1561270251643637e-07,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is discussing personal life events (marriage) and expressing uncertainty about future intimacy due to shyness. This is a personal, non-sexual conversation about emotional struggles and does not meet the threshold for Explicit-Flirting.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal reflection on marriage and shyness, not a suggestive or sexual remark.",
+        "evidence_transcript_quote": "नहीं अभी जैसे मेरी शादी हो गई तो मैं भी पता नहीं कुछ कर पाऊंगा बीवी के साथ कि नहीं",
+        "evidence_timestamp": "04:36",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is making a comment related to marriage and capability, continuing the personal/intimate topic."
     },
     {
       "category": "PlatformMove",
@@ -377,7 +773,25 @@
       "model_violation": "no",
       "p_violation_yes": 2.825757287115611e-15,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is agreeing with the expert's previous statement. It is a generic conversational filler and does not contain any policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a generic conversational agreement and does not constitute a platform move or any other violation.",
+        "evidence_transcript_quote": "जो कर सकते हैं करना अच्छी बात है सही ठहरा बने हैं",
+        "evidence_timestamp": "04:40",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is agreeing with the expert's previous statement or suggestion."
     },
     {
       "category": "reported",
@@ -393,7 +807,25 @@
       "model_violation": "no",
       "p_violation_yes": 7.507751520922312e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is reporting a hypothetical scenario or what someone else might say. This is reported speech and not a direct violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The quote is reported speech about a hypothetical situation, not a direct sexual solicitation or policy violation.",
+        "evidence_transcript_quote": "कोई इंसान ऐसे कह रहा कि तुमने सब कुछ देख ही लिया है तो मान ले वो हमसे मतलब काका और क्या कहेगा",
+        "evidence_timestamp": "04:45",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is quoting or referencing what someone else might say in a hypothetical scenario."
     },
     {
       "category": "Explicit-Flirting",
@@ -409,7 +841,25 @@
       "model_violation": "no",
       "p_violation_yes": 2.4300251889270138e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is referencing a hypothetical statement made by others in society. It is not a direct sexual proposal by the user.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The quote is a hypothetical example of what others might say, not a direct sexual solicitation.",
+        "evidence_transcript_quote": "कि समाज में मेरे साथ सो जाओ ये तो नहीं कहेगा",
+        "evidence_timestamp": "04:52",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is quoting a suggestive phrase, but it is presented as a hypothetical scenario or a reference to what someone else might say."
     },
     {
       "category": "PlatformMove",
@@ -425,7 +875,25 @@
       "model_violation": "no",
       "p_violation_yes": 4.2713534488134696e-08,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is denying having done anything in response to a hypothetical situation. This is a denial, not a platform move.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a denial of action, not a platform move or any other violation.",
+        "evidence_transcript_quote": "इतना कह रहा है तो मैंने कुछ किया नहीं तो ये वाली",
+        "evidence_timestamp": "04:58",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is responding to the previous statement by denying any action."
     },
     {
       "category": "Explicit-Flirting",
@@ -441,7 +909,25 @@
       "model_violation": "no",
       "p_violation_yes": 4.792325752702175e-09,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is expressing a personal feeling of inability to get close to someone. This is an emotional reflection, not a sexual solicitation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal reflection on emotional closeness, not a sexual solicitation.",
+        "evidence_transcript_quote": "एक तरह कुछ करीब नहीं पहुंच पाया जैसे उन्होंने लम्हे देखा भी मतलब ये नाते टाइम",
+        "evidence_timestamp": "05:08",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is expressing a feeling of distance or inability to get close in a certain kind of time."
     },
     {
       "category": "Explicit-Flirting",
@@ -457,7 +943,25 @@
       "model_violation": "no",
       "p_violation_yes": 7.194133030325383e-09,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is expressing a lack of feeling or interest in a certain type of situation. This is a personal statement, not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal statement about lack of interest, not a sexual solicitation.",
+        "evidence_transcript_quote": "तो मुझे फीलिंग क्यों नहीं आ रही है ऐसे इस तरह का मैं मन रोपत नहीं",
+        "evidence_timestamp": "05:14",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is expressing a negative feeling about the situation."
     },
     {
       "category": "Explicit-Flirting",
@@ -473,7 +977,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.7629981198155879e-09,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The expert is describing a general social dynamic. This is not a sexual solicitation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general social observation, not a sexual solicitation.",
+        "evidence_transcript_quote": "बात ये है उसको तो होता है जैसे सब से बढ़िया बात होता है",
+        "evidence_timestamp": "05:20",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is responding to the user's comment about feelings."
     },
     {
       "category": "Explicit-Flirting",
@@ -489,7 +1011,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.3176514270095466e-10,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The expert is offering general social advice about shyness. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is general social advice, not a sexual solicitation.",
+        "evidence_transcript_quote": "अगर आपको शर्म हो शर्म आता है तो अच्छी बात है सरिंदा होना चाहिए",
+        "evidence_timestamp": "05:26",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is giving advice regarding shyness."
     },
     {
       "category": "Explicit-Flirting",
@@ -505,7 +1045,25 @@
       "model_violation": "no",
       "p_violation_yes": 6.205049996884007e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The user is discussing their personal anxiety about future marital intimacy. This is a personal, non-sexual conversation about emotional struggles.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal reflection on marital anxiety, not a sexual solicitation.",
+        "evidence_transcript_quote": "nei jaise meri abhi meri shaadi hogi kahin toh main apni biwi ke saath bhi kuch rakhoonga aisa kaam kyunki mujhe ab yeh sab se tension ho rahi hai",
+        "evidence_timestamp": "06:04",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:42+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is expressing anxiety about his marital situation and potential behavior with his wife."
     },
     {
       "category": "SuspiciousActivity",
@@ -521,7 +1079,25 @@
       "model_violation": "no",
       "p_violation_yes": 6.605209842821306e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as SuspiciousActivity, but the user is asking about a massage parlor in the context of removing shyness, not for sexual services. This is a general conversation about personal issues and does not meet the threshold for a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The user is discussing personal shyness and asking about massage parlors as a potential remedy, which does not constitute a transactional request for sexual services.",
+        "evidence_transcript_quote": "मैं मतलब कैसे चेक करूँ कि कुछ मतलब कुछ कर सकते हैं इस पर जाकर मसाज पर ले जाकर",
+        "evidence_timestamp": "06:32",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking how to check if they can get a massage."
     },
     {
       "category": "Explicit-Flirting",
@@ -537,7 +1113,25 @@
       "model_violation": "no",
       "p_violation_yes": 6.605216142043291e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Explicit-Flirting, but the expert is giving advice about physical well-being and not making suggestive or sexual remarks.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The expert's advice regarding physical health is not suggestive or sexual in nature.",
+        "evidence_transcript_quote": "तो देखिए अगर आपका गला फिर कसकर गला समय से कर नहीं है तो गला में सर मत बनाइए आप ठीक है",
+        "evidence_timestamp": "06:37",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is giving advice related to the throat/neck area."
     },
     {
       "category": "Explicit-Flirting",
@@ -553,7 +1147,25 @@
       "model_violation": "no",
       "p_violation_yes": 2.1907822035208183e-06,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Explicit-Flirting, but the expert is offering a general encouraging comment about the user's potential to improve, which is not sexual.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The expert's comment is a general encouragement and does not contain sexual undertones.",
+        "evidence_transcript_quote": "आप अच्छा बनकर देखना अच्छा पिएगा ना इतना अच्छा होगा",
+        "evidence_timestamp": "06:43",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:44+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is complimenting the user's appearance or the outcome of something."
     }
   ]
 }

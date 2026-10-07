@@ -44,7 +44,25 @@
       "model_violation": "no",
       "p_violation_yes": 4.910429870159115e-16,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Hello' as PlatformMove. This is a standard greeting and not a violation. It is over-sensitive.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "A simple greeting does not constitute a policy violation.",
+        "evidence_transcript_quote": "ஹலோ",
+        "evidence_timestamp": "00:56",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "unclear",
+      "model_context": "The call starts with a greeting."
     },
     {
       "category": "PlatformMove",
@@ -60,7 +78,25 @@
       "model_violation": "no",
       "p_violation_yes": 3.97896253583724e-12,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'En panna' as PlatformMove. This is part of a general conversation about work and not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "General conversation about work is not a policy violation.",
+        "evidence_transcript_quote": "என்ன பண்ண?",
+        "evidence_timestamp": "01:08",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is responding to the greeting."
     },
     {
       "category": "PlatformMove",
@@ -76,7 +112,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.1513509855710022e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'No, they are different' as PlatformMove. This is part of a general conversation and not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "General conversation is not a policy violation.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is responding to the user's comment."
     },
     {
       "category": "PlatformMove",
@@ -92,7 +146,25 @@
       "model_violation": "no",
       "p_violation_yes": 4.413579432488399e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Yes, no, friends' as PlatformMove. This is part of a general conversation and not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "General conversation is not a policy violation.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is confirming something."
     },
     {
       "category": "PlatformMove",
@@ -108,7 +180,25 @@
       "model_violation": "no",
       "p_violation_yes": 7.746073136852956e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Riya Kalyan mane thi' as PlatformMove. This is not found in the transcript and appears to be a hallucination.",
+        "fp_type": "FABRICATION",
+        "fp_reason": "The quoted content does not appear in the transcript.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is making a statement."
     },
     {
       "category": "PlatformMove",
@@ -124,7 +214,25 @@
       "model_violation": "no",
       "p_violation_yes": 6.835885550466474e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Yes thank you' as PlatformMove. This is a polite expression and not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Polite expressions are not policy violations.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is expressing thanks."
     },
     {
       "category": "Explicit-Flirting",
@@ -140,7 +248,10 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9995953290813406,
       "matched": true,
-      "matched_gt_category": "Explicit-Flirting"
+      "matched_gt_category": "Explicit-Flirting",
+      "dataset_origin_label": "TP",
+      "model_speaker": "user",
+      "model_context": "The user is asking the expert for 'open talk'."
     },
     {
       "category": "SuspiciousActivity",
@@ -156,7 +267,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9966232745119491,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Right right, what is the rate?' as SuspiciousActivity. The transcript shows the user asking 'What work?' and 'Right right'. There is no rate inquiry here. This is a mishearing or over-sensitivity.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The transcript does not contain a rate inquiry at this timestamp.",
+        "evidence_transcript_quote": "ரைட் ரைட்",
+        "evidence_timestamp": "01:49",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking about the rate."
     },
     {
       "category": "PlatformMove",
@@ -172,7 +301,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.0015011812350883861,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'working in the stock exchange' as PlatformMove. This is a description of work and not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Describing one's work is not a policy violation.",
+        "evidence_transcript_quote": "ஸ்டாக் எக்ஸ்சேஞ்ச்ல ஒர்க் பண்றேன்",
+        "evidence_timestamp": "02:22",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:02+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is discussing their work. The expert responds by asking about 'open talk'."
     },
     {
       "category": "Explicit-Flirting",
@@ -188,7 +335,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9998977288910255,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'ni open talk peseya' as Explicit-Flirting. This is a repetition of the same topic as GT[0] ('ஓபன் டாக் பேசுவியா?'), which is already matched=True. Therefore, this is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a violation already matched to GT[0].",
+        "evidence_transcript_quote": "நீ ஓபன் டாக் பேசுவியா?",
+        "evidence_timestamp": "02:28",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:01+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is explicitly asking for 'open talk'."
     },
     {
       "category": "Explicit-Flirting",
@@ -204,7 +369,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9982963073550222,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'open na show panradaliya' as Explicit-Flirting. This is a follow-up to the previous conversation about 'open talk' and is a distinct instance of the user asking for sexualized content/nudity, which is not covered by the existing GT flags (GT[0] is about 'open talk', GT[1] is about 'waist'). However, since it is a distinct instance of a violation not covered by GT, it should be a GT_MISS, but the policy requires conservative use. Given it's a request for nudity/sexualized content, it is a valid violation. Since no GT flag covers this specific request for 'showing', it is a GT_MISS.",
+        "fp_type": "GT_MISS",
+        "fp_reason": "The model correctly identified a request for sexualized content that was missed by the ground truth.",
+        "evidence_transcript_quote": "ஓபன்னா ஷோ பண்றது இல்ல.",
+        "evidence_timestamp": "02:33",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:01+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is responding to the user's request for 'open talk' by asking if they want to 'show open'."
     },
     {
       "category": "PlatformMove",
@@ -220,7 +403,25 @@
       "model_violation": "no",
       "p_violation_yes": 1.777854579889421e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as PlatformMove, but the transcript shows the user is just continuing the conversation. It does not meet the criteria for a PlatformMove (no external app or contact info).",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote does not reach the threshold for a PlatformMove violation.",
+        "evidence_transcript_quote": "அந்த இடுப்ப மட்டும் காட்ட முடியுமா கேட்டேன்.",
+        "evidence_timestamp": "03:17",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:01+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking to continue the conversation for a while."
     },
     {
       "category": "PlatformMove",
@@ -236,7 +437,25 @@
       "model_violation": "no",
       "p_violation_yes": 5.144221091925853e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'full pin portettrukke' as PlatformMove. This is a Tamil phrase meaning 'I have put everything on pin/locked', which is not a PlatformMove.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The phrase does not constitute a request to move to an external platform.",
+        "evidence_transcript_quote": "எல்லாம் பின் போட்டு வச்சிருக்கேன்.",
+        "evidence_timestamp": "02:46",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:01+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is stating something about 'full pin portettrukke'."
     },
     {
       "category": "PlatformMove",
@@ -252,7 +471,25 @@
       "model_violation": "no",
       "p_violation_yes": 2.1815938727736594e-08,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as PlatformMove, but it is a repetition of the waist request. It is not a PlatformMove.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a request for body exposure, not a platform move.",
+        "evidence_transcript_quote": "அந்த இடுப்ப மட்டும் காட்ட முடியுமா?",
+        "evidence_timestamp": "02:53",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:01+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking a question about something related to the call or service."
     },
     {
       "category": "PlatformMove",
@@ -268,7 +505,25 @@
       "model_violation": "no",
       "p_violation_yes": 6.681514592712769e-07,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as PlatformMove, but it is a continuation of the waist request. It is not a PlatformMove.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a request for body exposure, not a platform move.",
+        "evidence_transcript_quote": "இடுப்பு மட்டும் போதும்.",
+        "evidence_timestamp": "03:06",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:01+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is responding to the user's previous query."
     }
   ]
 }

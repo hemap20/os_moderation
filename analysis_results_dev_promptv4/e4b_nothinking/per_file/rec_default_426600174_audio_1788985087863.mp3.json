@@ -26,7 +26,22 @@
       "p_violation_yes": 0.0006263314491116805,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Are you earning?' as SuspiciousActivity. This is general money talk and does not involve sexual services or transactional behavior related to the platform's policy.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "General money talk is not a violation.",
+        "evidence_transcript_quote": "എന്താ വർക്ക്",
+        "evidence_timestamp": "02:13",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:27+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

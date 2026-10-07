@@ -106,7 +106,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as SuspiciousActivity. The speaker is asking for a rate. However, this is part of a conversation where the other party has already offered sexual services (GT[1]). This is a direct inquiry about the rate for those services.",
+        "fp_type": "MATCHER_MISS",
+        "fp_reason": "The quote is a direct inquiry about the rate for the sexual services already offered in the conversation, which is covered by the ground truth flag at 00:57.",
+        "evidence_transcript_quote": "எவ்ளோ தருவீங்க?",
+        "evidence_timestamp": "00:41",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:34+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -123,7 +138,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as SuspiciousActivity. This is a repetition of the rate inquiry already covered by the ground truth flag at 00:57.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of the rate inquiry already covered by the ground truth flag at 00:57.",
+        "evidence_transcript_quote": "எனக்கு வேணும், நீங்க எவ்ளோ தருவீங்க?",
+        "evidence_timestamp": "00:46",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:34+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -140,7 +170,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as SuspiciousActivity. This is another repetition of the rate inquiry already covered by the ground truth flag at 00:57.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of the rate inquiry already covered by the ground truth flag at 00:57.",
+        "evidence_transcript_quote": "நீங்க இதுவரைக்கும் எவ்ளோ தந்து போயிருக்கீங்கன்னு சொல்லுங்க, நான் ஓகேனா சொல்றேன்",
+        "evidence_timestamp": "00:51",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:34+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -174,7 +219,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Poora 30 minutes ka' as SuspiciousActivity. The ground truth already has a flag at 00:57 for 'நான் 300 கேப்பேன்' (I will ask for 300) which is matched=True. The model's flag is a separate instance of discussing the duration/rate of the service. Since the GT flag at 00:57 is matched=True, this is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a violation already covered by a matched ground-truth flag.",
+        "evidence_transcript_quote": "30 மினிட்ஸ்",
+        "evidence_timestamp": "01:02",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:36+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",

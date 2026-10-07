@@ -54,7 +54,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged a phrase as SuspiciousActivity. The transcript shows the user is just asking about the purpose of the call. There is no mention of transactional behavior.",
+        "fp_type": "FABRICATION",
+        "fp_reason": "The quoted content does not appear in the transcript.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:36+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -71,7 +86,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'My date, sex.' as Explicit-Flirting. The transcript shows the user discussing a 'sex toy' (GT[0]). The model's quote is a misinterpretation of the conversation about the toy. It is not a direct violation, and the model is over-interpreting the context.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a misinterpretation of a conversation about a sex toy and does not reach the threshold for an explicit violation.",
+        "evidence_transcript_quote": "అదే టాయ్ సెక్స్ టాయ్",
+        "evidence_timestamp": "01:15",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:37+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -88,7 +118,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'You are doing it on me, video call in the bed.' as Explicit-Flirting. This quote does not appear in the transcript. The model is hallucinating a sexual request that is not present in the audio.",
+        "fp_type": "FABRICATION",
+        "fp_reason": "The quoted content does not exist in the transcript.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:37+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -105,7 +150,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'So, what should I pay?' as SuspiciousActivity. The transcript does not contain this quote. The model is hallucinating a payment request.",
+        "fp_type": "FABRICATION",
+        "fp_reason": "The quoted content does not exist in the transcript.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:37+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -122,7 +182,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Ask, if you want it, I will do it.' as SuspiciousActivity. This is a misinterpretation of the user saying they will do what the other person asks, which is not a payment request.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general offer to comply with requests and does not constitute a suspicious transactional request.",
+        "evidence_transcript_quote": "నువ్వు అడుగు ఎలా కావాలంటే అలా చేస్తా",
+        "evidence_timestamp": "02:35",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:37+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -139,7 +214,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'If you want it, I will do it, tell me how to do it.' as Explicit-Flirting. This is a general offer to comply with requests, not an explicit sexual request.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general offer to comply with requests and does not reach the threshold for an explicit sexual violation.",
+        "evidence_transcript_quote": "నీకు ఎలా కావాలంటే అలా చేస్తా చెప్పు ఇలా చేయాలి",
+        "evidence_timestamp": "02:38",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:37+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -156,7 +246,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged '95 15 16 16' as PlatformMove. This is a sequence of numbers that does not constitute a phone number or contact detail in this context.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The numbers do not constitute a phone number or actionable contact detail.",
+        "evidence_transcript_quote": "95 15 16 16",
+        "evidence_timestamp": "03:24",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:37+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",

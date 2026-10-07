@@ -72,7 +72,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a question about the rate. This is a direct inquiry about the cost of a service, which is already covered by the ground-truth flag at 00:57 (GT[2]). Since the ground-truth flag is matched=true, this is a duplicate instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of a violation already covered by a matched ground-truth flag.",
+        "evidence_transcript_quote": "எவ்ளோ தருவீங்க?",
+        "evidence_timestamp": "00:41",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:48+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -89,7 +104,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a question about the service. This is a general question and does not reach the threshold for a SuspiciousActivity violation. It is over-sensitive.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general question and does not reach the threshold for a SuspiciousActivity violation.",
+        "evidence_transcript_quote": "எவ்ளோ வேணும்?",
+        "evidence_timestamp": "00:44",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:48+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -106,7 +136,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a question about the service. This is a general question and does not reach the threshold for a SuspiciousActivity violation. It is over-sensitive.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general question and does not reach the threshold for a SuspiciousActivity violation.",
+        "evidence_transcript_quote": "நீங்க இதுவரைக்கும் எவ்ளோ தந்து போயிருக்கீங்கன்னு சொல்லுங்க",
+        "evidence_timestamp": "00:51",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:48+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -157,7 +202,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Explicit-Flirting. The transcript quote 'आर ए एम ओ य पोटिया मत कर तो बर बर मियां बोल उनसे सवा' is garbled and does not clearly contain explicit sexual content or flirting. It appears to be a transcription error or nonsensical speech. Since the content is unclear and does not meet the policy definition for Explicit-Flirting, it is an over-sensitive flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged content is garbled and does not reach the threshold for explicit flirting.",
+        "evidence_transcript_quote": "आर ए एम ओ य पोटिया मत कर तो बर बर मियां बोल उनसे सवा",
+        "evidence_timestamp": "01:24",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "suspect",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:49+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

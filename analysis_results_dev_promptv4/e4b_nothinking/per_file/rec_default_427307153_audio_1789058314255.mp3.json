@@ -26,7 +26,22 @@
       "p_violation_yes": 0.00048785348453128955,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'I know' as a PlatformMove. This is a general statement and does not contain any request to move to an external platform or share contact details. It is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general statement and does not meet the threshold for a PlatformMove violation.",
+        "evidence_transcript_quote": "తెలుసు",
+        "evidence_timestamp": "00:49",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:24+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -43,7 +58,22 @@
       "p_violation_yes": 2.7535661536881667e-05,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged the speaker saying they don't want to give their phone number. This is a refusal to share contact information, which is explicitly not a violation.",
+        "fp_type": "EXCEPTION_IGNORED",
+        "fp_reason": "The speaker is refusing to share their phone number, which is an explicit exception in the policy.",
+        "evidence_transcript_quote": "ఏమైనా ఉంటే యాప్ లోనే మాట్లాడుకోండి అంటున్నాను",
+        "evidence_timestamp": "01:02",
+        "fp_exception_matched": "Any statement where a user DENIES having or REFUSES to share contact information (e.g., 'I don't have a phone number,' 'I won't give you my Insta') is explicitly NOT a violation and MUST be ignored.",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:24+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -60,7 +90,22 @@
       "p_violation_yes": 2.7535687796947383e-05,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'I say I know' as a PlatformMove. This is a general statement and does not contain any request to move to an external platform or share contact details.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general statement and does not meet the threshold for a PlatformMove violation.",
+        "evidence_transcript_quote": "తెలుసు",
+        "evidence_timestamp": "01:07",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:24+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -77,7 +122,22 @@
       "p_violation_yes": 1.147876852587815e-05,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged the speaker advising not to share personal numbers. This is a safety warning, not a violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is advising against sharing personal information, which is a safety warning and not a violation.",
+        "evidence_transcript_quote": "పర్సనల్ నెంబర్స్ ఎవరికీ షేర్ చేయకండి అంటున్నాను",
+        "evidence_timestamp": "01:10",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:24+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -94,7 +154,22 @@
       "p_violation_yes": 1.147876852587815e-05,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FN"
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged the speaker warning against giving out phone numbers. This is a safety warning, not a violation.",
+        "fp_type": "CONTEXT_CONFUSION",
+        "fp_reason": "The speaker is warning against sharing phone numbers, which is a safety warning and not a violation.",
+        "evidence_transcript_quote": "మీ ఫోన్ నెంబర్స్ అవి ఇవ్వకండి",
+        "evidence_timestamp": "01:17",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:24+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

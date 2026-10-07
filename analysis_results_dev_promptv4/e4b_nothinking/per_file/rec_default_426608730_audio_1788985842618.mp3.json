@@ -26,7 +26,22 @@
       "p_violation_yes": 0.7772754274247408,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a request for a video call. The policy explicitly states: 'Do NOT trigger for... video call requests (in-platform feature)'.",
+        "fp_type": "EXCEPTION_IGNORED",
+        "fp_reason": "Video call requests are explicitly excluded from policy violations.",
+        "evidence_transcript_quote": "എനിക്ക് ഒരു വീഡിയോ കോൾസിന് താല്പര്യമുണ്ടോ",
+        "evidence_timestamp": "00:06",
+        "fp_exception_matched": "Do NOT trigger for: 'Can we move to video call?', 'Video call karein?', 'Can you accept video call?', 'Let's do video call' - These refer to the platform's built-in video call feature and are NOT violations.",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:27+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

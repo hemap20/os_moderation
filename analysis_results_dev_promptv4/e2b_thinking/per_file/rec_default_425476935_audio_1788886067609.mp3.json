@@ -54,7 +54,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag at 00:28 refers to the same utterance as GT[0] ('ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಅಮೌಂಟ್ ಹಾಕಿರ್ತಾರೆ ಅವರಿಗೆ ಶೋ ಮಾಡಬೇಕು'). GT[0] is categorized as PlatformMove, while the model flagged it as SuspiciousActivity. Since the content is a violation and is already covered by a ground-truth flag, this is a WRONG_CATEGORY error.",
+        "fp_type": "WRONG_CATEGORY",
+        "fp_reason": "The utterance is already flagged in ground truth as PlatformMove, which is a more accurate category for the mention of WhatsApp transactions.",
+        "evidence_transcript_quote": "ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಅಮೌಂಟ್ ಹಾಕಿರ್ತಾರೆ ಅವರಿಗೆ ಶೋ ಮಾಡಬೇಕು",
+        "evidence_timestamp": "00:28",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:56+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -88,7 +103,22 @@
       "p_violation_yes": null,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "TP"
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag at 00:34 refers to the utterance 'ಅಮೌಂಟ್ ಹಾಕಿರ್ತಾರೆ ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಶೋ ಮಾಡಬೇಕು ಲೇಟ್ ಮಾಡಬಾರದು'. This is essentially a repetition or continuation of the same topic covered by GT[0] at 00:28. Since GT[0] is already present in the file, this flag is a duplicate instance of the same violation.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This flag refers to the same violation instance already captured by the ground-truth flag at 00:28. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "ಅಮೌಂಟ್ ಹಾಕಿರ್ತಾರೆ ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಶೋ ಮಾಡಬೇಕು ಲೇಟ್ ಮಾಡಬಾರದು",
+        "evidence_timestamp": "00:33",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:40:56+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",

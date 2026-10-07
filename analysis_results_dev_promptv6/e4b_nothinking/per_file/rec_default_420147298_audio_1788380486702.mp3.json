@@ -35,7 +35,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.003172654363796871,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged a general comment about the app being boring as Explicit-Flirting. This is a general conversation and does not contain sexual undertones or suggestive content.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general comment about the app and does not reach the threshold for Explicit-Flirting.",
+        "evidence_transcript_quote": "और इस एप्स में क्या है देखो रात के टाइम में क्या है काम खत्म होने के बाद ना बहुत बोरिंग फील होता है तो इस एप्स में क्या है ना थोड़ा बात-बात करके अच्छा लगता है ऐसा",
+        "evidence_timestamp": "04:40",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:47:23+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "None. The user is initiating the conversation by expressing boredom and suggesting the app is good for talking."
     },
     {
       "category": "PlatformMove",
@@ -51,7 +69,10 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9990697224556403,
       "matched": true,
-      "matched_gt_category": "PlatformMove"
+      "matched_gt_category": "PlatformMove",
+      "dataset_origin_label": "FP",
+      "model_speaker": "user",
+      "model_context": "The user is asking the expert to provide their Instagram handle to continue the conversation outside the app."
     }
   ]
 }

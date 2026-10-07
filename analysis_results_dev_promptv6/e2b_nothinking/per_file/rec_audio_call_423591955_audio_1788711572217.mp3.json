@@ -25,7 +25,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.001169509749830765,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged a question about marriage as Explicit-Flirting. This is a general conversation about personal status, not a sexualized request.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Asking about marriage status is not a violation of the explicit flirting policy.",
+        "evidence_transcript_quote": "क्या दतिया में आपकी शादी हुई है कि कैसे क्या है?",
+        "evidence_timestamp": "01:00",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:26+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is initiating a conversation with a suggestive or inappropriate opening statement."
     },
     {
       "category": "PlatformMove",
@@ -41,7 +59,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.001169509749830765,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about family location as PlatformMove. Sharing personal details without contact info is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Sharing family location is not a violation of the platform move policy.",
+        "evidence_transcript_quote": "जी वही मेरा मायका है और वही ससुराल है",
+        "evidence_timestamp": "01:05",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:26+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is providing personal information about family members."
     },
     {
       "category": "Explicit-Flirting",
@@ -57,7 +93,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.0017007213651336682,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged a request for a relationship as Explicit-Flirting. While this is a romantic question, it is not a sexualized request or nudity request, and the policy allows mild romanticism.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Asking to be a girlfriend is not a violation of the explicit flirting policy.",
+        "evidence_transcript_quote": "सही है बाकी आप गर्लफ्रेंड बनना चाहेंगी मेरी?",
+        "evidence_timestamp": "01:12",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:26+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is directly asking the user to enter into a romantic relationship."
     },
     {
       "category": "Not Applicable",
@@ -73,7 +127,25 @@
       "model_violation": "no",
       "p_violation_yes": 9.669209717057444e-17,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged a question about a husband's job as Not Applicable. This is a standard conversational question.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Asking about a husband's job is not a violation.",
+        "evidence_transcript_quote": "और क्या पति क्या करते हैं आपके?",
+        "evidence_timestamp": "01:26",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:26+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking a general, non-violating question to the expert."
     },
     {
       "category": "Not Applicable",
@@ -89,7 +161,25 @@
       "model_violation": "no",
       "p_violation_yes": 3.068246448279046e-13,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged a general statement as Not Applicable. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "General conversation is not a violation.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:26+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is responding to the user's question."
     },
     {
       "category": "PlatformMove",
@@ -105,7 +195,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.060086648833494447,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'playgram तक क्या आपने' as a PlatformMove. Checking the transcript at 01:30, the user says 'वो इलेक्ट्रिशियन है' (He is an electrician). The phrase 'playgram' does not appear in the transcript at all. This is a hallucination.",
+        "fp_type": "FABRICATION",
+        "fp_reason": "The quoted content does not exist in the transcript.",
+        "evidence_transcript_quote": "",
+        "evidence_timestamp": "",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:29+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is asking about a specific platform."
     },
     {
       "category": "Not Applicable",
@@ -121,7 +229,25 @@
       "model_violation": "no",
       "p_violation_yes": 5.789356328730652e-12,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'मैंने एंटर की है' as 'Not Applicable'. Since the model itself categorized it as 'Not Applicable' (which is not a violation category), and the content is just a statement about education level ('I have completed intermediate'), this is an over-sensitive or irrelevant flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The statement is a benign answer about education and does not violate any policy.",
+        "evidence_transcript_quote": "मैंने इंटर की है",
+        "evidence_timestamp": "01:39",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:43:29+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is confirming an action on the platform."
     }
   ]
 }

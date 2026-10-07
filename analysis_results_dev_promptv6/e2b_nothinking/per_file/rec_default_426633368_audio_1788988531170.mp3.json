@@ -53,7 +53,25 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9953903051133886,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'um sexy a bhejo' as Explicit-Flirting. This is a request for sexualized content, which is a violation. Since it is not covered by any GT flag, it is a GT_MISS.",
+        "fp_type": "GT_MISS",
+        "fp_reason": "The model correctly identified a suggestive request for sexualized content that was missed by the ground truth.",
+        "evidence_transcript_quote": "நல்லா காமிங்க",
+        "evidence_timestamp": "01:00",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:01+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is responding to a previous statement, likely in response to the expert's initial greeting or setup."
     },
     {
       "category": "Explicit-Flirting",
@@ -69,7 +87,25 @@
       "model_violation": "no",
       "p_violation_yes": 0.0031726785693210607,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Explicit-Flirting, but the transcript does not support the translation 'are you coming to my place'. It is a misinterpretation of the conversation.",
+        "fp_type": "MISHEARING",
+        "fp_reason": "The model misheard the transcript and attributed a meaning that is not present.",
+        "evidence_transcript_quote": "ஆமா காமிங்க நல்லா உங்க முகத்தை",
+        "evidence_timestamp": "01:25",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:01+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "user",
+      "model_context": "The user is initiating a suggestive invitation."
     },
     {
       "category": "Explicit-Flirting",
@@ -85,7 +121,25 @@
       "model_violation": "no",
       "p_violation_yes": 3.763646388618279e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Explicit-Flirting, but it is a misinterpretation of the conversation.",
+        "fp_type": "MISHEARING",
+        "fp_reason": "The model misheard the transcript and attributed a meaning that is not present.",
+        "evidence_transcript_quote": "ஆமா காமிங்க நல்லா உங்க முகத்தை",
+        "evidence_timestamp": "01:25",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:45:01+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      },
+      "model_speaker": "expert",
+      "model_context": "The expert is accepting the invitation."
     },
     {
       "category": "Explicit-Flirting",
@@ -101,7 +155,10 @@
       "model_violation": "no",
       "p_violation_yes": 2.7264699038522107e-06,
       "matched": true,
-      "matched_gt_category": "Explicit-Flirting"
+      "matched_gt_category": "Explicit-Flirting",
+      "dataset_origin_label": "TP",
+      "model_speaker": "expert",
+      "model_context": "The expert is asking a question related to the invitation."
     }
   ]
 }

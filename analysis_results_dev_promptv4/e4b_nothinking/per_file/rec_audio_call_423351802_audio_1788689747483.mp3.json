@@ -26,7 +26,22 @@
       "p_violation_yes": 0.006692797010632608,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The phrase 'What are you doing?' is a standard conversational opener and does not reach the threshold for Explicit-Flirting. It is over-sensitive to flag this.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The phrase is a standard conversational question and does not constitute a policy violation.",
+        "evidence_transcript_quote": "क्या कर रही हो",
+        "evidence_timestamp": "00:25",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:08+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -43,7 +58,22 @@
       "p_violation_yes": 4.4508482557577276e-07,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The speaker is stating they cannot hear the other person, which is a technical issue and explicitly excluded from policy violations.",
+        "fp_type": "EXCEPTION_IGNORED",
+        "fp_reason": "The quote is a technical complaint about audio quality, which is explicitly excluded from policy violations.",
+        "evidence_transcript_quote": "हेलो आवाज नहीं आ रही क्या",
+        "evidence_timestamp": "00:42",
+        "fp_exception_matched": "I can't hear you",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:08+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -60,7 +90,22 @@
       "p_violation_yes": 0.004609506948296619,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The phrase 'What are you doing?' is a standard conversational opener and does not reach the threshold for Explicit-Flirting. It is over-sensitive to flag this.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The phrase is a standard conversational question and does not constitute a policy violation.",
+        "evidence_transcript_quote": "क्या कर रही हो",
+        "evidence_timestamp": "00:37",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:08+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -77,7 +122,22 @@
       "p_violation_yes": 0.004070083598142031,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The speaker is complimenting the other person's voice. While it uses the word 'sexy', the policy allows for mild romanticism and compliments, and this does not reach the threshold for a severe violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a compliment on the user's voice, which is allowed under the policy as mild romanticism.",
+        "evidence_transcript_quote": "आवाज तो बहुत सेक्सी है तुम्हारी",
+        "evidence_timestamp": "00:53",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:08+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -94,7 +154,22 @@
       "p_violation_yes": 0.9240377730821031,
       "matched": false,
       "matched_gt_category": null,
-      "dataset_origin_label": "FP"
+      "dataset_origin_label": "FP",
+      "fp_classification": {
+        "reasoning": "The transcript shows the speaker is repeating that they cannot hear the other person. The model misheard this as a suggestive phrase.",
+        "fp_type": "MISHEARING",
+        "fp_reason": "The model misheard a technical complaint about audio as a suggestive phrase.",
+        "evidence_transcript_quote": "आवाज नहीं आ रही",
+        "evidence_timestamp": "00:57",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "suspect",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:41:08+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }
