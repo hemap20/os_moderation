@@ -53,7 +53,23 @@
       "model_violation": "no",
       "p_violation_yes": 3.1391327920480296e-17,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a greeting as a violation. This is clearly not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged quote is a standard greeting and does not violate any policy.",
+        "evidence_transcript_quote": "ഹലോ",
+        "evidence_timestamp": "00:00",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -69,7 +85,23 @@
       "model_violation": "no",
       "p_violation_yes": 1.748234128271057e-13,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about work and location as a violation. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged quote is a neutral statement about the speaker's work and location.",
+        "evidence_transcript_quote": "സ്ഥലം താല്ക്കട്ട",
+        "evidence_timestamp": "00:04",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -85,7 +117,23 @@
       "model_violation": "no",
       "p_violation_yes": 2.413362771833214e-12,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about working as a violation. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged quote is a neutral statement about the speaker's work status.",
+        "evidence_transcript_quote": "ഞാൻ വർക്ക് ചെയ്യുക",
+        "evidence_timestamp": "00:07",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -101,7 +149,23 @@
       "model_violation": "no",
       "p_violation_yes": 2.5946094982764667e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about account work as a violation. This is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged quote is a neutral statement about the speaker's profession.",
+        "evidence_transcript_quote": "ഞാൻ അക്കൗണ്ട്സ് കാര്യങ്ങൾ",
+        "evidence_timestamp": "00:14",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -117,7 +181,23 @@
       "model_violation": "no",
       "p_violation_yes": 0.07585166080682706,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged an inquiry about a service as a violation. This is a duplicate of the concept covered by GT[0] (Open talk service). Since GT[0] is in the file, this is an extra instance.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of the 'open talk' service inquiry already covered by a ground-truth flag. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "ഓപ്പൺ ടോക്ക് സർവീസ് എടുക്കാൻ താല്പര്യമുണ്ടോ?",
+        "evidence_timestamp": "00:17",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -133,7 +213,8 @@
       "model_violation": "no",
       "p_violation_yes": 0.0021827107117081807,
       "matched": true,
-      "matched_gt_category": "Explicit-Flirting"
+      "matched_gt_category": "Explicit-Flirting",
+      "dataset_origin_label": "TP"
     },
     {
       "category": "SuspiciousActivity",
@@ -149,7 +230,23 @@
       "model_violation": "no",
       "p_violation_yes": 0.0002611900485022231,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged a confirmation of the service as a violation. This is a duplicate of the concept covered by GT[0].",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of the 'open talk' service inquiry already covered by a ground-truth flag. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "സർവീസ് താല്പര്യമുണ്ടോ എന്നോ?",
+        "evidence_timestamp": "00:24",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 0,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -165,7 +262,8 @@
       "model_violation": "no",
       "p_violation_yes": 0.004070137939983506,
       "matched": true,
-      "matched_gt_category": "PlatformMove"
+      "matched_gt_category": "PlatformMove",
+      "dataset_origin_label": "TP"
     },
     {
       "category": "SuspiciousActivity",
@@ -181,7 +279,23 @@
       "model_violation": "yes",
       "p_violation_yes": 0.8670124402838982,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged an inquiry about the rate as a violation. This is a duplicate of the concept covered by GT[2] (40 minutes for 250).",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This is a duplicate instance of the rate inquiry already covered by a ground-truth flag. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "അതിന്റെ റേറ്റ്?",
+        "evidence_timestamp": "00:33",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -197,7 +311,8 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9999705561718785,
       "matched": true,
-      "matched_gt_category": "SuspiciousActivity"
+      "matched_gt_category": "SuspiciousActivity",
+      "dataset_origin_label": "TP"
     },
     {
       "category": "PlatformMove",
@@ -213,7 +328,23 @@
       "model_violation": "no",
       "p_violation_yes": 5.42221734436887e-06,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Video call? Video call.' as a PlatformMove. However, the policy explicitly states that video call requests (in-platform feature) are NOT violations. This is an in-platform feature request, so it should not be flagged.",
+        "fp_type": "EXCEPTION_IGNORED",
+        "fp_reason": "The user is requesting a video call, which is an in-platform feature and explicitly excluded from the PlatformMove policy.",
+        "evidence_transcript_quote": "വീഡിയോ കോൾ ആണോ?",
+        "evidence_timestamp": "00:44",
+        "fp_exception_matched": "NEVER FLAG - Video call requests",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:18+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -229,7 +360,23 @@
       "model_violation": "no",
       "p_violation_yes": 4.3204126993085624e-10,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Super. You are very good.' as Explicit-Flirting. This is a simple compliment and does not meet the threshold for sexual undertones or suggestive content defined in the policy.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general compliment and does not reach the threshold for Explicit-Flirting.",
+        "evidence_transcript_quote": "സൂപ്പർ",
+        "evidence_timestamp": "00:47",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:18+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }

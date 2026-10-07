@@ -71,7 +71,23 @@
       "model_violation": "no",
       "p_violation_yes": 3.5571034672805724e-17,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Hello' as Not a violation. This is a standard greeting and not a policy violation. Since it is not a violation, it should not have been flagged as a model flag in the first place, but as it is a false positive, it is classified as over-sensitivity to neutral content.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a neutral greeting and does not constitute a policy violation.",
+        "evidence_transcript_quote": "ஹலோ",
+        "evidence_timestamp": "00:00",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:18+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -87,7 +103,23 @@
       "model_violation": "no",
       "p_violation_yes": 6.560200168153779e-12,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Hello' as Not a violation. This is a standard greeting and not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a neutral greeting and does not constitute a policy violation.",
+        "evidence_transcript_quote": "ஹலோ",
+        "evidence_timestamp": "00:05",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:18+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -103,7 +135,23 @@
       "model_violation": "no",
       "p_violation_yes": 6.560200168153779e-12,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Hi my mother' as Not a violation. This is a casual greeting and not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a neutral greeting and does not constitute a policy violation.",
+        "evidence_transcript_quote": "ஹாய் என் பேரு என்ன?",
+        "evidence_timestamp": "00:07",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:18+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -119,7 +167,23 @@
       "model_violation": "no",
       "p_violation_yes": 3.437299118169812e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'What are you doing' as Not a violation. This is a general conversational question and not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a neutral conversational question and does not constitute a policy violation.",
+        "evidence_transcript_quote": "ஹலோ",
+        "evidence_timestamp": "00:05",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:18+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -135,7 +199,8 @@
       "model_violation": "no",
       "p_violation_yes": 1.670143001672819e-05,
       "matched": true,
-      "matched_gt_category": "PlatformMove"
+      "matched_gt_category": "PlatformMove",
+      "dataset_origin_label": "TP"
     },
     {
       "category": "Explicit-Flirting",
@@ -151,7 +216,23 @@
       "model_violation": "no",
       "p_violation_yes": 0.02931170170915023,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Will you cut the cream?' as Explicit-Flirting. This quote is a mishearing of the Tamil transcript. The actual transcript contains 'முலை புண்டையெல்லாம் காட்டுவேன்' (I will show my breasts and pussy) which is already covered by GT[1].",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "The quote is a misheard version of a violation already captured by a ground-truth flag. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "முலை புண்டையெல்லாம் காட்டுவேன்",
+        "evidence_timestamp": "00:30",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 1,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:18+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -167,7 +248,8 @@
       "model_violation": "no",
       "p_violation_yes": 1.1253517471925912e-07,
       "matched": true,
-      "matched_gt_category": "Explicit-Flirting"
+      "matched_gt_category": "Explicit-Flirting",
+      "dataset_origin_label": "TP"
     },
     {
       "category": "SuspiciousActivity",
@@ -183,7 +265,23 @@
       "model_violation": "no",
       "p_violation_yes": 0.16451448772339144,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'How much are you charging?' as SuspiciousActivity. This is a direct inquiry about rates for services, which is already covered by GT[2].",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "The quote is a direct inquiry about rates already captured by a ground-truth flag. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "நான் 300 கேப்பேன்",
+        "evidence_timestamp": "00:57",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:18+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -199,7 +297,23 @@
       "model_violation": "no",
       "p_violation_yes": 4.495180350520601e-06,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Why aren't you doing this?' as PlatformMove. This is a vague conversational filler and does not meet the criteria for a PlatformMove violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a vague conversational filler and does not constitute a policy violation.",
+        "evidence_transcript_quote": "எவ்ளோ வேணும்?",
+        "evidence_timestamp": "00:44",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:18+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -215,7 +329,23 @@
       "model_violation": "no",
       "p_violation_yes": 2.5867434148174095e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flagged 'If you stop here, say okay or no, we will proceed.' as PlatformMove. This is a vague conversational filler and does not meet the criteria for a PlatformMove violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a vague conversational filler and does not constitute a policy violation.",
+        "evidence_transcript_quote": "நான் ஓகேனா சொல்றேன்",
+        "evidence_timestamp": "00:51",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:18+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -231,7 +361,8 @@
       "model_violation": "yes",
       "p_violation_yes": 0.5069066279078456,
       "matched": true,
-      "matched_gt_category": "SuspiciousActivity"
+      "matched_gt_category": "SuspiciousActivity",
+      "dataset_origin_label": "TP"
     },
     {
       "category": "SuspiciousActivity",
@@ -247,7 +378,23 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9856798892799814,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "TP",
+      "fp_classification": {
+        "reasoning": "The model flag 'phod 30 minutes pe' (for 30 minutes) is a continuation of the conversation regarding the rate of 300 mentioned in GT[2]. Since GT[2] ('நான் 300 கேப்பேன்' - 'I will ask for 300') is already flagged as a SuspiciousActivity violation, this additional flag is a duplicate instance of the same transactional discussion. Therefore, it is a DUPLICATE_OR_EXTRA_INSTANCE.",
+        "fp_type": "DUPLICATE_OR_EXTRA_INSTANCE",
+        "fp_reason": "This flag is a duplicate instance of the transactional discussion already covered by the ground-truth flag at 00:57. [unverified: matched-GT recompute for this file disagreed with the cached scorer output and could not be resolved — this DUPLICATE_OR_EXTRA_INSTANCE call is unconfirmed, needs human review]",
+        "evidence_transcript_quote": "போதும் 30 மினிட்ஸ்",
+        "evidence_timestamp": "01:02",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": 2,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "low",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:23+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -263,7 +410,8 @@
       "model_violation": "no",
       "p_violation_yes": 0.005554924698088134,
       "matched": true,
-      "matched_gt_category": "PlatformMove"
+      "matched_gt_category": "PlatformMove",
+      "dataset_origin_label": "TP"
     }
   ]
 }

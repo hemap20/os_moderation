@@ -44,7 +44,23 @@
       "model_violation": "no",
       "p_violation_yes": 4.0307262913476244e-17,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a neutral statement where the speaker expresses surprise at hearing a term for the first time. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a neutral expression of surprise and does not violate any policy.",
+        "evidence_transcript_quote": "सॉरी वो कैसे बनता है मैं पहली बार सुन रही हूं",
+        "evidence_timestamp": "00:28",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -60,7 +76,23 @@
       "model_violation": "no",
       "p_violation_yes": 0.34764174130472225,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a general offer of help as Explicit-Flirting. This is a vague offer of assistance and does not contain sexual undertones or suggestive content.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general offer of help and does not contain any sexual or suggestive content.",
+        "evidence_transcript_quote": "ऐसा हम मिस आपके हम हमेशा आपको जब भी कुछ भी चीज लगे कुछ भी शॉपिंग करनी रहेगी हम किया करेंगे",
+        "evidence_timestamp": "00:33",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -76,7 +108,23 @@
       "model_violation": "no",
       "p_violation_yes": 0.005908820571084515,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a general offer of help as SuspiciousActivity. This is not a transactional request for sexual services or suspicious behavior.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general offer of help and does not constitute suspicious transactional behavior.",
+        "evidence_transcript_quote": "जब भी आपको कुछ भी शॉपिंग करनी होगी हम आपके लिए शॉपिंग करके देंगे",
+        "evidence_timestamp": "00:40",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -92,7 +140,23 @@
       "model_violation": "no",
       "p_violation_yes": 0.20029475328404717,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a neutral question about benefits as SuspiciousActivity. This is a general inquiry and not a request for payment for sexual services.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general inquiry and does not constitute suspicious transactional behavior.",
+        "evidence_transcript_quote": "क्या बदले में आपको क्या बेनिफिट है",
+        "evidence_timestamp": "00:56",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -108,7 +172,8 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9995690058329068,
       "matched": true,
-      "matched_gt_category": "PlatformMove"
+      "matched_gt_category": "PlatformMove",
+      "dataset_origin_label": "FN"
     },
     {
       "category": "Explicit-Flirting",
@@ -124,7 +189,23 @@
       "model_violation": "no",
       "p_violation_yes": 3.035217697573458e-07,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a neutral statement where the speaker declines an offer. This is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a neutral statement declining an offer and does not violate any policy.",
+        "evidence_transcript_quote": "थैंक यू सो मच बट आई एम सॉरी आई कांट एक्सेप्ट इट बिकॉज़ आई एम अ वन साइड जो एंड आई एम इन द मेडिकल फील्ड",
+        "evidence_timestamp": "01:03",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -140,7 +221,23 @@
       "model_violation": "no",
       "p_violation_yes": 2.7535661536881667e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about income as SuspiciousActivity. This is a personal statement and not a request for sexual services.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal statement about income and does not constitute suspicious transactional behavior.",
+        "evidence_transcript_quote": "ओके बाय द वे सो नो थैंक यू सो मच फॉर योर अपॉर्चुनिटी बट आई एम सॉरी मैं खुद दो लाख कमाती हूं तो मुझे मेरा शॉपिंग करना आता है",
+        "evidence_timestamp": "01:24",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Low confidence",
@@ -156,7 +253,23 @@
       "model_violation": "no",
       "p_violation_yes": 3.068246448279046e-13,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a statement about income as a violation. This is a personal statement and not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal statement about income and does not violate any policy.",
+        "evidence_transcript_quote": "मैं खुद दो लाख कमाती हूं तो मुझे मेरा शॉपिंग करना आता है",
+        "evidence_timestamp": "01:29",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -172,7 +285,23 @@
       "model_violation": "no",
       "p_violation_yes": 2.4374100555808313e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a neutral conversation about marriage pressure as Explicit-Flirting. This is a personal discussion and does not contain sexual undertones.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal discussion about marriage pressure and does not contain any sexual or suggestive content.",
+        "evidence_transcript_quote": "मैं इसमें एक्चुअली आई एम अ कन्फ्यूज्ड शादी करना चाहिए कि नहीं करना चाहिए और मेरे मम्मी पापा मुझे शादी के लिए फोर्स कर रहे हैं और मुझे शादी में इंटरेस्ट नहीं है तो फिर मैं ये जानना चाहती हूं",
+        "evidence_timestamp": "01:32",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -188,7 +317,23 @@
       "model_violation": "no",
       "p_violation_yes": 8.966730491527304e-12,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The speaker is expressing a desire for friendship, which is a social request and does not violate any policy. It is not a platform move, explicit flirting, or suspicious activity.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The statement is a benign social request for friendship and does not reach the threshold for any policy violation.",
+        "evidence_transcript_quote": "मुझे सिर्फ मुझे सिर्फ एक दोस्त चाहिए बस",
+        "evidence_timestamp": "01:48",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -204,7 +349,23 @@
       "model_violation": "no",
       "p_violation_yes": 0.0004878520887732711,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The speaker is offering to be a friend and asking for advice. This is mild social interaction and does not constitute explicit flirting or a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a benign social interaction and does not meet the criteria for Explicit-Flirting.",
+        "evidence_transcript_quote": "हां दोस्त है तो मैं आपकी बन सकती हूं नो डाउट अच्छा तो हम हम आपके लिए सिर्फ सब कुछ करेंगे बस आप कुछ मत कीजिए मुझसे बातें कीजिए मुझे सलाह दीजिए बस",
+        "evidence_timestamp": "01:52",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -220,7 +381,8 @@
       "model_violation": "yes",
       "p_violation_yes": 0.9149003686721539,
       "matched": true,
-      "matched_gt_category": "PlatformMove"
+      "matched_gt_category": "PlatformMove",
+      "dataset_origin_label": "FN"
     },
     {
       "category": "PlatformMove",
@@ -236,7 +398,23 @@
       "model_violation": "no",
       "p_violation_yes": 3.7636427993270934e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The speaker is explicitly refusing to call the other person, which is a denial of a potential platform move request. This is explicitly protected by the policy.",
+        "fp_type": "EXCEPTION_IGNORED",
+        "fp_reason": "The user is explicitly refusing to share contact information or initiate a call, which is a protected denial under the policy.",
+        "evidence_transcript_quote": "नो थैंक्स मैं आपको कॉल नहीं करूंगी",
+        "evidence_timestamp": "02:14",
+        "fp_exception_matched": "Any statement where a user DENIES having or REFUSES to share contact information is explicitly NOT a violation and MUST be ignored.",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -252,7 +430,23 @@
       "model_violation": "no",
       "p_violation_yes": 4.464272240178801e-13,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The conversation is about marital status, which is a general social topic and not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "Discussing marital status is a general social conversation and does not violate any policy.",
+        "evidence_transcript_quote": "आप मैरिड हो अनमैरिड हो? हां अनमैरिड हूं",
+        "evidence_timestamp": "02:22",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -268,7 +462,23 @@
       "model_violation": "no",
       "p_violation_yes": 9.610230327626659e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The speaker is giving advice about not being used for money, which is a general social warning and not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general social warning and does not constitute a policy violation.",
+        "evidence_transcript_quote": "ओके किसी को वैसा मत बोलो नहीं तो कोई भी आपको एटीएम समझ के लेके चले जाएंगे शॉपिंग करने के लिए",
+        "evidence_timestamp": "02:35",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -284,7 +494,23 @@
       "model_violation": "no",
       "p_violation_yes": 4.1937956583795446e-13,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The speaker is advising the other person to stay as a friend and not be used for money. This is a social warning, not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general social warning and does not constitute a policy violation.",
+        "evidence_transcript_quote": "गलत बात फ्रेंड है तो फ्रेंड बन के रहो बट किसी का एटीएम पेटीएम मत बनो",
+        "evidence_timestamp": "02:47",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -300,7 +526,23 @@
       "model_violation": "no",
       "p_violation_yes": 5.2744174853792033e-08,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The speaker is expressing personal feelings about a relationship, which is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal expression and does not constitute a policy violation.",
+        "evidence_transcript_quote": "मुझे बनना है मुझे मुझे उसमें मुझे खुशी मिलती है ना और क्या",
+        "evidence_timestamp": "02:53",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -316,7 +558,23 @@
       "model_violation": "no",
       "p_violation_yes": 4.099093439508832e-09,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The speaker is warning about the consequences of a relationship, which is a general social observation and not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general social observation and does not constitute a policy violation.",
+        "evidence_transcript_quote": "खुशी मिलती है पर आपको वो बर्बाद करके छोड़ेगी वो देखो आजकल का जमाना वैसा है भाई",
+        "evidence_timestamp": "02:57",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -332,7 +590,23 @@
       "model_violation": "no",
       "p_violation_yes": 1.522997974471263e-08,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The speaker is expressing a desire to avoid certain behaviors, which is not a policy violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal expression and does not constitute a policy violation.",
+        "evidence_transcript_quote": "मुझे वो सब उसके नहीं पड़ रहा",
+        "evidence_timestamp": "03:03",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -348,7 +622,23 @@
       "model_violation": "no",
       "p_violation_yes": 8.481087466936619e-05,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The speaker is making a general observation about transactional behavior in relationships, which is not a direct offer or request for sexual services.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general social observation and does not constitute a policy violation.",
+        "evidence_transcript_quote": "हां पता चला आपके आपके साथ भी घूमी पैसे के लिए किसी और के साथ भी घूमी तो फायदा क्या है वो",
+        "evidence_timestamp": "03:06",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -364,7 +654,23 @@
       "model_violation": "no",
       "p_violation_yes": 5.1014042090808254e-09,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Explicit-Flirting. The quote is a denial of a relationship claim. It does not meet the policy definition for Explicit-Flirting (suggestive comments, sexual remarks, etc.). It is a general conversation about relationship status. Therefore, it is over-sensitive.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general statement about relationship status and does not contain any sexual or suggestive content.",
+        "evidence_transcript_quote": "उससे मुझे नहीं उससे मुझे नहीं है ना मुझे सिर्फ",
+        "evidence_timestamp": "03:12",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -380,7 +686,23 @@
       "model_violation": "no",
       "p_violation_yes": 1.0603575991523846e-13,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Explicit-Flirting. The quote is a personal preference statement about wanting a partner or friend. This is general relationship talk and does not meet the threshold for a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal preference statement and does not contain any sexual or suggestive content.",
+        "evidence_transcript_quote": "मुझे सिर्फ एक पार्टनर चाहिए बस वो कैसे भी कुछ भी होने दे मुझे क्या",
+        "evidence_timestamp": "03:16",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -396,7 +718,23 @@
       "model_violation": "no",
       "p_violation_yes": 5.847042763599827e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as PlatformMove. The quote is a discussion about the difference between a friend and a partner. It does not suggest moving to an external platform or sharing contact details.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a discussion about relationship definitions and does not involve a platform move.",
+        "evidence_transcript_quote": "वही दोस्त पार्टनर एक ही हुआ यार",
+        "evidence_timestamp": "03:23",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -412,7 +750,23 @@
       "model_violation": "no",
       "p_violation_yes": 2.2671445131678592e-12,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Not a violation, but it was counted as a false positive in the evaluation. The quote is a clarification of relationship types, which is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a clarification of relationship types and does not violate any policy.",
+        "evidence_transcript_quote": "नो नो नो नो नो बोथ आर डिफरेंट",
+        "evidence_timestamp": "03:25",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -428,7 +782,23 @@
       "model_violation": "no",
       "p_violation_yes": 1.3176514270095466e-10,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Not a violation, but it was counted as a false positive. The quote is a definition of a partner vs a friend, which is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a definition of relationship types and does not violate any policy.",
+        "evidence_transcript_quote": "नहीं नो पार्टनर जो है नो डिफरेंट",
+        "evidence_timestamp": "03:29",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -444,7 +814,23 @@
       "model_violation": "no",
       "p_violation_yes": 1.2378189627675852e-10,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Not a violation, but it was counted as a false positive. The quote is a definition of a life partner, which is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a definition of relationship types and does not violate any policy.",
+        "evidence_transcript_quote": "वो लाइफ लॉन्ग होता है फ्रेंड होता है वो फ्रेंड तक की सीमित होता है पार्टनर होता है वो लाइफ लॉन्ग चलता है हमारे साथ दैट इज अ पार्टनर लाइफ पार्टनर",
+        "evidence_timestamp": "03:31",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -460,7 +846,23 @@
       "model_violation": "no",
       "p_violation_yes": 5.4927883509546835e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Not a violation, but it was counted as a false positive. The quote is a personal preference statement, which is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a personal preference statement and does not violate any policy.",
+        "evidence_transcript_quote": "हां तो हां तो बस मुझे वही चाहिए और कुछ नहीं चाहिए",
+        "evidence_timestamp": "03:39",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "Not a violation",
@@ -476,7 +878,23 @@
       "model_violation": "no",
       "p_violation_yes": 2.1940866100643185e-09,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as Not a violation, but it was counted as a false positive. The quote is a hypothetical question about the platform, which is not a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a hypothetical question about the platform and does not violate any policy.",
+        "evidence_transcript_quote": "आपको लाइफ पार्टनर चाहिए तो इसमें मत ही ढूंढो आप मैं तो क्लियरली बता सकती हूं",
+        "evidence_timestamp": "03:42",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -492,7 +910,23 @@
       "model_violation": "no",
       "p_violation_yes": 8.618072811299709e-16,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as PlatformMove. The quote is a statement about the platform's function, not a request to move off-platform.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a statement about the platform's function and does not involve a platform move.",
+        "evidence_transcript_quote": "आपको लाइफ पार्टनर चाहिए तो इसमें मत ही ढूंढो आप मैं तो क्लियरली बता सकती हूं",
+        "evidence_timestamp": "03:42",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -508,7 +942,23 @@
       "model_violation": "no",
       "p_violation_yes": 6.1627377326348205e-12,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged this as PlatformMove. The quote is a simple acknowledgment, not a request to move off-platform.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a simple acknowledgment and does not involve a platform move.",
+        "evidence_transcript_quote": "ओके ठीक है",
+        "evidence_timestamp": "03:46",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:15+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -524,7 +974,23 @@
       "model_violation": "no",
       "p_violation_yes": 4.235583571640497e-12,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'Okay' as a PlatformMove. This is a conversational filler/acknowledgment and does not meet the policy definition for a platform move. It is an over-sensitive flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged quote is a neutral acknowledgment and does not constitute a platform move request.",
+        "evidence_transcript_quote": "ओके",
+        "evidence_timestamp": "03:49",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "PlatformMove",
@@ -540,7 +1006,23 @@
       "model_violation": "no",
       "p_violation_yes": 1.675205799218013e-11,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged 'No problem' as a PlatformMove. This is a standard polite response and does not meet the policy definition for a platform move. It is an over-sensitive flag.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The flagged quote is a polite conversational response and does not constitute a platform move request.",
+        "evidence_transcript_quote": "कोई बात नहीं",
+        "evidence_timestamp": "03:51",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -556,7 +1038,23 @@
       "model_violation": "no",
       "p_violation_yes": 0.00013982175886379007,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "dataset_origin_label": "FN",
+      "fp_classification": {
+        "reasoning": "The model flagged a general statement about money as SuspiciousActivity. The policy states not to flag general money talk or ambiguous statements. This does not reach the threshold for a violation.",
+        "fp_type": "OVER_SENSITIVITY",
+        "fp_reason": "The quote is a general statement about money and does not involve a specific request for sexual services or transactional behavior.",
+        "evidence_transcript_quote": "हां तो और पैसे का ये मत कीजिए",
+        "evidence_timestamp": "03:53",
+        "fp_exception_matched": "",
+        "related_gt_flag_index": null,
+        "transcript_reliability": "ok",
+        "classifier_confidence": "high",
+        "classifier_model": "gemini-3.1-flash-lite",
+        "taxonomy_version": "fp_v1",
+        "classified_at": "2026-10-07T07:38:17+00:00",
+        "prompt_hash": "b6d4ec9fe158ef34"
+      }
     }
   ]
 }
