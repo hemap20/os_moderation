@@ -55,7 +55,18 @@
       "model_speaker": null,
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 1.0,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 1.0,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -73,7 +84,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking about their interest in sex. The expert responds by mentioning payment.",
       "matched": true,
-      "matched_gt_category": "Explicit-Flirting"
+      "matched_gt_category": "Explicit-Flirting",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -91,7 +111,16 @@
       "model_speaker": "user",
       "model_context": "The user is discussing payment in relation to the sexual interest mentioned earlier. The expert confirms this arrangement.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -109,7 +138,16 @@
       "model_speaker": "user",
       "model_context": "The user is confirming the payment arrangement with the expert.",
       "matched": true,
-      "matched_gt_category": "SuspiciousActivity"
+      "matched_gt_category": "SuspiciousActivity",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -127,7 +165,17 @@
       "model_speaker": "unclear",
       "model_context": "The user mentions a specific amount, likely related to the payment discussed previously.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }

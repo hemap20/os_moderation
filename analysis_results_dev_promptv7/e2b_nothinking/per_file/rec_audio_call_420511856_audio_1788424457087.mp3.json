@@ -27,7 +27,16 @@
       "model_speaker": "user",
       "model_context": "The user is initiating a conversation by suggesting making a plan. The expert responds by asking about lunch.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -45,7 +54,18 @@
       "model_speaker": "user",
       "model_context": "The user denies having a plan and states they are not leaving. The expert then asks about lunch.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "speech_act_cap"
+      ],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Never a violation",
@@ -63,7 +83,18 @@
       "model_speaker": "expert",
       "model_context": "The expert is responding to the user's statement about the plan by asking if lunch has been prepared.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -81,7 +112,18 @@
       "model_speaker": "expert",
       "model_context": "The expert is stating the price of the lunch. The user acknowledges this.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -99,7 +141,18 @@
       "model_speaker": "expert",
       "model_context": "The expert confirms that the food is ready. The user responds with an acknowledgment.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -117,7 +170,18 @@
       "model_speaker": "expert",
       "model_context": "The expert confirms the readiness of the food. The user then asks for advice.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -135,7 +199,18 @@
       "model_speaker": "expert",
       "model_context": "The expert begins to offer advice to the user. The user responds with an acknowledgment.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -153,7 +228,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking about the payment process after mentioning that they pay every time. The expert seems to be responding to this query.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -171,7 +255,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking the expert if the topic being discussed is about foreign things or sexual things. The expert responds by clarifying the nature of the discussion.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -189,7 +282,16 @@
       "model_speaker": "user",
       "model_context": "The user is continuing the conversation, seemingly discussing the nature of the interaction or service being offered, using suggestive language.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.6
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -207,7 +309,16 @@
       "model_speaker": "user",
       "model_context": "The user explicitly brings up the topic of sex again, emphasizing the sexual nature of the interaction.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "Never a violation",
@@ -225,7 +336,18 @@
       "model_speaker": "user",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -243,7 +365,18 @@
       "model_speaker": "user",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -261,7 +394,18 @@
       "model_speaker": "user",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -279,7 +423,18 @@
       "model_speaker": "user",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -297,7 +452,18 @@
       "model_speaker": "user",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -315,7 +481,18 @@
       "model_speaker": "user",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -333,7 +510,18 @@
       "model_speaker": "expert",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -351,7 +539,18 @@
       "model_speaker": "expert",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -369,7 +568,18 @@
       "model_speaker": "user",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -387,7 +597,19 @@
       "model_speaker": "expert",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }

@@ -1,0 +1,5 @@
+model,prompt_version,scoring_mode,n_flags_total,n_dropped,n_dropped_tp,n_capped,n_capped_tp,n_tp_pushed_below_0.6,n_tp_pushed_below_0.8,auroc_confidence,auroc_with_dropped_as_lowest,tp_rate_by_speech_act,tp_rate_by_speaker
+e2b_nothinking,v7,raw,1279,0,0,0,0,0,0,0.88,0.88,,
+e2b_nothinking,v7,sa,1279,0,0,19,0,0,0,0.88,0.88,"{""direct"": 0.08, ""denial"": 0.03, ""(missing)"": 0.0, ""reported"": 0.0, ""hypothetical"": 0.12}","{""user"": 0.05, ""expert"": 0.04, ""unclear"": 0.0, ""(missing)"": 0.0}"
+e2b_nothinking,v7,sa_drop_invalid,1279,889,3,19,0,0,0,0.75,0.9,,
+e2b_nothinking,v7,pp_full,1279,889,3,110,7,7,0,0.74,0.9,"{""direct"": 0.14, ""denial"": 0.05, ""reported"": 0.0, ""(missing)"": 0.0, ""hypothetical"": 0.2}","{""user"": 0.12, ""expert"": 0.14, ""unclear"": 0.0}"

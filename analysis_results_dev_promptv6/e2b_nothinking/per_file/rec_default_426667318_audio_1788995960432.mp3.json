@@ -80,7 +80,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is introducing themselves and stating their location."
+      "model_context": "The user is introducing themselves and stating their location.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -114,7 +123,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is clarifying their work location."
+      "model_context": "The user is clarifying their work location.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Not Applicable",
@@ -148,7 +166,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": null
+      "model_context": null,
+      "pp_confidence": 0.1,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not Applicable",
@@ -182,7 +211,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": null
+      "model_context": null,
+      "pp_confidence": 0.1,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not Applicable",
@@ -216,7 +256,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": null
+      "model_context": null,
+      "pp_confidence": 0.1,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not Applicable",
@@ -250,7 +301,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": null
+      "model_context": null,
+      "pp_confidence": 0.1,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "PlatformMove",
@@ -269,7 +331,18 @@
       "matched_gt_category": "Explicit-Flirting",
       "dataset_origin_label": "TP",
       "model_speaker": "user",
-      "model_context": "The user is asking for contact information after a brief exchange."
+      "model_context": "The user is asking for contact information after a brief exchange.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "violation_cap"
+      ],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -288,7 +361,16 @@
       "matched_gt_category": "PlatformMove",
       "dataset_origin_label": "TP",
       "model_speaker": "user",
-      "model_context": "The user is explicitly asking for a contact number."
+      "model_context": "The user is explicitly asking for a contact number.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "PlatformMove",
@@ -322,7 +404,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is providing a sequence of digits, likely a phone number."
+      "model_context": "The expert is providing a sequence of digits, likely a phone number.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -356,7 +447,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is asking the expert a direct question about cheating."
+      "model_context": "The user is asking the expert a direct question about cheating.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -390,7 +490,17 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is making a statement about something unrelated to the call or platform."
+      "model_context": "The user is making a statement about something unrelated to the call or platform.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }

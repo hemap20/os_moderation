@@ -27,7 +27,18 @@
       "model_speaker": "user",
       "model_context": "The user is asking the expert about their origin. The expert responds by asking the user where they are from.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Allowed",
@@ -45,7 +56,18 @@
       "model_speaker": "user",
       "model_context": "The user repeats the question, likely seeking confirmation or emphasis.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Allowed",
@@ -63,7 +85,18 @@
       "model_speaker": "expert",
       "model_context": "The expert answers the user's question by stating their location, mentioning UPI.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "PlatformMove",
@@ -81,7 +114,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking what the expert does after a certain point in the conversation. The expert responds by asking the user about their location.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -99,7 +141,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking for the expert's location. The expert then states their location.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -117,7 +168,16 @@
       "model_speaker": "user",
       "model_context": "The user mentions providing UPI details. This is a form of payment/financial information exchange.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -135,7 +195,16 @@
       "model_speaker": "user",
       "model_context": "The user is initiating a conversation about marriage arrangements. The expert responds by clarifying the relationship.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -153,7 +222,16 @@
       "model_speaker": "user",
       "model_context": "The user is providing personal family details in response to the expert's previous statement. The expert then asks about a relationship.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -171,7 +249,16 @@
       "model_speaker": "expert",
       "model_context": "The expert is directly asking the user if they want to enter into a romantic relationship, which is a form of flirting.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -189,7 +276,16 @@
       "model_speaker": "user",
       "model_context": "The user responds to the expert's romantic question with a casual, non-committal term.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "normal",
@@ -207,7 +303,19 @@
       "model_speaker": "user",
       "model_context": "The user is asking about the expert's husband's activities. The expert responds by mentioning something related to 'playgram'.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }

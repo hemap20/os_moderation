@@ -64,7 +64,18 @@
       "model_speaker": "user",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -82,7 +93,18 @@
       "model_speaker": "user",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -100,7 +122,18 @@
       "model_speaker": "user",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -118,7 +151,18 @@
       "model_speaker": "expert",
       "model_context": "The user asked if the expert was trying something, and the expert responded by asking the user if they were trying it.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -136,7 +180,18 @@
       "model_speaker": "expert",
       "model_context": "The expert repeated the question, confirming if the user was trying a specific thing.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Never a violation",
@@ -154,7 +209,18 @@
       "model_speaker": "user",
       "model_context": "The user expressed affection to the expert.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -172,7 +238,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking the expert not to open something, possibly referring to content or a call. The expert then asks for contact information.",
       "matched": true,
-      "matched_gt_category": "Explicit-Flirting"
+      "matched_gt_category": "Explicit-Flirting",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "PlatformMove",
@@ -190,7 +265,16 @@
       "model_speaker": "user",
       "model_context": "After the previous exchange, the user directly asks for the expert's WhatsApp number.",
       "matched": true,
-      "matched_gt_category": "PlatformMove"
+      "matched_gt_category": "PlatformMove",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "PlatformMove",
@@ -208,7 +292,16 @@
       "model_speaker": "expert",
       "model_context": "The expert provides a sequence of digits, which is likely a phone number or ID in response to the user's request.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -226,7 +319,17 @@
       "model_speaker": "user",
       "model_context": "The user is asking the expert if they will cheat. The expert responds by saying they are not doing anything wrong.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }

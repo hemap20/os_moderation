@@ -1,0 +1,17 @@
+model,prompt_version,scoring_mode,n_flags_total,n_dropped,n_dropped_tp,n_capped,n_capped_tp,n_tp_pushed_below_0.6,n_tp_pushed_below_0.8,auroc_confidence,auroc_with_dropped_as_lowest,tp_rate_by_speech_act,tp_rate_by_speaker
+e2b_nothinking,v4,raw,1445,0,0,0,0,0,0,0.8,0.8,,
+e2b_nothinking,v4,sa,1445,0,0,109,0,0,0,0.86,0.86,"{""direct"": 0.06, ""reported"": 0.0, ""denial"": 0.01, ""(missing)"": 0.0, ""hypothetical"": 0.04}","{""(missing)"": 0.04}"
+e2b_nothinking,v4,sa_drop_invalid,1445,783,1,11,0,0,0,0.85,0.92,,
+e2b_nothinking,v4,pp_full,1445,783,1,65,13,13,8,0.81,0.91,"{""direct"": 0.11, ""reported"": 0.01, ""denial"": 0.02, ""hypothetical"": 0.05}","{""(missing)"": 0.08}"
+e2b_thinking,v4,raw,186,0,0,0,0,0,0,0.69,0.69,,
+e2b_thinking,v4,sa,186,0,0,7,0,0,0,0.71,0.71,"{""(missing)"": 0.0, ""direct"": 0.27, ""reported"": 0.0, ""hypothetical"": 0.09, ""denial"": 0.0}","{""(missing)"": 0.21}"
+e2b_thinking,v4,sa_drop_invalid,186,19,0,7,0,0,0,0.67,0.71,,
+e2b_thinking,v4,pp_full,186,19,0,21,4,4,0,0.66,0.71,"{""direct"": 0.27, ""reported"": 0.0, ""hypothetical"": 0.09, ""denial"": 0.0}","{""(missing)"": 0.23}"
+e4b_nothinking,v4,raw,141,0,0,0,0,0,0,0.79,0.79,,
+e4b_nothinking,v4,sa,141,0,0,6,0,0,0,0.81,0.81,"{""direct"": 0.24, ""reported"": 0.0, ""null"": 0.0, ""hypothetical"": 0.33, ""denial"": 0.0}","{""(missing)"": 0.21}"
+e4b_nothinking,v4,sa_drop_invalid,141,0,0,6,0,0,0,0.81,0.81,,
+e4b_nothinking,v4,pp_full,141,0,0,10,0,0,0,0.82,0.82,"{""direct"": 0.24, ""reported"": 0.0, ""null"": 0.0, ""hypothetical"": 0.33, ""denial"": 0.0}","{""(missing)"": 0.21}"
+e4b_thinking,v4,raw,108,0,0,0,0,0,0,0.69,0.69,,
+e4b_thinking,v4,sa,108,0,0,3,0,0,0,0.7,0.7,"{""reported"": 0.0, ""direct"": 0.32}","{""(missing)"": 0.3}"
+e4b_thinking,v4,sa_drop_invalid,108,0,0,3,0,0,0,0.7,0.7,,
+e4b_thinking,v4,pp_full,108,0,0,4,1,0,0,0.7,0.7,"{""reported"": 0.0, ""direct"": 0.32}","{""(missing)"": 0.3}"

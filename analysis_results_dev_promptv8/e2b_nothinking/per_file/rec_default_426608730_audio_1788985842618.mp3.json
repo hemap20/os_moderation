@@ -27,7 +27,18 @@
       "model_speaker": null,
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.0,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": null,
+        "sa": 0.0,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -45,7 +56,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking about the nature of the service being offered. The expert responds with a price.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -63,7 +83,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking for the price of the service mentioned previously.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -81,7 +110,17 @@
       "model_speaker": "expert",
       "model_context": "The expert states the price for the service.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }

@@ -47,7 +47,18 @@
       "matched_gt_category": "Explicit-Flirting",
       "dataset_origin_label": "TP",
       "model_speaker": "user",
-      "model_context": "The user is asking about the expert's size. The expert responds by asking for contact information."
+      "model_context": "The user is asking about the expert's size. The expert responds by asking for contact information.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "violation_cap"
+      ],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -66,7 +77,17 @@
       "matched_gt_category": "PlatformMove",
       "dataset_origin_label": "TP",
       "model_speaker": "user",
-      "model_context": "The user asks for WhatsApp contact information. The expert responds by mentioning they are busy."
+      "model_context": "The user asks for WhatsApp contact information. The expert responds by mentioning they are busy.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }

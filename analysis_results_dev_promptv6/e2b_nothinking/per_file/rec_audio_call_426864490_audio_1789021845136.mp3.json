@@ -43,7 +43,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is asking for the full name of the person they are calling."
+      "model_context": "The user is asking for the full name of the person they are calling.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -77,7 +86,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is confirming the name and acknowledging the call."
+      "model_context": "The expert is confirming the name and acknowledging the call.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -111,7 +129,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is concluding the call and stating they are leaving."
+      "model_context": "The expert is concluding the call and stating they are leaving.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -145,7 +172,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is responding to something, possibly acknowledging the expert."
+      "model_context": "The user is responding to something, possibly acknowledging the expert.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -179,7 +215,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user initiates a greeting."
+      "model_context": "The user initiates a greeting.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -213,7 +258,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert responds to the greeting."
+      "model_context": "The expert responds to the greeting.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -247,7 +301,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is suggesting moving the conversation to Instagram."
+      "model_context": "The user is suggesting moving the conversation to Instagram.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "PlatformMove",
@@ -281,7 +344,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is suggesting moving the conversation to a phone number."
+      "model_context": "The user is suggesting moving the conversation to a phone number.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "unclear",
@@ -315,7 +387,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is asking a question, likely initiating conversation."
+      "model_context": "The user is asking a question, likely initiating conversation.",
+      "pp_confidence": 0.1,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "unclear",
@@ -349,7 +432,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is responding to the previous question."
+      "model_context": "The expert is responding to the previous question.",
+      "pp_confidence": 0.1,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "PlatformMove",
@@ -383,7 +477,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is asking for location details, which is personal information."
+      "model_context": "The user is asking for location details, which is personal information.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -417,7 +520,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is providing a location."
+      "model_context": "The expert is providing a location.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -451,7 +563,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is providing another location."
+      "model_context": "The expert is providing another location.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -485,7 +606,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is stating their location."
+      "model_context": "The expert is stating their location.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -519,7 +649,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is discussing the download and usage of something."
+      "model_context": "The user is discussing the download and usage of something.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -553,7 +692,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is responding to the user's previous statement."
+      "model_context": "The expert is responding to the user's previous statement.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -587,7 +735,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is explaining their interest in the app's content."
+      "model_context": "The user is explaining their interest in the app's content.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "violation_cap"
+      ],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -621,7 +780,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "unclear",
-      "model_context": "The user is discussing the intention behind something, and the expert is responding by stating that everyone has different intentions."
+      "model_context": "The user is discussing the intention behind something, and the expert is responding by stating that everyone has different intentions.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "Not Applicable",
@@ -655,7 +823,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "unclear",
-      "model_context": "This is a general compliment or observation about speaking ability."
+      "model_context": "This is a general compliment or observation about speaking ability.",
+      "pp_confidence": 0.1,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not Applicable",
@@ -689,7 +868,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "unclear",
-      "model_context": "Continuation of the previous statement."
+      "model_context": "Continuation of the previous statement.",
+      "pp_confidence": 0.1,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not Applicable",
@@ -723,7 +913,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "unclear",
-      "model_context": "This seems to be a statement about current action."
+      "model_context": "This seems to be a statement about current action.",
+      "pp_confidence": 0.1,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not Applicable",
@@ -757,7 +958,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "unclear",
-      "model_context": "This is a concluding remark or agreement."
+      "model_context": "This is a concluding remark or agreement.",
+      "pp_confidence": 0.1,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "PlatformMove",
@@ -791,7 +1003,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is asking about a problem."
+      "model_context": "The user is asking about a problem.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -825,7 +1046,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is making a statement about something being bad/wrong."
+      "model_context": "The user is making a statement about something being bad/wrong.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -859,7 +1089,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is discussing a cost related to 'ladies'."
+      "model_context": "The user is discussing a cost related to 'ladies'.",
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.6
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -893,7 +1132,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is responding to the user's query about the cost."
+      "model_context": "The expert is responding to the user's query about the cost.",
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.6
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -927,7 +1175,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is explicitly stating a price for a duration of talk time."
+      "model_context": "The expert is explicitly stating a price for a duration of talk time.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -961,7 +1218,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is discussing something mentioned by the expert, possibly related to a service or rate."
+      "model_context": "The user is discussing something mentioned by the expert, possibly related to a service or rate.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "Not Applicable",
@@ -995,7 +1261,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is responding to the user's previous statement, offering advice on fitness."
+      "model_context": "The expert is responding to the user's previous statement, offering advice on fitness.",
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not Applicable",
@@ -1029,7 +1306,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is sharing their experience or opinion about seeking advice."
+      "model_context": "The user is sharing their experience or opinion about seeking advice.",
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not Applicable",
@@ -1063,7 +1351,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is responding to the user's statement about intentions."
+      "model_context": "The expert is responding to the user's statement about intentions.",
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not Applicable",
@@ -1097,7 +1396,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is continuing the conversation."
+      "model_context": "The expert is continuing the conversation.",
+      "pp_confidence": 0.1,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not Applicable",
@@ -1131,7 +1441,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "unclear",
-      "model_context": null
+      "model_context": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not Applicable",
@@ -1165,7 +1486,19 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "unclear",
-      "model_context": null
+      "model_context": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }
