@@ -1,0 +1,32 @@
+[
+  {
+    "chunk_offset_sec": 0.0,
+    "raw": "<eos>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 28.0,
+    "raw": "{\"d\": []}<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 56.0,
+    "raw": "\"d\": [\n  {\n    \"t\": \"00:05\",\n    \"seg\": \"um sexy a bhejo\",\n    \"tr\": \"um sexy send it\",\n    \"f\": \"Explicit-Flirting\",\n    \"spk\": \"expert\",\n    \"ctx\": \"The user is speaking, and the expert responds with a suggestive comment.\",\n    \"speech_act\": \"direct\",\n    \"j\": \"This is a clear request for explicit talk, matching the 'Clear' criteria for Explicit-Flirting.\",\n    \"violation\": \"yes\",\n    \"c\": 0.9\n  }\n]<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 84.0,
+    "raw": "\"d\":[{\"t\":\"00:00\",\"seg\":\"a wala kaam me in alawa molayare\",\"tr\":\"a wala kaam me in alawa molayare\",\"f\":\"PlatformMove\",\"spk\":\"user\",\"ctx\":\"The user is asking about work or a task. The expert responds with a question.\",\"speech_act\":\"direct\",\"j\":\"The user is proposing to move the conversation to an external platform or contact method.\",\"violation\":\"yes\",\"c\":0.9}]<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 112.0,
+    "raw": "{\"d\": []}<turn|>",
+    "thinking": null
+  },
+  {
+    "chunk_offset_sec": 140.0,
+    "raw": "<|channel>thought\nThinking Process:\n\n1.  **Analyze the Request and Context:**\n    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.\n    *   **Context:** App called \"Friends\" (user pays, talks to an expert). Calls can be audio/video.\n    *   **Goal:** Find every possible violation based on three categories (PlatformMove, SuspiciousActivity, Explicit-Flirting).\n    *   **Output Rule:** Only output quotes matching \"Clear\" (0.9) or \"Possible\" (0.6), or \"About a violation\" (0.3). Do not output greetings, small talk, filler words, or \"Never a violation\" items.\n    *   **Output Format:** Strict JSON schema.\n\n2.  **Analyze the Audio Transcript:**\n    *   The provided transcript is: \"Yeah. They done na thammena out the badaa. Hmm?\" (The language appears to be Hindi/Hinglish).\n\n3.  **Evaluate the Transcript against Violation Categories:**\n\n    *   **Transcript:** \"Yeah. They done na thammena out the badaa. Hmm?\"\n\n    *   **Category 1: PlatformMove (Moving outside the app)**\n        *   Does it propose moving to WhatsApp, Telegram, giving a number, etc.? No.\n        *   *Conclusion:* No violation.\n\n    *   **Category 2: SuspiciousActivity (Money/Payment linked to sex)**\n        *   Does it involve pricing, payment for nudity, or sexual services? No.\n        *   *Conclusion:* No violation.\n\n    *   **Category 3: Explicit-Flirting (Sexual talk, showing body)**\n        *   Does it involve asking to show the body, nudity, sexual acts, or preferences? No.\n        *   *Conclusion:* No violation.\n\n4.  **Apply Filtering Rules:**\n    *   The transcript is very short and appears to be casual conversation or small talk (\"Yeah. They done na thammena out the badaa. Hmm?\").\n    *   The rules explicitly state: \"Do not output quotes that match a 'Never a violation' item, or ordinary conversation (greetings, small talk, introductions, questions about the other person's day, work, family or location, filler words, call quality).\"\n    *   The provided text falls squarely into the category of ordinary conversation/small talk.\n\n5.  **Final Decision:**\n    *   No violations were found. Therefore, the output should be an empty array.\n\n6.  **Construct JSON Output:**\n    *   Return `{\"d\": []}`.<channel|>```json\n{\"d\": []}\n```<turn|>",
+    "thinking": "Thinking Process:\n\n1.  **Analyze the Request and Context:**\n    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.\n    *   **Context:** App called \"Friends\" (user pays, talks to an expert). Calls can be audio/video.\n    *   **Goal:** Find every possible violation based on three categories (PlatformMove, SuspiciousActivity, Explicit-Flirting).\n    *   **Output Rule:** Only output quotes matching \"Clear\" (0.9) or \"Possible\" (0.6), or \"About a violation\" (0.3). Do not output greetings, small talk, filler words, or \"Never a violation\" items.\n    *   **Output Format:** Strict JSON schema.\n\n2.  **Analyze the Audio Transcript:**\n    *   The provided transcript is: \"Yeah. They done na thammena out the badaa. Hmm?\" (The language appears to be Hindi/Hinglish).\n\n3.  **Evaluate the Transcript against Violation Categories:**\n\n    *   **Transcript:** \"Yeah. They done na thammena out the badaa. Hmm?\"\n\n    *   **Category 1: PlatformMove (Moving outside the app)**\n        *   Does it propose moving to WhatsApp, Telegram, giving a number, etc.? No.\n        *   *Conclusion:* No violation.\n\n    *   **Category 2: SuspiciousActivity (Money/Payment linked to sex)**\n        *   Does it involve pricing, payment for nudity, or sexual services? No.\n        *   *Conclusion:* No violation.\n\n    *   **Category 3: Explicit-Flirting (Sexual talk, showing body)**\n        *   Does it involve asking to show the body, nudity, sexual acts, or preferences? No.\n        *   *Conclusion:* No violation.\n\n4.  **Apply Filtering Rules:**\n    *   The transcript is very short and appears to be casual conversation or small talk (\"Yeah. They done na thammena out the badaa. Hmm?\").\n    *   The rules explicitly state: \"Do not output quotes that match a 'Never a violation' item, or ordinary conversation (greetings, small talk, introductions, questions about the other person's day, work, family or location, filler words, call quality).\"\n    *   The provided text falls squarely into the category of ordinary conversation/small talk.\n\n5.  **Final Decision:**\n    *   No violations were found. Therefore, the output should be an empty array.\n\n6.  **Construct JSON Output:**\n    *   Return `{\"d\": []}`."
+  }
+]
