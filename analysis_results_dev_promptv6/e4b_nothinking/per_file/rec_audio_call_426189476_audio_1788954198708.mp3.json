@@ -43,7 +43,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is asking the expert what they are saying. The expert responds by saying they are talking about open talk."
+      "model_context": "The user is asking the expert what they are saying. The expert responds by saying they are talking about open talk.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -77,7 +86,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is asking if open talk is available in the code. The expert responds by saying it is not available."
+      "model_context": "The user is asking if open talk is available in the code. The expert responds by saying it is not available.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "violation_cap"
+      ],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -111,7 +131,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is asking for a definition of 'open talk'. The expert responds by explaining that it is about sexual conversations."
+      "model_context": "The user is asking for a definition of 'open talk'. The expert responds by explaining that it is about sexual conversations.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "violation_cap"
+      ],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -145,7 +176,19 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is asking if there are any sexual conversations available in the code. The expert does not respond to this specific question in the provided audio."
+      "model_context": "The user is asking if there are any sexual conversations available in the code. The expert does not respond to this specific question in the provided audio.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "violation_cap"
+      ],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.3
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }

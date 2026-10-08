@@ -71,7 +71,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is asking about showing the amount on WhatsApp."
+      "model_context": "The user is asking about showing the amount on WhatsApp.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "violation_cap"
+      ],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -90,7 +101,18 @@
       "matched_gt_category": "PlatformMove",
       "dataset_origin_label": "TP",
       "model_speaker": "user",
-      "model_context": "The user is reiterating the request about showing the amount on WhatsApp."
+      "model_context": "The user is reiterating the request about showing the amount on WhatsApp.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "violation_cap"
+      ],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -109,7 +131,17 @@
       "matched_gt_category": "SuspiciousActivity",
       "dataset_origin_label": "TP",
       "model_speaker": "expert",
-      "model_context": "The expert is stating a price for a service."
+      "model_context": "The expert is stating a price for a service.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }

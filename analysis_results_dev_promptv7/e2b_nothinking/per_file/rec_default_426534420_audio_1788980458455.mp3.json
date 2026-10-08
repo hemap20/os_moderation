@@ -55,7 +55,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking about what is shown on WhatsApp. The expert responds by specifying a part of the body.",
       "matched": true,
-      "matched_gt_category": "PlatformMove"
+      "matched_gt_category": "PlatformMove",
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.6
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -73,7 +82,16 @@
       "model_speaker": "expert",
       "model_context": "The expert is specifying a part of the body to be shown. The user then asks what body part is being shown.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -91,7 +109,17 @@
       "model_speaker": "user",
       "model_context": "The user is asking for clarification on the body part being shown, mentioning a number.",
       "matched": true,
-      "matched_gt_category": "Explicit-Flirting"
+      "matched_gt_category": "Explicit-Flirting",
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.6
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }

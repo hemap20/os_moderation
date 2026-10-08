@@ -520,6 +520,164 @@ def confusion_metrics(tp: int, fp: int, fn: int, tn: Optional[int] = None) -> di
     return out
 
 
+VALID_MODEL_CATEGORIES = {"PlatformMove", "SuspiciousActivity", "Explicit-Flirting"}
+
+# Rule sets for post_process_confidence. "none" is a true no-op (handled as
+# a special case in that function, not via this dict) — every non-none set
+# always applies the category-drop and reported/denial cap; only whether
+# the violation=="no" cap also applies differs between them.
+POST_PROCESSING_RULE_SETS = {
+    "pp_v1": {"cap_violation_no": True},           # v6 and earlier
+    "pp_v1_noviol": {"cap_violation_no": False},    # v7, v8 — their own prompt
+                                                     # already ties "violation"
+                                                     # to speech_act, so a
+                                                     # separate violation cap
+                                                     # would double-penalize.
+}
+POST_PROCESSING_CHOICES = ["none"] + list(POST_PROCESSING_RULE_SETS)
+
+
+def post_process_confidence(flag: dict, rule_set: str) -> Tuple[Optional[float], bool, List[str]]:
+    """Returns (pp_confidence, pp_dropped, rules_applied).
+
+    rule_set="none" is an exact no-op: pp_confidence=model_confidence
+    (unchanged, including None), pp_dropped=False, rules_applied=[] — this
+    is what guarantees every _pp output equals its raw counterpart when
+    post-processing is off, by construction rather than a separate check.
+
+    Any other rule_set applies, in order:
+      1. category drop: if the flag's category isn't one of the three real
+         categories, pp_dropped=True (the flag is excluded entirely from
+         every pp-based metric, matched or not — a bogus category like the
+         literal string "Not a violation" is a model mistake no raw
+         confidence value should be trusted to rank).
+      2. missing model_confidence is treated as 0.0 as the base value.
+      3. cap pp_confidence to <= 0.3 if model_speech_act is "reported" or
+         "denial" (self-identified as not a live violation, per the v6+
+         prompts' own speech_act definition).
+      4. (pp_v1 only) also cap to <= 0.3 if model_violation == "no"."""
+    if rule_set == "none":
+        return flag.get("model_confidence"), False, []
+
+    rules_applied: List[str] = []
+    dropped = (flag.get("category") not in VALID_MODEL_CATEGORIES)
+    if dropped:
+        rules_applied.append("category_drop")
+
+    conf = flag.get("model_confidence")
+    if conf is None:
+        conf = 0.0
+
+    if flag.get("model_speech_act") in ("reported", "denial"):
+        if conf > 0.3:
+            rules_applied.append("speech_act_cap")
+        conf = min(conf, 0.3)
+
+    if POST_PROCESSING_RULE_SETS[rule_set]["cap_violation_no"] and flag.get("model_violation") == "no":
+        if conf > 0.3:
+            rules_applied.append("violation_cap")
+        conf = min(conf, 0.3)
+
+    return conf, dropped, rules_applied
+
+
+def apply_post_processing(model_flags: List[dict], rule_set: str) -> List[dict]:
+    """Returns a NEW list of flag dicts (originals untouched) with
+    pp_confidence/pp_dropped/pp_rules_applied added — model_confidence
+    itself is never modified."""
+    out = []
+    for f in model_flags:
+        pp_confidence, pp_dropped, rules_applied = post_process_confidence(f, rule_set)
+        out.append({**f, "pp_confidence": pp_confidence, "pp_dropped": pp_dropped, "pp_rules_applied": rules_applied})
+    return out
+
+
+def aggregate_file_level_pp(rows: List[dict]) -> dict:
+    """pp-aware file-level confusion: a pp_dropped flag counts as if the
+    model never raised it at all (affects FP/TN too, not just thresholded
+    metrics) — everything else (matching) is unchanged from the real
+    matcher's result. Assumes rows' model_flags already carry pp_dropped
+    (see apply_post_processing)."""
+    tp = fp = fn = tn = 0
+    for r in rows:
+        gt_flags = r.get("gt_flags", [])
+        kept = [f for f in r["model_flags"] if not f.get("pp_dropped")]
+        flag_tp_pp = sum(1 for f in kept if f.get("matched"))
+        gt_positive = len(gt_flags) > 0
+        if gt_positive and flag_tp_pp > 0:
+            tp += 1
+        elif gt_positive:
+            fn += 1
+        elif kept:
+            fp += 1
+        else:
+            tn += 1
+    return {"n_files": len(rows), **confusion_metrics(tp, fp, fn, tn)}
+
+
+def aggregate_flag_level_pp(rows: List[dict]) -> dict:
+    """pp-aware flag-level confusion — same redundant-crediting rule as
+    aggregate_flag_level, just over the pp-kept (non-dropped) flags."""
+    tp = fn = tn = redundant = 0
+    fp_total = 0
+    for r in rows:
+        gt_flags = r.get("gt_flags", [])
+        kept = [f for f in r["model_flags"] if not f.get("pp_dropped")]
+        ftp = sum(1 for f in kept if f.get("matched"))
+        tp += ftp
+        fn += len(gt_flags) - ftp
+        if not gt_flags and not kept:
+            tn += 1
+        red = sum(1 for f in kept if not f.get("matched") and _is_redundant(f))
+        redundant += red
+        fp_total += (len(kept) - ftp) - red
+    out = confusion_metrics(tp, fp_total, fn, tn)
+    out["redundant"] = redundant
+    out["precision"] = r2((tp + redundant) / (tp + fp_total + redundant) if (tp + fp_total + redundant) else None)
+    return out
+
+
+def post_processing_report(rows: List[dict]) -> dict:
+    """The visibility numbers explicitly asked for: how many flags the
+    category-drop rule removed, and how many TP (matched) flags the
+    reported/denial cap actually lowered — the recall cost of rule 2 is
+    invisible unless you look specifically at flags that WERE real
+    catches."""
+    n_dropped = 0
+    n_tp_capped_by_speech_act = 0
+    n_total = 0
+    for r in rows:
+        for f in r["model_flags"]:
+            n_total += 1
+            if f.get("pp_dropped"):
+                n_dropped += 1
+            if f.get("matched") and "speech_act_cap" in (f.get("pp_rules_applied") or []):
+                n_tp_capped_by_speech_act += 1
+    return {"n_flags_total": n_total, "n_dropped_by_category_rule": n_dropped,
+            "n_tp_capped_by_speech_act_rule": n_tp_capped_by_speech_act}
+
+
+def persist_post_processing_to_cache(per_file_dir: Path, rows: List[dict]):
+    """Writes pp_confidence/pp_dropped (and pp_rules_applied, for the
+    audit trail) back into the on-disk per-file cache, matched flag by
+    flag with the stored cache — never touching any other field (matched,
+    fp_classification, matched_gt_category, etc.)."""
+    for r in rows:
+        path = per_file_dir / f"{r['file_id']}.json"
+        if not path.exists():
+            continue
+        cached = json.loads(path.read_text())
+        cached_flags = cached.get("model_flags", [])
+        new_flags = r["model_flags"]
+        if len(cached_flags) != len(new_flags):
+            continue  # alignment can't be trusted — skip rather than guess
+        for cf, nf in zip(cached_flags, new_flags):
+            cf["pp_confidence"] = nf.get("pp_confidence")
+            cf["pp_dropped"] = nf.get("pp_dropped")
+            cf["pp_rules_applied"] = nf.get("pp_rules_applied")
+        path.write_text(json.dumps(cached, ensure_ascii=False, indent=2))
+
+
 def aggregate_file_level(rows: List[dict], bucket_key: str = "file_bucket") -> dict:
     tp = sum(1 for r in rows if r[bucket_key] == "TP")
     fp = sum(1 for r in rows if r[bucket_key] == "FP")
@@ -882,6 +1040,13 @@ def main():
                          help="Extra results-directory suffix for keeping a prompt experiment's results "
                               "separate, e.g. --results-tag promptA -> analysis_results_promptA/ (or "
                               "analysis_results_dev_promptA/ combined with --dataset-root Dostt_dev)")
+    parser.add_argument("--post-processing", type=str, default="none", choices=POST_PROCESSING_CHOICES,
+                         help="Confidence post-processing rule set (see post_process_confidence): "
+                              "pp_v1 (category drop + reported/denial cap + violation=='no' cap, for "
+                              "v6 and earlier) or pp_v1_noviol (same minus the violation cap, for v7/v8). "
+                              "Always computes and persists pp_confidence/pp_dropped into the per-file "
+                              "cache and writes confusion_*_pp.csv alongside the raw tables — 'none' "
+                              "(default) is a true no-op, so every _pp output equals its raw counterpart.")
     args = parser.parse_args()
     configure_dataset_root(args.dataset_root, args.results_tag)  # first thing — everything below reads MODEL_DIRS/OUTPUT_DIR/DATASET_DIR
 
@@ -901,6 +1066,11 @@ def main():
     overall_flag_rows = []
     by_language_file_rows = []
     by_language_flag_rows = []
+    overall_file_rows_pp = []
+    overall_flag_rows_pp = []
+    by_language_file_rows_pp = []
+    by_language_flag_rows_pp = []
+    pp_report_rows = []
     qualifying_overall_rows = []
     qualifying_by_language_rows = []
     ranking_rows = []
@@ -997,6 +1167,22 @@ def main():
                 out.append({**r, "gt_flag_count": len(gt_of_cat), "model_flags": model_of_cat})
             return out
 
+        # --- Post-processing: always computed, "none" is a true no-op ---
+        # Mutates scored_rows' model_flags in place (adds pp_confidence/
+        # pp_dropped/pp_rules_applied) so every aggregation below — raw AND
+        # pp — reads from the same rows.
+        for r in scored_rows:
+            r["model_flags"] = apply_post_processing(r["model_flags"], args.post_processing)
+        persist_post_processing_to_cache(OUTPUT_DIR / model_key / "per_file", scored_rows)
+        pp_report = post_processing_report(scored_rows)
+        logger.info(f"[{model_key}] post_processing={args.post_processing}: "
+                    f"{pp_report['n_dropped_by_category_rule']} flag(s) dropped by the category rule, "
+                    f"{pp_report['n_tp_capped_by_speech_act_rule']} matched (TP) flag(s) capped by the "
+                    f"reported/denial rule, out of {pp_report['n_flags_total']} total flags")
+        pp_report_rows.append({"model": model_key, "post_processing": args.post_processing, **pp_report})
+        overall_file_rows_pp.append({"model": model_key, "post_processing": args.post_processing, **aggregate_file_level_pp(scored_rows)})
+        overall_flag_rows_pp.append({"model": model_key, "post_processing": args.post_processing, **aggregate_flag_level_pp(scored_rows)})
+
         overall_entropy = entropy_by_correctness(scored_rows)
         overall_file_rows.append({"model": model_key, **aggregate_file_level(scored_rows), **overall_entropy})
         overall_flag_rows.append({"model": model_key, **aggregate_flag_level(scored_rows), **overall_entropy})
@@ -1006,12 +1192,14 @@ def main():
         for r in scored_rows:
             by_lang[r["language"]].append(r)
 
-        model_summary = {"overall": language_block(scored_rows), "by_language": {}}
+        model_summary = {"overall": language_block(scored_rows), "by_language": {}, "post_processing": args.post_processing}
 
         for lang, lang_rows in sorted(by_lang.items()):
             lang_entropy = entropy_by_correctness(lang_rows)
             by_language_file_rows.append({"model": model_key, "language": lang, **aggregate_file_level(lang_rows), **lang_entropy})
             by_language_flag_rows.append({"model": model_key, "language": lang, **aggregate_flag_level(lang_rows), **lang_entropy})
+            by_language_file_rows_pp.append({"model": model_key, "language": lang, "post_processing": args.post_processing, **aggregate_file_level_pp(lang_rows)})
+            by_language_flag_rows_pp.append({"model": model_key, "language": lang, "post_processing": args.post_processing, **aggregate_flag_level_pp(lang_rows)})
             qualifying_by_language_rows.append({"model": model_key, "language": lang, **aggregate_file_level(lang_rows, "qualifying_pm_ef_bucket")})
             for row in confidence_bucket_table(lang_rows, "model_confidence"):
                 bucket_rows_model_conf.append({"model": model_key, "language": lang, **row})
@@ -1019,7 +1207,7 @@ def main():
                 bucket_rows_logprob_conf.append({"model": model_key, "language": lang, **row})
             entropy_rows.append({"model": model_key, "language": lang, **lang_entropy})
             for signal in RANKING_SIGNALS:
-                ranking_rows.append({"model": model_key, "language": lang, "category": "ALL", "signal": signal,
+                ranking_rows.append({"model": model_key, "language": lang, "category": "ALL", "signal": signal, "post_processing": "none",
                                       **auprc_and_recall_at_fp_budget(lang_rows, signal)})
             model_summary["by_language"][lang] = language_block(lang_rows)
 
@@ -1029,13 +1217,21 @@ def main():
             bucket_rows_logprob_conf.append({"model": model_key, "language": "ALL", **row})
         entropy_rows.append({"model": model_key, "language": "ALL", **overall_entropy})
         for signal in RANKING_SIGNALS:
-            ranking_rows.append({"model": model_key, "language": "ALL", "category": "ALL", "signal": signal,
+            ranking_rows.append({"model": model_key, "language": "ALL", "category": "ALL", "signal": signal, "post_processing": "none",
                                   **auprc_and_recall_at_fp_budget(scored_rows, signal)})
+        # The AUROC/AUPRC table "with a pp column": one additional row using
+        # pp_confidence as the ranking signal, over the pp-kept (non-dropped)
+        # flags only — tagged with the actual rule set used (vs "none" for
+        # every row above), in the SAME file rather than a separate one.
+        pp_filtered_rows = [{**r, "model_flags": [f for f in r["model_flags"] if not f.get("pp_dropped")]} for r in scored_rows]
+        ranking_rows.append({"model": model_key, "language": "ALL", "category": "ALL", "signal": "pp_confidence",
+                              "post_processing": args.post_processing,
+                              **auprc_and_recall_at_fp_budget(pp_filtered_rows, "pp_confidence")})
         # Per-category ranking metrics (overall across languages, per category).
         for category in config.CATEGORY_LABELS.values():
             cat_rows = filter_rows_by_category(scored_rows, category)
             for signal in RANKING_SIGNALS:
-                ranking_rows.append({"model": model_key, "language": "ALL", "category": category, "signal": signal,
+                ranking_rows.append({"model": model_key, "language": "ALL", "category": category, "signal": signal, "post_processing": "none",
                                       **auprc_and_recall_at_fp_budget(cat_rows, signal)})
 
         # v4 categorical-label breakdowns — trivial/empty for pre-v4 runs
@@ -1087,8 +1283,18 @@ def main():
                "mean_entropy_tp_flags", "n_tp_flags_with_entropy",
                "mean_entropy_fp_flags", "n_fp_flags_with_entropy"], model_keys)
     merge_and_write_csv(OUTPUT_DIR / "auprc_recall_at_fp_budget.csv", ranking_rows,
-              ["model", "language", "category", "signal", "auroc", "auprc", "n_flags_ranked", "n_flags_missing_confidence"]
+              ["model", "language", "category", "signal", "post_processing", "auroc", "auprc", "n_flags_ranked", "n_flags_missing_confidence"]
               + [f"recall_at_fp_{b}" for b in RECALL_AT_FP_BUDGETS], model_keys)
+    merge_and_write_csv(OUTPUT_DIR / "confusion_file_level_overall_pp.csv", overall_file_rows_pp,
+              ["model", "post_processing", "n_files", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"], model_keys)
+    merge_and_write_csv(OUTPUT_DIR / "confusion_flag_level_overall_pp.csv", overall_flag_rows_pp,
+              ["model", "post_processing", "tp", "fp", "redundant", "fn", "tn", "precision", "recall", "specificity", "accuracy"], model_keys)
+    merge_and_write_csv(OUTPUT_DIR / "confusion_file_level_by_language_pp.csv", by_language_file_rows_pp,
+              ["model", "language", "post_processing", "n_files", "tp", "fp", "fn", "tn", "precision", "recall", "specificity", "accuracy"], model_keys)
+    merge_and_write_csv(OUTPUT_DIR / "confusion_flag_level_by_language_pp.csv", by_language_flag_rows_pp,
+              ["model", "language", "post_processing", "tp", "fp", "redundant", "fn", "tn", "precision", "recall", "specificity", "accuracy"], model_keys)
+    merge_and_write_csv(OUTPUT_DIR / "post_processing_report.csv", pp_report_rows,
+              ["model", "post_processing", "n_flags_total", "n_dropped_by_category_rule", "n_tp_capped_by_speech_act_rule"], model_keys)
     merge_and_write_csv(OUTPUT_DIR / "tp_rate_by_speech_act.csv", tp_rate_speech_act_rows,
               ["model", "value", "n", "n_matched", "tp_rate"], model_keys)
     merge_and_write_csv(OUTPUT_DIR / "tp_rate_by_quote_type.csv", tp_rate_quote_type_rows,

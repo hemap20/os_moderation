@@ -51,9 +51,11 @@ from analyze_results import (
     _is_redundant,
     aggregate_file_level,
     aggregate_flag_level,
+    apply_post_processing,
     configure_dataset_root,
     merge_and_write_csv,
     r2,
+    POST_PROCESSING_CHOICES,
 )
 import analyze_results as ar
 from pipeline_logging import StageLogger
@@ -199,7 +201,13 @@ def threshold_metrics_for_group(rows: List[dict], category: str, threshold: Opti
 
     assert tp + fn == n_gt_pos, f"category={category} threshold={threshold}: TP+FN={tp + fn} != n_gt_pos={n_gt_pos}"
     assert fp + tn == n_gt_neg, f"category={category} threshold={threshold}: FP+TN={fp + tn} != n_gt_neg={n_gt_neg}"
-    assert tp <= loose_tp, f"category={category} threshold={threshold}: strict tp={tp} > loose_tp={loose_tp}"
+    # NOT "strict tp <= loose_tp" — that doesn't universally hold: strict_pos
+    # for a named category credits a flag matched to a GT flag of THIS
+    # category even when the model's OWN self-labeled category is
+    # different (a deliberate design choice — see strict_pos above), while
+    # loose_pos only ever looks at the model's own self-label. A file can
+    # therefore be a strict TP via a cross-category match while failing
+    # loose_pos entirely (no flag self-labeled as this category at all).
 
     return {
         "category": category,
@@ -288,6 +296,10 @@ def main():
     parser.add_argument("--signals", type=str, default=None,
                          help="Comma-separated subset of signals to run: model_confidence, "
                               "logprob_derived_confidence, neg_entropy (default: all three)")
+    parser.add_argument("--post-processing", type=str, default="none", choices=POST_PROCESSING_CHOICES,
+                         help="Confidence post-processing rule set (see analyze_results.post_process_confidence). "
+                              "Always writes threshold_metrics_by_category_pp.csv alongside the raw table — "
+                              "'none' (default) is a true no-op, equal to the raw table by construction.")
     args = parser.parse_args()
     override_thresholds = [float(t) for t in args.thresholds.split(",") if t.strip()] if args.thresholds else None
     signal_names = args.signals.split(",") if args.signals else None
@@ -347,6 +359,40 @@ def main():
     )
     print(f"threshold_metrics_by_category.csv written to {output_dir}/ for {len(rows_by_model)} model(s), "
           f"{len(SIGNALS) if not signal_names else len(signal_names)} signal(s) — no other file in that directory was touched.")
+
+    # Post-processed threshold table, always written alongside the raw one —
+    # "none" is a true no-op (apply_post_processing returns pp_confidence==
+    # model_confidence, pp_dropped=False for every flag), so this equals the
+    # model_confidence rows of threshold_metrics_by_category.csv exactly
+    # when post_processing=="none".
+    pp_thresholds = override_thresholds if override_thresholds is not None else DEFAULT_THRESHOLDS
+    pp_threshold_rows = []
+    for model_key, rows in rows_by_model.items():
+        pp_rows = []
+        for r in rows:
+            annotated = apply_post_processing(r["model_flags"], args.post_processing)
+            kept = [f for f in annotated if not f["pp_dropped"]]
+            pp_rows.append({**r, "model_flags": kept})
+
+        for row in threshold_metrics_table(pp_rows, pp_thresholds, logger, "pp_confidence"):
+            pp_threshold_rows.append({"model": model_key, "language": "ALL", "post_processing": args.post_processing, **row})
+
+        by_lang_pp: dict = {}
+        for r in pp_rows:
+            by_lang_pp.setdefault(r["language"], []).append(r)
+        for lang, lang_rows in sorted(by_lang_pp.items()):
+            for row in threshold_metrics_table(lang_rows, pp_thresholds, logger, "pp_confidence"):
+                pp_threshold_rows.append({"model": model_key, "language": lang, "post_processing": args.post_processing, **row})
+
+    merge_and_write_csv(
+        output_dir / "threshold_metrics_by_category_pp.csv", pp_threshold_rows,
+        ["model", "language", "category", "post_processing", "threshold", "n_gt_pos", "n_gt_neg", "tp", "fp", "fn", "tn",
+         "precision", "recall", "specificity", "accuracy", "f1", "loose_tp", "loose_recall",
+         "flag_tp", "flag_fp", "flag_redundant", "flag_fn", "flag_precision", "flag_recall", "n_flags_missing_confidence"],
+        list(rows_by_model.keys()),
+    )
+    print(f"threshold_metrics_by_category_pp.csv written to {output_dir}/ for {len(rows_by_model)} model(s) "
+          f"(post_processing={args.post_processing}).")
 
 
 if __name__ == "__main__":

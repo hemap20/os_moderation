@@ -73,7 +73,16 @@
       "model_speaker": "user",
       "model_context": "The user is greeting the expert and immediately mentions their mother's name. The expert responds by asking for the user's name.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -91,7 +100,16 @@
       "model_speaker": "user",
       "model_context": "The user mentions seeing a new video on Instagram, which is a hint towards external content.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -109,7 +127,16 @@
       "model_speaker": "user",
       "model_context": "The user mentions cutting money for Pune. The expert responds with a question about the amount.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -127,7 +154,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking about an amount, likely related to a service or payment. The expert responds by mentioning a duration.",
       "matched": true,
-      "matched_gt_category": "SuspiciousActivity"
+      "matched_gt_category": "SuspiciousActivity",
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -145,7 +181,16 @@
       "model_speaker": "expert",
       "model_context": "The expert is clarifying the duration related to the previous query about the amount.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -163,7 +208,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking for an Instagram ID, which is a request for contact information on an external platform.",
       "matched": true,
-      "matched_gt_category": "PlatformMove"
+      "matched_gt_category": "PlatformMove",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "PlatformMove",
@@ -181,7 +235,17 @@
       "model_speaker": "user",
       "model_context": null,
       "matched": true,
-      "matched_gt_category": "PlatformMove"
+      "matched_gt_category": "PlatformMove",
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }

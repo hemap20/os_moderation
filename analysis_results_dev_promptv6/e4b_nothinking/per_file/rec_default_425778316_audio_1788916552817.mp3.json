@@ -80,7 +80,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "और वीडियो कॉल, ओपन कॉल. Are you comfortable for that? Yeah."
+      "model_context": "और वीडियो कॉल, ओपन कॉल. Are you comfortable for that? Yeah.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -114,7 +123,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "और वीडियो कॉल, ओपन कॉल. Are you comfortable for that? Yeah."
+      "model_context": "और वीडियो कॉल, ओपन कॉल. Are you comfortable for that? Yeah.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -133,7 +151,18 @@
       "matched_gt_category": "SuspiciousActivity",
       "dataset_origin_label": "TP",
       "model_speaker": "user",
-      "model_context": "Yeah. हम बात कर सकते हैं. Hmm, कितना आपका पेमेंट. Fully nude."
+      "model_context": "Yeah. हम बात कर सकते हैं. Hmm, कितना आपका पेमेंट. Fully nude.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "violation_cap"
+      ],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -152,7 +181,17 @@
       "matched_gt_category": "Explicit-Flirting",
       "dataset_origin_label": "TP",
       "model_speaker": "expert",
-      "model_context": "Hmm, कितना आपका पेमेंट. Fully nude. Evo call."
+      "model_context": "Hmm, कितना आपका पेमेंट. Fully nude. Evo call.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }

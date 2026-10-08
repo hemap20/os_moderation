@@ -89,7 +89,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user initiates the call."
+      "model_context": "The user initiates the call.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -123,7 +132,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is introducing themselves to the expert."
+      "model_context": "The user is introducing themselves to the expert.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -157,7 +175,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is stating their previous experience."
+      "model_context": "The user is stating their previous experience.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -191,7 +218,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user confirms the platform."
+      "model_context": "The user confirms the platform.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -225,7 +261,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is responding to the user's statement."
+      "model_context": "The expert is responding to the user's statement.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -259,7 +304,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is confirming their presence on the platform."
+      "model_context": "The expert is confirming their presence on the platform.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -293,7 +347,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is asking for the expert not to provide a number on WhatsApp."
+      "model_context": "The user is asking for the expert not to provide a number on WhatsApp.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "speech_act_cap"
+      ],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -312,7 +377,16 @@
       "matched_gt_category": "PlatformMove",
       "dataset_origin_label": "TP",
       "model_speaker": "user",
-      "model_context": "The user is requesting the expert to provide a number."
+      "model_context": "The user is requesting the expert to provide a number.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "PlatformMove",
@@ -331,7 +405,16 @@
       "matched_gt_category": "PlatformMove",
       "dataset_origin_label": "TP",
       "model_speaker": "user",
-      "model_context": "The user is providing a sequence of digits, likely a phone number."
+      "model_context": "The user is providing a sequence of digits, likely a phone number.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "",
@@ -365,7 +448,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": null
+      "model_context": null,
+      "pp_confidence": 0.0,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": null,
+        "sa": 0.0,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "",
@@ -399,7 +493,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": null
+      "model_context": null,
+      "pp_confidence": 0.0,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": null,
+        "sa": 0.0,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -433,7 +538,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is discussing a price or rate."
+      "model_context": "The user is discussing a price or rate.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "PlatformMove",
@@ -467,7 +581,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is discussing the platform's functionality regarding video."
+      "model_context": "The user is discussing the platform's functionality regarding video.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -486,7 +609,16 @@
       "matched_gt_category": "SuspiciousActivity",
       "dataset_origin_label": "TP",
       "model_speaker": "user",
-      "model_context": "The user is stating the amount they want to pay and providing a number."
+      "model_context": "The user is stating the amount they want to pay and providing a number.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -520,7 +652,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is responding to the user's offer to pay and seems to be confirming the condition."
+      "model_context": "The expert is responding to the user's offer to pay and seems to be confirming the condition.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -554,7 +695,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is linking the action of a video call to the payment for the 'all open' service."
+      "model_context": "The user is linking the action of a video call to the payment for the 'all open' service.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -588,7 +738,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is requesting a video call and mentioning payment."
+      "model_context": "The user is requesting a video call and mentioning payment.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -607,7 +766,16 @@
       "matched_gt_category": "Explicit-Flirting",
       "dataset_origin_label": "TP",
       "model_speaker": "expert",
-      "model_context": "The expert is stating the price for the video call."
+      "model_context": "The expert is stating the price for the video call.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "PlatformMove",
@@ -641,7 +809,17 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is agreeing to proceed with the service."
+      "model_context": "The expert is agreeing to proceed with the service.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }

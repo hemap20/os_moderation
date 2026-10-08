@@ -46,7 +46,18 @@
       "model_speaker": "unclear",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.0,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": null,
+        "sa": 0.0,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Allowed",
@@ -64,7 +75,18 @@
       "model_speaker": "user",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.0,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": null,
+        "sa": 0.0,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Allowed",
@@ -82,7 +104,18 @@
       "model_speaker": "user",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.0,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": null,
+        "sa": 0.0,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Allowed",
@@ -100,7 +133,18 @@
       "model_speaker": "user",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.0,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": null,
+        "sa": 0.0,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -118,7 +162,16 @@
       "model_speaker": "user",
       "model_context": "The user is responding to a previous topic, possibly related to explicit talk, by stating a preference.",
       "matched": true,
-      "matched_gt_category": "Explicit-Flirting"
+      "matched_gt_category": "Explicit-Flirting",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -136,7 +189,18 @@
       "model_speaker": "user",
       "model_context": "The user repeats the statement, possibly seeking clarification or emphasizing their stance.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "speech_act_cap"
+      ],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "About a Violation",
@@ -154,7 +218,18 @@
       "model_speaker": "user",
       "model_context": "The user is asking for a definition of a term used previously in the conversation.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "PlatformMove",
@@ -172,7 +247,16 @@
       "model_speaker": "user",
       "model_context": "The user is making a statement about the nature of the 'open talk' mentioned earlier, possibly implying a switch to video.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -190,7 +274,16 @@
       "model_speaker": "user",
       "model_context": "The user asks if there is a video call available. The expert responds by asking for contact information.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -208,7 +301,16 @@
       "model_speaker": "user",
       "model_context": "The user suggests using WhatsApp for communication. The expert confirms this.",
       "matched": true,
-      "matched_gt_category": "PlatformMove"
+      "matched_gt_category": "PlatformMove",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "PlatformMove",
@@ -226,7 +328,16 @@
       "model_speaker": "expert",
       "model_context": "The expert seems to be confirming their presence or availability, possibly in the current platform, before the user suggests moving to WhatsApp.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -244,7 +355,16 @@
       "model_speaker": "user",
       "model_context": "The user is suggesting switching the call type to a video call. The expert agrees to the request.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -262,7 +382,16 @@
       "model_speaker": "expert",
       "model_context": "The expert confirms the request to switch to a video call.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -280,7 +409,17 @@
       "model_speaker": "unclear",
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }

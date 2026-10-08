@@ -37,7 +37,18 @@
       "model_speaker": null,
       "model_context": null,
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.0,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": null,
+        "sa": 0.0,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -55,7 +66,18 @@
       "model_speaker": "user",
       "model_context": "The user is complaining about poor audio quality and the expert is responding to the complaint.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "speech_act_cap"
+      ],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -73,7 +95,18 @@
       "model_speaker": "user",
       "model_context": "The user is accusing someone of lying regarding the audio issue.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "speech_act_cap"
+      ],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -91,7 +124,16 @@
       "model_speaker": "user",
       "model_context": "The user is strongly insisting on the audio issue and questioning why they should lie.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Allowed",
@@ -109,7 +151,18 @@
       "model_speaker": "user",
       "model_context": "The user is changing the topic to ask about the expert's location.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.0,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": null,
+        "sa": 0.0,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Allowed",
@@ -127,7 +180,18 @@
       "model_speaker": "expert",
       "model_context": "The expert is providing their location in response to the user's question.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.0,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": null,
+        "sa": 0.0,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Allowed",
@@ -145,7 +209,18 @@
       "model_speaker": "user",
       "model_context": "The user is asking about the expert's profession.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.0,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": null,
+        "sa": 0.0,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Allowed",
@@ -163,7 +238,18 @@
       "model_speaker": "user",
       "model_context": "The user is stating their current job.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.0,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": null,
+        "sa": 0.0,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "PlatformMove",
@@ -181,7 +267,16 @@
       "model_speaker": "user",
       "model_context": "The user is discussing the presence of SBI employees and its effect on the server status. The expert responds by questioning the presence of SBI people.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -199,7 +294,16 @@
       "model_speaker": "unclear",
       "model_context": "The user confirms the name Zara Sayyed, and the expert confirms it. This is part of the initial identification.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -217,7 +321,16 @@
       "model_speaker": "expert",
       "model_context": "The expert is asking about a monetary amount related to the user's account or service.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -235,7 +348,16 @@
       "model_speaker": "expert",
       "model_context": "The expert states the amount mentioned previously.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -253,7 +375,16 @@
       "model_speaker": "expert",
       "model_context": "The expert confirms the previous information regarding the year.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -271,7 +402,16 @@
       "model_speaker": "user",
       "model_context": "The user makes a comment about the expert's appearance.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -289,7 +429,16 @@
       "model_speaker": "expert",
       "model_context": "The expert confirms the user's observation.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -307,7 +456,16 @@
       "model_speaker": "user",
       "model_context": "The user asks a question about a sensory experience.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "About a Violation",
@@ -325,7 +483,18 @@
       "model_speaker": "user",
       "model_context": "The user responds to the previous question with an expression of uncertainty.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "PlatformMove",
@@ -343,7 +512,16 @@
       "model_speaker": "user",
       "model_context": "The user is discussing plans, and the expert responds by suggesting a chore.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -361,7 +539,16 @@
       "model_speaker": "expert",
       "model_context": "The expert is suggesting a chore to the user.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -379,7 +566,16 @@
       "model_speaker": "user",
       "model_context": "The user is questioning the necessity of doing housework by paying money, suggesting a transactional element.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -397,7 +593,16 @@
       "model_speaker": "user",
       "model_context": "The user is denying the suggestion to do the work, asserting that they, as girls, also do it.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -415,7 +620,16 @@
       "model_speaker": "expert",
       "model_context": "The expert agrees that the girl should also participate in the work.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -433,7 +647,16 @@
       "model_speaker": "expert",
       "model_context": "The expert is checking on the user's meal status.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -451,7 +674,16 @@
       "model_speaker": "user",
       "model_context": "The user asks for the reason behind the expert's comment about dinner.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -469,7 +701,16 @@
       "model_speaker": "expert",
       "model_context": "The expert starts to explain the reason for the previous comment.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "f",
@@ -487,7 +728,18 @@
       "model_speaker": "user",
       "model_context": "The user is recounting an incident about a friend's birthday party where a fight started. The expert asks for clarification about the fight.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "f",
@@ -505,7 +757,18 @@
       "model_speaker": "user",
       "model_context": "The user is asking the expert for confirmation about a specific physical action taken during the reported fight.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "f",
@@ -523,7 +786,18 @@
       "model_speaker": "expert",
       "model_context": "The expert is denying that the described matter or fight actually happened.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "PlatformMove",
@@ -541,7 +815,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking about the sequence of events following a previous mention. The expert responds by clarifying that the person did not come after that.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -559,7 +842,16 @@
       "model_speaker": "user",
       "model_context": "The user asks a direct, personal question about the expert's marital status.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -577,7 +869,16 @@
       "model_speaker": "expert",
       "model_context": "The expert responds to the question about marriage by stating they are married.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -595,7 +896,16 @@
       "model_speaker": "user",
       "model_context": "The user follows up on the expert's statement about being married with a question about the reason.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -613,7 +923,16 @@
       "model_speaker": "user",
       "model_context": "The user makes a speculative comment about marriage and getting stuck, which is a general conversational statement.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -631,7 +950,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking for advice on what to do, and the expert responds by suggesting to just enjoy life.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -649,7 +977,16 @@
       "model_speaker": "user",
       "model_context": "The user asks about the status of SBI tomorrow, which is a general query.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -667,7 +1004,16 @@
       "model_speaker": "expert",
       "model_context": "The expert is responding to the user's question about not going to the office for a week.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -685,7 +1031,16 @@
       "model_speaker": "expert",
       "model_context": "The expert explains the reason for not being in the office, citing a trip to the grandmother's house and some work.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -703,7 +1058,16 @@
       "model_speaker": "user",
       "model_context": "The user is stating their origin. The expert responds by asking about the user's living situation.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -721,7 +1085,16 @@
       "model_speaker": "user",
       "model_context": "The user is clarifying their living situation, which is personal context. The expert then comments on the user being busy.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -739,7 +1112,16 @@
       "model_speaker": "expert",
       "model_context": "The expert is commenting on the user's activity level and the situation at home. The user then suggests they will come over.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -757,7 +1139,16 @@
       "model_speaker": "user",
       "model_context": "The user proposes to come to the expert's location, suggesting a potential in-person meeting.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "PlatformMove",
@@ -775,7 +1166,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking for clarification about a specific type of biryani, suggesting a potential shift in topic or context.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -793,7 +1193,16 @@
       "model_speaker": "user",
       "model_context": "The user is continuing the discussion about the availability of biryani types in Kolkata.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -811,7 +1220,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking for clarification on the type of biryani being discussed.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -829,7 +1247,16 @@
       "model_speaker": "user",
       "model_context": "The user is commenting on the preparation or serving style of the biryani.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -847,7 +1274,16 @@
       "model_speaker": "user",
       "model_context": "The user expresses that they find talking on these apps better than after work, and then suggests moving the conversation to Instagram.",
       "matched": true,
-      "matched_gt_category": "PlatformMove"
+      "matched_gt_category": "PlatformMove",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -865,7 +1301,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking the expert to perform a dance to a song. The expert responds by questioning the song.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "PlatformMove",
@@ -883,7 +1328,16 @@
       "model_speaker": "user",
       "model_context": "The user is suggesting the expert stop what they are doing and put on music. The expert responds by asking if they should dance.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -901,7 +1355,16 @@
       "model_speaker": "user",
       "model_context": "The user is directly asking the expert to perform a dance.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "About a Violation",
@@ -919,7 +1382,18 @@
       "model_speaker": "expert",
       "model_context": "The expert is responding to the request to dance by stating they cannot dance to a song.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "PlatformMove",
@@ -937,7 +1411,16 @@
       "model_speaker": "expert",
       "model_context": "The expert is asking for clarification after the user stated they cannot dance.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -955,7 +1438,16 @@
       "model_speaker": "expert",
       "model_context": "The expert is responding to the previous question by claiming they know how to dance.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -973,7 +1465,16 @@
       "model_speaker": "expert",
       "model_context": "The expert is comparing dancing in a club setting to their ability.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -991,7 +1492,16 @@
       "model_speaker": "expert",
       "model_context": "The expert is suggesting dancing now, continuing the suggestive theme.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -1009,7 +1519,16 @@
       "model_speaker": "user",
       "model_context": "The user is asking about the expert's relationship status in a suggestive manner.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -1027,7 +1546,16 @@
       "model_speaker": "user",
       "model_context": "The user confirms they have a boyfriend in response to the previous question.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -1045,7 +1573,16 @@
       "model_speaker": "user",
       "model_context": "The user is making a comment about the expert's presence tonight, implying a social context.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "About a Violation",
@@ -1063,7 +1600,19 @@
       "model_speaker": "expert",
       "model_context": "The expert is responding negatively to the user's comment about coming tonight.",
       "matched": false,
-      "matched_gt_category": null
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }

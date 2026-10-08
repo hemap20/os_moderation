@@ -71,7 +71,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "No context before. The expert responds with 'దీంట్లో కాదు. వాట్సాప్ ఎంత? 300. హాఫ్ an hour.'"
+      "model_context": "No context before. The expert responds with 'దీంట్లో కాదు. వాట్సాప్ ఎంత? 300. హాఫ్ an hour.'",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -90,7 +99,16 @@
       "matched_gt_category": "PlatformMove",
       "dataset_origin_label": "TP",
       "model_speaker": "expert",
-      "model_context": "The user asked if payment is required for video calls. The expert is stating a rate for WhatsApp video calls."
+      "model_context": "The user asked if payment is required for video calls. The expert is stating a rate for WhatsApp video calls.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -124,7 +142,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The expert just mentioned a rate for WhatsApp. The user is asking about a direct option, likely referring to a direct payment or service."
+      "model_context": "The expert just mentioned a rate for WhatsApp. The user is asking about a direct option, likely referring to a direct payment or service.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "violation_cap"
+      ],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -158,7 +187,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The user asked about a direct option. The expert is clarifying that only video calls are available, possibly implying the payment structure."
+      "model_context": "The user asked about a direct option. The expert is clarifying that only video calls are available, possibly implying the payment structure.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -192,7 +230,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The expert just stated that only video calls are available. The user is declining the service."
+      "model_context": "The expert just stated that only video calls are available. The user is declining the service.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -226,7 +273,17 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is explicitly stating they are not interested in WhatsApp video calls, which is a refusal."
+      "model_context": "The user is explicitly stating they are not interested in WhatsApp video calls, which is a refusal.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }

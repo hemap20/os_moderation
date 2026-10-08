@@ -62,7 +62,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is asking how something is made and states they are hearing it for the first time."
+      "model_context": "The user is asking how something is made and states they are hearing it for the first time.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -96,7 +105,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is offering services for 'topping' whenever the user desires."
+      "model_context": "The expert is offering services for 'topping' whenever the user desires.",
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.6
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -130,7 +148,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is offering to perform shopping tasks for the user."
+      "model_context": "The expert is offering to perform shopping tasks for the user.",
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.6
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -164,7 +191,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is asking the expert what the benefit is in return for the service."
+      "model_context": "The user is asking the expert what the benefit is in return for the service.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -183,7 +219,16 @@
       "matched_gt_category": "PlatformMove",
       "dataset_origin_label": "FN",
       "model_speaker": "user",
-      "model_context": "The user is proposing to move the conversation to WhatsApp."
+      "model_context": "The user is proposing to move the conversation to WhatsApp.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "PlatformMove",
@@ -217,7 +262,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is refusing the offer due to personal reasons (single woman, medical issue)."
+      "model_context": "The user is refusing the offer due to personal reasons (single woman, medical issue).",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Not Applicable",
@@ -251,7 +305,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user changes the topic to ask about the expert's job."
+      "model_context": "The user changes the topic to ask about the expert's job.",
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not Applicable",
@@ -285,7 +350,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is answering the question about their job."
+      "model_context": "The expert is answering the question about their job.",
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not Applicable",
@@ -319,7 +395,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is asking for clarification about the type of shop."
+      "model_context": "The user is asking for clarification about the type of shop.",
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not Applicable",
@@ -353,7 +440,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert specifies the type of shop."
+      "model_context": "The expert specifies the type of shop.",
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "PlatformMove",
@@ -387,7 +485,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is declining the service offered by the expert."
+      "model_context": "The user is declining the service offered by the expert.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "Low confidence",
@@ -421,7 +528,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is explaining their financial situation."
+      "model_context": "The user is explaining their financial situation.",
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Low confidence",
@@ -455,7 +573,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is questioning the platform's relevance to their earnings."
+      "model_context": "The user is questioning the platform's relevance to their earnings.",
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not applicable",
@@ -489,7 +618,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is expressing personal confusion about marriage."
+      "model_context": "The user is expressing personal confusion about marriage.",
+      "pp_confidence": 0.1,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not applicable",
@@ -523,7 +663,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is describing family pressure regarding marriage."
+      "model_context": "The user is describing family pressure regarding marriage.",
+      "pp_confidence": 0.1,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not applicable",
@@ -557,7 +708,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is stating their desire for a friend."
+      "model_context": "The user is stating their desire for a friend.",
+      "pp_confidence": 0.1,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -591,7 +753,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is initiating a statement, possibly setting a tone for the interaction."
+      "model_context": "The user is initiating a statement, possibly setting a tone for the interaction.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -625,7 +796,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is responding to the user's statement, likely confirming the service structure."
+      "model_context": "The expert is responding to the user's statement, likely confirming the service structure.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -659,7 +839,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is setting expectations for the conversation, asking for advice."
+      "model_context": "The user is setting expectations for the conversation, asking for advice.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "PlatformMove",
@@ -693,7 +882,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "unclear",
-      "model_context": "This is a technical issue related to the call quality, not a policy violation."
+      "model_context": "This is a technical issue related to the call quality, not a policy violation.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -712,7 +910,16 @@
       "matched_gt_category": "PlatformMove",
       "dataset_origin_label": "FN",
       "model_speaker": "user",
-      "model_context": "The user is directly asking for permission to share personal contact information."
+      "model_context": "The user is directly asking for permission to share personal contact information.",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
     },
     {
       "category": "PlatformMove",
@@ -746,7 +953,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is refusing the request to share their number and refusing a future action."
+      "model_context": "The user is refusing the request to share their number and refusing a future action.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "speech_act_cap"
+      ],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Not Applicable",
@@ -780,7 +998,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "unclear",
-      "model_context": "The user is confirming marital status and then asking the expert what else to say about them."
+      "model_context": "The user is confirming marital status and then asking the expert what else to say about them.",
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "Not Applicable",
@@ -814,7 +1043,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is giving advice about how others might perceive the user if they speak certain things."
+      "model_context": "The expert is giving advice about how others might perceive the user if they speak certain things.",
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
     },
     {
       "category": "PlatformMove",
@@ -848,7 +1088,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The user seems to be discussing the nature of the relationship or advice given by the expert."
+      "model_context": "The user seems to be discussing the nature of the relationship or advice given by the expert.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -882,7 +1131,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is expressing dissatisfaction or seeking something from the expert."
+      "model_context": "The user is expressing dissatisfaction or seeking something from the expert.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -916,7 +1174,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is making a statement about a relationship outcome, which could be interpreted as suggestive."
+      "model_context": "The expert is making a statement about a relationship outcome, which could be interpreted as suggestive.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -950,7 +1217,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is expressing a feeling about the current situation."
+      "model_context": "The user is expressing a feeling about the current situation.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -984,7 +1260,18 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is questioning the user's actions regarding money and relationships."
+      "model_context": "The expert is questioning the user's actions regarding money and relationships.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "violation_cap"
+      ],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "PlatformMove",
@@ -1018,7 +1305,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is denying something mentioned previously."
+      "model_context": "The user is denying something mentioned previously.",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -1052,7 +1348,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is expressing a desire for a relationship, asking if they should seek a partner or a friend."
+      "model_context": "The user is expressing a desire for a relationship, asking if they should seek a partner or a friend.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -1086,7 +1391,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is responding to the user's question about partners and clarifying the term."
+      "model_context": "The expert is responding to the user's question about partners and clarifying the term.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -1120,7 +1434,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is defining the difference between a partner and a friend."
+      "model_context": "The expert is defining the difference between a partner and a friend.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "Explicit-Flirting",
@@ -1154,7 +1477,16 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "expert",
-      "model_context": "The expert is elaborating on the definition of a lifelong partner."
+      "model_context": "The expert is elaborating on the definition of a lifelong partner.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     },
     {
       "category": "SuspiciousActivity",
@@ -1188,7 +1520,17 @@
         "prompt_hash": "b6d4ec9fe158ef34"
       },
       "model_speaker": "user",
-      "model_context": "The user is reiterating their desire for a life partner and asking about the platform's suitability."
+      "model_context": "The user is reiterating their desire for a life partner and asking about the platform's suitability.",
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.1,
+        "sa": 0.1,
+        "sa_drop_invalid": 0.1,
+        "pp_full": 0.1
+      }
     }
-  ]
+  ],
+  "scoring_modes_version": "sm_v1"
 }
