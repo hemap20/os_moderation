@@ -1,0 +1,129 @@
+{
+  "file_id": "rec_default_425476935_audio_1788886067609.mp3",
+  "language": "kannada",
+  "gt_flag_count": 3,
+  "model_flag_count": 3,
+  "flag_tp": 2,
+  "flag_fn": 1,
+  "flag_fp": 1,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "They put money on WhatsApp, we have to show them.",
+      "timestamp": "00:28",
+      "excerpt": "ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಅಮೌಂಟ್ ಹಾಕಿರ್ತಾರೆ ಅವರಿಗೆ ಶೋ ಮಾಡಬೇಕು",
+      "confidence": 0.9,
+      "matched": true,
+      "matched_model_category": "SuspiciousActivity"
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "We show everything fully open.",
+      "timestamp": "00:43",
+      "excerpt": "ಎಲ್ಲಾ ಫುಲ್ ಓಪನ್ ಅಲ್ಲಿ ತೋರಿಸ್ತೀವಿ",
+      "confidence": 0.4,
+      "matched": false,
+      "matched_model_category": null
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "500 for half an hour.",
+      "timestamp": "00:47",
+      "excerpt": "ಹಾಫ್ ಆನ್ ಅವರ್ ಗೆ 500",
+      "confidence": 0.9,
+      "matched": true,
+      "matched_model_category": "SuspiciousActivity"
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "For laptop TV, show the amount on WhatsApp, right?",
+      "timestamp": "00:28",
+      "excerpt": "laptop TV mate whatsapp al amount hakeertar show marbeko ha right",
+      "model_confidence": 0.6,
+      "logprob_derived_confidence": 0.9990122186423032,
+      "entropy_mean": 0.0014988333438011952,
+      "neg_entropy": -0.0014988333438011952,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "no",
+      "p_violation_yes": 0.4999988069562007,
+      "model_speaker": "user",
+      "model_context": "The user is asking the expert to show the amount on WhatsApp.",
+      "matched": false,
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "violation_cap"
+      ],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "The amount, show on WhatsApp, rate, manabodo (friend/sir).",
+      "timestamp": "00:31",
+      "excerpt": "amount hakeertare whatsapp al show marbeko rate manabodo",
+      "model_confidence": 0.6,
+      "logprob_derived_confidence": 0.9990122186423032,
+      "entropy_mean": 0.00010881832723852285,
+      "neg_entropy": -0.00010881832723852285,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "no",
+      "p_violation_yes": 0.00035697059339087037,
+      "model_speaker": "user",
+      "model_context": "The user is asking about the rate and how to show the amount on WhatsApp.",
+      "matched": true,
+      "matched_gt_category": "PlatformMove",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "violation_cap"
+      ],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.3
+      }
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "This people are asking for the amount on WhatsApp for half an hour, 500.",
+      "timestamp": "00:35",
+      "excerpt": "eha phuloganal torastha amount par whatsapp al pechto half an hour ge 500",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": 0.9990122186423032,
+      "entropy_mean": 6.854446002779215e-07,
+      "neg_entropy": -6.854446002779215e-07,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": 0.9999921322487634,
+      "model_speaker": "user",
+      "model_context": "The user is stating the specific price and duration for the service.",
+      "matched": true,
+      "matched_gt_category": "SuspiciousActivity",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
+    }
+  ],
+  "scoring_modes_version": "sm_v1"
+}

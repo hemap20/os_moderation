@@ -1,0 +1,45 @@
+model,prompt_version,scoring_mode,n_capped,n_capped_tp,n_dropped,n_dropped_tp,tp_pushed_below_0.6,tp_pushed_below_0.8,auroc_confidence,tp_rate_by_speech_act,tp_rate_by_speaker
+e2b_nothinking,v6,raw,0,0,0,0,0,0,0.86,,
+e2b_nothinking,v6,sa,9,0,0,0,0,0,0.86,"{""(missing)"": 0.0, ""direct"": 0.06, ""hypothetical"": 0.06, ""reported"": 0.0, ""denial"": 0.0}","{""unclear"": 0.0, ""user"": 0.05, ""expert"": 0.04}"
+e2b_nothinking,v6,sa_drop_invalid,9,0,242,0,0,0,0.88,,
+e2b_nothinking,v6,pp_full,60,7,242,0,7,0,0.88,"{""direct"": 0.07, ""hypothetical"": 0.08, ""reported"": 0.0, ""denial"": 0.0}","{""user"": 0.07, ""expert"": 0.05, ""unclear"": 0.0}"
+e2b_thinking,v6,raw,0,0,0,0,0,0,0.64,,
+e2b_thinking,v6,sa,12,3,0,0,3,3,0.63,"{""(missing)"": 0.0, ""direct"": 0.26, ""reported"": 0.0, ""denial"": 0.0, ""hypothetical"": 0.0}","{""(missing)"": 0.0, ""user"": 0.29, ""unclear"": 0.29, ""expert"": 0.16}"
+e2b_thinking,v6,sa_drop_invalid,12,3,11,1,3,3,0.62,,
+e2b_thinking,v6,pp_full,26,6,11,1,6,3,0.62,"{""direct"": 0.26, ""reported"": 0.0, ""denial"": 0.0, ""hypothetical"": 0.0}","{""user"": 0.29, ""unclear"": 0.25, ""expert"": 0.16}"
+e4b_nothinking,v6,raw,0,0,0,0,0,0,0.79,,
+e4b_nothinking,v6,sa,4,0,0,0,0,0,0.82,"{""direct"": 0.38, ""hypothetical"": 0.4, ""denial"": 0.0, ""reported"": 0.0}","{""user"": 0.36, ""unclear"": 0.0, ""expert"": 0.29}"
+e4b_nothinking,v6,sa_drop_invalid,4,0,0,0,0,0,0.82,,
+e4b_nothinking,v6,pp_full,11,1,0,0,1,0,0.82,"{""direct"": 0.38, ""hypothetical"": 0.4, ""denial"": 0.0, ""reported"": 0.0}","{""user"": 0.36, ""unclear"": 0.0, ""expert"": 0.29}"
+e4b_thinking,v6,raw,0,0,0,0,0,0,0.67,,
+e4b_thinking,v6,sa,12,3,0,0,3,3,0.64,"{""reported"": 0.0, ""direct"": 0.25, ""denial"": 0.0, ""hypothetical"": 0.5}","{""user"": 0.27, ""expert"": 0.18, ""unclear"": 0.25}"
+e4b_thinking,v6,sa_drop_invalid,12,3,0,0,3,3,0.64,,
+e4b_thinking,v6,pp_full,14,3,0,0,3,3,0.64,"{""reported"": 0.0, ""direct"": 0.25, ""denial"": 0.0, ""hypothetical"": 0.5}","{""user"": 0.27, ""expert"": 0.18, ""unclear"": 0.25}"
+e2b_nothinking,v7,raw,0,0,0,0,0,0,0.88,,
+e2b_nothinking,v7,sa,19,0,0,0,0,0,0.88,"{""direct"": 0.08, ""denial"": 0.03, ""(missing)"": 0.0, ""reported"": 0.0, ""hypothetical"": 0.12}","{""user"": 0.05, ""expert"": 0.04, ""unclear"": 0.0, ""(missing)"": 0.0}"
+e2b_nothinking,v7,sa_drop_invalid,19,0,889,3,0,0,0.9,,
+e2b_nothinking,v7,pp_full,110,7,889,3,7,0,0.9,"{""direct"": 0.14, ""denial"": 0.05, ""reported"": 0.0, ""(missing)"": 0.0, ""hypothetical"": 0.2}","{""user"": 0.12, ""expert"": 0.14, ""unclear"": 0.0}"
+e2b_thinking,v7,raw,0,0,0,0,0,0,0.78,,
+e2b_thinking,v7,sa,6,0,0,0,0,0,0.78,"{""direct"": 0.11, ""(missing)"": 0.01, ""reported"": 0.0, ""hypothetical"": 0.0, ""denial"": 0.0}","{""unclear"": 0.0, ""user"": 0.08, ""expert"": 0.11}"
+e2b_thinking,v7,sa_drop_invalid,6,0,169,1,0,0,0.84,,
+e2b_thinking,v7,pp_full,25,0,169,1,0,0,0.84,"{""direct"": 0.15, ""reported"": 0.0, ""hypothetical"": 0.0, ""denial"": 0.0}","{""unclear"": 0.0, ""user"": 0.14, ""expert"": 0.2}"
+e4b_nothinking,v7,raw,0,0,0,0,0,0,0.85,,
+e4b_nothinking,v7,sa,5,1,0,0,1,1,0.84,"{""direct"": 0.17, ""reported"": 0.0, ""denial"": 0.0}","{""expert"": 0.16, ""unclear"": 0.06, ""user"": 0.16}"
+e4b_nothinking,v7,sa_drop_invalid,5,1,5,0,1,1,0.84,,
+e4b_nothinking,v7,pp_full,21,5,5,0,5,1,0.81,"{""direct"": 0.17, ""reported"": 0.0, ""denial"": 0.0}","{""expert"": 0.17, ""unclear"": 0.07, ""user"": 0.16}"
+e4b_thinking,v7,raw,0,0,0,0,0,0,0.73,,
+e4b_thinking,v7,sa,71,14,0,0,14,12,0.64,"{""direct"": 0.23, ""reported"": 0.0, ""denial"": 0.0, ""hypothetical"": 0.0}","{""unclear"": 0.16, ""expert"": 0.12, ""user"": 0.26}"
+e4b_thinking,v7,sa_drop_invalid,71,14,0,0,14,12,0.64,,
+e4b_thinking,v7,pp_full,77,14,0,0,14,12,0.65,"{""direct"": 0.23, ""reported"": 0.0, ""denial"": 0.0, ""hypothetical"": 0.0}","{""unclear"": 0.16, ""expert"": 0.12, ""user"": 0.26}"
+e2b_nothinking,v8,raw,0,0,0,0,0,0,0.83,,
+e2b_nothinking,v8,sa,70,0,0,0,0,0,0.86,"{""(missing)"": 0.0, ""direct"": 0.06, ""reported"": 0.0, ""hypothetical"": 0.07, ""denial"": 0.03}","{""(missing)"": 0.0, ""user"": 0.05, ""expert"": 0.03, ""unclear"": 0.0}"
+e2b_nothinking,v8,sa_drop_invalid,43,0,284,0,0,0,0.88,,
+e2b_nothinking,v8,pp_full,261,12,284,0,12,0,0.83,"{""direct"": 0.06, ""reported"": 0.0, ""hypothetical"": 0.07, ""denial"": 0.03, ""(missing)"": 0.0}","{""user"": 0.07, ""unclear"": 0.0, ""expert"": 0.05}"
+e2b_thinking,v8,raw,0,0,0,0,0,0,0.62,,
+e2b_thinking,v8,sa,24,1,0,0,1,1,0.68,"{""direct"": 0.23, ""reported"": 0.0, ""hypothetical"": 0.12, ""denial"": 0.0}","{""user"": 0.26, ""unclear"": 0.05, ""expert"": 0.0}"
+e2b_thinking,v8,sa_drop_invalid,24,1,3,0,1,1,0.68,,
+e2b_thinking,v8,pp_full,37,4,3,0,4,1,0.67,"{""direct"": 0.23, ""reported"": 0.0, ""denial"": 0.0, ""hypothetical"": 0.17}","{""user"": 0.26, ""unclear"": 0.05, ""expert"": 0.0}"
+e4b_nothinking,v8,raw,0,0,0,0,0,0,0.76,,
+e4b_nothinking,v8,sa,3,0,0,0,0,0,0.76,"{""direct"": 0.23, ""reported"": 0.0, ""denial"": 0.0}","{""user"": 0.23, ""expert"": 0.2, ""unclear"": 0.0}"
+e4b_nothinking,v8,sa_drop_invalid,3,0,0,0,0,0,0.76,,
+e4b_nothinking,v8,pp_full,7,0,0,0,0,0,0.77,"{""direct"": 0.23, ""reported"": 0.0, ""denial"": 0.0}","{""user"": 0.23, ""expert"": 0.2, ""unclear"": 0.0}"

@@ -1,0 +1,152 @@
+{
+  "file_id": "rec_audio_call_426035272_audio_1788942782972.mp3",
+  "language": "telugu",
+  "gt_flag_count": 3,
+  "model_flag_count": 4,
+  "flag_tp": 2,
+  "flag_fn": 1,
+  "flag_fp": 2,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Do you have any interest in sex?",
+      "timestamp": "00:31",
+      "excerpt": "మీకు సెక్స్ మీద ఏమైనా ఇంట్రెస్ట్ ఉందా",
+      "confidence": 0.4,
+      "matched": true,
+      "matched_model_category": "Explicit-Flirting"
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "If you pay the amount, I will show you.",
+      "timestamp": "00:41",
+      "excerpt": "అదే అమౌంట్ కొడతా అంటే నేను చూపిస్తాను",
+      "confidence": 0.9,
+      "matched": true,
+      "matched_model_category": "SuspiciousActivity"
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "300, I will show everything.",
+      "timestamp": "00:55",
+      "excerpt": "300 అండి నేను మొత్తం చూపిస్తాను",
+      "confidence": 0.9,
+      "matched": false,
+      "matched_model_category": null
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "you have interest in sex",
+      "timestamp": "00:33",
+      "excerpt": "meeku sex me dana interest undaam",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": 0.7574140797729273,
+      "entropy_mean": 6.587738211531284e-06,
+      "neg_entropy": -6.587738211531284e-06,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": 1.0,
+      "model_speaker": "user",
+      "model_context": "The user is discussing their interest in sex with the expert. The expert does not respond directly to this statement.",
+      "matched": true,
+      "matched_gt_category": "Explicit-Flirting",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "if you give the amount, I will do it",
+      "timestamp": "00:40",
+      "excerpt": "unde amount koodta ante nen choostaanu",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": 1.0,
+      "entropy_mean": 1.9303161421361827e-05,
+      "neg_entropy": -1.9303161421361827e-05,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": 1.0,
+      "model_speaker": "user",
+      "model_context": "The user proposes payment as a condition for the service. The expert confirms the condition.",
+      "matched": true,
+      "matched_gt_category": "SuspiciousActivity",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will do 300",
+      "timestamp": "00:44",
+      "excerpt": "nanta kattalla 300",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": 1.0,
+      "entropy_mean": 0.0019628974845677938,
+      "neg_entropy": -0.0019628974845677938,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": 0.9999984502816872,
+      "model_speaker": "user",
+      "model_context": "The user specifies the price for the service. The conversation ends after this statement.",
+      "matched": false,
+      "matched_gt_category": null,
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Where do you ask Insta",
+      "timestamp": "00:56",
+      "excerpt": "कहाँ ने मोतम पूछो इंस्टा",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": 1.0,
+      "entropy_mean": 2.9099524143403085e-07,
+      "neg_entropy": -2.9099524143403085e-07,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": 0.9999997615814777,
+      "model_speaker": "unclear",
+      "model_context": "The user is asking where the expert can be contacted outside the current application. The expert has not responded yet.",
+      "matched": false,
+      "matched_gt_category": null,
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.3,
+        "sa_drop_invalid": 0.3,
+        "pp_full": 0.3
+      }
+    }
+  ],
+  "scoring_modes_version": "sm_v1"
+}

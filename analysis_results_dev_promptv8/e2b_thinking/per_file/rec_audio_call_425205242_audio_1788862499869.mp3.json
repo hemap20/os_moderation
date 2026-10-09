@@ -1,0 +1,127 @@
+{
+  "file_id": "rec_audio_call_425205242_audio_1788862499869.mp3",
+  "language": "malayalam",
+  "gt_flag_count": 3,
+  "model_flag_count": 3,
+  "flag_tp": 1,
+  "flag_fn": 2,
+  "flag_fp": 2,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Are you interested in taking an open talk service?",
+      "timestamp": "00:45",
+      "excerpt": "എനിക്ക് ഓപ്പൺ ടോക്ക് സർവീസ് എടുക്കാൻ താല്പര്യം ഉണ്ടോ",
+      "confidence": 0.9,
+      "matched": false,
+      "matched_model_category": null
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "It is a video call service, it is through Telegram.",
+      "timestamp": "00:57",
+      "excerpt": "വീഡിയോ കോൾ സർവീസ് ആണ് ടെലഗ്രാമിൽ കൂടി ആണ്",
+      "confidence": 0.9,
+      "matched": false,
+      "matched_model_category": null
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Okay, I will give you my Telegram ID, send a hi.",
+      "timestamp": "1:15",
+      "excerpt": "ഓക്കെ ഞാൻ ടെലഗ്രാം ഐഡി അറിയാം ഒരു ഹായ് അയക്കും",
+      "confidence": 0.9,
+      "matched": true,
+      "matched_model_category": "PlatformMove"
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "About a Violation",
+      "translation": "What is the open talk service?",
+      "timestamp": "01:03",
+      "excerpt": "ओपन टॉक सर्विस दी कंदtalpirlundo",
+      "model_confidence": 0.3,
+      "logprob_derived_confidence": 0.9863036762878201,
+      "entropy_mean": 0.00010516293668442571,
+      "neg_entropy": -0.00010516293668442571,
+      "model_speech_act": "hypothetical",
+      "model_quote_type": null,
+      "model_violation": "no",
+      "p_violation_yes": 7.681204685202095e-15,
+      "model_speaker": "user",
+      "model_context": "The user is asking about the service after discussing work and going home. The expert seems to be about to respond.",
+      "matched": false,
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": true,
+      "pp_rules_applied": [
+        "category_drop"
+      ],
+      "scored": {
+        "raw": 0.3,
+        "sa": 0.3,
+        "sa_drop_invalid": null,
+        "pp_full": null
+      }
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Okay I know the Telegram ID. I will give a high ID. Okay Capital 42.",
+      "timestamp": "00:56",
+      "excerpt": "ഓക്കെ ഞാൻ ടെലഗ്രാം ഐഡി അറിയാം. ഒരു ഹൈ ഐകും. ഓക്കെ ക്യാപിറ്റൽ 42.",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": 1.0,
+      "entropy_mean": 0.013383502801979799,
+      "neg_entropy": -0.013383502801979799,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": 1.0,
+      "model_speaker": "user",
+      "model_context": "The user is confirming the details of the video call service and then offers their Telegram ID and a specific ID.",
+      "matched": true,
+      "matched_gt_category": "PlatformMove",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "ok. ah capital f then small letter i d h a here is 120 black profile",
+      "timestamp": "01:24",
+      "excerpt": "ok. ah capital f pinne small letter i d h a idha 120 black profile kitiyo",
+      "model_confidence": 0.6,
+      "logprob_derived_confidence": 0.7548821430729863,
+      "entropy_mean": 0.03322880040491537,
+      "neg_entropy": -0.03322880040491537,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": 0.9970190245679925,
+      "model_speaker": "user",
+      "model_context": "The user is discussing sharing an ID and a black profile, likely in response to a previous query or instruction.",
+      "matched": false,
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.6,
+        "sa": 0.6,
+        "sa_drop_invalid": 0.6,
+        "pp_full": 0.6
+      }
+    }
+  ],
+  "scoring_modes_version": "sm_v1"
+}

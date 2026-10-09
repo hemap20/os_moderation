@@ -1,0 +1,9 @@
+model,prompt_version,scoring_mode,n_capped,n_capped_tp,n_dropped,n_dropped_tp,tp_pushed_below_0.6,tp_pushed_below_0.8,auroc_confidence,tp_rate_by_speech_act,tp_rate_by_speaker
+e2b_nothinking,v6,raw,0,0,0,0,0,0,0.86,,
+e2b_nothinking,v6,sa,79,3,0,0,3,3,0.86,"{""hypothetical"": 0.03, ""direct"": 0.04, ""denial"": 0.0, ""(missing)"": 0.0, ""reported"": 0.0, ""mild"": 1.0, ""unclear"": 0.0, ""low confidence"": 0.0}","{""user"": 0.04, ""expert"": 0.02, ""unclear"": 0.01}"
+e2b_nothinking,v6,sa_drop_invalid,70,3,2389,2,3,3,0.88,,
+e2b_nothinking,v6,pp_full,581,39,2389,2,39,8,0.87,"{""hypothetical"": 0.03, ""direct"": 0.05, ""denial"": 0.01, ""reported"": 0.0, ""mild"": 1.0, ""unclear"": 0.0, ""low confidence"": 0.0}","{""user"": 0.05, ""expert"": 0.03, ""unclear"": 0.01}"
+gemini-3.1-flash-lite,v6,raw,0,0,0,0,0,0,0.7,,
+gemini-3.1-flash-lite,v6,sa,0,0,0,0,0,0,0.7,"{""direct"": 0.39, ""reported"": 0.07, ""hypothetical"": 0.09, ""denial"": 0.08}","{""user"": 0.32, ""expert"": 0.35}"
+gemini-3.1-flash-lite,v6,sa_drop_invalid,0,0,0,0,0,0,0.7,,
+gemini-3.1-flash-lite,v6,pp_full,0,0,0,0,0,0,0.7,"{""direct"": 0.39, ""reported"": 0.07, ""hypothetical"": 0.09, ""denial"": 0.08}","{""user"": 0.32, ""expert"": 0.35}"

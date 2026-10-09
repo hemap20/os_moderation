@@ -84,9 +84,15 @@ def parse_classification(raw_text: str) -> tuple:
     violation_token_topk fields always stay None here — only the
     categorical speech_act/quote_type/violation fields are populated."""
     schema_module = prompt_loader.schema_module_for_prompt(PROMPT_PATH)
-    is_v4 = schema_module is not None and hasattr(schema_module, "RawModelOutputV4")
+    is_v6 = schema_module is not None and hasattr(schema_module, "RawModelOutputV6")
+    is_v4 = not is_v6 and schema_module is not None and hasattr(schema_module, "RawModelOutputV4")
     parsed = gemini_client.parse_json_lenient(raw_text)
-    raw_output = schema_module.RawModelOutputV4(**parsed) if is_v4 else schema_module.RawModelOutput(**parsed)
+    if is_v6:
+        raw_output = schema_module.RawModelOutputV6(**parsed)
+    elif is_v4:
+        raw_output = schema_module.RawModelOutputV4(**parsed)
+    else:
+        raw_output = schema_module.RawModelOutput(**parsed)
 
     missing_counts = {k: 0 for k in _MISSING_TRACKED_FIELDS}
     flags = []
@@ -96,18 +102,21 @@ def parse_classification(raw_text: str) -> tuple:
         speech_act = getattr(f, "speech_act", None)
         quote_type = getattr(f, "quote_type", None)
         violation = getattr(f, "violation", None)
-        if is_v4:
+        speaker = getattr(f, "speaker", None)
+        context = getattr(f, "context", None)
+        if is_v4 or is_v6:
             if speech_act is None:
                 missing_counts["speech_act"] += 1
-            if quote_type is None:
-                missing_counts["quote_type"] += 1
             if violation is None:
                 missing_counts["violation"] += 1
+        if is_v4 and quote_type is None:
+            missing_counts["quote_type"] += 1
         flags.append(GemmaChunkFlag(
             model_category=f.flag, model_timestamp=f.timestamp, model_excerpt=f.excerpt,
             model_translation=f.translation, model_justification=f.justification,
             model_confidence=f.confidence,
             model_speech_act=speech_act, model_quote_type=quote_type, model_violation=violation,
+            model_speaker=speaker, model_context=context,
         ))
     return flags, missing_counts
 

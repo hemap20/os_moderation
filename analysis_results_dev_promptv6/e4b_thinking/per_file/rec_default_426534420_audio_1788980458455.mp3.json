@@ -1,0 +1,125 @@
+{
+  "file_id": "rec_default_426534420_audio_1788980458455.mp3",
+  "language": "telugu",
+  "gt_flag_count": 3,
+  "model_flag_count": 3,
+  "flag_tp": 1,
+  "flag_fn": 2,
+  "flag_fp": 2,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Will you come to WhatsApp?",
+      "timestamp": "00:14",
+      "excerpt": "వాట్సాప్ కి వస్తారా",
+      "confidence": 0.9,
+      "matched": false,
+      "matched_model_category": null
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "I will show my body",
+      "timestamp": "00:14",
+      "excerpt": "బాడీ చూపిస్తాను",
+      "confidence": 0.4,
+      "matched": false,
+      "matched_model_category": null
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will show for 200",
+      "timestamp": "00:24",
+      "excerpt": "200 కి చూపిస్తాను",
+      "confidence": 0.9,
+      "matched": true,
+      "matched_model_category": "SuspiciousActivity"
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "WhatsApp, do you show your whole body?",
+      "timestamp": "00:00",
+      "excerpt": "WhatsApp ka sara body chho pistano?",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": 0.9889649700069889,
+      "entropy_mean": 0.017884328044601716,
+      "neg_entropy": -0.017884328044601716,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": 0.9999897481064004,
+      "model_speaker": "user",
+      "model_context": "Speaker 1: 'Hey, drama, you want to talk?' Speaker 2 responds: 'Body chho sta.'",
+      "matched": false,
+      "matched_gt_category": null,
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
+    },
+    {
+      "category": "Explicit-Flirting",
+      "translation": "Up the bottom.",
+      "timestamp": "00:00",
+      "excerpt": "Up the bottom.",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": 0.9999958575069212,
+      "entropy_mean": 0.034191158521934994,
+      "neg_entropy": -0.034191158521934994,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": 0.999995112442896,
+      "model_speaker": "user",
+      "model_context": "The user is giving a specific instruction regarding the body view, following the request to show the body.",
+      "matched": false,
+      "matched_gt_category": null,
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "And you show your body. 200 for showing.",
+      "timestamp": "00:00",
+      "excerpt": "And che body chho pistano. 200 se chho pistano.",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": 0.9999984701508995,
+      "entropy_mean": 0.0011855307668776998,
+      "neg_entropy": -0.0011855307668776998,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": 0.9999997615814777,
+      "model_speaker": "user",
+      "model_context": "The user is offering payment (200) in direct exchange for the expert showing their body.",
+      "matched": true,
+      "matched_gt_category": "SuspiciousActivity",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": [],
+      "scored": {
+        "raw": 0.9,
+        "sa": 0.9,
+        "sa_drop_invalid": 0.9,
+        "pp_full": 0.9
+      }
+    }
+  ],
+  "scoring_modes_version": "sm_v1"
+}
