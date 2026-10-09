@@ -103,6 +103,7 @@ def _build_model_dirs(gemma_results_dir: Path, gemini_results_dir: Path) -> Dict
         "e2b_conformer5s_text_nothinking": gemma_results_dir / "e2b_conformer5s_text_nothinking",
         "e4b_conformer5s_text_nothinking": gemma_results_dir / "e4b_conformer5s_text_nothinking",
         "gemini-3.5-flash-lite": gemini_results_dir / "gemini-3.5-flash-lite",
+        "gemini-3.1-flash-lite": gemini_results_dir / "gemini-3.1-flash-lite",
     }
 
 

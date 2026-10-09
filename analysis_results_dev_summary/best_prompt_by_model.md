@@ -52,19 +52,19 @@ Differences of 1-2 files are within dev-set noise on this dataset size.
 
 ## e4b_nothinking
 ### threshold >= 0.6
-- **v4 / pp_full** — recall 0.72, specificity 0.72, flag_precision 0.64 (fp_files=7, fn_files=7)
-- **v4 / sa** — recall 0.72, specificity 0.68, flag_precision 0.61 (fp_files=8, fn_files=7)
-- **v4 / sa_drop_invalid** — recall 0.72, specificity 0.68, flag_precision 0.61 (fp_files=8, fn_files=7)
+- **v8 / pp_full** — recall 0.8, specificity 0.6, flag_precision 0.35 (fp_files=10, fn_files=5)
+- **v8 / sa** — recall 0.8, specificity 0.56, flag_precision 0.33 (fp_files=11, fn_files=5)
+- **v8 / sa_drop_invalid** — recall 0.8, specificity 0.56, flag_precision 0.33 (fp_files=11, fn_files=5)
 
 ### threshold >= 0.8
-- **v4 / pp_full** — recall 0.64, specificity 0.92, flag_precision 0.73 (fp_files=2, fn_files=9)
-- **v4 / sa** — recall 0.64, specificity 0.88, flag_precision 0.7 (fp_files=3, fn_files=9)
-- **v4 / sa_drop_invalid** — recall 0.64, specificity 0.88, flag_precision 0.7 (fp_files=3, fn_files=9)
+- **v7 / sa** — recall 0.72, specificity 0.88, flag_precision 0.4 (fp_files=3, fn_files=7)
+- **v7 / sa_drop_invalid** — recall 0.72, specificity 0.88, flag_precision 0.4 (fp_files=3, fn_files=7)
+- **v7 / pp_full** — recall 0.72, specificity 0.88, flag_precision 0.4 (fp_files=3, fn_files=7)
 
 ### threshold >= 0.9
-- **v4 / pp_full** — recall 0.64, specificity 0.92, flag_precision 0.73 (fp_files=2, fn_files=9)
-- **v4 / sa** — recall 0.64, specificity 0.88, flag_precision 0.7 (fp_files=3, fn_files=9)
-- **v4 / sa_drop_invalid** — recall 0.64, specificity 0.88, flag_precision 0.7 (fp_files=3, fn_files=9)
+- **v7 / sa** — recall 0.72, specificity 0.88, flag_precision 0.4 (fp_files=3, fn_files=7)
+- **v7 / sa_drop_invalid** — recall 0.72, specificity 0.88, flag_precision 0.4 (fp_files=3, fn_files=7)
+- **v7 / pp_full** — recall 0.72, specificity 0.88, flag_precision 0.4 (fp_files=3, fn_files=7)
 
 ## e4b_thinking
 ### threshold >= 0.6

@@ -1,0 +1,67 @@
+{
+  "file_id": "rec_audio_call_426279116_audio_1788962727515.mp3",
+  "language": "telugu",
+  "gt_flag_count": 1,
+  "model_flag_count": 2,
+  "flag_tp": 1,
+  "flag_fn": 0,
+  "flag_fp": 1,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Everyone is saying let's do a video call on WhatsApp, give me 300.",
+      "timestamp": "01:41",
+      "excerpt": "అందరూ వాట్సాప్ వాట్సాప్ లో వీడియో కాల్ చేస్తాను 300 ఇవ్వు",
+      "confidence": 0.9,
+      "matched": true,
+      "matched_model_category": "SuspiciousActivity"
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I put 250 rupees",
+      "timestamp": "01:32",
+      "excerpt": "250 rupees antha vesanu",
+      "model_confidence": 0.1,
+      "logprob_derived_confidence": null,
+      "entropy_mean": null,
+      "neg_entropy": null,
+      "model_speech_act": "reported",
+      "model_quote_type": null,
+      "model_violation": "no",
+      "p_violation_yes": null,
+      "model_speaker": "user",
+      "model_context": "The user mentions installing the app and paying 250 rupees to talk.",
+      "matched": false,
+      "matched_gt_category": null,
+      "pp_confidence": 0.1,
+      "pp_dropped": false,
+      "pp_rules_applied": []
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Give 300 rupees",
+      "timestamp": "01:44",
+      "excerpt": "300 rupayalu ivvu",
+      "model_confidence": 0.6,
+      "logprob_derived_confidence": null,
+      "entropy_mean": null,
+      "neg_entropy": null,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": null,
+      "model_speaker": "user",
+      "model_context": "The user is talking about WhatsApp video calls and asks for 300 rupees.",
+      "matched": true,
+      "matched_gt_category": "PlatformMove",
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": []
+    }
+  ]
+}
