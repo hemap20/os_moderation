@@ -25,3 +25,16 @@ _Differences of 1-2 files are within dev-set noise on this dataset size._
 - Best at t=0.9: **v6/raw** — recall 0.59 (127/214), specificity 0.95 (159/167), flag_precision 0.47
 
 _Differences of 1-2 files are within dev-set noise on this dataset size._
+
+## gemini-3.5-flash-lite
+| prompt/mode | t=0.0 | t=0.3 | t=0.6 | t=0.8 | t=0.9 | t=1.0 |
+|---|---|---|---|---|---|---|
+| v6/raw | 0.09/0.99 | 0.09/0.99 | 0.08/0.99 | 0.08/0.99 | 0.08/0.99 | 0.0/1.0 |
+| v6/sa | 0.09/0.99 | 0.09/0.99 | 0.08/0.99 | 0.07/0.99 | 0.07/0.99 | 0.0/1.0 |
+| v6/pp_full | 0.09/0.99 | 0.09/0.99 | 0.08/0.99 | 0.07/0.99 | 0.07/0.99 | 0.0/1.0 |
+
+- Best at t=0.6: **v6/raw** — recall 0.08 (18/213), specificity 0.99 (166/167), flag_precision 0.75
+- Best at t=0.8: **v6/raw** — recall 0.08 (16/213), specificity 0.99 (166/167), flag_precision 0.76
+- Best at t=0.9: **v6/raw** — recall 0.08 (16/213), specificity 0.99 (166/167), flag_precision 0.76
+
+_Differences of 1-2 files are within dev-set noise on this dataset size._
