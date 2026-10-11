@@ -38,6 +38,7 @@ import json
 import re
 import time
 import traceback
+import zlib
 from pathlib import Path
 from typing import List, Optional
 
@@ -727,7 +728,14 @@ def main():
                          help="Alternate prompt file for a prompt experiment, e.g. prompt_v2.py — "
                               "does NOT affect ground truth, which always used prompt.py; "
                               "default (unset) uses config.CLASSIFICATION_PROMPT_PATH (prompt.py)")
+    parser.add_argument("--num-shards", type=int, default=1,
+                         help="Split the dataset into N disjoint shards so N processes (same model/mode/prompt) "
+                              "can run in parallel on one big GPU or several pods")
+    parser.add_argument("--shard-index", type=int, default=0,
+                         help="Which shard this process runs, 0..num-shards-1")
     args = parser.parse_args()
+    if not 0 <= args.shard_index < args.num_shards:
+        parser.error(f"--shard-index must be in [0, {args.num_shards})")
 
     global DATASET_DIR, GEMMA_RESULTS_DIR, PROMPT_PATH, RAW_SCHEMA_STR
     paths = config.dataset_paths(args.dataset_root, args.results_tag)
@@ -739,12 +747,19 @@ def main():
     RAW_SCHEMA_STR = json.dumps(schema_module.raw_model_output_json_schema())
     GEMMA_RESULTS_DIR = paths["gemma_results_dir"]
 
-    logger = StageLogger(f"gemma_local_{args.model}_{'thinking' if args.thinking else 'nothinking'}")
+    shard_suffix = f"_shard{args.shard_index}of{args.num_shards}" if args.num_shards > 1 else ""
+    logger = StageLogger(f"gemma_local_{args.model}_{'thinking' if args.thinking else 'nothinking'}{shard_suffix}")
     logger.info(f"Loading {MODEL_IDS[args.model]} (thinking={args.thinking})...")
     model, processor = load_model(args.model)
     logger.info("Model loaded.")
 
     records = dsv2.load_dataset_v2(DATASET_DIR)
+    if args.num_shards > 1:
+        # Stable hash of file_id, not list position: shards stay disjoint even if
+        # dataset ordering changes, and a file_id listed twice always lands in the
+        # same shard, so two processes never write the same results/<file_id>.json.
+        records = [r for r in records if zlib.crc32(r.file_id.encode()) % args.num_shards == args.shard_index]
+        logger.info(f"Shard {args.shard_index}/{args.num_shards}: {len(records)} file(s)")
     if args.dry_run:
         records = records[: args.dry_run_limit]
         logger.info(f"DRY RUN: {len(records)} file(s)")
@@ -762,7 +777,7 @@ def main():
     # dir race on the same chunk*.wav paths when run concurrently, corrupting
     # whichever one loses the race (observed: "Incorrect padding" audio
     # errors from a chunk truncated mid-write by the other process).
-    tmp_dir = output_dir(args.model, args.thinking) / "_chunks_tmp"
+    tmp_dir = output_dir(args.model, args.thinking) / f"_chunks_tmp{shard_suffix}"
     n_success, n_error = 0, 0
     total_missing_counts = {k: 0 for k in _MISSING_TRACKED_FIELDS}
     t0 = time.time()
