@@ -86,3 +86,9 @@ class GemmaFileResult(BaseModel):
     # (rather than present with 0) means this run's schema didn't ask for
     # it at all (e.g. speech_act under prompt.py/v2/v3).
     missing_field_counts: dict = Field(default_factory=dict)
+    # Hosted-API runs only (openrouter_text.py): wall-clock seconds for the
+    # successful request (network + queueing + generation), plus the
+    # provider's own timing/usage/cost — see openrouter_text.py. None for
+    # local runs, which don't record per-file timing.
+    inference_time_sec: Optional[float] = None
+    inference_meta: dict = Field(default_factory=dict)

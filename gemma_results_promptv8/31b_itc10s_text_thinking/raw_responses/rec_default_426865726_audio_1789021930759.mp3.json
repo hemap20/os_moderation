@@ -1,0 +1,1914 @@
+{
+  "content": "{\"d\": []}",
+  "reasoning": "Content Policy Analyst.\nAudio calls in Indian languages (Kannada in this case).\n\"Friends\" app (User pays, Expert is paid).\n\n        *   `PlatformMove`: Proposing/asking to move outside the app (WhatsApp, Telegram, phone numbers, meeting in person).\n        *   `SuspiciousActivity`: Money/payment for sexual content/services.\n        *   `Explicit-Flirting`: Sexual talk, requests for nudity, \"open talk\", \"non-veg talk\".\n        *   `About a Violation`: Warnings, stories, refusals, questions about rules (violation: \"no\", confidence $\\le 0.3$).\n\n        *   Internal app calls (audio/video).\n        *   \"Normal talk\" (non-sexual).\n        *   Apps mentioned for other reasons.\n        *   Meeting other people (not the caller).\n        *   General personal details (name, city, job) without contact info.\n        *   Compliments, \"I love you\", relationship talk.\n        *   \"Show/open\" for non-body things.\n        *   Refusals of sexual talk.\nMinified JSON object following the provided schema.\n\n    *   [00:00] Hello hello, where from? Bangalore? We are from Bangalore. (Small talk/Location - Allowed)\n    *   [00:10] Jep Nagar is yours? Ours is... will you tell the pin? (Asking for location/pin - Allowed, not contact info for moving platforms)\n    *   [00:20] Government school... sister didn't go today... (Small talk - Allowed)\n    *   [00:30] Breakfast/food done? (Small talk - Allowed)\n    *   [00:40] Breakfast done, need to eat food... (Small talk - Allowed)\n    *   [00:50] Which app do you use? It's been ten days for me, four days for you. (Talking about the app - Allowed)\n    *   [01:00] The app is good. Did you meet anyone in the app? (Talking about app usage - Allowed)\n    *   [01:10] Yesterday no... remember. (Small talk - Allowed)\n    *   [01:20] If used regularly, people are found. I use it occasionally. (Small talk - Allowed)\n    *   [01:30] Why haven't you met anyone? (Small talk - Allowed)\n    *   [01:40] (Unclear phrase) (Filler/Small talk - Allowed)\n    *   [01:50] (Filler)\n    *   [02:00] Four singles you... (Small talk/Relationship - Allowed)\n    *   [02:10] Chinese family... do you speak six chains? (Small talk - Allowed)\n    *   [02:20] (Filler)\n    *   [02:30] Yes, tell. (Small talk - Allowed)\n    *   [02:40] True, thanks, okay okay. (Small talk - Allowed)\n    *   [02:50] Which carrot is not found? (Likely a mistranscription or random talk - Allowed)\n    *   [03:00] Yes, you have to use it daily. (Small talk - Allowed)\n    *   [03:10] Then no one was found, a good friend. (Small talk - Allowed)\n    *   [03:20] No sir, new marriage. (Relationship talk - Allowed)\n    *   [03:30] Let's put it... (Unclear/Small talk - Allowed)\n    *   [03:40] (Unclear phrase)\n\n    *   `PlatformMove`: No requests for WhatsApp, Telegram, phone numbers, or meeting in person.\n    *   `SuspiciousActivity`: No mention of money for sexual services.\n    *   `Explicit-Flirting`: No sexual talk, requests for nudity, or \"open talk\".\n\n    *   The conversation is entirely small talk, greetings, and general discussion about using the app.\n    *   No violations found.",
+  "response": {
+    "id": "gen-1791856127-JzThdHS0RUP7tdotUriV",
+    "object": "chat.completion",
+    "created": 1791856127,
+    "model": "google/gemma-4-31b-it",
+    "provider": "CoreWeave",
+    "system_fingerprint": null,
+    "service_tier": null,
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": {
+          "content": [
+            {
+              "token": ".",
+              "bytes": [
+                46
+              ],
+              "logprob": -0.17393141984939575,
+              "top_logprobs": [
+                {
+                  "token": ".",
+                  "bytes": [
+                    46
+                  ],
+                  "logprob": -0.17393141984939575
+                },
+                {
+                  "token": " based",
+                  "bytes": [
+                    32,
+                    98,
+                    97,
+                    115,
+                    101,
+                    100
+                  ],
+                  "logprob": -2.048931360244751
+                },
+                {
+                  "token": " according",
+                  "bytes": [
+                    32,
+                    97,
+                    99,
+                    99,
+                    111,
+                    114,
+                    100,
+                    105,
+                    110,
+                    103
+                  ],
+                  "logprob": -3.923931360244751
+                },
+                {
+                  "token": " across",
+                  "bytes": [
+                    32,
+                    97,
+                    99,
+                    114,
+                    111,
+                    115,
+                    115
+                  ],
+                  "logprob": -4.54893159866333
+                },
+                {
+                  "token": " in",
+                  "bytes": [
+                    32,
+                    105,
+                    110
+                  ],
+                  "logprob": -8.673931121826172
+                },
+                {
+                  "token": " of",
+                  "bytes": [
+                    32,
+                    111,
+                    102
+                  ],
+                  "logprob": -9.298931121826172
+                },
+                {
+                  "token": " throughout",
+                  "bytes": [
+                    32,
+                    116,
+                    104,
+                    114,
+                    111,
+                    117,
+                    103,
+                    104,
+                    111,
+                    117,
+                    116
+                  ],
+                  "logprob": -9.923931121826172
+                },
+                {
+                  "token": " from",
+                  "bytes": [
+                    32,
+                    102,
+                    114,
+                    111,
+                    109
+                  ],
+                  "logprob": -11.048931121826172
+                },
+                {
+                  "token": "_",
+                  "bytes": [
+                    95
+                  ],
+                  "logprob": -11.298931121826172
+                },
+                {
+                  "token": " Based",
+                  "bytes": [
+                    32,
+                    66,
+                    97,
+                    115,
+                    101,
+                    100
+                  ],
+                  "logprob": -11.423931121826172
+                },
+                {
+                  "token": " per",
+                  "bytes": [
+                    32,
+                    112,
+                    101,
+                    114
+                  ],
+                  "logprob": -11.548931121826172
+                },
+                {
+                  "token": " matching",
+                  "bytes": [
+                    32,
+                    109,
+                    97,
+                    116,
+                    99,
+                    104,
+                    105,
+                    110,
+                    103
+                  ],
+                  "logprob": -11.673931121826172
+                },
+                {
+                  "token": " within",
+                  "bytes": [
+                    32,
+                    119,
+                    105,
+                    116,
+                    104,
+                    105,
+                    110
+                  ],
+                  "logprob": -11.673931121826172
+                },
+                {
+                  "token": " under",
+                  "bytes": [
+                    32,
+                    117,
+                    110,
+                    100,
+                    101,
+                    114
+                  ],
+                  "logprob": -11.923931121826172
+                },
+                {
+                  "token": "根据",
+                  "bytes": [
+                    230,
+                    160,
+                    185,
+                    230,
+                    141,
+                    174
+                  ],
+                  "logprob": -12.048931121826172
+                },
+                {
+                  "token": " as",
+                  "bytes": [
+                    32,
+                    97,
+                    115
+                  ],
+                  "logprob": -12.048931121826172
+                },
+                {
+                  "token": " relative",
+                  "bytes": [
+                    32,
+                    114,
+                    101,
+                    108,
+                    97,
+                    116,
+                    105,
+                    118,
+                    101
+                  ],
+                  "logprob": -12.298931121826172
+                },
+                {
+                  "token": " among",
+                  "bytes": [
+                    32,
+                    97,
+                    109,
+                    111,
+                    110,
+                    103
+                  ],
+                  "logprob": -12.298931121826172
+                },
+                {
+                  "token": " for",
+                  "bytes": [
+                    32,
+                    102,
+                    111,
+                    114
+                  ],
+                  "logprob": -12.298931121826172
+                },
+                {
+                  "token": " against",
+                  "bytes": [
+                    32,
+                    97,
+                    103,
+                    97,
+                    105,
+                    110,
+                    115,
+                    116
+                  ],
+                  "logprob": -12.798931121826172
+                }
+              ]
+            },
+            {
+              "token": "<channel|>",
+              "bytes": [
+                60,
+                99,
+                104,
+                97,
+                110,
+                110,
+                101,
+                108,
+                124,
+                62
+              ],
+              "logprob": -0.42982685565948486,
+              "top_logprobs": [
+                {
+                  "token": "<channel|>",
+                  "bytes": [
+                    60,
+                    99,
+                    104,
+                    97,
+                    110,
+                    110,
+                    101,
+                    108,
+                    124,
+                    62
+                  ],
+                  "logprob": -0.42982685565948486
+                },
+                {
+                  "token": "\n\n",
+                  "bytes": [
+                    10,
+                    10
+                  ],
+                  "logprob": -1.0548268556594849
+                },
+                {
+                  "token": "\n",
+                  "bytes": [
+                    10
+                  ],
+                  "logprob": -6.804826736450195
+                },
+                {
+                  "token": "<",
+                  "bytes": [
+                    60
+                  ],
+                  "logprob": -13.117326736450195
+                },
+                {
+                  "token": "end",
+                  "bytes": [
+                    101,
+                    110,
+                    100
+                  ],
+                  "logprob": -13.367326736450195
+                },
+                {
+                  "token": " According",
+                  "bytes": [
+                    32,
+                    65,
+                    99,
+                    99,
+                    111,
+                    114,
+                    100,
+                    105,
+                    110,
+                    103
+                  ],
+                  "logprob": -13.429826736450195
+                },
+                {
+                  "token": " Based",
+                  "bytes": [
+                    32,
+                    66,
+                    97,
+                    115,
+                    101,
+                    100
+                  ],
+                  "logprob": -13.554826736450195
+                },
+                {
+                  "token": " Match",
+                  "bytes": [
+                    32,
+                    77,
+                    97,
+                    116,
+                    99,
+                    104
+                  ],
+                  "logprob": -13.804826736450195
+                },
+                {
+                  "token": "-",
+                  "bytes": [
+                    45
+                  ],
+                  "logprob": -14.179826736450195
+                },
+                {
+                  "token": " Since",
+                  "bytes": [
+                    32,
+                    83,
+                    105,
+                    110,
+                    99,
+                    101
+                  ],
+                  "logprob": -14.179826736450195
+                },
+                {
+                  "token": " Mention",
+                  "bytes": [
+                    32,
+                    77,
+                    101,
+                    110,
+                    116,
+                    105,
+                    111,
+                    110
+                  ],
+                  "logprob": -14.367326736450195
+                },
+                {
+                  "token": " Returning",
+                  "bytes": [
+                    32,
+                    82,
+                    101,
+                    116,
+                    117,
+                    114,
+                    110,
+                    105,
+                    110,
+                    103
+                  ],
+                  "logprob": -14.429826736450195
+                },
+                {
+                  "token": " Therefore",
+                  "bytes": [
+                    32,
+                    84,
+                    104,
+                    101,
+                    114,
+                    101,
+                    102,
+                    111,
+                    114,
+                    101
+                  ],
+                  "logprob": -14.617326736450195
+                },
+                {
+                  "token": " The",
+                  "bytes": [
+                    32,
+                    84,
+                    104,
+                    101
+                  ],
+                  "logprob": -14.679826736450195
+                },
+                {
+                  "token": " Matches",
+                  "bytes": [
+                    32,
+                    77,
+                    97,
+                    116,
+                    99,
+                    104,
+                    101,
+                    115
+                  ],
+                  "logprob": -14.679826736450195
+                },
+                {
+                  "token": " Rules",
+                  "bytes": [
+                    32,
+                    82,
+                    117,
+                    108,
+                    101,
+                    115
+                  ],
+                  "logprob": -14.804826736450195
+                },
+                {
+                  "token": " Result",
+                  "bytes": [
+                    32,
+                    82,
+                    101,
+                    115,
+                    117,
+                    108,
+                    116
+                  ],
+                  "logprob": -14.804826736450195
+                },
+                {
+                  "token": "_",
+                  "bytes": [
+                    95
+                  ],
+                  "logprob": -14.992326736450195
+                },
+                {
+                  "token": " {",
+                  "bytes": [
+                    32,
+                    123
+                  ],
+                  "logprob": -15.304826736450195
+                },
+                {
+                  "token": " (",
+                  "bytes": [
+                    32,
+                    40
+                  ],
+                  "logprob": -15.304826736450195
+                }
+              ]
+            },
+            {
+              "token": "{\"",
+              "bytes": [
+                123,
+                34
+              ],
+              "logprob": -0.0022093667648732662,
+              "top_logprobs": [
+                {
+                  "token": "{\"",
+                  "bytes": [
+                    123,
+                    34
+                  ],
+                  "logprob": -0.0022093667648732662
+                },
+                {
+                  "token": "```",
+                  "bytes": [
+                    96,
+                    96,
+                    96
+                  ],
+                  "logprob": -6.127209186553955
+                },
+                {
+                  "token": "***",
+                  "bytes": [
+                    42,
+                    42,
+                    42
+                  ],
+                  "logprob": -11.845959663391113
+                },
+                {
+                  "token": "<?",
+                  "bytes": [
+                    60,
+                    63
+                  ],
+                  "logprob": -13.627209663391113
+                },
+                {
+                  "token": "get",
+                  "bytes": [
+                    103,
+                    101,
+                    116
+                  ],
+                  "logprob": -14.486584663391113
+                },
+                {
+                  "token": " crowds",
+                  "bytes": [
+                    32,
+                    99,
+                    114,
+                    111,
+                    119,
+                    100,
+                    115
+                  ],
+                  "logprob": -15.279553413391113
+                },
+                {
+                  "token": " those",
+                  "bytes": [
+                    32,
+                    116,
+                    104,
+                    111,
+                    115,
+                    101
+                  ],
+                  "logprob": -15.886975288391113
+                },
+                {
+                  "token": " {\"",
+                  "bytes": [
+                    32,
+                    123,
+                    34
+                  ],
+                  "logprob": -15.918713569641113
+                },
+                {
+                  "token": "预测",
+                  "bytes": [
+                    233,
+                    162,
+                    132,
+                    230,
+                    181,
+                    139
+                  ],
+                  "logprob": -16.010326385498047
+                },
+                {
+                  "token": "\\",
+                  "bytes": [
+                    92
+                  ],
+                  "logprob": -16.076427459716797
+                },
+                {
+                  "token": "のような",
+                  "bytes": [
+                    227,
+                    129,
+                    174,
+                    227,
+                    130,
+                    136,
+                    227,
+                    129,
+                    134,
+                    227,
+                    129,
+                    170
+                  ],
+                  "logprob": -16.211193084716797
+                },
+                {
+                  "token": " brainstorm",
+                  "bytes": [
+                    32,
+                    98,
+                    114,
+                    97,
+                    105,
+                    110,
+                    115,
+                    116,
+                    111,
+                    114,
+                    109
+                  ],
+                  "logprob": -16.227794647216797
+                },
+                {
+                  "token": " minds",
+                  "bytes": [
+                    32,
+                    109,
+                    105,
+                    110,
+                    100,
+                    115
+                  ],
+                  "logprob": -16.228771209716797
+                },
+                {
+                  "token": " brainstorming",
+                  "bytes": [
+                    32,
+                    98,
+                    114,
+                    97,
+                    105,
+                    110,
+                    115,
+                    116,
+                    111,
+                    114,
+                    109,
+                    105,
+                    110,
+                    103
+                  ],
+                  "logprob": -16.408458709716797
+                },
+                {
+                  "token": "观察",
+                  "bytes": [
+                    232,
+                    167,
+                    130,
+                    229,
+                    175,
+                    159
+                  ],
+                  "logprob": -16.447521209716797
+                },
+                {
+                  "token": " merchants",
+                  "bytes": [
+                    32,
+                    109,
+                    101,
+                    114,
+                    99,
+                    104,
+                    97,
+                    110,
+                    116,
+                    115
+                  ],
+                  "logprob": -16.478771209716797
+                },
+                {
+                  "token": "呈现",
+                  "bytes": [
+                    229,
+                    145,
+                    136,
+                    231,
+                    142,
+                    176
+                  ],
+                  "logprob": -16.482677459716797
+                },
+                {
+                  "token": " anthe",
+                  "bytes": [
+                    32,
+                    97,
+                    110,
+                    116,
+                    104,
+                    101
+                  ],
+                  "logprob": -16.488536834716797
+                },
+                {
+                  "token": " mined",
+                  "bytes": [
+                    32,
+                    109,
+                    105,
+                    110,
+                    101,
+                    100
+                  ],
+                  "logprob": -16.496349334716797
+                },
+                {
+                  "token": " Creating",
+                  "bytes": [
+                    32,
+                    67,
+                    114,
+                    101,
+                    97,
+                    116,
+                    105,
+                    110,
+                    103
+                  ],
+                  "logprob": -16.541271209716797
+                }
+              ]
+            },
+            {
+              "token": "d",
+              "bytes": [
+                100
+              ],
+              "logprob": -2.7418097943154862e-06,
+              "top_logprobs": [
+                {
+                  "token": "d",
+                  "bytes": [
+                    100
+                  ],
+                  "logprob": -2.7418097943154862e-06
+                },
+                {
+                  "token": " d",
+                  "bytes": [
+                    32,
+                    100
+                  ],
+                  "logprob": -13.68750286102295
+                },
+                {
+                  "token": "D",
+                  "bytes": [
+                    68
+                  ],
+                  "logprob": -14.75000286102295
+                },
+                {
+                  "token": "$",
+                  "bytes": [
+                    36
+                  ],
+                  "logprob": -15.12500286102295
+                },
+                {
+                  "token": "-",
+                  "bytes": [
+                    45
+                  ],
+                  "logprob": -16.531251907348633
+                },
+                {
+                  "token": "\\",
+                  "bytes": [
+                    92
+                  ],
+                  "logprob": -16.750001907348633
+                },
+                {
+                  "token": "set",
+                  "bytes": [
+                    115,
+                    101,
+                    116
+                  ],
+                  "logprob": -16.937501907348633
+                },
+                {
+                  "token": "${",
+                  "bytes": [
+                    36,
+                    123
+                  ],
+                  "logprob": -17.781251907348633
+                },
+                {
+                  "token": "to",
+                  "bytes": [
+                    116,
+                    111
+                  ],
+                  "logprob": -18.093751907348633
+                },
+                {
+                  "token": "#",
+                  "bytes": [
+                    35
+                  ],
+                  "logprob": -18.156251907348633
+                },
+                {
+                  "token": "get",
+                  "bytes": [
+                    103,
+                    101,
+                    116
+                  ],
+                  "logprob": -18.156251907348633
+                },
+                {
+                  "token": "<tool_call|>",
+                  "bytes": [
+                    60,
+                    116,
+                    111,
+                    111,
+                    108,
+                    95,
+                    99,
+                    97,
+                    108,
+                    108,
+                    124,
+                    62
+                  ],
+                  "logprob": -18.187501907348633
+                },
+                {
+                  "token": "s",
+                  "bytes": [
+                    115
+                  ],
+                  "logprob": -18.312501907348633
+                },
+                {
+                  "token": " \\",
+                  "bytes": [
+                    32,
+                    92
+                  ],
+                  "logprob": -18.531251907348633
+                },
+                {
+                  "token": " diph",
+                  "bytes": [
+                    32,
+                    100,
+                    105,
+                    112,
+                    104
+                  ],
+                  "logprob": -18.718751907348633
+                },
+                {
+                  "token": "誠",
+                  "bytes": [
+                    232,
+                    170,
+                    160
+                  ],
+                  "logprob": -18.781251907348633
+                },
+                {
+                  "token": ")",
+                  "bytes": [
+                    41
+                  ],
+                  "logprob": -18.781251907348633
+                },
+                {
+                  "token": "\")",
+                  "bytes": [
+                    34,
+                    41
+                  ],
+                  "logprob": -18.843751907348633
+                },
+                {
+                  "token": "啲",
+                  "bytes": [
+                    229,
+                    149,
+                    178
+                  ],
+                  "logprob": -18.968751907348633
+                },
+                {
+                  "token": "```",
+                  "bytes": [
+                    96,
+                    96,
+                    96
+                  ],
+                  "logprob": -19.187501907348633
+                }
+              ]
+            },
+            {
+              "token": "\":",
+              "bytes": [
+                34,
+                58
+              ],
+              "logprob": 0,
+              "top_logprobs": [
+                {
+                  "token": "\":",
+                  "bytes": [
+                    34,
+                    58
+                  ],
+                  "logprob": 0
+                },
+                {
+                  "token": " monolayer",
+                  "bytes": [
+                    32,
+                    109,
+                    111,
+                    110,
+                    111,
+                    108,
+                    97,
+                    121,
+                    101,
+                    114
+                  ],
+                  "logprob": -19.65625
+                },
+                {
+                  "token": " Greenway",
+                  "bytes": [
+                    32,
+                    71,
+                    114,
+                    101,
+                    101,
+                    110,
+                    119,
+                    97,
+                    121
+                  ],
+                  "logprob": -20.15625
+                },
+                {
+                  "token": " Terrain",
+                  "bytes": [
+                    32,
+                    84,
+                    101,
+                    114,
+                    114,
+                    97,
+                    105,
+                    110
+                  ],
+                  "logprob": -20.3125
+                },
+                {
+                  "token": " stadiums",
+                  "bytes": [
+                    32,
+                    115,
+                    116,
+                    97,
+                    100,
+                    105,
+                    117,
+                    109,
+                    115
+                  ],
+                  "logprob": -20.71875
+                },
+                {
+                  "token": " bridle",
+                  "bytes": [
+                    32,
+                    98,
+                    114,
+                    105,
+                    100,
+                    108,
+                    101
+                  ],
+                  "logprob": -20.90625
+                },
+                {
+                  "token": " Anyway",
+                  "bytes": [
+                    32,
+                    65,
+                    110,
+                    121,
+                    119,
+                    97,
+                    121
+                  ],
+                  "logprob": -21.1875
+                },
+                {
+                  "token": "\":[],",
+                  "bytes": [
+                    34,
+                    58,
+                    91,
+                    93,
+                    44
+                  ],
+                  "logprob": -21.390625
+                },
+                {
+                  "token": " Outline",
+                  "bytes": [
+                    32,
+                    79,
+                    117,
+                    116,
+                    108,
+                    105,
+                    110,
+                    101
+                  ],
+                  "logprob": -21.421875
+                },
+                {
+                  "token": "已知",
+                  "bytes": [
+                    229,
+                    183,
+                    178,
+                    231,
+                    159,
+                    165
+                  ],
+                  "logprob": -21.453125
+                },
+                {
+                  "token": " Wak",
+                  "bytes": [
+                    32,
+                    87,
+                    97,
+                    107
+                  ],
+                  "logprob": -21.5
+                },
+                {
+                  "token": " एवं",
+                  "bytes": [
+                    32,
+                    224,
+                    164,
+                    143,
+                    224,
+                    164,
+                    181,
+                    224,
+                    164,
+                    130
+                  ],
+                  "logprob": -21.671875
+                },
+                {
+                  "token": "ীয়",
+                  "bytes": [
+                    224,
+                    167,
+                    128,
+                    224,
+                    166,
+                    175,
+                    224,
+                    166,
+                    188
+                  ],
+                  "logprob": -21.6875
+                },
+                {
+                  "token": " dispos",
+                  "bytes": [
+                    32,
+                    100,
+                    105,
+                    115,
+                    112,
+                    111,
+                    115
+                  ],
+                  "logprob": -21.796875
+                },
+                {
+                  "token": "\"",
+                  "bytes": [
+                    34
+                  ],
+                  "logprob": -21.796875
+                },
+                {
+                  "token": " seguinte",
+                  "bytes": [
+                    32,
+                    115,
+                    101,
+                    103,
+                    117,
+                    105,
+                    110,
+                    116,
+                    101
+                  ],
+                  "logprob": -21.8125
+                },
+                {
+                  "token": " kondisi",
+                  "bytes": [
+                    32,
+                    107,
+                    111,
+                    110,
+                    100,
+                    105,
+                    115,
+                    105
+                  ],
+                  "logprob": -21.859375
+                },
+                {
+                  "token": " mew",
+                  "bytes": [
+                    32,
+                    109,
+                    101,
+                    119
+                  ],
+                  "logprob": -21.875
+                },
+                {
+                  "token": " Witness",
+                  "bytes": [
+                    32,
+                    87,
+                    105,
+                    116,
+                    110,
+                    101,
+                    115,
+                    115
+                  ],
+                  "logprob": -21.890625
+                },
+                {
+                  "token": " zaten",
+                  "bytes": [
+                    32,
+                    122,
+                    97,
+                    116,
+                    101,
+                    110
+                  ],
+                  "logprob": -21.90625
+                }
+              ]
+            },
+            {
+              "token": " []",
+              "bytes": [
+                32,
+                91,
+                93
+              ],
+              "logprob": -0.0007098776986822486,
+              "top_logprobs": [
+                {
+                  "token": " []",
+                  "bytes": [
+                    32,
+                    91,
+                    93
+                  ],
+                  "logprob": -0.0007098776986822486
+                },
+                {
+                  "token": "[]}",
+                  "bytes": [
+                    91,
+                    93,
+                    125
+                  ],
+                  "logprob": -7.2507100105285645
+                },
+                {
+                  "token": "=[]",
+                  "bytes": [
+                    61,
+                    91,
+                    93
+                  ],
+                  "logprob": -17.188209533691406
+                },
+                {
+                  "token": " [];",
+                  "bytes": [
+                    32,
+                    91,
+                    93,
+                    59
+                  ],
+                  "logprob": -18.531959533691406
+                },
+                {
+                  "token": "[]",
+                  "bytes": [
+                    91,
+                    93
+                  ],
+                  "logprob": -18.563209533691406
+                },
+                {
+                  "token": " //}",
+                  "bytes": [
+                    32,
+                    47,
+                    47,
+                    125
+                  ],
+                  "logprob": -18.719459533691406
+                },
+                {
+                  "token": " [])",
+                  "bytes": [
+                    32,
+                    91,
+                    93,
+                    41
+                  ],
+                  "logprob": -18.844459533691406
+                },
+                {
+                  "token": " [],",
+                  "bytes": [
+                    32,
+                    91,
+                    93,
+                    44
+                  ],
+                  "logprob": -19.625709533691406
+                },
+                {
+                  "token": " []);",
+                  "bytes": [
+                    32,
+                    91,
+                    93,
+                    41,
+                    59
+                  ],
+                  "logprob": -19.750709533691406
+                },
+                {
+                  "token": "}",
+                  "bytes": [
+                    125
+                  ],
+                  "logprob": -20.375709533691406
+                },
+                {
+                  "token": " Those",
+                  "bytes": [
+                    32,
+                    84,
+                    104,
+                    111,
+                    115,
+                    101
+                  ],
+                  "logprob": -20.656959533691406
+                },
+                {
+                  "token": " ",
+                  "bytes": [
+                    32
+                  ],
+                  "logprob": -20.781959533691406
+                },
+                {
+                  "token": " herds",
+                  "bytes": [
+                    32,
+                    104,
+                    101,
+                    114,
+                    100,
+                    115
+                  ],
+                  "logprob": -20.813209533691406
+                },
+                {
+                  "token": "C",
+                  "bytes": [
+                    67
+                  ],
+                  "logprob": -20.875709533691406
+                },
+                {
+                  "token": " orchards",
+                  "bytes": [
+                    32,
+                    111,
+                    114,
+                    99,
+                    104,
+                    97,
+                    114,
+                    100,
+                    115
+                  ],
+                  "logprob": -20.875709533691406
+                },
+                {
+                  "token": "%}",
+                  "bytes": [
+                    37,
+                    125
+                  ],
+                  "logprob": -21.219459533691406
+                },
+                {
+                  "token": "に",
+                  "bytes": [
+                    227,
+                    129,
+                    171
+                  ],
+                  "logprob": -21.328834533691406
+                },
+                {
+                  "token": " Probably",
+                  "bytes": [
+                    32,
+                    80,
+                    114,
+                    111,
+                    98,
+                    97,
+                    98,
+                    108,
+                    121
+                  ],
+                  "logprob": -21.469459533691406
+                },
+                {
+                  "token": " Andromeda",
+                  "bytes": [
+                    32,
+                    65,
+                    110,
+                    100,
+                    114,
+                    111,
+                    109,
+                    101,
+                    100,
+                    97
+                  ],
+                  "logprob": -21.531959533691406
+                },
+                {
+                  "token": "Terrain",
+                  "bytes": [
+                    84,
+                    101,
+                    114,
+                    114,
+                    97,
+                    105,
+                    110
+                  ],
+                  "logprob": -21.578834533691406
+                }
+              ]
+            },
+            {
+              "token": "}",
+              "bytes": [
+                125
+              ],
+              "logprob": -0.00013600854435935616,
+              "top_logprobs": [
+                {
+                  "token": "}",
+                  "bytes": [
+                    125
+                  ],
+                  "logprob": -0.00013600854435935616
+                },
+                {
+                  "token": " }",
+                  "bytes": [
+                    32,
+                    125
+                  ],
+                  "logprob": -9.687636375427246
+                },
+                {
+                  "token": "]}",
+                  "bytes": [
+                    93,
+                    125
+                  ],
+                  "logprob": -10.468886375427246
+                },
+                {
+                  "token": "}\\",
+                  "bytes": [
+                    125,
+                    92
+                  ],
+                  "logprob": -11.437636375427246
+                },
+                {
+                  "token": "}}",
+                  "bytes": [
+                    125,
+                    125
+                  ],
+                  "logprob": -11.547011375427246
+                },
+                {
+                  "token": "}]",
+                  "bytes": [
+                    125,
+                    93
+                  ],
+                  "logprob": -12.289198875427246
+                },
+                {
+                  "token": ")}",
+                  "bytes": [
+                    41,
+                    125
+                  ],
+                  "logprob": -13.070448875427246
+                },
+                {
+                  "token": "}\"",
+                  "bytes": [
+                    125,
+                    34
+                  ],
+                  "logprob": -13.320448875427246
+                },
+                {
+                  "token": "}'",
+                  "bytes": [
+                    125,
+                    39
+                  ],
+                  "logprob": -14.021620750427246
+                },
+                {
+                  "token": "}=",
+                  "bytes": [
+                    125,
+                    61
+                  ],
+                  "logprob": -14.157362937927246
+                },
+                {
+                  "token": "}.",
+                  "bytes": [
+                    125,
+                    46
+                  ],
+                  "logprob": -14.322402000427246
+                },
+                {
+                  "token": "}]}",
+                  "bytes": [
+                    125,
+                    93,
+                    125
+                  ],
+                  "logprob": -14.654433250427246
+                },
+                {
+                  "token": "})",
+                  "bytes": [
+                    125,
+                    41
+                  ],
+                  "logprob": -15.035292625427246
+                },
+                {
+                  "token": " unable",
+                  "bytes": [
+                    32,
+                    117,
+                    110,
+                    97,
+                    98,
+                    108,
+                    101
+                  ],
+                  "logprob": -15.097792625427246
+                },
+                {
+                  "token": "}%",
+                  "bytes": [
+                    125,
+                    37
+                  ],
+                  "logprob": -15.336073875427246
+                },
+                {
+                  "token": " testimonials",
+                  "bytes": [
+                    32,
+                    116,
+                    101,
+                    115,
+                    116,
+                    105,
+                    109,
+                    111,
+                    110,
+                    105,
+                    97,
+                    108,
+                    115
+                  ],
+                  "logprob": -15.632948875427246
+                },
+                {
+                  "token": "\"}",
+                  "bytes": [
+                    34,
+                    125
+                  ],
+                  "logprob": -15.781386375427246
+                },
+                {
+                  "token": " crossbody",
+                  "bytes": [
+                    32,
+                    99,
+                    114,
+                    111,
+                    115,
+                    115,
+                    98,
+                    111,
+                    100,
+                    121
+                  ],
+                  "logprob": -15.797011375427246
+                },
+                {
+                  "token": "}(",
+                  "bytes": [
+                    125,
+                    40
+                  ],
+                  "logprob": -15.914198875427246
+                },
+                {
+                  "token": "}`",
+                  "bytes": [
+                    125,
+                    96
+                  ],
+                  "logprob": -16.00013542175293
+                }
+              ]
+            },
+            {
+              "token": "",
+              "bytes": null,
+              "logprob": -2.264974000354414e-06,
+              "top_logprobs": [
+                {
+                  "token": "<turn|>",
+                  "bytes": [
+                    60,
+                    116,
+                    117,
+                    114,
+                    110,
+                    124,
+                    62
+                  ],
+                  "logprob": -2.264974000354414e-06
+                },
+                {
+                  "token": "<tool_call|>",
+                  "bytes": [
+                    60,
+                    116,
+                    111,
+                    111,
+                    108,
+                    95,
+                    99,
+                    97,
+                    108,
+                    108,
+                    124,
+                    62
+                  ],
+                  "logprob": -13.062501907348633
+                },
+                {
+                  "token": "}",
+                  "bytes": [
+                    125
+                  ],
+                  "logprob": -15.750001907348633
+                },
+                {
+                  "token": " those",
+                  "bytes": [
+                    32,
+                    116,
+                    104,
+                    111,
+                    115,
+                    101
+                  ],
+                  "logprob": -16.937501907348633
+                },
+                {
+                  "token": " optics",
+                  "bytes": [
+                    32,
+                    111,
+                    112,
+                    116,
+                    105,
+                    99,
+                    115
+                  ],
+                  "logprob": -17.187501907348633
+                },
+                {
+                  "token": "**",
+                  "bytes": [
+                    42,
+                    42
+                  ],
+                  "logprob": -17.312501907348633
+                },
+                {
+                  "token": "推进",
+                  "bytes": [
+                    230,
+                    142,
+                    168,
+                    232,
+                    191,
+                    155
+                  ],
+                  "logprob": -18.718751907348633
+                },
+                {
+                  "token": " Sufficient",
+                  "bytes": [
+                    32,
+                    83,
+                    117,
+                    102,
+                    102,
+                    105,
+                    99,
+                    105,
+                    101,
+                    110,
+                    116
+                  ],
+                  "logprob": -18.718751907348633
+                },
+                {
+                  "token": "of",
+                  "bytes": [
+                    111,
+                    102
+                  ],
+                  "logprob": -19.093751907348633
+                },
+                {
+                  "token": "get",
+                  "bytes": [
+                    103,
+                    101,
+                    116
+                  ],
+                  "logprob": -19.156251907348633
+                },
+                {
+                  "token": "对外",
+                  "bytes": [
+                    229,
+                    175,
+                    185,
+                    229,
+                    164,
+                    150
+                  ],
+                  "logprob": -19.218751907348633
+                },
+                {
+                  "token": "完成",
+                  "bytes": [
+                    229,
+                    174,
+                    140,
+                    230,
+                    136,
+                    144
+                  ],
+                  "logprob": -19.250001907348633
+                },
+                {
+                  "token": " packing",
+                  "bytes": [
+                    32,
+                    112,
+                    97,
+                    99,
+                    107,
+                    105,
+                    110,
+                    103
+                  ],
+                  "logprob": -19.250001907348633
+                },
+                {
+                  "token": " briefings",
+                  "bytes": [
+                    32,
+                    98,
+                    114,
+                    105,
+                    101,
+                    102,
+                    105,
+                    110,
+                    103,
+                    115
+                  ],
+                  "logprob": -19.328126907348633
+                },
+                {
+                  "token": " textiles",
+                  "bytes": [
+                    32,
+                    116,
+                    101,
+                    120,
+                    116,
+                    105,
+                    108,
+                    101,
+                    115
+                  ],
+                  "logprob": -19.406251907348633
+                },
+                {
+                  "token": " comfort",
+                  "bytes": [
+                    32,
+                    99,
+                    111,
+                    109,
+                    102,
+                    111,
+                    114,
+                    116
+                  ],
+                  "logprob": -19.468751907348633
+                },
+                {
+                  "token": " assessments",
+                  "bytes": [
+                    32,
+                    97,
+                    115,
+                    115,
+                    101,
+                    115,
+                    115,
+                    109,
+                    101,
+                    110,
+                    116,
+                    115
+                  ],
+                  "logprob": -19.671876907348633
+                },
+                {
+                  "token": "}$",
+                  "bytes": [
+                    125,
+                    36
+                  ],
+                  "logprob": -19.687501907348633
+                },
+                {
+                  "token": " revolving",
+                  "bytes": [
+                    32,
+                    114,
+                    101,
+                    118,
+                    111,
+                    108,
+                    118,
+                    105,
+                    110,
+                    103
+                  ],
+                  "logprob": -19.781251907348633
+                },
+                {
+                  "token": ")}",
+                  "bytes": [
+                    41,
+                    125
+                  ],
+                  "logprob": -19.796876907348633
+                }
+              ]
+            }
+          ],
+          "refusal": null
+        },
+        "finish_reason": "stop",
+        "native_finish_reason": "stop",
+        "message": {
+          "role": "assistant",
+          "content": "{\"d\": []}",
+          "refusal": null,
+          "reasoning": "Content Policy Analyst.\nAudio calls in Indian languages (Kannada in this case).\n\"Friends\" app (User pays, Expert is paid).\n\n        *   `PlatformMove`: Proposing/asking to move outside the app (WhatsApp, Telegram, phone numbers, meeting in person).\n        *   `SuspiciousActivity`: Money/payment for sexual content/services.\n        *   `Explicit-Flirting`: Sexual talk, requests for nudity, \"open talk\", \"non-veg talk\".\n        *   `About a Violation`: Warnings, stories, refusals, questions about rules (violation: \"no\", confidence $\\le 0.3$).\n\n        *   Internal app calls (audio/video).\n        *   \"Normal talk\" (non-sexual).\n        *   Apps mentioned for other reasons.\n        *   Meeting other people (not the caller).\n        *   General personal details (name, city, job) without contact info.\n        *   Compliments, \"I love you\", relationship talk.\n        *   \"Show/open\" for non-body things.\n        *   Refusals of sexual talk.\nMinified JSON object following the provided schema.\n\n    *   [00:00] Hello hello, where from? Bangalore? We are from Bangalore. (Small talk/Location - Allowed)\n    *   [00:10] Jep Nagar is yours? Ours is... will you tell the pin? (Asking for location/pin - Allowed, not contact info for moving platforms)\n    *   [00:20] Government school... sister didn't go today... (Small talk - Allowed)\n    *   [00:30] Breakfast/food done? (Small talk - Allowed)\n    *   [00:40] Breakfast done, need to eat food... (Small talk - Allowed)\n    *   [00:50] Which app do you use? It's been ten days for me, four days for you. (Talking about the app - Allowed)\n    *   [01:00] The app is good. Did you meet anyone in the app? (Talking about app usage - Allowed)\n    *   [01:10] Yesterday no... remember. (Small talk - Allowed)\n    *   [01:20] If used regularly, people are found. I use it occasionally. (Small talk - Allowed)\n    *   [01:30] Why haven't you met anyone? (Small talk - Allowed)\n    *   [01:40] (Unclear phrase) (Filler/Small talk - Allowed)\n    *   [01:50] (Filler)\n    *   [02:00] Four singles you... (Small talk/Relationship - Allowed)\n    *   [02:10] Chinese family... do you speak six chains? (Small talk - Allowed)\n    *   [02:20] (Filler)\n    *   [02:30] Yes, tell. (Small talk - Allowed)\n    *   [02:40] True, thanks, okay okay. (Small talk - Allowed)\n    *   [02:50] Which carrot is not found? (Likely a mistranscription or random talk - Allowed)\n    *   [03:00] Yes, you have to use it daily. (Small talk - Allowed)\n    *   [03:10] Then no one was found, a good friend. (Small talk - Allowed)\n    *   [03:20] No sir, new marriage. (Relationship talk - Allowed)\n    *   [03:30] Let's put it... (Unclear/Small talk - Allowed)\n    *   [03:40] (Unclear phrase)\n\n    *   `PlatformMove`: No requests for WhatsApp, Telegram, phone numbers, or meeting in person.\n    *   `SuspiciousActivity`: No mention of money for sexual services.\n    *   `Explicit-Flirting`: No sexual talk, requests for nudity, or \"open talk\".\n\n    *   The conversation is entirely small talk, greetings, and general discussion about using the app.\n    *   No violations found.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "text": "Content Policy Analyst.\nAudio calls in Indian languages (Kannada in this case).\n\"Friends\" app (User pays, Expert is paid).\n\n        *   `PlatformMove`: Proposing/asking to move outside the app (WhatsApp, Telegram, phone numbers, meeting in person).\n        *   `SuspiciousActivity`: Money/payment for sexual content/services.\n        *   `Explicit-Flirting`: Sexual talk, requests for nudity, \"open talk\", \"non-veg talk\".\n        *   `About a Violation`: Warnings, stories, refusals, questions about rules (violation: \"no\", confidence $\\le 0.3$).\n\n        *   Internal app calls (audio/video).\n        *   \"Normal talk\" (non-sexual).\n        *   Apps mentioned for other reasons.\n        *   Meeting other people (not the caller).\n        *   General personal details (name, city, job) without contact info.\n        *   Compliments, \"I love you\", relationship talk.\n        *   \"Show/open\" for non-body things.\n        *   Refusals of sexual talk.\nMinified JSON object following the provided schema.\n\n    *   [00:00] Hello hello, where from? Bangalore? We are from Bangalore. (Small talk/Location - Allowed)\n    *   [00:10] Jep Nagar is yours? Ours is... will you tell the pin? (Asking for location/pin - Allowed, not contact info for moving platforms)\n    *   [00:20] Government school... sister didn't go today... (Small talk - Allowed)\n    *   [00:30] Breakfast/food done? (Small talk - Allowed)\n    *   [00:40] Breakfast done, need to eat food... (Small talk - Allowed)\n    *   [00:50] Which app do you use? It's been ten days for me, four days for you. (Talking about the app - Allowed)\n    *   [01:00] The app is good. Did you meet anyone in the app? (Talking about app usage - Allowed)\n    *   [01:10] Yesterday no... remember. (Small talk - Allowed)\n    *   [01:20] If used regularly, people are found. I use it occasionally. (Small talk - Allowed)\n    *   [01:30] Why haven't you met anyone? (Small talk - Allowed)\n    *   [01:40] (Unclear phrase) (Filler/Small talk - Allowed)\n    *   [01:50] (Filler)\n    *   [02:00] Four singles you... (Small talk/Relationship - Allowed)\n    *   [02:10] Chinese family... do you speak six chains? (Small talk - Allowed)\n    *   [02:20] (Filler)\n    *   [02:30] Yes, tell. (Small talk - Allowed)\n    *   [02:40] True, thanks, okay okay. (Small talk - Allowed)\n    *   [02:50] Which carrot is not found? (Likely a mistranscription or random talk - Allowed)\n    *   [03:00] Yes, you have to use it daily. (Small talk - Allowed)\n    *   [03:10] Then no one was found, a good friend. (Small talk - Allowed)\n    *   [03:20] No sir, new marriage. (Relationship talk - Allowed)\n    *   [03:30] Let's put it... (Unclear/Small talk - Allowed)\n    *   [03:40] (Unclear phrase)\n\n    *   `PlatformMove`: No requests for WhatsApp, Telegram, phone numbers, or meeting in person.\n    *   `SuspiciousActivity`: No mention of money for sexual services.\n    *   `Explicit-Flirting`: No sexual talk, requests for nudity, or \"open talk\".\n\n    *   The conversation is entirely small talk, greetings, and general discussion about using the app.\n    *   No violations found.",
+              "format": "unknown",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3567,
+      "completion_tokens": 945,
+      "total_tokens": 4512,
+      "cost": 0.000678,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 2976,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000678,
+        "upstream_inference_prompt_cost": 0.0003567,
+        "upstream_inference_completions_cost": 0.0003213
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 939,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

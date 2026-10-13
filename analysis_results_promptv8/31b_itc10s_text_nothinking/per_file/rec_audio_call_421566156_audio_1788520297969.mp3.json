@@ -1,0 +1,67 @@
+{
+  "file_id": "rec_audio_call_421566156_audio_1788520297969.mp3",
+  "language": "tamil",
+  "gt_flag_count": 1,
+  "model_flag_count": 2,
+  "flag_tp": 1,
+  "flag_fn": 0,
+  "flag_fp": 1,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Do you know the WhatsApp number?",
+      "timestamp": "00:13",
+      "excerpt": "வாட்ஸ்அப் நம்பர் தெரியுமா?",
+      "confidence": 0.9,
+      "matched": true,
+      "matched_model_category": "PlatformMove"
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Do you know the WhatsApp number?",
+      "timestamp": "00:10",
+      "excerpt": "வாட்ஸ்அப் நம்பர் தெரியுமா",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": 0.9733666618072425,
+      "entropy_mean": 0.00028617441842573925,
+      "neg_entropy": -0.00028617441842573925,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": 0.9999994039535594,
+      "model_speaker": "user",
+      "model_context": "The user greets the expert and then asks this question. The expert responds that they only speak within the app.",
+      "matched": true,
+      "matched_gt_category": "PlatformMove",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": []
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "I only speak in this, that's all.",
+      "timestamp": "00:13",
+      "excerpt": "நான் இதில் பேசுகிறதோட அவ்வளோதாங்க",
+      "model_confidence": 0.3,
+      "logprob_derived_confidence": 0.9997256916230816,
+      "entropy_mean": 0.06953507201098787,
+      "neg_entropy": -0.06953507201098787,
+      "model_speech_act": "denial",
+      "model_quote_type": null,
+      "model_violation": "no",
+      "p_violation_yes": 7.152557657263969e-07,
+      "model_speaker": "expert",
+      "model_context": "The user asked for a WhatsApp number. The expert responds by refusing to move outside the app.",
+      "matched": false,
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": []
+    }
+  ]
+}
