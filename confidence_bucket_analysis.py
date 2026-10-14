@@ -22,7 +22,12 @@ flag category, on the model's self-reported confidence (model_confidence):
 Read-only over analyze_results.py's per_file caches — no scoring, no API calls.
 Partial runs are included on the files they finished (n_files column).
 
-Usage: python3 confidence_bucket_analysis.py [--out-dir analysis_results_full_summary]
+--scoring-mode pp_full replaces each flag's model_confidence with its
+scoring_modes pp_full value (flags scored None are dropped), via
+threshold_by_bucket_full.ensure_scored / rows_for_mode, and writes the same
+three CSVs with a _pp_full suffix. v1 runs have no pp_full and are skipped.
+
+Usage: python3 confidence_bucket_analysis.py [--out-dir analysis_results_full_summary] [--scoring-mode raw|pp_full]
 """
 import argparse
 import csv
@@ -164,6 +169,19 @@ def threshold_rows(prompt, model, rows):
     return out
 
 
+def apply_scoring_mode(rows, prompt, mode):
+    """rows with model_confidence replaced by the `mode` signal; flags the
+    mode drops are removed. raw returns rows unchanged."""
+    if mode == "raw":
+        return rows
+    from threshold_by_bucket_full import ensure_scored, rows_for_mode
+    ensure_scored(rows, prompt, [mode])
+    out = rows_for_mode(rows, mode)
+    for r in out:
+        r["model_flags"] = [{**f, "model_confidence": f["_scored_signal"]} for f in r["model_flags"]]
+    return out
+
+
 def write(path, rows):
     with path.open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
@@ -174,27 +192,34 @@ def write(path, rows):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--out-dir", default="analysis_results_full_summary")
-    out_dir = config.PROJECT_ROOT / parser.parse_args().out_dir
+    parser.add_argument("--scoring-mode", choices=["raw", "pp_full"], default="raw")
+    args = parser.parse_args()
+    out_dir = config.PROJECT_ROOT / args.out_dir
+    mode = args.scoring_mode
+    suffix = "" if mode == "raw" else f"_{mode}"
     out_dir.mkdir(parents=True, exist_ok=True)
 
     buckets, file_buckets, thresholds = [], [], []
     for prompt, adir in RUNS:
+        if mode != "raw" and prompt == "v1":
+            continue
         base = config.PROJECT_ROOT / adir
         for model_dir in sorted(p.parent for p in base.glob("*/per_file") if p.is_dir()):
             rows = load_cached_rows(base, model_dir.name)
             if not rows:
                 continue
+            rows = apply_scoring_mode(rows, prompt, mode)
             buckets += bucket_rows(prompt, model_dir.name, rows)
             file_buckets += file_bucket_rows(prompt, model_dir.name, rows)
             thresholds += threshold_rows(prompt, model_dir.name, rows)
             note = "" if len(rows) >= TOTAL_FILES else f"  (partial: {len(rows)}/{TOTAL_FILES} files)"
             print(f"{prompt} {model_dir.name}: {len(rows)} files{note}")
 
-    write(out_dir / "confidence_buckets_by_category.csv", buckets)
-    write(out_dir / "threshold_08_09_by_category.csv", thresholds)
-    write(out_dir / "confidence_buckets_by_category_file_level.csv", file_buckets)
-    print(f"Wrote {out_dir}/confidence_buckets_by_category.csv, confidence_buckets_by_category_file_level.csv "
-          f"and threshold_08_09_by_category.csv")
+    write(out_dir / f"confidence_buckets_by_category{suffix}.csv", buckets)
+    write(out_dir / f"threshold_08_09_by_category{suffix}.csv", thresholds)
+    write(out_dir / f"confidence_buckets_by_category_file_level{suffix}.csv", file_buckets)
+    print(f"Wrote {out_dir}/confidence_buckets_by_category{suffix}.csv, confidence_buckets_by_category_file_level{suffix}.csv "
+          f"and threshold_08_09_by_category{suffix}.csv")
 
 
 if __name__ == "__main__":

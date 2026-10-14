@@ -1319,6 +1319,15 @@ def main():
 
     print(f"\nAll CSVs written to {OUTPUT_DIR}/")
 
+    # Full-dataset runs feed the leaderboard; refresh it so it never goes stale.
+    # Dev-set runs (--dataset-root) and dry runs don't affect it.
+    if args.dataset_root is None and not args.dry_run:
+        try:
+            import leaderboard
+            leaderboard.main()
+        except Exception as exc:  # noqa: BLE001 — never fail the analysis over the leaderboard
+            print(f"WARNING: leaderboard refresh failed ({exc}); run python3 leaderboard.py by hand")
+
 
 if __name__ == "__main__":
     main()
