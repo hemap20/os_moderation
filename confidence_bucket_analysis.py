@@ -9,6 +9,10 @@ flag category, on the model's self-reported confidence (model_confidence):
      unmatched but a verified extra instance of an already-matched violation
      (counted as not-an-error in precision, as everywhere else); FP = the rest.
      So bucket TP+redundant+FP summed over buckets = that model's flag totals.
+     n_gt_flags = ground-truth flags of that category in the files the model
+     was scored on (same value on every bucket row; GT has no confidence).
+     n_gt_pos_files / n_gt_neg_files = files with / without a GT flag of that
+     category — the GT-negative side, since a flag-level TN doesn't exist.
 
   2. threshold_08_09_by_category.csv — FILE level at confidence >= 0.8 and
      >= 0.9: TP/TN/FP/FN, precision, recall, specificity, accuracy (+F1),
@@ -57,6 +61,15 @@ def r2(x):
 def bucket_rows(prompt, model, rows):
     out = []
     for cat in CATEGORIES:
+        # GT flags of this category across the files this model was scored on
+        # — per model, since partial runs cover fewer files. Not split by
+        # bucket: a GT flag has no model confidence of its own.
+        n_gt_flags = sum(len([g for g in r.get("gt_flags", []) if cat == "ALL" or g.get("category") == cat]) for r in rows)
+        # File counts: TN has no flag-level meaning, so the GT-negative side is
+        # given as files with no GT flag of this category (same as n_gt_neg in
+        # the threshold tables).
+        n_gt_pos_files = sum(1 for r in rows if any(cat == "ALL" or g.get("category") == cat for g in r.get("gt_flags", [])))
+        n_gt_neg_files = len(rows) - n_gt_pos_files
         counts = {}
         for r in rows:
             for f in r["model_flags"]:
@@ -76,9 +89,64 @@ def bucket_rows(prompt, model, rows):
             c = counts.get(label, {"tp": 0, "redundant": 0, "fp": 0})
             n = c["tp"] + c["redundant"] + c["fp"]
             out.append({
-                "prompt": prompt, "model": model, "n_files": len(rows), "category": cat, "confidence_bucket": label,
+                "prompt": prompt, "model": model, "n_files": len(rows), "category": cat, "n_gt_flags": n_gt_flags,
+                "n_gt_pos_files": n_gt_pos_files, "n_gt_neg_files": n_gt_neg_files, "confidence_bucket": label,
                 "n_flags": n, "tp": c["tp"], "redundant": c["redundant"], "fp": c["fp"],
                 "precision": r2((c["tp"] + c["redundant"]) / n) if n else None,
+            })
+    return out
+
+
+def _max_conf(flags):
+    """Highest model_confidence among `flags`, or "missing" if they all lack one."""
+    vals = [f.get("model_confidence") for f in flags if f.get("model_confidence") is not None]
+    return max(vals) if vals else None
+
+
+def file_bucket_rows(prompt, model, rows):
+    """FILE-level version of bucket_rows, consistent with
+    threshold_metrics_for_group: a GT-positive file is a TP in the bucket of
+    its highest-confidence flag that matched a GT flag of this category (for
+    ALL: any matched flag); a GT-negative file is an FP in the bucket of its
+    highest-confidence flag self-labelled as this category. Summing buckets
+    from the top down to threshold t gives exactly the threshold table's
+    TP/FP at t. GT-positive files with no such matched flag are FN at every
+    threshold, and GT-negative files with no such flag are TN at every
+    threshold — neither has a bucket, so both appear only in the totals."""
+    out = []
+    labels = [f"{lo:.1f}-{hi:.1f}" for lo, hi in BUCKETS] + ["missing"]
+    for cat in CATEGORIES:
+        tp, fp = {}, {}
+        n_pos = n_neg = never_caught = never_flagged = 0
+        for r in rows:
+            gt = [g for g in r.get("gt_flags", []) if cat == "ALL" or g.get("category") == cat]
+            flags = r["model_flags"]
+            if gt:
+                n_pos += 1
+                caught = [f for f in flags if f.get("matched") and (cat == "ALL" or f.get("matched_gt_category") == cat)]
+                if caught:
+                    b = bucket_of(_max_conf(caught))
+                    tp[b] = tp.get(b, 0) + 1
+                else:
+                    never_caught += 1
+            else:
+                n_neg += 1
+                own = [f for f in flags if cat == "ALL" or f.get("category") == cat]
+                if own:
+                    b = bucket_of(_max_conf(own))
+                    fp[b] = fp.get(b, 0) + 1
+                else:
+                    never_flagged += 1
+        for label in labels:
+            t, f_ = tp.get(label, 0), fp.get(label, 0)
+            if label == "missing" and not (t or f_):
+                continue
+            out.append({
+                "prompt": prompt, "model": model, "n_files": len(rows), "category": cat,
+                "n_gt_pos_files": n_pos, "n_gt_neg_files": n_neg,
+                "fn_files_never_caught": never_caught, "tn_files_never_flagged": never_flagged,
+                "confidence_bucket": label, "tp_files": t, "fp_files": f_,
+                "precision": r2(t / (t + f_)) if (t + f_) else None,
             })
     return out
 
@@ -109,7 +177,7 @@ def main():
     out_dir = config.PROJECT_ROOT / parser.parse_args().out_dir
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    buckets, thresholds = [], []
+    buckets, file_buckets, thresholds = [], [], []
     for prompt, adir in RUNS:
         base = config.PROJECT_ROOT / adir
         for model_dir in sorted(p.parent for p in base.glob("*/per_file") if p.is_dir()):
@@ -117,13 +185,16 @@ def main():
             if not rows:
                 continue
             buckets += bucket_rows(prompt, model_dir.name, rows)
+            file_buckets += file_bucket_rows(prompt, model_dir.name, rows)
             thresholds += threshold_rows(prompt, model_dir.name, rows)
             note = "" if len(rows) >= TOTAL_FILES else f"  (partial: {len(rows)}/{TOTAL_FILES} files)"
             print(f"{prompt} {model_dir.name}: {len(rows)} files{note}")
 
     write(out_dir / "confidence_buckets_by_category.csv", buckets)
     write(out_dir / "threshold_08_09_by_category.csv", thresholds)
-    print(f"Wrote {out_dir}/confidence_buckets_by_category.csv and threshold_08_09_by_category.csv")
+    write(out_dir / "confidence_buckets_by_category_file_level.csv", file_buckets)
+    print(f"Wrote {out_dir}/confidence_buckets_by_category.csv, confidence_buckets_by_category_file_level.csv "
+          f"and threshold_08_09_by_category.csv")
 
 
 if __name__ == "__main__":

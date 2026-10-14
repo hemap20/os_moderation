@@ -21,8 +21,10 @@ _passes_threshold/_signal_value/threshold_metrics_for_group (metric
 definitions) exactly as threshold_pp_v6_v8.py does — no new metric
 definitions here.
 
-Prompt-version -> scoring: v1 runs use raw only; v6 runs use raw/sa/pp_full
-(the dev-set v6 policy), per the task's instruction.
+Prompt-version -> scoring: v1 runs use raw only; v6/v7/v8 runs use
+raw/sa/pp_full (the same modes threshold_pp_v6_v8.py uses on the dev set).
+Partial runs (some v7/v8 full-dataset runs) are included on the files they
+finished — n_gt_pos + n_gt_neg on each row gives the file count.
 
 Usage: python3 threshold_by_bucket_full.py
 """
@@ -51,8 +53,11 @@ GT_CONF_CUTOFF = 0.7
 RUNS = [
     ("analysis_results", "v1", None),
     ("analysis_results_promptv6", "v6", None),
+    ("analysis_results_promptv7", "v7", None),
+    ("analysis_results_promptv8", "v8", None),
 ]
-PROMPT_MODES = {"v1": ["raw"], "v6": ["raw", "sa", "pp_full"]}
+PROMPT_MODES = {"v1": ["raw"], "v6": ["raw", "sa", "pp_full"],
+                "v7": ["raw", "sa", "pp_full"], "v8": ["raw", "sa", "pp_full"]}
 NUMERIC_THRESHOLDS = [round(i * 0.1, 2) for i in range(10)] + [0.95, 1.0]
 CATEGORIES = list(config.CATEGORY_LABELS.values()) + ["ALL"]
 
@@ -267,8 +272,14 @@ def main():
                          list({r["model"] for r in all_rows}))
     print(f"\nwrote {len(all_rows)} rows to threshold_metrics_by_bucket_full.csv")
 
+    # No-threshold view: every flag counts (threshold "none"), category ALL —
+    # one row per model/prompt/mode/bucket, the same rows as in the full table.
+    no_threshold = [r for r in all_rows if r["threshold"] == "none" and r["category"] == "ALL"]
+    ar.write_csv(OUT_DIR / "bucket_metrics_no_threshold.csv", no_threshold, ALL_FIELDNAMES)
+    print(f"wrote {len(no_threshold)} rows to bucket_metrics_no_threshold.csv")
+
     # overview markdown: category ALL, primary mode per prompt version
-    PRIMARY_MODE = {"v1": "raw", "v6": "sa"}
+    PRIMARY_MODE = {"v1": "raw", "v6": "sa", "v7": "sa", "v8": "sa"}
     md = ["# Threshold-by-bucket overview — full dataset (category ALL, primary scoring mode per run)", ""]
     model_prompt_pairs = sorted({(r["model"], r["prompt_version"]) for r in all_rows})
     buckets_order = [("overall", "overall"), ("length_segment", "short"), ("length_segment", "long"),
