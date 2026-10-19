@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_default_427307149_audio_1789058314884.mp3",
+  "language": "telugu",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 255,
+  "affected_word_count": 6,
+  "semantic_error_rate": 0.0235,
+  "seconds": 3.1,
+  "discrepancies": [
+    {
+      "reference_text": "ఎక్కడున్నారు మీరు?",
+      "translation_text": "I cannot see.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Where are you?' but the translation says 'I cannot see.'"
+    },
+    {
+      "reference_text": "నేను తెలుగు తమిళనాడు మద్రాస్",
+      "translation_text": "I am not Telugu, Tamil Nadu, Madras.",
+      "category": "negation_flipped",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'I am Telugu, Tamil Nadu, Madras' but the translation adds a negation 'not'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:58",
+      "type": "money_or_payment",
+      "reference_text": "నో జస్ట్ మనీ ఎర్నింగ్",
+      "translation_text": "No, just money earning.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:08",
+      "type": "money_or_payment",
+      "reference_text": "ఓన్లీ మనీ ఎర్నింగ్",
+      "translation_text": "Only money earning.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key policy-relevant discussion about earning money on the app, though it introduces a couple of minor errors in the beginning lines."
+}

@@ -1,0 +1,51 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert). Calls can be audio/video.
+    *   **Goal:** Find every possible violation based on three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+    *   **Output Format:** Strict minified JSON array following the specified schema.
+    *   **Key Constraints:**
+        *   Only output quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, filler words, etc.).
+        *   Category `f` must be exactly one of: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+        *   Handle "About a Violation, Not Doing It" (warnings, refusals, questions) by setting `violation: "no"` and `c <= 0.3`.
+        *   Quotes must be exact, with timestamps.
+
+2.  **Analyze the Transcript:**
+    *   [00:00] हलो (Hello)
+    *   [00:10] हलो (Hello)
+    *   [00:20] नंबर है मेरे नंबर हमको सिलेक्ट करें नंबर है मेरे व्हाट्सएप हमको सिलेक्ट करें (Number hai mere number humko select karein number hai mere WhatsApp humko select karein)
+    *   [00:30] हलो (Hello)
+
+3.  **Evaluate Transcript against Policy Categories:**
+
+    *   **[00:00] हलो / [00:10] हलो / [00:30] हलो:** These are greetings/small talk. -> *Allowed/Ordinary conversation. Skip.*
+
+    *   **[00:20] नंबर है मेरे नंबर हमको सिलेक्ट करें नंबर है मेरे व्हाट्सएप हमको सिलेक्ट करें (Number hai mere number humko select karein number hai mere WhatsApp humko select karein)**
+        *   *Translation:* "The number is mine, select my number. The number is my WhatsApp, select my WhatsApp."
+        *   *Analysis:* The user is explicitly asking the expert to select or use their WhatsApp number. This is a request for contact information/ID to move the conversation outside the current platform.
+        *   *Category Check:*
+            *   `PlatformMove`: Strong case criteria include "Giving or asking for a phone number, social media ID or handle, or payment ID (UPI, Paytm)." and "Proposing or asking to move to a named external app."
+            *   This quote directly asks the expert to select/use the WhatsApp number. This is a strong case for `PlatformMove`.
+        *   *Confidence:* 0.9 (Strong case, clear request for external contact method).
+        *   *Speech Act:* Direct (asking the expert to perform an action).
+        *   *Violation:* Yes (Strong case).
+
+4.  **Construct the JSON Output:** (Focusing only on the identified violation at 00:20).
+
+    *   t: 00:20
+    *   seg: नंबर है मेरे नंबर हमको सिलेक्ट करें नंबर है मेरे व्हाट्सएप हमको सिलेक्ट करें
+    *   tr: The number is mine, select my number. The number is my WhatsApp, select my WhatsApp.
+    *   f: PlatformMove
+    *   spk: user
+    *   ctx: The user is requesting the expert to select their number and WhatsApp ID. The expert did not respond immediately.
+    *   speech_act: direct
+    *   j: The user is directly asking the expert to select or use their WhatsApp number, which is a strong indicator of proposing contact outside the app.
+    *   violation: yes
+    *   c: 0.9
+
+5.  **Final Review:** The output must be a single, minified JSON object. (Looks correct).<channel|>```json
+{"d": [{"t": "00:20", "seg": "नंबर है मेरे नंबर हमको सिलेक्ट करें नंबर है मेरे व्हाट्सएप हमको सिलेक्ट करें", "tr": "The number is mine, select my number. The number is my WhatsApp, select my WhatsApp.", "f": "PlatformMove", "spk": "user", "ctx": "The user is requesting the expert to select their number and WhatsApp ID. The expert did not respond immediately.", "speech_act": "direct", "j": "The user is directly asking the expert to select or use their WhatsApp number, which is a strong indicator of proposing contact outside the app.", "violation": "yes", "c": 0.9}]}
+```<turn|>

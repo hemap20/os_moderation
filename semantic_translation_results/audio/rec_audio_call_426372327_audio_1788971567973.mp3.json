@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_audio_call_426372327_audio_1788971567973.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 102,
+  "affected_word_count": 17,
+  "semantic_error_rate": 0.1667,
+  "seconds": 5.3,
+  "discrepancies": [
+    {
+      "reference_text": "கேக்குதா",
+      "translation_text": "How are you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference asks 'Can you hear me?' but the translation says 'How are you?'."
+    },
+    {
+      "reference_text": "கேக்குது",
+      "translation_text": "I am fine.",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'I can hear you' but the translation says 'I am fine'."
+    },
+    {
+      "reference_text": "சும்மா தான் இருக்கேன் நான் பேஸ் பண்றேன்",
+      "translation_text": "Just chatting, how long have you been using this app?",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'I am just free, I am using [this]' but the translation adds a question about how long they have been using the app."
+    },
+    {
+      "reference_text": "எவ்வளவு நேரம் நான் பேஸ் பண்றேன்",
+      "translation_text": "How long have you been using this app?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'How long have I been using [it]' but the translation asks 'How long have you been using this app?'."
+    },
+    {
+      "reference_text": "இல்ல",
+      "translation_text": "Yes, I have talked.",
+      "category": "negation_flipped",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'No' but the translation says 'Yes, I have talked'."
+    },
+    {
+      "reference_text": "ஜானு பேசுவேன்",
+      "translation_text": "I am Janani",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'I will talk as Janu' but the translation translates it as 'I am Janani'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:26",
+      "type": "move_off_app",
+      "reference_text": "வாட்ஸ்அப்ல பேசி இருக்கேன்",
+      "translation_text": "Have you talked on WhatsApp?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:58",
+      "type": "move_off_app",
+      "reference_text": "நம்பர் குடு",
+      "translation_text": "Give me your number.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:00",
+      "type": "money_or_payment",
+      "reference_text": "நீ அமௌன்ட் பே பண்ற மாதிரி இருக்கும்",
+      "translation_text": "You will have to pay money for that.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:04",
+      "type": "money_or_payment",
+      "reference_text": "300",
+      "translation_text": "300.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key policy-relevant moments regarding sharing a phone number and paying 300 rupees, though there are minor errors in the initial greetings and name translation."
+}

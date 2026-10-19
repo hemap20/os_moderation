@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_default_427307746_audio_1789058356862.mp3",
+  "language": "tamil",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 72,
+  "affected_word_count": 10,
+  "semantic_error_rate": 0.1389,
+  "seconds": 5.5,
+  "discrepancies": [
+    {
+      "reference_text": "எப்படி இருக்கீங்க?",
+      "translation_text": "How to talk, how to talk",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'How are you?' but the translation says 'How to talk'."
+    },
+    {
+      "reference_text": "உள்ள ஒன்னும் இல்லையா?",
+      "translation_text": "I didn't put anything inside, did I put it inside?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'Is there nothing inside?' (referring to underwear), but the translation changes this to 'I didn't put anything inside'."
+    },
+    {
+      "reference_text": "போட்டுருக்கேன்",
+      "translation_text": "It happened",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'I have worn (it)' but the translation says 'It happened'."
+    },
+    {
+      "reference_text": "ஆடுது",
+      "translation_text": "It happened",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'It is shaking/moving' but the translation says 'It happened'."
+    },
+    {
+      "reference_text": "டீ-ஷர்ட்",
+      "translation_text": "teacher",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'T-shirt' but the translation mistranslates it as 'teacher'."
+    },
+    {
+      "reference_text": "காட்டுங்க பாக்கலாம்",
+      "translation_text": "Door, people?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Show me, let me see' but the translation says 'Door, people?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:23",
+      "type": "sexual_or_explicit",
+      "reference_text": "உள்ள ஒன்னும் இல்லையா?",
+      "translation_text": "I didn't put anything inside, did I put it inside?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:30",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஆடுது",
+      "translation_text": "it happened",
+      "status": "missing"
+    },
+    {
+      "t": "01:33",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஆஹா இது ரொம்ப லூசு டீ-ஷர்ட்",
+      "translation_text": "aha, this is very loose teacher",
+      "status": "softened"
+    },
+    {
+      "t": "01:50",
+      "type": "sexual_or_explicit",
+      "reference_text": "காட்டுங்க பாக்கலாம்",
+      "translation_text": "Door, people?",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "no",
+  "summary": "The translation is highly inaccurate, completely missing the sexual undertones and explicit requests of the conversation, such as asking to show breasts/body and commenting on a loose T-shirt."
+}

@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_audio_call_425730841_audio_1788903925979.mp3",
+  "language": "hindi",
+  "source": "itc_gemma_e4b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 38,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.1316,
+  "seconds": 3.4,
+  "discrepancies": [
+    {
+      "reference_text": "नहीं",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 1,
+      "explanation": "The user's refusal 'नहीं' (No) is missing from the translation."
+    },
+    {
+      "reference_text": "नहीं कर लेते ना",
+      "translation_text": "can't we do it",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The user's second refusal 'नहीं कर लेते ना' (No, let's not do it) is translated as a question suggesting they should do it."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:10",
+      "type": "move_off_app",
+      "reference_text": "व्हाट्सएप वीडियो कॉलिंग करते हैं आप?",
+      "translation_text": "let's do WhatsApp video calling",
+      "status": "preserved"
+    },
+    {
+      "t": "00:20",
+      "type": "sexual_or_explicit",
+      "reference_text": "हम उस पर सर्विस देते हैं फुल बॉडी का",
+      "translation_text": "We give service on that of full body",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the expert's offer of a full body service on WhatsApp, but fails to accurately translate the user's refusals, making it seem like the user is agreeing or suggesting the call."
+}

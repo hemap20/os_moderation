@@ -1,0 +1,122 @@
+{
+  "file_id": "rec_default_426606195_audio_1788985611722.mp3",
+  "language": "malayalam",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 203,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.0443,
+  "seconds": 18.5,
+  "discrepancies": [
+    {
+      "reference_text": "ഓപ്പൺ ആക്കുമോ",
+      "translation_text": "Everything is open, doctor.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Will you open/show?' (referring to video/body), but the translation mistranslates it as 'Everything is open, doctor'."
+    },
+    {
+      "reference_text": "എഴുതിയോ 95 62 99 85 34",
+      "translation_text": "Did you write it down? 956299853. Did you write down three or four?",
+      "category": "number_or_id_altered",
+      "word_count_affected": 7,
+      "explanation": "The phone number digits '85 34' are mistranslated as '853' and 'three or four'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:09",
+      "type": "move_off_app",
+      "reference_text": "ഇതിൽ മതിയോ വാട്സാപ്പിൽ ഒന്നും വേണ്ടല്ലോ",
+      "translation_text": "Is this enough? We don't need anything on WhatsApp, right?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:20",
+      "type": "move_off_app",
+      "reference_text": "അപ്പൊ നമ്പർ താ",
+      "translation_text": "We don't need it.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:24",
+      "type": "move_off_app",
+      "reference_text": "നമ്പർ താ നമ്പർ",
+      "translation_text": "",
+      "status": "missing"
+    },
+    {
+      "t": "01:29",
+      "type": "move_off_app",
+      "reference_text": "നമ്പർ നമ്പർ നമ്പർ",
+      "translation_text": "Number, number",
+      "status": "preserved"
+    },
+    {
+      "t": "01:33",
+      "type": "move_off_app",
+      "reference_text": "95 62 99 85 34",
+      "translation_text": "9562 99 853",
+      "status": "preserved"
+    },
+    {
+      "t": "04:36",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഞാൻ വീഡിയോ കോൾ വീഡിയോ കോൾ വിളിക്കണം നീ",
+      "translation_text": "I should call a video call, you...",
+      "status": "preserved"
+    },
+    {
+      "t": "04:41",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഡ്രസ്സ് എല്ലാം ഊരും അപ്പൊ നീ 500 റുപ്പീസ് എനിക്ക് പേ ചെയ്യണം ആ നമ്പറിൽ",
+      "translation_text": "I will take off all my clothes, then you have to pay me five hundred rupees to that number",
+      "status": "preserved"
+    },
+    {
+      "t": "04:41",
+      "type": "money_or_payment",
+      "reference_text": "500 റുപ്പീസ് എനിക്ക് പേ ചെയ്യണം ആ നമ്പറിൽ",
+      "translation_text": "pay me five hundred rupees to that number",
+      "status": "preserved"
+    },
+    {
+      "t": "04:52",
+      "type": "sexual_or_explicit",
+      "reference_text": "എല്ലാം ഊരിയിട്ട് പേ ചെയ്താൽ മതി",
+      "translation_text": "Just pay after taking everything off.",
+      "status": "preserved"
+    },
+    {
+      "t": "04:58",
+      "type": "sexual_or_explicit",
+      "reference_text": "വീഡിയോ കോൾ ചെയ്ത് എല്ലാം ഊരിയിട്ട് പേ ചെയ്താൽ പോരെ",
+      "translation_text": "Video call and everything...",
+      "status": "softened"
+    },
+    {
+      "t": "05:08",
+      "type": "sexual_or_explicit",
+      "reference_text": "വീഡിയോ കോൾ ചെയ്തിട്ട് എല്ലാം ഊരിയിട്ട് പേ ചെയ്താൽ പോരെ അപ്പൊ തന്നെ",
+      "translation_text": "Isn't it enough if I take everything off and pay? Then itself",
+      "status": "preserved"
+    },
+    {
+      "t": "05:19",
+      "type": "sexual_or_explicit",
+      "reference_text": "എല്ലാം ഊരി ഞാൻ തന്നെ വീഡിയോ 500 രൂപയാണ് അന്നേരം ഞാൻ എല്ലാം കാണിക്കും",
+      "translation_text": "take everything off. Right now, video, five hundred, then I will show everything",
+      "status": "preserved"
+    },
+    {
+      "t": "05:19",
+      "type": "money_or_payment",
+      "reference_text": "500 രൂപയാണ്",
+      "translation_text": "five hundred",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation successfully preserves the explicit sexual and financial nature of the call, including requests for video calls, stripping, and a 500 rupee payment, despite minor errors in phone number transcription."
+}

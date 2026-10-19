@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_426634262_audio_1788988662985.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 39,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.2308,
+  "seconds": 4.7,
+  "discrepancies": [
+    {
+      "reference_text": "என்ன சைஸ் வேணும்",
+      "translation_text": "What size, how much?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'what size do you want' but the translation translates it as 'What size, how much?'."
+    },
+    {
+      "reference_text": "இன்னும் கொஞ்சம் காமிக்க",
+      "translation_text": "Show me a little bit of work.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'show me a little more' (likely referring to body/nudity), but the translation adds 'of work'."
+    },
+    {
+      "reference_text": "இல்ல பாத்துட்டு இருக்கேன்",
+      "translation_text": "I will show you later.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'No, I am watching/looking', but the translation says 'I will show you later'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:27",
+      "type": "sexual_or_explicit",
+      "reference_text": "என்ன சைஸ் ஓடி",
+      "translation_text": "What size are you?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:30",
+      "type": "sexual_or_explicit",
+      "reference_text": "என்ன சைஸ் ஓடி",
+      "translation_text": "What size?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:33",
+      "type": "sexual_or_explicit",
+      "reference_text": "என்ன சைஸ் வேணும்",
+      "translation_text": "What size, how much?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:36",
+      "type": "move_off_app",
+      "reference_text": "வாட்ஸ்அப் வா",
+      "translation_text": "WhatsApp?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:38",
+      "type": "sexual_or_explicit",
+      "reference_text": "இன்னும் கொஞ்சம் காமிக்க",
+      "translation_text": "Show me a little bit of work.",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several errors towards the end of the call, misinterpreting requests to show more and questions about size/preferences as being about 'work' and 'how much'."
+}

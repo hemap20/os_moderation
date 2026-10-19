@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_427306879_audio_1789058296671.mp3",
+  "language": "telugu",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 59,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.2203,
+  "seconds": 3.8,
+  "discrepancies": [
+    {
+      "reference_text": "నేను హలో అండి మీరు",
+      "translation_text": "Are you a robot? Are you? Are you a robot? Are you a robot?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation introduces a question about being a robot which is not in the reference."
+    },
+    {
+      "reference_text": "ఫస్ట్ కాల్ చేస్తారా",
+      "translation_text": "Will you do a WhatsApp call?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks about a 'first call' (ఫస్ట్ కాల్), but the translation changes this to 'WhatsApp call'."
+    },
+    {
+      "reference_text": "రామకృష్ణ గారు ఏం లేకపోతే లేదండి",
+      "translation_text": "If you want to come, come, if not, don't.",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The translation invents a phrase about coming or not, and omits the name Ramakrishna."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:55",
+      "type": "move_off_app",
+      "reference_text": "ఫస్ట్ కాల్ చేస్తారా",
+      "translation_text": "Will you do a WhatsApp call?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:03",
+      "type": "money_or_payment",
+      "reference_text": "ఎంత చేయాలి ఎంత పంపించాలి",
+      "translation_text": "How much will you charge? How much? How much did you send?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:09",
+      "type": "money_or_payment",
+      "reference_text": "300",
+      "translation_text": "300.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation introduces several hallucinations, such as asking if the speaker is a robot and mentioning WhatsApp, which alters the specific context of the conversation."
+}

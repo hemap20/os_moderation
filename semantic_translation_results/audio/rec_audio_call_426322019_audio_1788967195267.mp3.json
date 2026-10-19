@@ -1,0 +1,38 @@
+{
+  "file_id": "rec_audio_call_426322019_audio_1788967195267.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 67,
+  "affected_word_count": 3,
+  "semantic_error_rate": 0.0448,
+  "seconds": 2.9,
+  "discrepancies": [
+    {
+      "reference_text": "സബ് ടൈറ്റിൽ",
+      "translation_text": "Yes, he is there.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Subtitle' (likely a misheard word or specific term), but the translation says 'Yes, he is there.'"
+    },
+    {
+      "reference_text": "ഉണ്ടല്ലോ",
+      "translation_text": "No.",
+      "category": "negation_flipped",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'Yes, there is' (ഉണ്ടല്ലോ), but the translation incorrectly translates it as 'No.'"
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:50",
+      "type": "move_off_app",
+      "reference_text": "വാട്സാപ്പില്",
+      "translation_text": "On WhatsApp.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate, preserving the overall tone and intent of the conversation, though there is a negation flip where 'Yes' is translated as 'No' regarding people at home."
+}

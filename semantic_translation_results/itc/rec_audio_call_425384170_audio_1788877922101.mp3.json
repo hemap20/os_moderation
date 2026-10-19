@@ -1,0 +1,143 @@
+{
+  "file_id": "rec_audio_call_425384170_audio_1788877922101.mp3",
+  "language": "malayalam",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 743,
+  "affected_word_count": 44,
+  "semantic_error_rate": 0.0592,
+  "seconds": 10.1,
+  "discrepancies": [
+    {
+      "reference_text": "ഞാൻ നഴ്സ് ആയിട്ട് ജോലി ചെയ്യുകയാണ്",
+      "translation_text": "I am working as an AIIMS",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says she is working as a nurse, but the translation says she is working as an AIIMS."
+    },
+    {
+      "reference_text": "വീട് കോഴിക്കോട് പേരാമ്പ്ര",
+      "translation_text": "home is Kozhikode, name is Ashwin",
+      "category": "named_entity_altered",
+      "word_count_affected": 3,
+      "explanation": "The reference says her home is in Perambra, Kozhikode, but the translation changes Perambra to the name Ashwin."
+    },
+    {
+      "reference_text": "യൂട്യൂബിൽ പോയിരുന്നു",
+      "translation_text": "said Ooty, we went",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions going to Ooty (ഊട്ടിയിൽ) earlier, but here says they went to 'Udupi' (യൂട്യൂബിൽ is a transcription error for ഉഡുപ്പിയിൽ), which the translation renders as Ooty."
+    },
+    {
+      "reference_text": "മസാജ് ഒക്കെ മസാജ് ഒക്കെ",
+      "translation_text": "not while talking",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference mentions messaging (മസാജ് ഒക്കെ - message/chatting), which the translation completely misinterprets as 'not while talking'."
+    },
+    {
+      "reference_text": "മലമ്പാമ്പ് കേക്ക് മലമ്പാമ്പ് ഇയാൾക്ക് ഫുഡ് ഇയാൾക്ക് ഉണ്ടാക്കി തരാം എന്ന് പറയുമ്പോൾ ഇയാൾ അത് ഉറപ്പാക്കില്ലേ ഇയാൾ",
+      "translation_text": "this python cake, python, he said he would make food for you. Won't you find it disgusting? You will make it.",
+      "category": "other_meaning_change",
+      "word_count_affected": 12,
+      "explanation": "The reference asks if he would feel aversion/disgust (അറയ്ക്കില്ലേ) to python food, which the translation mistranslates as 'won't you find it disgusting? You will make it'."
+    },
+    {
+      "reference_text": "അമ്മയത്തെ ഫീലിംഗ്സ് നമ്മൾ പോവുകയില്ല",
+      "translation_text": "we don't go into mother's feelings",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'such feelings' (അങ്ങനത്തെ ഫീലിംഗ്സ്), which is mistranscribed/translated as 'mother's feelings' (അമ്മയത്തെ)."
+    },
+    {
+      "reference_text": "കല്യാണം ഒക്കെ കഴിച്ചാലേ നമുക്ക് അറിയണ്ട നമുക്ക് ഒരു അനുഭൂതി ഇല്ലാതെ എടോ നമുക്ക് എങ്ങനെയാ ഫീലിംഗ്",
+      "translation_text": "Only if we eat all that will there be feelings, without an experience, how can we feel?",
+      "category": "other_meaning_change",
+      "word_count_affected": 12,
+      "explanation": "The reference talks about marriage (കല്യാണം), which the translation mistranslates as 'eat all that' (likely confusing kalyanam with kazhikkuka/eating)."
+    },
+    {
+      "reference_text": "ഇയാൾ പറഞ്ഞു പറഞ്ഞ് ചെയ്യിപ്പിക്കാനുള്ള",
+      "translation_text": "You are making me do it by talking. It's very beautiful, isn't it?",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds 'It's very beautiful, isn't it?' at the end, which is not in the reference."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:40",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഫീലിംഗ് എന്ന് വെച്ചാൽ സെക്സ്",
+      "translation_text": "By feelings, you mean sex?",
+      "status": "preserved"
+    },
+    {
+      "t": "03:17",
+      "type": "meeting_in_person",
+      "reference_text": "ഒരു ദിവസം സ്റ്റേ ചെയ്യേണ്ടി വന്നു",
+      "translation_text": "one day we had to stay",
+      "status": "preserved"
+    },
+    {
+      "t": "03:56",
+      "type": "meeting_in_person",
+      "reference_text": "മീറ്റ് ചെയ്യാനൊക്കെ വിളിച്ചാൽ പോവോ",
+      "translation_text": "If they call to meet, will you go?",
+      "status": "preserved"
+    },
+    {
+      "t": "05:08",
+      "type": "sexual_or_explicit",
+      "reference_text": "നമുക്ക് ഒന്നാമത്തെ സെക്സ് ഇതിനെ പറ്റി ഒക്കെ നന്നായിട്ട് അറിയാം",
+      "translation_text": "Firstly, we know well about sex and all this",
+      "status": "preserved"
+    },
+    {
+      "t": "06:29",
+      "type": "sexual_or_explicit",
+      "reference_text": "അതേപോലെ തന്നെയാണ് സെക്സ് ചെയ്ത് വീണ്ടും",
+      "translation_text": "it is the same. Those who have had sex and done it again and again",
+      "status": "preserved"
+    },
+    {
+      "t": "07:05",
+      "type": "sexual_or_explicit",
+      "reference_text": "എന്നാലും ഒരു മസ്റ്റ് വിഷൻ അങ്ങനെ ഒരു ഫീലിംഗ് ഒന്നുമില്ല",
+      "translation_text": "Even then, is there no feeling like masturbation?",
+      "status": "preserved"
+    },
+    {
+      "t": "07:13",
+      "type": "sexual_or_explicit",
+      "reference_text": "അല്ല ഞാൻ ചോദിച്ച മസ്റ്റ് വിഷന്റെ ഫീലിംഗ് ഉണ്ടോ",
+      "translation_text": "I asked if there is a feeling of masturbation",
+      "status": "preserved"
+    },
+    {
+      "t": "07:22",
+      "type": "sexual_or_explicit",
+      "reference_text": "കൈകൊണ്ട് ചെയ്യുന്നതൊക്കെ",
+      "translation_text": "doing it with the hand",
+      "status": "preserved"
+    },
+    {
+      "t": "07:24",
+      "type": "sexual_or_explicit",
+      "reference_text": "മാസ്റ്റർബേഷനോ",
+      "translation_text": "is it masturbation?",
+      "status": "preserved"
+    },
+    {
+      "t": "07:58",
+      "type": "sexual_or_explicit",
+      "reference_text": "സ്വയം ചെയ്യുന്നത് നല്ലതല്ല",
+      "translation_text": "Doing it yourself is not good",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the explicit sexual nature of the conversation, including discussions about sex and masturbation, despite several minor translation errors and mistranscribed words."
+}

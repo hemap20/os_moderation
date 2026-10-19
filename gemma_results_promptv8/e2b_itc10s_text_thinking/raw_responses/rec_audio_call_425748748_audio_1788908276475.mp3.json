@@ -1,0 +1,90 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert/paid host). Calls can be audio/video.
+    *   **Goal:** Find every possible violation based on three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+    *   **Output Format:** Strict minified JSON array following the defined schema.
+    *   **Key Constraints:**
+        *   Only output quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, location questions, filler words).
+        *   Category `f` must be exactly one of: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+        *   Strict rules for `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting` (confidence levels, allowed exceptions, etc.).
+        *   `About a Violation` (warnings, refusals, questions about rules) results in `violation: "no"` and `c <= 0.3`.
+
+2.  **Analyze the Transcript (Segment by Segment):**
+
+    *   `[00:00] हेलो कैसी हो अच्छी बात कैसे हो बहुत बढ़िया` (Hello, how are you? Good thing, how are you? Very good.) -> Ordinary greeting. (Skip)
+    *   `[00:10] कहाँ से हो एम पी से आप कहाँ से हो मैं दिल्ली से आप दिल्ली में रहना चाहें` (Where are you from? From MP? Where are you from? I am from Delhi, do you want to live in Delhi?) -> Location/small talk. (Skip)
+    *   `[00:20] इंस्टाग्राम पर कनेक्ट हो गए मेरे साथ हाँ हो जाऊँगी बट मैं आपको जानती नहीं हूँ ना अभी तो` (Connected on Instagram with me? Yes, I will, but I don't know you yet, right?) -> Discussing Instagram connection.
+    *   `[00:30] हाँ एक बार देख लो मेरी प्रोफाइल वहाँ सही लगे तो बात कर लेना वरना ब्लॉक कर देना अच्छा इतना इतना कॉन्फिडेंस बिल्कुल` (Yes, check my profile once, if you like it, then talk, otherwise block. Good, so much confidence.) -> Suggesting interaction via Instagram/profile.
+    *   `[00:40] डेल्ही में कहाँ से हो प्रॉपर डेल्ही में प्रॉपर डेल्ही डेल्ही बहुत बड़ा है` (Where are you from in Delhi? Proper Delhi in proper Delhi, Delhi is very big.) -> Location talk. (Skip)
+    *   `[00:50] संगम विहार संगम विहार ओके ये कहाँ पे है` (Sangam Vihar, Sangam Vihar. Okay, where is this?) -> Location/small talk. (Skip)
+    *   `[01:00] वैसे मैं मयूर भी है इंस्टाग्राम पर कनेक्ट हो गई हाँ हो जाऊंगी बट मैं आपको जा` (By the way, I am Mayur too, connected on Instagram. Yes, I will, but I...) -> Confirming Instagram connection.
+    *   `[01:10] जानू के पहले नहीं मयूर विहार सिंह जानते हो तुम` (Before Janu, no. Mayur Vihar Singh, do you know him?) -> Name/personal detail. (Skip)
+
+3.  **Evaluate Potential Violations against Rules:**
+
+    *   **PlatformMove Check:** Does the speaker propose moving outside the app (WhatsApp, Telegram, meeting in person, phone number)?
+        *   The conversation revolves entirely around connecting on Instagram (`इंस्टाग्राम पर कनेक्ट हो गए`, `मेरी प्रोफाइल वहाँ`).
+        *   The speaker suggests checking the profile and talking there. This is a hint at moving the conversation off the current platform.
+        *   *Rule Check:* Strong cases include proposing a named external app or asking for a social media ID.
+        *   Quote: `[00:20] इंस्टाग्राम पर कनेक्ट हो गए मेरे साथ हाँ हो जाऊँगी बट मैं आपको जानती नहीं हूँ ना अभी तो` and `[00:30] हाँ एक बार देख लो मेरी प्रोफाइल वहाँ सही लगे तो बात कर लेना वरना ब्लॉक कर देना`
+        *   This is a clear proposal/hint to move the interaction to Instagram.
+
+    *   **SuspiciousActivity Check:** Is there money/payment linked to sex/nudity? (No.)
+
+    *   **Explicit-Flirting Check:** Is there sexual talk, body showing, or explicit requests? (No.)
+
+4.  **Draft the Flag(s):**
+
+    *   Focus on the Instagram connection as the primary violation type.
+
+    *   *Candidate 1 (00:20):* Proposing connection on Instagram.
+    *   *Candidate 2 (00:30):* Suggesting checking the profile and talking there.
+
+5.  **Finalize JSON Structure and Confidence Scores:**
+
+    *   Both quotes fit the `PlatformMove` category. They are strong cases (0.9) because they explicitly name the external platform (Instagram) for contact.
+
+    *(Self-Correction during drafting: Ensure the quotes are exact and the translation is accurate.)*<channel|>```json
+{"d": [
+  {
+    "t": "00:20",
+    "seg": "इंस्टाग्राम पर कनेक्ट हो गए मेरे साथ हाँ हो जाऊँगी बट मैं आपको जानती नहीं हूँ ना अभी तो",
+    "tr": "Connected on Instagram with me? Yes, I will, but I don't know you yet, right?",
+    "f": "PlatformMove",
+    "spk": "user",
+    "ctx": "The user confirms the connection on Instagram and agrees to proceed, but states they do not know the expert yet.",
+    "speech_act": "direct",
+    "j": "The user explicitly proposes connecting on Instagram and agrees to proceed, which is a strong case for PlatformMove.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "00:30",
+    "seg": "हाँ एक बार देख लो मेरी प्रोफाइल वहाँ सही लगे तो बात कर लेना वरना ब्लॉक कर देना",
+    "tr": "Yes, check my profile once, if you like it, then talk, otherwise block.",
+    "f": "PlatformMove",
+    "spk": "user",
+    "ctx": "The user advises the expert to check their profile on Instagram and suggests talking if they like it, or blocking otherwise.",
+    "speech_act": "direct",
+    "j": "The user suggests moving the conversation to their profile on Instagram, which is a strong case for PlatformMove.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "01:00",
+    "seg": "वैसे मैं मयूर भी है इंस्टाग्राम पर कनेक्ट हो गई हाँ हो जाऊंगी बट मैं आपको जा",
+    "tr": "By the way, I am Mayur too, connected on Instagram. Yes, I will, but I...",
+    "f": "PlatformMove",
+    "spk": "expert",
+    "ctx": "The expert confirms they are also connected on Instagram and agrees to proceed, but the sentence is cut off.",
+    "speech_act": "direct",
+    "j": "The expert confirms the connection on Instagram and agrees to proceed, indicating a move to an external platform.",
+    "violation": "yes",
+    "c": 0.9
+  }
+]}
+```<turn|>

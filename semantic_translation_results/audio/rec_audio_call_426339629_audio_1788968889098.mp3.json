@@ -1,0 +1,115 @@
+{
+  "file_id": "rec_audio_call_426339629_audio_1788968889098.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 70,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.1571,
+  "seconds": 6.7,
+  "discrepancies": [
+    {
+      "reference_text": "എവിടെയാ സ്ഥലം?",
+      "translation_text": "Are you there?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks about the location, but the translation asks if the person is there."
+    },
+    {
+      "reference_text": "സ്ഥലം താല്ക്കട്ട",
+      "translation_text": "Tell me, tell me.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference states the location is Thalkatta, but the translation says 'Tell me, tell me'."
+    },
+    {
+      "reference_text": "എന്താ ചെയ്യുന്നത്?",
+      "translation_text": "What is it?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'What are you doing?', but the translation says 'What is it?'."
+    },
+    {
+      "reference_text": "സൂപ്പർ",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 1,
+      "explanation": "The word 'Super' is missing from the translation."
+    },
+    {
+      "reference_text": "എനിക്ക് 250 രൂപയല്ലേ?",
+      "translation_text": "I am not going to take it.",
+      "category": "intent_changed",
+      "word_count_affected": 4,
+      "explanation": "The reference asks for confirmation of the price (Isn't it 250 rupees for me?), but the translation says 'I am not going to take it'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:17",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഓക്കേ, നീ ഓപ്പൺ ടോക്ക് സർവീസ് എടുക്കാൻ താല്പര്യമുണ്ടോ?",
+      "translation_text": "Okay, are you interested in taking open talk services?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:21",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഓപ്പൺ ടോക്ക് സർവീസ് എടുക്കാൻ താല്പര്യമുണ്ടോ എന്ന്",
+      "translation_text": "Are you interested in taking open talk services?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:29",
+      "type": "move_off_app",
+      "reference_text": "വാട്സാപ്പിലോ?",
+      "translation_text": "On WhatsApp?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:30",
+      "type": "move_off_app",
+      "reference_text": "ടെലഗ്രാം",
+      "translation_text": "Telegram.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:33",
+      "type": "money_or_payment",
+      "reference_text": "അതിന്റെ റേറ്റ്?",
+      "translation_text": "What is the rate?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:35",
+      "type": "money_or_payment",
+      "reference_text": "അതിന്റെ എമൗണ്ട് എത്രയാണ്?",
+      "translation_text": "What is the amount?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:41",
+      "type": "money_or_payment",
+      "reference_text": "40 മിനിറ്റിന് 250",
+      "translation_text": "40 minutes for 250.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:44",
+      "type": "sexual_or_explicit",
+      "reference_text": "വീഡിയോ കോൾ ആണോ?",
+      "translation_text": "Is it a video call?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:52",
+      "type": "money_or_payment",
+      "reference_text": "എനിക്ക് 250 രൂപയല്ലേ?",
+      "translation_text": "I am not going to take it.",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "no",
+  "summary": "The translation accurately captures the negotiation of services and rates on Telegram, but completely alters the final line from a price confirmation to a refusal of service."
+}

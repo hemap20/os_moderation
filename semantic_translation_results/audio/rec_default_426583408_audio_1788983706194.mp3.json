@@ -1,0 +1,101 @@
+{
+  "file_id": "rec_default_426583408_audio_1788983706194.mp3",
+  "language": "kannada",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 1524,
+  "affected_word_count": 25,
+  "semantic_error_rate": 0.0164,
+  "seconds": 6.6,
+  "discrepancies": [
+    {
+      "reference_text": "ನಾನು ಅಂದ ಕಣ್ರಿ ನಾನು ಅಂದ",
+      "translation_text": "Hello Linda, how are you? I am from Bangalore.",
+      "category": "named_entity_altered",
+      "word_count_affected": 5,
+      "explanation": "The translation misinterprets the Kannada word 'anda' (meaning 'I said') as a name 'Linda'."
+    },
+    {
+      "reference_text": "ಎಲ್ಲರಿಗೂ ನಾನು ನನ್ನ ಮಗ ಅತ್ತೆ ಮಾವ",
+      "translation_text": "Yes, I am with my son, sister, and mother.",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The translation changes 'mother-in-law and father-in-law' (ಅತ್ತೆ ಮಾವ) to 'sister and mother'."
+    },
+    {
+      "reference_text": "ಮಾರ್ಕೆಟ್ ಗೆ ಎಡ್ಡ ವರ್ಕ್ ಮಾಡ್ತೀನಿ",
+      "translation_text": "I work in the market",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The speaker says he works as a 'market head' (ಮಾರ್ಕೆಟ್ ಗೆ ಹೆಡ್), which is translated simply as working in the market."
+    },
+    {
+      "reference_text": "ಮನೇಲಿ ಮಗಳ ಜೊತೆ ಟೈಮ್ ಸ್ಪೆಂಡ್ ಮಾಡ್ಲಿಕ್ಕೆ ಆಗ್ತಾ ಇರ್ಲಿಲ್ಲ ನನಗೆ",
+      "translation_text": "I couldn't spend time with my family.",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The translation changes 'daughter' (ಮಗಳ) to 'family'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "05:41",
+      "type": "meeting_in_person",
+      "reference_text": "ಸೋ ಹಂಗೆ ಪರ್ಸನಲ್ ಕನೆಕ್ಟ್ ಆಗಬಹುದಾ",
+      "translation_text": "So, can we connect personally?",
+      "status": "preserved"
+    },
+    {
+      "t": "08:21",
+      "type": "meeting_in_person",
+      "reference_text": "ಸಿಗಬಹುದಾ ನೀವು",
+      "translation_text": "Can we meet?",
+      "status": "preserved"
+    },
+    {
+      "t": "08:28",
+      "type": "move_off_app",
+      "reference_text": "ನಂಬರ್ ಎಕ್ಸ್ಚೇಂಜ್ ಮಾಡ್ಕೊಳ್ಳೋಣ ತೊಂದರೆ ಇಲ್ಲ ಒಂದ್ಸಲ ಕಾಲಲ್ಲೂ ಮಾತಾಡೋಣ",
+      "translation_text": "Let's exchange numbers, no problem. Let's talk on call too.",
+      "status": "preserved"
+    },
+    {
+      "t": "09:36",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಪಿಂಗ್ ಮಾಡ್ತೀರಾ",
+      "translation_text": "Ping me on WhatsApp.",
+      "status": "preserved"
+    },
+    {
+      "t": "09:42",
+      "type": "move_off_app",
+      "reference_text": "888 ನಾಳೆ ಮಾತಾಡೋಣ ಓಕೆನಾ ಈಗ ಬೇಡ",
+      "translation_text": "888, let's talk tomorrow, okay? Not now.",
+      "status": "preserved"
+    },
+    {
+      "t": "09:51",
+      "type": "move_off_app",
+      "reference_text": "888 888 888 ಓಕೆ 45 ಓಕೆ 89 574",
+      "translation_text": "888. 888, okay. 45. Okay. 89. 574.",
+      "status": "preserved"
+    },
+    {
+      "t": "11:13",
+      "type": "meeting_in_person",
+      "reference_text": "ಸಿಗಬಹುದಾ ನಾಳೆ",
+      "translation_text": "Can we meet tomorrow?",
+      "status": "preserved"
+    },
+    {
+      "t": "13:19",
+      "type": "meeting_in_person",
+      "reference_text": "ಸಿಗಬಹುದಾ ನಾಳೆ",
+      "translation_text": "Can we meet tomorrow?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key intents of exchanging phone numbers, moving to WhatsApp, and planning an in-person meeting, despite minor errors in translating family relations and names."
+}

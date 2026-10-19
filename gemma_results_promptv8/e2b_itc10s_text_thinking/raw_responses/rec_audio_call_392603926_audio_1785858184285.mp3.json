@@ -1,0 +1,54 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert/paid host). Calls can be audio/video.
+    *   **Goal:** Find every possible violation based on three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+    *   **Output Format:** Strict minified JSON array following the specified schema.
+    *   **Constraints:**
+        *   Only output quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, location questions, filler words).
+        *   Category `f` must be exactly one of: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+        *   Strict rules for `speech_act`, `violation`, and confidence scoring.
+
+2.  **Analyze the Transcript (Segment by Segment):**
+
+    *   `[00:00] हेलो हेलो आप कहाँ से हो आप कहाँ से हो मैं आगरा से हूँ` (Hello hello where are you from where are you from I am from Agra) -> Greeting, location exchange. (Allowed/Ordinary conversation).
+    *   `[00:10] कहाँ पे आगरा आगरा आगरा का ताजमहल बोलते हैं वो` (Where in Agra Agra Agra the Taj Mahal they say) -> Small talk about location/landmark. (Allowed/Ordinary conversation).
+    *   `[00:20] यहाँ होइ तो यहाँ गुजरात से हूँ सूरत से क्या करती हो आप` (Are you here so I am from Gujarat from Surat what do you do you) -> Location exchange, asking about job. (Allowed/Ordinary conversation).
+    *   `[00:30] क्या करती हो क्या बोल रही हो क्या करती हो आप मैं डायमंड जॉब करता हूँ आप क्या करती हो` (What do you do what are you saying what do you do I do diamond job what do you do) -> Asking about job/activity. (Allowed/Ordinary conversation).
+    *   `[00:40] दोस्ती करोगे क्या दोस्ती करोगे क्या दोस्त बनोगे ऐसा` (Will you be friends will you be friends will you become a friend like that) -> Suggesting friendship. (Allowed/Ordinary conversation).
+    *   `[00:50] हाँ दोस्त तो बनूँगा ही ना तुम अपना व्हाट्सएप नंबर बोलो नहीं व्हाट्सएप नंबर` (Yes friend I will become friend right tell your WhatsApp number no WhatsApp number) -> Requesting a WhatsApp number.
+
+3.  **Evaluate Potential Violations:**
+
+    *   **00:50 Quote:** "हाँ दोस्त तो बनूँगा ही ना तुम अपना व्हाट्सएप नंबर बोलो नहीं व्हाट्सएप नंबर" (Yes friend I will become friend right tell your WhatsApp number no WhatsApp number)
+        *   *Check against categories:*
+            *   `PlatformMove`: Proposing/asking for a phone number/social media ID. (Strong case: "Giving or asking for a phone number, social media ID or handle").
+            *   `SuspiciousActivity`: No money/sex involved.
+            *   `Explicit-Flirting`: No sexual content.
+        *   *Conclusion:* This is a strong `PlatformMove` violation.
+
+4.  **Draft the Flag (Focusing on 00:50):**
+
+    *   t: 00:50
+    *   seg: हाँ दोस्त तो बनूँगा ही ना तुम अपना व्हाट्सएप नंबर बोलो नहीं व्हाट्सएप नंबर
+    *   tr: Yes friend I will become friend right tell your WhatsApp number no WhatsApp number
+    *   f: PlatformMove
+    *   spk: user
+    *   ctx: The user suggests becoming friends, and then directly asks the expert to provide their WhatsApp number.
+    *   speech_act: direct
+    *   j: The user is directly asking for the expert's WhatsApp number, which is a strong case for PlatformMove.
+    *   violation: yes
+    *   c: 0.9 (Strong case, clear request for contact info).
+
+5.  **Final Review against Rules:**
+    *   Did I exclude allowed conversation? Yes (Greetings, location, job talk were excluded).
+    *   Is the quote exact? Yes.
+    *   Is the JSON schema correct? Yes.
+    *   Is the output minified JSON? Yes.
+
+6.  **Construct the Final JSON.** (Only one flag found.)<channel|>```json
+{"d": [{"t": "00:50", "seg": "हाँ दोस्त तो बनूँगा ही ना तुम अपना व्हाट्सएप नंबर बोलो नहीं व्हाट्सएप नंबर", "tr": "Yes friend I will become friend right tell your WhatsApp number no WhatsApp number", "f": "PlatformMove", "spk": "user", "ctx": "The user suggests becoming friends and then directly asks the expert to provide their WhatsApp number.", "speech_act": "direct", "j": "The user is directly asking for the expert's WhatsApp number, which is a strong case for PlatformMove.", "violation": "yes", "c": 0.9}]}
+```<turn|>

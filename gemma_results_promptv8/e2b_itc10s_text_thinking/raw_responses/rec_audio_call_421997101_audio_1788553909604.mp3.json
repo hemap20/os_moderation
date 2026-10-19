@@ -1,0 +1,117 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Constraints:**
+    *   **Role:** Content policy analyst reviewing audio from Indian languages.
+    *   **Context:** App "Friends" (user pays, talks to expert). Calls can be audio/video.
+    *   **Output Goal:** Find every possible violation. High confidence is crucial.
+    *   **Categories (f):** Must be exactly one of: **PlatformMove**, **SuspiciousActivity**, **Explicit-Flirting**.
+    *   **Exclusions:** Greetings, small talk, introductions, names, questions about daily life/work/family/location, filler words, call quality, and "Allowed" items.
+    *   **Output Format:** Minified JSON adhering strictly to the provided schema.
+    *   **Key Rules:**
+        *   Check if quote is Allowed/Ordinary conversation -> Do not output.
+        *   Check if quote is Warning/Story/Refusal/Negation/Question about rules -> `violation: "no"`, `c <= 0.3`.
+        *   Quotes must be exact, real, and include timestamps.
+        *   Focus on strong (0.9) and weaker (0.6) cases.
+
+2.  **Analyze the Transcript (Segment by Segment):**
+
+    *   [00:00] हेलो हाँ सर मैं बैंगलोर से बैंगलोर (Hello yes sir I am from Bangalore to Bangalore) -> Greeting/Location. (Allowed/Ordinary)
+    *   [00:10] नाम नाम क्या आपका अमरीन अमरीन (Name name what is your Amreen Amreen) -> Introduction/Name. (Allowed/Ordinary)
+    *   [00:20] मुस्लिम हो आप हाँ जी असलाम वालेकुम वालिकम सलाम (Muslim are you yes Assalamu Alaikum Walikum Salam) -> Greeting/Religious greeting. (Allowed/Ordinary)
+    *   [00:30] हाँ जी मुस्लिम हो (Yes Muslim) -> Confirmation. (Allowed/Ordinary)
+    *   [00:40] अलहमदुल्ला आपका नाम अली उमेर क्या अली उमेर (Alhamdulillah your name Ali Umer what Ali Umer) -> Greeting/Name confirmation. (Allowed/Ordinary)
+    *   [00:50] अली उमेर अली उमेर उमेर अच्छा किधर से हुआ (Ali Umer Ali Umer Umer good where are you from) -> Location question. (Allowed/Ordinary)
+    *   [01:00] हाँ विजयपुरा कर्नाटका (Yes Vijayapura Karnataka) -> Location. (Allowed/Ordinary)
+    *   [01:10] विजयपुरा मतलब वो तिलहन अली के पास आता है उधर से बीजापुर बीजापुर (Vijayapura means that Tilhan comes near Ali from there Bijapur Bijapur) -> Location detail. (Allowed/Ordinary)
+    *   [01:20] दीजिए आप ओके क्या करते हैं आप मैं कस्टमर सर्विस जॉब करती हूँ कस्टमर सपोर्ट (Give you okay what do you do I do customer service job customer support) -> Job description. (Allowed/Ordinary)
+    *   [01:30] ट्वेंटी फाइव हाँ ट्वेंटी फाइव (Twenty five yes twenty five) -> Number/Detail. (Allowed/Ordinary)
+    *   [01:40] ट्वेंटी फाइव मेरे से पाँच साल के बड़े हो दीदी आप हाँ बीस तारीख के (Twenty five five years older than me didi you yes twentieth date) -> Personal detail/Age. (Allowed/Ordinary)
+    *   [01:50] और इसमें बैंगलोर में कौन सी है सर बैंगलोर (And in this Bangalore which one sir Bangalore) -> Location question. (Allowed/Ordinary)
+    *   [02:00] बेंगलोर में वो विजयापुरा है मेरा भी प्रॉपर लेकिन दूसरा है कर्नाटक ये क्या बोलते हैं बेंगलोर है ना (In Bangalore that is Vijayapura mine too proper but the other is Karnataka what do you call Bangalore right) -> Location discussion. (Allowed/Ordinary)
+    *   [02:10] उधर आती है देवनहल्ली हाँ वैसे मैं अभी तो बैंगलोर में जा मुंबई (It comes there Devanahalli yes anyway I am currently in Bangalore to Mumbai) -> Location/Travel. (Allowed/Ordinary)
+    *   [02:20] मुंबई में जॉब करती हूँ मुंबई में हाँ मुंबई में जॉब खाना होगा (I do job in Mumbai in Mumbai yes in Mumbai I have to eat) -> Job/Location. (Allowed/Ordinary)
+    *   [02:30] हाँ हो गया तुम्हारा हुआ अलहमदुल्ला पढ़ाई करते हो जॉब करते हो (Yes done yours Alhamdulillah do you study do you work) -> General conversation. (Allowed/Ordinary)
+    *   [02:40] जॉब क्या जॉब करते हैं सेफ्टी ऑफिसर क्या सेफ्टी ऑफिसर (Job what do you do Safety Officer what Safety Officer) -> Job title. (Allowed/Ordinary)
+    *   [02:50] ओह अच्छा सेफ्टी ऑफिस है (Oh okay Safety Officer is) -> Confirmation. (Allowed/Ordinary)
+    *   [03:00] ओ साइड पे ओ साइड पे ट्वेंटी टू मिनट्स कम हुई ना इतना (Oh on side on side twenty two minutes less than that much) -> Call duration/Time reference. (Allowed/Ordinary)
+    *   [03:10] जल्दी जॉब पर लग गए हाँ अरे सीखने में इंटरेस्ट नहीं था (Quickly got the job yes oh not interested in learning) -> Conversation about career. (Allowed/Ordinary)
+    *   [03:20] सीखने में इंटरेस्ट नहीं था तो डिप्लोमा लगा लिया लगा के सीधा जाते चले गए (Not interested in learning so took a diploma and went straight) -> Conversation about career. (Allowed/Ordinary)
+    *   [03:30] मैरिड हो नहीं नहीं सिंगल हो (Married or not no single) -> Personal status. (Allowed/Ordinary)
+    *   [03:40] और और बताओ (And and tell me) -> Conversation prompt. (Allowed/Ordinary)
+    *   [03:50] स्नैप यूज़ करते आप क्या बोल रहे हो स्नैपचैट स्नैपचैट यूज़ (Use Snap what are you saying Snapchat Snapchat use) -> Discussing app usage. (Allowed/Ordinary)
+    *   [04:00] यूज़ करती हूँ आई डी का नाम बोलिए आपका आई डी का नाम (I use it tell me the name of your ID your ID name) -> Requesting ID. (Potential PlatformMove, but weak/contextual).
+    *   [04:10] बोलिए (Tell me) -> Prompt. (Allowed/Ordinary)
+    *   [04:20] हाँ मैं सेकेंड में बता रही हूँ (Yes I am telling in second) -> Response. (Allowed/Ordinary)
+    *   [04:30] अमरीन (Amreen) -> Name. (Allowed/Ordinary)
+    *   [04:40] अमीन लिखो और उसके बाद में ना वो क्या बोलते हैं (Write Amin and after that what do you call it) -> Instruction. (Allowed/Ordinary)
+    *   [04:50] टेस्ट मंडप वाला हेलो (Test Mandap wala hello) -> Unclear context/Name reference. (Allowed/Ordinary)
+    *   [05:00] हेलो हेलो (Hello hello) -> Greeting. (Allowed/Ordinary)
+    *   [05:10] हेलो हेलो (Hello hello) -> Greeting. (Allowed/Ordinary)
+    *   [05:20] हाँ आवाज़ आ रही है हाँ कान (Yes sound is coming yes ear) -> Call quality. (Allowed/Ordinary)
+    *   [05:30] खान खान डबल सेवेन फोर नाइन (Khan Khan double seven four nine) -> ID/Number spoken in pieces. (PlatformMove potential if it's a contact ID).
+    *   [05:40] अम्ब्रेला नर्सरी नहीं नहीं अम्ब्रेला कहाँ आएगा स्पेस मतलब स्पेस नहीं है (Umbrella nursery no no umbrella where will come space means there is no space) -> Technical discussion about usernames. (Allowed/Ordinary)
+    *   [05:50] जैसे इंस्टा पे अगर हम नाम डालें तो अगर स्पेस डालते तो नीचे कैसे आता है माइनस जैसा हाँ वो डालो स्पेस मत छोड़ो (Like on Insta if we put a name then if we put space then how does it come down like minus yes put space don't leave space) -> Technical discussion about usernames. (Allowed/Ordinary)
+    *   [06:00] स्पेलिंग बोलो ए एम आर डबल ई एन (Say the spelling A M R double E N) -> Instruction. (Allowed/Ordinary)
+    *   [06:10] उसके बाद में वो नीचे का जो स्पेस स्पेस नहीं क्या बोलते हैं मैनेज जैसा होता है वो डालो उसके बाद में (After that the lower space space no what do you call it like manage that put it after that) -> Instruction. (Allowed/Ordinary)
+    *   [06:20] क्या है जी ए एन डबल सेवेवेर फोर नाइन खानुम (What is it ji G N double seven four nine Khanum) -> ID/Name. (PlatformMove potential).
+    *   [06:30] हाँ हाँ हाँ (Yes yes yes) -> Confirmation. (Allowed/Ordinary)
+    *   [06:40] वन ट्वेल्व सेवन फोर नाइन हाँ हाँ आ रही है आपको मेरी आई डी (One twelve seven four nine yes yes you are getting my ID) -> Providing ID. (PlatformMove strong case).
+    *   [06:50] हाँ हाँ (Yes yes) -> Confirmation. (Allowed/Ordinary)
+    *   [07:00] रिक्वेस्ट भेजे (Sent request) -> Context. (Allowed/Ordinary)
+    *   [07:10] हाँ है ना (Yes right) -> Confirmation. (Allowed/Ordinary)
+    *   [07:20] स्नैपचैट में बात करते हैं आओ (Let's talk on Snapchat come) -> Suggesting external app contact. (PlatformMove strong case).
+    *   [07:30] हाँ ठीक है (Yes okay) -> Acceptance. (Allowed/Ordinary)
+
+3.  **Identify and Formulate Flags:**
+
+    *   **Flag 1 (06:40):** Providing the ID. Strong PlatformMove.
+    *   **Flag 2 (07:20):** Suggesting moving to Snapchat. Strong PlatformMove.
+    *   **Flag 3 (05:30/06:20):** The ID/Name spoken in pieces. This is a single ID/name request/exchange.
+
+4.  **Review Flags against Rules:**
+
+    *   *Flag 1 (06:40):* "वन ट्वेल्व सेवन फोर नाइन हाँ हाँ आ रही है आपको मेरी आई डी" (One twelve seven four nine yes yes you are getting my ID). Direct proposal/giving of contact info. Strong PlatformMove (0.9).
+    *   *Flag 2 (07:20):* "स्नैपचैट में बात करते हैं आओ" (Let's talk on Snapchat come). Direct proposal to move to an external app. Strong PlatformMove (0.9).
+    *   *Flag 3 (05:30/06:20):* The ID exchange. The ID is spoken in pieces (05:30: खान खान डबल सेवेन फोर नाइन, 06:20: जी ए एन डबल सेवेवेर फोर नाइन खानुम). Rule states: "A phone number or ID is ONE flag, even when it is spoken in pieces across several utterances. Quote the whole number or ID in one flag, at the time it starts."
+
+5.  **Final JSON Construction.** (Ensure strict adherence to the schema and minification.)<channel|>```json
+{"d": [
+  {
+    "t": "06:40",
+    "seg": "वन ट्वेल्व सेवन फोर नाइन हाँ हाँ आ रही है आपको मेरी आई डी",
+    "tr": "One twelve seven four nine yes yes you are getting my ID",
+    "f": "PlatformMove",
+    "spk": "expert",
+    "ctx": "The expert confirms that the user is receiving their ID after discussing the username spelling. The user responds with confirmation.",
+    "speech_act": "direct",
+    "j": "The expert directly provides their ID number, which is a strong case for PlatformMove.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "07:20",
+    "seg": "स्नैपचैट में बात करते हैं आओ",
+    "tr": "Let's talk on Snapchat come",
+    "f": "PlatformMove",
+    "spk": "user",
+    "ctx": "The user suggests moving the conversation to Snapchat as an alternative platform. The expert accepts the suggestion.",
+    "speech_act": "direct",
+    "j": "The user proposes moving the contact outside the current app to Snapchat, which is a strong case for PlatformMove.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "05:30",
+    "seg": "खान खान डबल सेवेन फोर नाइन",
+    "tr": "Khan Khan double seven four nine",
+    "f": "PlatformMove",
+    "spk": "unclear",
+    "ctx": "The user is discussing how to correctly write their ID, and then the ID is spoken in pieces.",
+    "speech_act": "direct",
+    "j": "This quote is part of the ID exchange and represents a phone number or ID spoken in pieces, which counts as a single flag.",
+    "violation": "yes",
+    "c": 0.9
+  }
+]}
+```<turn|>

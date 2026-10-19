@@ -1,0 +1,37 @@
+{
+  "file_id": "rec_default_427012537_audio_1789032626712.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 58,
+  "affected_word_count": 10,
+  "semantic_error_rate": 0.1724,
+  "seconds": 3.1,
+  "discrepancies": [
+    {
+      "reference_text": "എവിടെയാ",
+      "translation_text": "How are you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference asks 'Where are you?' but the translation says 'How are you?'."
+    },
+    {
+      "reference_text": "ഒന്ന് പറയൂ ഈ ഔട്ട്‌ഫിറ്റ് ഒക്കെ എവിടെയാ ഉള്ളത് എവിടെയാ",
+      "translation_text": "I want to see your outfit, can you show me? How are you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference asks where the outfit is located, but the translation asks to see the outfit and adds 'How are you?'."
+    },
+    {
+      "reference_text": "",
+      "translation_text": "No, I cannot stand up right now.",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds a response about not being able to stand up which is not in the reference."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate but introduces a few meaning changes regarding the outfit questions and adds a line that was not spoken in the reference."
+}

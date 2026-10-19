@@ -1,0 +1,42 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert). Calls can be audio/video.
+    *   **Goal:** Find every possible violation based on three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+    *   **Output Format:** Strict minified JSON array following the specified schema.
+    *   **Constraints:**
+        *   Only output quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, etc.).
+        *   Category `f` must be exactly one of: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+        *   Confidence scores (0.9 strong, 0.6 weaker, 0.3 about violation).
+        *   Strict rules for `speech_act`, `violation`, and quoting.
+
+2.  **Analyze the Transcript (Hindi/Hinglish):**
+
+    *   [00:00] ज़्यादा क्या और कम क्या थोड़ा बहुत चल रहा है हेलो (Zyaada kya aur kam kya thoda bahut chal raha hai hello)
+    *   [00:10] हाँ इतना तो हो ही जाता है टेन प्लस हो जाता है दस बीस (Haan itna toh ho hi jaata hai ten plus ho jaata hai das bees)
+    *   [00:20] क्योंकि दो सौ तीन सौ रुपए भी बन जाते दिन के और कोई एक आधा डाल डूल भी देते बरसात पे भी (Kyunki do sau teen sau rupaye bhi ban jaate din ke aur koi ek aadha daal dool bhi dete barsaat pe bhi)
+    *   [00:30] बात करने के तो हेलो हाँ जी व्हाट्सएप पर भी कर लेती हूँ बात हाँ जी व्हाट्सएप पर भी कर लेती हूँ ना तभी तो (Baat karne ke toh hello haan ji WhatsApp par bhi kar leti hoon baat haan ji WhatsApp par bhi kar leti hoon na tabhi toh)
+    *   [00:40] हो जाते थोड़ी अर्निंग और इसमें करेंगे तो इसमें तो रात भर में सौ दो सौ रुपये ही कमा पाते हैं ना (Ho jaate thodi earning aur ismein karenge toh ismein toh raat bhar mein sau do sau rupaye hi kama paate hain na)
+    *   [00:50] और बात कर करके थक जाती हैं आपने तो माना एक से बात करनी है मैंने तो (Aur baat kar karke thak jaati hain aapne toh maana ek se baat karni hai maine toh)
+
+3.  **Evaluate Transcript against Policy Categories:**
+
+    *   **[00:00] ज़्यादा क्या और कम क्या थोड़ा बहुत चल रहा है हेलो:** Ordinary conversation/greeting. (Skip)
+    *   **[00:10] हाँ इतना तो हो ही जाता है टेन प्लस हो जाता है दस बीस:** General conversation about numbers/rates. (Skip)
+    *   **[00:20] क्योंकि दो सौ तीन सौ रुपए भी बन जाते दिन के और कोई एक आधा डाल डूल भी देते बरसात पे भी:** Discussing earning potential/money. (Allowed: general money talk, not linked to sexual content or a specific service payment request). (Skip)
+    *   **[00:30] बात करने के तो हेलो हाँ जी व्हाट्सएप पर भी कर लेती हूँ बात हाँ जी व्हाट्सएप पर भी कर लेती हूँ ना तभी तो:** User mentions WhatsApp. This is a potential `PlatformMove` hint, but it's framed as continuing the conversation on a known external platform, not a strong proposal or request for contact details.
+    *   **[00:40] हो जाते थोड़ी अर्निंग और इसमें करेंगे तो इसमें तो रात भर में सौ दो सौ रुपये ही कमा पाते हैं ना:** Discussing earnings/money. (Allowed: general money talk). (Skip)
+    *   **[00:50] और बात कर करके थक जाती हैं आपने तो माना एक से बात करनी है मैंने तो:** General conversation/complaint about talking. (Skip)
+
+4.  **Final Review against Rules:**
+    *   No strong `PlatformMove` (no asking for a number, no proposing a meeting).
+    *   No `SuspiciousActivity` (no payment for sex/nudity).
+    *   No `Explicit-Flirting` (no sexual talk or requests).
+    *   The conversation is purely transactional/discussing earnings and mentioning an external app (WhatsApp) as a means to continue the chat, which is generally allowed unless it constitutes a strong proposal to leave the platform.
+
+5.  **Conclusion:** No violations found based on the strict criteria.
+
+6.  **Generate Output:** Return the empty JSON structure.<channel|>{"d": []}<turn|>

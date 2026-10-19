@@ -1,0 +1,38 @@
+{
+  "file_id": "rec_audio_call_426127729_audio_1788949472560.mp3",
+  "language": "telugu",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 50,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.18,
+  "seconds": 3.2,
+  "discrepancies": [
+    {
+      "reference_text": "ఒక 300 ఫోన్ పే చేస్తానంటే నెంబర్ ఇస్తా కదా మరి",
+      "translation_text": "I will send 300 rupees via PhonePe, give me your number.",
+      "category": "intent_changed",
+      "word_count_affected": 9,
+      "explanation": "The reference speaker offers to give their number if the other person pays 300, but the translation reverses who is paying and who is giving the number."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:32",
+      "type": "money_or_payment",
+      "reference_text": "ఒక 300 ఫోన్ పే చేస్తానంటే నెంబర్ ఇస్తా కదా మరి",
+      "translation_text": "I will send 300 rupees via PhonePe, give me your number.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:32",
+      "type": "move_off_app",
+      "reference_text": "ఒక 300 ఫోన్ పే చేస్తానంటే నెంబర్ ఇస్తా కదా మరి",
+      "translation_text": "I will send 300 rupees via PhonePe, give me your number.",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "no",
+  "summary": "The translation incorrectly reverses the direction of the transaction and contact sharing offer, making it seem like the caller is offering money for a number instead of demanding money to give theirs."
+}

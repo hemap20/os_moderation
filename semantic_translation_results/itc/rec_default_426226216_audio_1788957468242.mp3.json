@@ -1,0 +1,38 @@
+{
+  "file_id": "rec_default_426226216_audio_1788957468242.mp3",
+  "language": "telugu",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 52,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.0962,
+  "seconds": 2.8,
+  "discrepancies": [
+    {
+      "reference_text": "నేను రాసుకుంటాను కిందకి అంటావా?",
+      "translation_text": "will you say a little lower?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'Should I rub/stroke downwards?' which is sexually suggestive, but the translation mistranslates it as 'will you say a little lower?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:33",
+      "type": "sexual_or_explicit",
+      "reference_text": "నేను రాసుకుంటాను కిందకి అంటావా?",
+      "translation_text": "will you say a little lower?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:39",
+      "type": "move_off_app",
+      "reference_text": "ఇంకొంచెం అంటే వాట్సాప్.",
+      "translation_text": "Meaning WhatsApp",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "partly",
+  "summary": "The translation fails to capture the sexually suggestive remark about rubbing/stroking downwards, translating it incorrectly, though it preserves the mention of WhatsApp."
+}

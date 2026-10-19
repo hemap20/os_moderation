@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_default_426639345_audio_1788989459421.mp3",
+  "language": "telugu",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 117,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.094,
+  "seconds": 5.1,
+  "discrepancies": [
+    {
+      "reference_text": "నెంబర్ వద్దులేండి మామూలుగా మాట్లాడుదాం",
+      "translation_text": "Your number came, right? Let's talk normally",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'No need for number, let's talk normally', but the translation says 'Your number came, right?'."
+    },
+    {
+      "reference_text": "7013993034",
+      "translation_text": "seven zero one three seven zero one double eight three zero three three zero three four Six",
+      "category": "number_or_id_altered",
+      "word_count_affected": 6,
+      "explanation": "The phone number digits are translated incorrectly and extra digits are added."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:35",
+      "type": "move_off_app",
+      "reference_text": "నెంబర్ వద్దులేండి మామూలుగా మాట్లాడుదాం",
+      "translation_text": "Your number came, right? Let's talk normally",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:43",
+      "type": "money_or_payment",
+      "reference_text": "ఇప్పుడు ఇందులో రీఛార్జ్ చేస్తావు చేశావు కదా ఆ డబ్బులు ఏమైనా నాకే వేస్తావా?",
+      "translation_text": "You recharge in this, you did it right, will you send that to me?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:50",
+      "type": "money_or_payment",
+      "reference_text": "ఎప్పుడు నేను నెంబర్ ఇస్తాను నువ్వు రీఛార్జ్ చేశావు కదా ఆ డబ్బులు ఏమైనా నాకే వేస్తావా అంటున్నా",
+      "translation_text": "Now I will give money, you recharged right, are you asking if you will send that money to me?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:59",
+      "type": "move_off_app",
+      "reference_text": "నెంబర్ కి ఇస్తా",
+      "translation_text": "I will give the number",
+      "status": "preserved"
+    },
+    {
+      "t": "01:02",
+      "type": "money_or_payment",
+      "reference_text": "మరి నాకు అమౌంట్ వేస్తావా అని అడుగుతున్నా నెంబర్ కి అంటున్నా",
+      "translation_text": "I'm saying it's madness.",
+      "status": "missing"
+    },
+    {
+      "t": "01:20",
+      "type": "money_or_payment",
+      "reference_text": "ఇప్పుడే వేయాలి నాకు మనీ మరి",
+      "translation_text": "You have to send me money right now",
+      "status": "preserved"
+    },
+    {
+      "t": "01:23",
+      "type": "move_off_app",
+      "reference_text": "7013 70 1399 3034 3034",
+      "translation_text": "seven zero one three seven zero one double eight three zero three three zero three four Six",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the main discussion about money and sharing a phone number, but it alters the phone number digits and misses a key question about sending money."
+}

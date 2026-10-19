@@ -1,0 +1,122 @@
+{
+  "file_id": "rec_default_426633368_audio_1788988531170.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 89,
+  "affected_word_count": 19,
+  "semantic_error_rate": 0.2135,
+  "seconds": 6.9,
+  "discrepancies": [
+    {
+      "reference_text": "சொல்லுங்க என்ன வேணும்",
+      "translation_text": "how are you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'tell me what you want' but the translation translates it as 'how are you?'."
+    },
+    {
+      "reference_text": "எதுவும் இல்லையே",
+      "translation_text": "Everything is fine.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'nothing really' but the translation says 'everything is fine'."
+    },
+    {
+      "reference_text": "உங்ககிட்ட பேச",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions 'to talk to you' which is missing from the translation."
+    },
+    {
+      "reference_text": "முகத்தை",
+      "translation_text": "body",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference asks to show the 'face' (முகத்தை) but the translation translates it as 'body'."
+    },
+    {
+      "reference_text": "மாருவாத்த",
+      "translation_text": "body",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference asks to show the 'chest' (மாருவாத்த) but the translation translates it as 'body'."
+    },
+    {
+      "reference_text": "என்ன வேணும்",
+      "translation_text": "Why are you asking?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'what do you want?' but the translation says 'Why are you asking?'."
+    },
+    {
+      "reference_text": "வாய் போடுவீங்களா",
+      "translation_text": "Will you show me your mouth?",
+      "category": "tone_softened",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'will you do oral/blowjob?' (வாய் போடுவீங்களா) but the translation softens it to 'will you show me your mouth?'."
+    },
+    {
+      "reference_text": "முகத்தை",
+      "translation_text": "body",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference asks to show the 'face' (முகத்தை) but the translation translates it as 'body'."
+    },
+    {
+      "reference_text": "காமிக்கிறேன்",
+      "translation_text": "Show me, okay?",
+      "category": "intent_changed",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'I will show' (காமிக்கிறேன்) but the translation translates it as a request 'Show me, okay?'."
+    },
+    {
+      "reference_text": "வேற என்ன காமிக்கணும்",
+      "translation_text": "I don't want to show you, okay?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks 'what else should I show?' but the translation says 'I don't want to show you, okay?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:36",
+      "type": "sexual_or_explicit",
+      "reference_text": "காமிங்க உங்க முகத்தை அப்படியே",
+      "translation_text": "Show me your body, okay?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:42",
+      "type": "sexual_or_explicit",
+      "reference_text": "கொஞ்சம் மாருவாத்த காமிங்க",
+      "translation_text": "Show me your body, okay?",
+      "status": "softened"
+    },
+    {
+      "t": "01:15",
+      "type": "sexual_or_explicit",
+      "reference_text": "கொஞ்சம் செக்ஸியா பேசுங்க",
+      "translation_text": "Talk sexily.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:38",
+      "type": "sexual_or_explicit",
+      "reference_text": "நல்லா போடுங்க வாய் போடுவீங்களா",
+      "translation_text": "Will you show me your mouth?",
+      "status": "softened"
+    },
+    {
+      "t": "01:54",
+      "type": "sexual_or_explicit",
+      "reference_text": "நல்லா வாய் போடுவீங்களா",
+      "translation_text": "Will you show me your mouth?",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general sexual nature of the call but softens explicit requests like oral sex to showing the mouth, and mistranslates 'face' and 'chest' as 'body'."
+}

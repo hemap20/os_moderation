@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_default_426573512_audio_1788982942725.mp3",
+  "language": "malayalam",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 128,
+  "affected_word_count": 7,
+  "semantic_error_rate": 0.0547,
+  "seconds": 3.8,
+  "discrepancies": [
+    {
+      "reference_text": "എൽ ആൻഡ് ടി യിൽ എൻജിനീയറായി വർക്ക് ചെയ്യുന്നത്",
+      "translation_text": "every day",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The translation incorrectly translates working as an engineer at L&T as 'every day' in the first instance."
+    },
+    {
+      "reference_text": "ഇല്ല",
+      "translation_text": "Yes, yes, yes",
+      "category": "negation_flipped",
+      "word_count_affected": 1,
+      "explanation": "The speaker says 'No' (ഇല്ല) to normal chat only, but the translation says 'Yes, yes, yes'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:10",
+      "type": "sexual_or_explicit",
+      "reference_text": "ആ ഞാൻ അത് ഓപ്പൺ ചാറ്റ് ഉണ്ടെന്ന് പറഞ്ഞാൽ ഫേസ് കാണിക്കാൻ പറഞ്ഞിട്ടാണ്",
+      "translation_text": "Yeah, I said if there is an open chat, it's to show the face, if there is an open chat, then it's to show the face.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:22",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഓപ്പൺ ചാറ്റ് താല്പര്യം ഉണ്ടോ?",
+      "translation_text": "Are you interested in open chat or not?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the sexual/explicit references to 'open chat', though it contains a minor negation flip and a mistranslation of the speaker's job in one instance."
+}

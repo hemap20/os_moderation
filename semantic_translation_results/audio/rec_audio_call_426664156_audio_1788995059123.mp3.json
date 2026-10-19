@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_audio_call_426664156_audio_1788995059123.mp3",
+  "language": "telugu",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 748,
+  "affected_word_count": 46,
+  "semantic_error_rate": 0.0615,
+  "seconds": 7.2,
+  "discrepancies": [
+    {
+      "reference_text": "మరి అట్లైనా మీరు రెడ్డీ ఆ?",
+      "translation_text": "Are you a Reddy?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks if the speaker is 'ready' (English loanword), but the translation misinterprets this as the 'Reddy' caste."
+    },
+    {
+      "reference_text": "బై ద వే ఏం చేస్తున్నావా?",
+      "translation_text": "Are you trying to say something?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks 'By the way, what are you doing?', but the translation completely changes this to 'Are you trying to say something?'."
+    },
+    {
+      "reference_text": "మరి మీకు వచ్చే స్టిల్ వర్జిన్ ఉంటదని ఎలా అనుకుంటున్నావ్?",
+      "translation_text": "No, I am still a virgin.",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference asks 'How do you think the one you get will still be a virgin?', but the translation attributes this statement to the other speaker as 'No, I am still a virgin'."
+    },
+    {
+      "reference_text": "నేను వర్జిన్ ఉన్నంత మాత్రాన వచ్చేమో స్టిల్ వర్జిన్ అని ఉండాలని గ్యారెంటీ లేదు కదా",
+      "translation_text": "I don't have a guarantee that I will be a virgin just because I am one.",
+      "category": "other_meaning_change",
+      "word_count_affected": 12,
+      "explanation": "The reference says 'Just because I am a virgin, there is no guarantee that the one who comes (my partner) will still be a virgin', which is mistranslated."
+    },
+    {
+      "reference_text": "లవ్ యు",
+      "translation_text": "Oh my god.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Love you', but the translation changes this to 'Oh my god'."
+    },
+    {
+      "reference_text": "నా నెంబర్ ఇస్తాను నోట్ చేసుకొని మీకు ఎప్పుడైనా వీలున్నప్పుడు ఒకసారి అట్లా మెసేజ్ చేయండి",
+      "translation_text": "Give me your number, I will note it down, and if I have time, I will message you.",
+      "category": "intent_changed",
+      "word_count_affected": 13,
+      "explanation": "The reference speaker offers to give his own number, but the translation reverses the intent to ask for the other person's number."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "07:27",
+      "type": "sexual_or_explicit",
+      "reference_text": "మరి మీరు మీరు ఎన్ని సంవత్సరాలు దూరంగా ఉన్నారు కదా మరి సెక్స్ ఎవరితో చేయలేదా?",
+      "translation_text": "You have been away for so many years, why didn't you have sex with anyone?",
+      "status": "preserved"
+    },
+    {
+      "t": "07:37",
+      "type": "sexual_or_explicit",
+      "reference_text": "ఈ సిక్స్ మంత్స్ నుంచి నో సెక్స్ ఆ?",
+      "translation_text": "Okay, so no sex for 6 months?",
+      "status": "preserved"
+    },
+    {
+      "t": "08:01",
+      "type": "sexual_or_explicit",
+      "reference_text": "లైఫ్ లో సెక్స్ కంటే నాకు హ్యాపీనిచ్చేవి చాలా ఉన్నాయి కానీ రిజల్ట్ అయితే ఆలోచనలు లేవు",
+      "translation_text": "Life and sex are more than happiness for me, but I don't have any thoughts about the result.",
+      "status": "preserved"
+    },
+    {
+      "t": "09:04",
+      "type": "move_off_app",
+      "reference_text": "నా నెంబర్ ఇస్తాను నోట్ చేసుకొని మీకు ఎప్పుడైనా వీలున్నప్పుడు ఒకసారి అట్లా మెసేజ్ చేయండి",
+      "translation_text": "Give me your number, I will note it down, and if I have time, I will message you.",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the explicit sexual discussions well, but it contains several critical meaning errors, including misinterpreting 'ready' as a caste name and reversing the direction of the phone number exchange offer."
+}

@@ -1,0 +1,108 @@
+{
+  "file_id": "rec_audio_call_426565068_audio_1788982358963.mp3",
+  "language": "malayalam",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 547,
+  "affected_word_count": 30,
+  "semantic_error_rate": 0.0548,
+  "seconds": 6.9,
+  "discrepancies": [
+    {
+      "reference_text": "ബാക്കി ചേച്ചിയൊക്കെ പറയാം എന്ന് പറഞ്ഞു",
+      "translation_text": "but said I could say other bad things.",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'the sister said we can talk about other things', but the translation says 'say other bad things'."
+    },
+    {
+      "reference_text": "എന്നാ ഞാൻ സെക്സ് ക്ലാസ് എടുത്തു തരാം",
+      "translation_text": "Why, didn't I take a sex class?",
+      "category": "intent_changed",
+      "word_count_affected": 7,
+      "explanation": "The speaker offers to teach/take a sex class ('I will take a sex class for you'), but the translation turns it into a past question."
+    },
+    {
+      "reference_text": "വെടി പറയും",
+      "translation_text": "Tell me PN, tell me buddy.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions 'vedi' (slang for slut/prostitute or dirty talk), which is mistranslated as 'PN' and 'buddy'."
+    },
+    {
+      "reference_text": "നാട്ടിലേക്ക് ഒക്കെ 20 ഒക്കെ",
+      "translation_text": "Vehicles sold to the hometown...",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference talks about sending 20 (thousand) back home, but the translation hallucinated 'vehicles sold'."
+    },
+    {
+      "reference_text": "സന്ധ്യ വിളിക്കാൻ",
+      "translation_text": "bathing in this",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions calling at dusk/evening, which is mistranslated as 'bathing'."
+    },
+    {
+      "reference_text": "ചാർജ് ഉണ്ട്",
+      "translation_text": "no charge",
+      "category": "negation_flipped",
+      "word_count_affected": 2,
+      "explanation": "The reference says the phone has charge, but the translation says 'no charge'."
+    },
+    {
+      "reference_text": "ഇപ്പൊ കുറച്ച് ക്ലാസ്സൊക്കെ എടുത്തൂടെ",
+      "translation_text": "couldn't you take some biology classes?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks to take some classes (referring back to the sex class), but the translation specifies 'biology classes'."
+    },
+    {
+      "reference_text": "ആന്റി പ്ലീസ്",
+      "translation_text": "Madhya Pradesh",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Auntie please', but the translation bizarrely says 'Madhya Pradesh'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "04:14",
+      "type": "sexual_or_explicit",
+      "reference_text": "എന്നാ ഞാൻ സെക്സ് ക്ലാസ് എടുത്തു തരാം",
+      "translation_text": "Why, didn't I take a sex class?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "04:23",
+      "type": "sexual_or_explicit",
+      "reference_text": "നിനക്ക് എന്ത് ടൈപ്പ് സെക്സ് ആണ് ഇഷ്ടം",
+      "translation_text": "What type of sex do you like?",
+      "status": "preserved"
+    },
+    {
+      "t": "05:04",
+      "type": "sexual_or_explicit",
+      "reference_text": "വെടി പറയും",
+      "translation_text": "Tell me PN, tell me buddy.",
+      "status": "missing"
+    },
+    {
+      "t": "08:24",
+      "type": "money_or_payment",
+      "reference_text": "എന്നാലും ഒരു മാസം 35 കിട്ടുമോ",
+      "translation_text": "Then will you get thirty-five a month?",
+      "status": "preserved"
+    },
+    {
+      "t": "08:36",
+      "type": "money_or_payment",
+      "reference_text": "നാട്ടിലേക്ക് ഒക്കെ 20 ഒക്കെ",
+      "translation_text": "Vehicles sold to the hometown...",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow of the conversation but introduces several errors, particularly in translating sexual slang ('vedi') and financial details, and ends with a complete hallucination ('Madhya Pradesh')."
+}

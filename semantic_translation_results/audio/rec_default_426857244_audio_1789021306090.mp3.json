@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_426857244_audio_1789021306090.mp3",
+  "language": "telugu",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 102,
+  "affected_word_count": 20,
+  "semantic_error_rate": 0.1961,
+  "seconds": 4.9,
+  "discrepancies": [
+    {
+      "reference_text": "కెనడా నుంచి ఉన్నావా యాప్ కి వచ్చి",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 6,
+      "explanation": "The reference to Canada is completely missing from the translation."
+    },
+    {
+      "reference_text": "రెండు రోజులు",
+      "translation_text": "it's okay.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The user says 'two days' in Telugu, but the translation says 'it's okay'."
+    },
+    {
+      "reference_text": "ఇంకేం బాగుండదు",
+      "translation_text": "There is no game in it.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The translation introduces the word 'game' which is not present in the reference."
+    },
+    {
+      "reference_text": "డబ్బులు పోక తప్పితే ఏమీ లేదులే",
+      "translation_text": "If you take money, there is nothing, right?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'except losing money, there is nothing', but the translation says 'If you take money'."
+    },
+    {
+      "reference_text": "అంతే ముక్కలు వాళ్ళు వస్తున్నారు",
+      "translation_text": "everyone is coming for money.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'only pieces (of people) are coming', but the translation says 'everyone is coming for money'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:34",
+      "type": "money_or_payment",
+      "reference_text": "ఏదో రీఛార్జ్ చేశాను కదా అని చేస్తున్నాను",
+      "translation_text": "I am just doing a recharge, that's why I am doing it.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:37",
+      "type": "money_or_payment",
+      "reference_text": "ఎందుకు రీఛార్జ్ చేశాక రా రా యాప్ కి",
+      "translation_text": "Okay, why did you recharge, tell me about the app.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:03",
+      "type": "money_or_payment",
+      "reference_text": "డబ్బులు పోక తప్పితే ఏమీ లేదులే",
+      "translation_text": "If you take money, there is nothing, right?",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow of the conversation but misses specific details like the mention of Canada and mistranslates the user's complaints about losing money on the app."
+}

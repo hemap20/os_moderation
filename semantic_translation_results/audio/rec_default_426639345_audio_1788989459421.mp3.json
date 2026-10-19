@@ -1,0 +1,115 @@
+{
+  "file_id": "rec_default_426639345_audio_1788989459421.mp3",
+  "language": "telugu",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 117,
+  "affected_word_count": 22,
+  "semantic_error_rate": 0.188,
+  "seconds": 8.9,
+  "discrepancies": [
+    {
+      "reference_text": "ఎక్కడి నుంచి?",
+      "translation_text": "Rajini, how are you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Where are you from?' but the translation introduces a name 'Rajini' and asks 'how are you?'."
+    },
+    {
+      "reference_text": "రాజమండ్రి నుంచి అండి",
+      "translation_text": "Who is this Rajini?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'From Rajahmundry' but the translation asks 'Who is this Rajini?'."
+    },
+    {
+      "reference_text": "ఓ రాజమండ్రి ఎక్కడి నుంచి?",
+      "translation_text": "Hey, I am calling from this address. You are Rajini, right? I am calling from there.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks 'Oh, where in Rajahmundry?' but the translation invents a completely different sentence about an address and Rajini."
+    },
+    {
+      "reference_text": "ఏయ్ ఎక్కడి నుంచి అంటే రాజమండ్రి నుంచి అండి",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 7,
+      "explanation": "The reference line clarifying 'I said from Rajahmundry' is completely missing from the translation."
+    },
+    {
+      "reference_text": "కోరుకొండ",
+      "translation_text": "Tell me.",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference mentions the place name 'Korukonda' but the translation translates it as 'Tell me'."
+    },
+    {
+      "reference_text": "నెంబర్ వద్దులేండి మామూలుగా మాట్లాడుదాం",
+      "translation_text": "I will give you my number, let's talk normally.",
+      "category": "negation_flipped",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'No need for number, let's talk normally' but the translation flips this to 'I will give you my number'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:35",
+      "type": "move_off_app",
+      "reference_text": "నెంబర్ వద్దులేండి మామూలుగా మాట్లాడుదాం",
+      "translation_text": "I will give you my number, let's talk normally.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:43",
+      "type": "money_or_payment",
+      "reference_text": "ఇప్పుడు ఇందులో రీఛార్జ్ చేస్తావు చేశావు కదా ఆ డబ్బులు ఏమైనా నాకే వేస్తావా?",
+      "translation_text": "You recharge in this, you did it right? Will you put that money in my account?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:50",
+      "type": "money_or_payment",
+      "reference_text": "ఎప్పుడు నేను నెంబర్ ఇస్తాను నువ్వు రీఛార్జ్ చేశావు కదా ఆ డబ్బులు ఏమైనా నాకే వేస్తావా అంటున్నా",
+      "translation_text": "Now I will give you the number. You recharged, right? Will you put that money in my account?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:50",
+      "type": "move_off_app",
+      "reference_text": "నేను నెంబర్ ఇస్తాను",
+      "translation_text": "I will give you the number",
+      "status": "preserved"
+    },
+    {
+      "t": "00:59",
+      "type": "move_off_app",
+      "reference_text": "నెంబర్ కి ఇస్తా",
+      "translation_text": "I will give you the number.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:02",
+      "type": "money_or_payment",
+      "reference_text": "మరి నాకు అమౌంట్ వేస్తావా అని అడుగుతున్నా",
+      "translation_text": "But will you put the amount in my account?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:20",
+      "type": "money_or_payment",
+      "reference_text": "ఇప్పుడే వేయాలి నాకు మనీ మరి",
+      "translation_text": "Then you have to pay me, money.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:23",
+      "type": "move_off_app",
+      "reference_text": "7013... 70... 1399... 3034... 3034",
+      "translation_text": "7013... 7013993034... 3034",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several hallucinations and errors in the first half, including flipping a refusal to share a phone number into an offer to share it, though the subsequent transaction and phone number sharing are preserved."
+}

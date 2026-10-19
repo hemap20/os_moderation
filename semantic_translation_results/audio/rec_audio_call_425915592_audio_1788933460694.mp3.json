@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_audio_call_425915592_audio_1788933460694.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 177,
+  "affected_word_count": 24,
+  "semantic_error_rate": 0.1356,
+  "seconds": 5.1,
+  "discrepancies": [
+    {
+      "reference_text": "ആ കേൾക്കാം",
+      "translation_text": "Where are you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Yes, I can hear you', but the translation asks 'Where are you?'."
+    },
+    {
+      "reference_text": "ഞാൻ സേഫ് ആണ്",
+      "translation_text": "I am a housewife.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I am safe' (or self-employed/similar slang), but the translation says 'I am a housewife'."
+    },
+    {
+      "reference_text": "രണ്ടുപേരും ഒന്നില്",
+      "translation_text": "Both are young.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Both are in first grade', but the translation says 'Both are young'."
+    },
+    {
+      "reference_text": "ഡ്രൈവർ ആണ് മാർക്കറ്റിൽ തന്നെ",
+      "translation_text": "He is a driver, he is in Kochi.",
+      "category": "named_entity_altered",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'He is a driver in the market itself', but the translation introduces 'Kochi' which is not mentioned."
+    },
+    {
+      "reference_text": "എങ്ങനെയുണ്ട് കോളൊക്കെ",
+      "translation_text": "How is life?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'How are the calls?', but the translation asks 'How is life?'."
+    },
+    {
+      "reference_text": "ഇൻസ്റ്റ ഇൻസ്റ്റ ത്രൂ",
+      "translation_text": "Through Instagram.",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The translation omits the repetition of 'Insta' but correctly identifies the platform."
+    },
+    {
+      "reference_text": "ഇപ്പൊത്തോഷായി",
+      "translation_text": "Yes, it's been ten years.",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'It's been some time now', but the translation specifies 'ten years'."
+    },
+    {
+      "reference_text": "ഞങ്ങൾക്ക് മക്കളെ തന്നെ ആയാൽ മതി",
+      "translation_text": "It was my parents' choice.",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'We just wanted children', but the translation says 'It was my parents' choice'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:03",
+      "type": "sexual_or_explicit",
+      "reference_text": "നോർമൽ ടോക്ക് മാത്രമുള്ളോ അതോ എല്ലാം സംസാരിക്കുമോ",
+      "translation_text": "Are you just having a normal talk, or do you talk about everything?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:14",
+      "type": "move_off_app",
+      "reference_text": "ഇൻസ്റ്റ ഇൻസ്റ്റ ത്രൂ",
+      "translation_text": "Through Instagram.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the overall tone and intent of the conversation, though it contains several minor meaning changes and introduces a location (Kochi) not present in the reference."
+}

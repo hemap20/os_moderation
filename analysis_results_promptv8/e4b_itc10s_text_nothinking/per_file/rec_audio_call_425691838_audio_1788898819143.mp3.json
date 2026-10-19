@@ -1,0 +1,64 @@
+{
+  "file_id": "rec_audio_call_425691838_audio_1788898819143.mp3",
+  "language": "hindi",
+  "gt_flag_count": 3,
+  "model_flag_count": 1,
+  "flag_tp": 1,
+  "flag_fn": 2,
+  "flag_fp": 0,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "My name is Gajanan, I want to f*** you",
+      "timestamp": "00:06",
+      "excerpt": "मेरा नाम गजानन है यार मैं तुम्हें चोदना चाहता हूं",
+      "confidence": 0.9,
+      "matched": false,
+      "matched_model_category": null
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "Okay, do you have WhatsApp?",
+      "timestamp": "00:10",
+      "excerpt": "ओके व्हाट्सएप है आपका",
+      "confidence": 0.9,
+      "matched": true,
+      "matched_model_category": "PlatformMove"
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Do you want to provide service on WhatsApp?",
+      "timestamp": "00:25",
+      "excerpt": "व्हाट्सएप पर सर्विस देनी है क्या",
+      "confidence": 0.8,
+      "matched": false,
+      "matched_model_category": null
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Okay, is it WhatsApp? Is it WhatsApp? Is it WhatsApp?",
+      "timestamp": "00:10",
+      "excerpt": "ओके व्हाट्सएप है आपका व्हाट्सएप है व्हाट्सएप है",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": 0.9014232584439297,
+      "entropy_mean": 0.010499590938593428,
+      "neg_entropy": -0.010499590938593428,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": 0.9963093618014388,
+      "model_speaker": "user",
+      "model_context": "The user is asking for the expert's contact details after an initial greeting. The expert confirms they are on WhatsApp.",
+      "matched": true,
+      "matched_gt_category": "PlatformMove",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": []
+    }
+  ]
+}

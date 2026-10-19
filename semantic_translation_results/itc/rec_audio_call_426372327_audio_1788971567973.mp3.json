@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_audio_call_426372327_audio_1788971567973.mp3",
+  "language": "tamil",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 102,
+  "affected_word_count": 6,
+  "semantic_error_rate": 0.0588,
+  "seconds": 3.5,
+  "discrepancies": [
+    {
+      "reference_text": "நீ அமௌன்ட் பே பண்ற மாதிரி இருக்கும்",
+      "translation_text": "Does it look like I am paying the amount?",
+      "category": "intent_changed",
+      "word_count_affected": 6,
+      "explanation": "The reference states 'You will have to pay an amount' as a requirement, but the translation turns it into a question about whether the speaker looks like they are paying."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:26",
+      "type": "move_off_app",
+      "reference_text": "வாட்ஸ்அப்ல பேசி இருக்கேன்",
+      "translation_text": "Have you talked on WhatsApp and all?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:58",
+      "type": "move_off_app",
+      "reference_text": "நம்பர் குடு",
+      "translation_text": "give me your number",
+      "status": "preserved"
+    },
+    {
+      "t": "01:00",
+      "type": "money_or_payment",
+      "reference_text": "நீ அமௌன்ட் பே பண்ற மாதிரி இருக்கும்",
+      "translation_text": "Does it look like I am paying the amount?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:04",
+      "type": "money_or_payment",
+      "reference_text": "300",
+      "translation_text": "Three hundred",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate, but it incorrectly translates the expert's demand for payment as a question about whether they themselves look like they are paying."
+}

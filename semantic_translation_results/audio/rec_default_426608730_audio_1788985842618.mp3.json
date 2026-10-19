@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_default_426608730_audio_1788985842618.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 11,
+  "affected_word_count": 6,
+  "semantic_error_rate": 0.5455,
+  "seconds": 3.0,
+  "discrepancies": [
+    {
+      "reference_text": "എനിക്ക് ഒരു വീഡിയോ കോൾസിന് താല്പര്യമുണ്ടോ",
+      "translation_text": "Are you interested in a new video call?",
+      "category": "intent_changed",
+      "word_count_affected": 6,
+      "explanation": "The reference speaker is asking if they themselves can have a video call, or expressing their own interest, whereas the translation asks if the other person is interested."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:06",
+      "type": "sexual_or_explicit",
+      "reference_text": "എനിക്ക് ഒരു വീഡിയോ കോൾസിന് താല്പര്യമുണ്ടോ",
+      "translation_text": "Are you interested in a new video call?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:10",
+      "type": "money_or_payment",
+      "reference_text": "എത്രയാ റേറ്റ്",
+      "translation_text": "What is the rate?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:12",
+      "type": "money_or_payment",
+      "reference_text": "500",
+      "translation_text": "500.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation accurately captures the pricing and inquiry about a video call, but flips the intent of who is asking for the call at 00:06."
+}

@@ -1,0 +1,30 @@
+{
+  "file_id": "rec_default_426865205_audio_1789021894193.mp3",
+  "language": "kannada",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 26,
+  "affected_word_count": 3,
+  "semantic_error_rate": 0.1154,
+  "seconds": 2.8,
+  "discrepancies": [
+    {
+      "reference_text": "ಏನ್ ಮಾಡ್ತಿದ್ದೀರಾ",
+      "translation_text": "How are you? I am fine, how are you? What are you doing? Nothing, just sitting.",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds extra conversational turns and responses that are not present in the reference transcript."
+    },
+    {
+      "reference_text": "ನಾನು ಮಾತಾಡಿದ್ದೀನಿ ಅಲ್ವಾ",
+      "translation_text": "Talk to me, I am free now. I have been busy for a few days.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'I have spoken to you, right?' but the translation changes this to a statement about being free and busy."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation adds several conversational lines not present in the reference and misinterprets a question about previous contact as a statement about being free and busy."
+}

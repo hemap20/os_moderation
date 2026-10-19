@@ -1,0 +1,101 @@
+{
+  "file_id": "rec_default_427035680_audio_1789034118532.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 241,
+  "affected_word_count": 36,
+  "semantic_error_rate": 0.1494,
+  "seconds": 6.7,
+  "discrepancies": [
+    {
+      "reference_text": "ഞാൻ അടൂർ",
+      "translation_text": "I am at home.",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions the place name 'Adoor', but the translation incorrectly translates it as 'at home'."
+    },
+    {
+      "reference_text": "ഞാൻ കൊല്ലം എന്താ ചെയ്യുന്നേ",
+      "translation_text": "What are you doing in Kollam?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The speaker says 'I am Kollam [from Kollam], what do you do?', but the translation changes this to 'What are you doing in Kollam?'."
+    },
+    {
+      "reference_text": "ഹോസ്പിറ്റലിൽ ആണ്",
+      "translation_text": "I am a housewife.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The speaker says they are in/at a hospital, but the translation says 'I am a housewife'."
+    },
+    {
+      "reference_text": "ഹോസ്പിറ്റലിൽ എന്താ ചെയ്യുന്നേ",
+      "translation_text": "What are you doing in Kollam?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The speaker asks what they do at the hospital, but the translation changes 'hospital' to 'Kollam'."
+    },
+    {
+      "reference_text": "ചേട്ടൻ നാട്ടിലില്ല",
+      "translation_text": "My brother is not at home.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The speaker says her husband ('Chettan' in this context) is not in the country/hometown, but the translation says 'My brother is not at home'."
+    },
+    {
+      "reference_text": "അച്ഛനും വേണ്ട പിന്നെ ഞാനും",
+      "translation_text": "My father is not here, then me.",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The speaker says 'Father, younger brother, and then me', but the translation says 'My father is not here, then me'."
+    },
+    {
+      "reference_text": "ആറു മാസമായി",
+      "translation_text": "It's been a while.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference specifies 'six months', but the translation generalizes it to 'a while'."
+    },
+    {
+      "reference_text": "ലേഡീസിന്റെ അല്ല ബോയ്സിന്റെ ഞാൻ പറഞ്ഞത് ലേഡീസിനെ എനിക്ക് അറിയത്തില്ല",
+      "translation_text": "I don't know about the boys, I don't know about the boys.",
+      "category": "other_meaning_change",
+      "word_count_affected": 10,
+      "explanation": "The speaker says 'I was talking about boys, not ladies; I don't know about ladies', but the translation says 'I don't know about the boys'."
+    },
+    {
+      "reference_text": "ഊമ്പിയ വർത്തമാനം",
+      "translation_text": "their own stories",
+      "category": "tone_softened",
+      "word_count_affected": 2,
+      "explanation": "The highly vulgar Malayalam slang 'oombiya varthamanam' (fucked up/shitty talk) is softened to 'their own stories'."
+    },
+    {
+      "reference_text": "ഷോക്കുകൾ",
+      "translation_text": "shows",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'shocks' (likely referring to shocking things/activities), which is translated literally as 'shows'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:32",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഇതിനകത്ത് ഇതിനകത്ത് എല്ലാം ഊമ്പിയ വർത്തമാനം കൊണ്ട് വരും",
+      "translation_text": "Everything happens here, people will come with their own stories.",
+      "status": "softened"
+    },
+    {
+      "t": "02:39",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഈ സംസാരിക്കത്തെ ഉള്ളൂ എന്ന് പറഞ്ഞാലും പിന്നെ ഊമ്പിയ വർത്തമാനം കൊണ്ട് വരും",
+      "translation_text": "Even if you say you are here to talk, people will come with their own stories.",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the general flow and intent of the conversation, but it softens highly vulgar Malayalam slang words and contains several inaccuracies regarding locations, occupations, and family members."
+}

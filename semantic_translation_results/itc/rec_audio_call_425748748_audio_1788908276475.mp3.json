@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_audio_call_425748748_audio_1788908276475.mp3",
+  "language": "hindi",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 119,
+  "affected_word_count": 27,
+  "semantic_error_rate": 0.2269,
+  "seconds": 4.6,
+  "discrepancies": [
+    {
+      "reference_text": "Instagram पे कनेक्ट होगे मेरे साथ?",
+      "translation_text": "Connect with me on Instagram.",
+      "category": "intent_changed",
+      "word_count_affected": 6,
+      "explanation": "The question asking if she wants to connect on Instagram is translated as an imperative command."
+    },
+    {
+      "reference_text": "दिल्ली में कहाँ से?",
+      "translation_text": "Do you want to live in Delhi?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The question asking where in Delhi they are from is translated as asking if they want to live in Delhi."
+    },
+    {
+      "reference_text": "मैं मयूर विहार से हूँ।",
+      "translation_text": "I am Mayur too.",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The speaker stating they are from Mayur Vihar is translated as saying they are Mayur too."
+    },
+    {
+      "reference_text": "Instagram पे कनेक्ट होगे?",
+      "translation_text": "Connected on Instagram?",
+      "category": "intent_changed",
+      "word_count_affected": 4,
+      "explanation": "The question asking if she will connect on Instagram is translated as asking if they are already connected."
+    },
+    {
+      "reference_text": "हाँ, हो जाऊंगी। बट मैं आपको जानूँगी पहले।",
+      "translation_text": "Yes, I will, but I [unclear] you Before knowing, no.",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The translation garbles the response about wanting to get to know him first."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:20",
+      "type": "move_off_app",
+      "reference_text": "Instagram पे कनेक्ट होगे मेरे साथ?",
+      "translation_text": "Connect with me on Instagram.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:04",
+      "type": "move_off_app",
+      "reference_text": "Instagram पे कनेक्ट होगे?",
+      "translation_text": "Connected on Instagram?",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow of the conversation but alters the intent of the Instagram requests from questions to commands or status checks, and mistranslates some location details."
+}

@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_audio_call_421997101_audio_1788553909604.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 424,
+  "affected_word_count": 18,
+  "semantic_error_rate": 0.0425,
+  "seconds": 4.5,
+  "discrepancies": [
+    {
+      "reference_text": "मेरे से 5 साल की बड़ी हो दीदी आप",
+      "translation_text": "You are five years older than me.",
+      "category": "key_content_missing",
+      "word_count_affected": 8,
+      "explanation": "The translation misses the word 'दीदी' (sister), which is a culturally significant term of address used here."
+    },
+    {
+      "reference_text": "20 में ही कम हुई ना इतना जल्दी जॉब पे लग गए",
+      "translation_text": "25, you are young, you got a job so quickly.",
+      "category": "number_or_id_altered",
+      "word_count_affected": 10,
+      "explanation": "The reference says '20' (referring to his age of 20), but the translation changes this to '25'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "03:52",
+      "type": "move_off_app",
+      "reference_text": "स्नैपचैट यूज़ करते हो आप",
+      "translation_text": "Do you use Snapchat?",
+      "status": "preserved"
+    },
+    {
+      "t": "04:02",
+      "type": "move_off_app",
+      "reference_text": "आईडी का नाम बोलिए आपका",
+      "translation_text": "What is your ID?",
+      "status": "preserved"
+    },
+    {
+      "t": "07:24",
+      "type": "move_off_app",
+      "reference_text": "स्नैपचैट में बात करते हैं आओ",
+      "translation_text": "Let's talk on Snapchat, okay?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is highly accurate and preserves the core intent of the speakers, who exchange Snapchat IDs to move off the app, though it alters one age number and drops a term of address."
+}

@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_default_427035680_audio_1789034118532.mp3",
+  "language": "malayalam",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 241,
+  "affected_word_count": 18,
+  "semantic_error_rate": 0.0747,
+  "seconds": 5.4,
+  "discrepancies": [
+    {
+      "reference_text": "ഹോസ്പിറ്റലിൽ ആണ്",
+      "translation_text": "I am a housewife.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'I am in the hospital' (or working in a hospital), but the translation says 'I am a housewife'."
+    },
+    {
+      "reference_text": "ഹോസ്പിറ്റലിൽ എന്താ ചെയ്യുന്നേ",
+      "translation_text": "What does your husband do?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'What do you do in the hospital?', but the translation asks 'What does your husband do?'."
+    },
+    {
+      "reference_text": "ചേട്ടൻ നാട്ടിലില്ല",
+      "translation_text": "My brother is not in the country.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "In this context, 'Chettan' refers to her husband, not her brother."
+    },
+    {
+      "reference_text": "അച്ഛനും വേണ്ട പിന്നെ ഞാനും",
+      "translation_text": "My father is also not here.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'Father, brother, and then me', but the translation says 'My father is also not here'."
+    },
+    {
+      "reference_text": "റെസ്റ്റോറന്റ്",
+      "translation_text": "There is a problem, there is a problem.",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'Restaurant', but the translation completely misinterprets it as 'There is a problem'."
+    },
+    {
+      "reference_text": "ആറു മാസമായി",
+      "translation_text": "How many years have you had the shop there?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'It has been six months', but the translation translates it as a question about years."
+    },
+    {
+      "reference_text": "നിങ്ങൾക്ക്",
+      "translation_text": "Priya",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The translation invents the name 'Priya' which is not in the reference."
+    },
+    {
+      "reference_text": "അല്ലല്ല",
+      "translation_text": "it's not a hundred.",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'No, no', but the translation says 'it's not a hundred'."
+    },
+    {
+      "reference_text": "ഷോക്കുകൾ",
+      "translation_text": "shows",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'shows' (referring to video shows/nudity), which is translated literally as 'shows' but loses the explicit context."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:47",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഇതിനകത്ത് ഷോക്കുകൾ ചെയ്യുന്നവർ കാണും",
+      "translation_text": "Those who do shows in this.",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation contains several mistranslations of basic facts (such as hospital vs. housewife, and restaurant vs. problem), but it successfully preserves the overall intent and the vulgar tone of the conversation regarding 'shitty talk' on the app."
+}

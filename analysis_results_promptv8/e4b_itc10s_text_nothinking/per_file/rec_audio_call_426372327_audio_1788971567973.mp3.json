@@ -1,0 +1,85 @@
+{
+  "file_id": "rec_audio_call_426372327_audio_1788971567973.mp3",
+  "language": "tamil",
+  "gt_flag_count": 3,
+  "model_flag_count": 2,
+  "flag_tp": 2,
+  "flag_fn": 1,
+  "flag_fp": 0,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Give me your number",
+      "timestamp": "00:58",
+      "excerpt": "நம்பர் குடு",
+      "confidence": 1.0,
+      "matched": true,
+      "matched_model_category": "PlatformMove"
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "You will have to pay an amount",
+      "timestamp": "01:00",
+      "excerpt": "நீ அமௌன்ட் பே பண்ற மாதிரி இருக்கும்",
+      "confidence": 0.8,
+      "matched": true,
+      "matched_model_category": "SuspiciousActivity"
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "You can call this number anytime",
+      "timestamp": "01:09",
+      "excerpt": "நீ எப்ப வேணாலும் இந்த நம்பருக்கு கால் பண்ணலாம்",
+      "confidence": 1.0,
+      "matched": false,
+      "matched_model_category": null
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Okay, give the number",
+      "timestamp": "00:50",
+      "excerpt": "சரி நம்பர் கொடு",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": 0.9930306547948966,
+      "entropy_mean": 0.003001671839534481,
+      "neg_entropy": -0.003001671839534481,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": 0.9998162130611753,
+      "model_speaker": "user",
+      "model_context": "The user was asking about the expert's relationship status. The user then directly asked for the expert's number.",
+      "matched": true,
+      "matched_gt_category": "PlatformMove",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": []
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Is it like I have to pay an amount, how much, that I will get cheated after paying three hundred? I will not cheat",
+      "timestamp": "01:00",
+      "excerpt": "நான் அமௌண்ட் பே பண்ணுற மாதிரி இருக்கா எவ்வளவு த்ரீ ஹண்ட்ரட் ம் ம் வாங்கிட்டு ஏமாற்றிட்டு போயிட்டேனா நான் ஏமாற்ற",
+      "model_confidence": 0.6,
+      "logprob_derived_confidence": 0.999889892903311,
+      "entropy_mean": 0.024620585324500847,
+      "neg_entropy": -0.024620585324500847,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": 0.9667811221845843,
+      "model_speaker": "user",
+      "model_context": "The user is asking about the payment structure and expressing concern about being cheated. The expert responds by saying they will not cheat.",
+      "matched": true,
+      "matched_gt_category": "SuspiciousActivity",
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": []
+    }
+  ]
+}

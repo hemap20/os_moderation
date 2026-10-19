@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_audio_call_426313681_audio_1788966303052.mp3",
+  "language": "telugu",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 118,
+  "affected_word_count": 18,
+  "semantic_error_rate": 0.1525,
+  "seconds": 6.7,
+  "discrepancies": [
+    {
+      "reference_text": "నేను విజయవాడ ఏం చేస్తుంటారు",
+      "translation_text": "No bike sir, I came from Vijayawada",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation introduces 'No bike sir' which is not present in the reference text."
+    },
+    {
+      "reference_text": "నేను మ్యారీడ్ అండి మీరు హౌస్ వైఫ్ మ్యారీడ్ సింగిలా",
+      "translation_text": "I am married, I am a housewife. Are you married or single?",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The translation attributes 'I am a housewife' to the wrong speaker or misinterprets the question about being a housewife."
+    },
+    {
+      "reference_text": "చెప్పండి నేను హౌస్ వైఫ్ మ్యారీడ్ సింగిలా",
+      "translation_text": "Man house man, is it there? Is it there?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The translation completely misinterprets the Telugu words for 'housewife, married, single' as 'Man house man, is it there?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:57",
+      "type": "move_off_app",
+      "reference_text": "లేదండి వాట్సాప్ ఆర్ ఇన్స్టాగ్రామ్",
+      "translation_text": "No, WhatsApp or Instagram",
+      "status": "preserved"
+    },
+    {
+      "t": "01:02",
+      "type": "move_off_app",
+      "reference_text": "చెప్పండి నెంబర్ చెప్పండి వాట్సాప్",
+      "translation_text": "tell me, tell me the number, WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "01:13",
+      "type": "money_or_payment",
+      "reference_text": "మరి అమౌంట్ వేస్తావా",
+      "translation_text": "Will you pay the amount?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:16",
+      "type": "money_or_payment",
+      "reference_text": "300",
+      "translation_text": "Three hundred",
+      "status": "preserved"
+    },
+    {
+      "t": "01:19",
+      "type": "money_or_payment",
+      "reference_text": "కన్ఫర్మేషన్ చెయ్ పేమెంట్ వేస్తా",
+      "translation_text": "give me confirmation I will make the payment",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation contains several mistranslations of conversational filler and background details, but successfully preserves all policy-relevant details regarding moving off-app to WhatsApp/Instagram and negotiating a payment of 300."
+}

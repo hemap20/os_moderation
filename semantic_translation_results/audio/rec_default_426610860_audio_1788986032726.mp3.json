@@ -1,0 +1,94 @@
+{
+  "file_id": "rec_default_426610860_audio_1788986032726.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 43,
+  "affected_word_count": 7,
+  "semantic_error_rate": 0.1628,
+  "seconds": 5.5,
+  "discrepancies": [
+    {
+      "reference_text": "എത്ര മിനിറ്റ്?",
+      "translation_text": "How much?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'How many minutes?' but the translation translates it as 'How much?'."
+    },
+    {
+      "reference_text": "അഞ്ച് മിനിറ്റ്",
+      "translation_text": "500.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Five minutes' but the translation incorrectly translates it as '500'."
+    },
+    {
+      "reference_text": "നമ്പർ തരട്ടെ",
+      "translation_text": "Give me the number.",
+      "category": "intent_changed",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Shall I give the number?' but the translation changes the intent to 'Give me the number'."
+    },
+    {
+      "reference_text": "33",
+      "translation_text": "3",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The reference number '33' is translated as '3'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:07",
+      "type": "sexual_or_explicit",
+      "reference_text": "നിങ്ങൾക്ക് ന്യൂഡ് വീഡിയോ കോളിന് താല്പര്യമുണ്ടോ?",
+      "translation_text": "Are you interested in a nude video call?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:12",
+      "type": "sexual_or_explicit",
+      "reference_text": "ന്യൂഡ് വീഡിയോ കോളിന് താല്പര്യമുണ്ടോ എന്ന്",
+      "translation_text": "Are you interested in a nude video call?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:17",
+      "type": "move_off_app",
+      "reference_text": "എന്താണ് വാട്സാപ്പിലാണോ?",
+      "translation_text": "Is it on WhatsApp?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:21",
+      "type": "money_or_payment",
+      "reference_text": "500",
+      "translation_text": "500.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:32",
+      "type": "move_off_app",
+      "reference_text": "നമ്പർ തരട്ടെ",
+      "translation_text": "Give me the number.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:36",
+      "type": "move_off_app",
+      "reference_text": "808",
+      "translation_text": "808",
+      "status": "preserved"
+    },
+    {
+      "t": "00:49",
+      "type": "move_off_app",
+      "reference_text": "808 93 33 54 316 316",
+      "translation_text": "808 93 3 54 316 316",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the explicit nature of the call but contains errors regarding the duration of the call, the phone number digits, and the intent of offering the phone number."
+}

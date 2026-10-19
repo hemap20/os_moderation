@@ -1,0 +1,101 @@
+{
+  "file_id": "rec_audio_call_425147890_audio_1788858642964.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 79,
+  "affected_word_count": 25,
+  "semantic_error_rate": 0.3165,
+  "seconds": 15.1,
+  "discrepancies": [
+    {
+      "reference_text": "दिव्या मुझे ना बहुत जरूरत है यार",
+      "translation_text": "Yes, Divya, I need you very much, friend.",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'I have a great need' (general), but the translation adds 'you' ('I need you'), changing the meaning."
+    },
+    {
+      "reference_text": "मुझे ना बहुत जरूरत है बहुत ज्यादा जरूरत है यार",
+      "translation_text": "I need you very much, I need you a lot, friend.",
+      "category": "other_meaning_change",
+      "word_count_affected": 10,
+      "explanation": "The reference says 'I have a great need, a very big need' (general), but the translation adds 'you' ('I need you')."
+    },
+    {
+      "reference_text": "हां भेज देती हूं लड़की बताओ कहां भेजनी है",
+      "translation_text": "Yes, I will send it, girl, tell me where to send it.",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference says 'I will send a girl' (लड़की), but the translation translates 'लड़की' as a vocative 'girl' ('I will send it, girl')."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:15",
+      "type": "sexual_or_explicit",
+      "reference_text": "सेक्स की",
+      "translation_text": "Sex.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:18",
+      "type": "sexual_or_explicit",
+      "reference_text": "करवाओगी तुम",
+      "translation_text": "Will you do it?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:20",
+      "type": "sexual_or_explicit",
+      "reference_text": "हां भेज देती हूं लड़की बताओ कहां भेजनी है",
+      "translation_text": "Yes, I will send it, girl, tell me where to send it.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:31",
+      "type": "move_off_app",
+      "reference_text": "ठीक है नंबर नोट करो",
+      "translation_text": "Okay, note down the number.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:33",
+      "type": "move_off_app",
+      "reference_text": "नंबर नोट कराओ",
+      "translation_text": "Note down the number.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:35",
+      "type": "move_off_app",
+      "reference_text": "देखो 800",
+      "translation_text": "Look, 800",
+      "status": "preserved"
+    },
+    {
+      "t": "00:43",
+      "type": "move_off_app",
+      "reference_text": "57",
+      "translation_text": "57",
+      "status": "preserved"
+    },
+    {
+      "t": "00:47",
+      "type": "move_off_app",
+      "reference_text": "48",
+      "translation_text": "48",
+      "status": "preserved"
+    },
+    {
+      "t": "00:49",
+      "type": "move_off_app",
+      "reference_text": "042",
+      "translation_text": "042",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate but misinterprets 'sending a girl' as 'sending it, girl', which slightly alters the intent of the prostitution/escort offer."
+}

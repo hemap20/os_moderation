@@ -1,0 +1,54 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert). Calls can be audio/video.
+    *   **Goal:** Find every possible violation based on strict rules.
+    *   **Output Format:** Minified JSON array of flags, adhering to a specific schema and strict categorization (PlatformMove, SuspiciousActivity, Explicit-Flirting).
+    *   **Key Constraints:**
+        *   Only output quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, location questions, filler words).
+        *   Category 'f' must be exactly one of: PlatformMove, SuspiciousActivity, Explicit-Flirting.
+        *   Strict rules for 'About a Violation' (warnings, refusals, questions about rules) -> `violation: "no"`, `c <= 0.3`.
+        *   Quotes must be exact, with timestamps.
+
+2.  **Analyze the Transcript:**
+    *   [00:00] हलो हलो जी हो (Hello hello ji ho)
+    *   [00:10] मैं बढ़िया आप बताइए मैं मध्य प्रदेश से (I am fine, you tell me, I am from Madhya Pradesh)
+    *   [00:20] मध्य प्रदेश क्या करते हो मैं पढ़ा (Madhya Pradesh, what do you do? I study)
+    *   [00:30] ट्राई करता हूँ व्हाट्सएप में आओगे वीडियो कॉल चाहिए (I try WhatsApp, will you come? I want a video call)
+
+3.  **Evaluate Transcript against Policy Rules:**
+
+    *   **[00:00] हलो हलो जी हो:** Greeting. (Allowed/Ordinary conversation). -> Skip.
+    *   **[00:10] मैं बढ़िया आप बताइए मैं मध्य प्रदेश से:** Small talk, asking about well-being and location. (Allowed/Ordinary conversation). -> Skip.
+    *   **[00:20] मध्य प्रदेश क्या करते हो मैं पढ़ा:** Asking about profession/studies. (Allowed/Ordinary conversation). -> Skip.
+    *   **[00:30] ट्राई करता हूँ व्हाट्सएप में आओगे वीडियो कॉल चाहिए:** This involves proposing moving the contact outside the app (WhatsApp, video call).
+
+4.  **Detailed Flag Generation for [00:30]:**
+
+    *   **Quote:** ट्राई करता हूँ व्हाट्सएप में आओगे वीडियो कॉल चाहिए
+    *   **Translation:** I try WhatsApp, will you come? I want a video call.
+    *   **Analysis:** The user is explicitly proposing moving the conversation to WhatsApp and requesting a video call, which is outside the scope of the current app interaction. This fits the definition of "PlatformMove."
+    *   **Category:** PlatformMove.
+    *   **Strength:** This is a strong proposal for external contact/communication method. (Confidence 0.9).
+    *   **Speaker:** user.
+    *   **Speech Act:** Direct (proposing the action).
+
+5.  **Construct the JSON Output:** (Focusing only on the identified violation.)
+
+    *   t: 00:30
+    *   seg: ट्राई करता हूँ व्हाट्सएप में आओगे वीडियो कॉल चाहिए
+    *   tr: I try WhatsApp, will you come? I want a video call.
+    *   f: PlatformMove
+    *   spk: user
+    *   ctx: The user asks about the expert's profession, and then proposes moving the conversation to WhatsApp and requesting a video call.
+    *   speech_act: direct
+    *   j: The user explicitly proposes moving the contact to an external app (WhatsApp) and asks for a video call, which is a strong case for PlatformMove.
+    *   violation: yes
+    *   c: 0.9
+
+6.  **Final Review:** The output must be a single, minified JSON object. (The analysis yields one strong flag.)<channel|>```json
+{"d": [{"t": "00:30", "seg": "ट्राई करता हूँ व्हाट्सएप में आओगे वीडियो कॉल चाहिए", "tr": "I try WhatsApp, will you come? I want a video call.", "f": "PlatformMove", "spk": "user", "ctx": "After asking about the expert's studies, the user proposes moving the conversation to WhatsApp and requests a video call.", "speech_act": "direct", "j": "The user explicitly proposes moving the contact to an external app (WhatsApp) and asks for a video call, which is a strong case for PlatformMove.", "violation": "yes", "c": 0.9}]}
+```<turn|>

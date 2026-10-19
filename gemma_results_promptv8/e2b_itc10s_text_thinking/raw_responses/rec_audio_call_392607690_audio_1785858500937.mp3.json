@@ -1,0 +1,74 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert/paid host). Calls can be audio/video.
+    *   **Goal:** Find every possible violation based on three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+    *   **Output Format:** Strict minified JSON array following the specified schema.
+    *   **Constraints:**
+        *   Only output quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, location, filler words).
+        *   Category `f` must be exactly one of: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+        *   Use confidence scores (0.9 strong, 0.6 weaker, 0.3 about a violation).
+        *   Strict rules for `speech_act`, `violation`, and quoting.
+
+2.  **Analyze the Transcript (Segment by Segment):**
+
+    *   `[00:00] हेलो कौन` (Hello who) - Greeting/Introduction. (Allowed/Ordinary conversation).
+    *   `[00:10] तुम कौन मैं प्रशांत आप कौन मैं पूजा कुमारी` (Who are you I Prashant who are you Pooja Kumari) - Introduction/Name exchange. (Allowed/Ordinary conversation).
+    *   `[00:20] कहाँ से हो मैं न्यू दिल्ली से हूँ न्यू दिल्ली से` (Where are you I am from New Delhi from New Delhi) - Location. (Allowed/Ordinary conversation).
+    *   `[00:30] हाँ मैं गुजरात से हूँ क्या करते हो गुजरात में मैं जॉब करता हूँ` (Yes I am from Gujarat what do you do in Gujarat I do a job) - Small talk/Work. (Allowed/Ordinary conversation).
+    *   `[00:40] हाँ तो क्या दोस्ती करोगे मुझसे सॉरी दोस्ती करोगे क्या मुझसे हाँ करूँगा ना क्यों नहीं करूँगा इसीलिए तो` (Yes so will you be friends with me sorry will you be friends with me yes I will not yes why not yes) - Establishing rapport/small talk. (Allowed/Ordinary conversation).
+    *   `[00:50] कॉल किया है हाँ तो अपना व्हाट्सएप नंबर बोलो व्हाट्सएप पर अभी से एक ही बार पहली बार में क्या` (Called yes so tell your WhatsApp number tell me on WhatsApp right now for the first time) - Requesting contact information (WhatsApp number).
+    *   `[01:00] अभी से व्हाट्सएप पे हाँ वही तो फिर आप बता दो नंबर आपका` (On WhatsApp right now yes that is then you tell me your number) - Confirmation/Request for number.
+    *   `[01:10] आप अपना बोलो मैं आपको मैसेज डालती हूँ ठीक है और वहाँ पर फिर मैं वीडियो कॉल वीडियो कॉल कहीं पर नहीं होगा सिर्फ नॉर्मल बात होगी` (You say yours I will send you a message okay and there then there will not be a video call only normal talk will be) - Clarifying call type (Audio only).
+    *   `[01:20] मतलब वीडियो कॉल नहीं करूँगा मैं हाँ तो मुझे कौन सी दिक्कत है अपना फोटो डाल देना उसपे देख लूँगी मैं` (Meaning I won't do video call yes so what is the problem for me put your photo on that I will see) - Suggesting sending a photo.
+    *   `[01:30] हाँ` (Yes) - Affirmation.
+
+3.  **Evaluate Potential Violations against Policies:**
+
+    *   **PlatformMove:** Proposing contact outside the app, giving/asking for contact info.
+        *   `[00:50] कॉल किया है हाँ तो अपना व्हाट्सएप नंबर बोलो व्हाट्सएप पर अभी से एक ही बार पहली बार में क्या` (Requesting WhatsApp number). This is a strong case for asking for a phone number/ID.
+        *   `[01:00] अभी से व्हाट्सएप पे हाँ वही तो फिर आप बता दो नंबर आपका` (Confirmation/Request for number).
+    *   **SuspiciousActivity:** Money/payment linked to sexual content. (None found).
+    *   **Explicit-Flirting:** Sexual talk, showing the body, etc. (None found).
+
+4.  **Draft Flags (Focusing on PlatformMove):**
+
+    *   *Candidate 1 (00:50):* Requesting WhatsApp number. Strong case for PlatformMove.
+    *   *Candidate 2 (01:00):* Requesting the number again. Strong case for PlatformMove.
+
+5.  **Finalize Flag Structure and Confidence:**
+
+    *   *Flag 1 (00:50):* Focus on the request for the number.
+    *   *Flag 2 (01:00):* Focus on the confirmation/request for the number.
+
+6.  **Construct JSON Output.** (Ensure strict adherence to the schema and minification.)<channel|>```json
+{"d": [
+  {
+    "t": "00:50",
+    "seg": "कॉल किया है हाँ तो अपना व्हाट्सएप नंबर बोलो व्हाट्सएप पर अभी से एक ही बार पहली बार में क्या",
+    "tr": "Called yes so tell your WhatsApp number tell me on WhatsApp right now for the first time",
+    "f": "PlatformMove",
+    "spk": "user",
+    "ctx": "The user is asking the expert to provide their WhatsApp number to continue communication outside the current platform.",
+    "speech_act": "direct",
+    "j": "The user is directly asking for a WhatsApp number, which is a strong case for proposing or asking for a phone number or ID.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "01:00",
+    "seg": "अभी से व्हाट्सएप पे हाँ वही तो फिर आप बता दो नंबर आपका",
+    "tr": "On WhatsApp right now yes that is then you tell me your number",
+    "f": "PlatformMove",
+    "spk": "user",
+    "ctx": "The user confirms the method (WhatsApp) and reiterates the request for the expert's number.",
+    "speech_act": "direct",
+    "j": "The user is directly asking for the expert's number, which is a strong case for proposing or asking for a phone number or ID.",
+    "violation": "yes",
+    "c": 0.9
+  }
+]}
+```<turn|>

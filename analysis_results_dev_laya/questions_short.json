@@ -1,0 +1,22 @@
+{
+  "platform_move": {
+    "type": "noul",
+    "instructions": "Using this policy definition, does a speaker in this transcript commit this violation (a strong or weaker case, not an allowed item)?\n\nA speaker proposes continuing the contact outside this app (another app, a phone call, or meeting in person), or gives or asks for the means to do so."
+  },
+  "suspicious_activity": {
+    "type": "noul",
+    "instructions": "Using this policy definition, does a speaker in this transcript commit this violation (a strong or weaker case, not an allowed item)?\n\nMoney or payment linked to sexual content, showing the body, or a sexual service."
+  },
+  "explicit_flirting": {
+    "type": "noul",
+    "instructions": "Using this policy definition, does a speaker in this transcript commit this violation (a strong or weaker case, not an allowed item)?\n\nSexual talk, sexual acts, or showing the body, directed at the other person."
+  },
+  "about_not_doing": {
+    "type": "noul",
+    "instructions": "Is the relevant speech only about a violation rather than doing it?\n\nThis applies to all three categories. Output these with \"violation\": \"no\" and confidence 0.3 or below:"
+  },
+  "quote_supported": {
+    "type": "noul",
+    "instructions": "Does the transcript contain words with the same meaning as this quote: «{quote_english}»?"
+  }
+}

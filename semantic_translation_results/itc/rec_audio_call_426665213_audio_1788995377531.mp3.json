@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_audio_call_426665213_audio_1788995377531.mp3",
+  "language": "telugu",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 143,
+  "affected_word_count": 25,
+  "semantic_error_rate": 0.1748,
+  "seconds": 4.9,
+  "discrepancies": [
+    {
+      "reference_text": "నేనైతే బిజీ, అమౌంట్ పంపిస్తే మీకు కాల్స్ వచ్చేసి 30 టు 40 మినిట్స్ ఉంటుంది.",
+      "translation_text": "I am 250 amount. For charges, your call time will be 30-40 years",
+      "category": "other_meaning_change",
+      "word_count_affected": 11,
+      "explanation": "The translation introduces a random number '250' and mistranslates '30 to 40 minutes' as '30-40 years'."
+    },
+    {
+      "reference_text": "నేను డైరెక్ట్ మీ గురించి మాట్లాడుకుందాం, ఒకవేళ మీకు ఏమంటారు, ప్రెజెంట్ మీతో మీట్ అవ్వాలి కదా.",
+      "translation_text": "Let's talk about LPG meal, if you say, you said Realme now",
+      "category": "other_meaning_change",
+      "word_count_affected": 14,
+      "explanation": "The translation completely distorts the reference text about meeting in person, turning it into nonsensical talk about 'LPG meal' and 'Realme'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:43",
+      "type": "move_off_app",
+      "reference_text": "నాకు ఏదైనా ఓకే, కాకపోతే నేను ప్రాపర్లీ వాట్సాప్ వీడియో కాల్స్ అటెండ్ అవుతా.",
+      "translation_text": "If you have anything for me, definitely, I probably attend all WhatsApp video calls",
+      "status": "preserved"
+    },
+    {
+      "t": "00:51",
+      "type": "move_off_app",
+      "reference_text": "వాట్సాప్ వీడియో కాల్స్ అటెండ్ అవుతాను, ఇంట్రెస్ట్ ఉందా మరి నీకు ఏమైనా అంటున్నా.",
+      "translation_text": "You are attending WhatsApp video calls, are you interested?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:58",
+      "type": "money_or_payment",
+      "reference_text": "నేనైతే బిజీ, అమౌంట్ పంపిస్తే మీకు కాల్స్ వచ్చేసి 30 టు 40 మినిట్స్ ఉంటుంది.",
+      "translation_text": "I am 250 amount. For charges, your call time will be 30-40 years",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:33",
+      "type": "move_off_app",
+      "reference_text": "ఆ, సరే అయితే వాట్సాప్ వీడియో కాల్ అటెండ్ అవ్వండి",
+      "translation_text": "Okay, like that video call",
+      "status": "softened"
+    },
+    {
+      "t": "01:33",
+      "type": "meeting_in_person",
+      "reference_text": "ప్రెజెంట్ మీతో మీట్ అవ్వాలి కదా.",
+      "translation_text": "Let's talk about LPG meal",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "no",
+  "summary": "The translation fails to accurately convey key policy-relevant details, completely missing the proposal to meet in person and distorting the payment/duration details into nonsensical phrases."
+}

@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_420511327_audio_1788424417781.mp3",
+  "language": "kannada",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 439,
+  "affected_word_count": 10,
+  "semantic_error_rate": 0.0228,
+  "seconds": 4.8,
+  "discrepancies": [
+    {
+      "reference_text": "ತೋಟ",
+      "translation_text": "Nothing.",
+      "category": "key_content_missing",
+      "word_count_affected": 1,
+      "explanation": "The speaker says they are in a garden/plantation ('ತೋಟ'), but the translation says 'Nothing.'"
+    },
+    {
+      "reference_text": "ಹೇ ಇಲ್ಲ",
+      "translation_text": "Yes, I am.",
+      "category": "negation_flipped",
+      "word_count_affected": 2,
+      "explanation": "The speaker says 'Hey, no' ('ಹೇ ಇಲ್ಲ') when asked if they are married, but the translation says 'Yes, I am.'"
+    },
+    {
+      "reference_text": "ಅಕೌಂಟ್ ಬಿಟ್ಟಿದ್ದೀರಾ",
+      "translation_text": "Are you bored?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The speaker asks if they have left/opened an account, but the translation translates it as being bored."
+    },
+    {
+      "reference_text": "ಅಕೌಂಟ್ ಕೊಡೋಕೆ",
+      "translation_text": "To put a tower?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The speaker asks what work they do to give an account, but the translation translates it as putting up a tower."
+    },
+    {
+      "reference_text": "ಕಣ್ಣಲ್ಲಿ ನೀರು ಸುರಿಸ್ಕೊಂಡಿ",
+      "translation_text": "and I had tears in my eyes.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The speaker says the other person was crying/shedding tears, but the translation attributes the tears to the speaker ('I had tears in my eyes')."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "05:40",
+      "type": "move_off_app",
+      "reference_text": "ನಿಮ್ದು ನಂಬರ್ ಕೊಡಿ ಮಾತಾಡೋಣ",
+      "translation_text": "Give me your number, let's talk.",
+      "status": "preserved"
+    },
+    {
+      "t": "06:05",
+      "type": "move_off_app",
+      "reference_text": "ನಂಬರ್ ಕೊಟ್ಬಿಟ್ಟರಲ್ಲ",
+      "translation_text": "Oh, you gave the number?",
+      "status": "preserved"
+    },
+    {
+      "t": "06:14",
+      "type": "move_off_app",
+      "reference_text": "ಏನಕ್ಕೆ ನಂಬರ್ ಕೊಡೋಣ",
+      "translation_text": "No, why should I give the number?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the overall tone and intent of the conversation, including policy-relevant discussions about sharing phone numbers, though there are minor errors regarding who was crying and some mistranslations of specific words like 'plantation' and 'account'."
+}

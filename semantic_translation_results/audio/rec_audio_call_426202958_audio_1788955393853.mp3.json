@@ -1,0 +1,44 @@
+{
+  "file_id": "rec_audio_call_426202958_audio_1788955393853.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 96,
+  "affected_word_count": 17,
+  "semantic_error_rate": 0.1771,
+  "seconds": 3.3,
+  "discrepancies": [
+    {
+      "reference_text": "मुर्गा अंडा दे देगा",
+      "translation_text": "If I do, I will give you an egg.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'the rooster will lay an egg', but the translation says 'If I do, I will give you an egg'."
+    },
+    {
+      "reference_text": "मुर्गी छोड़ो हम मुर्गा अंडा देगा है ना",
+      "translation_text": "Leave the chicken, I will give you an egg, right?",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference says 'leave the hen, the rooster will lay an egg, right?', but the translation changes 'rooster' to 'I'."
+    },
+    {
+      "reference_text": "ना देगा",
+      "translation_text": "I will give it.",
+      "category": "negation_flipped",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'it won't give' (negation), but the translation says 'I will give it' (affirmative)."
+    },
+    {
+      "reference_text": "ये मांग है",
+      "translation_text": "Is it a brain?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'this is the demand', but the translation says 'Is it a brain?'."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate for the general conversation about Bihar and work, but it completely misinterprets the humorous/nonsensical lines about a rooster laying eggs."
+}

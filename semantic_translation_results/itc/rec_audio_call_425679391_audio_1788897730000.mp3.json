@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_audio_call_425679391_audio_1788897730000.mp3",
+  "language": "hindi",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 130,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.0692,
+  "seconds": 6.9,
+  "discrepancies": [
+    {
+      "reference_text": "नीचे क्या चूत है और क्या",
+      "translation_text": "what is below, what is below, [unclear]",
+      "category": "tone_softened",
+      "word_count_affected": 6,
+      "explanation": "The explicit sexual term 'चूत' (cunt/pussy) is omitted and marked as unclear in the translation."
+    },
+    {
+      "reference_text": "कैसे पे दिखाओगे",
+      "translation_text": "Will you show it for money",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'how will you show' (कैसे पे), which the translation misinterprets as 'for money' (cash/pay)."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:55",
+      "type": "sexual_or_explicit",
+      "reference_text": "वीडियो कॉल बात करेगी",
+      "translation_text": "Great bowling, let's talk",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:00",
+      "type": "sexual_or_explicit",
+      "reference_text": "वीडियो कॉल करोगे",
+      "translation_text": "Will you video call",
+      "status": "preserved"
+    },
+    {
+      "t": "01:31",
+      "type": "sexual_or_explicit",
+      "reference_text": "नीचे वाला दिखाओगे",
+      "translation_text": "Will you show the one below",
+      "status": "preserved"
+    },
+    {
+      "t": "01:38",
+      "type": "sexual_or_explicit",
+      "reference_text": "नीचे क्या चूत है और क्या",
+      "translation_text": "what is below, what is below, [unclear]",
+      "status": "softened"
+    },
+    {
+      "t": "02:20",
+      "type": "move_off_app",
+      "reference_text": "व्हाट्सएप पे करते हैं",
+      "translation_text": "Let's do it on WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "02:27",
+      "type": "move_off_app",
+      "reference_text": "व्हाट्सएप पे दिखाओ",
+      "translation_text": "show it on WhatsApp",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general intent of moving to WhatsApp and video calling, but softens the highly explicit sexual language by omitting the Hindi slang for female genitals."
+}

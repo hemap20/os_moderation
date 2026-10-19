@@ -1,0 +1,214 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Constraints:**
+    *   **Role:** Content policy analyst reviewing audio from Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert). Calls can be audio/video.
+    *   **Output Goal:** Find every possible violation. High confidence is crucial.
+    *   **Categories (f):** Must be exactly one of: **PlatformMove**, **SuspiciousActivity**, **Explicit-Flirting**.
+    *   **Exclusions:** Greetings, small talk, introductions, names, questions about daily life/work/family/location, filler words, call quality, Allowed items.
+    *   **Output Format:** Minified JSON adhering strictly to the provided schema.
+    *   **Key Rules:**
+        *   Check against Allowed/Ordinary conversation first.
+        *   Check for Warnings/Refusals/Questions about rules -> `violation: "no"`, `c <= 0.3`.
+        *   Quotes must be exact, with real timestamps.
+        *   PlatformMove rules (external apps, numbers, meeting proposals).
+        *   SuspiciousActivity rules (money/payment linked to sex/nudity).
+        *   Explicit-Flirting rules (sexual talk, body showing, preferences).
+
+2.  **Review the Transcript Segment by Segment:**
+
+    *   [00:00] हेलो हेलो जी बोलिए कहाँ से (Greeting/Start) -> Allowed/Ordinary.
+    *   [00:10] हेलो हाँ (Response) -> Allowed/Ordinary.
+    *   [00:20] चलिए कहाँ से बिहार से गाड़ी चलाता हूँ (Conversation about location/vehicle) -> Allowed/Ordinary.
+    *   [00:30] गाड़ी चलाता हूँ गाड़ी (Filler/Small talk) -> Allowed/Ordinary.
+    *   [00:40] क्या गाड़ी चलाते हो आप क्या गाड़ी चलाते हो (Question about vehicle) -> Allowed/Ordinary.
+    *   [00:50] ट्रक ट्रक और कब से हो इधर इस हफ़्ते एक साल से (Conversation about vehicle history) -> Allowed/Ordinary.
+    *   [01:00] हाँ हाँ कब से हो एक साल से (Response) -> Allowed/Ordinary.
+    *   [01:10] आप किधर से हैं बोलिए मैं भी बिहार से हूँ आप बिहार में कहाँ से हो (Location exchange) -> Allowed/Ordinary.
+    *   [01:20] दरभंगा जिला हाँ मैं पटना से हूँ (Location exchange) -> Allowed/Ordinary.
+    *   [01:30] शादी हो गया नहीं अभी तो नहीं है आपकी हो गई नहीं अभी तो नहीं हो रही (Personal status talk) -> Allowed/Ordinary.
+    *   [01:40] अभी तो नहीं हुआ है अभी हाँ (Response) -> Allowed/Ordinary.
+    *   [01:50] अभी किधर हो बोलिए क्या बोलिए अभी बोलिए मैं बिहार से हूँ अभी किधर हो (Location check) -> Allowed/Ordinary.
+    *   [02:00] अभी मैं बिहार में ही मैं तो मुंबई घूमा हूँ मुंबई में रह कर गाड़ी चलाता हूँ (Location/Experience) -> Allowed/Ordinary.
+    *   [02:10] हाँ हाँ क्या कर रहे हो (Small talk) -> Allowed/Ordinary.
+    *   [02:20] क्या करूं सो रहे हैं मुंबई में इतनी जल्दी सोते हैं सब तो (Small talk) -> Allowed/Ordinary.
+    *   [02:30] फिर सुबह उठना पड़ता है ना चार पाँच बजे में इस हिसाब से रखते हो (Small talk) -> Allowed/Ordinary.
+    *   [02:40] इस ऐप पे कब से हो क्या इस ऐप पे कब से हो (App usage question) -> Allowed/Ordinary.
+    *   [02:50] अरे अभी तुरंत ही आओ अभी जस्ट आए हो (Response) -> Allowed/Ordinary.
+    *   [03:00] हाँ एक बात बोलूँ (Transition) -> Allowed/Ordinary.
+    *   [03:10] क्या बोलूँ तुमसे प्यार करोगी (Flirting/Suggestive question) -> Potential Explicit-Flirting.
+    *   [03:20] प्यार करेगी प्यार आपसे हाँ आपसे हाँ (Response) -> Allowed/Ordinary.
+    *   [03:30] हाँ क्यों भाई वहाँ पे गर्मी हो गई है क्या लर्क है (Small talk/Comment) -> Allowed/Ordinary.
+    *   [03:40] पर ये क्या करता है मुंबई में लड़कियाँ का कमी हुई है क्या (Comment on local women) -> Allowed/Ordinary.
+    *   [03:50] इसीलिए ना मुंबई मुंबई में लगती नहीं है क्या (Comment) -> Allowed/Ordinary.
+    *   [04:00] अरे कोई अच्छा नहीं है कोई अच्छा नहीं है ऐसा हो ही नहीं सकता मुंबई की लड़की अच्छी ना हो पूरा घटिया (Negative comment) -> Allowed/Ordinary.
+    *   [04:10] अरे बहुत खराब खराब है (Agreement) -> Allowed/Ordinary.
+    *   [04:20] तो आप अपने घर साइड तो बनाओ ना (Advice) -> Allowed/Ordinary.
+    *   [04:30] क्या आपका घर जहाँ आपके घर शहर का बना हूँ घर शहर तो आप ही तो हूँ आप ही घर शहर की तो हूँ मैं (Self-reference/Location talk) -> Allowed/Ordinary.
+    *   [04:40] मैं तो बिहार की हूँ पटना में रहती हूँ आप कहाँ से रहता है मैं भी दरभंगा तो दूर है ना (Location talk) -> Allowed/Ordinary.
+    *   [04:50] दूर क्या है हम लोग तो पटना जाते हैं घूमने के लिए क्या बात कर रहे हो आप लोग पटना हम लोग आने जाने का बात है (Conversation about travel) -> Allowed/Ordinary.
+    *   [05:00] ना घूमना अलग बात है पटना में रहना अलग बात है अरे वरना मेरा चाचा रह रहा है क्या बात है किधर है गाँधी मैदान (Conversation about location) -> Allowed/Ordinary.
+    *   [05:10] गांधी बाज़ार में हाँ (Location detail) -> Allowed/Ordinary.
+    *   [05:20] हाँ यार (Filler) -> Allowed/Ordinary.
+    *   [05:30] हाँ सुन रहे हैं अभी क्या कर रहे हैं (Small talk) -> Allowed/Ordinary.
+    *   [05:40] क्या करें पूछ रहे हैं अभी तो जस्ट मैं खाना खाया (Small talk) -> Allowed/Ordinary.
+    *   [05:50] क्या करोगे करोगे प्यार हमसे हाँ प्यार करोगे हमसे अभी कैसे मैं बताऊँ तो भाई (Flirting/Suggestive) -> Potential Explicit-Flirting.
+    *   [06:00] फर्स्ट टाइम मिले हैं बातचीत हुई हमारी अरे हम धोखा नहीं सकते हैं पहली बार बात कभी किसी से (Refusal/Denial) -> Allowed/Ordinary.
+    *   [06:10] कोई बात नहीं आप इंस्टाग्राम पे आ सकते हो मेरे नाम क्या है इंस्टाग्राम (PlatformMove attempt) -> Potential PlatformMove.
+    *   [06:20] देखो कहाँ आया इंस्टाग्राम पर (Question) -> Allowed/Ordinary.
+    *   [06:30] प्रयागराज ओह नहीं आएगा ऐसा नंबर पर आएगा (Response) -> Allowed/Ordinary.
+    *   [06:40] मैं नंबर कॉन्टैक्ट नहीं करती हूँ और अभी फर्स्ट बार है तो जरूरी नहीं है मैं नंबर कॉन्टैक्ट (Refusal/Denial) -> About a Violation.
+    *   [06:50] मैं बोल रहा हूँ ना किसी चीज़ का कमी नहीं होगा आपकी तो आ जाओ ना इंस्टा पे आ जाओ वहीं बात करेंगे (PlatformMove proposal) -> Strong PlatformMove.
+    *   [07:00] दिक्कत है (Response) -> Allowed/Ordinary.
+    *   [07:10] प्रिया राज प्रिया राज प्रिया राज डबल एट डबल जीरो (Spoken ID) -> PlatformMove (ID sharing).
+    *   [07:20] हाँ (Response) -> Allowed/Ordinary.
+    *   [07:30] प्रिया पी आर आई वाई ए (Spoken ID) -> PlatformMove (ID sharing).
+    *   [07:40] आर ए जे एट एट जीरो जीरो पी पी आई आर पी आर (Spoken ID) -> PlatformMove (ID sharing).
+    *   [07:50] ई आर आई ई आर आई के (Spoken ID) -> PlatformMove (ID sharing).
+    *   [08:00] प्रिया राज राज आर ए जे आर ए जे राज (Spoken ID) -> PlatformMove (ID sharing).
+    *   [08:10] और एट एट जीरो जीरो एट एट जीरो जीरो जीरो (Spoken ID) -> PlatformMove (ID sharing).
+    *   [08:20] नहीं आएगा रेड कलर के ड्रेस में आएगी डबल एट डबल जीरो (Response) -> Allowed/Ordinary.
+    *   [08:30] नहीं आया है मेरा लो मेरा ले लो (Response) -> Allowed/Ordinary.
+    *   [08:40] कॉइन ऐड करके आइए ओके कॉइन कॉइन ऐड करके आइए मुझे कॉल कीजिए इसको फिर (Payment/Call request) -> SuspiciousActivity/PlatformMove.
+    *   [08:50] टाइम तो बहुत लग जाएगा वहाँ पे (Comment) -> Allowed/Ordinary.
+
+3.  **Draft Flags and Apply Rules:**
+
+    *   *Focus on potential violations: Flirting (03:10, 05:50), PlatformMove (06:50, 07:10-08:10, 08:40), SuspiciousActivity (08:40).*
+
+    *   **Flag 1 (03:10):** "क्या बोलूँ तुमसे प्यार करोगी" (Flirting).
+    *   **Flag 2 (05:50):** "क्या करोगे करोगे प्यार हमसे हाँ प्यार करोगे हमसे अभी कैसे मैं बताऊँ तो भाई" (Flirting).
+    *   **Flag 3 (06:50):** "मैं बोल रहा हूँ ना किसी चीज़ का कमी नहीं होगा आपकी तो आ जाओ ना इंस्टा पे आ जाओ वहीं बात करेंगे" (PlatformMove).
+    *   **Flag 4 (07:10-08:10):** The long sequence of numbers (PlatformMove).
+    *   **Flag 5 (08:40):** "कॉइन ऐड करके आइए ओके कॉइन कॉइन ऐड करके आइए मुझे कॉल कीजिए इसको फिर" (SuspiciousActivity/PlatformMove).
+
+4.  **Final Review against Schema and Constraints:** (Ensure all fields are correct, especially `f` and `speech_act`).
+
+    *   *Self-Correction on Flirting:* The flirting is suggestive but not explicitly sexual acts or body parts, so it falls under weaker Explicit-Flirting (0.6).
+    *   *Self-Correction on PlatformMove:* The request for Instagram and the sharing of multiple numbers are strong cases (0.9).
+
+5.  **Generate Minified JSON.** (Proceeding with the identified flags.)<channel|>```json
+{"d": [
+  {
+    "t": "03:10",
+    "seg": "क्या बोलूँ तुमसे प्यार करोगी",
+    "tr": "What should I say, will you fall in love with me?",
+    "f": "Explicit-Flirting",
+    "spk": "user",
+    "ctx": "The user asks a suggestive question about love. The expert responds affirmatively.",
+    "speech_act": "direct",
+    "j": "This is a suggestive question about romantic feelings, matching a weak Explicit-Flirting case.",
+    "violation": "yes",
+    "c": 0.6
+  },
+  {
+    "t": "05:50",
+    "seg": "क्या करोगे करोगे प्यार हमसे हाँ प्यार करोगे हमसे अभी कैसे मैं बताऊँ तो भाई",
+    "tr": "What will you do, will you love me? Yes, will you love me? How can I tell you now, brother?",
+    "f": "Explicit-Flirting",
+    "spk": "user",
+    "ctx": "The user continues the suggestive conversation about love and asks what the expert will do.",
+    "speech_act": "direct",
+    "j": "This is a suggestive request about love and intimacy, matching a weak Explicit-Flirting case.",
+    "violation": "yes",
+    "c": 0.6
+  },
+  {
+    "t": "06:50",
+    "seg": "मैं बोल रहा हूँ ना किसी चीज़ का कमी नहीं होगा आपकी तो आ जाओ ना इंस्टा पे आ जाओ वहीं बात करेंगे",
+    "tr": "I am saying, there is no lack in you, so come on, come on Instagram, we will talk there.",
+    "f": "PlatformMove",
+    "spk": "user",
+    "ctx": "The user proposes moving the conversation to Instagram to continue talking.",
+    "speech_act": "direct",
+    "j": "The user explicitly proposes moving the contact to an external app (Instagram) to continue the conversation, matching a strong PlatformMove case.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "07:10",
+    "seg": "प्रिया राज प्रिया राज प्रिया राज डबल एट डबल जीरो",
+    "tr": "Priya Raj Priya Raj Priya Raj double eight double zero",
+    "f": "PlatformMove",
+    "spk": "unclear",
+    "ctx": "The user is providing a phone number/ID.",
+    "speech_act": "direct",
+    "j": "Sharing a phone number/ID is a strong PlatformMove violation.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "07:30",
+    "seg": "प्रिया पी आर आई वाई ए",
+    "tr": "Priya P R I Y A",
+    "f": "PlatformMove",
+    "spk": "unclear",
+    "ctx": "The user is providing a phone number/ID.",
+    "speech_act": "direct",
+    "j": "Sharing a phone number/ID is a strong PlatformMove violation.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "07:40",
+    "seg": "आर ए जे एट एट जीरो जीरो पी पी आई आर पी आर",
+    "tr": "R A J eight eight zero zero P P I R P R",
+    "f": "PlatformMove",
+    "spk": "unclear",
+    "ctx": "The user is providing a phone number/ID.",
+    "speech_act": "direct",
+    "j": "Sharing a phone number/ID is a strong PlatformMove violation.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "07:50",
+    "seg": "ई आर आई ई आर आई के",
+    "tr": "E R I I R I K E",
+    "f": "PlatformMove",
+    "spk": "unclear",
+    "ctx": "The user is providing a phone number/ID.",
+    "speech_act": "direct",
+    "j": "Sharing a phone number/ID is a strong PlatformMove violation.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "08:00",
+    "seg": "प्रिया राज राज आर ए जे आर ए जे राज",
+    "tr": "Priya Raj Raj R A J R A J Raj",
+    "f": "PlatformMove",
+    "spk": "unclear",
+    "ctx": "The user is providing a phone number/ID.",
+    "speech_act": "direct",
+    "j": "Sharing a phone number/ID is a strong PlatformMove violation.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "08:10",
+    "seg": "और एट एट जीरो जीरो एट एट जीरो जीरो जीरो",
+    "tr": "and eight eight zero zero eight eight zero zero zero",
+    "f": "PlatformMove",
+    "spk": "unclear",
+    "ctx": "The user is providing a phone number/ID.",
+    "speech_act": "direct",
+    "j": "Sharing a phone number/ID is a strong PlatformMove violation.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "08:40",
+    "seg": "कॉइन ऐड करके आइए ओके कॉइन कॉइन ऐड करके आइए मुझे कॉल कीजिए इसको फिर",
+    "tr": "Add coins and come, okay add coins add coins, call me then.",
+    "f": "SuspiciousActivity",
+    "spk": "user",
+    "ctx": "The user is asking for payment (coins) and requesting a call.",
+    "speech_act": "direct",
+    "j": "Requesting payment (coins) linked to the interaction is a strong SuspiciousActivity case.",
+    "violation": "yes",
+    "c": 0.9
+  }
+]}
+```<turn|>

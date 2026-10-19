@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_425656790_audio_1788896051031.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 121,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.124,
+  "seconds": 3.5,
+  "discrepancies": [
+    {
+      "reference_text": "மேரேஜ் ஆன லேடிஸ்",
+      "translation_text": "marriageable girls",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'married ladies' (மேரேஜ் ஆன லேடிஸ்), but the translation says 'marriageable girls'."
+    },
+    {
+      "reference_text": "தனியா வாட்ஸ்அப் இதுல பேசினா பேசாதீங்க வாட்ஸ்அப் நம்பர் எல்லாம் கொடுத்து",
+      "translation_text": "If you want to talk separately, talk on WhatsApp, give your number.",
+      "category": "intent_changed",
+      "word_count_affected": 9,
+      "explanation": "The reference warns the user NOT to talk on WhatsApp or give their number ('பேசினா பேசாதீங்க'), but the translation incorrectly translates it as a positive recommendation ('talk on WhatsApp, give your number')."
+    },
+    {
+      "reference_text": "லைன்ல வெயிட் பண்ணுங்க",
+      "translation_text": "I am waiting on the line",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference tells the user to wait on the line ('you wait on the line'), but the translation says 'I am waiting on the line'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:47",
+      "type": "sexual_or_explicit",
+      "reference_text": "ரோமேண்டிக்கா பேசுவாங்க செக்ஸியா பேசுவாங்க பிரண்ட்லியாவும் பேசுவாங்க",
+      "translation_text": "They will talk romantically, they will talk sexily, they will talk in a friendly way too.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:03",
+      "type": "move_off_app",
+      "reference_text": "தனியா வாட்ஸ்அப் இதுல பேசினா பேசாதீங்க வாட்ஸ்அப் நம்பர் எல்லாம் கொடுத்து",
+      "translation_text": "If you want to talk separately, talk on WhatsApp, give your number.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:07",
+      "type": "money_or_payment",
+      "reference_text": "ஜிபே பண்ண சொன்னா அதெல்லாம் பேசாதீங்க காசு வாங்கிட்டு ஏமாத்திருவாங்க",
+      "translation_text": "If they ask you to GPay, don't talk, they will cheat you by taking money.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate but completely reverses the speaker's warning about moving off-app, turning a warning NOT to share WhatsApp numbers into an instruction to do so."
+}

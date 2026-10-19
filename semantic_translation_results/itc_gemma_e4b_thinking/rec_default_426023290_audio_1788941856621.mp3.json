@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426023290_audio_1788941856621.mp3",
+  "language": "tamil",
+  "source": "itc_gemma_e4b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 37,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.2973,
+  "seconds": 5.6,
+  "discrepancies": [
+    {
+      "reference_text": "நான் சென்னைங்க நீங்க",
+      "translation_text": "No sir you are tell me",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference states the speaker is from Chennai, which is translated as 'No sir you are tell me'."
+    },
+    {
+      "reference_text": "நான் வொர்க் பண்ணிட்டு இருக்கேன்",
+      "translation_text": "you are to the hospital",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'I am working', but the translation says 'you are to the hospital'."
+    },
+    {
+      "reference_text": "நான் பிசினஸ் பண்றேன்",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The speaker's statement about doing business is completely missing from the translation."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:31",
+      "type": "move_off_app",
+      "reference_text": "வாட்ஸ்அப்ல பேசலாமா இன்ட்ரஸ்டடா",
+      "translation_text": "Can we talk on WhatsApp interested",
+      "status": "preserved"
+    },
+    {
+      "t": "00:34",
+      "type": "money_or_payment",
+      "reference_text": "எவ்வளவு",
+      "translation_text": "how much",
+      "status": "preserved"
+    },
+    {
+      "t": "00:36",
+      "type": "money_or_payment",
+      "reference_text": "300 ரூபாய்",
+      "translation_text": "three hundred only sir",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation contains several errors regarding locations and occupations in the middle of the call, but successfully preserves the critical policy-related moments regarding moving to WhatsApp and the payment amount."
+}

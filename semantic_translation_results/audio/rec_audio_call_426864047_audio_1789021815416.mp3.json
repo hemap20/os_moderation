@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_audio_call_426864047_audio_1789021815416.mp3",
+  "language": "kannada",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 993,
+  "affected_word_count": 17,
+  "semantic_error_rate": 0.0171,
+  "seconds": 5.7,
+  "discrepancies": [
+    {
+      "reference_text": "ನಮ್ಮ ತವರು ಮನೆಯಾಗ ಅಲ್ಲ ನನ್ನ ತವರು ಮನೆಯಾಗ",
+      "translation_text": "Not my mother's house, my husband's house.",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'Not my mother-in-law's house, my mother's house' (clarifying whose house), but the translation incorrectly translates it as 'husband's house'."
+    },
+    {
+      "reference_text": "ನನ್ನ ತವರು ಮನೆಯಾಗ ಅದಾರ",
+      "translation_text": "They are in my husband's house.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'They are in my mother's house', but the translation says 'husband's house'."
+    },
+    {
+      "reference_text": "ನಾನು ಹಂಗ ಎಲ್ಲರದು ಇಸ್ಕೊಳಂಗಿಲ್ಲ ನಂಬರ್",
+      "translation_text": "I will take everyone's number.",
+      "category": "negation_flipped",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'I don't take everyone's number like that', but the translation flips the negation to 'I will take everyone's number'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "11:28",
+      "type": "move_off_app",
+      "reference_text": "ಫೋನ್ ನಂಬರ್ ಹೇಳು",
+      "translation_text": "Tell me your phone number.",
+      "status": "preserved"
+    },
+    {
+      "t": "11:38",
+      "type": "move_off_app",
+      "reference_text": "ನಂದೇ ಹೇಳ್ತೀನಿ ಮಿಸ್ ಕಾಲ್ ಮಾಡ್ತೀನಿ ಹೇಳು",
+      "translation_text": "I will tell you, I will miss call you, tell me.",
+      "status": "preserved"
+    },
+    {
+      "t": "11:42",
+      "type": "move_off_app",
+      "reference_text": "77 77 60 60 57 57 39 39 31 31",
+      "translation_text": "77 77 60 60 57 57 39 39 31 31",
+      "status": "preserved"
+    },
+    {
+      "t": "12:13",
+      "type": "move_off_app",
+      "reference_text": "ಹೇಳು ನಂಬರ್ ನ ಕವಿ 77 605739 39",
+      "translation_text": "Tell the number, Kavita. 77 605739 39",
+      "status": "preserved"
+    },
+    {
+      "t": "12:24",
+      "type": "move_off_app",
+      "reference_text": "ಅಲ್ಲ ಇನ್ನೊಂದು ಸರಿ ಹೇಳು 77 60 57 ಓಕೆ 3931",
+      "translation_text": "Hello, tell me again. 77 6057. Okay. 3931",
+      "status": "preserved"
+    },
+    {
+      "t": "12:56",
+      "type": "move_off_app",
+      "reference_text": "ಮಿಸ್ ಕಾಲ್ ಮಾಡ್ಲಿ ಪಾ ಕವಿ ಮಾತಾಡೋಣ",
+      "translation_text": "Miss call me, Kavita, let's talk.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key policy-violating moments where the speakers exchange a phone number to move off the app, though there are minor errors regarding family houses and a flipped negation about taking numbers."
+}

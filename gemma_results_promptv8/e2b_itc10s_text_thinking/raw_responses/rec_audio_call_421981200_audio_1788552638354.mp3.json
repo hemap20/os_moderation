@@ -1,0 +1,109 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends" (user pays expert). Calls can be audio/video.
+    *   **Goal:** Find every possible violation based on three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+    *   **Output Format:** Strict minified JSON adhering to the specified schema.
+    *   **Constraints:**
+        *   Only output quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, etc.).
+        *   Category `f` must be exactly one of: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+        *   Use confidence scores (0.9 strong, 0.6 weaker, 0.3 about a violation).
+        *   Strict rules for `speech_act`, `violation`, and quoting.
+
+2.  **Analyze the Transcript (Segment by Segment):**
+
+    *   `[00:00] हेलो हेलो हेलो हाँ जी हाँ जी बोलिए` (Hello hello hello yes yes speak) -> Greeting/Start of call. (Allowed/Ordinary conversation)
+    *   `[00:10] अरुणाचल प्रदेश के अरुणाचल प्रदेश के` (Arunachal Pradesh of Arunachal Pradesh) -> Location/Small talk. (Allowed)
+    *   `[00:20] ओह बहुत दूर हो क्या नाम है आपका` (Oh very far what is your name) -> Small talk/Introduction. (Allowed)
+    *   `[00:30] बिना पैसे के लिए इस ऐप पर बात करते हो हाँ जी` (Talking on this app without money, yes) -> Context setting.
+    *   `[00:40] डायरेक्ट पेमेंट करूँ तो हमको क्या क्या आपको पेटीएम` (If I make a direct payment, what do you want, Paytm) -> Discussing payment method (Paytm).
+    *   `[00:50] कर दूँ डायरेक्ट तो अभी हेलो` (Should I do direct then hello now) -> Continuation of payment discussion.
+    *   `[01:00] अभी पेटीएम कर दूँ डायरेक्ट फिर बात करोगे उसपे हाँ अभी पैसा डालना पड़ेगा वीडियो कॉल करोगे` (Should I do Paytm directly now, then will you talk on that? Yes, you will have to put money now, will you do a video call) -> Explicit proposal for payment/video call.
+    *   `[01:10] हाँ पैसा डालने के बाद कितना पैसा एक हज़ार करेगा इतने हज़ार` (Yes, after putting money, how much money will you do, one thousand, so many thousand) -> Discussing price/amount.
+    *   `[01:20] करेगा क्या गंदा बात करेंगे नहीं ये गज़ा है तो नहीं` (Will you do what dirty talk? No, this is not dirty talk) -> Mentioning "dirty talk" and denial.
+    *   `[01:30] तो केक तो भी देना` (So give cake too) -> Unclear context, possibly related to payment or a bribe/gift.
+
+3.  **Evaluate Potential Violations against Categories:**
+
+    *   **PlatformMove:** Proposing contact outside the app, asking for numbers/payment IDs.
+    *   **SuspiciousActivity:** Money/payment linked to sexual content or service.
+    *   **Explicit-Flirting:** Sexual talk, requests for nudity/acts.
+
+4.  **Draft Flags:**
+
+    *   **Candidate 1 (00:40):** "डायरेक्ट पेमेंट करूँ तो हमको क्या क्या आपको पेटीएम" (If I make a direct payment, what do you want, Paytm)
+        *   *Analysis:* Mentions direct payment and a specific payment app (Paytm). This is linked to the transaction context.
+        *   *Category:* SuspiciousActivity (Payment discussion).
+    *   **Candidate 2 (01:00):** "अभी पेटीएम कर दूँ डायरेक्ट फिर बात करोगे उसपे हाँ अभी पैसा डालना पड़ेगा वीडियो कॉल करोगे" (Should I do Paytm directly now, then will you talk on that? Yes, you will have to put money now, will you do a video call)
+        *   *Analysis:* Explicitly links payment (Paytm) to a video call. This is a strong indicator of transactional sex work/service.
+        *   *Category:* SuspiciousActivity (Money linked to service/call). Also potentially PlatformMove (if the video call implies moving outside the standard audio app, but SuspiciousActivity is stronger).
+    *   **Candidate 3 (01:10):** "हाँ पैसा डालने के बाद कितना पैसा एक हज़ार करेगा इतने हज़ार" (Yes, after putting money, how much money will you do, one thousand, so many thousand)
+        *   *Analysis:* Discussing the price/rate.
+        *   *Category:* SuspiciousActivity (Asking about rate).
+    *   **Candidate 4 (01:20):** "करेगा क्या गंदा बात करेंगे नहीं ये गज़ा है तो नहीं" (Will you do what dirty talk? No, this is not dirty talk)
+        *   *Analysis:* Mentions "dirty talk" and a denial. This relates to Explicit-Flirting.
+        *   *Category:* Explicit-Flirting (Asking about sexual talk).
+
+5.  **Final Review and Formatting (Applying Rules):**
+
+    *   Ensure quotes are exact and timestamps are accurate.
+    *   Ensure `speech_act` and `violation` logic is correct.
+    *   Ensure category `f` is strictly one of the three allowed words.
+
+    *(Self-Correction on Candidate 2):* The combination of payment and video call is highly suspicious.
+
+6.  **Construct JSON Output.** (Proceeding with the identified flags.)<channel|>```json
+{"d": [
+  {
+    "t": "00:40",
+    "seg": "डायरेक्ट पेमेंट करूँ तो हमको क्या क्या आपको पेटीएम",
+    "tr": "If I make a direct payment, what do you want, Paytm",
+    "f": "SuspiciousActivity",
+    "spk": "user",
+    "ctx": "The user is discussing the method of payment, specifically suggesting using Paytm for a direct transaction.",
+    "speech_act": "direct",
+    "j": "The user is proposing a specific payment method (Paytm) for a direct transaction, which is linked to suspicious financial activity.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "01:00",
+    "seg": "अभी पेटीएम कर दूँ डायरेक्ट फिर बात करोगे उसपे हाँ अभी पैसा डालना पड़ेगा वीडियो कॉल करोगे",
+    "tr": "Should I do Paytm directly now, then will you talk on that? Yes, you will have to put money now, will you do a video call",
+    "f": "SuspiciousActivity",
+    "spk": "user",
+    "ctx": "The user explicitly links the payment via Paytm to the subsequent action of having a video call.",
+    "speech_act": "direct",
+    "j": "This is a strong case as it directly links payment (Paytm) to a video call, strongly suggesting a transactional service.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "01:10",
+    "seg": "हाँ पैसा डालने के बाद कितना पैसा एक हज़ार करेगा इतने हज़ार",
+    "tr": "Yes, after putting money, how much money will you do, one thousand, so many thousand",
+    "f": "SuspiciousActivity",
+    "spk": "expert",
+    "ctx": "The expert is responding to the user's query about the amount of money required after payment.",
+    "speech_act": "direct",
+    "j": "The expert is discussing the price or rate of the service, which falls under suspicious activity related to payment for service.",
+    "violation": "yes",
+    "c": 0.6
+  },
+  {
+    "t": "01:20",
+    "seg": "करेगा क्या गंदा बात करेंगे नहीं ये गज़ा है तो नहीं",
+    "tr": "Will you do what dirty talk? No, this is not dirty talk",
+    "f": "Explicit-Flirting",
+    "spk": "user",
+    "ctx": "The user asks about 'dirty talk' and immediately denies it, indicating a discussion about sexual content.",
+    "speech_act": "denial",
+    "j": "The user is asking about 'dirty talk', which is a strong indicator of explicit flirting, followed by a denial.",
+    "violation": "yes",
+    "c": 0.6
+  }
+]}
+```<turn|>

@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_default_427307153_audio_1789058314255.mp3",
+  "language": "telugu",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 223,
+  "affected_word_count": 16,
+  "semantic_error_rate": 0.0717,
+  "seconds": 4.6,
+  "discrepancies": [
+    {
+      "reference_text": "మీరు ఇందులోకి ఎందుకు వచ్చారో చెప్పండి",
+      "translation_text": "tell me why you came to India",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks why the user came onto the app, but the translation incorrectly translates this as coming to India."
+    },
+    {
+      "reference_text": "వీడియో కాల్స్ అయితే కాయిన్స్ ఎక్కువ అవుతాయి, ఆడియో కాల్స్ అయితే కాయిన్స్ తక్కువ అవుతాయి",
+      "translation_text": "if you break it into pieces, the coins will be more, if you break it into pieces, the coins will be less",
+      "category": "other_meaning_change",
+      "word_count_affected": 11,
+      "explanation": "The reference mentions video calls costing more coins and audio calls costing fewer coins, which is completely mistranslated as breaking things into pieces."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:02",
+      "type": "money_or_payment",
+      "reference_text": "ఎవరికీ ఫోన్ పేలు అవి చేయకండి అంటున్నాను, ఏమైనా ఉంటే యాప్ లోనే మాట్లాడుకోండి అంటున్నాను",
+      "translation_text": "don't do PhonePe or anything like that to anyone. If there is anything, talk within the app.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:10",
+      "type": "move_off_app",
+      "reference_text": "పర్సనల్ నెంబర్స్ ఎవరికీ షేర్ చేయకండి అంటున్నాను మీ పర్సనల్",
+      "translation_text": "I'm saying don't share personal numbers with anyone. Don't give your personal phone numbers",
+      "status": "preserved"
+    },
+    {
+      "t": "02:16",
+      "type": "money_or_payment",
+      "reference_text": "మళ్ళీ డబ్బులు అడుగుతారు, అలాంటివి ఎంకరేజ్ చేయకండి అంటున్నాను",
+      "translation_text": "some people ask for money, don't encourage such things.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the overall intent and tone of the call, including safety warnings about sharing personal numbers and sending money, though it contains a few mistranslations regarding app features like video/audio calls."
+}

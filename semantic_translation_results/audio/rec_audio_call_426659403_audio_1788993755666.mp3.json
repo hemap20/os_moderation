@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_audio_call_426659403_audio_1788993755666.mp3",
+  "language": "kannada",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 46,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.2391,
+  "seconds": 4.5,
+  "discrepancies": [
+    {
+      "reference_text": "ಏನ್ ಮಾಡ್ತಿದ್ದೀಯಾ?",
+      "translation_text": "Are you there?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'What are you doing?' but the translation says 'Are you there?'."
+    },
+    {
+      "reference_text": "ಯಾರೂ ಕೂಡ ಮಾತಾಡ್ತಿದ್ದೀನಿ",
+      "translation_text": "I am also here.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I am talking to someone' or 'talking with someone', whereas the translation says 'I am also here'."
+    },
+    {
+      "reference_text": "ವಾಟ್ಸಪ್ ಅಲ್ಲಿ",
+      "translation_text": "Yes.",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The reference explicitly mentions 'On WhatsApp' which is translated simply as 'Yes'."
+    },
+    {
+      "reference_text": "ಎಂತ ಫ್ರೀ ಆಗಿ ಮಾತಾಡ್ತೀಯಾ",
+      "translation_text": "When are you free to talk?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks 'Will you talk for free?' but the translation asks 'When are you free to talk?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:25",
+      "type": "move_off_app",
+      "reference_text": "ಓಕೆ ನಂಬರ್ ಅಲ್ಲಿ ಮಾತಾಡುವ",
+      "translation_text": "Okay, shall we talk on the number?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:27",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್ ಅಲ್ಲಿ",
+      "translation_text": "Yes.",
+      "status": "missing"
+    },
+    {
+      "t": "00:30",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಮಾತಾಡೋಣ ಅಂದೆ",
+      "translation_text": "Shall we talk on WhatsApp?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:43",
+      "type": "money_or_payment",
+      "reference_text": "ಎಂತ ಫ್ರೀ ಆಗಿ ಮಾತಾಡ್ತೀಯಾ",
+      "translation_text": "When are you free to talk?",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation misses one mention of WhatsApp and completely changes the user's inquiry about talking for free into a question about when they are free."
+}

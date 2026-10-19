@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_default_426667318_audio_1788995960432.mp3",
+  "language": "malayalam",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 90,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.1,
+  "seconds": 3.5,
+  "discrepancies": [
+    {
+      "reference_text": "എന്റെ പേര് അഞ്ജലി ഞാൻ തൃശ്ശൂർ",
+      "translation_text": "[unclear]",
+      "category": "key_content_missing",
+      "word_count_affected": 5,
+      "explanation": "The speaker's name (Anjali) and location (Thrissur) are completely missing from the translation."
+    },
+    {
+      "reference_text": "ഓപ്പൺ ചെയ്യുമോ",
+      "translation_text": "open pant [unclear]",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The translation incorrectly translates 'open' as 'open pant' which introduces a different meaning."
+    },
+    {
+      "reference_text": "സീറ്റ് ചെയ്യുമോ",
+      "translation_text": "Will you cheat?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The Malayalam word 'സീറ്റ്' (seat/show) is mistranslated as 'cheat'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:10",
+      "type": "move_off_app",
+      "reference_text": "വാട്സാപ്പ് നമ്പർ തരുമോ",
+      "translation_text": "Will you give me your WhatsApp number?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:18",
+      "type": "move_off_app",
+      "reference_text": "93 45 777 532",
+      "translation_text": "Nine three four five four five triple seven triple seven five three two five three two",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the main flow of the conversation, including the exchange of a WhatsApp number, but contains several mistranslations and missing details such as the female speaker's name and location."
+}

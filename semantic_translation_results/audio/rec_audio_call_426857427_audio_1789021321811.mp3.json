@@ -1,0 +1,44 @@
+{
+  "file_id": "rec_audio_call_426857427_audio_1789021321811.mp3",
+  "language": "kannada",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 1095,
+  "affected_word_count": 36,
+  "semantic_error_rate": 0.0329,
+  "seconds": 4.2,
+  "discrepancies": [
+    {
+      "reference_text": "ಯಾವ ಊರು? ಬೆಂಗಳೂರು, ನಿಮ್ದು? ನಂದು ಬೆಂಗಳೂರು",
+      "translation_text": "Where are you? I am in Mysore. You are in Mysore? Yes, I am. Where are you? Bangalore, what about you? I am in Bangalore too.",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The translation introduces a non-existent conversation about Mysore, which is not present in the reference."
+    },
+    {
+      "reference_text": "ಮತ್ತೆ ಟಿಫನ್ ಆಯ್ತಾ? ಇಲ್ಲ ಟಿಫನ್ ಆಯ್ತು, ಕೆಲಸ ಎಲ್ಲಾ ಆಯ್ತು, ನಿಮ್ದು ಆಯ್ತಾ?",
+      "translation_text": "Is your shift over? Work is not over yet, it's done for me. Is yours done?",
+      "category": "other_meaning_change",
+      "word_count_affected": 11,
+      "explanation": "The reference asks about breakfast (tiffin), but the translation incorrectly translates this as 'shift' and 'work'."
+    },
+    {
+      "reference_text": "ಮತ್ತೆ ಇಲ್ಲಿ ಯಾಕೆ ಬಂದಿದ್ದೀರಾ, ನೀವು ವೈಫ್ ಜೊತೆನ ಬಂದಿದ್ದೀರಾ?",
+      "translation_text": "Why are you asking? You are still young.",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference asks if the speaker came with his wife, but the translation completely changes this to 'Why are you asking? You are still young.'"
+    },
+    {
+      "reference_text": "ಇವತ್ತು ಬೇಕಷ್ಟೇ ನಂಗೆ ಅದೆಲ್ಲ ಗೊತ್ತಿಲ್ಲ ಇವತ್ತು ಬೇಕಷ್ಟೇ ಅಂತಾರೆ",
+      "translation_text": "Today is a holiday, I don't know anything, today is a holiday, they say.",
+      "category": "other_meaning_change",
+      "word_count_affected": 10,
+      "explanation": "The reference says they demand 'I need it today, I don't know about all that', but the translation incorrectly says 'Today is a holiday'."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate regarding the general flow of the conversation, but it introduces several incorrect details, such as mentioning Mysore and mistranslating discussions about breakfast and work demands."
+}

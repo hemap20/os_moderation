@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_426594432_audio_1788984607250.mp3",
+  "language": "kannada",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 16,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.5625,
+  "seconds": 4.3,
+  "discrepancies": [
+    {
+      "reference_text": "ಇಲ್ಲ ಪರವಾಗಿಲ್ಲ ಇಷ್ಟೇ ಸಾಕು",
+      "translation_text": "no",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The phrase meaning 'No, it's okay, this is enough' is mostly missing, translated only as 'no'."
+    },
+    {
+      "reference_text": "ವಿಡಿಯೋ ತೋರ್ಸು",
+      "translation_text": "your offer is not audible",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The request to 'show video' is incorrectly translated as 'your offer is not audible'."
+    },
+    {
+      "reference_text": "ವಾಟ್ಸಪ್ ಗೆ ಬರ್ತ್ಯಾ",
+      "translation_text": "WhatsApp WhatsApp paper tea",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The question asking to come to WhatsApp is translated as gibberish ('paper tea')."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:04",
+      "type": "sexual_or_explicit",
+      "reference_text": "ತೋರ್ಸು",
+      "translation_text": "Show",
+      "status": "preserved"
+    },
+    {
+      "t": "00:06",
+      "type": "sexual_or_explicit",
+      "reference_text": "ತೋರ್ಸು",
+      "translation_text": "Show",
+      "status": "preserved"
+    },
+    {
+      "t": "00:13",
+      "type": "sexual_or_explicit",
+      "reference_text": "ವಿಡಿಯೋ ತೋರ್ಸು",
+      "translation_text": "your offer is not audible",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:15",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್",
+      "translation_text": "WhatsApp WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "00:17",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್ ಗೆ ಬರ್ತ್ಯಾ",
+      "translation_text": "paper tea",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "no",
+  "summary": "The translation fails to accurately convey the user's requests to show video and to move to WhatsApp, rendering them as nonsensical phrases."
+}

@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_audio_call_425679391_audio_1788897730000.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 130,
+  "affected_word_count": 14,
+  "semantic_error_rate": 0.1077,
+  "seconds": 4.4,
+  "discrepancies": [
+    {
+      "reference_text": "मुझे तो नहीं आता वीडियो कॉल करने का",
+      "translation_text": "I don't have a reason to video call.",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'I don't know how to video call' but the translation says 'I don't have a reason to video call'."
+    },
+    {
+      "reference_text": "नीचे क्या चूत है और क्या",
+      "translation_text": "What bottom, what are you saying?",
+      "category": "tone_softened",
+      "word_count_affected": 6,
+      "explanation": "The explicit Hindi word for vagina ('चूत') is completely omitted and softened to 'what are you saying'."
+    },
+    {
+      "reference_text": "दिखाएंगे",
+      "translation_text": "What are you saying?",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'I will show' but the translation says 'What are you saying?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:55",
+      "type": "sexual_or_explicit",
+      "reference_text": "वीडियो कॉल बात करेगी",
+      "translation_text": "Will you do a video call?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:15",
+      "type": "sexual_or_explicit",
+      "reference_text": "दिखाओगे",
+      "translation_text": "Will you show me?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:31",
+      "type": "sexual_or_explicit",
+      "reference_text": "नीचे वाला दिखाओगे",
+      "translation_text": "Will you show me the bottom part?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:38",
+      "type": "sexual_or_explicit",
+      "reference_text": "नीचे क्या चूत है और क्या",
+      "translation_text": "What bottom, what are you saying?",
+      "status": "softened"
+    },
+    {
+      "t": "02:20",
+      "type": "move_off_app",
+      "reference_text": "व्हाट्सएप पे करते हैं",
+      "translation_text": "Shall we do it on WhatsApp?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:27",
+      "type": "move_off_app",
+      "reference_text": "व्हाट्सएप पे दिखाओ",
+      "translation_text": "Show me on WhatsApp.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate but softens the highly explicit sexual term 'चूत' (vagina) to 'what are you saying', though the overall intent to move to WhatsApp for a sexual video call is preserved."
+}

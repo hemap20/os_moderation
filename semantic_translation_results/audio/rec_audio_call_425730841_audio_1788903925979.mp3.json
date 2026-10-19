@@ -1,0 +1,38 @@
+{
+  "file_id": "rec_audio_call_425730841_audio_1788903925979.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 38,
+  "affected_word_count": 4,
+  "semantic_error_rate": 0.1053,
+  "seconds": 2.5,
+  "discrepancies": [
+    {
+      "reference_text": "नहीं कर लेते ना",
+      "translation_text": "No, I don't do that.",
+      "category": "intent_changed",
+      "word_count_affected": 4,
+      "explanation": "The reference is a persuasive request to do it anyway, whereas the translation is a refusal."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:10",
+      "type": "move_off_app",
+      "reference_text": "व्हाट्सएप वीडियो कॉलिंग करते हैं आप?",
+      "translation_text": "Do you do WhatsApp video calling?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:20",
+      "type": "sexual_or_explicit",
+      "reference_text": "हम उस पर सर्विस देते हैं फुल बॉडी का",
+      "translation_text": "We provide service for full body on that.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate, but it incorrectly translates a persuasive request to do a WhatsApp call as a refusal."
+}

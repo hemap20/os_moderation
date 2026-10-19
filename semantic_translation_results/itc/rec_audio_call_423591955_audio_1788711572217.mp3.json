@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_audio_call_423591955_audio_1788711572217.mp3",
+  "language": "hindi",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 111,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.1171,
+  "seconds": 3.2,
+  "discrepancies": [
+    {
+      "reference_text": "मैं तो हाउसवाइफ हूं",
+      "translation_text": "So you are a housewife",
+      "category": "intent_changed",
+      "word_count_affected": 4,
+      "explanation": "The reference is a first-person statement ('I am a housewife'), but the translation turns it into a question/statement about the other person ('So you are a housewife')."
+    },
+    {
+      "reference_text": "पति क्या करते हैं आपके?",
+      "translation_text": "do you know what they do",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks what her husband does, but the translation asks if she knows what they do."
+    },
+    {
+      "reference_text": "मैंने इंटर की है",
+      "translation_text": "[unclear]",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The speaker's response about completing intermediate education is missing and marked as unclear in the translation."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:12",
+      "type": "sexual_or_explicit",
+      "reference_text": "बाकी आप गर्लफ्रेंड बनना चाहेंगी मेरी?",
+      "translation_text": "besides would you like to be my girlfriend",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation generally preserves the flow of the conversation, but it misattributes a first-person statement about being a housewife to the other speaker and fails to translate the final response about education."
+}

@@ -1,0 +1,94 @@
+{
+  "file_id": "rec_default_426363836_audio_1788970922202.mp3",
+  "language": "telugu",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 65,
+  "affected_word_count": 18,
+  "semantic_error_rate": 0.2769,
+  "seconds": 5.9,
+  "discrepancies": [
+    {
+      "reference_text": "ఇంకేం చూద్దాం?",
+      "translation_text": "Is it available?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'What else shall we see?' but the translation asks if something is available."
+    },
+    {
+      "reference_text": "ఇప్పుడు ఏం చూద్దాం?",
+      "translation_text": "Yes, it is available.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'What shall we see now?' but the translation says 'Yes, it is available.'"
+    },
+    {
+      "reference_text": "చేసినావా సెర్చ్?",
+      "translation_text": "Did you take the size?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Did you search?' but the translation asks about taking the size."
+    },
+    {
+      "reference_text": "ఆ ట్యాగ్ ఏమైతది?",
+      "translation_text": "Okay, then fine.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'What happens to that tag?' but the translation says 'Okay, then fine.'"
+    },
+    {
+      "reference_text": "నీకు కాల్ ఇంట్రెస్ట్ ఉందా నీకు?",
+      "translation_text": "Are you interested in it?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference asks 'Are you interested in a call?' but the translation asks 'Are you interested in it?'"
+    },
+    {
+      "reference_text": "మరి కమ్మ",
+      "translation_text": "Manikonda.",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions 'Khammam' (or 'Kamma'), but the translation incorrectly translates it as 'Manikonda'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:06",
+      "type": "move_off_app",
+      "reference_text": "నా నెంబర్ తీసుకో",
+      "translation_text": "Take my number.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:11",
+      "type": "move_off_app",
+      "reference_text": "స్నాప్ ఉందా మరి?",
+      "translation_text": "Do you have Snapchat?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:17",
+      "type": "move_off_app",
+      "reference_text": "నెంబర్ తీసుకో 630",
+      "translation_text": "Take my number. 630",
+      "status": "preserved"
+    },
+    {
+      "t": "01:31",
+      "type": "move_off_app",
+      "reference_text": "630 28 77 180",
+      "translation_text": "630 28 77 180",
+      "status": "preserved"
+    },
+    {
+      "t": "01:55",
+      "type": "move_off_app",
+      "reference_text": "హాయ్ అని పెట్టు వాట్సాప్ లో",
+      "translation_text": "Say hi on WhatsApp.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation contains several minor meaning errors in the beginning, but successfully preserves the critical policy-violating moments where the speakers exchange a phone number and agree to connect on WhatsApp."
+}

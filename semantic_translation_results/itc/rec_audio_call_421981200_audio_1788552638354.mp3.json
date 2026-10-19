@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_audio_call_421981200_audio_1788552638354.mp3",
+  "language": "hindi",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 96,
+  "affected_word_count": 10,
+  "semantic_error_rate": 0.1042,
+  "seconds": 3.8,
+  "discrepancies": [
+    {
+      "reference_text": "पैसे के लिए आप बात करते हो",
+      "translation_text": "Do you talk on this app without money?",
+      "category": "negation_flipped",
+      "word_count_affected": 6,
+      "explanation": "The reference asks if she talks for money, but the translation flips this to 'without money'."
+    },
+    {
+      "reference_text": "एक घंटा बात करेंगे",
+      "translation_text": "Will you talk dirty?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'will talk for an hour', but the translation changes this to 'talk dirty'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:35",
+      "type": "money_or_payment",
+      "reference_text": "पैसे के लिए आप बात करते हो",
+      "translation_text": "Do you talk on this app without money?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:41",
+      "type": "money_or_payment",
+      "reference_text": "डायरेक्ट पेमेंट करूं तो",
+      "translation_text": "If I make a direct payment, then what",
+      "status": "preserved"
+    },
+    {
+      "t": "00:49",
+      "type": "money_or_payment",
+      "reference_text": "आपको पेटीएम कर दूं डायरेक्ट तो",
+      "translation_text": "do you [want] Paytm?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:00",
+      "type": "money_or_payment",
+      "reference_text": "अभी पेटीएम कर दूं डायरेक्ट फिर बात करोगे उस पर",
+      "translation_text": "Should I Paytm directly now, then will you talk on that?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:05",
+      "type": "money_or_payment",
+      "reference_text": "हां अभी पैसा डालना पड़ेगा",
+      "translation_text": "Yes, you will have to put money now",
+      "status": "preserved"
+    },
+    {
+      "t": "01:10",
+      "type": "money_or_payment",
+      "reference_text": "हां पैसा डालने का बाद",
+      "translation_text": "Yes, after putting money",
+      "status": "preserved"
+    },
+    {
+      "t": "01:14",
+      "type": "money_or_payment",
+      "reference_text": "कितना पैसा",
+      "translation_text": "how much money?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:16",
+      "type": "money_or_payment",
+      "reference_text": "1000 करेगा",
+      "translation_text": "Will you do one thousand?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the overall negotiation about direct Paytm payments and video calls, but introduces errors by flipping a question about money and mistranslating 'one hour' as 'talk dirty'."
+}

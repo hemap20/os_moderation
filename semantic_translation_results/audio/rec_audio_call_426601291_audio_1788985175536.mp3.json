@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_audio_call_426601291_audio_1788985175536.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 63,
+  "affected_word_count": 10,
+  "semantic_error_rate": 0.1587,
+  "seconds": 5.6,
+  "discrepancies": [
+    {
+      "reference_text": "நான் கயல்விழி பேசுறேன்",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The speaker introducing herself as Kayalvizhi is completely missing from the translation."
+    },
+    {
+      "reference_text": "நான் வந்துட்டு ஓகே, நான் வொர்க் பண்றேன், நீங்க?",
+      "translation_text": "I am doing okay, what about you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The speaker says she is working, but the translation says she is doing okay."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:14",
+      "type": "sexual_or_explicit",
+      "reference_text": "இந்த ஆப் ஏதாவது வீடியோ கால்ல ஏதாவது இன்ட்ரஸ்ட் இருக்கா?",
+      "translation_text": "Is there any interest in the app or video call?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:21",
+      "type": "move_off_app",
+      "reference_text": "வாட்ஸ்அப் வீடியோ கால்",
+      "translation_text": "WhatsApp video call?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:23",
+      "type": "money_or_payment",
+      "reference_text": "கொஞ்சம் முன்னாடி ஒரு ஆள் வந்து என்ன ஒரு 300 ஏமாத்தி போயிட்டாங்க",
+      "translation_text": "A little while ago, someone came and took 300 rupees and left.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key policy moments regarding WhatsApp video calls and money, though it misses the speaker's name and misinterprets her statement about working."
+}

@@ -1,0 +1,145 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Constraints:**
+    *   **Role:** Content policy analyst reviewing audio from Indian languages.
+    *   **Context:** App called "Friends" (user pays expert). Calls can be audio/video.
+    *   **Output Goal:** Find every possible violation, using specific categories (PlatformMove, SuspiciousActivity, Explicit-Flirting).
+    *   **Strict Rules:**
+        *   Output only quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, filler words, etc.).
+        *   Category 'f' must be exactly one of: PlatformMove, SuspiciousActivity, Explicit-Flirting.
+        *   Use the provided JSON schema exactly.
+        *   Confidence scores (0.9 strong, 0.6 weaker, 0.3 about a violation).
+        *   Check for warnings/refusals/questions -> "violation": "no", confidence <= 0.3.
+        *   Quotes must be exact, with real timestamps.
+        *   Max 20 flags.
+
+2.  **Analyze the Transcript (Segment by Segment):**
+
+    *   [00:00] हलो हलो हाँ सर हाँ हाँ बिहार यस (Greeting/small talk) -> Allowed/Ignore.
+    *   [00:10] क्या करता है वो यस मैं बस घर ही में रहती हूँ हाउस वाइफ हैज़ अ सुपर अच्छा काम है वो और क्या चाहिए (Small talk about job/life) -> Allowed/Ignore.
+    *   [00:20] आप पहली बार आए हो इस ऐप पे दसवीं बार आया हूँ हाँ टेंथ टाइम ओके तब (Context setting) -> Allowed/Ignore.
+    *   [00:30] तो काफ़ी लड़कियों से बातें की होगी ये है ना झूठ थोड़ी बोलेंगे हाँ झूठ नहीं बोलेंगे किए हैं हाँ बोले ना झूठ नहीं (General conversation about lying) -> Allowed/Ignore.
+    *   [00:40] नहीं बोलता जो भी है वो बोल लेता मैं ऐसा कुछ नहीं वही तो झूठ बोलने से क्या फायदा है कि नहीं झूठ नहीं बोलते और क्या चाहिए उसमें क्या ओ फ़िल्म शो देखा आपने (Small talk/question) -> Allowed/Ignore.
+    *   [00:50] नहीं दिखाया कोई आप दिखाओगे नहीं दिखाया किसी ने ना क्यों (Question about showing something) -> Allowed/Ignore.
+    *   [01:00] नहीं पूछा मैं आप ओपनली बात किए इसलिए बोला कि मैं नहीं पूछा आप दिखाए तो मैं देख लेता खुशी से नहीं नहीं मगर इसलिए पूछा ना कि इस पर लोग देख (Context about why they are talking) -> Allowed/Ignore.
+    *   [01:10] देखने ही आते हैं बोलते हैं दिखाओ इसपे लोग देखने ही आते हैं बोलते हैं दिखाओ तो दिखाओ ना फिर (General discussion about viewing) -> Allowed/Ignore.
+    *   [01:20] हम भी देख लेते हैं क्या दिखता है बातें करने आए हो ना नहीं देखने भी आए आप जो बोले जब बातें करने आया था जब आपसे बात किया तो देखने (General discussion) -> Allowed/Ignore.
+    *   [01:30] ओके तो देखो डियर दिखा तो दूँगी बट मुझे क्या मिलेगा ये बताओ क्या चाहिए बताओ (Transition to service/request) -> Allowed/Ignore.
+    *   [01:40] मैं इस पर तो दिखाऊँगी दिखाऊँगी क्यों नहीं दिखाऊँगी बट मैं व्हाट्सएप पर अच्छे से शो करती हूँ क्योंकि इस पर ब्लर हो जाती है ना नीचे कैमरा करूँ (Discussing method/platform) -> Potential PlatformMove.
+    *   [01:50] ना तो ब्लर हो जाएगी ओ सुपर ऊपर का तो देखा यहाँ अच्छा (Continuing discussion about viewing) -> Allowed/Ignore.
+    *   [02:00] दिखा दूँगी थैंक यू वेरी मच अरे ना हाँ दे दूँगा यार कितना चाहिए उतना दे दूँगा लेकिन वहाँ पैसे देके (Discussing payment) -> Potential SuspiciousActivity.
+    *   [02:10] मांग मांग के भागना नहीं बस नहीं नहीं नहीं मैं ऐसा नहीं करती मैं आपको इस पर भी दिखा दे रही हूँ व्हाट्सएप पर भी दिखा दूँगी बट इस पर पूरा नहीं दिख (Reassurance about showing via WhatsApp) -> Potential PlatformMove.
+    *   [02:20] नीचे कैमरा करोगे ना तो ब्लर हो जाएगा नीचे नहीं ऊपर का तो बॉम्बे तो दिखाओ आप क्या ऊपर का दिखाओ गौरी ऊपर का दिख सकता है (Specific request for content) -> Explicit-Flirting/PlatformMove.
+    *   [02:30] अरे वाह नमस्ते यार नमस्ते बब्बे आपके (Greeting) -> Allowed/Ignore.
+    *   [02:40] अब तो आ जाओ व्हाट्सएप पर यकीन हो गया ना मैं दिखाती हूँ कितना पैसा चाहिए ऐसे तो देखो मैं वन थाउजेंड लेती हूँ तुम बताओ कितना दोगे दो सौ (Negotiating price) -> SuspiciousActivity.
+    *   [02:50] इतना फ़ार नहीं है वन थाउज़ेंड पर तो ओरिजिनल मिलता है यहाँ बैंगलोर में वो तो मुझे पता है देखो फाइव हंड्रेड में (Negotiating price) -> SuspiciousActivity.
+    *   [03:00] ओपन शो का लेती हूँ और कपल सेक्स लाइफ सेक्स का वन थाउजेंड लेती हूँ (Stating prices for explicit content) -> SuspiciousActivity.
+
+3.  **Draft Flags and Apply Rules:**
+
+    *   *Focus on explicit content requests, payment demands, and moving off-platform.*
+
+    *   **Flag 1 (01:40):** Discussing showing content via WhatsApp (PlatformMove).
+    *   **Flag 2 (02:00):** Discussing payment ("कितना चाहिए उतना दे दूँगा लेकिन वहाँ पैसे देके").
+    *   **Flag 3 (02:10):** Reassurance about showing via WhatsApp (PlatformMove).
+    *   **Flag 4 (02:20):** Specific request for content ("ऊपर का दिखाओ गौरी ऊपर का दिख सकता है").
+    *   **Flag 5 (02:40):** Negotiating price ("मैं वन थाउजेंड लेती हूँ तुम बताओ कितना दोगे दो सौ").
+    *   **Flag 6 (02:50):** Negotiating price ("फाइव हंड्रेड में ओपन शो का लेती हूँ और कपल सेक्स लाइफ सेक्स का वन थाउजेंड लेती हूँ").
+
+4.  **Final Review against Constraints:**
+    *   All quotes are exact.
+    *   Categories are strictly PlatformMove, SuspiciousActivity, or Explicit-Flirting.
+    *   Contexts are provided.
+    *   Speech acts are direct (for violations).
+    *   Confidence scores are assigned based on strength.
+
+5.  **Construct JSON Output.** (Self-Correction: Ensure the language is exactly as transcribed and the JSON structure is perfect.)<channel|>```json
+{"d": [
+  {
+    "t": "01:40",
+    "seg": "मैं इस पर तो दिखाऊँगी दिखाऊँगी क्यों नहीं दिखाऊँगी बट मैं व्हाट्सएप पर अच्छे से शो करती हूँ क्योंकि इस पर ब्लर हो जाती है ना नीचे कैमरा करूँ",
+    "tr": "I will show it, I will show it, why not show it, but I show it well on WhatsApp because it gets blurred on the bottom camera.",
+    "f": "PlatformMove",
+    "spk": "expert",
+    "ctx": "The expert is discussing how they will show the content, mentioning that it gets blurred on the camera if shown directly, and suggests using WhatsApp.",
+    "speech_act": "direct",
+    "j": "The speaker proposes using WhatsApp to share the content, which is a hint at moving the interaction outside the current app.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "02:00",
+    "seg": "दिखा दूँगी थैंक यू वेरी मच अरे ना हाँ दे दूँगा यार कितना चाहिए उतना दे दूँगा लेकिन वहाँ पैसे देके",
+    "tr": "I will show it, thank you very much. Oh yes, I will give it, man, I will give as much as you want, but by paying there.",
+    "f": "SuspiciousActivity",
+    "spk": "expert",
+    "ctx": "The expert agrees to show the content but immediately links the service to a demand for payment.",
+    "speech_act": "direct",
+    "j": "The speaker explicitly links the service to a demand for money ('paying there'), which is a strong indicator of SuspiciousActivity.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "02:10",
+    "seg": "मांग मांग के भागना नहीं बस नहीं नहीं नहीं मैं ऐसा नहीं करती मैं आपको इस पर भी दिखा दे रही हूँ व्हाट्सएप पर भी दिखा दूँगी बट इस पर पूरा नहीं दिख",
+    "tr": "Don't run away by asking for money, no, no, no, I don't do that. I am showing it to you on this too, I will show it on WhatsApp too, but not completely.",
+    "f": "PlatformMove",
+    "spk": "expert",
+    "ctx": "The expert is reassuring the user that they will still show the content via WhatsApp, although not fully.",
+    "speech_act": "direct",
+    "j": "The speaker reiterates the plan to use WhatsApp for sharing, reinforcing the intent to move the interaction off-platform.",
+    "violation": "yes",
+    "c": 0.6
+  },
+  {
+    "t": "02:20",
+    "seg": "नीचे कैमरा करोगे ना तो ब्लर हो जाएगा नीचे नहीं ऊपर का तो बॉम्बे तो दिखाओ आप क्या ऊपर का दिखाओ गौरी ऊपर का दिख सकता है",
+    "tr": "If you use the bottom camera, it will get blurred. Not the bottom, the top one. So show Bombay, what is the top one, show the top one, can Gauri be seen on top?",
+    "f": "Explicit-Flirting",
+    "spk": "user",
+    "ctx": "The user is making a specific request for the expert to show a particular part of the body/location, focusing on the 'top' part.",
+    "speech_act": "direct",
+    "j": "The request is specific and focuses on showing a particular body part ('ऊपर का'), fitting the criteria for Explicit-Flirting.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "02:40",
+    "seg": "अब तो आ जाओ व्हाट्सएप पर यकीन हो गया ना मैं दिखाती हूँ कितना पैसा चाहिए ऐसे तो देखो मैं वन थाउजेंड लेती हूँ तुम बताओ कितना दोगे दो सौ",
+    "tr": "Now come on WhatsApp, you are convinced, right? I will show you how much money is needed. Look, I take one thousand, you tell me how much you will give, two hundred.",
+    "f": "SuspiciousActivity",
+    "spk": "expert",
+    "ctx": "The expert is negotiating the price for the service, stating their rate and asking the user for their offer.",
+    "speech_act": "direct",
+    "j": "The speaker is directly negotiating the price for the service, which falls under SuspiciousActivity.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "02:50",
+    "seg": "इतना फ़ार नहीं है वन थाउज़ेंड पर तो ओरिजिनल मिलता है यहाँ बैंगलोर में वो तो मुझे पता है देखो फाइव हंड्रेड में",
+    "tr": "It is not that far, for one thousand you get the original, in Bangalore, I know that. Look, for five hundred.",
+    "f": "SuspiciousActivity",
+    "spk": "expert",
+    "ctx": "The expert is further negotiating the price, offering a lower rate for the service.",
+    "speech_act": "direct",
+    "j": "The speaker continues the negotiation of the price for the service, confirming the SuspiciousActivity flag.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "03:00",
+    "seg": "ओपन शो का लेती हूँ और कपल सेक्स लाइफ सेक्स का वन थाउजेंड लेती हूँ",
+    "tr": "I take one thousand for an open show and one thousand for couple sex life, sex.",
+    "f": "SuspiciousActivity",
+    "spk": "expert",
+    "ctx": "The expert explicitly states the prices for explicit content and sexual services.",
+    "speech_act": "direct",
+    "j": "The speaker explicitly names prices for explicit and sexual content, which is a strong case for SuspiciousActivity.",
+    "violation": "yes",
+    "c": 0.9
+  }
+]}
+```<turn|>

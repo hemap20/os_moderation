@@ -1,0 +1,108 @@
+{
+  "file_id": "rec_audio_call_427000661_audio_1789031852494.mp3",
+  "language": "malayalam",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 647,
+  "affected_word_count": 21,
+  "semantic_error_rate": 0.0325,
+  "seconds": 7.1,
+  "discrepancies": [
+    {
+      "reference_text": "ഞാൻ അക്കൗണ്ടന്റ് ആയിട്ട് വർക്ക് ചെയ്യുക",
+      "translation_text": "I work in [unclear]",
+      "category": "key_content_missing",
+      "word_count_affected": 5,
+      "explanation": "The translation misses that the speaker works as an accountant."
+    },
+    {
+      "reference_text": "ആ കണ്ണൂർ അല്ല പറക്കോട്",
+      "translation_text": "Not that church, Parakkadavu",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation incorrectly translates 'Parakkode' (a place name) as 'Parakkadavu' and introduces 'church' which is not in the reference."
+    },
+    {
+      "reference_text": "ഒരാഴ്ച ലീവ് ആയിരുന്നു",
+      "translation_text": "on leave for a day",
+      "category": "number_or_id_altered",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'on leave for a week' (or 'one week'), but the translation says 'a day'."
+    },
+    {
+      "reference_text": "ഇൻസ്റ്റയിൽ മെസ്സേജ് അയച്ചാൽ നമുക്ക് ബെനഫിറ്റ് കിട്ടുമല്ലോ",
+      "translation_text": "If we explain on Insta, we won't get any benefit, right?",
+      "category": "negation_flipped",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'we will get benefit if we message on Insta', but the translation flips this to 'we won't get any benefit'."
+    },
+    {
+      "reference_text": "ഞാൻ വാട്സാപ്പിൽ",
+      "translation_text": "Then I will [unclear]",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The translation misses the mention of WhatsApp at the very end of the call."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "04:45",
+      "type": "move_off_app",
+      "reference_text": "മെസ്സേജ് പിന്നെ ഇൻസ്റ്റയിൽ ഒക്കെ വഴി ഒക്കെ നമുക്ക് അയക്കാം",
+      "translation_text": "Messages, maybe through Instagram or something.",
+      "status": "preserved"
+    },
+    {
+      "t": "04:50",
+      "type": "move_off_app",
+      "reference_text": "ഇൻസ്റ്റയിൽ മെസ്സേജ് അയച്ചാൽ നമുക്ക് ബെനഫിറ്റ് കിട്ടുമല്ലോ",
+      "translation_text": "If we explain on Insta, we won't get any benefit, right?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "07:01",
+      "type": "money_or_payment",
+      "reference_text": "എനിക്ക് എത്ര പൈസയാണ് ഇതിൽ റീചാർജ് ചെയ്യേണ്ടത്",
+      "translation_text": "How much money do you need to recharge this?",
+      "status": "preserved"
+    },
+    {
+      "t": "07:09",
+      "type": "money_or_payment",
+      "reference_text": "റീചാർജ് ഇന്ന് ഒരു 300 350 ചെയ്തിട്ടുണ്ടാവും",
+      "translation_text": "I must have charged it for three hundred or three hundred and fifty rupees.",
+      "status": "preserved"
+    },
+    {
+      "t": "07:32",
+      "type": "money_or_payment",
+      "reference_text": "അപ്പൊ ഇനി പുതിയ റീചാർജ് ചെയ്യണം",
+      "translation_text": "So then a new one... Need to recharge.",
+      "status": "preserved"
+    },
+    {
+      "t": "08:03",
+      "type": "money_or_payment",
+      "reference_text": "മെസ്സേജ് ഇത് ചാർജ് ചെയ്യാൻ വരുന്ന മെസ്സേജ് ആണ്",
+      "translation_text": "Message, this is a message saying to charge.",
+      "status": "preserved"
+    },
+    {
+      "t": "08:09",
+      "type": "money_or_payment",
+      "reference_text": "ഇത് റീചാർജ് ചെയ്യാൻ പെയ്മെന്റ് ചെയ്യാൻ പറഞ്ഞ മെസ്സേജ് ആണ്",
+      "translation_text": "This is to recharge, to make a payment, do you understand?",
+      "status": "preserved"
+    },
+    {
+      "t": "08:54",
+      "type": "move_off_app",
+      "reference_text": "ഞാൻ വാട്സാപ്പിൽ",
+      "translation_text": "Then I will [unclear]",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate but misses key off-app platform references, including a crucial mention of WhatsApp at the very end of the call."
+}

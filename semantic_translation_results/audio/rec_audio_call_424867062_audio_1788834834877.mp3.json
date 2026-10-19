@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_audio_call_424867062_audio_1788834834877.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 181,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.0718,
+  "seconds": 4.0,
+  "discrepancies": [
+    {
+      "reference_text": "डिटिशियन हूं",
+      "translation_text": "Beautician.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'dietician' (डिटिशियन) but the translation says 'beautician'."
+    },
+    {
+      "reference_text": "एज कितना है आपका",
+      "translation_text": "What is your bra size?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks for age, but the translation incorrectly translates it as asking for bra size."
+    },
+    {
+      "reference_text": "बारात लेके आओ",
+      "translation_text": "Bring your bra.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'bring the wedding procession' (बारात लेके आओ), which is mistranslated as 'bring your bra'."
+    },
+    {
+      "reference_text": "बारात बैंड बाजा",
+      "translation_text": "Bra, band, baja.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'wedding procession, band, music' (बारात बैंड बाजा), which is mistranslated as 'bra, band, baja'."
+    },
+    {
+      "reference_text": "सेट",
+      "translation_text": "sex.",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'set' (सेट), which is mistranslated as 'sex'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:11",
+      "type": "sexual_or_explicit",
+      "reference_text": "जैसे प्यार सेट",
+      "translation_text": "Like, love, sex.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "02:25",
+      "type": "sexual_or_explicit",
+      "reference_text": "अच्छा ब्रा का साइज कितना है आपका",
+      "translation_text": "So what is your bra size?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several major errors, repeatedly mistranslating words like 'baraat' (wedding procession) and 'age' as 'bra', and 'set' as 'sex', which artificially introduces explicit content earlier in the call than it actually occurs."
+}

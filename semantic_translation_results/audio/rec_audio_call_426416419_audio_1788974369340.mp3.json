@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_audio_call_426416419_audio_1788974369340.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 88,
+  "affected_word_count": 8,
+  "semantic_error_rate": 0.0909,
+  "seconds": 4.8,
+  "discrepancies": [
+    {
+      "reference_text": "முலை புண்டையெல்லாம் காட்டுவேன்",
+      "translation_text": "I will show you everything, front and back.",
+      "category": "tone_softened",
+      "word_count_affected": 3,
+      "explanation": "The highly explicit Tamil words for breasts and vagina were softened to 'everything, front and back'."
+    },
+    {
+      "reference_text": "முலை புண்டையெல்லாம் காட்டுவேன்",
+      "translation_text": "I will show you everything, front and back.",
+      "category": "tone_softened",
+      "word_count_affected": 3,
+      "explanation": "The highly explicit Tamil words for breasts and vagina were softened to 'everything, front and back' on repetition."
+    },
+    {
+      "reference_text": "போன் செஸ்ஸாவா?",
+      "translation_text": "Is it this one?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks about phone sex ('போன் செஸ்ஸாவா?'), which is mistranslated as 'Is it this one?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:24",
+      "type": "move_off_app",
+      "reference_text": "인ஸ்டா வரீங்களா? நீங்க வீடியோ காலோ",
+      "translation_text": "Will you come on Insta for a video call?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:30",
+      "type": "sexual_or_explicit",
+      "reference_text": "முலை புண்டையெல்லாம் காட்டுவேன்",
+      "translation_text": "I will show you everything, front and back.",
+      "status": "softened"
+    },
+    {
+      "t": "00:37",
+      "type": "sexual_or_explicit",
+      "reference_text": "முலை புண்டையெல்லாம் காட்டுவேன்",
+      "translation_text": "I will show you everything, front and back.",
+      "status": "softened"
+    },
+    {
+      "t": "00:41",
+      "type": "money_or_payment",
+      "reference_text": "எவ்ளோ தருவீங்க?",
+      "translation_text": "How much will you give?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:57",
+      "type": "money_or_payment",
+      "reference_text": "நான் 300 கேப்பேன்",
+      "translation_text": "I ask for 300.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:07",
+      "type": "move_off_app",
+      "reference_text": "인ஸ்டா ஐடி சொல்லவா?",
+      "translation_text": "Tell me your Insta ID.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:37",
+      "type": "sexual_or_explicit",
+      "reference_text": "போன் செஸ்ஸாவா?",
+      "translation_text": "Is it this one?",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation softens highly explicit sexual terms to 'front and back' and completely misses a reference to phone sex at the end, though the transaction and off-app details are mostly preserved."
+}

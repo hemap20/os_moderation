@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_audio_call_426665213_audio_1788995377531.mp3",
+  "language": "telugu",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 143,
+  "affected_word_count": 19,
+  "semantic_error_rate": 0.1329,
+  "seconds": 5.8,
+  "discrepancies": [
+    {
+      "reference_text": "ప్రెజెంట్ అయితే ఖాళీగానే ఉన్నాను, జాబ్ కోసం చూస్తున్నాను.",
+      "translation_text": "I am doing a job, what about you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference says they are currently free and looking for a job, but the translation says they are doing a job."
+    },
+    {
+      "reference_text": "నేనైతే బిజీ, అమౌంట్ పంపిస్తే మీకు కాల్స్ వచ్చేసి 30 టు 40 మినిట్స్ ఉంటుంది.",
+      "translation_text": "If you pay the amount, I will give you my call details, it will be 300 to 400 rupees.",
+      "category": "number_or_id_altered",
+      "word_count_affected": 11,
+      "explanation": "The reference mentions a call duration of 30 to 40 minutes, which the translation incorrectly changes to 300 to 400 rupees."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:43",
+      "type": "move_off_app",
+      "reference_text": "నాకు ఏదైనా ఓకే, కాకపోతే నేను ప్రాపర్లీ వాట్సాప్ వీడియో కాల్స్ అటెండ్ అవుతా.",
+      "translation_text": "If you are okay, we can do a WhatsApp video call, are you okay?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:51",
+      "type": "move_off_app",
+      "reference_text": "వాట్సాప్ వీడియో కాల్స్ అటెండ్ అవుతాను, ఇంట్రెస్ట్ ఉందా మరి నీకు ఏమైనా అంటున్నా.",
+      "translation_text": "I am asking if you are interested in a WhatsApp video call, are you?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:58",
+      "type": "money_or_payment",
+      "reference_text": "నేనైతే బిజీ, అమౌంట్ పంపిస్తే మీకు కాల్స్ వచ్చేసి 30 టు 40 మినిట్స్ ఉంటుంది.",
+      "translation_text": "If you pay the amount, I will give you my call details, it will be 300 to 400 rupees.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:33",
+      "type": "move_off_app",
+      "reference_text": "ఆ, సరే అయితే వాట్సాప్ వీడియో కాల్ అటెండ్ అవ్వండి, ఒకవేళ మీకు ఓకే అనిపిస్తే, నేను డైరెక్ట్ మీ గురించి మాట్లాడుకుందాం, ఒకవేళ మీకు ఏమంటారు, ప్రెజెంట్ మీతో మీట్ అవ్వాలి కదా.",
+      "translation_text": "Yes, let's do a WhatsApp video call, if you are okay with me, then we can talk about meeting.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:33",
+      "type": "meeting_in_person",
+      "reference_text": "ఆ, సరే అయితే వాట్సాప్ వీడియో కాల్ అటెండ్ అవ్వండి, ఒకవేళ మీకు ఓకే అనిపిస్తే, నేను డైరెక్ట్ మీ గురించి మాట్లాడుకుందాం, ఒకవేళ మీకు ఏమంటారు, ప్రెజెంట్ మీతో మీట్ అవ్వాలి కదా.",
+      "translation_text": "Yes, let's do a WhatsApp video call, if you are okay with me, then we can talk about meeting.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the overall intent and tone of the call, including the policy-relevant mentions of WhatsApp video calls, payments, and meeting in person, though it alters a duration of 30-40 minutes into a price of 300-400 rupees."
+}

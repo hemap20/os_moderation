@@ -1,0 +1,48 @@
+{
+  "file_id": "rec_audio_call_426127729_audio_1788949472560.mp3",
+  "language": "telugu",
+  "gt_flag_count": 1,
+  "model_flag_count": 1,
+  "flag_tp": 1,
+  "flag_fn": 0,
+  "flag_fp": 0,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "If you PhonePe 300, I will give you my number, right?",
+      "timestamp": "00:32",
+      "excerpt": "ఒక 300 ఫోన్ పే చేస్తానంటే నెంబర్ ఇస్తా కదా మరి",
+      "confidence": 0.9,
+      "matched": true,
+      "matched_model_category": "SuspiciousActivity"
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "SuspiciousActivity",
+      "translation": "Yes, if one person pays two or three hundred for PhonePe, I will give the number, but no, mom.",
+      "timestamp": "00:30",
+      "excerpt": "యా అయ్యారు ఒకరు రెండు మూడు వందలు ఫోన్పే చేస్తానంటే నెంబర్ ఇస్తాగా మరి వద్దులే అమ్మ",
+      "model_confidence": 0.6,
+      "logprob_derived_confidence": 0.891371499294257,
+      "entropy_mean": 5.9953067512241234e-05,
+      "neg_entropy": -5.9953067512241234e-05,
+      "model_speech_act": "denial",
+      "model_quote_type": null,
+      "model_violation": "no",
+      "p_violation_yes": 6.092758470188601e-10,
+      "model_speaker": "user",
+      "model_context": "The user is discussing payment for a service and offering to provide a number if a payment is made. The expert seems to be declining this offer.",
+      "matched": true,
+      "matched_gt_category": "PlatformMove",
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": [
+        "speech_act_cap"
+      ]
+    }
+  ]
+}

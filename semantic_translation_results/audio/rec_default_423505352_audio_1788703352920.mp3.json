@@ -1,0 +1,108 @@
+{
+  "file_id": "rec_default_423505352_audio_1788703352920.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 179,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.0615,
+  "seconds": 4.8,
+  "discrepancies": [
+    {
+      "reference_text": "നാട്ടില്",
+      "translation_text": "Where in Bangalore?",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference asks about their native place ('നാട്ടില്'), but the translation asks 'Where in Bangalore?'."
+    },
+    {
+      "reference_text": "നാട്ടില് കോട്ടയം",
+      "translation_text": "In Bangalore, Kothanur.",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Kottayam' (a district in Kerala), but the translation changes it to 'Kothanur' in Bangalore."
+    },
+    {
+      "reference_text": "കളിയൊക്കെ നടക്കാറുണ്ടോ?",
+      "translation_text": "Do you have games often?",
+      "category": "tone_softened",
+      "word_count_affected": 2,
+      "explanation": "The Malayalam slang 'കളി' (play/game) refers to having sex, which is translated literally as 'games'."
+    },
+    {
+      "reference_text": "ഞാൻ അങ്ങനെ ശമ ഉണ്ടാകത്തില്ലല്ലോ അല്ലേ",
+      "translation_text": "You don't have much time, right?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'I won't have that much peace/satisfaction, right?', which is mistranslated as 'You don't have much time, right?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:26",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഓപ്പൺ ആക്കി എടുക്കൂ",
+      "translation_text": "Can you open the camera?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:33",
+      "type": "sexual_or_explicit",
+      "reference_text": "കാണിക്കൂ",
+      "translation_text": "Can you show me?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:27",
+      "type": "sexual_or_explicit",
+      "reference_text": "മറ്റേത് കൂടെ",
+      "translation_text": "Put the other one there too.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:38",
+      "type": "move_off_app",
+      "reference_text": "നമ്പർ ഷെയർ ചെയ്യണോ?",
+      "translation_text": "Will you share your number?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:44",
+      "type": "move_off_app",
+      "reference_text": "ഇല്ലടാ ഞാൻ സ്നാപ്ചാറ്റ് കൊടുക്കാം",
+      "translation_text": "No, I will give you my Snapchat.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:48",
+      "type": "move_off_app",
+      "reference_text": "സ്നാപ്ചാറ്റ് ഉണ്ടോ?",
+      "translation_text": "Do you have Snapchat?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:50",
+      "type": "move_off_app",
+      "reference_text": "അതിലൂടെ വിളിച്ചാലോ",
+      "translation_text": "Call me on that.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:54",
+      "type": "money_or_payment",
+      "reference_text": "അല്ലടാ എനിക്ക് എന്തെങ്കിലും കിട്ടും അതിനകത്ത് എനിക്ക് ഒന്നും കിട്ടത്തില്ല",
+      "translation_text": "I don't think I will get anything, I won't get anything there.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:20",
+      "type": "sexual_or_explicit",
+      "reference_text": "കളിയൊക്കെ നടക്കാറുണ്ടോ?",
+      "translation_text": "Do you have games often?",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate but softens sexual slang ('കളി' meaning sex is translated literally as 'games') and alters geographical names (Kottayam becomes Kothanur)."
+}

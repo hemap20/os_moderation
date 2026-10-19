@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_default_423324272_audio_1788687697269.mp3",
+  "language": "kannada",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 266,
+  "affected_word_count": 30,
+  "semantic_error_rate": 0.1128,
+  "seconds": 4.8,
+  "discrepancies": [
+    {
+      "reference_text": "ಏನ್ ಲಿಂದ",
+      "translation_text": "Are you Linda?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'From where?' (ಏನ್ ಲಿಂದ / ಎಲ್ಲಿಂದ), which is mistranslated as asking if the person is 'Linda'."
+    },
+    {
+      "reference_text": "ಏನ್ ಲಿಂದ ಯೂಸ್ ಮಾಡ್ತಿದ್ದೀರಾ",
+      "translation_text": "Are you using Linda?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks 'From where are you using [the app]?', which is mistranslated as 'Are you using Linda?'."
+    },
+    {
+      "reference_text": "ಯಾವಾಗಿಂದ ಯೂಸ್ ಮಾಡ್ತಿದ್ದೀರಾ",
+      "translation_text": "Why are you using Linda?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'Since when are you using [it]?', which is mistranslated as 'Why are you using Linda?'."
+    },
+    {
+      "reference_text": "ಗರ್ಲ್ ಫ್ರೆಂಡ್ ಇದ್ದಾರ",
+      "translation_text": "Are you a girlfriend?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'Do you have a girlfriend?', which is mistranslated as 'Are you a girlfriend?'."
+    },
+    {
+      "reference_text": "ಊಟ ಮಾಡ್ತಿದ್ದೀರಾ",
+      "translation_text": "What are you doing?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Are you eating dinner?', which is mistranslated as 'What are you doing?'."
+    },
+    {
+      "reference_text": "ಐಟಿ ಸೆಲ್ ಅಲ್ಲಿ ವರ್ಕ್ ಮಾಡ್ತೀನಿ",
+      "translation_text": "I work in an insurance company.",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'I work in an IT cell', which is mistranslated as working in an insurance company."
+    },
+    {
+      "reference_text": "ಈಗ್ಲೇ ಬೇಡ ಅಪ್ಪ ಮದುವೆ ಎಲ್ಲಾ",
+      "translation_text": "Not now, dad, not married yet.",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference uses 'appa' as a casual exclamation ('Oh man, no marriage right now'), which is mistranslated literally as addressing 'dad'."
+    },
+    {
+      "reference_text": "ಹೋಯ್ತು ಹೋಯ್ತು ಬಿಜಿ ಆಯ್ತಾರೆ",
+      "translation_text": "Okay, okay, I'm busy.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'They go, they go, they get busy', which is mistranslated as 'I'm busy'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:09",
+      "type": "sexual_or_explicit",
+      "reference_text": "ಓಕೆ ಈ ಆಪ್ ಅಲ್ಲಿ ಫಿಸಿಕಲ್ ರಿಲೇಷನ್ ಶಿಪ್ ಇರ್ತಾರೆ ಫ್ರೆಂಡ್ಸ್ ಇರ್ತಾರೆ",
+      "translation_text": "Okay, on this app, there are physical relationships, friends, etc.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:14",
+      "type": "meeting_in_person",
+      "reference_text": "ಸೋ ಮೀಟ್ ಮಾಡ್ತಾರೆ ಆ ತರ",
+      "translation_text": "So, they do meet up, like that.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the overall tone and intent of the call, including policy-relevant mentions of physical relationships and meeting up, but contains several mistranslations of basic conversational phrases (such as misinterpreting 'from where' as 'Linda' and 'IT cell' as 'insurance company')."
+}

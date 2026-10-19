@@ -1,0 +1,51 @@
+{
+  "file_id": "rec_default_427037139_audio_1789034210020.mp3",
+  "language": "malayalam",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 43,
+  "affected_word_count": 12,
+  "semantic_error_rate": 0.2791,
+  "seconds": 3.7,
+  "discrepancies": [
+    {
+      "reference_text": "ബാംഗ്ലൂർ",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 1,
+      "explanation": "The translation misses the caller's response 'Bangalore' at 00:07."
+    },
+    {
+      "reference_text": "ഒന്ന് നാട്",
+      "translation_text": "Kunnamnad",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'one's hometown' (ഒന്ന് നാട്) which is mistranslated as a place name 'Kunnamnad'."
+    },
+    {
+      "reference_text": "ഞാൻ കോഴിക്കോട്ടാണ്",
+      "translation_text": "I have reached Kozhikode",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'I am in Kozhikode' rather than 'I have reached Kozhikode'."
+    },
+    {
+      "reference_text": "അവർക്ക് എത്ര വയസ്സുണ്ട്",
+      "translation_text": "how old are you",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'how old are they (the children)' but the translation asks 'how old are you'."
+    },
+    {
+      "reference_text": "എന്തിനാണെന്നുള്ള ചോദ്യത്തിന് പ്രസക്തിയുണ്ടോ",
+      "translation_text": "Is there fame for the question of why",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The word 'relevance' (പ്രസക്തി) is mistranslated as 'fame'."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several meaning changes and mistranslations, such as translating 'relevance' as 'fame' and misinterpreting a question about children's ages as being about the listener's age."
+}

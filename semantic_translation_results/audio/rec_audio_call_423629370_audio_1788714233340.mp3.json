@@ -1,0 +1,94 @@
+{
+  "file_id": "rec_audio_call_423629370_audio_1788714233340.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 1609,
+  "affected_word_count": 40,
+  "semantic_error_rate": 0.0249,
+  "seconds": 6.4,
+  "discrepancies": [
+    {
+      "reference_text": "बहुत से चूतियों का भला हो जाता",
+      "translation_text": "Many idiots get lucky.",
+      "category": "tone_softened",
+      "word_count_affected": 6,
+      "explanation": "The vulgar term 'चूतियों' (fools/idiots, but highly vulgar) is softened to 'idiots'."
+    },
+    {
+      "reference_text": "सिर्फ एक ही चीज को ढूंढती है वो है जिस्म",
+      "translation_text": "only after one thing, the one they love.",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference explicitly mentions 'जिस्म' (body/physical body), which is mistranslated as 'the one they love'."
+    },
+    {
+      "reference_text": "मैं तो आज मैं पड़ी लिखी नहीं हूं छोकरों पर गिर रही हूं",
+      "translation_text": "I am uneducated, I am dependent on my husband.",
+      "category": "other_meaning_change",
+      "word_count_affected": 12,
+      "explanation": "The reference says she is falling/dependent on young boys/strangers ('छोकरों पर गिर रही हूं'), but the translation says she is dependent on her husband."
+    },
+    {
+      "reference_text": "बच्चे करने कब आ जाओगे?",
+      "translation_text": "Now when will you have kids?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks 'when will you come to make babies/have kids?' ('बच्चे करने कब आ जाओगे?'), which implies coming to her physically, but the translation translates it generally as 'when will you have kids?'."
+    },
+    {
+      "reference_text": "बच्चे करने का टाइम नहीं मेरे पास होता है",
+      "translation_text": "I don't have kids, I have two.",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference says 'I don't have time to make babies', which is mistranslated as 'I don't have kids, I have two'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "08:34",
+      "type": "move_off_app",
+      "reference_text": "आप Instagram यूज करते हो?",
+      "translation_text": "Do you use Instagram?",
+      "status": "preserved"
+    },
+    {
+      "t": "09:28",
+      "type": "money_or_payment",
+      "reference_text": "मेरी थोड़ी मजबूरी है कि मैं इस ऐप पे आई हूं... मैं आई हूं सिर्फ अर्निंग के लिए",
+      "translation_text": "I have some compulsions, that's why I am on this app... only for earnings.",
+      "status": "preserved"
+    },
+    {
+      "t": "09:37",
+      "type": "move_off_app",
+      "reference_text": "अब मैं इसमें नंबर दे दूं या किसी को आईडी दे दूं तो उसमें नुकसान तो मेरा ही है ना",
+      "translation_text": "Now if I give my number or ID to someone, then the loss is mine, right?",
+      "status": "preserved"
+    },
+    {
+      "t": "09:55",
+      "type": "move_off_app",
+      "reference_text": "उस अर्निंग की जरूरत ही नहीं पड़ेगी आप मुझे नंबर दे दोगी तो मैं आपको अपना बना लूंगा ना",
+      "translation_text": "You won't need that earning, if you give me your number, I will make you my own.",
+      "status": "preserved"
+    },
+    {
+      "t": "10:08",
+      "type": "money_or_payment",
+      "reference_text": "तो मेरा खर्चा पानी कौन उठाएगा कहां से लाऊंगी मैं खर्चा पानी?",
+      "translation_text": "So who will pay for my expenses? Where will I get the money from?",
+      "status": "preserved"
+    },
+    {
+      "t": "13:29",
+      "type": "sexual_or_explicit",
+      "reference_text": "अब बच्चे करने कब आ जाओगे?",
+      "translation_text": "Now when will you have kids?",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate but softens vulgar terms and slightly alters sexual/physical references regarding 'body' and 'making babies'."
+}

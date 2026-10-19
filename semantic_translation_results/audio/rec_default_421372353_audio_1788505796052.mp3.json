@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_421372353_audio_1788505796052.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 1080,
+  "affected_word_count": 36,
+  "semantic_error_rate": 0.0333,
+  "seconds": 5.1,
+  "discrepancies": [
+    {
+      "reference_text": "வீடியோ ஆன் பண்ணிட்டு பேசுங்க",
+      "translation_text": "The video is on, right?",
+      "category": "intent_changed",
+      "word_count_affected": 4,
+      "explanation": "The reference is a request to turn on the video, whereas the translation translates it as a statement/question asking if the video is on."
+    },
+    {
+      "reference_text": "என்னங்க இந்த டிவில எல்லாம் இன்டர்வியூ எடுப்பாங்களா அந்த மாதிரி உட்கார்ந்து இருக்கீங்க",
+      "translation_text": "You are sitting like they take interviews on TV.",
+      "category": "other_meaning_change",
+      "word_count_affected": 10,
+      "explanation": "The reference is a question asking if they take interviews on TV, but the translation turns it into a statement."
+    },
+    {
+      "reference_text": "சொல்லுங்க உங்களுக்கு என்ன பாட்டு வேணும்",
+      "translation_text": "Tell me, what do you want to see?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks what song they want, but the translation says 'what do you want to see'."
+    },
+    {
+      "reference_text": "ஏதாச்சும் கொஞ்சம் மட்டும் நம்புற மாதிரி சொல்லுங்க",
+      "translation_text": "Tell me something like a number.",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference asks to say something believable, but the translation mistranslates it as 'something like a number'."
+    },
+    {
+      "reference_text": "எனக்கு தூக்கம் வரும்",
+      "translation_text": "Two minutes.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I will fall asleep', but the translation says 'Two minutes'."
+    },
+    {
+      "reference_text": "குக்கர் படுத்துட்டு இருக்கான் ஃபுல்லா ஓபன்ல வச்சுட்டு இருக்கான்",
+      "translation_text": "She put it on the bed. Everything is open.",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference talks about a guy lying down completely exposed, but the translation mistranslates it as 'she put it on the bed'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "10:53",
+      "type": "sexual_or_explicit",
+      "reference_text": "குக்கர் படுத்துட்டு இருக்கான் ஃபுல்லா ஓபன்ல வச்சுட்டு இருக்கான்",
+      "translation_text": "She put it on the bed. Everything is open.",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the friendly, conversational tone, but it mistranslates a key explicit reference to someone lying down exposed on camera."
+}

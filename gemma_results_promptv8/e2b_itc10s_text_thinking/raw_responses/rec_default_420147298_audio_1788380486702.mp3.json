@@ -1,0 +1,106 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Constraints:**
+    *   **Role:** Content policy analyst reviewing audio from Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert). Calls can be audio/video.
+    *   **Output Goal:** Find every possible violation. High confidence is crucial.
+    *   **Categories (f):** Must be exactly one of: **PlatformMove**, **SuspiciousActivity**, **Explicit-Flirting**.
+    *   **Exclusions:** Greetings, small talk, introductions, names, questions about daily life/work/family/location, filler words, call quality, and "Allowed" items.
+    *   **Output Format:** Minified JSON adhering strictly to the provided schema.
+    *   **Key Rules:**
+        *   Strong (0.9), Weaker (0.6), About a Violation (0.3).
+        *   `speech_act` must be "direct" for `violation: yes`.
+        *   Quotes must be exact, with real timestamps.
+        *   No output for allowed content or non-violations.
+
+2.  **Review the Transcript Segment by Segment:**
+
+    *   [00:00] हेलो हेलो वॉइस आ रहा है आ रहा है बोलो (Greeting/Call quality) -> *Allowed/Normal talk.*
+    *   [00:10] हाँ उस टाइम भी वॉइस भी नहीं आ रहा था तुम्हारा हाँ उस टाइम भी झूठ बोले थे तब नहीं आ रहा है अरे सच्ची में कसम वॉइस नहीं आ रहा था तुम्हारा यार झूठ क्यों बोलूँ मैं तो (Small talk/Complaint) -> *Allowed.*
+    *   [00:20] अच्छा कहाँ से हो ऑल द सेम अरे क्या करते हो मैं तो फ़िलहाल बैंक में काम करती हूँ एस बी आई में अच्छा (Location/Job inquiry) -> *Allowed.*
+    *   [00:30] अच्छा यहाँ पर रात भर एस बी आई एम्प्लॉय यहाँ पर रहेंगे तो नेक्स्ट डे इसलिए उनका सर्वर डाउन रहता है और वो आते नहीं हैं क्या (Work/Context) -> *Allowed.*
+    *   [00:40] रात में एस बी आई वाले लोग यहाँ रहेंगे इसलिए अरे इधर तो टाइम पास है यार वैसा कुछ भी नहीं है इधर बस बट टाइम पास है ऐसा कुछ भी नहीं है (Context) -> *Allowed.*
+    *   [00:50] अच्छा क्या नाम है ज़ारा ज़ारा ज़ारा अली खान नॉट खान सैयद (Name inquiry) -> *Allowed.*
+    *   [01:00] और ज़ारा सैयद यस आपके टू थाउज़ेंड कितने की बॉर्न हो टू थाउज़ेंड थ्री अच्छा इसलिए ज़ारा एट द रेट टू थाउज़ेंड (Asking for price/payment context) -> *SuspiciousActivity check.*
+    *   [01:10] थाउजेंड थ्री यस अरे आप तो वैसे बड़े लग रहे हो यार बड़े लग रहे हैं हाँ कैसे पता नहीं मुझे लग रहा हाँ (Compliment/Small talk) -> *Allowed (Compliment).*
+    *   [01:20] पता नहीं यार सबके अपने अपने अंदाज़ होते हैं ना अच्छा एक काम करो बर्तन ही धो लो (Request for chore) -> *Allowed.*
+    *   [01:30] यार क्या करें बताओ घर का काम है ना करना पड़ेगा अब लड़की है तो क्या ऐसे करके क्या ही है काम वाम तो सब करना चाहिए ना अब नहीं करेंगे (General conversation/Domestic talk) -> *Allowed.*
+    *   [01:40] क्या हम भी लड़के तो हम भी तो करते हैं हाँ लड़के को भी करना चाहिए देखो सारा काम आना अच्छा होता है ना अभी तक पता है तुमको डिनर नहीं किए हैं क्यों (General conversation) -> *Allowed.*
+    *   [01:50] क्योंकि आज ना मेरे एक फ्रेंड का बर्थडे था ठीक है तो वो बर्थडे में गई थी उसके बाद फिर आते आते लेट हो गया वहाँ पे मैटर हो गया था (Storytelling) -> *Allowed.*
+    *   [02:00] ठीक है मैटर क्या मारने लग गया था कैट फाइट क्या क्या कैट फाइट होने लग गया था क्या हाँ वैसे ही कुछ मतलब मैटर हो गया था उसके बाद (Storytelling) -> *Allowed.*
+    *   [02:10] पकड़ करके मारा गया कि नहीं मारा गया ये बताओ ऐसे बाल पकड़ कर नहीं नहीं ऐसा वाला कुछ मैटर नहीं हुआ था ठीक है तो उसके बाद हम क्या किए (Storytelling) -> *Allowed.*
+    *   [02:20] तुम आ गए हो जैसे ही तुमने हाथ धोया तो उसमें ना ही तुम्हारा तेज दिख रहा (Observation) -> *Allowed.*
+    *   [02:30] तो उसके बाद क्या आप आ गए और गए मतलब विदा नहीं किए उसके बाद अरे मैरिड हो क्या (Question about marital status) -> *Allowed (Small talk).*
+    *   [02:40] नहीं यार मैरिड क्यों रहेंगे क्यों नहीं रह सकते अभी शादी वादी करके कौन फंसेगा यार ये सब फंदे में तो अभी क्या होता है (General opinion/Discussion) -> *Allowed.*
+    *   [02:50] तो अभी क्या करना है अभी कुछ नहीं करना अभी लाइफ इंजॉय करना है बस ओके कल एस बी आई खुल रहा है कि नहीं खुल रहा है (Context/Future plans) -> *Allowed.*
+    *   [03:00] पहले एस बी आई खुल रहा है कि नहीं खुल रहा है अभी तो ऑफिस नहीं जा रहे एक हफ्ते से क्यों ऐसे ही क्योंकि अभी थोड़ा नानी के घर गए थे उसके बाद फिर घर में (Context) -> *Allowed.*
+    *   [03:10] कुछ कुछ काम था इस कारण सर को बोल दिया अभी ऑफिस नहीं आ सकते वो कहाँ से वो कहाँ से कोलकाता से कोलकाता से ही हो (Location/Work context) -> *Allowed.*
+    *   [03:20] और बीबी का कलकत्ता में रहते हो मतलब घर वालों के साथ रहते हो या फिर अकेले नहीं फैमिली के साथ रहते हैं ना अच्छा इतना चप्पल चप्पल (Location/Family context) -> *Allowed.*
+    *   [03:30] कपड़ कर रहे हो घर पे कोई नहीं है घर पे कोई भी नहीं है अच्छा मैं ही आ जाता हूँ घर पे रहो नहीं आ जाओ कोई बात नहीं (Invitation/Offer) -> *Allowed.*
+    *   [03:40] बिंदास अरे यार वाह ये क्या बिरयानी है क्या आलू वाली बिरयानी कलकत्ता की यार कलकत्ता में आलू वाली बिरयानी नहीं मिलता कोलकाता (Food talk/Location) -> *Allowed.*
+    *   [03:50] में तो आलू वाले ही बिरयानी मिलते हैं ना बिना आलू के बिरयानी नहीं मिलते कोलकाता में तो ये ये क्या है चिकन चिकन (Food talk) -> *Allowed.*
+    *   [04:00] पर एक नहीं एक नहीं खा सकते यार इसलिए इसको हाफ ऑफ करके रख दे रहे हैं बाप रे (Food talk) -> *Allowed.*
+    *   [04:10] क्या चार चम्मच चार चम्मच इस कटोरे से राइस निकाल रहे हो चार चम्मच वहाँ से निकाल रहे हो खाना क्या है वो तो डिसाइड करो यार (General conversation/Instruction) -> *Allowed.*
+    *   [04:20] खाना क्या है तुमको दिखाते हैं रुको खाना क्या है घर पे कोई भी नहीं है अकेली है बस तुम (General conversation) -> *Allowed.*
+    *   [04:30] आ ही आ ही रहा हूँ वेट करो एकदम एकदम फास्ट आओ एकदम रॉकेट में आ जाओ तो बस (Invitation/Instruction) -> *Allowed.*
+    *   [04:40] अच्छा इस ऐप्स में ना क्या है देखो रात के टाइम में क्या है काम काज को शुरू होने के बाद ना बहुत बोरिंग फील होता है तो इस ऐप्स में क्या है ना थोड़ा बात बात करके अच्छा लगता है (App feature discussion) -> *Allowed.*
+    *   [04:50] ऐसा समझे ओह लाओ अपना इंस्टाग्राम दो वहीं बात करता हूँ यहाँ पे ये फ्रंट कैमरा किधर से होएगा यार फ्रंट कैमरा वो नहीं होता है (PlatformMove attempt) -> *PlatformMove check.*
+    *   [05:00] नहीं होता ना नहीं तुमको ऐसे ही दिखाते देखो घर पे कोई भी नहीं है तुमको दिखाते हैं रुको बस ये देखो (Context) -> *Allowed.*
+    *   [05:10] अच्छा घर पे कोई भी नहीं है देखो पूरा खाली है घर पे मेरा कोई भी नहीं है मैम क्रिसमस ट्री (Context) -> *Allowed.*
+    *   [05:20] अरे शाबाश (Response) -> *Allowed.*
+    *   [05:30] इस गाने पे डांस करके दिखाओ ये गाना अरे यार ये ऐसे ही हम म्यूज़िक लगा के छोड़ दें देखो हाँ इसपे डांस करके दिखाओ (Request for action/dance) -> *Allowed (Not sexual).*
+    *   [05:40] एक गाने में डांस नहीं आता तो क्या आता है कुछ और डांस देखना आता है सुनना आता है (Discussion about skills) -> *Allowed.*
+    *   [05:50] डांस आता है बट क्लब जाते हैं ना जब उस टाइम में डांस कर लेते हैं थोड़ा बॉयफ्रेंड वगैरह नहीं है क्या हाँ बॉयफ्रेंड है ना मेरा हाँ तो (Discussion about social life) -> *Allowed.*
+    *   [06:00] तो फिर यहाँ पे आ रहे हो बेचारे को छोड़ के नहीं नहीं वो बहुत बिज़ी रहता है ना उसका बिज़नेस के कारण वो बहुत बिज़ी रहता है तो उसे (Context) -> *Allowed.*
+    *   [06:10] जी (Response) -> *Allowed.*
+
+3.  **Identify Potential Flags:**
+
+    *   **Candidate 1 (01:00):** "आपके टू थाउज़ेंड कितने की बॉर्न हो टू थाउज़ेंड थ्री" (Asking for price/payment).
+    *   **Candidate 2 (04:50):** "ओह लाओ अपना इंस्टाग्राम दो वहीं बात करता हूँ यहाँ पे ये फ्रंट कैमरा किधर से होएगा यार फ्रंट कैमरा वो नहीं होता है" (Requesting external contact/app).
+
+4.  **Evaluate Candidates against Policy:**
+
+    *   **Candidate 1 (01:00):** "आपके टू थाउज़ेंड कितने की बॉर्न हो टू थाउज़ेंड थ्री"
+        *   Category: SuspiciousActivity (Asking about rate/payment).
+        *   Strength: Weaker case (Asking about a rate/price).
+        *   Violation: No (It's a question about payment, not a direct demand for sexual service payment).
+        *   Confidence: 0.6 (Weaker case).
+
+    *   **Candidate 2 (04:50):** "ओह लाओ अपना इंस्टाग्राम दो वहीं बात करता हूँ यहाँ पे ये फ्रंट कैमरा किधर से होएगा यार फ्रंट कैमरा वो नहीं होता है"
+        *   Category: PlatformMove (Proposing moving to a named external app/asking for means to do so).
+        *   Strength: Strong case (Proposing moving to a named external app: "अपना इंस्टाग्राम दो").
+        *   Violation: Yes (Direct proposal to move contact).
+        *   Confidence: 0.9.
+
+5.  **Finalize JSON Output.** (Only two strong candidates found.)<channel|>```json
+{
+  "d": [
+    {
+      "t": "01:00",
+      "seg": "आपके टू थाउज़ेंड कितने की बॉर्न हो टू थाउज़ेंड थ्री",
+      "tr": "How much is your two thousand born two thousand three?",
+      "f": "SuspiciousActivity",
+      "spk": "user",
+      "ctx": "The user is asking about the price or rate for the service being discussed. The expert does not respond directly to the price inquiry.",
+      "speech_act": "direct",
+      "j": "This is a weaker case as the user is asking about a rate or price in a suggestive context, without explicitly naming a sexual service.",
+      "violation": "no",
+      "c": 0.6
+    },
+    {
+      "t": "04:50",
+      "seg": "ओह लाओ अपना इंस्टाग्राम दो वहीं बात करता हूँ यहाँ पे ये फ्रंट कैमरा किधर से होएगा यार फ्रंट कैमरा वो नहीं होता है",
+      "tr": "Oh, give me your Instagram, I'll talk there. Where is this front camera coming from? That doesn't happen.",
+      "f": "PlatformMove",
+      "spk": "user",
+      "ctx": "The user suggests moving the conversation to an external platform (Instagram) and asks about the technical feasibility of using a front camera.",
+      "speech_act": "direct",
+      "j": "This is a strong case as the user explicitly proposes moving the contact to a named external app (Instagram) and asks for the means to do so.",
+      "violation": "yes",
+      "c": 0.9
+    }
+  ]
+}
+```<turn|>

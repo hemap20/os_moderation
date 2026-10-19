@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426023290_audio_1788941856621.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 37,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.2432,
+  "seconds": 3.7,
+  "discrepancies": [
+    {
+      "reference_text": "சொல்லுங்க",
+      "translation_text": "Hello, how are you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'Tell me' or 'Go ahead', but the translation says 'Hello, how are you?'."
+    },
+    {
+      "reference_text": "சொல்லுங்க நீங்க எங்கிருந்து பேசுறீங்க",
+      "translation_text": "I am fine, where are you calling from?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'Tell me, where are you speaking from?', but the translation adds 'I am fine'."
+    },
+    {
+      "reference_text": "நான் வொர்க் பண்ணிட்டு இருக்கேன்",
+      "translation_text": "I am just going",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'I am working', but the translation says 'I am just going'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:31",
+      "type": "move_off_app",
+      "reference_text": "வாட்ஸ்அப்ல பேசலாமா இன்ட்ரஸ்டடா",
+      "translation_text": "Can we talk on WhatsApp, are you interested?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:34",
+      "type": "money_or_payment",
+      "reference_text": "எவ்வளவு",
+      "translation_text": "How much?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:36",
+      "type": "money_or_payment",
+      "reference_text": "300 ரூபாய்",
+      "translation_text": "300 rupees.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key policy-relevant moments regarding moving to WhatsApp and the payment amount, despite minor translation errors in the general conversation."
+}

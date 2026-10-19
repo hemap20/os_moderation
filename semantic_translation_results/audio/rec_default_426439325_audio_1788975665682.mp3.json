@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_426439325_audio_1788975665682.mp3",
+  "language": "telugu",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 51,
+  "affected_word_count": 8,
+  "semantic_error_rate": 0.1569,
+  "seconds": 3.2,
+  "discrepancies": [
+    {
+      "reference_text": "అన్ మ్యారీడ్",
+      "translation_text": "I am married",
+      "category": "negation_flipped",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'unmarried' but the translation says 'I am married'."
+    },
+    {
+      "reference_text": "రొమాంటిక్ గా రొమాంటిక్ గా కాదా?",
+      "translation_text": "Are you on Zomato or Swiggy?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks about being romantic, but the translation completely changes it to food delivery apps."
+    },
+    {
+      "reference_text": "ఇన్స్టా ఉంది",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The user's confirmation that they have Instagram is missing from the translation."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:15",
+      "type": "sexual_or_explicit",
+      "reference_text": "అన్ మ్యారీడ్, చూస్తున్నా ఫ్రెండ్స్ విత్ బెనిఫిట్స్ కోసం, నువ్వు?",
+      "translation_text": "I am married, I am looking for friends with benefits, are you?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:22",
+      "type": "sexual_or_explicit",
+      "reference_text": "ఫ్రెండ్స్ విత్ బెనిఫిట్స్ కోసం చూస్తున్నావ్ నువ్వు?",
+      "translation_text": "Are you looking for friends with benefits?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:50",
+      "type": "move_off_app",
+      "reference_text": "ఒక్క నిమిషం లైన్ లో ఉండు, ఇన్స్టా ఉందా?",
+      "translation_text": "Wait a minute, are you on Instagram?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:53",
+      "type": "move_off_app",
+      "reference_text": "ఇన్స్టా ఉంది",
+      "translation_text": "",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the explicit 'friends with benefits' references, but flips 'unmarried' to 'married', completely mistranslates a line about romance into food delivery apps, and misses the final confirmation of having Instagram."
+}

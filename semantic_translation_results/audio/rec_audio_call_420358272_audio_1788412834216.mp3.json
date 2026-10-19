@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_audio_call_420358272_audio_1788412834216.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 251,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.0199,
+  "seconds": 3.8,
+  "discrepancies": [
+    {
+      "reference_text": "ஹவுஸ் வைஃபா இருக்கேன்",
+      "translation_text": "I am safe.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The speaker says she is a housewife, but the translation incorrectly translates this as 'I am safe'."
+    },
+    {
+      "reference_text": "காயின் முடிய போகுது",
+      "translation_text": "My call balance is about to end.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The speaker says her coins are about to end, which is translated as call balance."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:10",
+      "type": "sexual_or_explicit",
+      "reference_text": "எல்லாம் செக்சுவல் ஹராஸ்மென்ட் தான்",
+      "translation_text": "It is all sexual harassment.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:41",
+      "type": "sexual_or_explicit",
+      "reference_text": "அப்படியே வராங்களா நீங்க இத பண்ணுவீங்களா அத பண்ணுவீங்களான்னு கேப்பாங்க",
+      "translation_text": "They just come and ask, 'Will you do this? Will you do that?'",
+      "status": "preserved"
+    },
+    {
+      "t": "02:52",
+      "type": "money_or_payment",
+      "reference_text": "எனக்கு காயின் முடிய போகுது",
+      "translation_text": "My call balance is about to end.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is highly accurate, preserving the overall tone and intent of the conversation, with only a minor mistranslation of 'housewife' as 'safe' and 'coins' as 'call balance'."
+}

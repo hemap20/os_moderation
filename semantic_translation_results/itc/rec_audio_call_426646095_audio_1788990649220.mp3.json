@@ -1,0 +1,122 @@
+{
+  "file_id": "rec_audio_call_426646095_audio_1788990649220.mp3",
+  "language": "telugu",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 153,
+  "affected_word_count": 20,
+  "semantic_error_rate": 0.1307,
+  "seconds": 7.9,
+  "discrepancies": [
+    {
+      "reference_text": "ఎంతమంది పిల్లలు అండి మీకు",
+      "translation_text": "How many from Polavaram?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks how many children they have, but the translation incorrectly translates this as 'How many from Polavaram?'."
+    },
+    {
+      "reference_text": "ఎందుకు డివోర్స్ అయింది",
+      "translation_text": "Why did it develop?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks why they got divorced, but the translation mistranslates 'divorce' as 'develop'."
+    },
+    {
+      "reference_text": "అంతా షేర్ చేయలేను నేను",
+      "translation_text": "I didn't share anything.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'I cannot share all that', but the translation says 'I didn't share anything'."
+    },
+    {
+      "reference_text": "మొత్తం చూపిస్తారా",
+      "translation_text": "Should I show everything?",
+      "category": "intent_changed",
+      "word_count_affected": 2,
+      "explanation": "The reference is a question from the male user asking 'Will you show everything?', but the translation turns it into a question from the female speaker 'Should I show everything?'."
+    },
+    {
+      "reference_text": "నెంబర్ చెప్తానండి వాట్సప్ నెంబర్ చెప్తాను",
+      "translation_text": "I will tell you the amount number, I will tell you the WhatsApp number.",
+      "category": "added_content",
+      "word_count_affected": 5,
+      "explanation": "The translation adds the word 'amount' which is not present in the reference text."
+    },
+    {
+      "reference_text": "బ్రా బూబ్స్",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The explicit words 'bra boobs' are completely omitted from the translation."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:20",
+      "type": "sexual_or_explicit",
+      "reference_text": "మీకు న్యూడ్ కాల్ కావాలా",
+      "translation_text": "Do you want a nude call?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:36",
+      "type": "money_or_payment",
+      "reference_text": "మనీ వేస్తేనే కాల్ చేస్తాను లేకపోతే చేయను",
+      "translation_text": "I will call only if you pay money, otherwise I won't.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:41",
+      "type": "money_or_payment",
+      "reference_text": "హాఫ్ ఆన్ అవర్ 500 తీసుకుంటానండి",
+      "translation_text": "I will take 500 for half an hour.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:44",
+      "type": "sexual_or_explicit",
+      "reference_text": "మొత్తం చూపిస్తారా",
+      "translation_text": "Should I show everything?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:47",
+      "type": "sexual_or_explicit",
+      "reference_text": "మొత్తం చూపిస్తానండి మొత్తం చూపియకుండా",
+      "translation_text": "I will show everything, show everything.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:51",
+      "type": "sexual_or_explicit",
+      "reference_text": "విత్ అవుట్ డ్రెస్ కదా",
+      "translation_text": "Without dress, right?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:57",
+      "type": "move_off_app",
+      "reference_text": "ఇదేనా దీనికి ఇవ్వాలా వాట్సప్ నెంబర్",
+      "translation_text": "is this it, what is its name, what's...",
+      "status": "missing"
+    },
+    {
+      "t": "02:04",
+      "type": "move_off_app",
+      "reference_text": "నెంబర్ చెప్తానండి వాట్సప్ నెంబర్ చెప్తాను",
+      "translation_text": "I will tell you the amount number, I will tell you the WhatsApp number.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:07",
+      "type": "sexual_or_explicit",
+      "reference_text": "మీ సైజ్ ఏంటి బ్రా బూబ్స్",
+      "translation_text": "what is your size?",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the main transaction of a paid nude call and moving to WhatsApp, but it misses some explicit terms like 'bra boobs' and contains several mistranslations."
+}

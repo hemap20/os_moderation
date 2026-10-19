@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_427303915_audio_1789058082453.mp3",
+  "language": "tamil",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 59,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.2203,
+  "seconds": 4.9,
+  "discrepancies": [
+    {
+      "reference_text": "சாப்டேன் நீங்க சாப்டீங்களா?",
+      "translation_text": "If I ate, will you show? I mean, ah, I have eaten.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation introduces a question about showing that is not present in the reference text at this timestamp."
+    },
+    {
+      "reference_text": "சிங்கிளா மேரிடா?",
+      "translation_text": "are you easy ma'am?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks if the person is single or married, but the translation asks if she is 'easy'."
+    },
+    {
+      "reference_text": "ஏன் காமிக்கிறீங்களா?",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The reference question asking if she will show is missing from its original position in the conversation."
+    },
+    {
+      "reference_text": "உங்க ஏஜ்?",
+      "translation_text": "This age",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Your age?' whereas the translation says 'This age'."
+    },
+    {
+      "reference_text": "புரியல",
+      "translation_text": "I understand",
+      "category": "negation_flipped",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'I don't understand' (புரியல), but the translation translates it as 'I understand'."
+    },
+    {
+      "reference_text": "ஏதோ காமிக்கிறீங்களான்னு",
+      "translation_text": "No, no.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference repeats the question about showing, but the translation translates it as 'No, no'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:39",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஏன் காமிக்கிறீங்களா?",
+      "translation_text": "",
+      "status": "missing"
+    },
+    {
+      "t": "00:59",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஏதோ காமிக்கிறீங்களான்னு",
+      "translation_text": "No, no.",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "no",
+  "summary": "The translation is highly inaccurate, hallucinating sexualized questions early on, mistranslating basic questions about marital status and age, and completely missing or altering the actual explicit requests to show made by the caller."
+}

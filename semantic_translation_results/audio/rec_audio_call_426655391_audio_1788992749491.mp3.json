@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_audio_call_426655391_audio_1788992749491.mp3",
+  "language": "telugu",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 133,
+  "affected_word_count": 27,
+  "semantic_error_rate": 0.203,
+  "seconds": 4.9,
+  "discrepancies": [
+    {
+      "reference_text": "ఎక్కడ ఉన్నావు?",
+      "translation_text": "Welcome.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Where are you?' but the translation says 'Welcome.'"
+    },
+    {
+      "reference_text": "నేను కూడా ఇక్కడే",
+      "translation_text": "It is in Hyderabad.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I am also here' but the translation says 'It is in Hyderabad.'"
+    },
+    {
+      "reference_text": "ట్రూ కాలర్ లో",
+      "translation_text": "QConnect, no?",
+      "category": "named_entity_altered",
+      "word_count_affected": 3,
+      "explanation": "The reference mentions 'Truecaller' but the translation changes it to 'QConnect'."
+    },
+    {
+      "reference_text": "మరి ఇప్పుడు ఎక్కడ ఉంటున్నావు?",
+      "translation_text": "What?",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The reference asks 'So where are you staying now?' but the translation translates it as 'What?'"
+    },
+    {
+      "reference_text": "పర్సన్ ఏంది ఈ యాప్ లో?",
+      "translation_text": "what is the purpose of this app?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks 'What is the person in this app?' (referring to finding a person) but the translation translates it as 'purpose'."
+    },
+    {
+      "reference_text": "ఎవరైనా పరిచయం అయితే బాగుంటుంది కదా",
+      "translation_text": "Anyone you met, anyone you liked?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'It would be nice if someone gets introduced, right?' but the translation translates it as a question about meeting/liking someone."
+    },
+    {
+      "reference_text": "ఇంట్రెస్ట్ ఉందా మరి ఏమన్నా?",
+      "translation_text": "I have no interest, but is there anyone?",
+      "category": "negation_flipped",
+      "word_count_affected": 4,
+      "explanation": "The reference asks 'Do you have any interest?' but the translation adds a negation 'I have no interest'."
+    },
+    {
+      "reference_text": "ఉంది",
+      "translation_text": "Hmm.",
+      "category": "key_content_missing",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'I have (interest)' but the translation translates it as a filler 'Hmm'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:26",
+      "type": "move_off_app",
+      "reference_text": "ఇన్స్టాగ్రామ్ నంబర్ ఏమన్నా ఇస్తావా మరి?",
+      "translation_text": "Will you give your Instagram number?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation contains several inaccuracies regarding locations, app names, and specific questions, but it successfully preserves the key policy moment where the speaker asks for an Instagram number."
+}

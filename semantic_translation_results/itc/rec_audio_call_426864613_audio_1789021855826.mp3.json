@@ -1,0 +1,44 @@
+{
+  "file_id": "rec_audio_call_426864613_audio_1789021855826.mp3",
+  "language": "kannada",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 144,
+  "affected_word_count": 17,
+  "semantic_error_rate": 0.1181,
+  "seconds": 3.5,
+  "discrepancies": [
+    {
+      "reference_text": "ನಾವ್ ಮಂಗಳೂರು",
+      "translation_text": "Nagamangala, is it?",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions Mangalore (ಮಂಗಳೂರು), but the translation incorrectly translates it as Nagamangala."
+    },
+    {
+      "reference_text": "ನಮ್ದು ಸ್ಟೇಷನರಿ ಶಾಪ್ ಇದೆ",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The speaker's statement that they have a stationery shop is missing from the translation at this timestamp."
+    },
+    {
+      "reference_text": "ಸಿಂಗಲ್ ಆ ಮ್ಯಾರೀಡ್?",
+      "translation_text": "single owner.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The question asking if they are single or married is mistranslated as 'single owner'."
+    },
+    {
+      "reference_text": "ಸಣ್ಣದು ದಿನಸಿ ಸ್ಟೋರಾ? ಅಲ್ಲ ಸ್ಟೇಷನರಿ ಶಾಪ್ ಸಣ್ಣದು",
+      "translation_text": "A small one, is it a grocery store? Or do you mean small in terms of distance?",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference clarifies it is a small stationery shop, but the translation mistranslates this as asking about distance."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the overall tone and intent of a casual conversation, though it contains a few errors regarding locations (Mangalore vs Nagamangala) and specific details about the speaker's shop."
+}

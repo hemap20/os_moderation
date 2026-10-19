@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_audio_call_425730841_audio_1788903925979.mp3",
+  "language": "hindi",
+  "source": "itc_gemma_e2b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 38,
+  "affected_word_count": 7,
+  "semantic_error_rate": 0.1842,
+  "seconds": 9.9,
+  "discrepancies": [
+    {
+      "reference_text": "आ जाओ ना",
+      "translation_text": "you don't come",
+      "category": "negation_flipped",
+      "word_count_affected": 3,
+      "explanation": "The positive invitation to join is translated as a negative statement not to come."
+    },
+    {
+      "reference_text": "नहीं कर लेते ना",
+      "translation_text": "do not do",
+      "category": "negation_flipped",
+      "word_count_affected": 4,
+      "explanation": "The persuasive suggestion to do it is translated as a command or statement not to do it."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:10",
+      "type": "move_off_app",
+      "reference_text": "व्हाट्सएप वीडियो कॉलिंग करते हैं आप?",
+      "translation_text": "let's do WhatsApp video calling",
+      "status": "preserved"
+    },
+    {
+      "t": "00:20",
+      "type": "sexual_or_explicit",
+      "reference_text": "हम उस पर सर्विस देते हैं फुल बॉडी का",
+      "translation_text": "we give service on that full body's",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the key policy elements regarding WhatsApp video calling and full body services, but garbles the persuasive dialogue in the middle by flipping positive invitations into negations."
+}

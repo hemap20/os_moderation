@@ -1,0 +1,30 @@
+{
+  "file_id": "rec_default_427012373_audio_1789032615035.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 37,
+  "affected_word_count": 10,
+  "semantic_error_rate": 0.2703,
+  "seconds": 2.6,
+  "discrepancies": [
+    {
+      "reference_text": "आवाज आ रही है क्या",
+      "translation_text": "I am listening, tell me.",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks 'Is my voice coming through?' but the translation says 'I am listening, tell me' which changes the speaker's statement."
+    },
+    {
+      "reference_text": "आवाज आ रही है क्या",
+      "translation_text": "Tell me what to do.",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks 'Is my voice coming through?' but the translation says 'Tell me what to do'."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation misinterprets the repetitive questions about audio clarity ('Is my voice coming through?') as active conversational responses ('I am listening, tell me' and 'Tell me what to do')."
+}

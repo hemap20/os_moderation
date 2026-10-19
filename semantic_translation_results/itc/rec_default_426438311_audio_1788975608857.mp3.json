@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_default_426438311_audio_1788975608857.mp3",
+  "language": "malayalam",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 303,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.0429,
+  "seconds": 3.5,
+  "discrepancies": [
+    {
+      "reference_text": "ഭാര്യയുടെ നമ്പർ ഒന്ന് തന്നേ",
+      "translation_text": "gave the wife's number, gave it",
+      "category": "intent_changed",
+      "word_count_affected": 5,
+      "explanation": "The reference is a request asking for the wife's number, but the translation incorrectly states that the number was given."
+    },
+    {
+      "reference_text": "ഭാര്യക്ക് അറിയാമോ",
+      "translation_text": "do you know the matter",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks if the wife knows, but the translation translates it as 'do you know the matter'."
+    },
+    {
+      "reference_text": "ഭാര്യയുടെ ഇത് കണ്ടു ചേട്ടൻ അറിയാമോ",
+      "translation_text": "Do you know that the saree has this in hand",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference mentions 'wife's' (bharyayude), which is mistranslated as 'saree' (shari)."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "03:17",
+      "type": "move_off_app",
+      "reference_text": "ഭാര്യയുടെ നമ്പർ ഒന്ന് തന്നേ",
+      "translation_text": "gave the wife's number, gave it",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate but contains some errors, particularly mistranslating a request for a phone number as a statement that the number was already given."
+}

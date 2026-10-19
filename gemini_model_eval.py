@@ -53,10 +53,19 @@ PROMPT_PATH: Path = config.CLASSIFICATION_PROMPT_PATH
 # Reassigned by main() alongside PROMPT_PATH — see gemma_local.py's
 # equivalent global for why this must track the active prompt's schema.
 RAW_SCHEMA_STR = json.dumps(prompt_loader.schema_module_for_prompt(PROMPT_PATH).raw_model_output_json_schema())
+# --transcript-dir: classify a timestamped transcript (e.g. the English
+# translations/audio_gemini31fl/ files) instead of the audio. None = audio.
+TRANSCRIPT_DIR: Optional[Path] = None
+OUTPUT_NAME: Optional[str] = None
+
+
+def load_transcript(file_id: str) -> str:
+    d = json.loads((TRANSCRIPT_DIR / f"{file_id}.json").read_text())
+    return "\n".join(f"[{s['t']}] {s.get('en') or s.get('text', '')}" for s in d.get("segments", []))
 
 
 def output_dir(model: str) -> Path:
-    safe_name = model.replace("/", "_")
+    safe_name = OUTPUT_NAME or model.replace("/", "_")
     return GEMINI_RESULTS_DIR / safe_name
 
 
@@ -64,6 +73,12 @@ def call_classification(client, model: str, record: dsv2.FileRecordV2, logger: S
     prompt_text = prompt_loader.render_prompt(PROMPT_PATH, json_schema_str=RAW_SCHEMA_STR)
 
     def do_call():
+        if TRANSCRIPT_DIR is not None:
+            # Same framing gemma_local_text.py uses for transcript-based runs.
+            transcript_part = (
+                "[TRANSCRIPT OF THE CALL — analyse this text, which is the full "
+                "transcription of the audio, in place of the audio itself]\n\n" + load_transcript(record.file_id))
+            return gemini_client.generate_text(client, model, contents=[prompt_text, transcript_part])
         uploaded = gemini_client.upload_audio(client, record.path)
         return gemini_client.generate_text(client, model, contents=[uploaded, prompt_text])
 
@@ -183,9 +198,14 @@ def main():
     parser.add_argument("--prompt-path", type=str, default=None,
                          help="Alternate prompt file for a prompt experiment, e.g. prompt_v2.py — "
                               "does NOT affect ground truth, which always used prompt.py")
+    parser.add_argument("--transcript-dir", type=str, default=None,
+                         help="Classify transcripts from this folder (<file_id>.json with segments [{t, en|text}]) "
+                              "instead of the audio, e.g. translations/audio_gemini31fl")
+    parser.add_argument("--output-name", type=str, default=None,
+                         help="Results subfolder name (default: the model name); use a distinct one for transcript runs")
     args = parser.parse_args()
 
-    global DATASET_DIR, GEMINI_RESULTS_DIR, PROMPT_PATH, RAW_SCHEMA_STR
+    global DATASET_DIR, GEMINI_RESULTS_DIR, PROMPT_PATH, RAW_SCHEMA_STR, TRANSCRIPT_DIR, OUTPUT_NAME
     paths = config.dataset_paths(args.dataset_root, args.results_tag)
     DATASET_DIR = paths["dataset_dir"]
     GEMINI_RESULTS_DIR = paths["gemini_results_dir"]
@@ -194,7 +214,11 @@ def main():
         PROMPT_PATH = p if p.is_absolute() else config.PROJECT_ROOT / p
     RAW_SCHEMA_STR = json.dumps(prompt_loader.schema_module_for_prompt(PROMPT_PATH).raw_model_output_json_schema())
 
-    logger = StageLogger(f"gemini_model_eval_{args.model.replace('/', '_')}")
+    if args.transcript_dir:
+        t = Path(args.transcript_dir)
+        TRANSCRIPT_DIR = t if t.is_absolute() else config.PROJECT_ROOT / t
+    OUTPUT_NAME = args.output_name
+    logger = StageLogger(f"gemini_model_eval_{OUTPUT_NAME or args.model.replace('/', '_')}")
 
     try:
         prompt_loader.load_raw_prompt(PROMPT_PATH)

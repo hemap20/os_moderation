@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_default_426857244_audio_1789021306090.mp3",
+  "language": "telugu",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 102,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.1471,
+  "seconds": 3.8,
+  "discrepancies": [
+    {
+      "reference_text": "కెనడా నుంచి ఉన్నావా యాప్ కి వచ్చి",
+      "translation_text": "how many days has it been since you joined the app?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference asks if they are on the app from Canada, but the translation asks how many days since they joined."
+    },
+    {
+      "reference_text": "ఏదో రీఛార్జ్ చేశాను కదా అని చేస్తున్నాను",
+      "translation_text": "We did some recharge for you, right? I am doing it",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'I recharged, so I am calling', but the translation says 'We did some recharge for you'."
+    },
+    {
+      "reference_text": "ఎక్కడ అలవాలా",
+      "translation_text": "where should we meet?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Where, Alwal?' (a location in Hyderabad), but the translation incorrectly translates this as 'where should we meet?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:34",
+      "type": "money_or_payment",
+      "reference_text": "ఏదో రీఛార్జ్ చేశాను కదా అని చేస్తున్నాను",
+      "translation_text": "We did some recharge for you, right? I am doing it",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:03",
+      "type": "money_or_payment",
+      "reference_text": "డబ్బులు పోక తప్పితే ఏమీ లేదులే",
+      "translation_text": "Apart from wasting money, there is nothing",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several meaning changes, including misinterpreting a location name as an invitation to meet and altering the context of who did the recharge."
+}

@@ -1,0 +1,129 @@
+{
+  "file_id": "rec_default_426642159_audio_1788989918579.mp3",
+  "language": "telugu",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 146,
+  "affected_word_count": 19,
+  "semantic_error_rate": 0.1301,
+  "seconds": 7.9,
+  "discrepancies": [
+    {
+      "reference_text": "వాట్సాప్ వస్తారా?",
+      "translation_text": "Is it a WhatsApp profile?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Will you come to WhatsApp?' but the translation asks if it is a WhatsApp profile."
+    },
+    {
+      "reference_text": "అంటే కాలే",
+      "translation_text": "do you want me to cook?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'I didn't understand' (slang/mispronounced), but the translation mistranslates it as 'do you want me to cook?'."
+    },
+    {
+      "reference_text": "హాయ్ చెప్పండి",
+      "translation_text": "Tell me the ID",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Say hi' but the translation says 'Tell me the ID'."
+    },
+    {
+      "reference_text": "మీరు ఫోన్ నెంబర్ ఇస్తాను కదా",
+      "translation_text": "will the email or phone number come?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'You will give the phone number, right?' but the translation mentions 'email'."
+    },
+    {
+      "reference_text": "నువ్వు కొట్టు నేను చూపిస్తా",
+      "translation_text": "you pay, I will show",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'You transfer (the money) and I will show' but the translation translates 'కొట్టు' (transfer/send) as 'pay'."
+    },
+    {
+      "reference_text": "నువ్వు కొట్టు చూపిస్తా",
+      "translation_text": "Pay, I will show",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'You transfer (the money) and I will show' but the translation translates 'కొట్టు' as 'Pay'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:36",
+      "type": "move_off_app",
+      "reference_text": "వాట్సాప్ వస్తారా?",
+      "translation_text": "Is it a WhatsApp profile?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:40",
+      "type": "move_off_app",
+      "reference_text": "వాట్సాప్ కి",
+      "translation_text": "WhatsApp me",
+      "status": "preserved"
+    },
+    {
+      "t": "00:46",
+      "type": "move_off_app",
+      "reference_text": "చెప్పండి నెంబర్ చెప్పండి",
+      "translation_text": "Tell me your WhatsApp number",
+      "status": "preserved"
+    },
+    {
+      "t": "00:56",
+      "type": "move_off_app",
+      "reference_text": "వాట్సాప్ కి రమ్మని చెప్తాను",
+      "translation_text": "I will tell you to come to WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "01:00",
+      "type": "move_off_app",
+      "reference_text": "నెంబర్ తీసుకోండి 863",
+      "translation_text": "take the number, eight six three",
+      "status": "preserved"
+    },
+    {
+      "t": "01:11",
+      "type": "move_off_app",
+      "reference_text": "863 964 0057",
+      "translation_text": "Eight six three nine six four double zero five seven",
+      "status": "preserved"
+    },
+    {
+      "t": "02:10",
+      "type": "money_or_payment",
+      "reference_text": "ఫోన్ పే చేయండి",
+      "translation_text": "do PhonePe, do PhonePe",
+      "status": "preserved"
+    },
+    {
+      "t": "02:14",
+      "type": "sexual_or_explicit",
+      "reference_text": "ఫోన్ పే చేయండి షో చేస్తాను",
+      "translation_text": "do PhonePe, I will show",
+      "status": "preserved"
+    },
+    {
+      "t": "02:33",
+      "type": "sexual_or_explicit",
+      "reference_text": "ショー చేస్తాను అంటాను",
+      "translation_text": "I will show",
+      "status": "preserved"
+    },
+    {
+      "t": "02:42",
+      "type": "money_or_payment",
+      "reference_text": "500",
+      "translation_text": "Five hundred",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation contains several minor errors and mistranslations of specific phrases, but successfully preserves the core intent of moving to WhatsApp, exchanging a phone number, and negotiating a payment of 500 rupees for a show."
+}

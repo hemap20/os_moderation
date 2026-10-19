@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_default_426460304_audio_1788976707317.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 59,
+  "affected_word_count": 4,
+  "semantic_error_rate": 0.0678,
+  "seconds": 3.5,
+  "discrepancies": [
+    {
+      "reference_text": "ഇല്ല",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 1,
+      "explanation": "The translation completely omits the response 'No' to the marriage question."
+    },
+    {
+      "reference_text": "എങ്ങനെ എല്ലാം കോളേജ്",
+      "translation_text": "How, is everything open?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference mentions 'college' which is mistranslated as 'open'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:45",
+      "type": "sexual_or_explicit",
+      "reference_text": "എല്ലാം ഓപ്പൺ കോൾ ചെയ്യാറുണ്ടോ ഓപ്പൺ ടോക്ക് ചെയ്യാറുണ്ടോ എന്ന്",
+      "translation_text": "Are you doing open calls or open talk?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:54",
+      "type": "sexual_or_explicit",
+      "reference_text": "ശരിക്കും ചെയ്യാറില്ല എന്തേ",
+      "translation_text": "Really, I am not doing that.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:05",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഞാൻ ഓപ്പൺ",
+      "translation_text": "I am doing open talk.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the overall intent and tone of the conversation, including the explicit 'open talk' references, though it misses one short response and mistranslates 'college' as 'open'."
+}

@@ -1,0 +1,108 @@
+{
+  "file_id": "rec_audio_call_425933838_audio_1788934868635.mp3",
+  "language": "hindi",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 334,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.0269,
+  "seconds": 29.1,
+  "discrepancies": [
+    {
+      "reference_text": "पूरी दूध",
+      "translation_text": "milk etc.",
+      "category": "tone_softened",
+      "word_count_affected": 2,
+      "explanation": "The reference uses 'दूध' (breasts/milk) in a sexual context, which is translated literally as 'milk etc.', softening the explicit anatomical reference."
+    },
+    {
+      "reference_text": "पहले पैसे देना पड़ेगा",
+      "translation_text": "You will have to give oil in the oil",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'first you have to give money', which is mistranslated as 'give oil in the oil'."
+    },
+    {
+      "reference_text": "पानी निकाल दूंगा",
+      "translation_text": "I will take out water",
+      "category": "tone_softened",
+      "word_count_affected": 3,
+      "explanation": "The reference uses a slang term for ejaculation ('पानी निकाल दूंगा'), which is translated literally as 'I will take out water'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:06",
+      "type": "sexual_or_explicit",
+      "reference_text": "सेक्स करने बोल रहा हूँ",
+      "translation_text": "I am asking to have sex",
+      "status": "preserved"
+    },
+    {
+      "t": "01:08",
+      "type": "sexual_or_explicit",
+      "reference_text": "सेक्स करोगे",
+      "translation_text": "will you have sex?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:56",
+      "type": "move_off_app",
+      "reference_text": "नंबर दो ना अपना",
+      "translation_text": "give me your number",
+      "status": "preserved"
+    },
+    {
+      "t": "02:12",
+      "type": "sexual_or_explicit",
+      "reference_text": "वीडियो कॉल करके दिखाना पूरी पूरी दूध",
+      "translation_text": "You will have to show me by video call, milk etc.",
+      "status": "softened"
+    },
+    {
+      "t": "02:14",
+      "type": "money_or_payment",
+      "reference_text": "फिर मैं आपको पैसे भेजते जाऊंगा रोज रोज रोज रोज ठीक है",
+      "translation_text": "and then I will keep sending you money every day, every day, every day, every day, okay",
+      "status": "preserved"
+    },
+    {
+      "t": "02:27",
+      "type": "money_or_payment",
+      "reference_text": "पहले पैसे देना पड़ेगा",
+      "translation_text": "You will have to give oil in the oil",
+      "status": "intent_changed"
+    },
+    {
+      "t": "02:37",
+      "type": "money_or_payment",
+      "reference_text": "आपको रोज दो-दो सौ रुपए डालते जाऊंगा रोज ठीक है रोज मेरे को दिखाते जाना",
+      "translation_text": "I will keep putting two hundred rupees every day, every day, okay you have to keep showing me every day",
+      "status": "preserved"
+    },
+    {
+      "t": "02:47",
+      "type": "money_or_payment",
+      "reference_text": "पहले पहले मुझे ₹300 डाल के दिखाओ",
+      "translation_text": "first show me by putting three hundred rupees",
+      "status": "preserved"
+    },
+    {
+      "t": "02:54",
+      "type": "money_or_payment",
+      "reference_text": "तो मैं आपको दो-दो सौ रुपए डाल दूंगा रोज",
+      "translation_text": "then I will put two hundred rupees for you every day",
+      "status": "preserved"
+    },
+    {
+      "t": "03:54",
+      "type": "sexual_or_explicit",
+      "reference_text": "पानी निकाल दूंगा",
+      "translation_text": "I will take out water",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the overall intent of negotiating a paid video call for sexual exposure, but softens explicit slang terms and contains a mistranslation regarding the initial payment request."
+}

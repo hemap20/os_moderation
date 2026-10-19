@@ -1,0 +1,31 @@
+{
+  "file_id": "rec_default_427012589_audio_1789032630677.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 39,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.1282,
+  "seconds": 2.4,
+  "discrepancies": [
+    {
+      "reference_text": "അതൊക്കെ ഫേസ്ബുക്കിൽ കൂടെയല്ലേ കാണുള്ളൂ",
+      "translation_text": "Only if you turn on the face camera, I will be able to see you.",
+      "category": "named_entity_altered",
+      "word_count_affected": 5,
+      "explanation": "The reference mentions Facebook, but the translation changes it to 'face camera'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:22",
+      "type": "move_off_app",
+      "reference_text": "അതൊക്കെ ഫേസ്ബുക്കിൽ കൂടെയല്ലേ കാണുള്ളൂ",
+      "translation_text": "Only if you turn on the face camera, I will be able to see you.",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate, but it incorrectly translates 'Facebook' as 'face camera', thereby missing a policy-relevant mention of moving off the app."
+}

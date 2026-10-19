@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_audio_call_421223616_audio_1788491953131.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 61,
+  "affected_word_count": 6,
+  "semantic_error_rate": 0.0984,
+  "seconds": 3.2,
+  "discrepancies": [
+    {
+      "reference_text": "எங்கிருந்து கால் பண்ணனும்?",
+      "translation_text": "Why are you calling?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'Where should I call from?' or 'Where do I need to call from?', but the translation says 'Why are you calling?'."
+    },
+    {
+      "reference_text": "அப்புறம் பேசுறதுக்கு தான்",
+      "translation_text": "Is this for talking?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'It is just for talking later', but the translation phrases it as a question 'Is this for talking?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:38",
+      "type": "move_off_app",
+      "reference_text": "ஏதாவது காண்டாக்ட் இருக்கா?",
+      "translation_text": "Do you have any contact?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:42",
+      "type": "move_off_app",
+      "reference_text": "ஒரு ரெண்டு பேரு இன்ஸ்டாகிராம்ல கொடுத்தாங்க",
+      "translation_text": "Two people gave it on Instagram.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is highly accurate overall, with only minor meaning discrepancies in two short conversational lines, while preserving all policy-relevant mentions of off-app contacts."
+}

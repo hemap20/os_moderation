@@ -1,0 +1,157 @@
+{
+  "file_id": "rec_default_426591403_audio_1788984361913.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 51,
+  "affected_word_count": 36,
+  "semantic_error_rate": 0.7059,
+  "seconds": 8.9,
+  "discrepancies": [
+    {
+      "reference_text": "നീ എവിടെയാടാ",
+      "translation_text": "I am waiting.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Where are you?' but the translation says 'I am waiting.'"
+    },
+    {
+      "reference_text": "ഹസ്ബൻഡ് എവിടെയാ",
+      "translation_text": "Husband is not at home.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Where is husband?' but the translation states 'Husband is not at home.'"
+    },
+    {
+      "reference_text": "കളിക്കണ്ട",
+      "translation_text": "Don't call.",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'Don't play' (or don't mess around), which is translated as 'Don't call.'"
+    },
+    {
+      "reference_text": "കളിച്ചാൽ കുത്തുമാലോ",
+      "translation_text": "If you call, it will be a problem.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'If you play, you will get stabbed/poked', which is translated as 'If you call, it will be a problem.'"
+    },
+    {
+      "reference_text": "അവിടെ",
+      "translation_text": "He is at the shop.",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds 'at the shop' which is not in the reference."
+    },
+    {
+      "reference_text": "കാണണ്ട",
+      "translation_text": "Don't call.",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'No need to see' but the translation says 'Don't call.'"
+    },
+    {
+      "reference_text": "ഞാൻ നിന്നെ കളിക്കണ്ടേ",
+      "translation_text": "Should I not call you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'Shouldn't I play with/fuck you?' but the translation changes it to 'Should I not call you?'"
+    },
+    {
+      "reference_text": "ഹസ്ബൻഡ് ഉണ്ടാവുമ്പോൾ ഞാൻ നിന്നെ എങ്ങനെയാ നക്കുന്നത്",
+      "translation_text": "If the husband is there, how can I touch you?",
+      "category": "tone_softened",
+      "word_count_affected": 7,
+      "explanation": "The reference uses the explicit word 'lick' (നക്കുന്നത്) which is softened to 'touch' in the translation."
+    },
+    {
+      "reference_text": "ഹസ്ബൻഡ് നക്കാറില്ല",
+      "translation_text": "Doesn't your husband touch you?",
+      "category": "tone_softened",
+      "word_count_affected": 2,
+      "explanation": "The reference uses 'lick' (നക്കാറില്ല) which is softened to 'touch' in the translation."
+    },
+    {
+      "reference_text": "ഹസ്ബൻഡിനെ അവിടെ കിടത്തി ഞാൻ നിന്നെ കളിക്കട്ടെ",
+      "translation_text": "If I put the husband aside, can I play with you?",
+      "category": "tone_softened",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'Shall I lay your husband there and fuck/play with you?', which is softened in translation."
+    },
+    {
+      "reference_text": "നല്ല മാരകമായി അടിക്കട്ടെ",
+      "translation_text": "Let me play with you properly.",
+      "category": "tone_softened",
+      "word_count_affected": 3,
+      "explanation": "The reference uses highly explicit slang for sexual intercourse ('strike/hit lethally') which is softened to 'play with you properly'."
+    },
+    {
+      "reference_text": "മോലയുണ്ടോ",
+      "translation_text": "Do you have a child?",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference asks 'Do you have breasts?' (മോലയുണ്ടോ) but the translation mistranslates it as 'Do you have a child?'"
+    },
+    {
+      "reference_text": "മോല വലുതാണോ കാണിച്ചേ",
+      "translation_text": "Is the child big? Show me.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks 'Are your breasts big? Show me' but the translation mistranslates 'breasts' as 'child'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:37",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഞാൻ നിന്നെ കളിക്കണ്ടേ",
+      "translation_text": "Should I not call you?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:45",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഹസ്ബൻഡ് ഉണ്ടാവുമ്പോൾ ഞാൻ നിന്നെ എങ്ങനെയാ നക്കുന്നത്",
+      "translation_text": "If the husband is there, how can I touch you?",
+      "status": "softened"
+    },
+    {
+      "t": "00:52",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഹസ്ബൻഡ് നക്കാറില്ല",
+      "translation_text": "Doesn't your husband touch you?",
+      "status": "softened"
+    },
+    {
+      "t": "01:05",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഹസ്ബൻഡിനെ അവിടെ കിടത്തി ഞാൻ നിന്നെ കളിക്കട്ടെ",
+      "translation_text": "If I put the husband aside, can I play with you?",
+      "status": "softened"
+    },
+    {
+      "t": "01:15",
+      "type": "sexual_or_explicit",
+      "reference_text": "നല്ല മാരകമായി അടിക്കട്ടെ",
+      "translation_text": "Let me play with you properly.",
+      "status": "softened"
+    },
+    {
+      "t": "01:30",
+      "type": "sexual_or_explicit",
+      "reference_text": "മോലയുണ്ടോ",
+      "translation_text": "Do you have a child?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:33",
+      "type": "sexual_or_explicit",
+      "reference_text": "മോല വലുതാണോ കാണിച്ചേ",
+      "translation_text": "Is the child big? Show me.",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "no",
+  "summary": "The translation heavily censors and mistranslates highly explicit sexual references (such as 'lick', 'fuck/strike', and 'breasts') into completely non-sexual terms like 'touch', 'call', and 'child'."
+}

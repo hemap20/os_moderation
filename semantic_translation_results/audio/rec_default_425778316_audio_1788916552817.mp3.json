@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_425778316_audio_1788916552817.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 65,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.1385,
+  "seconds": 4.6,
+  "discrepancies": [
+    {
+      "reference_text": "ऑडियो कॉल ओपन call",
+      "translation_text": "A hot video call, open call.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'audio call' but the translation changes it to 'hot video call'."
+    },
+    {
+      "reference_text": "बट विथ पेमेंट",
+      "translation_text": "What about the payment?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference states 'but with payment' as a condition, whereas the translation asks 'What about the payment?'."
+    },
+    {
+      "reference_text": "फुल्ली न्यूड",
+      "translation_text": "For a nude call?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference specifies 'fully nude' but the translation changes it to a question 'For a nude call?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:26",
+      "type": "sexual_or_explicit",
+      "reference_text": "बात करने के लिए और रोमांटिक टॉकिंग के लिए",
+      "translation_text": "To talk and for romantic talking.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:41",
+      "type": "sexual_or_explicit",
+      "reference_text": "न्यूड कॉल्स",
+      "translation_text": "Nude calls?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:45",
+      "type": "money_or_payment",
+      "reference_text": "बट विथ पेमेंट",
+      "translation_text": "What about the payment?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:48",
+      "type": "money_or_payment",
+      "reference_text": "कितना आपका पेमेंट है?",
+      "translation_text": "How much is your payment?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:50",
+      "type": "sexual_or_explicit",
+      "reference_text": "फुल्ली न्यूड",
+      "translation_text": "For a nude call?",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation alters key details of the explicit and financial negotiation, changing 'audio call' to 'hot video call' and softening 'fully nude' to 'for a nude call?'."
+}

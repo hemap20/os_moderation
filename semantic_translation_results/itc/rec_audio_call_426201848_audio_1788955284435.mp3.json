@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_audio_call_426201848_audio_1788955284435.mp3",
+  "language": "hindi",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 176,
+  "affected_word_count": 7,
+  "semantic_error_rate": 0.0398,
+  "seconds": 4.2,
+  "discrepancies": [
+    {
+      "reference_text": "कर्नाटका से हूं आप कहां से",
+      "translation_text": "where did it happen corona virus happened here",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference mentions being from Karnataka, but the translation hallucinated 'corona virus happened here'."
+    },
+    {
+      "reference_text": "जारा जारा",
+      "translation_text": "Sara Zara",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The name 'Zara' is translated as 'Sara Zara'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:34",
+      "type": "move_off_app",
+      "reference_text": "तुम्हारा नंबर मिल जाएगा पर्सनल",
+      "translation_text": "Can I get your personal number",
+      "status": "preserved"
+    },
+    {
+      "t": "00:38",
+      "type": "move_off_app",
+      "reference_text": "आपका पर्सनल नंबर मिल जाएगा मेरे को",
+      "translation_text": "Can I get your personal number",
+      "status": "preserved"
+    },
+    {
+      "t": "00:45",
+      "type": "move_off_app",
+      "reference_text": "क्योंकि मैं पर्सनल नंबर नहीं देती",
+      "translation_text": "because I do not give out my personal number",
+      "status": "preserved"
+    },
+    {
+      "t": "00:55",
+      "type": "move_off_app",
+      "reference_text": "इसी पे ही बात करती हूं मैं पर्सनल नंबर नहीं देती",
+      "translation_text": "I only talk through this I do not give out my personal number",
+      "status": "preserved"
+    },
+    {
+      "t": "01:08",
+      "type": "move_off_app",
+      "reference_text": "परेशानी कुछ नहीं है तुम्हारे पर्सनल नंबर से बहुत ढेर सारी बात",
+      "translation_text": "One should talk a lot from the number",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key policy moments regarding the request for a personal phone number, though it contains a major hallucination about 'corona virus' instead of 'Karnataka'."
+}

@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_default_426076857_audio_1788945867967.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 669,
+  "affected_word_count": 24,
+  "semantic_error_rate": 0.0359,
+  "seconds": 3.3,
+  "discrepancies": [
+    {
+      "reference_text": "எங்கிருந்து பேசுறீங்க?",
+      "translation_text": "how are you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks where the person is speaking from, but the translation translates it as 'how are you?'."
+    },
+    {
+      "reference_text": "இந்த வீட்ல அனௌன்ஸ் பாத்துட்டு இருக்கீங்களா? இல்ல லவ் பண்றீங்களா?",
+      "translation_text": "Are your family members watching this, or are you doing this for love?",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference asks if they are looking for marriage alliances at home or if she is in love, but the translation incorrectly translates it as family members watching this app."
+    },
+    {
+      "reference_text": "பாத்துட்டு இருக்காங்க. நான் லவ் எல்லாம் பண்ணல.",
+      "translation_text": "They are watching. I am not doing this for love.",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference means they are looking for alliances and she is not in love, but the translation says 'They are watching'."
+    },
+    {
+      "reference_text": "கஞ்சா அடிப்பது தானே, சிகரெட் அடிப்பது தானே",
+      "translation_text": "smoke or drink",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference mentions smoking weed (ganja) and cigarettes, but the translation generalizes this to smoking or drinking."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "03:11",
+      "type": "sexual_or_explicit",
+      "reference_text": "வாட் இஸ் யுவர் பாடி கவுண்ட்னு",
+      "translation_text": "'What is your body count?'",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the overall tone and intent, though it mistranslates a question about marriage alliances as family members watching the app, and slightly alters a reference to smoking weed."
+}

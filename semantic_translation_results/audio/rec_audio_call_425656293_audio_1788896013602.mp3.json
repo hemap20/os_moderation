@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_audio_call_425656293_audio_1788896013602.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 87,
+  "affected_word_count": 16,
+  "semantic_error_rate": 0.1839,
+  "seconds": 6.6,
+  "discrepancies": [
+    {
+      "reference_text": "वी विल डू लिटॉक्स",
+      "translation_text": "we will do detox",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'लिटॉक्स' (dirty talks / lewd talks) which is mistranslated as 'detox'."
+    },
+    {
+      "reference_text": "डू यू लाइक एस?",
+      "translation_text": "do you like it?",
+      "category": "tone_softened",
+      "word_count_affected": 5,
+      "explanation": "The reference uses 'एस' (ass/sex) which is softened to 'it' in the translation."
+    },
+    {
+      "reference_text": "ये सब बातें यहां अलाउड नहीं है।",
+      "translation_text": "Are these things allowed here?",
+      "category": "negation_flipped",
+      "word_count_affected": 7,
+      "explanation": "The reference states these things are not allowed, but the translation turns it into a question asking if they are allowed."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:33",
+      "type": "move_off_app",
+      "reference_text": "कैन वी शेयर स्नैपचैट?",
+      "translation_text": "Can we share Snapchat?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:39",
+      "type": "move_off_app",
+      "reference_text": "कैन वी शेयर स्नैपचैट?",
+      "translation_text": "Can we share Snapchat?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:41",
+      "type": "move_off_app",
+      "reference_text": "नो, क्योंकि यहां पे अलाउड नहीं है।",
+      "translation_text": "No, because it is not allowed here.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:45",
+      "type": "sexual_or_explicit",
+      "reference_text": "यू कैन ट्रस्ट मी, वी विल डू लिटॉक्स एंड इट विल बी फन।",
+      "translation_text": "You can trust me, we will do detox and it will be fun.",
+      "status": "softened"
+    },
+    {
+      "t": "00:55",
+      "type": "sexual_or_explicit",
+      "reference_text": "डू यू लाइक सेक्स?",
+      "translation_text": "Do you like sex?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:57",
+      "type": "sexual_or_explicit",
+      "reference_text": "सॉरी फॉर आस्किंग दैट, बट डू यू लाइक एस?",
+      "translation_text": "Sorry for asking that, but do you like it?",
+      "status": "softened"
+    },
+    {
+      "t": "01:06",
+      "type": "sexual_or_explicit",
+      "reference_text": "ये सब बातें यहां अलाउड नहीं है।",
+      "translation_text": "Are these things allowed here?",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation softens explicit terms like 'dirty talks' to 'detox' and 'ass' to 'it', and incorrectly flips the final refusal into a question about whether such talk is allowed."
+}

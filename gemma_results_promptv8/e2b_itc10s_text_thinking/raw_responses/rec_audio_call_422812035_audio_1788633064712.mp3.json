@@ -1,0 +1,88 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends," user (caller/payer) talks to an expert (paid host). Calls (audio/video) are allowed.
+    *   **Goal:** Find every possible violation based on three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+    *   **Output Format:** Strict minified JSON array following the specified schema.
+    *   **Constraints:**
+        *   Only output quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, etc.).
+        *   Category `f` must be exactly one of: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+        *   Use confidence scores (0.9 strong, 0.6 weaker, 0.3 about a violation).
+        *   Strict rules for `speech_act` (direct, reported, hypothetical, denial) and `violation` (yes/no).
+
+2.  **Analyze the Transcript (Segment by Segment):**
+
+    *   `[00:00] हलो हलो हाय` (Hello hello hi) -> Greeting. (Allowed/Ordinary conversation. Skip.)
+    *   `[00:10] हाय कैसे हो आप कहाँ से हैं आप मैं दिल्ली से हूँ आप` (Hi how are you where are you from you I am from Delhi you) -> Small talk/Introduction. (Allowed/Ordinary conversation. Skip.)
+    *   `[00:20] कहाँ से हैं हम लखनऊ से हैं ओके` (Where are you from we are from Lucknow okay) -> Small talk/Location. (Allowed/Ordinary conversation. Skip.)
+    *   `[00:30] आपसे एक क्वेश्चन पूछ क्या करती हैं आप मैम आप पूछिए आपको सेक्सी वीडियो कॉल` (I ask you a question what do you do ma'am you ask you like sexy video call) -> Inquiry about service/request for specific content. (Potential Explicit-Flirting or SuspiciousActivity setup.)
+    *   `[00:40] पसंद है बहुत ज़्यादा पसंद है पैसे लेके करती हूँ करोगे` (like very much like I do it with money will you do it) -> Explicitly links the service to payment. (SuspiciousActivity.)
+    *   `[00:50] कितना पैसे लेके करती हो तीन सौ पचास कितना लेती हो तीन सौ पचास` (How much money do you take three hundred fifty how much do you take three hundred fifty) -> Discussing the rate/price. (SuspiciousActivity - weaker case, asking about rate.)
+    *   `[01:00] तीन सौ पचास आपको देंगे तो तीन सौ पचास आपको देंगे तो हम बी एफ ना देके देंगे` (Three hundred fifty you will give then three hundred fifty you will give then we will not give BF) -> Discussing payment and a specific service (BF). (SuspiciousActivity.)
+    *   `[01:10] देख लो फिर कोई बात नहीं एक सौ पचास दिन के दो सौ रुपये मनाते खुद आएंगे बढ़िया से अच्छे से` (See then no problem one hundred fifty for two hundred rupees they refuse themselves will come nicely well) -> Discussing payment/refusal. (SuspiciousActivity.)
+    *   `[01:20] चले जाओ फिर यहाँ क्यों गार्ड मरा रहे हो` (Go then why are you dying here) -> Ending the call/Dismissal. (Ordinary conversation/Filler.)
+
+3.  **Evaluate Potential Flags:**
+
+    *   **Candidate 1 (00:30):** `क्या करती हैं आप मैम आप पूछिए आपको सेक्सी वीडियो कॉल` (What do you do ma'am you ask you like sexy video call)
+        *   *Analysis:* This is a direct inquiry about the nature of the service (sexy video call). Fits Explicit-Flirting setup or SuspiciousActivity setup.
+    *   **Candidate 2 (00:40):** `पसंद है बहुत ज़्यादा पसंद है पैसे लेके करती हूँ करोगे` (like very much like I do it with money will you do it)
+        *   *Analysis:* Explicitly links the service to money. Strong SuspiciousActivity.
+    *   **Candidate 3 (00:50):** `कितना पैसे लेके करती हो तीन सौ पचास कितना लेती हो तीन सौ पचास` (How much money do you take three hundred fifty how much do you take three hundred fifty)
+        *   *Analysis:* Asking about the rate. Weaker SuspiciousActivity.
+    *   **Candidate 4 (01:00):** `तीन सौ पचास आपको देंगे तो तीन सौ पचास आपको देंगे तो हम बी एफ ना देके देंगे` (Three hundred fifty you will give then three hundred fifty you will give then we will not give BF)
+        *   *Analysis:* Discussing payment and a service (BF). SuspiciousActivity.
+    *   **Candidate 5 (01:10):** `देख लो फिर कोई बात नहीं एक सौ पचास दिन के दो सौ रुपये मनाते खुद आएंगे बढ़िया से अच्छे से` (See then no problem one hundred fifty for two hundred rupees they refuse themselves will come nicely well)
+        *   *Analysis:* Discussing payment/refusal. SuspiciousActivity.
+
+4.  **Finalizing Flags (Applying Rules and Schema):**
+
+    *   *Focus on the strongest violations (0.9/0.6).*
+
+    *   *Flag 1 (00:40):* Strong link between service and money.
+    *   *Flag 2 (00:50):* Asking about the rate.
+    *   *Flag 3 (01:00):* Discussing payment for a service.
+
+5.  **Construct JSON Output.** (Ensuring strict adherence to the required fields and minified format.)<channel|>```json
+{"d": [
+  {
+    "t": "00:40",
+    "seg": "पसंद है बहुत ज़्यादा पसंद है पैसे लेके करती हूँ करोगे",
+    "tr": "like very much like I do it with money will you do it",
+    "f": "SuspiciousActivity",
+    "spk": "user",
+    "ctx": "The user confirms they like the service and explicitly states they do it for money, asking if the expert will participate.",
+    "speech_act": "direct",
+    "j": "This is a strong case as the user explicitly links the service to payment.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "00:50",
+    "seg": "कितना पैसे लेके करती हो तीन सौ पचास कितना लेती हो तीन सौ पचास",
+    "tr": "how much money do you take three hundred fifty how much do you take three hundred fifty",
+    "f": "SuspiciousActivity",
+    "spk": "user",
+    "ctx": "The user asks the expert about the price or rate for the service.",
+    "speech_act": "direct",
+    "j": "This is a weaker case as the user is asking about a rate in a suggestive conversation.",
+    "violation": "yes",
+    "c": 0.6
+  },
+  {
+    "t": "01:00",
+    "seg": "तीन सौ पचास आपको देंगे तो तीन सौ पचास आपको देंगे तो हम बी एफ ना देके देंगे",
+    "tr": "three hundred fifty you will give then three hundred fifty you will give then we will not give BF",
+    "f": "SuspiciousActivity",
+    "spk": "user",
+    "ctx": "The user discusses the payment amount and the specific service (BF) they are willing or unwilling to provide.",
+    "speech_act": "direct",
+    "j": "This is a strong case as it involves discussing payment for a sexual service.",
+    "violation": "yes",
+    "c": 0.9
+  }
+]}
+```<turn|>

@@ -1,0 +1,31 @@
+{
+  "file_id": "rec_default_421888258_audio_1788546625741.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 14,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.9286,
+  "seconds": 6.8,
+  "discrepancies": [
+    {
+      "reference_text": "यार बता रहा Instagram में स्टेटस डाल Instagram स्टेटस डाल Instagram में डाल दे",
+      "translation_text": "Yes, I am going to I will tell you later I will tell you later, I will tell you later I will tell you later Okay, fine I will tell you on Instagram I will tell you later No, I will tell you on Instagram, I will tell you later I will tell you later, I will tell you later I will tell you later",
+      "category": "other_meaning_change",
+      "word_count_affected": 13,
+      "explanation": "The reference asks the other person to post a status on Instagram, whereas the translation incorrectly states that the speaker will tell them later on Instagram."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:06",
+      "type": "move_off_app",
+      "reference_text": "Instagram में स्टेटस डाल Instagram स्टेटस डाल Instagram में डाल दे",
+      "translation_text": "I will tell you on Instagram",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "no",
+  "summary": "The translation completely misinterprets the reference's instruction to post a status on Instagram, translating it instead as a promise to talk or tell them later on Instagram."
+}

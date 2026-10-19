@@ -1,0 +1,101 @@
+{
+  "file_id": "rec_audio_call_426864047_audio_1789021815416.mp3",
+  "language": "kannada",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 993,
+  "affected_word_count": 31,
+  "semantic_error_rate": 0.0312,
+  "seconds": 7.0,
+  "discrepancies": [
+    {
+      "reference_text": "ಸದ್ಯ ಕೀರ್ತಿ ಮೇಡಂ ಜೊತೆ ಮಾತಾಡ್ತಾ ಇದ್ದೀನಿ",
+      "translation_text": "Currently, I am not talking to Keerthi madam.",
+      "category": "negation_flipped",
+      "word_count_affected": 6,
+      "explanation": "The reference says he is currently talking to Keerthi madam, but the translation incorrectly adds a negation."
+    },
+    {
+      "reference_text": "ಎಲೆಕ್ಟ್ರಿಕಲ್ ಕಾಂಟ್ರಾಕ್ಟರ್",
+      "translation_text": "electrical concept",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference states he is an electrical contractor, which is translated incorrectly as 'electrical concept'."
+    },
+    {
+      "reference_text": "ಗೋಕುಲಕೊಪ್ಪ",
+      "translation_text": "Gopunakoppa",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The area name 'Gokulakoppa' is mistranslated as 'Gopunakoppa'."
+    },
+    {
+      "reference_text": "ಟೂ ಇಯರ್ಸ್ ಬ್ಯಾಕ್ ಬಂದಿದ್ದೆ",
+      "translation_text": "I came four years back",
+      "category": "number_or_id_altered",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'two years back', but the translation changes it to 'four years'."
+    },
+    {
+      "reference_text": "ಇನ್ನ ಸ್ಕೂಲಿಗೆ ಹೋಗ್ತಾ ಇಲ್ಲ ಚಿಕ್ಕವರು",
+      "translation_text": "they are still going to school",
+      "category": "negation_flipped",
+      "word_count_affected": 6,
+      "explanation": "The reference says the children are not yet going to school, but the translation says they are still going."
+    },
+    {
+      "reference_text": "ಮಕ್ಕಳು ಊರಲ್ಲಿ ಇದ್ದಾರೆ ಅವರು",
+      "translation_text": "There are no children",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says the children are in the village, but the translation says there are no children."
+    },
+    {
+      "reference_text": "ಮುಂಡಗೋಡ ತಾಲೂಕಿನಾಗ",
+      "translation_text": "reaching Mangalore",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions Mundgod taluk, which is mistranslated as Mangalore."
+    },
+    {
+      "reference_text": "ಬರಿ ಹೊಡೆದು ಬರಿ ಹೊಡೆದು",
+      "translation_text": "they slaughter lambs, slaughter sheep",
+      "category": "added_content",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'just drinking/eating' (slang), but the translation invents 'slaughter lambs, slaughter sheep'."
+    },
+    {
+      "reference_text": "605739",
+      "translation_text": "zero five seven three nine",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The translation misses the digit '6' (six) in the repeated phone number sequence."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "11:28",
+      "type": "move_off_app",
+      "reference_text": "ಫೋನ್ ನಂಬರ್ ಹೇಳು",
+      "translation_text": "tell me your phone number",
+      "status": "preserved"
+    },
+    {
+      "t": "11:42",
+      "type": "move_off_app",
+      "reference_text": "77 77 60 60 57 57 39 39 31 31",
+      "translation_text": "double seven, okay, double seven. six zero six zero five seven five seven three nine three nine three one three one",
+      "status": "preserved"
+    },
+    {
+      "t": "12:56",
+      "type": "move_off_app",
+      "reference_text": "ಮಿಸ್ ಕಾಲ್ ಮಾಡ್ಲಿ ಪಾ ಕವಿ ಮಾತಾಡೋಣ",
+      "translation_text": "let me give a missed call Kavi, let's talk",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation contains several minor errors in names, numbers, and negations, but successfully preserves the key policy-relevant exchange of phone numbers and the intent to connect off-app."
+}

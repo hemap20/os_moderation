@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426537197_audio_1788980611266.mp3",
+  "language": "malayalam",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 56,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.0893,
+  "seconds": 3.8,
+  "discrepancies": [
+    {
+      "reference_text": "രാജേഷ്",
+      "translation_text": "Reshma",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The name Rajesh was translated as Reshma."
+    },
+    {
+      "reference_text": "അങ്കമാലി",
+      "translation_text": "Andhra",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The place Angamaly was translated as Andhra."
+    },
+    {
+      "reference_text": "ഇല്ലല്ലോ",
+      "translation_text": "Yes he will give open talk",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'No, right?' but the translation says 'Yes he will give open talk'."
+    },
+    {
+      "reference_text": "ഇല്ല താല്പര്യമില്ല",
+      "translation_text": "Right?",
+      "category": "negation_flipped",
+      "word_count_affected": 2,
+      "explanation": "The user's refusal 'No, I am not interested' is translated as 'Right?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:59",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഞാൻ ഓപ്പൺ ടോക്ക് താല്പര്യമുണ്ടോ",
+      "translation_text": "Whether you are interested in open talk",
+      "status": "preserved"
+    },
+    {
+      "t": "01:09",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഇല്ല താല്പര്യമില്ല",
+      "translation_text": "Right?",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "no",
+  "summary": "The translation alters key names, locations, and completely misrepresents the user's refusal of 'open talk' as a question 'Right?'."
+}

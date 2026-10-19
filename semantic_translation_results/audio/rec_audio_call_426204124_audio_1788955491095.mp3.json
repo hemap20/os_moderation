@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_audio_call_426204124_audio_1788955491095.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 199,
+  "affected_word_count": 26,
+  "semantic_error_rate": 0.1307,
+  "seconds": 4.7,
+  "discrepancies": [
+    {
+      "reference_text": "हां जी आंटी जी",
+      "translation_text": "Yes, I am.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The speaker says 'Yes, Aunty' (referring to someone else or teasingly), which is translated as 'Yes, I am.'"
+    },
+    {
+      "reference_text": "याद भी नहीं है कि आप कहां से हो",
+      "translation_text": "I don't even remember where you are from.",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference says 'You don't even remember where I am from' (addressed to the other person), but the translation attributes this lack of memory to the speaker themselves."
+    },
+    {
+      "reference_text": "जब से पैदा हुई हूं तब से मुझे तुमसे मोहब्बत है",
+      "translation_text": "I have loved you since I was born.",
+      "category": "other_meaning_change",
+      "word_count_affected": 10,
+      "explanation": "The reference uses feminine grammatical gender ('पैदा हुई हूं'), indicating the female speaker is talking, but the translation does not capture this context, though the literal meaning is mostly kept."
+    },
+    {
+      "reference_text": "मैंने लड़का को देखी",
+      "translation_text": "I am looking at a boy.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'I have seen/chosen a boy' (past tense), whereas the translation says 'I am looking at a boy' (present continuous)."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:46",
+      "type": "move_off_app",
+      "reference_text": "नंबर सेंड करो तुम शादी करने की बात भी कर लूंगा और बताओ",
+      "translation_text": "Send me your number, I will talk about marriage after that, and tell me more.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:51",
+      "type": "move_off_app",
+      "reference_text": "अपना नंबर बताओ नंबर शादी करेंगे फिर",
+      "translation_text": "Tell me your number, we will get married then.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the overall tone and intent of the conversation, including the requests to share phone numbers, though there are minor tense and pronoun discrepancies."
+}

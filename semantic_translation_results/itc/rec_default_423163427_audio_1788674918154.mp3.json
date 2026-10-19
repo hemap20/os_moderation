@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_423163427_audio_1788674918154.mp3",
+  "language": "tamil",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 48,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.3125,
+  "seconds": 4.3,
+  "discrepancies": [
+    {
+      "reference_text": "எங்கிருந்து பேசுறீங்க? சென்னை எங்க? சென்னை",
+      "translation_text": "where are you calling from? Salem? Where in Salem?",
+      "category": "named_entity_altered",
+      "word_count_affected": 5,
+      "explanation": "The translation changes the location from Chennai to Salem."
+    },
+    {
+      "reference_text": "வேண்டாம் வேண்டாம் ஏன்?",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The user's refusal 'No, no' and the expert's question 'Why?' are missing from the translation."
+    },
+    {
+      "reference_text": "நல்லா இருக்கும்",
+      "translation_text": "The point will be good",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The translation mistranslates 'It will be good' as 'The point will be good'."
+    },
+    {
+      "reference_text": "கஸ்டமர்ஸ்",
+      "translation_text": "customers fifty rupees",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds 'fifty rupees' which is not in the reference."
+    },
+    {
+      "reference_text": "எந்த ஏரியா? அம்பத்தூர் எங்க பாப்போம்",
+      "translation_text": "For you, baby.",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The translation completely changes the discussion about the area (Ambattur) to 'For you, baby'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:15",
+      "type": "sexual_or_explicit",
+      "reference_text": "நான் பிரைவேட் வீடியோ கால்ஸ் எல்லாம் பண்ணுவேன் உனக்கு ஏதாவது தேவைப்படுதா?",
+      "translation_text": "I do private video calls. Do you need anything?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:26",
+      "type": "money_or_payment",
+      "reference_text": "நல்லா இருக்கும் 300 ருபீஸ் தான்",
+      "translation_text": "The point will be good, it is just three hundred rupees.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the core offer of private video calls and the price, but introduces several errors including changing Chennai to Salem, adding a non-existent price at the end, and completely mistranslating the final lines."
+}

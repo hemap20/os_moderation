@@ -1,0 +1,38 @@
+{
+  "file_id": "rec_audio_call_426594019_audio_1788984570393.mp3",
+  "language": "telugu",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 421,
+  "affected_word_count": 4,
+  "semantic_error_rate": 0.0095,
+  "seconds": 2.9,
+  "discrepancies": [
+    {
+      "reference_text": "ఎక్కడి నుంచి అండి",
+      "translation_text": "Vijayawada, where are you from?",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds 'Vijayawada' which is not mentioned in the reference text."
+    },
+    {
+      "reference_text": "మీ బ్రా సైజ్ ఎంత",
+      "translation_text": "What is your real age?",
+      "category": "tone_softened",
+      "word_count_affected": 4,
+      "explanation": "The explicit question asking for her bra size is softened to asking for her real age."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "04:10",
+      "type": "sexual_or_explicit",
+      "reference_text": "మీ బ్రా సైజ్ ఎంత",
+      "translation_text": "What is your real age?",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate but softens a highly explicit question about the user's bra size to a question about her real age."
+}

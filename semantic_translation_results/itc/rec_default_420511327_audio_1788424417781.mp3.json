@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_default_420511327_audio_1788424417781.mp3",
+  "language": "kannada",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 439,
+  "affected_word_count": 22,
+  "semantic_error_rate": 0.0501,
+  "seconds": 6.3,
+  "discrepancies": [
+    {
+      "reference_text": "ನಿಮ್ ಊರು",
+      "translation_text": "mine is Tumkur, yours?",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds 'Tumkur' which is not mentioned in the reference text."
+    },
+    {
+      "reference_text": "ತೋಟ",
+      "translation_text": "What have you done?",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'garden/plantation' (thota), but the translation translates it as 'What have you done?'."
+    },
+    {
+      "reference_text": "ಫಸ್ಟ್ ಮಗನ",
+      "translation_text": "Pushpa?",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Is the first one a son?', but the translation incorrectly translates this as a name 'Pushpa'."
+    },
+    {
+      "reference_text": "ಸೆಕೆಂಡ್ ಸ್ಟ್ಯಾಂಡರ್ಡ್ ಯುಕೆಜಿ ಮಕ್ಕಳು ಅಂದಿದ್ದೀಯ ಎಷ್ಟು ವರ್ಷದ ಮಗನಿಗೆ ಸಾರಿ ಮ್ಯಾರೀಡ್ ನಾನು",
+      "translation_text": "suppose one UKG child, how many times has it happened here? Child marriage, marriage, eight years.",
+      "category": "other_meaning_change",
+      "word_count_affected": 11,
+      "explanation": "The reference discusses the children's school grades and the speaker correcting herself that she is married, but the translation hallucinates 'child marriage' and 'eight years'."
+    },
+    {
+      "reference_text": "ಅಕೌಂಟ್ ಬಿಟ್ಟಿದ್ದೀರಾ",
+      "translation_text": "you've been gone for so many years?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks if they have left/opened an account, but the translation asks about being gone for many years."
+    },
+    {
+      "reference_text": "ನಂಬರ್ ಕೊಟ್ಬಿಟ್ಟರಲ್ಲ",
+      "translation_text": "Did I give the number?",
+      "category": "intent_changed",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'So you gave them your number?', but the translation changes the subject to 'Did I give the number?'."
+    },
+    {
+      "reference_text": "ಏನ್ರಿ ಕಟ್ ಮಾಡಿ ಮಾಡ್ತೀನಿ",
+      "translation_text": "Get married, I will do it, man.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'I will disconnect and call again', but the translation completely misinterprets this as 'Get married, I will do it'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "05:40",
+      "type": "move_off_app",
+      "reference_text": "ನಿಮ್ದು ನಂಬರ್ ಕೊಡಿ ಮಾತಾಡೋಣ ನಾನು ಒಳ್ಳೆ ಹುಡುಗ ಅನ್ಸಿದ್ರೆ ಅಷ್ಟೇ ಮಾತಾಡಿ ಇಲ್ಲ ಅಂದ್ರೆ ಮಾತಾಡಬೇಡಿ",
+      "translation_text": "Oh, give me your number, let's talk. If I seem like a good boy, then talk, otherwise don't talk",
+      "status": "preserved"
+    },
+    {
+      "t": "06:05",
+      "type": "move_off_app",
+      "reference_text": "ನಂಬರ್ ಕೊಟ್ಬಿಟ್ಟರಲ್ಲ",
+      "translation_text": "Did I give the number?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "06:14",
+      "type": "move_off_app",
+      "reference_text": "ಏನಕ್ಕೆ ನಂಬರ್ ಕೊಡೋಣ",
+      "translation_text": "Why should I give the number?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the general flow of the conversation but introduces several severe mistranslations, including hallucinating place names like Tumkur, misinterpreting discussions about children and call reconnections, and altering the intent of a question about sharing phone numbers."
+}

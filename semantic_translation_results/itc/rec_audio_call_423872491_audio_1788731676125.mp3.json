@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_audio_call_423872491_audio_1788731676125.mp3",
+  "language": "hindi",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 79,
+  "affected_word_count": 19,
+  "semantic_error_rate": 0.2405,
+  "seconds": 4.0,
+  "discrepancies": [
+    {
+      "reference_text": "250 रुपए में आधे घंटे तक सब कुछ करूंगी",
+      "translation_text": "the charge is 250 rupees for half an hour. Will you do everything?",
+      "category": "intent_changed",
+      "word_count_affected": 8,
+      "explanation": "The reference states 'I will do everything for 250 rupees', but the translation turns 'I will do everything' into a question asked by the other speaker."
+    },
+    {
+      "reference_text": "टाइम पास मत करो वरना मैं जा रही हूं किसी और को देने",
+      "translation_text": "don't waste time. Wait, I am going to give it to someone else.",
+      "category": "other_meaning_change",
+      "word_count_affected": 11,
+      "explanation": "The translation adds 'Wait' and mistranslates the conditional warning 'otherwise I am going to give it to someone else'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:21",
+      "type": "sexual_or_explicit",
+      "reference_text": "वीडियो कॉल पर बात करना है आपको मुझसे",
+      "translation_text": "Do you want to talk to me on a video call?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:27",
+      "type": "money_or_payment",
+      "reference_text": "हां 250 रुपए में आधे घंटे तक सब कुछ करूंगी",
+      "translation_text": "Yes, the charge is 250 rupees for half an hour. Will you do everything?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:27",
+      "type": "sexual_or_explicit",
+      "reference_text": "हां 250 रुपए में आधे घंटे तक सब कुछ करूंगी",
+      "translation_text": "Yes, the charge is 250 rupees for half an hour. Will you do everything?",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation alters the intent of the explicit offer by turning the provider's statement of what she will do into a question from the client."
+}

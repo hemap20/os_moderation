@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_default_423562532_audio_1788709014492.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 154,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.0714,
+  "seconds": 5.7,
+  "discrepancies": [
+    {
+      "reference_text": "എറണാകുളം",
+      "translation_text": "I am at home.",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference specifies Ernakulam, but the translation says 'I am at home'."
+    },
+    {
+      "reference_text": "ആപ്പ് റീഫണ്ട്",
+      "translation_text": "I am just sitting.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions 'app refund' while the translation says 'I am just sitting'."
+    },
+    {
+      "reference_text": "പിള്ളേരൊക്കെ?",
+      "translation_text": "What about the others?",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference specifically asks about children ('pillare'), but the translation generalizes it to 'others'."
+    },
+    {
+      "reference_text": "പിള്ളേർ രണ്ടാളും",
+      "translation_text": "The others",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference specifies 'both children', but the translation says 'the others'."
+    },
+    {
+      "reference_text": "ജിപേ ചെയ്യാം വാട്സാപ്പ് നമ്പർ തരു",
+      "translation_text": "they will give their GPay or WhatsApp number.",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says callers offer to GPay and ask for her WhatsApp number, but the translation says they will give their GPay or WhatsApp number."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:58",
+      "type": "move_off_app",
+      "reference_text": "ജിപേ ചെയ്യാം വാട്സാപ്പ് നമ്പർ തരു",
+      "translation_text": "they will give their GPay or WhatsApp number.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:06",
+      "type": "money_or_payment",
+      "reference_text": "15 20 25 ഒക്കെ തരാം എന്നൊക്കെ പറയുന്നവര്",
+      "translation_text": "They say they will give 15, 20, 25, etc.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:19",
+      "type": "money_or_payment",
+      "reference_text": "ഈ ആപ്പിനകത്ത് ഏൺ ചെയ്യാൻ പറ്റുമോ?",
+      "translation_text": "Can you earn money in this app?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:30",
+      "type": "money_or_payment",
+      "reference_text": "അതിങ്ങനെ ഇതിനകത്ത് തന്നെ ഇങ്ങനെ സംസാരിച്ചോണ്ടിരിക്കുമ്പോൾ ഇങ്ങനെ പൈസ കേറിക്കൊണ്ടിരിക്കും",
+      "translation_text": "It comes like this, while talking inside it, money keeps getting added.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:35",
+      "type": "money_or_payment",
+      "reference_text": "അത് നമുക്ക് തന്നെ ഇതിനകത്ത് നിന്ന് വിത്ഡ്രോ ചെയ്തെടുക്കാം",
+      "translation_text": "We can withdraw it ourselves.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate but alters details about location, children, and misrepresents the direction of the WhatsApp/GPay request (callers asking for her number vs. callers offering theirs)."
+}

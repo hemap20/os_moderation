@@ -1,0 +1,94 @@
+{
+  "file_id": "rec_audio_call_426099993_audio_1788947488901.mp3",
+  "language": "hindi",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 378,
+  "affected_word_count": 19,
+  "semantic_error_rate": 0.0503,
+  "seconds": 5.3,
+  "discrepancies": [
+    {
+      "reference_text": "मैं मुंबई से",
+      "translation_text": "Are you from Mumbai?",
+      "category": "intent_changed",
+      "word_count_affected": 3,
+      "explanation": "The speaker states they are from Mumbai, but the translation turns this into a question directed at the other person."
+    },
+    {
+      "reference_text": "मैं हैदराबाद",
+      "translation_text": "I am from Hyderabad.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The speaker says they are from Hyderabad, but the reference indicates the other speaker is from Hyderabad."
+    },
+    {
+      "reference_text": "नहीं है इसलिए बात कर रही हूं।",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 6,
+      "explanation": "The speaker's explanation of why she is talking is completely missing from the translation."
+    },
+    {
+      "reference_text": "नहीं आपको नहीं लगेगा हमारा पति ही करेगा।",
+      "translation_text": "No, don't you think our husband...",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The speaker says her husband will book the ticket so the other person doesn't need to, but the translation is garbled and incomplete."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:10",
+      "type": "meeting_in_person",
+      "reference_text": "अरे आसपास रहते हो मजा आता तुम खाली फोन में मजा आएगा बोले तो कैसा?",
+      "translation_text": "Oh, it is fun if we live nearby. You said it will be fun just on the phone, so how?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:16",
+      "type": "meeting_in_person",
+      "reference_text": "आसपास फोन में बात करिए ना पहले बाद में आऊंगा।",
+      "translation_text": "Talk on the phone first, then come.",
+      "status": "preserved"
+    },
+    {
+      "t": "03:04",
+      "type": "meeting_in_person",
+      "reference_text": "आ जाओ कभी हैदराबाद।",
+      "translation_text": "Come sometime, come to Hyderabad",
+      "status": "preserved"
+    },
+    {
+      "t": "03:09",
+      "type": "meeting_in_person",
+      "reference_text": "कभी हैदराबाद आ जाओ घूमने के लिए।",
+      "translation_text": "come to Hyderabad sometime for a visit.",
+      "status": "preserved"
+    },
+    {
+      "t": "03:16",
+      "type": "meeting_in_person",
+      "reference_text": "आ जाओ दोनों घूम के आ जाएंगे।",
+      "translation_text": "Come, we will both go around.",
+      "status": "preserved"
+    },
+    {
+      "t": "03:44",
+      "type": "meeting_in_person",
+      "reference_text": "फिर आके मिलते नहीं मिलते?",
+      "translation_text": "Will we meet or not?",
+      "status": "preserved"
+    },
+    {
+      "t": "03:52",
+      "type": "meeting_in_person",
+      "reference_text": "आके मिलोगे या ना मिलोगे?",
+      "translation_text": "will you come and meet or not?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation generally preserves the tone and the main policy-relevant invitations to meet in person, but it contains several errors regarding who lives where and mistranslates the husband's role in booking tickets."
+}

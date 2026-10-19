@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_default_426853539_audio_1789021025445.mp3",
+  "language": "hindi",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 40,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.375,
+  "seconds": 8.9,
+  "discrepancies": [
+    {
+      "reference_text": "यहाँ से",
+      "translation_text": "No, look.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The translation 'No, look' does not match the reference 'From here'."
+    },
+    {
+      "reference_text": "तुमको क्या खिला रहे हैं? एक बार तो दिखाओ",
+      "translation_text": "It will remain open, show it properly, it is remaining open, the electricity has come, good.",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The translation introduces completely unrelated text about electricity and remaining open instead of asking what they are feeding them."
+    },
+    {
+      "reference_text": "अरे ये ले लिया बच्ची",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 5,
+      "explanation": "The final line of the reference is completely missing from the translation."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:17",
+      "type": "sexual_or_explicit",
+      "reference_text": "क्या क्या कर रहा है? क्या कर रहा है इसको हिला रहा है?",
+      "translation_text": "What are you doing? What are you doing? Are you shaking it?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the explicit question about shaking it, but completely mistranslates and omits the latter half of the conversation."
+}

@@ -1,0 +1,122 @@
+{
+  "file_id": "rec_audio_call_421071310_audio_1788465787061.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 818,
+  "affected_word_count": 20,
+  "semantic_error_rate": 0.0244,
+  "seconds": 12.3,
+  "discrepancies": [
+    {
+      "reference_text": "ऐप चलाती हूँ",
+      "translation_text": "I just run ads",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I run/use the app', but the translation incorrectly translates it as 'I just run ads'."
+    },
+    {
+      "reference_text": "हाँ, मैं नहीं करती हूँ।",
+      "translation_text": "Yes, I am.",
+      "category": "negation_flipped",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'Yes, I don't do it' (denying working for pennies), but the translation flips this to 'Yes, I am'."
+    },
+    {
+      "reference_text": "नहीं नहीं, आप नहीं दे सकते ना।",
+      "translation_text": "No, you can give it, right?",
+      "category": "negation_flipped",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'No, you cannot give it, right?', but the translation drops the negation to say 'you can give it'."
+    },
+    {
+      "reference_text": "झूठ",
+      "translation_text": "body",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference uses 'झूठ' (lies/falsehood) or mispronounced slang, which the translation interprets as 'body'."
+    },
+    {
+      "reference_text": "रेंट का काम",
+      "translation_text": "dirty work",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'rent work' (prostitution/rental work), which is translated as 'dirty work'."
+    },
+    {
+      "reference_text": "व्हाट्सएप वीडियो कॉल",
+      "translation_text": "WhatsApp video call",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The reference says 'वीडियो कॉल' (video call) at 05:47, but the translation adds 'WhatsApp'."
+    },
+    {
+      "reference_text": "चुतिया",
+      "translation_text": "stupid",
+      "category": "tone_softened",
+      "word_count_affected": 1,
+      "explanation": "The strong Hindi swear word 'chutiya' (fucker/cunt) is softened to 'stupid'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "03:36",
+      "type": "sexual_or_explicit",
+      "reference_text": "किस लिए आऊंगा वीडियो कॉल में? मुझे सेक्स में इंटरेस्ट नहीं है।",
+      "translation_text": "Why would I come on a video call? I have no interest in sex.",
+      "status": "preserved"
+    },
+    {
+      "t": "03:57",
+      "type": "money_or_payment",
+      "reference_text": "कितने दूँगा मैं? कितने दूँगा मैं आपको? 300 रुपये दूँगा, 400 रुपये दूँगा, 500 रुपये दूँगा।",
+      "translation_text": "How much will I give? How much will I give you? 300, 400, 500?",
+      "status": "preserved"
+    },
+    {
+      "t": "04:07",
+      "type": "money_or_payment",
+      "reference_text": "अगर आपको 1 करोड़ रुपये देखे लाइफ में कभी?",
+      "translation_text": "Have you ever seen 1 crore in your life?",
+      "status": "preserved"
+    },
+    {
+      "t": "04:26",
+      "type": "sexual_or_explicit",
+      "reference_text": "300 रुपये में आप बॉडी दिखा रहे हो सबको।",
+      "translation_text": "You are showing your body to everyone for 300 rupees, okay?",
+      "status": "preserved"
+    },
+    {
+      "t": "04:36",
+      "type": "sexual_or_explicit",
+      "reference_text": "फिर वीडियो कॉल करके क्या दिखाओगे आप?",
+      "translation_text": "Then what will you show on a video call?",
+      "status": "preserved"
+    },
+    {
+      "t": "05:05",
+      "type": "money_or_payment",
+      "reference_text": "मैं इस दोस्त ऐप पे दोस्त बनाने के लिए आई हूँ, कोई रेंट का काम करने नहीं, ठीक है?",
+      "translation_text": "I have come to make friends on this app, not to do any dirty work, okay?",
+      "status": "preserved"
+    },
+    {
+      "t": "05:25",
+      "type": "money_or_payment",
+      "reference_text": "मैंने वीडियो कॉल इसीलिए बोला था क्योंकि वीडियो कॉल पे मुझे ज्यादा कॉइन मिलता है।",
+      "translation_text": "I said video call because I get more coins on video calls.",
+      "status": "preserved"
+    },
+    {
+      "t": "05:47",
+      "type": "move_off_app",
+      "reference_text": "आपने व्हाट्सएप वीडियो कॉल बोला, ठीक है?",
+      "translation_text": "You said WhatsApp video call, okay?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the main intent and policy-relevant moments regarding video calls, coins, and body showing, though it softens a strong swear word at the end and contains minor translation errors."
+}

@@ -1,0 +1,136 @@
+{
+  "file_id": "rec_audio_call_426626261_audio_1788987652206.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 212,
+  "affected_word_count": 60,
+  "semantic_error_rate": 0.283,
+  "seconds": 8.2,
+  "discrepancies": [
+    {
+      "reference_text": "என் பேரு மனோ",
+      "translation_text": "And your name?",
+      "category": "named_entity_altered",
+      "word_count_affected": 3,
+      "explanation": "The speaker introduces himself as Mano, but the translation asks 'And your name?' instead."
+    },
+    {
+      "reference_text": "எந்த ஊரு",
+      "translation_text": "Are you in the hostel?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The speaker asks which town/city she is from, but the translation asks if she is in a hostel."
+    },
+    {
+      "reference_text": "சேலம்",
+      "translation_text": "Shailam",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The city Salem is mistranslated as the name Shailam."
+    },
+    {
+      "reference_text": "வீட்ல தான் இருக்கேன்",
+      "translation_text": "Hostel.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The speaker says she is at home, but the translation says 'Hostel'."
+    },
+    {
+      "reference_text": "பேசினா வெளிய கேக்கும்ல அதான்",
+      "translation_text": "I am talking slowly because someone is there.",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The speaker says she is talking softly because it will be heard outside, not because someone is right there."
+    },
+    {
+      "reference_text": "ஹால்ல இருக்காரு",
+      "translation_text": "He is there.",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The specific location 'hall' is missing from the translation."
+    },
+    {
+      "reference_text": "பக்கத்துல எங்க நானும் பாப்பாவும் படுத்து இருக்கோம்",
+      "translation_text": "He is sleeping, and I am also sleeping.",
+      "category": "key_content_missing",
+      "word_count_affected": 7,
+      "explanation": "The reference mentions that she and the baby/child are sleeping next to each other, which is omitted."
+    },
+    {
+      "reference_text": "பாப்பா இருந்தாலும் உங்க கூட இருக்க மாட்டாரா",
+      "translation_text": "Even if he is sleeping, he won't be with you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference mentions the child ('paapa'), but the translation changes this to 'sleeping'."
+    },
+    {
+      "reference_text": "பாப்பாவும் நீங்களும் இருந்தாலும் உங்க கூட வந்து படுக்க மாட்டாரா அப்படின்னு கேட்டேன்",
+      "translation_text": "Even if you and your husband are there, he won't come and sleep with you, I asked.",
+      "category": "other_meaning_change",
+      "word_count_affected": 11,
+      "explanation": "The reference asks about the child and her, but the translation incorrectly says 'you and your husband'."
+    },
+    {
+      "reference_text": "அவர் கொஞ்சம் உறக்கமா இருக்காருன்னு சொல்லி அங்க படுத்து இருக்காரு",
+      "translation_text": "He is sleeping there, he told me to sleep.",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference says he is sleeping there because he is feeling sleepy, not that he told her to sleep."
+    },
+    {
+      "reference_text": "செக்ஸியா பேசுவோமா",
+      "translation_text": "Talk sexily.",
+      "category": "intent_changed",
+      "word_count_affected": 2,
+      "explanation": "The proposal/question 'Shall we talk sexily?' is translated as a command 'Talk sexily'."
+    },
+    {
+      "reference_text": "உங்களை என்ஜாய் பண்ணவா",
+      "translation_text": "Shall we enjoy?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The active question 'Can I enjoy you?' is translated as a mutual 'Shall we enjoy?'."
+    },
+    {
+      "reference_text": "லிப்ல ஒரு கிஸ் பிடிக்குமா",
+      "translation_text": "Will you give me a long kiss?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks if she likes a kiss on the lips, but the translation asks 'Will you give me a long kiss?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:57",
+      "type": "sexual_or_explicit",
+      "reference_text": "செக்ஸியா பேசுவோமா",
+      "translation_text": "Talk sexily.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "03:03",
+      "type": "sexual_or_explicit",
+      "reference_text": "எனக்கு ஒரு மாதிரி மூடா இருக்கு செக்ஸியா பேசுவோமா",
+      "translation_text": "I am in a mood, can you talk sexily?",
+      "status": "preserved"
+    },
+    {
+      "t": "03:25",
+      "type": "sexual_or_explicit",
+      "reference_text": "உங்களை என்ஜாய் பண்ணவா",
+      "translation_text": "Shall we enjoy?",
+      "status": "preserved"
+    },
+    {
+      "t": "03:38",
+      "type": "sexual_or_explicit",
+      "reference_text": "லிப்ல ஒரு கிஸ் பிடிக்குமா",
+      "translation_text": "Will you give me a long kiss?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the overall sexual intent and explicit nature of the call, but contains several errors regarding names, locations, and details about the child and husband."
+}

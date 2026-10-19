@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426853539_audio_1789021025445.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 40,
+  "affected_word_count": 21,
+  "semantic_error_rate": 0.525,
+  "seconds": 3.7,
+  "discrepancies": [
+    {
+      "reference_text": "अरे ये लो",
+      "translation_text": "Open the yellow.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'Hey, take this' but the translation misinterprets it as 'Open the yellow'."
+    },
+    {
+      "reference_text": "ये लो",
+      "translation_text": "It's not opening.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Take this' but the translation misinterprets it as 'It's not opening'."
+    },
+    {
+      "reference_text": "अरे ये दे",
+      "translation_text": "Hello, kid.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'Hey, give this' but the translation misinterprets it as 'Hello, kid'."
+    },
+    {
+      "reference_text": "तुमको क्या खिला रहे हैं? एक बार तो दिखाओ",
+      "translation_text": "Why are you shaking it? Show me how to do it.",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference asks 'What are they feeding you? Show me once' but the translation completely changes the meaning."
+    },
+    {
+      "reference_text": "अरे ये ले लिया बच्ची",
+      "translation_text": "You have taken it all.",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'Hey, you took this, girl' but the translation says 'You have taken it all'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:17",
+      "type": "sexual_or_explicit",
+      "reference_text": "क्या क्या कर रहा है? क्या कर रहा है इसको हिला रहा है?",
+      "translation_text": "What are you doing? What are you doing to it? Are you shaking it?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains multiple severe mistranslations of basic phrases, though it manages to preserve the explicit question about shaking/masturbating."
+}

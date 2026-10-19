@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426600174_audio_1788985087863.mp3",
+  "language": "malayalam",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 291,
+  "affected_word_count": 18,
+  "semantic_error_rate": 0.0619,
+  "seconds": 4.7,
+  "discrepancies": [
+    {
+      "reference_text": "പത്തു മാസമായി എന്ന് പറഞ്ഞില്ലേ",
+      "translation_text": "Didn't you say ten months?",
+      "category": "number_or_id_altered",
+      "word_count_affected": 5,
+      "explanation": "The translation correctly translates the question but adds nonsensical phrases around it like 'Will you get the difference?' and 'Ah, it will grow, sir, but just look at the tools.' which are not in the reference."
+    },
+    {
+      "reference_text": "നോർമൽ കോൾ ആണോ ഓപ്പൺ ടോക്ക് ആണോ",
+      "translation_text": "is it a normal call? Auto open dot com.",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The translation turns 'open talk' into 'Auto open dot com', which is a complete hallucination."
+    },
+    {
+      "reference_text": "ഇല്ല ഓപ്പൺ ടോക്ക് ഒന്നും ഞാൻ സംസാരിച്ചിട്ടില്ല",
+      "translation_text": "I haven't even talked about big open talk.",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The translation adds the word 'big' which is not present in the reference."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "03:27",
+      "type": "sexual_or_explicit",
+      "reference_text": "കുറച്ചുപേർ ഇങ്ങനെ ചോദിക്കും നോർമൽ കോൾ ആണോ ഓപ്പൺ ടോക്ക് ആണോ അങ്ങനെയൊക്കെ ചോദിക്കും",
+      "translation_text": "at least one person will ask, is it a normal call? Auto open dot com.",
+      "status": "softened"
+    },
+    {
+      "t": "03:35",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഇല്ല ഓപ്പൺ ടോക്ക് ഒന്നും ഞാൻ സംസാരിച്ചിട്ടില്ല",
+      "translation_text": "I haven't even talked about big open talk.",
+      "status": "preserved"
+    },
+    {
+      "t": "03:43",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഓപ്പൺ ടോക്ക് അങ്ങനെ ചെയ്തിട്ടില്ല ഞാൻ ഇങ്ങനെ ഓരോരുത്തരും പറഞ്ഞൊക്കെ പറയുന്നതൊക്കെ കേട്ടോണ്ടൊക്കെ ഇരുന്നിട്ടുണ്ട് അതായത് കപ്പിൾസ് ഒക്കെ ആയിട്ടൊക്കെ ഇങ്ങനെ അതൊക്കെ ഇങ്ങനെ കേട്ടോണ്ടിരുന്നിട്ടുണ്ട്",
+      "translation_text": "So, I haven't done that. I have just heard what others say. I have listened to what they say, like couples and all, I have listened to those things, it's good.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate but contains some garbled phrases and mistranslates 'open talk' as 'Auto open dot com' in one instance, though the general discussion about open talk and couples is preserved."
+}

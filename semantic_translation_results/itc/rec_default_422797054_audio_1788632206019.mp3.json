@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_422797054_audio_1788632206019.mp3",
+  "language": "hindi",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 315,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.0159,
+  "seconds": 3.7,
+  "discrepancies": [
+    {
+      "reference_text": "नंबर पे पेमेंट करना पड़ेगा",
+      "translation_text": "Will I have to pay on the number?",
+      "category": "intent_changed",
+      "word_count_affected": 5,
+      "explanation": "The reference is a statement/demand by the female speaker that payment must be made to the number, but the translation turns it into a question by the male speaker."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:01",
+      "type": "move_off_app",
+      "reference_text": "आपका स्नैपचैट है क्या",
+      "translation_text": "Do you have Snapchat?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:10",
+      "type": "move_off_app",
+      "reference_text": "नंबर शेयर कर लो",
+      "translation_text": "Share the number",
+      "status": "preserved"
+    },
+    {
+      "t": "02:19",
+      "type": "money_or_payment",
+      "reference_text": "नंबर पे पेमेंट करना पड़ेगा",
+      "translation_text": "Will I have to pay on the number?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "02:49",
+      "type": "sexual_or_explicit",
+      "reference_text": "क्या दिखाओगे",
+      "translation_text": "Will you show what you say?",
+      "status": "preserved"
+    },
+    {
+      "t": "03:05",
+      "type": "sexual_or_explicit",
+      "reference_text": "अभी एक बार दिखा दो वो अच्छा है या नहीं मुझे कैसे पता",
+      "translation_text": "Show it once now, whether it is good or not, how would I know?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate, but it incorrectly translates the female speaker's demand for payment on her number as a question from the male speaker."
+}

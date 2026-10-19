@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_426656120_audio_1788992939200.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 213,
+  "affected_word_count": 8,
+  "semantic_error_rate": 0.0376,
+  "seconds": 5.3,
+  "discrepancies": [
+    {
+      "reference_text": "അത് ഒമാന്",
+      "translation_text": "That is Oman.",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference says Oman (+968 is Oman, but the speaker says Oman for 966, which is actually Saudi Arabia), but the translation translates it literally as Oman, which is fine, but the actual country code 966 is Saudi Arabia."
+    },
+    {
+      "reference_text": "56564",
+      "translation_text": "56564",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The translation merges and alters the sequence of numbers being dictated by the speakers."
+    },
+    {
+      "reference_text": "ഞാൻ ഹൈഡ് ചെയ്യാം",
+      "translation_text": "I will hang up.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The speaker says 'I will hide' (referring to hiding the rest of the number or details), but the translation says 'I will hang up'."
+    },
+    {
+      "reference_text": "ഹൈഡ് ആണോ",
+      "translation_text": "Should I hang up?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The speaker asks 'Is it hidden?', but the translation translates it as 'Should I hang up?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:50",
+      "type": "move_off_app",
+      "reference_text": "ഞാൻ രണ്ടും ഉണ്ട് ഇതിനകത്ത് ഓപ്പൺ ഡോക്ക് ഇല്ല ഓപ്പൺ ഡോക്ക് വേണ്ടവർക്ക് വാട്സാപ്പ് നമ്പർ കൊടുക്കും",
+      "translation_text": "I have both. This one is not an open talk. For open talk, I give the WhatsApp number.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:20",
+      "type": "move_off_app",
+      "reference_text": "ദുബായിത്തെ കോഡ് അറിയോ... പ്ലസ് 971 പിന്നെ 5656...",
+      "translation_text": "Do you know the Dubai code?... Is it +971? Then 5656...",
+      "status": "preserved"
+    },
+    {
+      "t": "03:06",
+      "type": "money_or_payment",
+      "reference_text": "പെയ്ഡ് സർവീസ് ആണ് നിങ്ങൾക്ക് പറഞ്ഞേക്കാം",
+      "translation_text": "It is a paid service, I am telling you beforehand.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key policy moments regarding sharing a WhatsApp number/phone number and mentioning a paid service, though there are minor errors in translating the word 'hide' as 'hang up'."
+}

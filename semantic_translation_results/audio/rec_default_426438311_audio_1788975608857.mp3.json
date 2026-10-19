@@ -1,0 +1,94 @@
+{
+  "file_id": "rec_default_426438311_audio_1788975608857.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 303,
+  "affected_word_count": 46,
+  "semantic_error_rate": 0.1518,
+  "seconds": 6.8,
+  "discrepancies": [
+    {
+      "reference_text": "ഞാൻ ഹേഴ്സ് ഇങ്ങ് ഫൈനൽ ഇയർ അടിക്കാൻ",
+      "translation_text": "I am in my final year of nursing.",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference contains garbled/slang words which do not clearly mean 'nursing'."
+    },
+    {
+      "reference_text": "തത്തമ്മ",
+      "translation_text": "cat",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'parrot' (തത്തമ്മ), but the translation translates it as 'cat'."
+    },
+    {
+      "reference_text": "നീ എന്തിനാ പുള്ളിനെ വിളിച്ചത്",
+      "translation_text": "I was calling my sister.",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks 'Why did you call him/that guy?', but the translation says 'I was calling my sister'."
+    },
+    {
+      "reference_text": "ചേച്ചിക്ക് എന്താ കലിപ്പ്",
+      "translation_text": "Why are you angry with your sister?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks 'Why is sister angry?', but the translation says 'Why are you angry with your sister?'."
+    },
+    {
+      "reference_text": "ചേട്ടൻ എത്ര വയസ്സുണ്ട്",
+      "translation_text": "How old is he?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks 'How old are you, brother?', but the translation asks 'How old is he?'."
+    },
+    {
+      "reference_text": "ഞാൻ ബാംഗ്ലൂരിൽ ഉണ്ടായിരുന്ന ആളാണ് എനിക്കറിയാം",
+      "translation_text": "I was going to ask you that.",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'I am someone who was in Bangalore, I know', but the translation says 'I was going to ask you that'."
+    },
+    {
+      "reference_text": "നീ എന്തിനാ കറിയാക്കുന്നത്",
+      "translation_text": "Why did you come there?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks 'Why are you crying/whining?', but the translation says 'Why did you come there?'."
+    },
+    {
+      "reference_text": "എന്റെ ഭാര്യക്ക് അറിയാലോ ഞാൻ ഇതിൽ ഉള്ളത്",
+      "translation_text": "I know her, that's why.",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference says 'My wife knows that I am on this (app)', but the translation says 'I know her, that's why'."
+    },
+    {
+      "reference_text": "ഭാര്യയുടെ ഇത് കണ്ടു ചേട്ടൻ അറിയാമോ",
+      "translation_text": "Do you know my wife?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference asks 'Does brother know seeing your wife's this (profile/activity)?', but the translation simplifies it to 'Do you know my wife?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:48",
+      "type": "move_off_app",
+      "reference_text": "ഇൻസ്റ്റാഗ്രാം",
+      "translation_text": "Instagram",
+      "status": "preserved"
+    },
+    {
+      "t": "03:17",
+      "type": "move_off_app",
+      "reference_text": "ഭാര്യയുടെ നമ്പർ ഒന്ന് തന്നേ",
+      "translation_text": "Give me your wife's number.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the general flow but contains several critical mistranslations, such as turning 'him/that guy' into 'sister', and completely misrepresenting the husband's statement about his wife knowing he is on the app."
+}

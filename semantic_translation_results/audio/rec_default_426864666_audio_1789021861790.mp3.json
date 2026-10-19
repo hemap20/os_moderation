@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426864666_audio_1789021861790.mp3",
+  "language": "kannada",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 73,
+  "affected_word_count": 14,
+  "semantic_error_rate": 0.1918,
+  "seconds": 3.8,
+  "discrepancies": [
+    {
+      "reference_text": "ಎಲ್ಲಿಂದ",
+      "translation_text": "how are you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference asks 'from where' but the translation translates it as 'how are you'."
+    },
+    {
+      "reference_text": "ನೀವು ಎಲ್ಲಿಂದ",
+      "translation_text": "How are you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'where are you from' but the translation translates it as 'how are you'."
+    },
+    {
+      "reference_text": "ಒಡೆಯರ ಹಾಗೆ",
+      "translation_text": "like a stranger",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'like a master/owner' but the translation says 'like a stranger'."
+    },
+    {
+      "reference_text": "ಏನಾದ್ರೂ ತೋರಿಸ್ತೀರಾ",
+      "translation_text": "Will you show it?",
+      "category": "tone_softened",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'will you show something' (implying showing body/nudity), which is translated slightly more vaguely as 'Will you show it?'."
+    },
+    {
+      "reference_text": "ಮತ್ತೆ ಇನ್ನ ಯಾಕೆ ರೀ ನೀವು ಮಾಸ್ಕ್ ಹಾಕಿದ್ದೀರಾ",
+      "translation_text": "Why are you asking? You are wearing a mask.",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference asks 'Then why are you wearing a mask?' but the translation says 'Why are you asking? You are wearing a mask'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:44",
+      "type": "sexual_or_explicit",
+      "reference_text": "ಏನಾದ್ರೂ ತೋರಿಸ್ತೀರಾ",
+      "translation_text": "Will you show it?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate, though it contains a few minor meaning changes regarding locations and questions, but the overall intent and tone of the conversation are preserved."
+}

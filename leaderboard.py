@@ -16,9 +16,12 @@ Basis (same for every row, so trends are comparable):
 Columns:
   recall, specificity, balanced_acc   per call, all categories, conf >= 0.8.
                                        balanced_acc = (recall + specificity) / 2.
-  flag_precision                       per flag: share of flags with conf >= 0.8
-                                       that are correct (matched, or a redundant
-                                       extra catch of an already-matched violation).
+  call_precision                       per call, NO threshold (every flag counts): of the calls
+                                       flagged, the share that really had a violation caught
+                                       (= the "overall" row of the Overall table).
+  flag_precision                       per flag, NO threshold: share of all flags that are
+                                       correct (matched, or a redundant extra catch of an
+                                       already-matched violation).
   precision_gap                        flag precision at conf >= 0.8 minus flag
                                        precision below 0.8. Larger = confidence is
                                        more meaningful; 0 = confidence carries no signal.
@@ -50,7 +53,7 @@ TOTAL_FILES = 381
 SIGNAL = "_lb_conf"
 
 COLUMNS = ["rank", "model", "input", "prompt", "calls", "partial", "basis",
-           "balanced_acc", "recall", "specificity", "flag_precision", "precision_gap",
+           "balanced_acc", "recall", "specificity", "call_precision", "flag_precision", "precision_gap",
            "right_flags_high", "ambiguous_recall", "n_flags", "updated"]
 
 
@@ -72,6 +75,8 @@ def full_dataset_runs():
 
 
 def model_input(model_key):
+    if "audiotrans" in model_key:
+        return "text (English, Gemini-translated from audio)"
     if "itc" in model_key:
         return "text (Indic-Transcribe-Core)"
     if "conformer" in model_key:
@@ -124,7 +129,7 @@ def flag_metrics(rows):
     gap = (hi_p - (lo_p or 0.0)) if hi_p is not None else None
     right = hi_ok + lo_ok
     return {
-        "flag_precision": r2(hi_p),
+        "flag_precision": r2(right / (hi_n + lo_n)) if (hi_n + lo_n) else None,  # all flags, no threshold
         "precision_gap": r2(gap),
         "right_flags_high": r2(hi_ok / right) if right else None,
         "n_flags": hi_n + lo_n,
@@ -155,7 +160,7 @@ def build():
                 "calls": len(rows), "partial": "yes" if len(rows) < 0.9 * TOTAL_FILES else "",
                 "basis": "raw" if prompt == "v1" else "pp_full",
                 "balanced_acc": r2((rec + spec) / 2) if rec is not None and spec is not None else None,
-                "recall": rec, "specificity": spec, "ambiguous_recall": amb,
+                "recall": rec, "specificity": spec, "call_precision": threshold_metrics_for_group(rows, "ALL", None, SIGNAL)["precision"], "ambiguous_recall": amb,
                 **flag_metrics(rows), "updated": date.today().isoformat(),
             })
     rows_out.sort(key=lambda r: -(r["balanced_acc"] or 0))
@@ -166,15 +171,15 @@ def build():
 
 def write_md(rows, path):
     hdr = ["#", "Model", "Input", "Prompt", "Calls", "Balanced acc.", "Recall", "Specificity",
-           "Flag precision", "Precision gap", "Right flags ≥0.8", "Ambiguous recall"]
+           "Precision per call (all flags)", "Precision per flag (all flags)", "Precision gap", "Right flags ≥0.8", "Ambiguous recall"]
     lines = ["# Full-dataset leaderboard", "",
-             f"Per call at confidence ≥ {HIGH} unless noted; pp_full confidence (raw for v1). "
+             f"Per call at confidence ≥ {HIGH} unless noted (both precisions use all flags, no threshold); pp_full confidence (raw for v1). "
              "\\* = partial run (fewer calls scored). Regenerate: `python3 leaderboard.py`.", "",
              "| " + " | ".join(hdr) + " |", "|" + "---|" * len(hdr)]
     for r in rows:
         star = " \\*" if r["partial"] else ""
         cells = [r["rank"], r["model"] + star, r["input"], r["prompt"], r["calls"], r["balanced_acc"], r["recall"],
-                 r["specificity"], r["flag_precision"], r["precision_gap"], r["right_flags_high"], r["ambiguous_recall"]]
+                 r["specificity"], r["call_precision"], r["flag_precision"], r["precision_gap"], r["right_flags_high"], r["ambiguous_recall"]]
         lines.append("| " + " | ".join("" if c is None else str(c) for c in cells) + " |")
     path.write_text("\n".join(lines) + "\n")
 

@@ -1,0 +1,101 @@
+{
+  "file_id": "rec_audio_call_426576577_audio_1788983168675.mp3",
+  "language": "tamil",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 1694,
+  "affected_word_count": 29,
+  "semantic_error_rate": 0.0171,
+  "seconds": 7.3,
+  "discrepancies": [
+    {
+      "reference_text": "நானும் மேரிடு தாங்க",
+      "translation_text": "I am a lady too",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The speaker says 'I am also married', but the translation incorrectly translates it as 'I am a lady too'."
+    },
+    {
+      "reference_text": "வாய்ஸ் கேட்டா மேரிடு மாதிரி தெரியல",
+      "translation_text": "you don't sound like a lady",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The speaker says 'hearing your voice, you don't sound married', but the translation says 'you don't sound like a lady'."
+    },
+    {
+      "reference_text": "ஏன் அக்கவுண்ட் சொல்லணுமா",
+      "translation_text": "should I call you sister?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The speaker asks 'Why, should I call you akka (elder sister)?', but the translation mistranslates 'akka' as 'account' in the Tamil script context, rendering it as 'should I call you sister?' based on a guess, but the reference text actually says 'akka' (written as 'அக்கவுண்ட்' due to a transcription error or mishearing, but the translation says 'sister' in one place and 'account' in another)."
+    },
+    {
+      "reference_text": "அக்கான்னு சொன்னா",
+      "translation_text": "account",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'அக்கான்னு சொன்னா' (if I call you sister), but the translation says 'account' due to misinterpreting the Tamil text."
+    },
+    {
+      "reference_text": "அக்கான்னு சொன்னதுதான் குடுப்பீங்களா",
+      "translation_text": "will you drink only if I call you sister?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'Will you give it only if I call you sister?', but the translation says 'will you drink only if I call you sister?'."
+    },
+    {
+      "reference_text": "ஹேர்ட்டா இருக்கேனா நான் அதுல இருந்து வந்துட்டேன் இப்ப நான் ஹேர்ட்டா எல்லாம் இல்ல",
+      "translation_text": "I have come out of that hotel. Nowadays it's not like a hotel.",
+      "category": "other_meaning_change",
+      "word_count_affected": 11,
+      "explanation": "The speaker says she is not 'hurt' and has come out of it, but the translation misinterprets 'hurt' as 'hotel'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "11:04",
+      "type": "move_off_app",
+      "reference_text": "பிரண்ட்ஷிப்பா இருக்கலாமா",
+      "translation_text": "can we be friends?",
+      "status": "preserved"
+    },
+    {
+      "t": "11:55",
+      "type": "move_off_app",
+      "reference_text": "இல்ல அதெல்லாம் எதுவும் வேணாம் ஜஸ்ட் வேணாம் நீங்க நம்பர் குடுங்க நான் வாட்ஸ்அப் ஹாய் மெசேஜ் போடுறேன்",
+      "translation_text": "No, nothing like that is needed. Just, no. You give the number, I will send a 'Hi' message on WhatsApp.",
+      "status": "preserved"
+    },
+    {
+      "t": "12:01",
+      "type": "move_off_app",
+      "reference_text": "இல்ல நம்பர் வேண்டாம் நான் டெலிகிராம் ஐடி வேணா தரேன்",
+      "translation_text": "I don't want the number. I can give you my Telegram ID if you want.",
+      "status": "preserved"
+    },
+    {
+      "t": "13:56",
+      "type": "move_off_app",
+      "reference_text": "சரி நீங்க கட் பண்ணிட்டும் போயிறாத நம்பர் ஷேர் பண்ணிட்டு போ தயவுசெய்து",
+      "translation_text": "Sir, don't cut the call and go. Let's share and then go, please.",
+      "status": "preserved"
+    },
+    {
+      "t": "13:59",
+      "type": "move_off_app",
+      "reference_text": "சரி ஓகே 95",
+      "translation_text": "Okay, okay. Nine five",
+      "status": "preserved"
+    },
+    {
+      "t": "14:16",
+      "type": "move_off_app",
+      "reference_text": "95 66 26 9047",
+      "translation_text": "Nine five double six, okay. Two six double six two six nine zero four seven.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation successfully captures the main intent of the call, including the exchange of phone numbers to move off-app, but contains several odd mistranslations such as translating 'married' as 'lady' and 'hurt' as 'hotel'."
+}

@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_default_426848544_audio_1789020636084.mp3",
+  "language": "telugu",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 295,
+  "affected_word_count": 25,
+  "semantic_error_rate": 0.0847,
+  "seconds": 5.1,
+  "discrepancies": [
+    {
+      "reference_text": "ఆ పుట్టుమచ్చ టెంప్టింగ్ గా ఉంది.",
+      "translation_text": "that photo is very tempting",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference mentions a mole (పుట్టుమచ్చ) being tempting, but the translation incorrectly translates it as 'photo'."
+    },
+    {
+      "reference_text": "సరే, నేను టెంప్టింగ్ గా ఉందని చెప్తున్నాను.",
+      "translation_text": "okay I will say I am in a tempting mood",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'Okay, I am saying it is tempting', but the translation says 'I am in a tempting mood'."
+    },
+    {
+      "reference_text": "బాయ్ ఫ్రెండ్ ఉండేవారు, ఇప్పుడు లేరు.",
+      "translation_text": "He didn't run away",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'I used to have a boyfriend, now I don't', but the translation says 'He didn't run away'."
+    },
+    {
+      "reference_text": "ఎచ్చమల్లి.",
+      "translation_text": "Gachibowli, 410",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference mentions 'Etchamalli' (or similar area name), but the translation says 'Gachibowli, 410' which is incorrect and adds a number."
+    },
+    {
+      "reference_text": "క్యాప్ జెమిని.",
+      "translation_text": "cabs, tell me the price",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions the company name 'Capgemini', but the translation says 'cabs, tell me the price'."
+    },
+    {
+      "reference_text": "ఏ పర్పస్ కోసం వచ్చావు?",
+      "translation_text": "Which bar did you come from",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks 'For what purpose did you come?', but the translation says 'Which bar did you come from'."
+    },
+    {
+      "reference_text": "చూపియను.",
+      "translation_text": "I will show you",
+      "category": "negation_flipped",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'I won't show', but the translation flips the negation to 'I will show you'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "03:59",
+      "type": "sexual_or_explicit",
+      "reference_text": "ఒకసారి ఇలా చూపించొచ్చు కదా.",
+      "translation_text": "Do this like this once",
+      "status": "preserved"
+    },
+    {
+      "t": "04:03",
+      "type": "sexual_or_explicit",
+      "reference_text": "చూపియను.",
+      "translation_text": "I will show you",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "no",
+  "summary": "The translation contains several critical errors, including flipping a refusal to show herself ('I won't show') into an agreement ('I will show you'), and mistranslating key terms like 'mole' to 'photo' and 'Capgemini' to 'cabs'."
+}

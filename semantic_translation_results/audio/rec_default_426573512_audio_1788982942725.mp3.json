@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_426573512_audio_1788982942725.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 128,
+  "affected_word_count": 33,
+  "semantic_error_rate": 0.2578,
+  "seconds": 5.2,
+  "discrepancies": [
+    {
+      "reference_text": "ആ ഞാൻ അത് ഓപ്പൺ ചാറ്റ് ഉണ്ടെന്ന് പറഞ്ഞാൽ ഫേസ് കാണിക്കാൻ പറഞ്ഞിട്ടാണ്",
+      "translation_text": "Ah, I said that if there is an open chat, I can show my face.",
+      "category": "other_meaning_change",
+      "word_count_affected": 12,
+      "explanation": "The reference says 'I asked you to show your face if you are up for open chat', but the translation says 'I can show my face'."
+    },
+    {
+      "reference_text": "ഓപ്പൺ ചാറ്റ് ഉണ്ടെങ്കിൽ പിന്നെ ഫേസ് കാണിക്കാൻ പറഞ്ഞിട്ടാണ്",
+      "translation_text": "If there is an open chat, then I can show my face.",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference says 'I asked you to show your face if there is open chat', but the translation says 'I can show my face'."
+    },
+    {
+      "reference_text": "നോർമൽ ചാറ്റ് മാത്രമേ ഉള്ളൂ",
+      "translation_text": "Only normal chat?",
+      "category": "intent_changed",
+      "word_count_affected": 4,
+      "explanation": "The reference is a statement ('Only normal chat is there'), but the translation turns it into a question."
+    },
+    {
+      "reference_text": "അല്ല അപ്പൊ ആള് പുറത്തൊക്കെ പോകുമ്പോൾ മിസ്സ് ഒന്നും ചെയ്യാറില്ലേ?",
+      "translation_text": "Well, when people go out, they don't usually miss anything.",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference asks 'Don't you miss your husband when he goes abroad?', but the translation completely misinterprets it as 'when people go out, they don't usually miss anything'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:10",
+      "type": "sexual_or_explicit",
+      "reference_text": "ആ ഞാൻ അത് ഓപ്പൺ ചാറ്റ് ഉണ്ടെന്ന് പറഞ്ഞാൽ ഫേസ് കാണിക്കാൻ പറഞ്ഞിട്ടാണ്",
+      "translation_text": "Ah, I said that if there is an open chat, I can show my face.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:15",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഓപ്പൺ ചാറ്റ് ഉണ്ടെങ്കിൽ പിന്നെ ഫേസ് കാണിക്കാൻ പറഞ്ഞിട്ടാണ്",
+      "translation_text": "If there is an open chat, then I can show my face.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:22",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഓപ്പൺ ചാറ്റ് താല്പര്യം ഉണ്ടോ?",
+      "translation_text": "Are you interested in an open chat?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation mostly preserves the flow of the conversation but misinterprets who is supposed to show their face during an 'open chat' and completely mistranslates the final question about missing the husband."
+}

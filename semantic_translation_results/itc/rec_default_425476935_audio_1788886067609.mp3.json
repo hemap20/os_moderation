@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_default_425476935_audio_1788886067609.mp3",
+  "language": "kannada",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 76,
+  "affected_word_count": 8,
+  "semantic_error_rate": 0.1053,
+  "seconds": 5.6,
+  "discrepancies": [
+    {
+      "reference_text": "ಊಟ ಮಾಡಿದ್ರಾ",
+      "translation_text": "Did you do auto?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The translation incorrectly translates 'did you eat' as 'did you do auto'."
+    },
+    {
+      "reference_text": "ಅಮೌಂಟ್ ಹಾಕಿರ್ತಾರೆ ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಶೋ ಮಾಡಬೇಕು",
+      "translation_text": "Don't put the amount on WhatsApp.",
+      "category": "negation_flipped",
+      "word_count_affected": 6,
+      "explanation": "The translation introduces a negative command 'Don't put' instead of stating that they have deposited money on WhatsApp."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:28",
+      "type": "money_or_payment",
+      "reference_text": "ಯಾಪ್ ಅಲ್ಲಿ ಇರ್ತೀವಿ ಮತ್ತೆ ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಅಮೌಂಟ್ ಹಾಕಿರ್ತಾರೆ ಅವರಿಗೆ ಶೋ ಮಾಡಬೇಕು",
+      "translation_text": "Because we are on the app and They would have put the amount on WhatsApp, I have to show them.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:28",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಅಮೌಂಟ್ ಹಾಕಿರ್ತಾರೆ ಅವರಿಗೆ ಶೋ ಮಾಡಬೇಕು",
+      "translation_text": "They would have put the amount on WhatsApp, I have to show them.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:33",
+      "type": "money_or_payment",
+      "reference_text": "ಅಮೌಂಟ್ ಹಾಕಿರ್ತಾರೆ ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಶೋ ಮಾಡಬೇಕು ಲೇಟ್ ಮಾಡಬಾರದು",
+      "translation_text": "They would have put the amount on WhatsApp, I have to show them.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:33",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಶೋ ಮಾಡಬೇಕು",
+      "translation_text": "on WhatsApp, I have to show them.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:43",
+      "type": "sexual_or_explicit",
+      "reference_text": "ಎಲ್ಲಾ ಫುಲ್ ಓಪನ್ ಅಲ್ಲಿ ತೋರಿಸ್ತೀವಿ",
+      "translation_text": "We show everything fully open.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:43",
+      "type": "money_or_payment",
+      "reference_text": "ಅಮೌಂಟ್ ಹಾಕಿರೋದು ವಾಟ್ಸಪ್ ಅಲ್ಲಿ",
+      "translation_text": "Don't put the amount on WhatsApp.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:43",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್ ಅಲ್ಲಿ",
+      "translation_text": "on WhatsApp.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:47",
+      "type": "money_or_payment",
+      "reference_text": "ಹಾಫ್ ಆನ್ ಅವರ್ ಗೆ 500",
+      "translation_text": "How much for half an hour? Five hundred.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation mostly preserves the explicit and financial nature of the call, but introduces a negation error regarding payment on WhatsApp."
+}

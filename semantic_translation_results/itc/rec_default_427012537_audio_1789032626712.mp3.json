@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_default_427012537_audio_1789032626712.mp3",
+  "language": "malayalam",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 58,
+  "affected_word_count": 14,
+  "semantic_error_rate": 0.2414,
+  "seconds": 3.8,
+  "discrepancies": [
+    {
+      "reference_text": "ഒന്ന് പറയൂ ഈ ഔട്ട്‌ഫിറ്റ് ഒക്കെ എവിടെയാ ഉള്ളത് എവിടെയാ",
+      "translation_text": "Awesome dress, the outfit is really awesome, where are you",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference asks where the outfit is located, but the translation translates it as praising the outfit as awesome."
+    },
+    {
+      "reference_text": "മുറുക്കോ",
+      "translation_text": "sleeping or rice",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference asks if she is chewing betel leaf (murukko), which is mistranslated as sleeping or rice."
+    },
+    {
+      "reference_text": "എനിക്ക് ഒന്ന് കാണാൻ പറ്റില്ലല്ലേ",
+      "translation_text": "I [unclear] Can't take it, right?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks 'Can't I see it?', which is mistranslated as 'Can't take it, right?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:36",
+      "type": "sexual_or_explicit",
+      "reference_text": "എനിക്ക് ഒന്ന് കാണാൻ പറ്റില്ലല്ലേ",
+      "translation_text": "I [unclear] Can't take it, right?",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several mistranslations regarding the user's questions about seeing the outfit and what the expert is eating, which slightly alters the intent of the conversation."
+}

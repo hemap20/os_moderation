@@ -1,0 +1,74 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert/paid host). Calls can be audio/video.
+    *   **Goal:** Find every possible violation based on three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+    *   **Output Format:** Strict minified JSON array of flag objects.
+    *   **Constraints:**
+        *   Only output quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, etc.).
+        *   Category `f` must be exactly one of: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+        *   Strict rules for `speech_act`, `violation`, and `confidence`.
+        *   Quotes must be exact, with timestamps.
+
+2.  **Analyze the Transcript (Segment by Segment):**
+
+    *   `[00:00] हेलो हेलो` (Hello hello) -> Greeting. (Allowed/Ordinary conversation)
+    *   `[00:10] सो रहे हो तो क्या कर रहे हो अभी लेटा हुआ हूँ कहाँ से हो तुम कहाँ से हो` (Are you sleeping, what are you doing? I am lying down, where are you from, where are you from) -> Small talk/Introduction. (Allowed)
+    *   `[00:20] तुम कहाँ से हो क्या कर रहे हो हाँ` (Where are you from, what are you doing? Yes) -> Small talk. (Allowed)
+    *   `[00:30] क्या करती हो पढ़ाई करती हो क्या हाँ पढ़ाई करती हो कितने साल की हो तीस साल की हो` (What do you do? Do you study? Yes, I study. How old are you? Thirty years old) -> Personal details/Small talk. (Allowed)
+    *   `[00:40] ओह बॉयफ्रेंड है नहीं तो मगर किए के भी नहीं तो` (Oh, have a boyfriend? No, but not done/done anything either) -> Personal status. (Allowed)
+    *   `[00:50] करने हैं अभी क्या कह रहे हो हाँ तो करने हैं अभी` (Want to do? What are you saying? Yes, want to do it now) -> Context setting. (Allowed)
+    *   `[01:00] वीडियो कॉल पे आओ वीडियो कॉल भी करती हूँ ऑडियो कॉल करती हूँ आज सुबह ही करती हूँ` (Come on a video call. I also do video calls. I do audio calls this morning too) -> Discussing call types. (Allowed - allowed call types are fine).
+    *   `[01:10] बढ़िया बढ़िया` (Great great) -> Filler/Acknowledgement. (Allowed)
+    *   `[01:20] ऑडियो ट्रॉली की ट्राई करोगे कितना साइज है तुम्हारा बुक्स का` (Will you try audio trolley? What is the size of your books?) -> Seems like a product/service question. (Allowed)
+    *   `[01:30] थर्टी सिक्स` (Thirty six) -> Answer. (Allowed)
+    *   `[01:40] तो अपने आप अपने आप किए अपने आप कैसे करते हैं उंगली डाल के नहीं तो` (So, how do you do it by yourself? Not by putting a finger in) -> Context related to a physical action/service.
+    *   `[01:50] यार देखो चोटने का मन कर रहा है वीडियो कॉल पे आना पैसे डाल के आ जाओगे वीडियो कॉल पे` (Dude, look, I feel like hitting. Come on a video call, send money and come on a video call) -> Suggesting meeting/payment for a video call.
+    *   `[02:00] ऐसे डालो आ जाती है वीडियो कॉल पे हाँ तो बता ना डाल देता ना` (Put it like this, it comes on video call. Yes, so tell me, put it or not) -> Encouragement/Instruction.
+    *   `[02:10] मेरा आइडिया दर्ज कर ले` (Register my idea) -> Unclear context, possibly related to the service.
+    *   `[02:20] स्टार ऑफ़ द आर्ट` (Star of the art) -> Unclear.
+    *   `[02:30] इंस्टाग्राम पर नहीं हूँ मैं व्हाट्सएप पर व्हाट्सएप पर` (I am not on Instagram, I am on WhatsApp, WhatsApp) -> Platform mention.
+
+3.  **Evaluate Potential Violations:**
+
+    *   **PlatformMove:** Look for proposals to move outside the app, asking for external contact info, or proposing a meeting.
+        *   `[01:50] यार देखो चोटने का मन कर रहा है वीडियो कॉल पे आना पैसे डाल के आ जाओगे वीडियो कॉल पे` (Suggests meeting/payment for a video call, which is a strong move.)
+        *   `[02:30] इंस्टाग्राम पर नहीं हूँ मैं व्हाट्सएप पर व्हाट्सएप पर` (Mentions WhatsApp, which is an external platform, but this is just stating where they are, not proposing contact.)
+
+    *   **SuspiciousActivity:** Look for money/payment linked to sexual content or services.
+        *   `[01:50] ...पैसे डाल के आ जाओगे वीडियो कॉल पे` (Asking for money to proceed with a video call.) This is a weaker case (asking for money outside the app whose purpose is unclear, though here the purpose is clearly to initiate a video call).
+
+    *   **Explicit-Flirting:** Look for sexual talk, body requests, etc.
+        *   No explicit sexual content found.
+
+4.  **Draft Flags (Focusing on the strongest candidates):**
+
+    *   **Candidate 1 (SuspiciousActivity/PlatformMove):** The request for money to initiate a video call.
+
+5.  **Final Review against Rules:**
+
+    *   Quote: `[01:50] यार देखो चोटने का मन कर रहा है वीडियो कॉल पे आना पैसे डाल के आ जाओगे वीडियो कॉल पे`
+    *   Type: Direct request for payment to move the interaction to a video call (PlatformMove/SuspiciousActivity).
+    *   Confidence: High, as it explicitly links money to the action.
+
+6.  **Construct JSON Output.** (Only one strong flag identified.)<channel|>```json
+{
+  "d": [
+    {
+      "t": "01:50",
+      "seg": "यार देखो चोटने का मन कर रहा है वीडियो कॉल पे आना पैसे डाल के आ जाओगे वीडियो कॉल पे",
+      "tr": "Dude, look, I feel like hitting. Come on a video call, send money and come on a video call",
+      "f": "SuspiciousActivity",
+      "spk": "user",
+      "ctx": "The user expresses a desire for a video call and suggests paying money to initiate it. The expert responds by encouraging the user to proceed with the payment.",
+      "speech_act": "direct",
+      "j": "The user is asking for money to facilitate a video call, which links payment to the service, fitting the definition of SuspiciousActivity.",
+      "violation": "yes",
+      "c": 0.9
+    }
+  ]
+}
+```<turn|>

@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_default_423163427_audio_1788674918154.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 48,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.1042,
+  "seconds": 3.2,
+  "discrepancies": [
+    {
+      "reference_text": "எந்த ஏரியா?",
+      "translation_text": "Who? How many have you done?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Which area?' but the translation asks 'Who? How many have you done?'."
+    },
+    {
+      "reference_text": "அம்பத்தூர்",
+      "translation_text": "50.",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference names a location 'Ambattur' but the translation says '50'."
+    },
+    {
+      "reference_text": "எங்க பாப்போம்",
+      "translation_text": "Where do you live?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Let's see where' or 'Let's see' but the translation asks 'Where do you live?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:15",
+      "type": "sexual_or_explicit",
+      "reference_text": "நான் பிரைவேட் வீடியோ கால்ஸ் எல்லாம் பண்ணுவேன் உனக்கு ஏதாவது தேவைப்படுதா?",
+      "translation_text": "I do private video calls. Do you need anything?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:26",
+      "type": "money_or_payment",
+      "reference_text": "நல்லா இருக்கும் 300 ருபீஸ் தான்",
+      "translation_text": "It will be good. It is 300 rupees.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation accurately captures the initial offer of private video calls and the price, but completely alters the final questions and answers regarding location."
+}

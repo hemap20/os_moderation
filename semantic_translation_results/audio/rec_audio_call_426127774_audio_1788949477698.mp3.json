@@ -1,0 +1,150 @@
+{
+  "file_id": "rec_audio_call_426127774_audio_1788949477698.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 392,
+  "affected_word_count": 34,
+  "semantic_error_rate": 0.0867,
+  "seconds": 10.6,
+  "discrepancies": [
+    {
+      "reference_text": "आप कैसे हो?",
+      "translation_text": "Where are you from?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'How are you?' but the translation asks 'Where are you from?'"
+    },
+    {
+      "reference_text": "बोलिए",
+      "translation_text": "I don't want to tell you, go away.",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'Speak/Tell me' but the translation says 'I don't want to tell you, go away.'"
+    },
+    {
+      "reference_text": "ब्यूटी प्रोडक्ट कंपनी में हूँ",
+      "translation_text": "I work in a video production company.",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'beauty product company' but the translation says 'video production company'."
+    },
+    {
+      "reference_text": "ओपन है?",
+      "translation_text": "Okay then.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Is it open?' (referring to video call/showing body) but the translation says 'Okay then.'"
+    },
+    {
+      "reference_text": "झांट नहीं उखाड़ते",
+      "translation_text": "wasting my time on this",
+      "category": "tone_softened",
+      "word_count_affected": 3,
+      "explanation": "The highly vulgar Hindi phrase referring to pubic hair is softened to 'wasting my time'."
+    },
+    {
+      "reference_text": "तू मेरी माँ की छिनार है क्या?",
+      "translation_text": "Is your mother a prostitute?",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference asks 'Are you my mother's whore/co-wife?' but the translation translates it as 'Is your mother a prostitute?'"
+    },
+    {
+      "reference_text": "भड़वागिरी",
+      "translation_text": "act like a fool",
+      "category": "tone_softened",
+      "word_count_affected": 1,
+      "explanation": "The vulgar term for pimping/panderism is softened to 'act like a fool'."
+    },
+    {
+      "reference_text": "अगर नहीं घुस पाए तो बताओ हम घुसा देंगे दो-तीन दिन एक साथ",
+      "translation_text": "If I couldn't enter, then tell me, I will enter in two or three days together",
+      "category": "other_meaning_change",
+      "word_count_affected": 12,
+      "explanation": "The reference contains a highly explicit sexual threat ('shove it in for two-three days'), which is translated literally and nonsensically as 'enter in two or three days'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:35",
+      "type": "sexual_or_explicit",
+      "reference_text": "वीडियो कॉलिंग करके देख लो",
+      "translation_text": "Video call me and see.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:40",
+      "type": "sexual_or_explicit",
+      "reference_text": "वीडियो कॉलिंग करके देख लो",
+      "translation_text": "Video call me and see.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:43",
+      "type": "sexual_or_explicit",
+      "reference_text": "ओपन है?",
+      "translation_text": "Okay then.",
+      "status": "missing"
+    },
+    {
+      "t": "00:46",
+      "type": "money_or_payment",
+      "reference_text": "रिचार्ज करने की औकात नहीं है?",
+      "translation_text": "Do you have the capacity to recharge?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:08",
+      "type": "sexual_or_explicit",
+      "reference_text": "गांड में डाल लेना अपना",
+      "translation_text": "Put it in your ass.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:10",
+      "type": "sexual_or_explicit",
+      "reference_text": "हाँ तेरी माँ की गांड में भी तू डाल सकता है",
+      "translation_text": "Yes, you can put it in your mother's ass too.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:15",
+      "type": "sexual_or_explicit",
+      "reference_text": "अपनी माँ के गांड में ही डाला कर",
+      "translation_text": "you should put it in your mother's ass.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:25",
+      "type": "sexual_or_explicit",
+      "reference_text": "तू मेरी माँ की छिनार है क्या?",
+      "translation_text": "Is your mother a prostitute?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "02:27",
+      "type": "sexual_or_explicit",
+      "reference_text": "छिनार का बेटा है तू",
+      "translation_text": "you are the son of a prostitute",
+      "status": "preserved"
+    },
+    {
+      "t": "02:30",
+      "type": "sexual_or_explicit",
+      "reference_text": "भड़वागिरी",
+      "translation_text": "act like a fool",
+      "status": "softened"
+    },
+    {
+      "t": "02:33",
+      "type": "sexual_or_explicit",
+      "reference_text": "अगर नहीं घुस पाए तो बताओ हम घुसा देंगे दो-तीन दिन एक साथ",
+      "translation_text": "If I couldn't enter, then tell me, I will enter in two or three days together.",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow of the argument and most of the explicit insults, but it softens several highly vulgar terms and mistranslates a sexual threat at the end."
+}

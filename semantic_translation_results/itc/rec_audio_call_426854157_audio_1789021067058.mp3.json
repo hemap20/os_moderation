@@ -1,0 +1,30 @@
+{
+  "file_id": "rec_audio_call_426854157_audio_1789021067058.mp3",
+  "language": "hindi",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 61,
+  "affected_word_count": 7,
+  "semantic_error_rate": 0.1148,
+  "seconds": 2.4,
+  "discrepancies": [
+    {
+      "reference_text": "शादी हो गई?",
+      "translation_text": "it has been seven days.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks if they are married, but the translation incorrectly translates this as 'it has been seven days'."
+    },
+    {
+      "reference_text": "शादी हो गई है?",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The second question asking if they are married is completely missing from the translation."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate but completely misinterprets and omits the questions about marriage at the end of the call."
+}

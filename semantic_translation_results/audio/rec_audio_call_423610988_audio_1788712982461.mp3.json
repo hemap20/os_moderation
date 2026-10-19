@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_audio_call_423610988_audio_1788712982461.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 30,
+  "affected_word_count": 12,
+  "semantic_error_rate": 0.4,
+  "seconds": 3.2,
+  "discrepancies": [
+    {
+      "reference_text": "क्या हाल-चाल है",
+      "translation_text": "What are you doing?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'How are things?' but the translation asks 'What are you doing?'."
+    },
+    {
+      "reference_text": "सब ठीक है",
+      "translation_text": "Nothing.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'Everything is fine' but the translation says 'Nothing'."
+    },
+    {
+      "reference_text": "बंद बंद है",
+      "translation_text": "Just sitting.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'It is closed/shut' but the translation says 'Just sitting'."
+    },
+    {
+      "reference_text": "कौन सा है इंस्टाग्राम",
+      "translation_text": "Are you on Instagram?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks 'Which one is Instagram?' or 'What is your Instagram?' but the translation asks 'Are you on Instagram?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:23",
+      "type": "move_off_app",
+      "reference_text": "कौन सा है इंस्टाग्राम",
+      "translation_text": "Are you on Instagram?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation captures the general flow of the conversation, including the inquiry about Instagram, but contains several minor meaning discrepancies in the casual greetings and responses."
+}

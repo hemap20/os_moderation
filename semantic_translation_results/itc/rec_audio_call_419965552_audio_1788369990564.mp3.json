@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_audio_call_419965552_audio_1788369990564.mp3",
+  "language": "hindi",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 66,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.2273,
+  "seconds": 4.5,
+  "discrepancies": [
+    {
+      "reference_text": "आज आज का नहीं मिलेंगे।",
+      "translation_text": "won't meet Jasika?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'won't we meet today' but the translation introduces the name 'Jasika' which is not in the reference."
+    },
+    {
+      "reference_text": "ब्लॉक कर दूँ?",
+      "translation_text": "call,",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'Should I block?' but the translation says 'call'."
+    },
+    {
+      "reference_text": "पूरा पहले आज दवाई दो।",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 5,
+      "explanation": "The reference request to 'give medicine first today' is completely missing from the translation."
+    },
+    {
+      "reference_text": "लाओ, उनको।",
+      "translation_text": "Ladoo Chamko,",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Bring them' but the translation misinterprets this as a name 'Ladoo Chamko'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:04",
+      "type": "move_off_app",
+      "reference_text": "फेसबुक पे, व्हाट्सएप पे?",
+      "translation_text": "On Facebook? On WhatsApp?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:06",
+      "type": "move_off_app",
+      "reference_text": "व्हाट्सएप पे नहीं, फेसबुक पे लगा रही हूँ।",
+      "translation_text": "Not on WhatsApp, it happens on Facebook, put it on Facebook.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:30",
+      "type": "meeting_in_person",
+      "reference_text": "गुप्ता जी नाम है मेरा, आज आज का नहीं मिलेंगे।",
+      "translation_text": "Gupta ji is my name, won't meet Jasika?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:42",
+      "type": "move_off_app",
+      "reference_text": "फेसबुक पे नहीं, इंस्टाग्राम पे देखो।",
+      "translation_text": "Not on Facebook, look on Instagram,",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the mentions of social media platforms (WhatsApp, Facebook, Instagram) but introduces an incorrect name 'Jasika' when discussing meeting up, and completely misses or mistranslates the latter part of the conversation."
+}

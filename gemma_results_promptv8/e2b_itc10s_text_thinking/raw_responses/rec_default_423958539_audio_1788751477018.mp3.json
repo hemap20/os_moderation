@@ -1,0 +1,78 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert/paid host). Calls can be audio/video.
+    *   **Goal:** Find every possible violation based on three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+    *   **Output Format:** Strict minified JSON array of flags following a specific schema.
+    *   **Constraints:**
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, filler words, etc.).
+        *   Category `f` must be exactly one of: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+        *   Strict rules for confidence scores (0.9 strong, 0.6 weaker, 0.3 about a violation).
+        *   Strict rules for `speech_act` and `violation`.
+        *   Quotes must be exact, with real timestamps.
+
+2.  **Analyze the Transcript:**
+
+    *   [00:00] हाँ सर (Yes sir) - Greeting/acknowledgment. (Allowed/Ordinary)
+    *   [00:10] हाँ जी कहाँ से हो गुड़गांव से हो (Yes, where are you from, from Gurgaon?) - Small talk/location. (Allowed)
+    *   [00:20] बोलो हाँ किशोदा हो (Tell me, yes, are you a teenager?) - Small talk. (Allowed)
+    *   [00:30] वेरी गुड वेरी गुड आप कैसे बताएँगे (Very good, very good, how will you tell?) - Conversation flow. (Allowed)
+    *   [00:40] रात कैसे कटेगी ठीक ठाक है ना (How will the night pass, okay?) - Small talk/inquiry. (Allowed)
+    *   [00:50] रात का अच्छा से झुक गए हम क्या क्या क्या क्या हाँ (The night was good, we... what what what what yes) - Conversation flow. (Allowed)
+    *   [01:00] बोलिए अरे अरे हम लोग सुनते थे क्या बोलिए सुन रहा हूँ (Speak, oh oh we used to listen, what are you saying, I am listening) - Conversation flow. (Allowed)
+    *   [01:10] हाँ क्या पूछ रहे थे आप क्या क्या पूछ रहे थे आप (Yes, what were you asking, what were you asking?) - Conversation flow. (Allowed)
+    *   [01:20] नहीं आपने बोला ना मेरी तो मैंने पूछा क्या रात ठीक से गए कि नहीं पूछा गया ऐसे ही जाती है वो तो (No, you said, I asked if the night went well or not, it just goes like that) - Conversation flow/explanation. (Allowed)
+    *   [01:30] हाँ बताइए (Yes, tell me) - Conversation flow. (Allowed)
+    *   [01:40] हाँ ब्रेकफास्ट किया (Yes, had breakfast) - Small talk. (Allowed)
+    *   [01:50] अभी तो नहीं अभी तो देखते ही हो (Not yet, not yet, you are just looking) - Conversation flow. (Allowed)
+    *   [02:00] हाँ ओके ठीक है सामने तो और एक बताओ (Yes, okay, fine, in front, tell me one more) - Transition. (Allowed)
+    *   [02:10] सामने तो आओ कैसे अरे मतलब कैसे अभी क्या पढ़ते हैं मैं भी उधर से पढ़ा हूँ मैं पेज पर दिखाऊँ क्या क्या (Come in front, how, oh meaning how, what are you reading now, I also studied from there, should I show on the page what what) - Suggesting a video call/showing something.
+    *   [02:20] अरे एक बार अपना फेस तो दिखाओ आओ आओ तो आओ तो वीडियो कॉल (Hey, show your face once, come, come, come, so video call) - Direct request for video call.
+    *   [02:30] वीडियो कॉल तो करो कैसे करूँ वीडियो कॉल तो करो तभी तो दिखेगा क्या (Do a video call, how do I do it? Do a video call, only then will it be visible?) - Direct request for video call.
+    *   [02:40] उसपे व्हाट्सएप पे (On that, on WhatsApp) - Mentioning WhatsApp.
+
+3.  **Evaluate Potential Violations against Rules:**
+
+    *   **PlatformMove:** Proposing contact outside the app, giving/asking for contact info.
+        *   [02:40] "उसपे व्हाट्सएप पे" (On that, on WhatsApp). This mentions an external app (WhatsApp) in the context of making a video call. This is a hint/proposal to move the contact method.
+        *   [02:20] "आओ आओ तो आओ तो वीडियो कॉल" (Come, come, come, so video call). This is a direct request for a video call, which is an allowed call type *inside* the app, but the context suggests moving the interaction method or confirming the method.
+        *   *Check PlatformMove rules:* Strong cases involve proposing/asking to move to a named external app or giving/asking for a phone number/social media ID.
+        *   The mention of WhatsApp is a hint towards moving the interaction method.
+
+    *   **SuspiciousActivity:** Money/payment linked to sexual content. (None found).
+
+    *   **Explicit-Flirting:** Sexual talk, showing the body, etc. (None found).
+
+4.  **Draft Flags (Focusing on PlatformMove):**
+
+    *   The core violation potential lies in the discussion about switching to a video call and mentioning WhatsApp.
+
+    *   *Candidate 1:* [02:40] "उसपे व्हाट्सएप पे" (On that, on WhatsApp). This is a mention of an external app for contact.
+
+5.  **Final Review against Constraints:**
+
+    *   Quote: [02:40] उसपे व्हाट्सएप पे
+    *   Category: PlatformMove (Hinting at moving contact method/app).
+    *   Confidence: 0.6 (It's a mention, not a strong proposal like "Let's talk on WhatsApp").
+    *   Speech Act: Direct (The user is proposing/suggesting the method).
+
+6.  **Construct JSON Output.** (Only one strong candidate found.)<channel|>```json
+{
+  "d": [
+    {
+      "t": "02:40",
+      "seg": "उसपे व्हाट्सएप पे",
+      "tr": "On that, on WhatsApp",
+      "f": "PlatformMove",
+      "spk": "user",
+      "ctx": "The user is asking how to proceed with the interaction, specifically regarding showing the face and making a video call. The expert responds by suggesting that the video call will make things visible.",
+      "speech_act": "direct",
+      "j": "The user mentions WhatsApp in the context of the proposed video call, which hints at moving the contact method outside the current app.",
+      "violation": "yes",
+      "c": 0.6
+    }
+  ]
+}
+```<turn|>

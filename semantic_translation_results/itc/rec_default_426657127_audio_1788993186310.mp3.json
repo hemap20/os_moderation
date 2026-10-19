@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_default_426657127_audio_1788993186310.mp3",
+  "language": "malayalam",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 99,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.0909,
+  "seconds": 5.0,
+  "discrepancies": [
+    {
+      "reference_text": "ഇത് കൊല്ലം.",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The translation completely omits the speaker's location 'Kollam'."
+    },
+    {
+      "reference_text": "എന്ത് ചെയ്യുന്നു?",
+      "translation_text": "No, what should I do?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The question 'What do you do?' is mistranslated as 'No, what should I do?'."
+    },
+    {
+      "reference_text": "ഒത്തുറ്റി",
+      "translation_text": "Muthoot",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The company name 'Othutty' is translated as 'Muthoot'."
+    },
+    {
+      "reference_text": "ഒരുങ്ങിയൊക്കെ ആണല്ലോ ഇരിക്കുന്നത്.",
+      "translation_text": "you are getting ready and taking it, right?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The phrase meaning 'You are sitting all dressed up' is mistranslated as 'getting ready and taking it'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:36",
+      "type": "money_or_payment",
+      "reference_text": "എനിക്ക് രാവിലെ കുറച്ച് പൈസ വേണം ടോ.",
+      "translation_text": "I need some money in the morning.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:45",
+      "type": "move_off_app",
+      "reference_text": "വാട്സാപ്പിലാണ്.",
+      "translation_text": "it is on WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "00:45",
+      "type": "money_or_payment",
+      "reference_text": "പെയ്ഡ് സർവീസാണ്.",
+      "translation_text": "it is a paid service.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:52",
+      "type": "money_or_payment",
+      "reference_text": "ഇതിൽ നിന്ന് അഞ്ച് രൂപ വെച്ച് കിട്ടുന്നുണ്ട് നമുക്ക് ഒരു മിനിറ്റിന്.",
+      "translation_text": "We get five rupees from this per minute",
+      "status": "preserved"
+    },
+    {
+      "t": "01:04",
+      "type": "move_off_app",
+      "reference_text": "ഞാൻ ചെയ്യുന്നെങ്കിൽ ഞാൻ വാട്സാപ്പിൽ ചെയ്യാറുള്ളൂ.",
+      "translation_text": "If I do it, I usually do it on WhatsApp",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation contains some minor errors and omissions regarding locations and general conversation, but successfully preserves all policy-relevant details about payments and moving to WhatsApp."
+}

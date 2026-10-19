@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_audio_call_426104039_audio_1788947773748.mp3",
+  "language": "tamil",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 304,
+  "affected_word_count": 19,
+  "semantic_error_rate": 0.0625,
+  "seconds": 5.6,
+  "discrepancies": [
+    {
+      "reference_text": "சாப்பிட்டீங்களான்னு கேக்குறீங்களா என்னன்னு கேட்டியா?",
+      "translation_text": "Are you asking if I have coffee or what?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks if they are asking about eating food, not having coffee."
+    },
+    {
+      "reference_text": "நீங்க எப்போல இருந்து இந்த ஆப் யூஸ் பண்றீங்க?",
+      "translation_text": "What is this, are you doing diabetes?",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference asks how long they have been using this app, which is completely mistranslated as a question about diabetes."
+    },
+    {
+      "reference_text": "பேசலைன்னா வரப்போகுது ஒன்னும் வரப்போறது இல்ல.",
+      "translation_text": "What is going to come from talking? Nothing is going to come",
+      "category": "negation_flipped",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'If I don't talk, nothing is going to come (no money)', but the translation flips this to 'What is going to come from talking?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:48",
+      "type": "money_or_payment",
+      "reference_text": "அதுக்கு பட்ஜெட் வேணும்ல.",
+      "translation_text": "You need a budget to eat out, right?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:52",
+      "type": "money_or_payment",
+      "reference_text": "ஒன்னொன்னும் 200 ரூபாய் 300 ரூபாய்னு விக்குது சாப்பாடு.",
+      "translation_text": "Food is selling for two hundred or three hundred now.",
+      "status": "preserved"
+    },
+    {
+      "t": "03:04",
+      "type": "sexual_or_explicit",
+      "reference_text": "அதான் அந்த செக்ஸ் பண்றது பிடிக்குமா போய் அப்ளை பண்ணலாமா?",
+      "translation_text": "That is it, they ask if you like to have sex, can we do this and that",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the overall tone and intent of the conversation, including the explicit mention of users asking for sex, though there are minor mistranslations regarding app usage and a flipped negation about earning money."
+}

@@ -1,0 +1,101 @@
+{
+  "file_id": "rec_audio_call_426849624_audio_1789020718433.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 186,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.0806,
+  "seconds": 10.5,
+  "discrepancies": [
+    {
+      "reference_text": "आ जाओ आप",
+      "translation_text": "Oh, you are from Bihar?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'you come' (inviting him), but the translation translates it as a question about being from Bihar."
+    },
+    {
+      "reference_text": "पीना है आपका",
+      "translation_text": "You want to drink?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'want to drink yours' (highly suggestive), but the translation turns it into a question about the other person wanting to drink."
+    },
+    {
+      "reference_text": "पिलाओगी ना",
+      "translation_text": "Serve me in a bag.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'you will make me drink, right?' but the translation introduces 'in a bag' which is completely incorrect."
+    },
+    {
+      "reference_text": "ये तो दे आई है मेरा बेटा",
+      "translation_text": "This is my son.",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'she has gone to give this, my son' or similar, but the translation says 'This is my son'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:40",
+      "type": "meeting_in_person",
+      "reference_text": "आ जाऊँ",
+      "translation_text": "Shall I come?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:49",
+      "type": "meeting_in_person",
+      "reference_text": "बिस्तर में आ जाऊँ",
+      "translation_text": "Come to the bed.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:55",
+      "type": "meeting_in_person",
+      "reference_text": "आ जाओ आप",
+      "translation_text": "Oh, you are from Bihar?",
+      "status": "missing"
+    },
+    {
+      "t": "01:15",
+      "type": "meeting_in_person",
+      "reference_text": "आ जाऊँ",
+      "translation_text": "Shall I come?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:17",
+      "type": "meeting_in_person",
+      "reference_text": "हाँ आ रही हूँ",
+      "translation_text": "Yes, I am coming.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:43",
+      "type": "sexual_or_explicit",
+      "reference_text": "मुझे पीना है",
+      "translation_text": "I want to drink.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:26",
+      "type": "sexual_or_explicit",
+      "reference_text": "पीना है आपका",
+      "translation_text": "You want to drink?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "02:35",
+      "type": "sexual_or_explicit",
+      "reference_text": "पिलाओगी",
+      "translation_text": "Will you serve me?",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow of the conversation but fails to accurately translate several highly suggestive/sexual double entendres ('drink yours', 'will you make me drink') and invitations to meet, rendering them as innocent or nonsensical phrases."
+}

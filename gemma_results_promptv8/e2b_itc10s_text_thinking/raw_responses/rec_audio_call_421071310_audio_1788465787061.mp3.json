@@ -1,0 +1,148 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Constraints:**
+    *   **Role:** Content policy analyst reviewing audio from Indian languages.
+    *   **Context:** App ("Friends") where a user (payer) talks to an expert (paid host). Calls can be audio/video.
+    *   **Output Goal:** Find every possible violation. High confidence is crucial.
+    *   **Categories (f):** Must be exactly one of: **PlatformMove**, **SuspiciousActivity**, **Explicit-Flirting**.
+    *   **Exclusions:** Greetings, small talk, introductions, names, questions about daily life/work/family/location, filler words, call quality, "Allowed" items.
+    *   **Output Format:** Minified JSON array following the strict schema.
+    *   **Key Rules:**
+        *   Check against Allowed/Normal conversation first.
+        *   Warnings/Refusals/Questions about rules/negations get `violation: "no"` and `c <= 0.3`.
+        *   Quotes must be exact, with real timestamps.
+        *   Focus on strong (0.9) and weaker (0.6) cases.
+
+2.  **Review the Transcript Segment by Segment:**
+
+    *   [00:00] हम्म (Filler/Sound)
+    *   [00:10] हेलो हेलो हाँ क्या कर रही हैं (Greeting/Small talk - Allowed)
+    *   [00:20] कुछ नहीं आप कैसा देओ कुछ नहीं ऐसा नहीं है (Small talk - Allowed)
+    *   [00:30] मैं महाराष्ट्र से हूँ (Location/Personal detail - Allowed)
+    *   [00:40] आप क्या कर रहे हो जॉब करते हो बिज़नेस करते हो क्या (Small talk - Allowed)
+    *   [00:50] क्या बोल रहे हैं जॉब करते हो बिज़नेस करते हो ऐसा पूछें (Meta-commentary - Allowed)
+    *   [01:00] तो क्यों करके आए ऐसे चला के आते हैं फिर (Small talk - Allowed)
+    *   [01:10] हेलो मैं पूरा ऐप चलाती हूँ और कुछ नहीं करती हूँ आवाज़ नहीं आ रहा आपका मैं बोला मैं थोड़ा बहुत ऐप चलाती हूँ और कुछ नहीं (Call quality/App status - Allowed)
+    *   [01:20] आप खींच के ट्वेंटी आपको क्या चाहिए लाइफ में (Question about needs - Allowed)
+    *   [01:30] क्या क्या चाहिए बोलो लाइफ में क्या चाहिए पर सब कुछ क्या (Small talk - Allowed)
+    *   [01:40] हम्म (Filler)
+    *   [01:50] सब कुछ में क्या चाहिए ऐसा पूछा मैंने आपको आप बोल रहे क्यों (Conversation flow - Allowed)
+    *   [02:00] आपको मैंने क्या पूछा आपने पूछा कि मुझे लाइफ में क्या चाहिए हाँ और और मुझे क्या चाहिए (Conversation flow - Allowed)
+    *   [02:10] होगा कुछ नहीं मैंने पूछा कि आपको लाइफ में क्या चाहिए क्या वही पूछा जो आपने (Conversation flow - Allowed)
+    *   [02:20] सुना क्या आपको लाइटिंग ही चाहिए कुछ नहीं सुना मैंने ठीक है अच्छा (Small talk - Allowed)
+    *   [02:30] एक भी आपके अंदर तो तेरे अंदर हो सकता है मेरे अंदर नहीं हाँ तो तुम्हारे अंदर कुछ वो हो सकती है मेरे अंदर (Philosophical/Self-reflection - Allowed)
+    *   [02:40] मेरे अंदर नहीं है नहीं मेरे अंदर ईगो नहीं है मैं तो समर्पण तुम्हारी बात बातों से पता चल रहा है मैं इसीलिए मैं (Self-description/Philosophy - Allowed)
+    *   [02:50] तो समर्पण कर सकता हूँ आप कर सकते हो समर्पण आपके अंदर बहुत ईगो है (Philosophy - Allowed)
+    *   [03:00] आप समर्पण कर सकते हो किसी चीज़ को समर्पण ये क्या होती है समर्पण मीन्स कि दे दे (Definition/Question about rules - Allowed)
+    *   [03:10] दे देना हाँ क्या दे देना (Small talk - Allowed)
+    *   [03:20] क्या दे दो नवीन समर्पण मिसाय था कि भाई (Small talk - Allowed)
+    *   [03:30] वीडियो कॉल पर आऊँगा वीडियो कॉल पर आऊँगा वीडियो कॉल पर मुझे सिखाना है (PlatformMove hint? - Needs context)
+    *   [03:40] इसमें इंटरेस्ट नहीं है मतलब इंटरेस्ट नहीं है ऐसा नहीं कि मैं नल्ला हूँ ऐसा नहीं है मैं मतलब (Refusal/Denial - Allowed)
+    *   [03:50] बट आप कुछ चंद पैसों के लिए काम कर रहे हो बराबर है कितने दूँगा मैं कितने दूँगा (SuspiciousActivity hint - Pricing/Payment)
+    *   [04:00] मैं आपको तीन सौ रुपए दूंगा चार सौ रुपए दूंगा पाँच सौ रुपए दूंगा ठीक है तो एक करोड़ देखे कभी लाइफ में हमने (SuspiciousActivity - Pricing/Payment)
+    *   [04:10] क्या अगर आपको एक करोड़ रुपए देखे लाइफ में कभी क्यों नहीं देखे मुझे सिर्फ आपके पास पेंशन नहीं नहीं आप (SuspiciousActivity - Pricing/Payment)
+    *   [04:20] नहीं दे सकते ना क्यों तीन सौ रुपए में आप बॉडी दिखा रहे हो सबको ठीक है (SuspiciousActivity - Explicit content linked to payment)
+    *   [04:30] मैं तुम्हें कैसे पता मैं अपनी बॉडी दिखा रही हूँ फिर वीडियो कॉल करके क्या दिखाऊँगा तो वीडियो कॉल (Explicit-Flirting/Body talk)
+    *   [04:40] सिर्फ बॉडी दिखाना होती है क्या बात नहीं कर सकते क्या तुम्हारे इतनी गंदी तुम तुम ऐसे गंदी सोच कैसे ला सकते हो हाँ वीडियो कॉल पर सिर्फ वो दिखाने के लिए वीडियो कॉल करते हैं (Explicit-Flirting/Suggestive)
+    *   [04:50] क्या इसका मतलब आप फैमिली के साथ किसी के साथ बाहर गए हो आपके बच्चे हैं आपके फैमिली ने आपको अपने माँ बाप अपने माँ बाप ने आपको फोन किया वीडियो कॉल अपने बच्चे के लिए बच्चे को देखने के लिए (Personal/Family talk - Allowed)
+    *   [05:00] तो वो लोग भी अपना छूट दिखाने के लिए आपको वीडियो कॉल करेगा क्या बात करने से पहले ना सौ बार सोच लो (Warning/Advice - Allowed)
+    *   [05:10] गंदी गंदी बातें मेरे यहाँ पर लेकर मत आओ मैं इस डोस ऐप पर डोस बनाने के लिए आई हूँ कोई रैंडी का काम करने नहीं हूँ ठीक है तो हम बात भी कर सकते हैं ना (Refusal/Boundary setting - Allowed)
+    *   [05:20] तो आपने वीडियो कॉल का क्यों बोला इस पर भी वीडियो कॉल कर सकते हो नहीं नहीं नहीं अभी अभी अभी मैंने वीडियो कॉल इसलिए (Conversation flow - Allowed)
+    *   [05:30] बोला था कि वीडियो कॉल पर मुझे ज़्यादा कॉइन मिलता है तो मैंने थोड़ी ना बोला है मैं अब अब मेरा झूठ दिखाऊँगी मोक्ष दिखाऊँगी मुझे वीडियो कॉल करो ऐसा वगैरह (PlatformMove hint? - Mentioning video call for coins)
+    *   [05:40] देखो अगर आपने व्हाट्सएप वीडियो कॉल बोला ठीक है नहीं है ना तो आपने व्हाट्सएप ठीक है आपने व्हाट्सएप वीडियो कॉल बोला (Conversation flow - Allowed)
+    *   [05:50] ठीक है तो मैंने गंदा वीडियो कॉल थोड़ी ना किया है अगर आपने आपकी माँ ने आपको कॉल किया होगा कुछ छूट दिखाने के लिए कॉल किया था क्या वीडियो कॉल हाँ हाँ (Explicit/Body talk context - Allowed)
+    *   [06:00] एक तो आपकी फ्रस्ट्रेशन आप खुद पर निकाल रहे हो पहली बात आपकी फ्रस्ट्रेशन आप खुद पर निकाल रहे हो (Advice/Self-reflection - Allowed)
+    *   [06:10] पर निकाल रहे हो ठीक है बात करने की थमेश नहीं है तो ऐप से चले जाओ किसी भी लड़की के साथ ऐसे ही बात करोगे तो ऐसे ही गाली देगा तुमको ठीक है (Advice/Warning - Allowed)
+    *   [06:20] वीडियो कॉल करने से क्या सिर्फ नहीं नहीं नहीं मुझे मुझे कुछ फ़र्क नहीं पड़ रहा है मुझे आपने बात की और आप कुछ बात कर रहे हो मुझे कुछ भी फ़र्क नहीं पड़ रहा है क्यों (Conversation flow - Allowed)
+    *   [06:30] क्योंकि आप छुट्टियाँ हो इसलिए नहीं (Small talk/Reasoning - Allowed)
+
+3.  **Identify Potential Violations:**
+
+    *   **SuspiciousActivity (Money/Payment):**
+        *   [03:50] बट आप कुछ चंद पैसों के लिए काम कर रहे हो बराबर है कितने दूँगा मैं कितने दूँगा
+        *   [04:00] मैं आपको तीन सौ रुपए दूंगा चार सौ रुपए दूंगा पाँच सौ रुपए दूंगा ठीक है तो एक करोड़ देखे कभी लाइफ में हमने
+        *   [04:10] क्या अगर आपको एक करोड़ रुपए देखे लाइफ में कभी क्यों नहीं देखे मुझे सिर्फ आपके पास पेंशन नहीं नहीं आप
+        *   [04:20] नहीं दे सकते ना क्यों तीन सौ रुपए में आप बॉडी दिखा रहे हो सबको ठीक है
+
+    *   **Explicit-Flirting (Sexual Talk/Body):**
+        *   [04:30] मैं तुम्हें कैसे पता मैं अपनी बॉडी दिखा रही हूँ फिर वीडियो कॉल करके क्या दिखाऊँगा तो वीडियो कॉल
+        *   [04:40] सिर्फ बॉडी दिखाना होती है क्या बात नहीं कर सकते क्या तुम्हारे इतनी गंदी तुम तुम ऐसे गंदी सोच कैसे ला सकते हो हाँ वीडियो कॉल पर सिर्फ वो दिखाने के लिए वीडियो कॉल करते हैं
+
+    *   **PlatformMove (Moving outside the app):**
+        *   [03:30] वीडियो कॉल पर आऊँगा वीडियो कॉल पर आऊँगा वीडियो कॉल पर मुझे सिखाना है (This is a proposal for a specific type of contact, but the context is ambiguous. Let's check the strong case definition.)
+        *   [05:30] बोला था कि वीडियो कॉल पर मुझे ज़्यादा कॉइन मिलता है तो मैंने थोड़ी ना बोला है मैं अब अब मेरा झूठ दिखाऊँगी मोक्ष दिखाऊँगी मुझे वीडियो कॉल करो ऐसा वगैरह (Requesting a specific action/contact method tied to the app's mechanism.)
+
+4.  **Draft Flags and Apply Rules:**
+
+    *   *Focus on the strongest cases first.*
+
+    *   **Flag 1 (SuspiciousActivity - Strong):** Pricing for showing the body.
+    *   **Flag 2 (Explicit-Flirting - Strong):** Direct discussion about showing the body/video call purpose.
+    *   **Flag 3 (SuspiciousActivity - Strong):** Extreme pricing/payment discussion.
+    *   **Flag 4 (PlatformMove - Strong/Weaker):** Requesting video call for coins.
+
+5.  **Final Review against Schema and Constraints.** (Ensure all fields are present, especially `speech_act` and `violation` logic.) (Self-Correction: Ensure quotes are exact and translations are accurate.)<channel|>```json
+{"d": [
+  {
+    "t": "03:50",
+    "seg": "बट आप कुछ चंद पैसों के लिए काम कर रहे हो बराबर है कितने दूँगा मैं कितने दूँगा",
+    "tr": "But you are working for a few coins, okay, how much will I give, how much will I give",
+    "f": "SuspiciousActivity",
+    "spk": "user",
+    "ctx": "The user is discussing the nature of the work and then immediately transitions into discussing the payment rate.",
+    "speech_act": "direct",
+    "j": "This is a strong case as the user is directly discussing payment rates for the service.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "04:20",
+    "seg": "नहीं दे सकते ना क्यों तीन सौ रुपए में आप बॉडी दिखा रहे हो सबको ठीक है",
+    "tr": "You can't give it, right? Why are you showing your body for three hundred rupees to everyone, okay?",
+    "f": "SuspiciousActivity",
+    "spk": "user",
+    "ctx": "The user is questioning the payment amount and linking it directly to the explicit content being shown.",
+    "speech_act": "direct",
+    "j": "This is a strong case as it links a specific payment amount to the explicit act of showing the body.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "04:30",
+    "seg": "मैं तुम्हें कैसे पता मैं अपनी बॉडी दिखा रही हूँ फिर वीडियो कॉल करके क्या दिखाऊँगा तो वीडियो कॉल",
+    "tr": "How do I know? I am showing my body, then what will I show by video calling? So video call",
+    "f": "Explicit-Flirting",
+    "spk": "expert",
+    "ctx": "The expert is responding to the user's question about how they know the user is showing their body, and then discussing what is shown during a video call.",
+    "speech_act": "direct",
+    "j": "This is a strong case as it directly discusses showing the body and the purpose of the video call in a sexual context.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "04:40",
+    "seg": "सिर्फ बॉडी दिखाना होती है क्या बात नहीं कर सकते क्या तुम्हारे इतनी गंदी तुम तुम ऐसे गंदी सोच कैसे ला सकते हो हाँ वीडियो कॉल पर सिर्फ वो दिखाने के लिए वीडियो कॉल करते हैं",
+    "tr": "Is it just about showing the body? Can't we talk? Can you bring such dirty thoughts? How can you bring such dirty thoughts? Yes, we do video calls just to show that.",
+    "f": "Explicit-Flirting",
+    "spk": "expert",
+    "ctx": "The expert is responding to the user's suggestive comments about dirty thoughts and justifying the purpose of the video call.",
+    "speech_act": "direct",
+    "j": "This is a strong case as it involves suggestive language and explicit discussion about the purpose of the video call related to showing the body.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "05:30",
+    "seg": "बोला था कि वीडियो कॉल पर मुझे ज़्यादा कॉइन मिलता है तो मैंने थोड़ी ना बोला है मैं अब अब मेरा झूठ दिखाऊँगी मोक्ष दिखाऊँगी मुझे वीडियो कॉल करो ऐसा वगैरह",
+    "tr": "I said that I get more coins on video call, so I didn't say that. Now I will show my lie, I will show moksha, call me on video call, etc.",
+    "f": "PlatformMove",
+    "spk": "user",
+    "ctx": "The user is justifying their request for a video call by mentioning the incentive (coins) and then making a direct request for the action.",
+    "speech_act": "direct",
+    "j": "This is a weaker case as it hints at using the platform feature (video call) for an incentive, which is a form of moving the interaction outside of standard audio chat.",
+    "violation": "yes",
+    "c": 0.6
+  }
+]}
+```<turn|>

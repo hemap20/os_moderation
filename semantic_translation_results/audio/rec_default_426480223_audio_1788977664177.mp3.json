@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426480223_audio_1788977664177.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 151,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.0728,
+  "seconds": 4.0,
+  "discrepancies": [
+    {
+      "reference_text": "എനിക്കൊരു കോൾ വരുന്നുണ്ട്",
+      "translation_text": "I have a code coming.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I have a call coming' but the translation mistranslates 'call' as 'code'."
+    },
+    {
+      "reference_text": "മെസ്സേജ് ചെയ്താൽ മതി",
+      "translation_text": "then you can share. Just message me.",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds 'then you can share' which is not present in the reference."
+    },
+    {
+      "reference_text": "ഫുൾ മൂഡ് ആയിട്ട് കാണിക്കും മൂഡ് ആയിട്ട് സംസാരിക്കും",
+      "translation_text": "Full nude, I will show and talk nude.",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference says 'mood' (meaning in a sexy/passionate mood) but the translation translates it as 'nude'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:30",
+      "type": "money_or_payment",
+      "reference_text": "ഞാൻ പെയ്ഡ് ആയിട്ട് കോൾ ചെയ്യുന്നുണ്ട്",
+      "translation_text": "then I am doing paid calls.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:44",
+      "type": "money_or_payment",
+      "reference_text": "500 ആണ്",
+      "translation_text": "500 is the charge.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:50",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഫുൾ മൂഡ് ആയിട്ട് കാണിക്കും മൂഡ് ആയിട്ട് സംസാരിക്കും ഞാൻ കൂടി മാസ്റ്റർബേറ്റ് ചെയ്യും",
+      "translation_text": "Full nude, I will show and talk nude. I will masturbate too.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key policy-relevant details regarding paid calls and explicit services, though it mistranslates 'mood' as 'nude' and 'call' as 'code'."
+}

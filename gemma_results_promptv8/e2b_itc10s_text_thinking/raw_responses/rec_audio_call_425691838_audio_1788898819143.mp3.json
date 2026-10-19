@@ -1,0 +1,80 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert). Calls can be audio/video.
+    *   **Goal:** Find every possible violation based on three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+    *   **Output Format:** Strict minified JSON adhering to the specified schema.
+    *   **Constraints:**
+        *   Only output quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, filler words, call quality).
+        *   Category `f` must be exactly one of: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+        *   Use confidence scores (0.9 strong, 0.6 weaker, 0.3 about violation).
+        *   Strict rules for `speech_act` and `violation`.
+
+2.  **Analyze the Transcript (Hindi):**
+
+    *   [00:00] हलो हाँ जी आपका नाम अरे नाम क्या जानोगी यार मैं तुम्हें शोधना चाहता हूँ तुमसे तो बात है
+    *   [00:10] ओके व्हाट्सएप है आपका व्हाट्सएप है व्हाट्सएप है बताइए
+    *   [00:20] हेलो व्हाट्सएप बताइए व्हाट्सएप पर सर्विस देंगे क्या हाँ जी व्हाट्सएप पर सर्विस देंगे
+    *   [00:30] हाँ हाँ ऐसे नहीं बात करेंगे नहीं नहीं क्यों बोलो व्हाट्सएप अपना
+    *   [00:40] इसपे तो मैं पे भी कर रहा हूँ ओके बाय बाय हेलो हेलो
+    *   [00:50] हेलो
+
+3.  **Evaluate Transcript against Policy Categories:**
+
+    *   **[00:00] हलो हाँ जी आपका नाम अरे नाम क्या जानोगी यार मैं तुम्हें शोधना चाहता हूँ तुमसे तो बात है** (Hello yes your name hey what name will you know yaar I want to talk to you) -> Standard greeting/introduction. (Allowed/Ordinary conversation).
+    *   **[00:10] ओके व्हाट्सएप है आपका व्हाट्सएप है व्हाट्सएप है बताइए** (Okay WhatsApp is yours your WhatsApp is WhatsApp tell me) -> Asking for contact information (WhatsApp).
+    *   **[00:20] हेलो व्हाट्सएप बताइए व्हाट्सएप पर सर्विस देंगे क्या हाँ जी व्हाट्सएप पर सर्विस देंगे** (Hello tell WhatsApp yes will give service on WhatsApp yes will give service on WhatsApp) -> Discussing service delivery via WhatsApp.
+    *   **[00:30] हाँ हाँ ऐसे नहीं बात करेंगे नहीं नहीं क्यों बोलो व्हाट्सएप अपना** (Yes yes we won't talk like this no no why say WhatsApp yours) -> User pushing for WhatsApp.
+    *   **[00:40] इसपे तो मैं पे भी कर रहा हूँ ओके बाय बाय हेलो हेलो** (I am also paying on this okay bye bye hello hello) -> Mentioning payment.
+
+4.  **Determine Violations:**
+
+    *   **PlatformMove:** The user is actively pushing for contact via WhatsApp and discussing service delivery on that platform.
+        *   [00:10] "ओके व्हाट्सएप है आपका व्हाट्सएप है व्हाट्सएप है बताइए" (Asking for/confirming WhatsApp). This is a strong case for asking for a means to move contact outside the app (or establish contact outside the app).
+        *   [00:20] "व्हाट्सएप पर सर्विस देंगे क्या हाँ जी व्हाट्सएप पर सर्विस देंगे" (Confirming service via WhatsApp).
+    *   **SuspiciousActivity:** The user mentions payment.
+        *   [00:40] "इसपे तो मैं पे भी कर रहा हूँ" (I am also paying on this). This is general money talk, but in the context of a paid service app, it could be relevant. However, the policy explicitly allows "general money talk (salary, rent, prices of things, 'we pay and leave')". It is not linked to sexual content or a specific service price/payment for sex. (Allowed).
+    *   **Explicit-Flirting:** No sexual content or suggestive talk. (None).
+
+5.  **Draft Flags (Focusing on PlatformMove):**
+
+    *   *Candidate 1 (00:10):* Asking for WhatsApp. Strong case.
+    *   *Candidate 2 (00:20):* Discussing service via WhatsApp. Strong case.
+
+6.  **Final Review against Rules:**
+
+    *   Both candidates are direct requests/proposals for external contact/service delivery via a specific app.
+    *   They are not warnings/refusals/questions about rules.
+    *   Confidence should be high (0.9).
+
+7.  **Construct JSON Output.** (Self-Correction: Ensure the quotes are exact and the translation is accurate.)<channel|>```json
+{"d": [
+  {
+    "t": "00:10",
+    "seg": "ओके व्हाट्सएप है आपका व्हाट्सएप है व्हाट्सएप है बताइए",
+    "tr": "Okay, it's WhatsApp, your WhatsApp, WhatsApp, tell me.",
+    "f": "PlatformMove",
+    "spk": "user",
+    "ctx": "The user is asking the expert for the caller's WhatsApp contact information.",
+    "speech_act": "direct",
+    "j": "The user is directly asking for the caller's WhatsApp number, which is a strong case for proposing or asking for the means to move contact outside the app.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "00:20",
+    "seg": "हेलो व्हाट्सएप बताइए व्हाट्सएप पर सर्विस देंगे क्या हाँ जी व्हाट्सएप पर सर्विस देंगे",
+    "tr": "Hello, tell WhatsApp. Will you give service on WhatsApp? Yes, we will give service on WhatsApp.",
+    "f": "PlatformMove",
+    "spk": "expert",
+    "ctx": "The expert confirms that the service will be provided via WhatsApp.",
+    "speech_act": "direct",
+    "j": "The expert confirms the service delivery method is WhatsApp, which is a strong case for proposing or asking for the means to move contact outside the app.",
+    "violation": "yes",
+    "c": 0.9
+  }
+]}
+```<turn|>

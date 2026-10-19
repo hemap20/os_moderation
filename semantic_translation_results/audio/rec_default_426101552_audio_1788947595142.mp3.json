@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_426101552_audio_1788947595142.mp3",
+  "language": "kannada",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 128,
+  "affected_word_count": 22,
+  "semantic_error_rate": 0.1719,
+  "seconds": 5.3,
+  "discrepancies": [
+    {
+      "reference_text": "ಯಾಕೆ ಅನ್ಮ್ಯೂಟ್ ಆಗಿದ್ದೀರಾ?",
+      "translation_text": "Why are you looking at me?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks why they are unmuted, but the translation translates this as looking at them."
+    },
+    {
+      "reference_text": "ನೋ ಕಣ್ಣಿರೋದೇ ನೋಡೋದಕ್ಕೆ ನೋಡಬಾರದ?",
+      "translation_text": "No, I am not looking at you, I am just watching.",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'No, eyes are meant for seeing, shouldn't I look?', which is translated incorrectly."
+    },
+    {
+      "reference_text": "ಬಾಯ್ ಫ್ರೆಂಡ್ಸ್?",
+      "translation_text": "Boyfriend?",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The reference asks 'Boyfriends?' in plural, but the translation uses singular 'Boyfriend?'."
+    },
+    {
+      "reference_text": "ಇಲ್ಲ",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 1,
+      "explanation": "The user's response 'No' (ಇಲ್ಲ) to the boyfriend question is missing from the translation."
+    },
+    {
+      "reference_text": "ನೀವು ಇದ್ದೀರಾ?",
+      "translation_text": "Are you with someone?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Do you have (one)?' (referring to a girlfriend), but the translation asks 'Are you with someone?'."
+    },
+    {
+      "reference_text": "ಹೇ ಇಟ್ಕೊಳ್ಳೋಕೆ ಆಗ್ತಾ ಇಲ್ಲ",
+      "translation_text": "Hey, that is not a reason to use it.",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'Hey, I can't hold it in' (suggesting arousal/excitement), which is completely mistranslated."
+    },
+    {
+      "reference_text": "ನೀವು ಎಲ್ಲರಿಗೂ ಇರಲ್ಲ ಅಲ್ವಾ?",
+      "translation_text": "You are with everyone, right?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'You don't have it for everyone, right?', which is mistranslated."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:29",
+      "type": "sexual_or_explicit",
+      "reference_text": "ಹೇ ಇಟ್ಕೊಳ್ಳೋಕೆ ಆಗ್ತಾ ಇಲ್ಲ",
+      "translation_text": "Hey, that is not a reason to use it.",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several errors, particularly at the end of the call where a sexually suggestive comment about not being able to hold it in is completely mistranslated into a generic statement."
+}

@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_audio_call_423645324_audio_1788715186440.mp3",
+  "language": "tamil",
+  "source": "itc_gemma_e2b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 129,
+  "affected_word_count": 20,
+  "semantic_error_rate": 0.155,
+  "seconds": 15.5,
+  "discrepancies": [
+    {
+      "reference_text": "ஹெட் போன் வந்து கழட்டினீங்கன்னா நல்லா கேக்கும்",
+      "translation_text": "if you put the headphone it will be heard well",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'if you remove the headphones' but the translation says 'if you put the headphone'."
+    },
+    {
+      "reference_text": "என்னோட நேம் பவித்ரா",
+      "translation_text": "That is what we have to talk to him",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The speaker's name 'Pavithra' is completely missing and mistranslated."
+    },
+    {
+      "reference_text": "படிச்சிட்டு இருக்கீங்களா வொர்க் பாக்குறீங்களா",
+      "translation_text": "are you cooking or are you working",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks 'are you studying or working' but the translation translates 'studying' as 'cooking'."
+    },
+    {
+      "reference_text": "உன்னைய பண்ணலாமா",
+      "translation_text": "can we drive the vehicle",
+      "category": "tone_softened",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'can I do you' (sexual slang) but the translation translates it as 'can we drive the vehicle'."
+    },
+    {
+      "reference_text": "உன் கூட என்ஜாய் பண்ணலாமா",
+      "translation_text": "can we enjoy with them",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'can I enjoy with you' but the translation says 'can we enjoy with them'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:31",
+      "type": "move_off_app",
+      "reference_text": "இன்ஸ்டா ஐடி",
+      "translation_text": "Insta ID",
+      "status": "preserved"
+    },
+    {
+      "t": "02:08",
+      "type": "sexual_or_explicit",
+      "reference_text": "செக்ஸியா பேசலாமா",
+      "translation_text": "can we talk sexually",
+      "status": "preserved"
+    },
+    {
+      "t": "02:13",
+      "type": "sexual_or_explicit",
+      "reference_text": "செக்ஸியா பேசலாமா",
+      "translation_text": "can we talk sexually",
+      "status": "preserved"
+    },
+    {
+      "t": "02:22",
+      "type": "sexual_or_explicit",
+      "reference_text": "உன்னைய பண்ணலாமா உன் கூட என்ஜாய் பண்ணலாமா",
+      "translation_text": "can we drive the vehicle can we enjoy with them",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation mostly preserves the conversation but softens the explicit sexual request at the end by translating 'do you' as 'drive the vehicle' and changes 'with you' to 'with them'."
+}

@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_default_426432272_audio_1788975283995.mp3",
+  "language": "kannada",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 150,
+  "affected_word_count": 14,
+  "semantic_error_rate": 0.0933,
+  "seconds": 4.0,
+  "discrepancies": [
+    {
+      "reference_text": "ಮನೇಲಿ ಹೆಂಡತಿಗೆ ಗೊತ್ತಾ ಯೂಸ್ ಮಾಡೋದು?",
+      "translation_text": "Do you know about LPG at home?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The translation incorrectly translates 'wife' (ಹೆಂಡತಿ) and 'using' (ಯೂಸ್ ಮಾಡೋದು) as 'LPG'."
+    },
+    {
+      "reference_text": "ಗೊತ್ತಿಲ್ಲ.",
+      "translation_text": "I don't know how to use it,",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The translation adds 'how to use it' based on the previous incorrect LPG translation."
+    },
+    {
+      "reference_text": "ಕುಡಿತಾರೆ ಇಡೋದು.",
+      "translation_text": "they drink it, keep it.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The translation literally translates 'ಕುಡಿತಾರೆ' (which is a colloquial/slang expression here) as 'drink it'."
+    },
+    {
+      "reference_text": "ನಿಮ್ಮ ಹತ್ರ ಫ್ರೆಂಡ್ಸ್ ಗೆ ಬರ್ತೀನಿ ನಾನು.",
+      "translation_text": "Can I get your number?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'I will come to you as a friend' or 'I come to Friends app for you', but the translation asks for a phone number."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:56",
+      "type": "sexual_or_explicit",
+      "reference_text": "ನನಗೆ ಸೆಕ್ಸ್ ಬಗ್ಗೆ ಇಂಟರೆಸ್ಟ್. ಇನ್ನು ಮಾಡಬೇಕು. ಮಾಡಬೇಕು ಅನ್ಸುತ್ತೆ ಸೆಕ್ಸ್. ದಿನಾಲು ಬೇಕು ನನಗೆ. ದಿನಾಲು ಬೇಕು.",
+      "translation_text": "I am still interested in sex, I want to do it. I feel like doing it, I want sex every day, I want it every day.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the explicit sexual interest of the caller, but introduces bizarre errors in the latter half, translating a question about the wife knowing about the app into a question about LPG, and translating a statement about coming to the app into a request for a phone number."
+}

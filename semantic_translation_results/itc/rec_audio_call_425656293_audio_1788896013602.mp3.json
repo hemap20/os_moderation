@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_audio_call_425656293_audio_1788896013602.mp3",
+  "language": "hindi",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 87,
+  "affected_word_count": 22,
+  "semantic_error_rate": 0.2529,
+  "seconds": 5.0,
+  "discrepancies": [
+    {
+      "reference_text": "कैन वी शेयर स्नैपचैट?",
+      "translation_text": "can we share subject",
+      "category": "named_entity_altered",
+      "word_count_affected": 4,
+      "explanation": "The translation incorrectly translates 'Snapchat' as 'subject' in the first instance."
+    },
+    {
+      "reference_text": "यू कैन ट्रस्ट मी, वी विल डू लिटॉक्स एंड इट विल बी फन।",
+      "translation_text": "founder can trust me, will do only talks mental health",
+      "category": "other_meaning_change",
+      "word_count_affected": 12,
+      "explanation": "The translation misinterprets 'You can trust me, we will do lewd talks and it will be fun' as 'founder can trust me, will do only talks mental health'."
+    },
+    {
+      "reference_text": "ये सब बातें यहां अलाउड नहीं है।",
+      "translation_text": "are these kinds of things allowed",
+      "category": "negation_flipped",
+      "word_count_affected": 6,
+      "explanation": "The translation turns a statement that these things are not allowed into a question asking if they are allowed."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:33",
+      "type": "move_off_app",
+      "reference_text": "कैन वी शेयर स्नैपचैट?",
+      "translation_text": "can we share subject",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:39",
+      "type": "move_off_app",
+      "reference_text": "कैन वी शेयर स्नैपचैट?",
+      "translation_text": "can we share Snapchat",
+      "status": "preserved"
+    },
+    {
+      "t": "00:41",
+      "type": "move_off_app",
+      "reference_text": "नो, क्योंकि यहां पे अलाउड नहीं है।",
+      "translation_text": "no because it is not allowed here",
+      "status": "preserved"
+    },
+    {
+      "t": "00:45",
+      "type": "sexual_or_explicit",
+      "reference_text": "यू कैन ट्रस्ट मी, वी विल डू लिटॉक्स एंड इट विल बी फन।",
+      "translation_text": "founder can trust me, will do only talks mental health",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:55",
+      "type": "sexual_or_explicit",
+      "reference_text": "डू यू लाइक सेक्स?",
+      "translation_text": "Do you like sex",
+      "status": "preserved"
+    },
+    {
+      "t": "00:57",
+      "type": "sexual_or_explicit",
+      "reference_text": "सॉरी फॉर आस्किंग दैट, बट डू यू लाइक एस?",
+      "translation_text": "sorry for asking that but do you like s",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the explicit questions about sex, but fails to accurately translate the request for Snapchat initially and completely distorts the proposal for 'lewd talks' into 'mental health' talks."
+}

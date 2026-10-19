@@ -1,0 +1,38 @@
+{
+  "file_id": "rec_audio_call_426621209_audio_1788987102942.mp3",
+  "language": "telugu",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 50,
+  "affected_word_count": 10,
+  "semantic_error_rate": 0.2,
+  "seconds": 2.8,
+  "discrepancies": [
+    {
+      "reference_text": "మీకు ఏమైనా పర్సనల్ చాట్ కావాలి అంటే పేమెంట్ చేస్తే చేస్తానండి",
+      "translation_text": "if you want any personal chat, I will make a payment.",
+      "category": "intent_changed",
+      "word_count_affected": 10,
+      "explanation": "The reference says the speaker will do personal chat if the other person pays, but the translation says the speaker will make a payment."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:36",
+      "type": "money_or_payment",
+      "reference_text": "మీకు ఏమైనా పర్సనల్ చాట్ కావాలి అంటే పేమెంట్ చేస్తే చేస్తానండి",
+      "translation_text": "if you want any personal chat, I will make a payment.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:36",
+      "type": "sexual_or_explicit",
+      "reference_text": "వీడియో కాల్స్ ఏమైనా కావాలి అంటే",
+      "translation_text": "if you want video calls or anything like that",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation incorrectly reverses the direction of the payment offer, stating that the host will pay the user instead of the user paying the host for personal chats."
+}

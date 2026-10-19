@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_audio_call_424416192_audio_1788788125311.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 330,
+  "affected_word_count": 14,
+  "semantic_error_rate": 0.0424,
+  "seconds": 6.7,
+  "discrepancies": [
+    {
+      "reference_text": "திருச்சியில இருந்து",
+      "translation_text": "I am from Salem",
+      "category": "named_entity_altered",
+      "word_count_affected": 3,
+      "explanation": "The reference states the speaker is from Trichy, but the translation incorrectly says Salem."
+    },
+    {
+      "reference_text": "அப்பா நல்லவங்களும் இருக்காங்க",
+      "translation_text": "Like your father, there are good people too.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The Tamil filler word 'அப்பா' (appa) was mistranslated literally as 'father' instead of being recognized as an exclamation/filler."
+    },
+    {
+      "reference_text": "வெட்டியாதான் இருக்கிறேன்",
+      "translation_text": "I am single anyway",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'I am free/idle anyway', but the translation incorrectly translates it as 'I am single'."
+    },
+    {
+      "reference_text": "இந்த மாதிரி பண்ணியா போயிட்டு இருக்கு.",
+      "translation_text": "Tell me, why did you call?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'It is going on like this', but the translation invents a completely different question."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:00",
+      "type": "move_off_app",
+      "reference_text": "வீடியோ கால் பண்ணுன்னு கேப்பாங்க, நம்பர் குடுன்னு கேப்பாங்க",
+      "translation_text": "They will ask for video calls, ask for numbers",
+      "status": "preserved"
+    },
+    {
+      "t": "01:24",
+      "type": "move_off_app",
+      "reference_text": "நம்பர் குடுத்து, அவங்க நைட் 10:00 மணிக்கு வீடியோ கால் பேசி",
+      "translation_text": "ask for numbers. They video call at 10 PM",
+      "status": "preserved"
+    },
+    {
+      "t": "02:21",
+      "type": "money_or_payment",
+      "reference_text": "காசு குடு, நான் உனக்கு இதுல பண்றேன்",
+      "translation_text": "Give me money, I will give you my WhatsApp number",
+      "status": "preserved"
+    },
+    {
+      "t": "02:21",
+      "type": "move_off_app",
+      "reference_text": "நான் வாட்ஸ்அப்ல நம்பர் தர்றேன், நம்ம வாட்ஸ்அப்ல பேசிக்கலாம்",
+      "translation_text": "I will give you my WhatsApp number, we can talk on WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "02:21",
+      "type": "money_or_payment",
+      "reference_text": "ஒரு மணி நேரம் பேசினா 100 ரூபாய் தான் வரும், எனக்கு அந்த நீரு இனி 200 ரூபாய் எனக்கு குடு நான் அதுல பேசலாம்",
+      "translation_text": "If you talk for an hour, you will get 100 rupees, give me 200 rupees and we can talk",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the overall tone and intent of the conversation, including warnings about off-app movement and payment scams, though it contains a few minor translation errors such as mistaking Trichy for Salem and translating a filler word as 'father'."
+}

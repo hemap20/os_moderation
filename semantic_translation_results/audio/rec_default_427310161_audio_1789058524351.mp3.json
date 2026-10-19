@@ -1,0 +1,30 @@
+{
+  "file_id": "rec_default_427310161_audio_1789058524351.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 14,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.3571,
+  "seconds": 4.6,
+  "discrepancies": [
+    {
+      "reference_text": "என்ன பண்ணிட்டு இருக்க?",
+      "translation_text": "Are you sleeping?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The question 'What are you doing?' was translated as 'Are you sleeping?'."
+    },
+    {
+      "reference_text": "என்ன பண்ணிட்டு இருக்கேனா?",
+      "translation_text": "Am I sleeping? No,",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The response repeating 'What am I doing?' was translated as 'Am I sleeping? No,'."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is generally accurate in tone and intent, but it incorrectly translates 'What are you doing?' as 'Are you sleeping?' and adjusts the response accordingly."
+}

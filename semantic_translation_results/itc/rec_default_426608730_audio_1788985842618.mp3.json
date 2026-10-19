@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_default_426608730_audio_1788985842618.mp3",
+  "language": "malayalam",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 11,
+  "affected_word_count": 3,
+  "semantic_error_rate": 0.2727,
+  "seconds": 3.4,
+  "discrepancies": [
+    {
+      "reference_text": "ഹലോ ഹലോ പറയൂ",
+      "translation_text": "Hello hello, okay,",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation adds 'okay' and omits the Malayalam word for 'tell me' (പറയൂ)."
+    },
+    {
+      "reference_text": "എനിക്ക് ഒരു വീഡിയോ കോൾസിന് താല്പര്യമുണ്ടോ",
+      "translation_text": "are you interested in nude video calls?",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds the word 'nude' which is not present in the reference text."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:06",
+      "type": "sexual_or_explicit",
+      "reference_text": "എനിക്ക് ഒരു വീഡിയോ കോൾസിന് താല്പര്യമുണ്ടോ",
+      "translation_text": "are you interested in nude video calls?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:10",
+      "type": "money_or_payment",
+      "reference_text": "എത്രയാ റേറ്റ്",
+      "translation_text": "How much is the rate?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:12",
+      "type": "money_or_payment",
+      "reference_text": "500",
+      "translation_text": "Five hundred.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate but adds the word 'nude' to the video call request, which was not explicitly stated in the reference."
+}

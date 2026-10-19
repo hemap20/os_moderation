@@ -1,0 +1,129 @@
+{
+  "file_id": "rec_default_426620137_audio_1788986984372.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 144,
+  "affected_word_count": 29,
+  "semantic_error_rate": 0.2014,
+  "seconds": 5.6,
+  "discrepancies": [
+    {
+      "reference_text": "நீங்க அழகா இருக்கீங்க.",
+      "translation_text": "I am also fine.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'You are beautiful' but the translation says 'I am also fine'."
+    },
+    {
+      "reference_text": "ஆ, நீங்களும் அழகா தான் இருக்கீங்க.",
+      "translation_text": "You are also fine?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'Ah, you are also beautiful' but the translation says 'You are also fine?'."
+    },
+    {
+      "reference_text": "எனக்கு வயசு ஆகல.",
+      "translation_text": "Your voice is not clear.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'I am not of age yet' but the translation says 'Your voice is not clear'."
+    },
+    {
+      "reference_text": "ஓபன் டாக் பேசுவியா?",
+      "translation_text": "Are you talking on OpenTalk?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'Will you talk openly (sexually)?' but the translation misinterprets 'open talk' as an app name 'OpenTalk'."
+    },
+    {
+      "reference_text": "ஒர்க் பண்ணிட்டு இருக்கேன்.",
+      "translation_text": "I am talking on OpenTalk.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I am working' but the translation says 'I am talking on OpenTalk'."
+    },
+    {
+      "reference_text": "நீ ஓபன் டாக் பேசுவியா?",
+      "translation_text": "Are you talking on OpenTalk?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks 'Will you talk openly (sexually)?' but the translation misinterprets it as 'talking on OpenTalk'."
+    },
+    {
+      "reference_text": "இதுக்கு மேல ஒன்னும் பண்ண முடியாது.",
+      "translation_text": "I will show it later.",
+      "category": "intent_changed",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'I cannot do anything more than this' (refusal) but the translation says 'I will show it later' (promise/postponement)."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:36",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஓபன் டாக் பேசுவியா?",
+      "translation_text": "Are you talking on OpenTalk?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "02:28",
+      "type": "sexual_or_explicit",
+      "reference_text": "நீ ஓபன் டாக் பேசுவியா?",
+      "translation_text": "Are you talking on OpenTalk?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "02:33",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஓபன்னா ஷோ பண்றது இல்ல.",
+      "translation_text": "Open means I do not show anything.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:37",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஓ, எதுவுமே ஷோ பண்றது இல்லையா?",
+      "translation_text": "You do not show anything?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:41",
+      "type": "sexual_or_explicit",
+      "reference_text": "அந்த இடுப்ப மட்டும் காட்ட முடியுமா?",
+      "translation_text": "Can you show only your waist?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:53",
+      "type": "sexual_or_explicit",
+      "reference_text": "அந்த இடுப்ப மட்டும் காட்ட முடியுமா?",
+      "translation_text": "Can you show only your waist?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:58",
+      "type": "sexual_or_explicit",
+      "reference_text": "இதுக்கு மேல ஒன்னும் பண்ண முடியாது.",
+      "translation_text": "I will show it later.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "03:06",
+      "type": "sexual_or_explicit",
+      "reference_text": "இடுப்பு மட்டும் போதும்.",
+      "translation_text": "Just the waist is enough.",
+      "status": "preserved"
+    },
+    {
+      "t": "03:17",
+      "type": "sexual_or_explicit",
+      "reference_text": "அந்த இடுப்ப மட்டும் காட்ட முடியுமா கேட்டேன்.",
+      "translation_text": "Can you show only your waist?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation mostly preserves the explicit requests to show the waist, but it misinterprets 'open talk' (sexual talk) as an app name and incorrectly translates a refusal ('cannot do anything more') as a promise to show it later."
+}

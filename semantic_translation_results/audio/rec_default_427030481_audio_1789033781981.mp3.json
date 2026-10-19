@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_427030481_audio_1789033781981.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 68,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.2206,
+  "seconds": 3.9,
+  "discrepancies": [
+    {
+      "reference_text": "എന്താ വിശേഷം",
+      "translation_text": "Can you see me?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'What's up?' or 'What's the news?', but the translation incorrectly translates it as 'Can you see me?'."
+    },
+    {
+      "reference_text": "ഭയങ്കര ചിരിയാണല്ലോ",
+      "translation_text": "I am asking if you can see me, I think.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'You are laughing a lot', but the translation completely changes the meaning."
+    },
+    {
+      "reference_text": "ചിരിക്കാതിരിക്കൂ",
+      "translation_text": "Should I smile?",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'Don't laugh' or 'Stop laughing', but the translation translates it as a question 'Should I smile?'."
+    },
+    {
+      "reference_text": "നമ്പർ കിട്ടിയില്ലേ നമ്പർ കിട്ടിയില്ല",
+      "translation_text": "I told you, I told you.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference mentions not getting a number, but the translation says 'I told you, I told you'."
+    },
+    {
+      "reference_text": "അവിലും മലരും കഴിച്ച് പല്ല് കുടുങ്ങി",
+      "translation_text": "Did you eat anything? Did you get stuck?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'Teeth got stuck eating flattened rice and puffed rice', which is translated incorrectly."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:49",
+      "type": "move_off_app",
+      "reference_text": "നമ്പർ കിട്ടിയില്ലേ നമ്പർ കിട്ടിയില്ല",
+      "translation_text": "I told you, I told you.",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several significant meaning changes, including translating general greetings as questions about visibility and completely missing a reference to a phone number."
+}

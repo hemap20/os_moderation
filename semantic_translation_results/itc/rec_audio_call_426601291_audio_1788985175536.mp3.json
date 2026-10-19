@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_audio_call_426601291_audio_1788985175536.mp3",
+  "language": "tamil",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 63,
+  "affected_word_count": 18,
+  "semantic_error_rate": 0.2857,
+  "seconds": 4.3,
+  "discrepancies": [
+    {
+      "reference_text": "ஆமாங்க, இது விசிட்டிங் இல்ல இல்ல, இது விசிட்டிங் இல்ல இல்ல, இது விசிட்டிங் இல்ல இல்ல, இது விசிட்டிங் நான் கயல்விழி பேசுறேன்",
+      "translation_text": "Ah, where are you calling from? Where are you calling from? I am from Coimbatore. What are you doing in Coimbatore?",
+      "category": "other_meaning_change",
+      "word_count_affected": 16,
+      "explanation": "The reference mentions 'visiting' and the speaker introducing herself as Kayalvizhi, but the translation invents a conversation about Coimbatore."
+    },
+    {
+      "reference_text": "சரி விடுங்க",
+      "translation_text": "Okay, I'm hanging up.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Okay, leave it' or 'let it go', whereas the translation says 'I'm hanging up'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:14",
+      "type": "move_off_app",
+      "reference_text": "இந்த ஆப் ஏதாவது வீடியோ கால்ல ஏதாவது இன்ட்ரஸ்ட் இருக்கா?",
+      "translation_text": "Also, in this app, are you interested in any video call?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:21",
+      "type": "move_off_app",
+      "reference_text": "வாட்ஸ்அப் வீடியோ கால்",
+      "translation_text": "On WhatsApp?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:23",
+      "type": "money_or_payment",
+      "reference_text": "கொஞ்சம் முன்னாடி ஒரு ஆள் வந்து என்ன ஒரு 300 ஏமாத்தி போயிட்டாங்க",
+      "translation_text": "Sister, a while ago a person came and it was like 300",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation mostly preserves the core intent and policy-relevant moments regarding WhatsApp video calls and a 300-rupee scam, though the opening lines are completely mistranslated with invented details about Coimbatore."
+}

@@ -1,0 +1,52 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert/paid host). Calls can be audio/video.
+    *   **Goal:** Find every possible violation based on three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+    *   **Output Format:** Strict minified JSON array following the specified schema.
+    *   **Constraints:**
+        *   Only output quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, location questions, filler words).
+        *   Category `f` must be exactly one of: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+        *   Use confidence scores (0.9 strong, 0.6 weaker, 0.3 about a violation).
+        *   Strict rules for `speech_act` and `violation`.
+
+2.  **Analyze the Transcript:**
+    *   [00:00] हम रायपुर से भी कोई सुनने आए नहीं हैं हाँ जी (Hum Raipur se bhi koi sunne aaye nahi hain haan ji)
+    *   [00:10] कैसे हो हेलो कैसे हो कहाँ से हो क्या बात है सर आप (Kaise ho hello kaise ho kahan se ho kya baat hai sir aap)
+    *   [00:20] बैंड बाज रहा है कौन मिला है इंस्टाग्राम हेलो और सुनाइए (Band baaj raha hai kaun mila hai Instagram hello aur sunaiye)
+    *   [00:30] हाँ (Haan)
+
+3.  **Evaluate Transcript against Policy Rules:**
+
+    *   **[00:00] हम रायपुर से भी कोई सुनने आए नहीं हैं हाँ जी** (We haven't had anyone come from Raipur either, yes.)
+        *   Type: Small talk/location/general conversation.
+        *   Verdict: Allowed/Ordinary conversation. (Do not output).
+
+    *   **[00:10] कैसे हो हेलो कैसे हो कहाँ से हो क्या बात है सर आप** (How are you hello how are you where are you what's up sir you)
+        *   Type: Greeting, small talk, asking about well-being/location.
+        *   Verdict: Allowed/Ordinary conversation. (Do not output).
+
+    *   **[00:20] बैंड बाज रहा है कौन मिला है इंस्टाग्राम हेलो और सुनाइए** (Band is playing, who did you meet on Instagram hello and tell me)
+        *   Analysis: This involves mentioning "Instagram" and asking about meeting someone ("kaun mila hai").
+        *   Check `PlatformMove`: Does it propose moving outside the app? It mentions Instagram, which is an external app, and asks about a meeting/contact.
+        *   Is it a strong case? It hints at contact elsewhere.
+        *   Check `PlatformMove` rules: "Hints at contact elsewhere that mention contact, a number, an app or leaving this app, without a clear proposal: 'Let's talk somewhere else', 'Can we talk outside this app?', 'I have another number'."
+        *   The quote is: "बैंड बाज रहा है कौन मिला है इंस्टाग्राम हेलो और सुनाइए" (Band baaj raha hai kaun mila hai Instagram hello aur sunaiye). This is a question about who met whom on Instagram.
+        *   It is a weaker case (0.6) as it hints at external contact/app usage without a clear proposal to move there.
+
+4.  **Draft the Flag (for [00:20]):**
+    *   t: 00:20
+    *   seg: बैंड बाज रहा है कौन मिला है इंस्टाग्राम हेलो और सुनाइए
+    *   tr: Band is playing, who did you meet on Instagram hello and tell me
+    *   f: PlatformMove
+    *   spk: user
+    *   ctx: The user asks about who they met on Instagram and prompts the expert to tell them.
+    *   speech_act: direct (asking a question)
+    *   j: The user mentions Instagram and asks about a meeting, hinting at contact outside the app, which is a weaker PlatformMove case.
+    *   violation: no (since confidence is 0.6)
+    *   c: 0.6
+
+5.  **Final Review:** Only one potential flag found, matching the criteria. Ensure the output is minified JSON.<channel|>{"d": [{"t": "00:20", "seg": "बैंड बाज रहा है कौन मिला है इंस्टाग्राम हेलो और सुनाइए", "tr": "Band is playing, who did you meet on Instagram hello and tell me", "f": "PlatformMove", "spk": "user", "ctx": "The user asks about who they met on Instagram and prompts the expert to tell them.", "speech_act": "direct", "j": "The user mentions Instagram and asks about a meeting, hinting at contact outside the app, which is a weaker PlatformMove case.", "violation": "no", "c": 0.6}]}<turn|>

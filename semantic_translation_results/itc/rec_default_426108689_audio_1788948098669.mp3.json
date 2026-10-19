@@ -1,0 +1,30 @@
+{
+  "file_id": "rec_default_426108689_audio_1788948098669.mp3",
+  "language": "malayalam",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 15,
+  "affected_word_count": 7,
+  "semantic_error_rate": 0.4667,
+  "seconds": 6.3,
+  "discrepancies": [
+    {
+      "reference_text": "",
+      "translation_text": "For the Health Minister, for the Health Minister, for the Health Minister, for the Health Minister, for the Health Minister, for the Health Minister, for the Health Minister, for the Health Minister, for the Health Minister, for the Health Minister, for the Health Minister, for the Health Minister, for the Health Minister, for the Health Minister, for the Health Minister, for the Health Minister, for the Health Minister, because it is needed.",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation contains a long hallucinated phrase about the Health Minister at the beginning."
+    },
+    {
+      "reference_text": "നിങ്ങൾ എവിടെയാ എവിടെയാ സ്ഥലം എവിടെയാ സ്ഥലം",
+      "translation_text": "Your idea, idea is it, idea is it.",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The questions asking where the person is located are mistranslated as talking about an idea."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains a large hallucinated segment at the beginning and completely mistranslates the questions about the user's location."
+}

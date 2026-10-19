@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_audio_call_423645324_audio_1788715186440.mp3",
+  "language": "tamil",
+  "source": "itc_gemma_e4b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 129,
+  "affected_word_count": 14,
+  "semantic_error_rate": 0.1085,
+  "seconds": 10.4,
+  "discrepancies": [
+    {
+      "reference_text": "என்னோட நேம் பவித்ரா",
+      "translation_text": "That's what we need to talk to him",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The speaker introduces herself as Pavithra, but the translation completely misses her name and mistranslates the phrase."
+    },
+    {
+      "reference_text": "படிச்சிட்டு இருக்கீங்களா வொர்க் பாக்குறீங்களா",
+      "translation_text": "are you cooking or are you working",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks if they are studying or working, but the translation changes 'studying' to 'cooking'."
+    },
+    {
+      "reference_text": "உன்னைய பண்ணலாமா",
+      "translation_text": "can we overtake the vehicle",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'can I do you' (sexual proposition), which is completely mistranslated as overtaking a vehicle."
+    },
+    {
+      "reference_text": "உன் கூட என்ஜாய் பண்ணலாமா",
+      "translation_text": "can we enjoy with them",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks 'can I enjoy with you', but the translation changes 'with you' to 'with them'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "1:31",
+      "type": "move_off_app",
+      "reference_text": "இன்ஸ்டா ஐடி",
+      "translation_text": "Insta ID",
+      "status": "preserved"
+    },
+    {
+      "t": "2:08",
+      "type": "sexual_or_explicit",
+      "reference_text": "செக்ஸியா பேசலாமா",
+      "translation_text": "should I talk to you sexually",
+      "status": "preserved"
+    },
+    {
+      "t": "2:13",
+      "type": "sexual_or_explicit",
+      "reference_text": "செக்ஸியா பேசலாமா",
+      "translation_text": "should I talk sexually",
+      "status": "preserved"
+    },
+    {
+      "t": "2:22",
+      "type": "sexual_or_explicit",
+      "reference_text": "உன்னைய பண்ணலாமா உன் கூட என்ஜாய் பண்ணலாமா",
+      "translation_text": "can we overtake the vehicle can we enjoy with them",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow and the explicit request to talk sexually, but completely fails to translate the final sexual proposition, turning 'can I do you' into 'can we overtake the vehicle'."
+}

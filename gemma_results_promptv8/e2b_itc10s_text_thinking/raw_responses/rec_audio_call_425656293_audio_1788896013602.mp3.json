@@ -1,0 +1,51 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert). Calls can be audio/video.
+    *   **Goal:** Find every possible violation based on three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+    *   **Output Format:** Strict minified JSON array following the specified schema.
+    *   **Constraints:**
+        *   Only output quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, etc.).
+        *   Category `f` must be exactly one of: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+        *   Strict rules for `speech_act`, `violation`, and confidence scores (0.9 strong, 0.6 weaker, 0.3 about violation).
+
+2.  **Analyze the Transcript (Segment by Segment):**
+
+    *   `[00:00] हेलो हेलो वेलकम यस सर हाँ बताओ` (Hello hello welcome yes sir tell me) -> Greeting/Introduction. (Allowed/Ordinary conversation).
+    *   `[00:10] ठीक ही है कोरबा छत्तीसगढ़ आप` (Okay, it is Korba Chhattisgarh you) -> Small talk/Location. (Allowed/Ordinary conversation).
+    *   `[00:20] कोरबा छत्तीसगढ़ अच्छा आप` (Korba Chhattisgarh okay you) -> Small talk. (Allowed/Ordinary conversation).
+    *   `[00:30] राजस्थान कैन वी शेयर सब्जेक्ट हाँ जी कैन वी शेयर` (Rajasthan can we share subject yes ji can we share) -> Asking to share a topic. (Contextual, but not inherently violating).
+    *   `[00:40] स्नैपचैट नो क्योंकि यहाँ पे अलाउड नहीं है फाउंडर कैन ट्रस्ट मी विल डू ओनली टॉक्स मेंटल हेल्प` (Snapchat no because here it is not allowed founder can trust me will do only talks mental help) -> Discussing app rules and service type.
+    *   `[00:50] डू यू लाइक सेक्स सॉरी फॉर आस्किंग दैट बट डू यू लाइक एस` (Do you like sex sorry for asking that but do you like s) -> Direct question about sexual preference.
+    *   `[01:00] आप ये सब बातें मतलब ये सब बातें अलाउड हैं` (You these all things means these all things are allowed) -> Clarification about allowed topics.
+
+3.  **Evaluate Potential Violations against Categories:**
+
+    *   **[00:30] राजस्थान कैन वी शेयर सब्जेक्ट हाँ जी कैन वी शेयर** - Not a violation.
+    *   **[00:40] स्नैपचैट नो क्योंकि यहाँ पे अलाउड नहीं है फाउंडर कैन ट्रस्ट मी विल डू ओनली टॉक्स मेंटल हेल्प** - Discussing app rules and service scope. Not a violation.
+    *   **[00:50] डू यू लाइक सेक्स सॉरी फॉर आस्किंग दैट बट डू यू लाइक एस** - This is a direct question about sexual preference.
+
+        *   *Check Explicit-Flirting:* Strong cases include "Naming a sexual act or position, or asking about the other person's sexual preferences or experiences: 'Which position do you like?', 'Do you watch sex movies?'"
+        *   The quote is: "डू यू लाइक सेक्स सॉरी फॉर आस्किंग दैट बट डू यू लाइक एस" (Do you like sex sorry for asking that but do you like s). This is a direct inquiry about sexual interest.
+        *   *Confidence:* This is a direct question about sexual preferences. It fits the criteria for Explicit-Flirting. (Strong case, 0.9).
+        *   *Speech Act:* Direct.
+        *   *Violation:* Yes (Strong case).
+
+4.  **Construct the JSON Output:** (Focusing only on the identified violation at 00:50).
+
+    *   *Quote:* "डू यू लाइक सेक्स सॉरी फॉर आस्किंग दैट बट डू यू लाइक एस"
+    *   *Category:* Explicit-Flirting
+    *   *Speaker:* User (implied, as they are asking the expert).
+    *   *Context:* The user is asking about sexual preferences, apologizing for the question.
+
+5.  **Final Review against Rules:**
+    *   Did I use the correct categories? Yes (Explicit-Flirting).
+    *   Are quotes exact? Yes.
+    *   Is the JSON schema correct? Yes.
+    *   Are non-violating parts excluded? Yes.
+    *   Is the output minified JSON? Yes. (Self-Correction: Ensure the language is exactly as transcribed, even if Hindi/Hinglish).<channel|>```json
+{"d": [{"t": "00:50", "seg": "डू यू लाइक सेक्स सॉरी फॉर आस्किंग दैट बट डू यू लाइक एस", "tr": "Do you like sex sorry for asking that but do you like s", "f": "Explicit-Flirting", "spk": "user", "ctx": "The user asks about sexual preferences, apologizing for the question. The expert has not responded yet.", "speech_act": "direct", "j": "This is a strong case as it is a direct question asking about the other person's sexual preferences.", "violation": "yes", "c": 0.9}]}
+```<turn|>

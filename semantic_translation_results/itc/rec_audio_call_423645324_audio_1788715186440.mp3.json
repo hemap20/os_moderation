@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_audio_call_423645324_audio_1788715186440.mp3",
+  "language": "tamil",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 129,
+  "affected_word_count": 23,
+  "semantic_error_rate": 0.1783,
+  "seconds": 4.3,
+  "discrepancies": [
+    {
+      "reference_text": "என்னோட நேம் பவித்ரா",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The speaker's name 'Pavithra' is completely missing from the translation."
+    },
+    {
+      "reference_text": "அதான் பேசினோம்ல ஒரு டைம்",
+      "translation_text": "That's what, we should talk",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'That's why, we spoke once' (past tense), but the translation says 'we should talk' (future/proposal)."
+    },
+    {
+      "reference_text": "படிச்சிட்டு இருக்கீங்களா வொர்க் பாக்குறீங்களா",
+      "translation_text": "are you cooking, are you working",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks if they are studying ('படிச்சிட்டு இருக்கீங்களா'), but the translation translates it as cooking."
+    },
+    {
+      "reference_text": "சரி இப்ப வந்தா உன்னைய பண்ணலாமா உன் கூட என்ஜாய் பண்ணலாமா",
+      "translation_text": "Okay, if I come now, can we [unclear], can we enjoy with them",
+      "category": "tone_softened",
+      "word_count_affected": 10,
+      "explanation": "The explicit sexual reference 'உன்னைய பண்ணலாமா' (can I do you/fuck you) is translated as '[unclear]' and 'with them' instead of 'with you'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:31",
+      "type": "move_off_app",
+      "reference_text": "இன்ஸ்டா ஐடி",
+      "translation_text": "Insta ID",
+      "status": "preserved"
+    },
+    {
+      "t": "02:08",
+      "type": "sexual_or_explicit",
+      "reference_text": "செக்ஸியா பேசலாமா",
+      "translation_text": "shall we talk sexily?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:13",
+      "type": "sexual_or_explicit",
+      "reference_text": "செக்ஸியா பேசலாமா",
+      "translation_text": "shall we talk sexily?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:22",
+      "type": "sexual_or_explicit",
+      "reference_text": "உன்னைய பண்ணலாமா உன் கூட என்ஜாய் பண்ணலாமா",
+      "translation_text": "can we [unclear], can we enjoy with them",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate but softens the explicit sexual proposition at the very end of the call by marking the direct sexual verb as unclear."
+}

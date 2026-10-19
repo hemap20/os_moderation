@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_default_426634262_audio_1788988662985.mp3",
+  "language": "tamil",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 39,
+  "affected_word_count": 12,
+  "semantic_error_rate": 0.3077,
+  "seconds": 7.2,
+  "discrepancies": [
+    {
+      "reference_text": "என்ன சைஸ் ஓடி",
+      "translation_text": "the size is that much",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'what size' (with a crude term), but the translation says 'the size is that much'."
+    },
+    {
+      "reference_text": "என்ன சைஸ் வேணும்",
+      "translation_text": "How much is one size",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'what size do you want', but the translation translates it as 'How much is one size'."
+    },
+    {
+      "reference_text": "இன்னும் கொஞ்சம் காமிக்க",
+      "translation_text": "I will show a little here",
+      "category": "intent_changed",
+      "word_count_affected": 3,
+      "explanation": "The reference is a request to show a little more, but the translation changes it to a statement of intent to show."
+    },
+    {
+      "reference_text": "இல்ல பாத்துட்டு இருக்கேன்",
+      "translation_text": "Cannot pay for everything",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'No, I am watching', but the translation completely changes this to 'Cannot pay for everything'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:27",
+      "type": "sexual_or_explicit",
+      "reference_text": "என்ன சைஸ் ஓடி",
+      "translation_text": "the size is that much",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:30",
+      "type": "sexual_or_explicit",
+      "reference_text": "என்ன சைஸ் ஓடி",
+      "translation_text": "How much is one size",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:33",
+      "type": "sexual_or_explicit",
+      "reference_text": "என்ன சைஸ் வேணும்",
+      "translation_text": "How much is one size",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:36",
+      "type": "move_off_app",
+      "reference_text": "வாட்ஸ்அப் வா",
+      "translation_text": "WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "00:38",
+      "type": "sexual_or_explicit",
+      "reference_text": "இன்னும் கொஞ்சம் காமிக்க",
+      "translation_text": "I will show a little here",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "no",
+  "summary": "The translation is highly inaccurate, misinterpreting explicit questions about size and requests to show more into unrelated statements about size and payments."
+}

@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_audio_call_420358272_audio_1788412834216.mp3",
+  "language": "tamil",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 251,
+  "affected_word_count": 12,
+  "semantic_error_rate": 0.0478,
+  "seconds": 3.7,
+  "discrepancies": [
+    {
+      "reference_text": "நான் மேரிடு ஒர்க் பண்ணிட்டு இருக்கேன்",
+      "translation_text": "I am unmarried, I am working.",
+      "category": "negation_flipped",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'I am married and working', but the translation incorrectly says 'I am unmarried'."
+    },
+    {
+      "reference_text": "சொல்ல கூட சொல்ல விடமாட்டாங்க",
+      "translation_text": "let the kids speak too...",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'they won't even let us speak', but the translation mistranslates this as 'let the kids speak'."
+    },
+    {
+      "reference_text": "காயின் முடிய போகுது",
+      "translation_text": "My time is also about to end.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference mentions 'coins' (app currency) are about to end, which is translated as 'time'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:10",
+      "type": "sexual_or_explicit",
+      "reference_text": "எல்லாம் செக்சுவல் ஹராஸ்மென்ட் தான்",
+      "translation_text": "It is just sexual harassment.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:41",
+      "type": "sexual_or_explicit",
+      "reference_text": "அப்படியே வராங்களா நீங்க இத பண்ணுவீங்களா அத பண்ணுவீங்களான்னு கேப்பாங்க",
+      "translation_text": "They will ask, will you do this, will you do that?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key discussion about the app being used primarily for sexual harassment, though it contains a few minor errors such as translating 'married' as 'unmarried' and mistranslating a phrase about speaking as 'let the kids speak'."
+}

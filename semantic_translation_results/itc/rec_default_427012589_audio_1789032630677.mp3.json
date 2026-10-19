@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_default_427012589_audio_1789032630677.mp3",
+  "language": "malayalam",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 39,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.2821,
+  "seconds": 3.2,
+  "discrepancies": [
+    {
+      "reference_text": "ഞാൻ കോഴിക്കോട്",
+      "translation_text": "I am from Kollam",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference says Kozhikode twice, but the translation changes the second instance to Kollam."
+    },
+    {
+      "reference_text": "അതൊക്കെ ഫേസ്ബുക്കിൽ കൂടെയല്ലേ കാണുള്ളൂ",
+      "translation_text": "You can only see it if you catch it on Facebook, right, even now?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The translation introduces 'catch it' and 'even now' which changes the meaning of the reference."
+    },
+    {
+      "reference_text": "ആ പിന്നെ പറയാലോ",
+      "translation_text": "Ah, tell me about the app.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference means 'we can talk later' or 'then we can say', but the translation says 'tell me about the app'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:22",
+      "type": "move_off_app",
+      "reference_text": "അതൊക്കെ ഫേസ്ബുക്കിൽ കൂടെയല്ലേ കാണുള്ളൂ",
+      "translation_text": "You can only see it if you catch it on Facebook, right, even now?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate but contains a few minor errors, such as changing Kozhikode to Kollam and slightly mistranslating the final phrase."
+}

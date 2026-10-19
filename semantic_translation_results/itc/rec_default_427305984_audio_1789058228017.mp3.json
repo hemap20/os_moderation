@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_427305984_audio_1789058228017.mp3",
+  "language": "telugu",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 65,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.0769,
+  "seconds": 4.3,
+  "discrepancies": [
+    {
+      "reference_text": "నాకు తెలియదు",
+      "translation_text": "normal canvas?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'I don't know' but the translation says 'normal canvas?'."
+    },
+    {
+      "reference_text": "ఏదైనా పని ఇట్లా మీటింగ్ అట్లా ఉందా?",
+      "translation_text": "Like money, like meeting, is it like that",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds 'money' which is not present in the reference text."
+    },
+    {
+      "reference_text": "నాట్ విసి ఆ",
+      "translation_text": "not busy?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'Not VC (video call)?' but the translation translates it as 'not busy?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:50",
+      "type": "meeting_in_person",
+      "reference_text": "ఏదైనా పని ఇట్లా మీటింగ్ అట్లా ఉందా?",
+      "translation_text": "Like money, like meeting, is it like that",
+      "status": "preserved"
+    },
+    {
+      "t": "01:00",
+      "type": "meeting_in_person",
+      "reference_text": "కలవడం",
+      "translation_text": "",
+      "status": "missing"
+    },
+    {
+      "t": "01:02",
+      "type": "meeting_in_person",
+      "reference_text": "కలవడం హలో",
+      "translation_text": "Hello madam, hello, hello madam",
+      "status": "missing"
+    },
+    {
+      "t": "01:05",
+      "type": "meeting_in_person",
+      "reference_text": "కలవడానికి",
+      "translation_text": "",
+      "status": "missing"
+    },
+    {
+      "t": "01:11",
+      "type": "meeting_in_person",
+      "reference_text": "మీట్ అవ్వడానికి అంటున్నావ్",
+      "translation_text": "we are saying to meet",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation generally preserves the intent of discussing a meeting, though it introduces a mention of money and mistranslates 'VC' as 'busy'."
+}

@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_audio_call_426203802_audio_1788955464104.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 558,
+  "affected_word_count": 12,
+  "semantic_error_rate": 0.0215,
+  "seconds": 4.6,
+  "discrepancies": [
+    {
+      "reference_text": "बनाऊं किसी को",
+      "translation_text": "make them meet someone",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference means 'make someone my boyfriend', but the translation says 'make them meet someone'."
+    },
+    {
+      "reference_text": "मैं बन जाऊं?",
+      "translation_text": "Should I hang up?",
+      "category": "intent_changed",
+      "word_count_affected": 3,
+      "explanation": "The speaker is offering to become her boyfriend ('Should I become?'), but the translation incorrectly translates this as hanging up the call."
+    },
+    {
+      "reference_text": "फ्रेंड?",
+      "translation_text": "Why?",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference asks 'Friend?' in response to his offer, but the translation says 'Why?'."
+    },
+    {
+      "reference_text": "अनइनस्टॉल करने का फायदा है",
+      "translation_text": "what is the point of uninstalling?",
+      "category": "negation_flipped",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'there is a benefit to uninstalling', but the translation flips the meaning to 'what is the point of uninstalling?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:46",
+      "type": "money_or_payment",
+      "reference_text": "सच बोलूं तीन चार दिन हुए और अभी मैंने रिचार्ज किया था वो खत्म होते ही मैं बंद कर रहा हूं",
+      "translation_text": "To be honest, it has been three or four days, and I just recharged, as soon as it ends, I will stop.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:53",
+      "type": "money_or_payment",
+      "reference_text": "मतलब रिचार्ज बार-बार आगे नहीं आगे रिचार्ज करके बात करना ये तो ना होती है यार",
+      "translation_text": "Well, recharging again and again to talk is not worth it, you know.",
+      "status": "preserved"
+    },
+    {
+      "t": "03:03",
+      "type": "money_or_payment",
+      "reference_text": "रिचार्ज करके कितनी बार कितनी बार करूं ये?",
+      "translation_text": "Recharging again and again, how many times should I do this?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate, but it completely misses the male speaker's proposal to become the female speaker's boyfriend, translating 'Should I become?' as 'Should I hang up?'."
+}

@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426865726_audio_1789021930759.mp3",
+  "language": "kannada",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 128,
+  "affected_word_count": 8,
+  "semantic_error_rate": 0.0625,
+  "seconds": 3.4,
+  "discrepancies": [
+    {
+      "reference_text": "ಜೆಪಿ ನಗರ",
+      "translation_text": "Jayanagar",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions JP Nagar, but the translation changes it to Jayanagar."
+    },
+    {
+      "reference_text": "ಪಿಇಎಸ್ ಕಾಲೇಜ್",
+      "translation_text": "BTM Layout",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions PES College, but the translation changes it to BTM Layout."
+    },
+    {
+      "reference_text": "ಗವರ್ನಮೆಂಟ್ ಸ್ಕೂಲ್",
+      "translation_text": "government quarters",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions a government school, but the translation says government quarters."
+    },
+    {
+      "reference_text": "ಹತ್ತು ದಿನ",
+      "translation_text": "15 days",
+      "category": "number_or_id_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference says 10 days, but the translation says 15 days."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:06",
+      "type": "meeting_in_person",
+      "reference_text": "ಯಾರನ್ನ ಮೀಟ್ ಮಾಡಿದ್ರಾ ಆಪ್ ಅಲ್ಲಿ",
+      "translation_text": "Did you meet anyone on the app?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:35",
+      "type": "meeting_in_person",
+      "reference_text": "ಮತ್ತೆ ನೀವ್ಯಾಕೆ ಯಾರನ್ನು ಮೀಟ್ ಮಾಡಿಲ್ಲ",
+      "translation_text": "Then why didn't you meet anyone?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the overall tone and intent, though there are minor discrepancies in location names, numbers, and some missing lines towards the end."
+}

@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_audio_call_419965552_audio_1788369990564.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 66,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.1667,
+  "seconds": 7.0,
+  "discrepancies": [
+    {
+      "reference_text": "गुप्ता जी नाम है मेरा, आज आज का नहीं मिलेंगे।",
+      "translation_text": "Gupta ji is not my name, you will not find me on Azadika.",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference says 'My name is Gupta ji, we won't meet today' but the translation incorrectly negates the name and invents 'Azadika'."
+    },
+    {
+      "reference_text": "लाओ, उनको।",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The phrase 'Bring them' is completely missing from the translation."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:04",
+      "type": "move_off_app",
+      "reference_text": "फेसबुक पे, व्हाट्सएप पे?",
+      "translation_text": "On Facebook or WhatsApp?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:06",
+      "type": "move_off_app",
+      "reference_text": "व्हाट्सएप पे नहीं, फेसबुक पे लगा रही हूँ।",
+      "translation_text": "Not on WhatsApp, on Facebook.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:30",
+      "type": "meeting_in_person",
+      "reference_text": "गुप्ता जी नाम है मेरा, आज आज का नहीं मिलेंगे।",
+      "translation_text": "Gupta ji is not my name, you will not find me on Azadika.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:42",
+      "type": "move_off_app",
+      "reference_text": "फेसबुक पे नहीं, इंस्टाग्राम पे देखो।",
+      "translation_text": "Don't look on Facebook, look on Instagram.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation mostly preserves the mentions of social media platforms, but completely distorts the speaker's statement about meeting in person and their name."
+}

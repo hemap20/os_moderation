@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_audio_call_426604675_audio_1788985474412.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 93,
+  "affected_word_count": 8,
+  "semantic_error_rate": 0.086,
+  "seconds": 5.8,
+  "discrepancies": [
+    {
+      "reference_text": "சொல்லுங்க",
+      "translation_text": "Hello, how are you?",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds 'how are you' which is not in the reference."
+    },
+    {
+      "reference_text": "சொல்லுங்க",
+      "translation_text": "I am fine, how are you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'tell me' but the translation says 'I am fine, how are you?'."
+    },
+    {
+      "reference_text": "எவ்வளோ கால் பண்றேன்",
+      "translation_text": "I will call you",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'how much if I call?' or 'how many calls?', but the translation translates it as 'I will call you'."
+    },
+    {
+      "reference_text": "எவ்வளோ காலா",
+      "translation_text": "You will call?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference repeats 'how many calls?' or 'how much call?', but the translation says 'You will call?'."
+    },
+    {
+      "reference_text": "அபிஷேக் பாரு",
+      "translation_text": "I will see",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions a name 'Abhishek' which is translated as 'I will see'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:43",
+      "type": "money_or_payment",
+      "reference_text": "எவ்வளோ கால் பண்றேன் பே பண்றியா",
+      "translation_text": "I will call you, will you pay?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:49",
+      "type": "money_or_payment",
+      "reference_text": "எவ்வளோ பே பண்ணனும்",
+      "translation_text": "How much should I pay?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:52",
+      "type": "money_or_payment",
+      "reference_text": "300",
+      "translation_text": "300.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:57",
+      "type": "move_off_app",
+      "reference_text": "நம்பர்",
+      "translation_text": "Number?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:59",
+      "type": "move_off_app",
+      "reference_text": "78 78 68 82 05 23 05 23",
+      "translation_text": "78 78 68 82 05 23 05 23",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation successfully preserves the key policy-violating moments of exchanging a phone number and discussing a payment of 300, despite minor translation errors and a missed name."
+}

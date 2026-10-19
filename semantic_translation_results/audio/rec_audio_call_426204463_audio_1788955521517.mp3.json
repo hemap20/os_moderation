@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_audio_call_426204463_audio_1788955521517.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 390,
+  "affected_word_count": 31,
+  "semantic_error_rate": 0.0795,
+  "seconds": 4.8,
+  "discrepancies": [
+    {
+      "reference_text": "मैं ऐप चलाती चलाती",
+      "translation_text": "Do you use Snapchat?",
+      "category": "named_entity_altered",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'I keep using the app' but the translation introduces 'Snapchat' out of nowhere."
+    },
+    {
+      "reference_text": "हां इसमें रिचार्ज होता है ना",
+      "translation_text": "Yes, it consumes a lot of data, right?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference talks about recharging/paying for the app, but the translation changes it to consuming data."
+    },
+    {
+      "reference_text": "हम्म रिचार्ज लगता नहीं है बहुत ज्यादा लगता है",
+      "translation_text": "Yes, it doesn't just consume data, it consumes a lot.",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference talks about the recharge costing a lot, but the translation refers to data consumption."
+    },
+    {
+      "reference_text": "तुम जैसे लड़के आते हैं बात करने",
+      "translation_text": "Girls like you come to talk.",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'boys like you come to talk' but the translation says 'girls like you'."
+    },
+    {
+      "reference_text": "दोबारा कॉल करने का मन करेगा",
+      "translation_text": "Don't call again.",
+      "category": "negation_flipped",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'I will feel like calling again' but the translation says 'Don't call again'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:35",
+      "type": "money_or_payment",
+      "reference_text": "हां इसमें रिचार्ज होता है ना",
+      "translation_text": "Yes, it consumes a lot of data, right?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:38",
+      "type": "money_or_payment",
+      "reference_text": "हम्म रिचार्ज लगता नहीं है बहुत ज्यादा लगता है",
+      "translation_text": "Yes, it doesn't just consume data, it consumes a lot.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:44",
+      "type": "money_or_payment",
+      "reference_text": "अच्छा कितना लगता होगा रिचार्ज",
+      "translation_text": "How much does it cost for a recharge?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several critical errors, including changing 'recharge' to 'data consumption' in some lines, introducing 'Snapchat' incorrectly, reversing a positive statement about calling again into a negative command, and swapping genders."
+}

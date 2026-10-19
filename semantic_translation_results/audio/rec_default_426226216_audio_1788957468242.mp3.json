@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_default_426226216_audio_1788957468242.mp3",
+  "language": "telugu",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 52,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.0962,
+  "seconds": 3.1,
+  "discrepancies": [
+    {
+      "reference_text": "హలో",
+      "translation_text": "Hello, I cannot hear you.",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds 'I cannot hear you' which is not in the reference."
+    },
+    {
+      "reference_text": "ఏయ్",
+      "translation_text": "Lower your voice a little.",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The translation translates an exclamation 'Hey' as 'Lower your voice a little'."
+    },
+    {
+      "reference_text": "నేను రాసుకుంటాను కిందకి అంటావా?",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The reference line about writing down or going lower is completely missing from the translation."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:39",
+      "type": "move_off_app",
+      "reference_text": "ఇంకొంచెం అంటే వాట్సాప్.",
+      "translation_text": "A little more means WhatsApp.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate but adds some text at the beginning, mistranslates an exclamation, and completely omits one line of dialogue near the end."
+}

@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_audio_call_403544174_audio_1786818489013.mp3",
+  "language": "kannada",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 183,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.071,
+  "seconds": 3.9,
+  "discrepancies": [
+    {
+      "reference_text": "ಚಿತ್ರದುರ್ಗ",
+      "translation_text": "Chaukare",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The town name Chitradurga is mistranslated as Chaukare."
+    },
+    {
+      "reference_text": "ಚಿತ್ರದುರ್ಗ ಡಿಸ್ಟ್ರಿಕ್ಟ್ ಕೇಳ್ರಿ ಯಾಕೆ ಕೇಳ್ರಿ ಅಂದ್ರೆ ನನಗೇನು ಗೊತ್ತಾಗಬೇಕು",
+      "translation_text": "Jagalakere district, you asked, what should I know about this kere or that kere?",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference asks why they are asking about the district and what they need to know, which is mistranslated with invented words like Jagalakere."
+    },
+    {
+      "reference_text": "ಏನ್ ಕ್ಯಾಪ್ ಯೂಸ್ ಮಾಡೋದು",
+      "translation_text": "using the cab?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks what app they are using, but the translation misinterprets 'app' as 'cab'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:34",
+      "type": "sexual_or_explicit",
+      "reference_text": "ಯಾರಿಗಾದ್ರೂ ವಿಡಿಯೋ ಕಾಲ್ ಏನಾದ್ರೂ ಮಾಡ್ತಿದ್ದೀರಾ",
+      "translation_text": "do you enter video calls with anyone?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:54",
+      "type": "meeting_in_person",
+      "reference_text": "ಒಬ್ಬರೇ ಇದ್ದೀರಲ್ಲ ನಾನು ಬರ್ತೀನಿ",
+      "translation_text": "You are alone, right? I will come.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation contains some minor errors in place names and misinterprets 'app' as 'cab', but the overall tone, intent, and policy-relevant moments (such as asking about video calls and offering to visit) are preserved."
+}

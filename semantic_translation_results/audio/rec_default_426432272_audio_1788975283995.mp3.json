@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_426432272_audio_1788975283995.mp3",
+  "language": "kannada",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 150,
+  "affected_word_count": 23,
+  "semantic_error_rate": 0.1533,
+  "seconds": 5.3,
+  "discrepancies": [
+    {
+      "reference_text": "ವಾಕ್ ಮಾಡ್ತಾ ಇದ್ದೀನಿ.",
+      "translation_text": "I am working.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I am walking' (ವಾಕ್ ಮಾಡ್ತಾ ಇದ್ದೀನಿ), but the translation says 'I am working'."
+    },
+    {
+      "reference_text": "ಮನೇಲಿ ಹೆಂಡತಿಗೆ ಗೊತ್ತಾ ಯೂಸ್ ಮಾಡೋದು?",
+      "translation_text": "Do you know how to use it at home?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference asks 'Does your wife at home know you use this?', but the translation asks 'Do you know how to use it at home?'."
+    },
+    {
+      "reference_text": "ಗೊತ್ತಿಲ್ಲ.",
+      "translation_text": "I don't know.",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'She doesn't know' (referring to the wife), but the translation says 'I don't know'."
+    },
+    {
+      "reference_text": "ಗೊತ್ತಾದ್ರೆ?",
+      "translation_text": "If you know, then...",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference asks 'What if she finds out?', but the translation says 'If you know, then...'."
+    },
+    {
+      "reference_text": "ನಿಮ್ಮ ಹತ್ರ ಫ್ರೆಂಡ್ಸ್ ಗೆ ಬರ್ತೀನಿ ನಾನು.",
+      "translation_text": "You will not get friends like me.",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'I come to you guys on Friends (app)', but the translation says 'You will not get friends like me'."
+    },
+    {
+      "reference_text": "ಮನೇಲಿ ಹೆಂಡತಿ ಇರಬೇಕಾದ್ರೆ ಯಾಕೆ ಯೂಸ್ ಮಾಡೋದು?",
+      "translation_text": "Why use it at home?",
+      "category": "key_content_missing",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'Why use it when you have a wife at home?', but the translation misses the mention of the wife."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:56",
+      "type": "sexual_or_explicit",
+      "reference_text": "ನನಗೆ ಸೆಕ್ಸ್ ಬಗ್ಗೆ ಇಂಟರೆಸ್ಟ್. ಇನ್ನು ಮಾಡಬೇಕು. ಮಾಡಬೇಕು ಅನ್ಸುತ್ತೆ ಸೆಕ್ಸ್.",
+      "translation_text": "I have an interest in sex, I still want to do it. I feel like doing it, sex.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:01",
+      "type": "sexual_or_explicit",
+      "reference_text": "ದಿನಾಲು ಬೇಕು ನನಗೆ.",
+      "translation_text": "I need it every day.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the explicit sexual content, but contains several mistranslations in the latter half of the call regarding the user's wife and his usage of the app."
+}

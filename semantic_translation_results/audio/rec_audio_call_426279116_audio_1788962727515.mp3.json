@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_audio_call_426279116_audio_1788962727515.mp3",
+  "language": "telugu",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 150,
+  "affected_word_count": 10,
+  "semantic_error_rate": 0.0667,
+  "seconds": 4.8,
+  "discrepancies": [
+    {
+      "reference_text": "50 రూపీస్",
+      "translation_text": "250 rupees",
+      "category": "number_or_id_altered",
+      "word_count_affected": 2,
+      "explanation": "The translation changes the amount paid from 50 rupees to 250 rupees."
+    },
+    {
+      "reference_text": "అందరూ వాట్సాప్ వాట్సాప్ లో వీడియో కాల్ చేస్తాను 300 ఇవ్వు",
+      "translation_text": "Everyone does video calls on WhatsApp, I will do 300.",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference says others ask for 300 rupees to do video calls on WhatsApp, whereas the translation says 'I will do 300'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:42",
+      "type": "sexual_or_explicit",
+      "reference_text": "కాకపోతే సుఖాలు ఎవరు తీరుస్తారు చెప్పు",
+      "translation_text": "If not, who will fulfill the happiness, tell me.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:30",
+      "type": "money_or_payment",
+      "reference_text": "50 రూపీస్ అంతా వేశాను",
+      "translation_text": "I paid 250 rupees",
+      "status": "preserved"
+    },
+    {
+      "t": "01:41",
+      "type": "move_off_app",
+      "reference_text": "అందరూ వాట్సాప్ వాట్సాప్ లో వీడియో కాల్ చేస్తాను 300 ఇవ్వు",
+      "translation_text": "Everyone does video calls on WhatsApp, I will do 300.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:41",
+      "type": "money_or_payment",
+      "reference_text": "300 ఇవ్వు",
+      "translation_text": "I will do 300.",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate but alters the payment amount from 50 to 250 rupees, and misrepresents a statement about other users asking for 300 rupees on WhatsApp as the speaker offering to do it."
+}

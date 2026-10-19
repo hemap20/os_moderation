@@ -1,0 +1,51 @@
+{
+  "file_id": "rec_default_427037139_audio_1789034210020.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 43,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.2558,
+  "seconds": 3.5,
+  "discrepancies": [
+    {
+      "reference_text": "ഒന്ന് നാട് ആലപ്പുഴ",
+      "translation_text": "It is in the state of Kerala.",
+      "category": "named_entity_altered",
+      "word_count_affected": 3,
+      "explanation": "The reference mentions Alappuzha as the hometown, but the translation changes it to the state of Kerala."
+    },
+    {
+      "reference_text": "അവർക്ക് എത്ര വയസ്സുണ്ട്",
+      "translation_text": "How old are you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks how old the children are, but the translation asks how old the speaker is."
+    },
+    {
+      "reference_text": "32 കല്യാണം കഴിഞ്ഞു",
+      "translation_text": "32. Are you married?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference states '32, married', whereas the translation translates it as a question 'Are you married?'."
+    },
+    {
+      "reference_text": "പ്രസക്തിയുണ്ടോ",
+      "translation_text": "prestige",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The Malayalam word for relevance/significance is mistranslated as prestige."
+    },
+    {
+      "reference_text": "പ്രസക്തി",
+      "translation_text": "prestige",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The Malayalam word for relevance/significance is mistranslated as prestige."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate in tone but contains several meaning errors, including mistranslating Alappuzha as Kerala, changing a question about children's age to the speaker's age, and mistranslating 'relevance' as 'prestige'."
+}

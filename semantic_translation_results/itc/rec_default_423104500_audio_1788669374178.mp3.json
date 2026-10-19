@@ -1,0 +1,101 @@
+{
+  "file_id": "rec_default_423104500_audio_1788669374178.mp3",
+  "language": "tamil",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 131,
+  "affected_word_count": 25,
+  "semantic_error_rate": 0.1908,
+  "seconds": 7.5,
+  "discrepancies": [
+    {
+      "reference_text": "வீடு கிடையாது ரூம்",
+      "translation_text": "It's not a house, I have to go",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'Not a house, a room', but the translation says 'It's not a house, I have to go'."
+    },
+    {
+      "reference_text": "முதல்ல இருந்து சொல்லுங்க",
+      "translation_text": "Boss, tell me.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'Tell me from the beginning', but the translation says 'Boss, tell me'."
+    },
+    {
+      "reference_text": "என்னது இது வந்துச்சா",
+      "translation_text": "Okay, I have come now",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'What is this, did it arrive?', but the translation says 'Okay, I have come now'."
+    },
+    {
+      "reference_text": "வாங்க ஸ்கேனர் அனுப்பி இருக்கேன் வாங்க பேசலாம்",
+      "translation_text": "Come, I have sent the scanner, come, no problem",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'Come, I have sent the scanner, come let's talk', but the translation says 'no problem' instead of 'let's talk'."
+    },
+    {
+      "reference_text": "பே பண்ணியாச்சா",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The question asking if payment has been made is completely missing from the translation."
+    },
+    {
+      "reference_text": "இன்னும் பாக்கலையே இந்த பாக்கறேன் பாத்துட்டு இருக்கேன்",
+      "translation_text": "Right, I didn't see this, this looking",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'I haven't seen it yet, I am looking at it now', but the translation is garbled and says 'Right, I didn't see this, this looking'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:01",
+      "type": "move_off_app",
+      "reference_text": "என் பேரு சுமதி ஐ அம் மேரிட் ஹவுஸ் வைப் வாட்ஸ்அப் வீடியோ கால் பேசலாமா இன்ட்ரஸ்ட் இருக்கா",
+      "translation_text": "My name is Sumathi, married, housewife. Shall we talk on WhatsApp video call? Are you interested?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:19",
+      "type": "money_or_payment",
+      "reference_text": "300 பே பண்ணனும்",
+      "translation_text": "three hundred [unclear]. You have to do it.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:19",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஃபுல் நியூடா பேசுவேன் டைம் லிமிட் இல்ல உங்களுக்கு ஃபுல் பில் ஆகுற வரைக்கும் நான் பேசுவேன் ஓகேவா",
+      "translation_text": "I will talk fully nude. There is no time limit. I will talk until you are fulfilled, okay?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:32",
+      "type": "move_off_app",
+      "reference_text": "9943684716",
+      "translation_text": "Double nine four three six double nine four eight four seven one six",
+      "status": "preserved"
+    },
+    {
+      "t": "03:16",
+      "type": "money_or_payment",
+      "reference_text": "வாங்க ஸ்கேனர் அனுப்பி இருக்கேன் வாங்க பேசலாம்",
+      "translation_text": "Come, I have sent the scanner, come, no problem",
+      "status": "preserved"
+    },
+    {
+      "t": "04:16",
+      "type": "money_or_payment",
+      "reference_text": "பே பண்ணியாச்சா",
+      "translation_text": "",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation successfully preserves the explicit and off-app solicitation details, but misses the final payment confirmation question and contains several mistranslated phrases."
+}

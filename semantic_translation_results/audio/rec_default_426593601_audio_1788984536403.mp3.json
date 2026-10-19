@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_default_426593601_audio_1788984536403.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 164,
+  "affected_word_count": 6,
+  "semantic_error_rate": 0.0366,
+  "seconds": 5.2,
+  "discrepancies": [
+    {
+      "reference_text": "38",
+      "translation_text": "32",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The size number was changed from 38 to 32."
+    },
+    {
+      "reference_text": "ம் காட்டலாம்",
+      "translation_text": "No.",
+      "category": "negation_flipped",
+      "word_count_affected": 2,
+      "explanation": "The speaker says 'Yes, I can show' but the translation says 'No'."
+    },
+    {
+      "reference_text": "அதெல்லாம் அலோடு இல்ல",
+      "translation_text": "Because of that, I don't want to.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The speaker says 'That is not allowed' (referring to app rules), but the translation says 'Because of that, I don't want to'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:29",
+      "type": "sexual_or_explicit",
+      "reference_text": "ரொமான்ஸ் செக்ஸ் பண்ணிருக்கீங்களா இப்ப ரீசன்டா எதாச்சும்",
+      "translation_text": "Have you done any romance or sex recently?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:55",
+      "type": "sexual_or_explicit",
+      "reference_text": "அப்போ என்ன பண்றீங்க கண்ட்ரோல் பிங்கரிங் வீடியோஸ்",
+      "translation_text": "So, what are you doing? Control, fingering, videos?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:04",
+      "type": "sexual_or_explicit",
+      "reference_text": "ம் என்ன சைஸ் நிப்பிள்",
+      "translation_text": "Hmm, what is your size, nipple?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:09",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஏன் அது காட்டலாம்ல",
+      "translation_text": "Can you show it?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:14",
+      "type": "sexual_or_explicit",
+      "reference_text": "ம் காட்டலாம்",
+      "translation_text": "No.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "02:20",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஓபன் பண்ணி காட்டலாம்",
+      "translation_text": "You can open it and show it.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:25",
+      "type": "sexual_or_explicit",
+      "reference_text": "அதெல்லாம் அலோடு இல்ல",
+      "translation_text": "Because of that, I don't want to.",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures most of the explicit sexual questions, but incorrectly flips the user's consent to show her body from 'Yes' to 'No' and mistranslates her final statement about app rules."
+}

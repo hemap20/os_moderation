@@ -1,0 +1,86 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert). Calls can be audio/video.
+    *   **Goal:** Find every possible violation based on three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+    *   **Output Format:** Strict minified JSON array following the specified schema.
+    *   **Constraints:**
+        *   Only output quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, location, filler words).
+        *   Category `f` must be exactly one of: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+        *   Strict rules for `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting` (including confidence levels and allowed exceptions).
+        *   `About a Violation` (warnings, refusals, questions about rules) gets `violation: "no"` and `c <= 0.3`.
+        *   Quotes must be exact, with real timestamps.
+
+2.  **Analyze the Transcript:**
+    *   [00:00] कहाँ लगाइए तो फेसबुक पर व्हाट्सएप पर व्हाट्सएप पर नहीं फेसबुक पर होता है फेसबुक पर लगाइए (Where to put it, on Facebook, WhatsApp, WhatsApp no, it's on Facebook, put it on Facebook)
+    *   [00:10] हेलो हेलो (Hello Hello)
+    *   [00:20] हेलो हेलो (Hello Hello)
+    *   [00:30] गुप्ता जी नाम है मेरा जासिका से नहीं मिलेंगे (Gupta ji, my name is Jasika, won't meet from)
+    *   [00:40] फेसबुक पे क्या देखना है फेसबुक पे नहीं इंस्टाग्राम पे देखो बुलाओ खाली फेसबुक पे तो अरे वो भी बुलाओ (What to see on Facebook, not on Instagram, look, call, only on Facebook, oh, call that too)
+    *   [00:50] लाड़ू चमको कहाँ लगाएंगे (Ladoo chamko, where will you put it)
+    *   [01:00] हाँ (Yes)
+
+3.  **Evaluate Transcript against Policy Rules:**
+
+    *   **[00:00] कहाँ लगाइए तो फेसबुक पर व्हाट्सएप पर व्हाट्सएप पर नहीं फेसबुक पर होता है फेसबुक पर लगाइए**
+        *   *Content:* Discussing which platform (Facebook vs. WhatsApp) to use.
+        *   *Category Check:* Does this propose moving outside the app? It suggests using external platforms (Facebook, WhatsApp, Instagram).
+        *   *PlatformMove Check:* It mentions external apps. It doesn't explicitly ask for a number or propose a meeting, but it discusses moving contact methods.
+        *   *Violation Check:* It's a discussion about platforms, not a strong proposal.
+        *   *Initial Assessment:* Weak `PlatformMove` or just allowed conversation about social media.
+
+    *   **[00:30] गुप्ता जी नाम है मेरा जासिका से नहीं मिलेंगे**
+        *   *Content:* Stating a name and a refusal/statement about meeting.
+        *   *Assessment:* Ordinary conversation/introduction.
+
+    *   **[00:40] फेसबुक पे क्या देखना है फेसबुक पे नहीं इंस्टाग्राम पे देखो बुलाओ खाली फेसबुक पे तो अरे वो भी बुलाओ**
+        *   *Content:* Discussing where to look for content (Facebook vs. Instagram) and suggesting calling/contacting on those platforms.
+        *   *Category Check:* Suggesting contact/interaction on external platforms.
+        *   *PlatformMove Check:* Hints at contact elsewhere.
+        *   *Initial Assessment:* Weak `PlatformMove`.
+
+    *   **[00:50] लाड़ू चमको कहाँ लगाएंगे**
+        *   *Content:* A question about where to put something (context unclear, likely related to the previous discussion about platforms or something else).
+        *   *Assessment:* Ordinary conversation/small talk.
+
+4.  **Final Flag Generation Strategy:**
+    The conversation is primarily about social media platforms (Facebook, WhatsApp, Instagram) and where to conduct contact. This falls under `PlatformMove` (hints at contact elsewhere). Since there are no explicit requests for numbers or meetings, the cases will be weaker.
+
+    *   *Flag 1 (00:00):* Discussing platforms.
+    *   *Flag 2 (00:40):* Discussing platforms and calling/contacting.
+
+5.  **Construct JSON Output (Self-Correction/Refinement):** Ensure strict adherence to the schema and rules, especially regarding `speech_act` and `violation`. Since these are just discussions about platforms, they are likely low confidence `PlatformMove` flags.<channel|>```json
+{
+  "RawModelOutputV6": {
+    "d": [
+      {
+        "t": "00:00",
+        "seg": "कहाँ लगाइए तो फेसबुक पर व्हाट्सएप पर व्हाट्सएप पर नहीं फेसबुक पर होता है फेसबुक पर लगाइए",
+        "tr": "Where to put it, on Facebook, WhatsApp, WhatsApp no, it's on Facebook, put it on Facebook",
+        "f": "PlatformMove",
+        "spk": "user",
+        "ctx": "The user is discussing which platform (Facebook or WhatsApp) is appropriate for something, suggesting Facebook.",
+        "speech_act": "direct",
+        "j": "The user is discussing and suggesting the use of external social media platforms (Facebook, WhatsApp) for contact or activity, which is a weak hint at moving contact outside the app.",
+        "violation": "no",
+        "c": 0.6
+      },
+      {
+        "t": "00:40",
+        "seg": "फेसबुक पे क्या देखना है फेसबुक पे नहीं इंस्टाग्राम पे देखो बुलाओ खाली फेसबुक पे तो अरे वो भी बुलाओ",
+        "tr": "What to see on Facebook, not on Instagram, look, call, only on Facebook, oh, call that too",
+        "f": "PlatformMove",
+        "spk": "user",
+        "ctx": "The user is advising the expert on where to look for content (Facebook vs. Instagram) and suggesting calling on those platforms.",
+        "speech_act": "direct",
+        "j": "The user is actively suggesting the use of external platforms (Instagram, Facebook) for interaction and calling, which constitutes a weaker hint at moving contact outside the app.",
+        "violation": "no",
+        "c": 0.6
+      }
+    ]
+  }
+}
+```<turn|>

@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_audio_call_423645324_audio_1788715186440.mp3",
+  "language": "tamil",
+  "source": "itc_gemma_e4b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 129,
+  "affected_word_count": 2,
+  "semantic_error_rate": 0.0155,
+  "seconds": 4.0,
+  "discrepancies": [
+    {
+      "reference_text": "என்ஜாய் பண்ணலாமா",
+      "translation_text": "Can we overpower the car? Can we enjoy with them",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The translation introduces a bizarre phrase 'overpower the car' which is not in the reference, and translates 'with you' (உன் கூட) as 'with them'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:31",
+      "type": "move_off_app",
+      "reference_text": "இன்ஸ்டா ஐடி",
+      "translation_text": "Insta ID",
+      "status": "preserved"
+    },
+    {
+      "t": "02:08",
+      "type": "sexual_or_explicit",
+      "reference_text": "செக்ஸியா பேசலாமா",
+      "translation_text": "can I talk to you sexually",
+      "status": "preserved"
+    },
+    {
+      "t": "02:13",
+      "type": "sexual_or_explicit",
+      "reference_text": "செக்ஸியா பேசலாமா",
+      "translation_text": "can we talk sexually?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:22",
+      "type": "sexual_or_explicit",
+      "reference_text": "உன்னைய பண்ணலாமா உன் கூட என்ஜாய் பண்ணலாமா",
+      "translation_text": "can we overpower the car? Can we enjoy with them",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation mostly preserves the conversation and sexual intent, but fails at the very end by mistranslating a sexual proposition into a nonsensical phrase about overpowering a car."
+}

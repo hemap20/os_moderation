@@ -1,0 +1,94 @@
+{
+  "file_id": "rec_default_423104500_audio_1788669374178.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 131,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.0992,
+  "seconds": 5.9,
+  "discrepancies": [
+    {
+      "reference_text": "சொல்லுங்க",
+      "translation_text": "Where are you?",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'Tell me' or 'Speak up', but the translation says 'Where are you?'."
+    },
+    {
+      "reference_text": "எங்கிருந்து பேசுறீங்க",
+      "translation_text": "I am at home.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Where are you speaking from?', but the translation translates it as 'I am at home.'."
+    },
+    {
+      "reference_text": "நான் வீட்ல இருந்து",
+      "translation_text": "Where are you from?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I am from home', but the translation translates it as a question 'Where are you from?'."
+    },
+    {
+      "reference_text": "வாட்ஸ்அப் வீடியோ கால் பேசலாமா",
+      "translation_text": "Can we talk on a video call?",
+      "category": "named_entity_altered",
+      "word_count_affected": 4,
+      "explanation": "The reference explicitly mentions 'WhatsApp video call', but the translation omits 'WhatsApp'."
+    },
+    {
+      "reference_text": "ஃபுல் நியூடா பேசுவேன்",
+      "translation_text": "I will talk to you fully.",
+      "category": "tone_softened",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I will talk fully nude', but the translation softens this to 'I will talk to you fully'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:01",
+      "type": "move_off_app",
+      "reference_text": "என் பேரு சுமதி ஐ அம் மேரிட் ஹவுஸ் வைப் வாட்ஸ்அப் வீடியோ கால் பேசலாமா இன்ட்ரஸ்ட் இருக்கா",
+      "translation_text": "My name is Sumathi. I am married, a housewife. Can we talk on a video call? Are you interested?",
+      "status": "softened"
+    },
+    {
+      "t": "01:19",
+      "type": "money_or_payment",
+      "reference_text": "300 பே பண்ணனும்",
+      "translation_text": "You have to pay 300.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:19",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஃபுல் நியூடா பேசுவேன்",
+      "translation_text": "I will talk to you fully.",
+      "status": "softened"
+    },
+    {
+      "t": "01:32",
+      "type": "move_off_app",
+      "reference_text": "99436 994 84716",
+      "translation_text": "99436 994 84716",
+      "status": "preserved"
+    },
+    {
+      "t": "03:16",
+      "type": "money_or_payment",
+      "reference_text": "ஸ்கேனர் அனுப்பி இருக்கேன்",
+      "translation_text": "I have sent the scanner",
+      "status": "preserved"
+    },
+    {
+      "t": "04:16",
+      "type": "money_or_payment",
+      "reference_text": "பே பண்ணியாச்சா",
+      "translation_text": "Is it done?",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation successfully captures the transaction intent, but softens the explicit offer of a 'fully nude' call and omits the mention of 'WhatsApp'."
+}

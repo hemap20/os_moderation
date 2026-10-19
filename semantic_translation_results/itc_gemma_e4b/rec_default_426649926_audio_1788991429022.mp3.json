@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426649926_audio_1788991429022.mp3",
+  "language": "kannada",
+  "source": "itc_gemma_e4b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 22,
+  "affected_word_count": 8,
+  "semantic_error_rate": 0.3636,
+  "seconds": 13.4,
+  "discrepancies": [
+    {
+      "reference_text": "ಎಲ್ಲಾ ಸ್ಟಾಲಿನ್ ಬಸ್ ಸ್ಟಾಪ್",
+      "translation_text": "Some bank permit",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation completely misinterprets the reference text about a bus stop."
+    },
+    {
+      "reference_text": "ಯಾರಾ ಇದು ಕಾನ್ಸೆಪ್ಟ್",
+      "translation_text": "Cancer in this",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation misinterprets the Kannada word for concept as cancer."
+    },
+    {
+      "reference_text": "2762",
+      "translation_text": "two seven two seven four",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The last digits of the phone number are translated incorrectly."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:29",
+      "type": "move_off_app",
+      "reference_text": "ನಂಬರ್ ಕೊಡು",
+      "translation_text": "just give me the number",
+      "status": "preserved"
+    },
+    {
+      "t": "00:41",
+      "type": "move_off_app",
+      "reference_text": "ನಂಬರ್ ಹೇಳಿ ಕಾಲ್ ಮಾಡ್ತೀನಿ",
+      "translation_text": "Yes tell the number I will call",
+      "status": "preserved"
+    },
+    {
+      "t": "00:45",
+      "type": "move_off_app",
+      "reference_text": "8861 8861 044 044 2762",
+      "translation_text": "double eight six one double eight six one Zero double four eight zero double four two seven two seven four",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the overall intent of exchanging a phone number to move off the app, though there are some minor translation errors and the final digits of the phone number are incorrect."
+}

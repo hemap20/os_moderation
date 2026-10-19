@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_audio_call_426203802_audio_1788955464104.mp3",
+  "language": "hindi",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 558,
+  "affected_word_count": 31,
+  "semantic_error_rate": 0.0556,
+  "seconds": 6.1,
+  "discrepancies": [
+    {
+      "reference_text": "हम जोधपुर से आप?",
+      "translation_text": "What sir, we are from Jodhpur, you are from Jaipur, New Delhi [unclear]",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The translation incorrectly adds 'you are from Jaipur' and 'New Delhi' which is not in the reference at this point."
+    },
+    {
+      "reference_text": "क्या करते हो दिल्ली नोएडा से?",
+      "translation_text": "What do you do, sister?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The translation adds 'sister' which is not in the reference and changes the tone of a potential romantic conversation."
+    },
+    {
+      "reference_text": "नहीं सिंगल हूं मैं",
+      "translation_text": "My darkness, my darkness, my darkness",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation completely hallucinates 'My darkness' instead of translating 'No, I am single'."
+    },
+    {
+      "reference_text": "बॉयफ्रेंड?",
+      "translation_text": "Ninety-two received on PhonePe, boyfriend, rupees seven. No, I don't get time. Nine received on PhonePe",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation hallucinates automated payment notifications ('received on PhonePe') that are not in the reference."
+    },
+    {
+      "reference_text": "हं?",
+      "translation_text": "dad",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The translation translates 'Huh?' as 'dad', which is completely incorrect."
+    },
+    {
+      "reference_text": "पास में क्या वर्कआउट है ये बात बोल रहा हूं मैं",
+      "translation_text": "then nearby What is the matter, son, this is what I am saying.",
+      "category": "other_meaning_change",
+      "word_count_affected": 10,
+      "explanation": "The translation adds 'son' which is not in the reference and alters the tone of the conversation."
+    },
+    {
+      "reference_text": "अनइनस्टॉल करने का फायदा है",
+      "translation_text": "there is no point in uninstalling",
+      "category": "negation_flipped",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'there is a benefit to uninstalling' (meaning it's better to uninstall), but the translation says 'there is no point in uninstalling'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:46",
+      "type": "money_or_payment",
+      "reference_text": "सच बोलूं तीन चार दिन हुए और अभी मैंने रिचार्ज किया था वो खत्म होते ही मैं बंद कर रहा हूं",
+      "translation_text": "to tell the truth, it has been three or four days, and just now I recharged, as soon as it ends I am closing it.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:53",
+      "type": "money_or_payment",
+      "reference_text": "मतलब रिचार्ज बार-बार आगे नहीं आगे रिचार्ज करके बात करना ये तो ना होती है यार",
+      "translation_text": "Recharging again and again to talk, this is not how it works, man.",
+      "status": "preserved"
+    },
+    {
+      "t": "03:03",
+      "type": "money_or_payment",
+      "reference_text": "रिचार्ज करके कितनी बार कितनी बार करूं ये?",
+      "translation_text": "How many times will you recharge?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the main intent of the conversation regarding dating and app recharges, but introduces several hallucinations (such as PhonePe notifications) and mistranslates some terms, including adding familial terms like 'sister', 'dad', and 'son' which are not in the reference."
+}

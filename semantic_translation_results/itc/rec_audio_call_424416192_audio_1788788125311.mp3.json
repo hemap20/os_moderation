@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_audio_call_424416192_audio_1788788125311.mp3",
+  "language": "tamil",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 330,
+  "affected_word_count": 20,
+  "semantic_error_rate": 0.0606,
+  "seconds": 5.5,
+  "discrepancies": [
+    {
+      "reference_text": "ஒருத்தர், ஒருத்தர் சொல்லிட்டு இருந்தாங்க.",
+      "translation_text": "That's what he was saying.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'someone was telling me' (gender-neutral/plural), but the translation specifies 'he'."
+    },
+    {
+      "reference_text": "சரிங்க, பரவாயில்லை இந்த அளவுக்கு அட்வைஸ் பண்றீங்க ரொம்ப தேங்க்ஸ். யாரும் தெரியாதவங்களுக்கு நீங்க",
+      "translation_text": "It's okay.",
+      "category": "key_content_missing",
+      "word_count_affected": 11,
+      "explanation": "The female speaker's expression of gratitude for the advice is completely omitted from the translation."
+    },
+    {
+      "reference_text": "நம்மள ஓட்டி விட்டு போயிறாங்க.",
+      "translation_text": "end up cheating us.",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The colloquial phrase 'ஓட்டி விட்டு போயிறாங்க' means they mock/tease or take us for a ride, rather than outright financial cheating."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:00",
+      "type": "move_off_app",
+      "reference_text": "வீடியோ கால் பண்ணுன்னு கேப்பாங்க, நம்பர் குடுன்னு கேப்பாங்க",
+      "translation_text": "They will ask for a video call, they will ask for your number.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:24",
+      "type": "move_off_app",
+      "reference_text": "நம்பர் குடுத்து, அவங்க நைட் 10:00 மணிக்கு வீடியோ கால் பேசி",
+      "translation_text": "they give their number, and at ten o'clock at night... They talk on video calls",
+      "status": "preserved"
+    },
+    {
+      "t": "02:21",
+      "type": "money_or_payment",
+      "reference_text": "காசு குடு, நான் உனக்கு இதுல பண்றேன்",
+      "translation_text": "Give me money, I will... I am doing this",
+      "status": "preserved"
+    },
+    {
+      "t": "02:21",
+      "type": "move_off_app",
+      "reference_text": "நான் வாட்ஸ்அப்ல நம்பர் தர்றேன், நம்ம வாட்ஸ்அப்ல பேசிக்கலாம்",
+      "translation_text": "I will give my WhatsApp number, let's talk on WhatsApp.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:21",
+      "type": "money_or_payment",
+      "reference_text": "ஒரு மணி நேரம் பேசினா 100 ரூபாய் தான் வரும், எனக்கு அந்த நீரு இனி 200 ரூபாய் எனக்கு குடு நான் அதுல பேசலாம்",
+      "translation_text": "If I talk here for an hour, I only get a hundred rupees, give me two hundred rupees... Let's talk there",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is highly accurate and preserves all policy-relevant warnings about off-app contact and payment scams, with only minor omissions of polite conversational filler."
+}

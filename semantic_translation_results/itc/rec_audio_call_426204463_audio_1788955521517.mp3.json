@@ -1,0 +1,122 @@
+{
+  "file_id": "rec_audio_call_426204463_audio_1788955521517.mp3",
+  "language": "hindi",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 390,
+  "affected_word_count": 83,
+  "semantic_error_rate": 0.2128,
+  "seconds": 7.5,
+  "discrepancies": [
+    {
+      "reference_text": "उदयपुर",
+      "translation_text": "Udhampur",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The city Udaipur was translated as Udhampur."
+    },
+    {
+      "reference_text": "जो तुम मुझे हाउसवाइफ बना रहे",
+      "translation_text": "everyone is making me a housewife",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'that you are making me a housewife', but the translation says 'everyone'."
+    },
+    {
+      "reference_text": "तो हाउसवाइफ क्यों बनेंगे तुम बताओ",
+      "translation_text": "so I will become a housewife later, you tell me, man",
+      "category": "negation_flipped",
+      "word_count_affected": 7,
+      "explanation": "The reference asks 'why would I become a housewife', but the translation says 'I will become a housewife later'."
+    },
+    {
+      "reference_text": "तुम मुझे यूज करते हुए तो साल भर हो चुका है",
+      "translation_text": "It has been a year since you have been using me",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference says 'I have been using this (app) for a year', but the translation says 'you have been using me'."
+    },
+    {
+      "reference_text": "साल भर तो नहीं सात आठ",
+      "translation_text": "not a year, a year",
+      "category": "number_or_id_altered",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'not a year, seven or eight (months)', but the translation says 'not a year, a year'."
+    },
+    {
+      "reference_text": "मैं ऐप चलाती चलाती",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The speaker's clarification about running the app is missing from the translation."
+    },
+    {
+      "reference_text": "हां इसमें रिचार्ज होता है ना",
+      "translation_text": "today my charge happens, no",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference asks if there is a recharge in this app, but the translation says 'today my charge happens'."
+    },
+    {
+      "reference_text": "हम्म रिचार्ज लगता नहीं है बहुत ज्यादा लगता है",
+      "translation_text": "it doesn't charge It takes a lot",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference says 'recharge is not just required, it costs a lot', but the translation says 'it doesn't charge'."
+    },
+    {
+      "reference_text": "बर्बाद करती है लड़कों को",
+      "translation_text": "ruin things, girl",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'ruin boys', but the translation says 'ruin things, girl'."
+    },
+    {
+      "reference_text": "मैं तो पुरानी हूं तुम्हें मुझे तो अच्छा लगा यार",
+      "translation_text": "you are old, you, I liked it man",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference says 'I am old (experienced on the app)', but the translation says 'you are old'."
+    },
+    {
+      "reference_text": "अच्छा तो लगेगा नहीं यार लड़कों से बात करने का कुछ अंदाज अलग है",
+      "translation_text": "It won't feel good, man, we are talking, it won't feel good, man, the style of talking to boys",
+      "category": "other_meaning_change",
+      "word_count_affected": 13,
+      "explanation": "The reference says 'Why won't it feel good, talking to boys has a different style', but the translation says 'It won't feel good'."
+    },
+    {
+      "reference_text": "अच्छी तो कर रही हूं और कैसी बात कर रही हूं यार",
+      "translation_text": "what are you talking about",
+      "category": "other_meaning_change",
+      "word_count_affected": 10,
+      "explanation": "The reference says 'I am talking nicely, how else would I talk', but the translation says 'what are you talking about'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:35",
+      "type": "money_or_payment",
+      "reference_text": "हां इसमें रिचार्ज होता है ना",
+      "translation_text": "today my charge happens, no",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:38",
+      "type": "money_or_payment",
+      "reference_text": "हम्म रिचार्ज लगता नहीं है बहुत ज्यादा लगता है",
+      "translation_text": "it doesn't charge It takes a lot",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:44",
+      "type": "money_or_payment",
+      "reference_text": "अच्छा कितना लगता होगा रिचार्ज",
+      "translation_text": "how much does it take, and in charge",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several errors, including misinterpreting who is 'old' or 'using the app', and mistranslating the discussion about app recharges/payments."
+}

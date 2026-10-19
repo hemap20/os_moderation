@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_427307746_audio_1789058356862.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 72,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.1806,
+  "seconds": 4.3,
+  "discrepancies": [
+    {
+      "reference_text": "எப்படி இருக்கீங்க?",
+      "translation_text": "50 pixels.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The translation completely misinterprets 'How are you?' as '50 pixels'."
+    },
+    {
+      "reference_text": "ஆடுது",
+      "translation_text": "Is it hard?",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference word means 'it is shaking/moving', but the translation incorrectly translates it as 'Is it hard?'."
+    },
+    {
+      "reference_text": "எதுவும் ஆடலையே",
+      "translation_text": "It's not hard either.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference means 'nothing is shaking', but the translation incorrectly translates it as 'It's not hard either'."
+    },
+    {
+      "reference_text": "அது எதுவும் ஆடலைங்க, உங்க கண்ணுக்கு அப்படி தெரியுது",
+      "translation_text": "It's not hard, it's just visible to your eyes.",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference means 'nothing is shaking, it just looks like that to your eyes', but the translation incorrectly translates 'shaking' as 'hard'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:23",
+      "type": "sexual_or_explicit",
+      "reference_text": "உள்ள ஒன்னும் இல்லையா?",
+      "translation_text": "Is there nothing inside?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:50",
+      "type": "sexual_or_explicit",
+      "reference_text": "காட்டுங்க பாக்கலாம்",
+      "translation_text": "Show it to me, okay?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several major errors, particularly misinterpreting 'How are you?' as '50 pixels' and translating 'shaking/moving' as 'hard', though the explicit requests to show and questions about undergarments are preserved."
+}

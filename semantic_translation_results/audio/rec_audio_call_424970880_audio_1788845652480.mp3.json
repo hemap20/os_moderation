@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_audio_call_424970880_audio_1788845652480.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 53,
+  "affected_word_count": 20,
+  "semantic_error_rate": 0.3774,
+  "seconds": 5.7,
+  "discrepancies": [
+    {
+      "reference_text": "வேலூர்",
+      "translation_text": "I am fine",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The speaker says 'Vellore' (a place name), but the translation says 'I am fine'."
+    },
+    {
+      "reference_text": "வீடியோ கால்ல பேசிக்கலாமா?",
+      "translation_text": "shall we talk?",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The translation misses the specific mention of talking on 'video call'."
+    },
+    {
+      "reference_text": "நான் ஒன்லி பே அண்ட் சர்வீஸ் மட்டும்தான் எடுப்பேன், வீடியோ கால் சர்வீஸ், இந்த மாதிரி பேச எல்லாம் மாட்டேன்",
+      "translation_text": "I only take paid services, I will take video call services. I won't talk like this",
+      "category": "other_meaning_change",
+      "word_count_affected": 14,
+      "explanation": "The reference states she only does paid video call services and won't just talk like this, but the translation splits it confusingly."
+    },
+    {
+      "reference_text": "வீடியோ கால்?",
+      "translation_text": "Okay, okay.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The speaker asks 'Video call?' but the translation says 'Okay, okay.'"
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:14",
+      "type": "sexual_or_explicit",
+      "reference_text": "வீடியோ கால்ல குடுத்தீங்களா?",
+      "translation_text": "Are you coming on video call?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:19",
+      "type": "sexual_or_explicit",
+      "reference_text": "வீடியோ கால்ல பேசிக்கலாமா?",
+      "translation_text": "shall we talk?",
+      "status": "softened"
+    },
+    {
+      "t": "00:27",
+      "type": "sexual_or_explicit",
+      "reference_text": "என்ன செக்ஸ் டாபிக்கா?",
+      "translation_text": "What, sex topic?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:34",
+      "type": "money_or_payment",
+      "reference_text": "நான் ஒன்லி பே அண்ட் சர்வீஸ் மட்டும்தான் எடுப்பேன்",
+      "translation_text": "I only take paid services",
+      "status": "preserved"
+    },
+    {
+      "t": "00:34",
+      "type": "sexual_or_explicit",
+      "reference_text": "வீடியோ கால் சர்வீஸ்",
+      "translation_text": "video call services",
+      "status": "preserved"
+    },
+    {
+      "t": "00:40",
+      "type": "sexual_or_explicit",
+      "reference_text": "வீடியோ கால்?",
+      "translation_text": "Okay, okay.",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general discussion about paid video call services and sex topics, but misses some specific mentions of video calls and mistranslates a location name as a greeting."
+}

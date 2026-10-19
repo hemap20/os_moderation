@@ -1,0 +1,87 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert/paid host). Calls can be audio/video.
+    *   **Goal:** Find every possible violation based on three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+    *   **Output Format:** Strict minified JSON array following the specified schema.
+    *   **Constraints:**
+        *   Only output quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, filler words, etc.).
+        *   Category `f` must be exactly one of: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+        *   Confidence scores (0.9 strong, 0.6 weaker, 0.3 about a violation).
+        *   Strict rules for `speech_act`, `violation`, and quote accuracy.
+
+2.  **Analyze the Transcript:**
+    *   [00:00] कहाँ से हो हेलो कहाँ से हो हेलो बोलो भाई (Where are you from? Hello, where are you from? Hello, speak brother)
+    *   [00:10] अभी कहाँ से हो कुछ तो बोलो मैम किसने (Where are you from now? Say something, ma'am, who?)
+    *   [00:20] आप कहाँ से हो अच्छा व्हाट्सअप पर आओगे कहाँ से आगरा से आगरा (Where are you from? Okay, will you come on WhatsApp? From Agra, from Agra)
+    *   [00:30] ऐसे क्या करते हो आप कुछ नहीं व्हाट्सअप पर आओगे (What do you do? You don't [do anything]? Will you come on WhatsApp?)
+
+3.  **Evaluate Transcript against Policy Categories:**
+
+    *   **[00:00] कहाँ से हो हेलो कहाँ से हो हेलो बोलो भाई** (Where are you from? Hello, where are you from? Hello, speak brother)
+        *   Type: Greeting/Small talk.
+        *   Verdict: Allowed/Ordinary conversation. (Do not output)
+
+    *   **[00:10] अभी कहाँ से हो कुछ तो बोलो मैम किसने** (Where are you from now? Say something, ma'am, who?)
+        *   Type: Small talk/Asking for identity.
+        *   Verdict: Allowed/Ordinary conversation. (Do not output)
+
+    *   **[00:20] आप कहाँ से हो अच्छा व्हाट्सअप पर आओगे कहाँ से आगरा से आगरा** (Where are you from? Okay, will you come on WhatsApp? From Agra, from Agra)
+        *   Analysis: The user is asking about location and explicitly proposing moving the conversation to WhatsApp.
+        *   Category Check: `PlatformMove`.
+        *   Strength Check: "व्हाट्सअप पर आओगे" (will you come on WhatsApp) is a strong case for proposing moving to a named external app.
+        *   Action: Flag this.
+
+    *   **[00:30] ऐसे क्या करते हो आप कुछ नहीं व्हाट्सअप पर आओगे** (What do you do? You don't [do anything]? Will you come on WhatsApp?)
+        *   Analysis: Continues the theme of asking about the person and proposing moving to WhatsApp.
+        *   Category Check: `PlatformMove`.
+        *   Strength Check: "व्हाट्सअप पर आओगे" (will you come on WhatsApp) is a strong case.
+        *   Action: Flag this.
+
+4.  **Construct the JSON Output (Focusing on the two identified flags):**
+
+    *   *Flag 1 (00:20)*
+    *   *Flag 2 (00:30)*
+
+5.  **Final Review against Constraints:**
+    *   Are quotes exact? Yes.
+    *   Are categories correct? Yes (`PlatformMove`).
+    *   Are allowed conversations excluded? Yes (Greetings/small talk excluded).
+    *   Is the JSON schema followed? Yes.
+    *   Are confidence scores appropriate? Yes (0.9 for strong platform move).
+
+**(Self-Correction during drafting):** The request asks for the quote that matches the strong case. Both instances of proposing WhatsApp are strong cases. I will flag both.<channel|>```json
+{
+  "RawModelOutputV6": {
+    "d": [
+      {
+        "t": "00:20",
+        "seg": "आप कहाँ से हो अच्छा व्हाट्सअप पर आओगे कहाँ से आगरा से आगरा",
+        "tr": "Where are you from? Okay, will you come on WhatsApp? From Agra, from Agra",
+        "f": "PlatformMove",
+        "spk": "user",
+        "ctx": "The user asks the expert where they are from and then proposes moving the conversation to WhatsApp, mentioning the city of Agra.",
+        "speech_act": "direct",
+        "j": "The user explicitly proposes moving the contact to an external app (WhatsApp) and asks for location details, matching a strong case for PlatformMove.",
+        "violation": "yes",
+        "c": 0.9
+      },
+      {
+        "t": "00:30",
+        "seg": "ऐसे क्या करते हो आप कुछ नहीं व्हाट्सअप पर आओगे",
+        "tr": "What do you do? You don't [do anything]? Will you come on WhatsApp?",
+        "f": "PlatformMove",
+        "spk": "user",
+        "ctx": "The user continues by asking about the expert's profession and reiterates the proposal to move the conversation to WhatsApp.",
+        "speech_act": "direct",
+        "j": "The user continues to propose moving the contact to an external app (WhatsApp), matching a strong case for PlatformMove.",
+        "violation": "yes",
+        "c": 0.9
+      }
+    ]
+  }
+}
+```<turn|>

@@ -1,0 +1,94 @@
+{
+  "file_id": "rec_audio_call_426871106_audio_1789022339887.mp3",
+  "language": "kannada",
+  "source": "itc",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 407,
+  "affected_word_count": 32,
+  "semantic_error_rate": 0.0786,
+  "seconds": 6.5,
+  "discrepancies": [
+    {
+      "reference_text": "ನನ್ನ ಹತ್ರ ಮಾತಾಡಿದ್ರಲ್ಲ ನನ್ನ ಹತ್ರ ನೀವು?",
+      "translation_text": "Did you speak to me yesterday?",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference asks 'You spoke to me, didn't you?' but the translation adds 'yesterday' which is not in the source."
+    },
+    {
+      "reference_text": "ಎಕ್ಸ್ ಗೆ",
+      "translation_text": "next",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'to my ex' (ex-partner), but the translation mistranslates 'ex' as 'next'."
+    },
+    {
+      "reference_text": "ಅವನು ಕೇಳಿದ್ರೆ ಚೆನ್ನಾಗಿ ಕೊಡುಸ್ತೀನಿ",
+      "translation_text": "He asks for more, I give more.",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'If he asks, I will buy him something nice', but the translation says 'He asks for more, I give more'."
+    },
+    {
+      "reference_text": "ಮಗಳಿಗೆ",
+      "translation_text": "children",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'daughter', but the translation says 'children'."
+    },
+    {
+      "reference_text": "ಎಕ್ಸ್ ಗೆ",
+      "translation_text": "son",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'ex', but the translation says 'son'."
+    },
+    {
+      "reference_text": "ಒಂದು ಲಕ್ಷ ಒಂದು ಐದಾರು ಸಾವಿರ",
+      "translation_text": "five lakhs. Five or six thousand",
+      "category": "number_or_id_altered",
+      "word_count_affected": 5,
+      "explanation": "The reference asks for 'one lakh or five-six thousand', but the translation introduces 'five lakhs'."
+    },
+    {
+      "reference_text": "ಎಕ್ಸ್ ಗೆ",
+      "translation_text": "next time",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'to my ex', but the translation mistranslates it as 'next time'."
+    },
+    {
+      "reference_text": "ಯಾವುದಾನ ಹುಡುಗಿಗೆ ಹೋಗ್ಬಿಟ್ಟು",
+      "translation_text": "go to that girl",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'go to some girl', but the translation says 'go to that girl'."
+    },
+    {
+      "reference_text": "ಹುಡುಗಿ ಪೈಸಾ ಜಾಸ್ತಿ ನಾ ಟೈಮ್",
+      "translation_text": "Girl, payasam, is that too much?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks 'Does a girl want money more, or time?', but the translation mistranslates 'paisa' (money) as 'payasam' (sweet pudding)."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:39",
+      "type": "money_or_payment",
+      "reference_text": "ಎಷ್ಟು ಖರ್ಚು ಮಾಡಿದ್ದೀರಾ? ... ಒಂದು ಲಕ್ಷ",
+      "translation_text": "how much have you spent? One lakh?",
+      "status": "preserved"
+    },
+    {
+      "t": "03:53",
+      "type": "money_or_payment",
+      "reference_text": "ಕೊಡಿ ಅಂದೆ ಒಂದು ಲಕ್ಷ ಒಂದು ಐದಾರು ಸಾವಿರ",
+      "translation_text": "Give me five lakhs. Five or six thousand is enough",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate in tone and intent, but contains several mistranslations of the word 'ex' (translated as 'next' or 'son') and 'paisa' (translated as 'payasam')."
+}

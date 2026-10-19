@@ -1,0 +1,85 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert/paid host). Calls can be audio/video.
+    *   **Goal:** Find every possible violation based on three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+    *   **Output Format:** Strict minified JSON adhering to the specified schema.
+    *   **Constraints:**
+        *   Only output quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, filler words, etc.).
+        *   Category `f` must be exactly one of: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+        *   Use `About a Violation` rules for low confidence/warnings.
+        *   Confidence scale: 0.9 (Strong), 0.6 (Weaker), 0.3 (About a violation).
+        *   Quotes must be exact, with real timestamps.
+
+2.  **Analyze the Transcript (Segment by Segment):**
+
+    *   `[00:00] हाँ जी हेलो हेलो` (Greeting) -> Allowed/Ordinary conversation. Skip.
+    *   `[00:10] हलो हलो काका हलो` (Greeting) -> Allowed/Ordinary conversation. Skip.
+    *   `[00:20] कहाँ से हो कहाँ से` (Location/Small talk) -> Allowed/Ordinary conversation. Skip.
+    *   `[00:30] कोई करता है क्या करती हो आप कौन सी पार्टी कौन कर रहा है` (Small talk/Inquiry) -> Allowed/Ordinary conversation. Skip.
+    *   `[00:40] क्या पढ़ती हूँ जो भी` (Small talk) -> Allowed/Ordinary conversation. Skip.
+    *   `[00:50] बढ़िया बॉलिंग बात करेंगे` (General statement) -> Allowed/Ordinary conversation. Skip.
+    *   `[01:00] वीडियो कॉल करोगे क्यों क्यों करोगे तो बोलो` (Asking about video call) -> Allowed (Call type within the app). Skip.
+    *   `[01:10] कोई तो रिज़न होगा वीडियो क्वालिटी में तो दिखाओगे क्या दिखाएँगे` (Technical/Video quality discussion) -> Allowed/Ordinary conversation. Skip.
+    *   `[01:20] क्या दिखाओगे क्या दिखाओगे तुम तुम तो पूछिए दिखाओगे तो क्या दिखाओगे` (Questioning about video content) -> Allowed/Ordinary conversation. Skip.
+    *   `[01:30] नीचे वाला दिखाओगे नीचे क्या है नीचे क्या है चू चैट` (Referring to something on the screen/chat) -> Allowed/Ordinary conversation. Skip.
+    *   `[01:40] क्या` (Filler/Short response) -> Skip.
+    *   `[01:50] अभी अभी अभी तो नहीं` (Refusal/Delay) -> Skip.
+    *   `[02:00] क्या है इंटरव्यू का सिद्धांत लेने में बहुत समय है` (Topic change/Work talk) -> Allowed/Ordinary conversation. Skip.
+    *   `[02:10] दरवाज़ा बंद नहीं है तो बंद कर दो नहीं अभी पंच नहीं थे` (Contextual/Non-sexual) -> Skip.
+    *   `[02:20] व्हाट्सएप पर करते हैं व्हाट्सएप पर ठीक व्हाट्सएप पर लिखाओ ठीक` (Proposing external contact method) -> Potential `PlatformMove`.
+    *   `[02:30] पैसे पे दिखाओगे` (Mentioning money/payment) -> Potential `SuspiciousActivity`.
+    *   `[02:40] इस साधन को तैयारियों में देखना चाहिए` (General advice) -> Skip.
+
+3.  **Evaluate Potential Flags:**
+
+    *   **Candidate 1:** `[02:20] व्हाट्सएप पर करते हैं व्हाट्सएप पर ठीक व्हाट्सएप पर लिखाओ ठीक`
+        *   *Analysis:* The user is proposing to switch the communication method to WhatsApp. This is a proposal to move outside the current app.
+        *   *Category:* `PlatformMove`.
+        *   *Confidence:* Strong (clear proposal to use a named external app).
+        *   *Action:* Flag this.
+
+    *   **Candidate 2:** `[02:30] पैसे पे दिखाओगे`
+        *   *Analysis:* This suggests payment is involved in the service ("show"). This links money to the service.
+        *   *Category:* `SuspiciousActivity`.
+        *   *Confidence:* Weak/Medium. It's a statement about payment for the service, but not a strong demand or explicit price. It hints at money linked to the service.
+        *   *Action:* Flag this.
+
+4.  **Construct the JSON Output:** (Focusing on the two identified flags.)
+
+    *   *Self-Correction/Review:* Ensure all fields (t, seg, tr, f, spk, ctx, speech_act, j, violation, c) are correctly populated according to the rules.
+
+    *   *Flag 1 (PlatformMove):* Needs to capture the proposal to use WhatsApp.
+    *   *Flag 2 (SuspiciousActivity):* Needs to capture the mention of money/payment.
+
+5.  **Final JSON Generation.** (Ensure minified format.)<channel|>```json
+{"d": [
+  {
+    "t": "02:20",
+    "seg": "व्हाट्सएप पर करते हैं व्हाट्सएप पर ठीक व्हाट्सएप पर लिखाओ ठीक",
+    "tr": "Let's do it on WhatsApp, okay, write it on WhatsApp, okay",
+    "f": "PlatformMove",
+    "spk": "user",
+    "ctx": "The user is suggesting a change in communication method, proposing to move the conversation outside the current application to WhatsApp.",
+    "speech_act": "direct",
+    "j": "The user explicitly proposes moving the conversation to an external application (WhatsApp), which is a strong case for PlatformMove.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "02:30",
+    "seg": "पैसे पे दिखाओगे",
+    "tr": "You will show it for money",
+    "f": "SuspiciousActivity",
+    "spk": "expert",
+    "ctx": "The user proposes moving the conversation to WhatsApp. The expert responds by mentioning that the service involves payment.",
+    "speech_act": "direct",
+    "j": "The expert mentions that the service involves payment ('paisa pe'), linking money to the service, which is a weaker case for SuspiciousActivity.",
+    "violation": "yes",
+    "c": 0.6
+  }
+]}
+```<turn|>

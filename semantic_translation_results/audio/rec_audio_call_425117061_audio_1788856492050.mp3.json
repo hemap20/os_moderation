@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_audio_call_425117061_audio_1788856492050.mp3",
+  "language": "kannada",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 185,
+  "affected_word_count": 16,
+  "semantic_error_rate": 0.0865,
+  "seconds": 5.8,
+  "discrepancies": [
+    {
+      "reference_text": "ಎಲ್ಲಿಂದ?",
+      "translation_text": "Linga.",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference asks 'From where?' but the translation incorrectly translates it as a name 'Linga'."
+    },
+    {
+      "reference_text": "ಸಿಕ್ಕಿರೋದು ಮತ್ತೆ",
+      "translation_text": "Come soon.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'met again' or 'finding you again', whereas the translation says 'Come soon'."
+    },
+    {
+      "reference_text": "ಏನು ಪಾಯಸ",
+      "translation_text": "What happened?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions 'Payasa' (sweet pudding/metaphorical teasing), but the translation says 'What happened?'."
+    },
+    {
+      "reference_text": "ನನಗೆ ನೆನಪಿಲ್ಲ",
+      "translation_text": "I remember you.",
+      "category": "negation_flipped",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'I don't remember', but the translation flips this to 'I remember you'."
+    },
+    {
+      "reference_text": "ಶ್ರೀ ವಿದ್ಯಾ ನೋಡ್ತಾ ಇದ್ದಾರೆ ಸರ್ ಮೋಸ್ಟ್ಲಿ",
+      "translation_text": "I saw your photo, you are the one, right?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference mentions 'Sri Vidya is watching, sir, mostly', but the translation completely changes this to seeing a photo."
+    },
+    {
+      "reference_text": "ಹುಬ್ಬಳ್ಳಿಯಂತ",
+      "translation_text": "You are from Linga?",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'Hubli' (as heard), but the translation changes it to 'Linga'."
+    },
+    {
+      "reference_text": "ತವರು ಮನೆಯಲ್ಲ",
+      "translation_text": "He is at his home.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'At maternal home' (referring to her being at her parents' house), but the translation says 'He is at his home'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:50",
+      "type": "move_off_app",
+      "reference_text": "Instagram ಐಡಿ ನಾನು ಕೊಡು ಕೊಡು ಕೊಡು ಅಂದೆ",
+      "translation_text": "Instagram ID, I... Give, give, give, you said.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:10",
+      "type": "move_off_app",
+      "reference_text": "Instagram ಐಡಿ ನಾನು ಅವತ್ತು ಕೇಳ್ದೆ ನಿಮ್ಮದು",
+      "translation_text": "Instagram ID, I asked you that time.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation contains several errors in specific details, such as translating 'from where' and 'Hubli' as 'Linga' and flipping a negation about remembering, but the overall intent and the policy-relevant discussion about asking for an Instagram ID are preserved."
+}

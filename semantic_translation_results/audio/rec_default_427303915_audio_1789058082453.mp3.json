@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_default_427303915_audio_1789058082453.mp3",
+  "language": "tamil",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 59,
+  "affected_word_count": 4,
+  "semantic_error_rate": 0.0678,
+  "seconds": 3.3,
+  "discrepancies": [
+    {
+      "reference_text": "ஏன் காமிக்கிறீங்களா?",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The user's question asking if she will show her body/herself is completely missing from the translation."
+    },
+    {
+      "reference_text": "ஏதோ காமிக்கிறீங்களான்னு",
+      "translation_text": "I am just lying down.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The user repeats his question about showing herself, but the translation incorrectly translates it as 'I am just lying down'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:39",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஏன் காமிக்கிறீங்களா?",
+      "translation_text": "",
+      "status": "missing"
+    },
+    {
+      "t": "00:59",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஏதோ காமிக்கிறீங்களான்னு",
+      "translation_text": "I am just lying down.",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "no",
+  "summary": "The translation completely omits and misrepresents the user's explicit requests asking the host to show herself/her body."
+}

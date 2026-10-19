@@ -1,0 +1,82 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Context:**
+    *   **Role:** Content policy analyst reviewing audio from calls in Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert/paid host). Calls can be audio/video.
+    *   **Goal:** Find every possible violation based on three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+    *   **Output Format:** Strict minified JSON array following the specified schema.
+    *   **Key Constraints:**
+        *   Only output quotes matching strong/weaker cases.
+        *   Do not output allowed items or ordinary conversation (greetings, small talk, names, etc.).
+        *   Category `f` must be exactly one of: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.
+        *   Use confidence scores (0.9 strong, 0.6 weaker, 0.3 about a violation).
+        *   Strict rules for `speech_act` and `violation`.
+
+2.  **Analyze the Transcript:**
+    *   [00:00] हेलो हेलो हाँ सर मैं गुजरात से आ रहा था कहाँ से हो (Hello hello yes sir I was coming from Gujarat where are you from)
+    *   [00:10] गुजरात से मैं दिल्ली से क्या करती हो मैं अभी जॉब करता हूँ सिंगल हूँ मैरिड (From Gujarat I am from Delhi what do you do I am currently working single married)
+    *   [00:20] सुन लो बेटा कल को बात करना है क्या उससे यहीं पे आ जाओ बेटा कल सर्विस चाहिए तो बताओ आधे घंटे करूँगी तीन सौ रुपये (Listen beta tomorrow we have to talk should you come here tomorrow beta if you want service tell me I will do half an hour three hundred rupees)
+    *   [00:30] हाँ (Yes)
+
+3.  **Evaluate Transcript against Policy Categories:**
+
+    *   **[00:00] हेलो हेलो हाँ सर मैं गुजरात से आ रहा था कहाँ से हो**
+        *   Type: Greeting, small talk, location inquiry.
+        *   Verdict: Allowed/Ordinary conversation. (Do not output).
+
+    *   **[00:10] गुजरात से मैं दिल्ली से क्या करती हो मैं अभी जॉब करता हूँ सिंगल हूँ मैरिड**
+        *   Type: Personal details, small talk.
+        *   Verdict: Allowed/Ordinary conversation. (Do not output).
+
+    *   **[00:20] सुन लो बेटा कल को बात करना है क्या उससे यहीं पे आ जाओ बेटा कल सर्विस चाहिए तो बताओ आधे घंटे करूँगी तीन सौ रुपये**
+        *   Analysis: This involves proposing a future meeting/interaction ("come here tomorrow") and explicitly mentioning a service ("service") linked to a price ("तीन सौ रुपये" / three hundred rupees).
+        *   *PlatformMove Check:* "क्या उससे यहीं पे आ जाओ बेटा" (Should you come here tomorrow) suggests meeting in person.
+        *   *SuspiciousActivity Check:* Offering a service for money ("सर्विस चाहिए तो बताओ आधे घंटे करूँगी तीन सौ रुपये"). This is money linked to a service.
+        *   *Explicit-Flirting Check:* No explicit sexual talk or body requests.
+
+4.  **Draft Flags (Focusing on [00:20]):**
+
+    *   **Flag 1 (PlatformMove):** The proposal to come to the location.
+    *   **Flag 2 (SuspiciousActivity):** The offer of a service for money.
+
+5.  **Refine Flags according to Schema and Rules:**
+
+    *   *Quote:* "सुन लो बेटा कल को बात करना है क्या उससे यहीं पे आ जाओ बेटा कल सर्विस चाहिए तो बताओ आधे घंटे करूँगी तीन सौ रुपये" (00:20)
+
+    *   *Flag 1 (PlatformMove):* Focus on the proposal to meet.
+    *   *Flag 2 (SuspiciousActivity):* Focus on the payment for the service.
+
+6.  **Final JSON Construction (Self-Correction/Review):** Ensure all fields are present, language is correct, and the `speech_act` and `violation` logic is applied correctly (direct speech matching strong/weaker cases).
+
+    *   The quote is a direct proposal/offer, so `speech_act` should be "direct".
+    *   The cases are strong enough (0.9/0.6).
+
+    (Proceeding to generate the minified JSON.)<channel|>```json
+{"d": [
+  {
+    "t": "00:20",
+    "seg": "सुन लो बेटा कल को बात करना है क्या उससे यहीं पे आ जाओ बेटा कल सर्विस चाहिए तो बताओ आधे घंटे करूँगी तीन सौ रुपये",
+    "tr": "Listen beta tomorrow we have to talk should you come here tomorrow beta if you want service tell me I will do half an hour three hundred rupees",
+    "f": "PlatformMove",
+    "spk": "user",
+    "ctx": "The user proposes meeting up tomorrow and offers a service, specifying a time and price.",
+    "speech_act": "direct",
+    "j": "The speaker proposes meeting in person ('come here tomorrow') and asks for the means to do so, matching a strong case for PlatformMove.",
+    "violation": "yes",
+    "c": 0.9
+  },
+  {
+    "t": "00:20",
+    "seg": "कल सर्विस चाहिए तो बताओ आधे घंटे करूँगी तीन सौ रुपये",
+    "tr": "If you want service tomorrow tell me, I will do half an hour three hundred rupees",
+    "f": "SuspiciousActivity",
+    "spk": "user",
+    "ctx": "The user explicitly links the requested service to a monetary payment of three hundred rupees.",
+    "speech_act": "direct",
+    "j": "The speaker offers a service and demands payment (three hundred rupees), matching a strong case for SuspiciousActivity.",
+    "violation": "yes",
+    "c": 0.9
+  }
+]}
+```<turn|>

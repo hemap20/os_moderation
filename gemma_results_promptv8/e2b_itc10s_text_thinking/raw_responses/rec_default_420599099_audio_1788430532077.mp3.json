@@ -1,0 +1,44 @@
+<|channel>thought
+Thinking Process:
+
+1.  **Analyze the Request and Constraints:**
+    *   **Role:** Content policy analyst reviewing audio from Indian languages.
+    *   **Context:** App called "Friends" (user pays, talks to an expert). Calls can be audio/video.
+    *   **Output Goal:** Find every possible violation. High confidence is crucial.
+    *   **Categories (f):** Must be exactly one of: **PlatformMove**, **SuspiciousActivity**, **Explicit-Flirting**.
+    *   **Exclusions:** Greetings, small talk, introductions, names, questions about daily life/work/family/location, filler words, call quality, "Allowed" items.
+    *   **Output Format:** Minified JSON adhering strictly to the provided schema.
+    *   **Key Rules:**
+        *   Check if it's Allowed/Ordinary conversation -> Do not output.
+        *   Check if it's a warning/story/refusal/negation/question about rules -> "violation": "no", confidence <= 0.3.
+        *   Quotes must be exact, with real timestamps.
+        *   Focus on strong (0.9) and weaker (0.6) cases.
+
+2.  **Analyze the Transcript (Segment by Segment):**
+
+    *   [00:00] कान मूजता है कभी कुछ होता है हेलो (Ear plugs sometimes something happens Hello) -> Greeting/small talk. (Allowed/Ignore)
+    *   [00:10] कैसे हो बढ़िया कहाँ से हो कर दे ओके (How are you good where are you give okay) -> Greeting/small talk. (Allowed/Ignore)
+    *   [00:20] गुजरात और बताओ क्या करते हो मेरे को ऐसा क्यों लग रहा है कि (Gujarat and tell what do you do to me why I feel that) -> Small talk/asking about location/job. (Allowed/Ignore)
+    *   [00:30] मेरे को ऐसा क्यों लग रहा है कि क्लास में बैठ के मेरे से बातें कर रहे हो बॉर्डर पर बैठे हो (Why I feel that you are sitting in class talking to me sitting on the border) -> Context setting/personal feeling. (Allowed/Ignore)
+    *   [00:40] अच्छा जॉब करते हो बिज़नेस बिज़नेसमैन वाओ एक्चुअली मेरे को बिज़नेसमैन ही पसंद है (Oh you do a job businessman wow actually I like businessman) -> Conversation about jobs/preferences. (Allowed/Ignore)
+    *   [00:50] जॉब करने वालों को तो सैलरी मिलती है बिज़नेसमैन वाले तो डेली अगर बिज़नेस बैठ गया बेटे फिर तो मैं अमीर हूँ फिर मैं खरीद लूँगी (People who do jobs get salary businessmen if business sits daily son then I will be rich then I will buy) -> General talk about money/business. (Allowed/Ignore)
+    *   [01:00] मैं लड़की हूँ नमक टाढ़ी हूँ मेरा खुद का सोच है कि मैं बहुत बड़ी बिज़नेसमैन बनूँ पैसे ही पैसे हो क्योंकि अभी के टाइम पे मेरे को (I am a girl I am salty I have my own thought that I become a very big businessman money is money because right now to me) -> Self-description/ambition. (Allowed/Ignore)
+    *   [01:10] ऐसा लगता है कि हर चीज़ बस रोक रहे हैं वैसे किस आई डोंट नो आपकी साइड क्या है मैं अपने (It seems that everything is just stopping वैसे किस आई डोंट नो आपकी साइड क्या है मैं अपने) -> General philosophical talk/vague. (Allowed/Ignore)
+    *   [01:20] साइड की बता रही हूँ जिसके पास ये है उसके पास तो आदमी घूमता है आदमी नरेंद्र मोदी को देखो चाय बनाते बनाते बेचारे कहाँ (I am telling your side who has this he has so people roam people Narendra Modi look making tea where did they reach) -> Political/news commentary. (Allowed/Ignore)
+    *   [01:30] पहुँच गए अभी न्यूज़ आता है ना कि चीनी इसलिए महंगी हो गई क्योंकि नरेंद्र मोदी भी तो चाय बनाते बनाते वहाँ पहुँच गए उस (Reached now news comes that sugar is expensive because Narendra Modi also reached there making tea) -> News/commentary. (Allowed/Ignore)
+    *   [01:40] पोस्ट पे तो हँसी आता है ये चीज़ें देख के हाँ बस हिसाब पे कब से हो एक हफ्ता हो (On the post then laughter comes seeing these things yes just on the account how long has it been one week) -> General commentary. (Allowed/Ignore)
+    *   [01:50] कब से एक वीक हुआ एक वीक अच्छा एक वीक हुआ है वैसे ऐसा होता है कि इस ऐप पर तो (How long has it been one week one week okay one week has happened that on this app) -> Context setting. (Allowed/Ignore)
+    *   [02:00] मेरे को ज़्यादातर ऐसे मिले जिनका दिल टूटा हो अकेले वो लोग ओवरथिंक कर करके इस ऐप पर आते हैं और आई मैं खुद मैं खुद वैसी हूँ मेरा तो दिल टूट (I mostly meet people who have a broken heart alone they overthink and come to this app and I myself I myself am like that my heart is broken) -> Personal sharing/vulnerability. (Allowed/Ignore)
+    *   [02:10] टूटा है आपके साथ क्या हुआ जरूर दिल ही टूटा होगा तभी आए हो कुछ हुआ ही नहीं है बस मज़े मारना है यार नहीं नहीं (Broken with you what happened surely the heart must be broken that's why you came nothing happened just to have fun no no) -> Emotional talk. (Allowed/Ignore)
+    *   [02:20] कोई इंसान ऐसे नहीं आता है बिना रीज़न्स के एडवर्टाइज़मेंट आई थी बीच में हाँ इंस्टाग्राम पर ना (No person comes like this without reasons advertisement was in between yes on Instagram no) -> Talking about app usage/ads. (Allowed/Ignore)
+    *   [02:30] इंस्टाग्राम पर ना मैं भी पता है इंस्टाग्राम से इधर आई मैं सोची कि मेरे को पहले मिलता मैं जो इतना डिप्रेशन में जा रही थी ये वो ओवरथिंक करना इससे अच्छा तो मेरे को ये (On Instagram no I also know from Instagram came here I thought that I used to get I was going so much into depression this overthinking instead of this I get this) -> Personal sharing/app motivation. (Allowed/Ignore)
+    *   [02:40] ऐप मिल जाता मैं बक बक बक बक एकदम मस्त सबसे बातें करती चिल लो चिल मारो चिल लाइफ में चिल करना चाहिए (I get the app I babble babble babble totally cool talk to everyone chill chill relax in life should chill) -> General chat/advice. (Allowed/Ignore)
+    *   [02:50] चलो मैं तो अपना इतना बकबक बकबक बकबक कर दी वैसे बिज़नेस किस चीज़ का है आपका हार्डवेयर आइटम्स का है होलसेल का (Come on I have babbled so much business what is yours hardware items wholesale) -> Asking about business type. (Allowed/Ignore)
+    *   [03:00] किस चीज़ का अच्छा अच्छा अच्छा (What kind of thing good good good) -> Response. (Allowed/Ignore)
+    *   [03:10] फिर तो सही है यार मैं तो नर्सिंग कर रही हूँ मैं तो सीधा इंजेक्शन देती हूँ इंजेक्शन बेटा इंजेक्शन लो (Then that's right यार I am doing nursing I give injection directly injection son take injection) -> Talking about job (nursing). (Allowed/Ignore)
+    *   [03:20] मैं तो सोचती हूँ किसी के सर में दर्द हो तो मैं उसको पेट दर्द का इंजेक्शन या मेडिसिन्स नहीं दूँ मेरे को खुद पर इतना ट्रस्ट है नर्सिंग करके (I think if someone has a headache I don't give them stomach pain injection or medicines I have so much trust in nursing) -> Talking about professional ethics/job. (Allowed/Ignore)
+    *   [03:30] मैं किसी काम की नहीं हूँ (I am not useful for any work) -> Self-deprecating statement. (Allowed/Ignore)
+
+3.  **Conclusion:** The transcript consists entirely of small talk, personal sharing, job discussions, political commentary, and general app usage/vulnerability sharing. It contains no strong flirting, explicit content, requests for external contact information, or explicit financial transactions linked to sexual services.
+
+4.  **Final Output Generation:** Since no violations were found, the output must be `{"d": []}`.<channel|>{"d": []}<turn|>

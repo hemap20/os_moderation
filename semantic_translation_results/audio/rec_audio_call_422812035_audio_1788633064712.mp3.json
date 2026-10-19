@@ -1,0 +1,94 @@
+{
+  "file_id": "rec_audio_call_422812035_audio_1788633064712.mp3",
+  "language": "hindi",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 103,
+  "affected_word_count": 12,
+  "semantic_error_rate": 0.1165,
+  "seconds": 10.7,
+  "discrepancies": [
+    {
+      "reference_text": "बीएफ ना देख लेंगे।",
+      "translation_text": "you will not give me a video call?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference mentions 'BF' (porn video) but the translation incorrectly translates it as 'video call'."
+    },
+    {
+      "reference_text": "चले जाओ फिर यहां क्यों गांड मरा रहे हो?",
+      "translation_text": "Then go away, why are you wasting time here?",
+      "category": "tone_softened",
+      "word_count_affected": 8,
+      "explanation": "The highly vulgar Hindi phrase 'गांड मरा रहे हो' (getting your ass fucked) is softened to 'wasting time'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:38",
+      "type": "sexual_or_explicit",
+      "reference_text": "आपको सेक्सी वीडियो कॉल्स पसंद है?",
+      "translation_text": "Do you like sexy video calls?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:46",
+      "type": "money_or_payment",
+      "reference_text": "पैसे लेकर करती हूं, करोगे?",
+      "translation_text": "I do it for money. Will you do it?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:52",
+      "type": "money_or_payment",
+      "reference_text": "पैसे लेकर करती हूं।",
+      "translation_text": "I do it for money.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:54",
+      "type": "money_or_payment",
+      "reference_text": "350",
+      "translation_text": "350.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:55",
+      "type": "money_or_payment",
+      "reference_text": "कितना लेती हो?",
+      "translation_text": "How much do you take?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:58",
+      "type": "money_or_payment",
+      "reference_text": "350",
+      "translation_text": "350?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:01",
+      "type": "money_or_payment",
+      "reference_text": "350 आपको देंगे तुम",
+      "translation_text": "350 you will give?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:04",
+      "type": "money_or_payment",
+      "reference_text": "350 आपको देंगे तुम बीएफ ना देख लेंगे।",
+      "translation_text": "350 you will give, you will not give me a video call?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:15",
+      "type": "money_or_payment",
+      "reference_text": "150 देंगे 200 बना देंगे 14 आएंगे बढ़िया से अच्छे से।",
+      "translation_text": "I will give 150, 200, make it 14, it will be nice and good.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate regarding the transaction details, but it softens a highly vulgar insult at the end and mistranslates a reference to watching porn (BF)."
+}

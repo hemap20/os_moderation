@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_425939252_audio_1788935280682.mp3",
+  "language": "malayalam",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 560,
+  "affected_word_count": 18,
+  "semantic_error_rate": 0.0321,
+  "seconds": 5.1,
+  "discrepancies": [
+    {
+      "reference_text": "എനിക്കൊന്ന് ഉച്ചവരെ ഉള്ളായിരുന്നു. അപ്പൊ പോന്നു. പത്തു മണിക്ക് താഴെയാണ്.",
+      "translation_text": "I have some urgent work, so I am leaving. I will come after 10 o'clock.",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference says he only had work until noon and left, and that it is before 10 o'clock, whereas the translation says he has urgent work, is leaving, and will come after 10."
+    },
+    {
+      "reference_text": "ഇപ്പൊ വയസ്സ് കുറവായില്ലേ. ഇപ്പൊ ഒന്നും സ്ഥിരം ഒന്നും പനിയൊന്നുമില്ല.",
+      "translation_text": "I am old, so I don't have any fever or anything.",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference says he is young ('വയസ്സ് കുറവായില്ലേ') and doesn't have a permanent job ('പണി'), which the translation mistranslates as being old and not having a fever ('പനി')."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "03:51",
+      "type": "money_or_payment",
+      "reference_text": "ആ പെണ്ണിന് പൈസ വേണം. ആ പെണ്ണ് ചോദിക്കുന്നത് വലിയ എമൗണ്ടാ.",
+      "translation_text": "That girl needs money. She is asking for a huge amount.",
+      "status": "preserved"
+    },
+    {
+      "t": "05:30",
+      "type": "money_or_payment",
+      "reference_text": "അല്ലാതെ ജോത്സ്യന്റെ അടുത്ത് പോയി കാശ് കളഞ്ഞിട്ട് കാര്യമൊന്നുമില്ല.",
+      "translation_text": "Going to Jyothishi and wasting money is of no use.",
+      "status": "preserved"
+    },
+    {
+      "t": "06:04",
+      "type": "money_or_payment",
+      "reference_text": "എന്റെ ടൈം ഏതാണ്ട് ആയി. പൈസ പോണു.",
+      "translation_text": "My time is almost up, my money is running out.",
+      "status": "preserved"
+    },
+    {
+      "t": "06:15",
+      "type": "move_off_app",
+      "reference_text": "വാട്സാപ്പ് ഉപയോഗിക്കുന്ന ആളാണോ?",
+      "translation_text": "Are you using WhatsApp?",
+      "status": "preserved"
+    },
+    {
+      "t": "06:17",
+      "type": "move_off_app",
+      "reference_text": "ഞാൻ വാട്സാപ്പ് ഒക്കെ ഉണ്ട് എനിക്ക്.",
+      "translation_text": "I have WhatsApp.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key intents and policy-relevant moments, though it contains a couple of mistranslations regarding the speaker's age, job status, and working hours."
+}

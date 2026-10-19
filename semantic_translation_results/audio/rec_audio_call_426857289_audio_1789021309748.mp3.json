@@ -1,0 +1,30 @@
+{
+  "file_id": "rec_audio_call_426857289_audio_1789021309748.mp3",
+  "language": "kannada",
+  "source": "audio",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 23,
+  "affected_word_count": 4,
+  "semantic_error_rate": 0.1739,
+  "seconds": 2.6,
+  "discrepancies": [
+    {
+      "reference_text": "ಏನ್ ಮಾಡ್ತಿದ್ದೀರಾ?",
+      "translation_text": "Hello.",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The question 'What are you doing?' at the beginning of the call is translated as 'Hello.'"
+    },
+    {
+      "reference_text": "ಮತ್ತೆ ಟಿಫನ್",
+      "translation_text": "What are you doing?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks about breakfast/tiffin, but the translation asks 'What are you doing?' instead."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation mostly captures the casual conversational flow, but misses the specific question about breakfast and translates the initial question as a greeting."
+}
