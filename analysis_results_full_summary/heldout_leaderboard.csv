@@ -1,0 +1,21 @@
+model,input,prompt,heldout_files,complete,gt_pos_files,gt_neg_files,raw08_recall,raw08_spec,pp08_recall,pp08_spec,picked,picked_recall,picked_spec
+gemini-3.1-flash-lite_audiotrans_text,"text (English, Gemini-translated from audio)",v8,331,True,189,142,0.85,0.89,0.85,0.89,,,
+gemini-3.1-flash-lite_itc10s_text,text (Indic-Transcribe-Core),v8,331,True,189,142,0.83,0.86,0.83,0.87,,,
+31b_itc10s_text_nothinking,text (Indic-Transcribe-Core),v8,331,True,189,142,0.79,0.89,0.78,0.91,,,
+31b_itc10s_text_thinking,text (Indic-Transcribe-Core),v8,331,True,189,142,0.78,0.89,0.64,0.92,,,
+e4b_itc10s_text_nothinking,text (Indic-Transcribe-Core),v8,331,True,189,142,0.6,0.94,0.6,0.96,,,
+gemini-3.1-flash-lite,audio,v6,331,True,189,142,0.58,0.95,0.58,0.95,,,
+e2b_itc10s_text_nothinking,text (Indic-Transcribe-Core),v8,331,True,189,142,0.51,0.85,0.5,0.86,,,
+e2b_thinking,audio,v1,331,True,189,142,0.44,0.88,,,,,
+e2b_nothinking,audio,v6,330,True,188,142,0.5,0.8,0.47,0.82,pp_full @ 0.9,0.46,0.82
+e2b_nothinking,audio,v1,331,True,189,142,0.37,0.92,,,,,
+12b_nothinking,audio,v1,331,True,189,142,0.31,0.91,,,,,
+e2b_conformer5s_text_nothinking,text (Indic-Conformer),v1,331,True,189,142,0.27,0.94,,,,,
+e4b_conformer5s_text_nothinking,text (Indic-Conformer),v1,331,True,189,142,0.17,0.97,,,,,
+e4b_nothinking,audio,v1,330,True,188,142,0.13,0.99,,,,,
+gemini-3.5-flash-lite,audio,v6,330,True,188,142,0.07,0.99,0.07,0.99,,,
+e4b_thinking,audio,v7,116,False,61,55,0.75,0.78,0.69,0.84,raw @ 0.8,0.75,0.78
+e4b_thinking,audio,v1,163,False,83,80,0.65,0.85,,,,,
+e4b_nothinking,audio,v7,289,False,165,124,0.55,0.9,0.53,0.9,pp_full @ 0.6,0.61,0.84
+e2b_thinking,audio,v8,147,False,82,65,0.54,0.75,0.48,0.78,sa @ 0.6,0.57,0.68
+gemini-3.5-flash-lite,audio,v1,327,False,186,141,0.26,0.97,,,,,
