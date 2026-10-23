@@ -1,0 +1,1574 @@
+From d59c5490deb319c8afc18301992f4498525d0b8c Mon Sep 17 00:00:00 2001
+From: Claude <claude@local>
+Date: Wed, 7 Oct 2026 08:28:50 +0000
+Subject: [PATCH] Add recall-first design, evaluation pipeline, error analysis
+ playbooks, case study, and moderation eval kit
+
+---
+ skills/CHANGELOG.md                           |  15 +
+ skills/prompt-engineering/SKILL.md            |  34 ++
+ .../01_fp_classification_task.md              | 133 ++++++++
+ .../moderation-eval-kit/02_dev_set_task.md    |  67 ++++
+ .../03_schema_and_logprob_plumbing_task.md    |  63 ++++
+ .../04_new_prompt_version_setup_task.md       |  53 +++
+ .../assets/moderation-eval-kit/README.md      |  41 +++
+ .../example_prompt_recall_first_v6_1.py       |  92 ++++++
+ .../moderation-eval-kit/example_schema_v6.py  |  42 +++
+ .../case-study-audio-moderation-2026.md       | 145 +++++++++
+ .../references/error-analysis-playbook.md     | 201 ++++++++++++
+ .../evaluation-pipeline-playbook.md           | 303 ++++++++++++++++++
+ .../iteration-and-evaluation-discipline.md    |  22 +-
+ .../references/recall-first-prompt-design.md  | 220 +++++++++++++
+ 14 files changed, 1422 insertions(+), 9 deletions(-)
+ create mode 100644 skills/prompt-engineering/assets/moderation-eval-kit/01_fp_classification_task.md
+ create mode 100644 skills/prompt-engineering/assets/moderation-eval-kit/02_dev_set_task.md
+ create mode 100644 skills/prompt-engineering/assets/moderation-eval-kit/03_schema_and_logprob_plumbing_task.md
+ create mode 100644 skills/prompt-engineering/assets/moderation-eval-kit/04_new_prompt_version_setup_task.md
+ create mode 100644 skills/prompt-engineering/assets/moderation-eval-kit/README.md
+ create mode 100644 skills/prompt-engineering/assets/moderation-eval-kit/example_prompt_recall_first_v6_1.py
+ create mode 100644 skills/prompt-engineering/assets/moderation-eval-kit/example_schema_v6.py
+ create mode 100644 skills/prompt-engineering/references/case-study-audio-moderation-2026.md
+ create mode 100644 skills/prompt-engineering/references/error-analysis-playbook.md
+ create mode 100644 skills/prompt-engineering/references/evaluation-pipeline-playbook.md
+ create mode 100644 skills/prompt-engineering/references/recall-first-prompt-design.md
+
+diff --git a/skills/CHANGELOG.md b/skills/CHANGELOG.md
+index d0c441e..a9850bf 100644
+--- a/skills/CHANGELOG.md
++++ b/skills/CHANGELOG.md
+@@ -3,6 +3,21 @@
+ All notable updates to these skills are logged here, most recent first. When asking
+ Claude to update a skill with a new learning, also ask it to add a line here.
+ 
++## 2026-10-07
++- Added four references from the 2026 audio-moderation series (Gemma audio models
++  vs Gemini, 5 Indian languages, prompts v1–v6.1):
++  - `recall-first-prompt-design.md`;
++  - `evaluation-pipeline-playbook.md`;
++  - `error-analysis-playbook.md`;
++  - `case-study-audio-moderation-2026.md`.
++- Added `prompt-engineering/assets/moderation-eval-kit/`: ready-to-paste task
++  prompts plus a template for a recall-first prompt and schema.
++- Revised two bullets in `iteration-and-evaluation-discipline.md` (per-category
++  confidence calibration; "prefer logprobs over self-report").
++- Correction to an earlier draft that was never committed: the claim that
++  thinking-model logprobs were "below chance" came from a token-offset bug. It's
++  invalid, not a finding.
++
+ ## 2026-09-23
+ - Added `prompt-engineering/references/iteration-and-evaluation-discipline.md` —
+   field-tested evaluation/iteration lessons from audio content-moderation
+diff --git a/skills/prompt-engineering/SKILL.md b/skills/prompt-engineering/SKILL.md
+index 54b5bef..34d5082 100644
+--- a/skills/prompt-engineering/SKILL.md
++++ b/skills/prompt-engineering/SKILL.md
+@@ -52,6 +52,22 @@ sibling `conversation-design` skill — combine both when building a conversatio
+   discipline: confidence-score validation, the cost of added mandatory steps,
+   subtractive-change testing, cross-domain transfer pitfalls, and telling apart
+   different error types before choosing a fix.
++- **Optimizing for "catch everything, filter by score later" (recall-first)?** → See
++  `references/recall-first-prompt-design.md`: grading instead of filtering, one
++  anchored confidence scale, verdict-token logprobs, which structured fields help,
++  definition structure without contradictions (Clear/Possible/Never plus one
++  "about a violation" section), anti-flood rules, and grounding.
++- **Setting up or auditing an evaluation pipeline** (ground truth, dev set, matcher,
++  threshold tables, comparing prompt versions)? → See
++  `references/evaluation-pipeline-playbook.md`, plus the ready-to-paste task prompts
++  in `assets/moderation-eval-kit/`.
++- **Diagnosing why a flagging model is wrong** (FP taxonomy, FN analysis,
++  hard-negative audits, mining the model's justifications)? → See
++  `references/error-analysis-playbook.md`.
++- **Starting a similar moderation project?** → Read
++  `references/case-study-audio-moderation-2026.md` first: the timeline, numbers,
++  decisions, open issues, and the roadmap beyond prompting (verification,
++  detectors, calibration, training, Indian-language models).
+ - **Building a conversational bot that needs both good dialogue *and* tool use /
+   reasoning?** → Combine this skill with `conversation-design`: use ReAct-style
+   reasoning under the hood for information-gathering turns, and conversation-design
+@@ -107,6 +123,24 @@ sibling `conversation-design` skill — combine both when building a conversatio
+   changes, exception-list limits, grounding/hallucination architecture, cross-domain
+   transfer pitfalls, and evaluation-methodology traps (small-sample noise, fallible
+   ground truth, error-type misdiagnosis).
++- `references/recall-first-prompt-design.md` — Prompt design for recall-first
++  flagging: grading instead of filtering, removing alarm language, anchored
++  confidence scales, ranking signals (self-report, verdict-token logprob, entropy;
++  thinking-mode caveats), structured fields, definition structure, anti-flood,
++  grounding, model-specific behaviour.
++- `references/evaluation-pipeline-playbook.md` — End-to-end measurement: ground
++  truth provenance and corrections, dev-set construction, run plumbing (schema
++  mapping, compliance, timestamps, logprob location), matcher design and
++  validation, scoring definitions (strict/loose TP, redundant flags), required
++  tables, how to compare versions, and an audit checklist.
++- `references/error-analysis-playbook.md` — The FP taxonomy with ordered types and
++  code-enforced rules, the classification process and human review, FN analysis,
++  hard-negative audits, mining justifications, and testing labels as filters.
++- `references/case-study-audio-moderation-2026.md` — Timeline, numbers, decisions,
++  open issues and roadmap from the audio-moderation series.
++- `assets/moderation-eval-kit/` — Ready-to-paste coding-agent task prompts (dev
++  set, plumbing, prompt-version setup, FP classification) and a template for a
++  recall-first prompt and schema.
+ 
+ (More references will be added here as additional source material is processed —
+ each new technique gets its own file, linked from this list.)
+diff --git a/skills/prompt-engineering/assets/moderation-eval-kit/01_fp_classification_task.md b/skills/prompt-engineering/assets/moderation-eval-kit/01_fp_classification_task.md
+new file mode 100644
+index 0000000..f15a16f
+--- /dev/null
++++ b/skills/prompt-engineering/assets/moderation-eval-kit/01_fp_classification_task.md
+@@ -0,0 +1,133 @@
++# Task: Sub-classify false-positive (FP) flags by error type
++
++## Context
++
++This repo evaluates open-source models (Gemma variants) against gemini-3.5-flash-lite on audio moderation of Indian-language calls. The categories are PlatformMove, SuspiciousActivity and Explicit-Flirting, and the policy prompt is `prompt.py`.
++
++Ground truth comes from a Gemini pipeline:
++- `stage1_transcribe.py` produces a transcript per file.
++- `stage2_classify.py` produces ground-truth flags per file.
++
++`analyze_results.py` then uses Gemini to match each model's flags to the ground-truth flags. Any model flag with no matching ground-truth flag is counted as an FP (`"matched": false` in `analysis_results/<model>/per_file/*.json`).
++
++Today every FP is counted the same way. I want each FP flag labelled with **why** it is wrong, so I can choose the right prompt fix for each error type. Read `analyze_results.py`, `gemini_client.py`, `config.py`, `dataset_v2.py`, `schemas_gemma.py` and `prompt.py` before writing anything, and reuse their existing loaders, client, retry logic and logging conventions.
++
++## What counts as an FP
++
++Work at the **flag level**. Every model flag with `matched == false` gets classified. That includes extra unmatched flags inside files whose `file_bucket` is TP, not only flags in FP files. Record `file_bucket` alongside each classified flag so I can separate the two cases later.
++
++Important: the `Dostt/<lang>_<cat>/{TP,FP,FN}` folder names are the dataset's original labels. They are **not** the model's outcome. Never use the folder name as the FP label. It is fine to pass it to the classifier as extra context, clearly named `dataset_origin_label`.
++
++## Error-type taxonomy
++
++Assign exactly one `fp_type` per FP flag. Apply the checks **in the order below** and stop at the first one that fits. The order matters because several types can look alike, and the earlier checks rule out causes that would make the later ones meaningless.
++
++1. **`GT_MISS`**: The model is actually right, and the ground truth missed a real violation. The quote is present in the transcript, it clearly meets the policy definition of the stated category, and no exception in `prompt.py` applies.
++   - Use this label conservatively. Ground truth is also Gemini, so every `GT_MISS` goes into the human-review export (see below).
++
++2. **`WRONG_CATEGORY`**: The same (or essentially the same) utterance *is* flagged in the ground truth, but under a different category. The content was real and violating; only the category is wrong.
++
++3. **`DUPLICATE_OR_EXTRA_INSTANCE`**: The flag refers to a violation that is already matched to a ground-truth flag in this file. It is either the same utterance repeated, or another instance of the same violation that the ground truth represented with one flag (for example, the phone number spoken twice).
++   - This is a scoring artifact, not a model error. Keep it separate so it can be excluded from "real" FPs.
++
++4. **`FABRICATION`**: Neither the quoted content nor anything resembling it appears anywhere in the ground-truth transcript, including near the timestamp. The model invented it.
++
++5. **`MISHEARING`**: Something similar-sounding or partially overlapping *is* in the transcript near the timestamp, but the model's version changes the meaning in a way that creates the violation. Typical cases are homophones, a code-mixed word misread, or a number or app name misheard.
++   - The distinction from `FABRICATION` is whether there is a real source utterance the model distorted.
++
++6. **`EXCEPTION_IGNORED`**: The quote is real and accurately understood, but it matches an explicit "Do NOT flag / NEVER FLAG / Override" item in `prompt.py`. Examples: an in-platform video-call request, coins or gifts, a denial or refusal to share contact details, "I can't hear you".
++   - Record *which* exception in `fp_exception_matched`, quoted from `prompt.py`.
++
++7. **`CONTEXT_CONFUSION`**: The quote is real and would be a violation in isolation, but the context shows it isn't happening now. Examples: a hypothetical, reported speech about someone else, a joke, a negation, a question that was declined, the expert warning the user, or a description of a general practice. It is also not covered by an explicit exception (otherwise it would be type 6).
++
++8. **`OVER_SENSITIVITY`**: The quote is real, accurately understood and in context, but it doesn't reach the violation threshold. Examples: mild romance or compliments flagged as Explicit-Flirting, general money talk flagged as SuspiciousActivity, sharing a city or name flagged as PlatformMove. No explicit exception names it, but the category definition doesn't cover it.
++
++9. **`UNCLEAR`**: Evidence is insufficient to decide. Examples: the transcript is missing or incomplete around the timestamp (`incomplete_transcript: true`), the timestamp is invalid, or the quote is too garbled.
++   - Always state what's missing in the reason.
++
++## How to classify each flag
++
++For each FP flag, build one classification request containing:
++- the model flag in full, including category, timestamp, native-language excerpt, translation, justification and self-reported confidence. Load the excerpt from the model's raw result files, because `per_file` currently drops it.
++- the ground-truth transcript. Include the full transcript if it fits; otherwise include a window of about ±90 s around the flag timestamp, plus the full transcript text searched for the excerpt's key terms.
++- **all** ground-truth flags for that file, with their `matched` status against this model's flags.
++- the **other** model flags in the same file (needed for the duplicate check).
++- the policy definitions and exception lists, loaded from `prompt.py` at runtime rather than copied.
++- `language` and `dataset_origin_label`.
++
++Use Gemini through the existing `gemini_client`. Make the model name a CLI argument (`--classifier-model`), defaulting to the strongest Gemini model already configured in `config.py`. It should be a stronger model than the one that produced the ground truth, so it isn't just repeating the ground truth's blind spots.
++
++Use a JSON response schema. The classifier prompt must tell the model to:
++- walk the decision order 1→9 explicitly and stop at the first match;
++- write its reasoning in a `reasoning` field **before** giving `fp_type`;
++- quote the exact transcript text it relied on in `evidence_transcript_quote`, or an empty string if nothing was found (which is required for `FABRICATION`);
++- remember that it is seeing a transcript, not audio. `FABRICATION` and `MISHEARING` are judged against the ground-truth transcript, which may itself contain errors. It should set `transcript_reliability: "ok" | "suspect"` when the transcript itself looks garbled near the timestamp.
++
++Classifier output schema, one object per flag:
++
++```json
++{
++  "reasoning": "string, step-by-step walk through the decision order",
++  "fp_type": "GT_MISS | WRONG_CATEGORY | DUPLICATE_OR_EXTRA_INSTANCE | FABRICATION | MISHEARING | EXCEPTION_IGNORED | CONTEXT_CONFUSION | OVER_SENSITIVITY | UNCLEAR",
++  "fp_reason": "one sentence, English",
++  "evidence_transcript_quote": "string",
++  "evidence_timestamp": "mm:ss or empty",
++  "fp_exception_matched": "string or empty",
++  "related_gt_flag_index": "int or null",
++  "transcript_reliability": "ok | suspect",
++  "classifier_confidence": "low | medium | high"
++}
++```
++
++Batch requests the same way `analyze_results.py` batches matching, and keep the batch size configurable. Validate every response against the enum, and retry or mark `UNCLEAR` on invalid output.
++
++## Where to store results
++
++Do **not** change the existing TP/FP/FN counts or CSV columns. This is an additional layer on top.
++
++1. **Per-flag, in place.** In `analysis_results/<model>/per_file/<file_id>.json`, add to each `matched: false` flag:
++   - `excerpt` (native language, so it's available going forward);
++   - `fp_classification`: the classifier output above, plus `classifier_model`, `taxonomy_version: "fp_v1"`, `classified_at` (ISO timestamp), and `prompt_hash` (hash of `prompt.py` content, so results can be tied to a prompt version).
++
++   Also add `excerpt` to matched flags for consistency.
++
++2. **Flat table.** Write `analysis_results/fp_classification/fp_flags.csv` with one row per FP flag. Columns: `model, language, file_id, file_bucket, dataset_origin_label, model_category, timestamp, excerpt, translation, model_confidence, logprob_derived_confidence, entropy_mean, fp_type, fp_reason, evidence_transcript_quote, fp_exception_matched, related_gt_flag_index, transcript_reliability, classifier_confidence, prompt_hash`.
++
++3. **Aggregates.**
++   - `fp_type_breakdown_overall.csv` with columns `model, fp_type, n, pct_of_fp`;
++   - `fp_type_breakdown_by_language.csv`;
++   - `fp_type_breakdown_by_category.csv` (by model category);
++   - `fp_type_entropy.csv` with mean entropy and mean logprob confidence per `fp_type` per model. I want to see whether any FP type is separable by entropy.
++
++   Also compute an **adjusted precision** in `adjusted_precision.csv`, per model at flag level and file level. It treats `GT_MISS` as TP and excludes `DUPLICATE_OR_EXTRA_INSTANCE` from the FP count. Report it next to the original precision and show the raw counts.
++
++4. **Human-review export.** Write `analysis_results/fp_classification/review_sample.csv` containing:
++   - all `GT_MISS` flags;
++   - all flags with `classifier_confidence == "low"` or `transcript_reliability == "suspect"`;
++   - a stratified random sample of 5 per (model × fp_type), with a fixed seed.
++
++   Add empty columns `human_fp_type` and `human_notes`. Add a small `--score-review` mode that reads the filled-in file back and reports agreement between classifier and human, overall and per type.
++
++## Script requirements
++
++- Create a new script, `classify_fps.py`. Don't fold this into `analyze_results.py`.
++- It must be resumable: skip flags that already have `fp_classification` with the same `taxonomy_version` and `prompt_hash`, unless `--force` is given.
++- Flags:
++  - `--models` (comma list, same as `analyze_results.py`);
++  - `--languages`;
++  - `--limit`;
++  - `--dry-run` (classify 3 flags, print the requests and responses, write nothing);
++  - `--classifier-model`;
++  - `--force`;
++  - `--score-review <path>`.
++- Log to `logs/classify_fps.log` using `pipeline_logging.py`.
++- Round all numbers to 2 decimals, as in the other analysis files.
++- Write per-file results incrementally so a crash doesn't lose progress.
++- At the end, print a summary table: per model, the count and % of each `fp_type`.
++- Add a short section to `README.md` describing the script, the taxonomy, the decision order, and every output file.
++
++## Before running the full job
++
++1. Run `--dry-run` and show me the three requests and responses.
++2. Run on one model and one language (for example `e2b_thinking`, Hindi) and show me the breakdown along with 10 example rows across different types.
++3. Wait for my go-ahead before running across all models.
+diff --git a/skills/prompt-engineering/assets/moderation-eval-kit/02_dev_set_task.md b/skills/prompt-engineering/assets/moderation-eval-kit/02_dev_set_task.md
+new file mode 100644
+index 0000000..123946e
+--- /dev/null
++++ b/skills/prompt-engineering/assets/moderation-eval-kit/02_dev_set_task.md
+@@ -0,0 +1,67 @@
++# Task: Build a fixed 50-file dev set for fast prompt iteration
++
++## Why
++
++Prompt experiments on the full dataset (~380 files × several models) take too long, so I want a small, **fixed** dev set of 50 files to iterate on. It must not be random. A random 50 would contain few hard cases and few of each violation category, so prompt changes would barely register. The dev set should be stratified and enriched with the cases prompt changes actually affect. The full dataset stays the final validation set.
++
++Read `dataset.py`, `dataset_v2.py`, `config.py`, `analyze_results.py` and the stage 1/2 ground-truth layout before writing anything, and reuse the existing loaders.
++
++## Dependency
++
++Build the selection from the **re-scored (v2 matching) results** in `analysis_results/`, not from `analysis_results_v1_batched/`. If v2 re-scoring hasn't finished for all 8 models, stop and tell me instead of using v1.
++
++## Signals to compute per file (all 381)
++
++- `language`;
++- `dataset_origin_label`, the folder the file sits in (`<lang>_<cat>/TP|FP|FN` or `TN`), and `origin_category`;
++- `gt_positive` (ground truth has at least one flag), `gt_categories`, and `gt_flag_count`;
++- `n_models_flagged`: how many of the 8 models raised any flag;
++- `n_models_correct`: how many models got the file-level bucket right (TP or TN);
++- `n_models_fp_flags`: the total count of unmatched model flags across models;
++- `duration_s`, `incomplete_transcript`, and any matching-reliability or UNVERIFIED marker from v2 scoring.
++
++## Exclusions
++
++Exclude files that are:
++- `incomplete_transcript: true`;
++- marked UNVERIFIED or low matching reliability in v2 scoring;
++- missing results for any of the 8 models;
++- missing the audio file.
++
++Also exclude files longer than the 90th percentile duration, because they dominate run time.
++
++## Selection: 10 files per language × 5 languages
++
++Within each language, pick the following. Break ties with a fixed seed (`--seed 42`). Where more candidates exist than slots, prefer files with the **most model disagreement** (`n_models_correct` closest to 4 of 8). Disagreement files are the ones a prompt change can move.
++
++| Slot | Count | Definition | Purpose |
++|---|---|---|---|
++| Positive: PlatformMove | 1 | GT has PlatformMove | category coverage |
++| Positive: SuspiciousActivity | 1 | GT has SuspiciousActivity | category coverage |
++| Positive: Explicit-Flirting | 1 | GT has Explicit-Flirting | category coverage |
++| Positive: hard miss | 2 | GT positive, `n_models_correct <= 3` (most models missed it) | measures recall gains |
++| Negative: hard clean | 3 | GT negative, `n_models_flagged >= 3` (a clean file several models wrongly flagged) | measures over-sensitivity |
++| Negative: easy clean | 2 | GT negative, `n_models_flagged <= 1` | catches a prompt that starts flagging everything |
++
++That gives 5 positive and 5 negative files per language, 50 in total.
++
++If a slot has no candidates in a language, fill it from the closest slot in the same language (positive→positive, negative→negative), and log the substitution. For example, SuspiciousActivity is sparse in some languages. Do not borrow from other languages.
++
++After selection, check these conditions and report whether each holds:
++- each category has at least 5 positive files overall;
++- there are at least 30 GT flags in total, which is needed for flag-level metrics to mean anything;
++- at least 10 of the positives contain more than one GT flag (Multi).
++
++If any fail, adjust within the same language and tell me what you changed.
++
++## Output
++
++1. **Copy the files.** Create `Dostt_dev/` with **the same folder structure as `Dostt/`**, so the existing loaders work unchanged: `<lang>_<cat>/TP|FP|FN/...` and `TN/`, including `Single/`/`Multi/` and the `transcripts/` subfolders. Copy the audio files and every associated ground-truth artifact (transcripts, classifications, raw responses). Copy, don't move. `Dostt/` must be untouched.
++2. **Add a `--dataset-root` option** to the dataset config and loaders, defaulting to the current root, so I can run `gemma_local.py`, `gemini_model_eval.py`, `analyze_results.py` and `classify_fps.py` against `Dostt_dev/` without editing code. Results for dev runs must go to separate directories (for example, `gemma_results_dev/`, `gemini_results_dev/`, `analysis_results_dev/`) so they can never mix with full-dataset results.
++3. **Write the manifest** to `manifest/dev_set_v1.csv`, with one row per file: every computed signal, the `slot` it filled, `selection_reason`, and whether it was a substitution. Also write `manifest/dev_set_v1_summary.md` with counts per language × slot, per category, GT flag totals, Multi count, total audio duration, and the validation results above.
++4. **Write a dev baseline** to `analysis_results_dev/baseline_v1_prompt/`. Extract the existing v2-scored results of all 8 models for just these 50 files: file-level and flag-level confusion per model, overall and per language, and the FP-type breakdown if it exists. The v1 prompt then has a dev-set baseline without re-running any model.
++5. **Freeze the set.** The dev set must not change during prompt iteration. If a rebuild is ever needed, write `dev_set_v2`; never overwrite v1.
++
++## Before copying anything
++
++Show me the candidate counts per language × slot, the proposed 50 with their slot and reason, and the validation results. Wait for my go-ahead, then copy and build the baseline.
+diff --git a/skills/prompt-engineering/assets/moderation-eval-kit/03_schema_and_logprob_plumbing_task.md b/skills/prompt-engineering/assets/moderation-eval-kit/03_schema_and_logprob_plumbing_task.md
+new file mode 100644
+index 0000000..b3d52a0
+--- /dev/null
++++ b/skills/prompt-engineering/assets/moderation-eval-kit/03_schema_and_logprob_plumbing_task.md
+@@ -0,0 +1,63 @@
++# Task: Support prompt_v4's new output fields, without touching ground truth
++
++`prompt_v4.py` (in the repo root) asks the model for three new fields in each flag, in this order:
++
++```
++t, seg, tr, f, speech_act, quote_type, j, violation, c
++```
++
++- `speech_act`: "direct" | "reported" | "hypothetical" | "denial"
++- `quote_type`: "verbatim" | "paraphrase"
++- `violation`: "yes" | "no"
++
++## 1. Keep ground truth isolated (most important)
++
++`schemas.py`'s `RawModelOutput` / `raw_model_output_json_schema()` is shared with `stage2_classify.py`, which generates ground truth. **Do not modify it.** Ground truth must stay exactly as generated with the v1 prompt and schema.
++
++- Create a new `schemas_v4.py` with `FlagResultV4` and `RawModelOutputV4`. List the fields in the order above; the field order in the JSON schema is part of the prompt.
++- Add a prompt → schema mapping, for example in `config.py` or `prompt_loader.py`: `prompt_v4.py` uses the v4 schema, and every other prompt uses the current schema.
++- Use that mapping in `gemma_local.py` and `gemini_model_eval.py`, both for the `{json_schema_str}` substitution and for parsing. `stage2_classify.py` must keep using `schemas.py` whatever the setting. Add an assertion for this.
++- For `gemini_model_eval.py`: if it passes a `response_schema` to Gemini, pass the v4 one. Otherwise just substitute the v4 schema into the prompt.
++
++## 2. Store the new fields
++
++Add to `GemmaChunkFlag` in `schemas_gemma.py` (as optional fields, so old results still load):
++
++- `model_speech_act`, `model_quote_type`, `model_violation`;
++- `logprob_violation`: the logprob of the first token of the `violation` value;
++- `p_violation_yes`:
++  - if the generated value is "yes", this is `exp(logprob_violation)`;
++  - if it is "no", compute `exp(logprob of " yes"-equivalent token)` from the top-k at that position when it's available. Otherwise use `1 - exp(logprob_violation)`, and record which method was used in `p_violation_method`.
++
++If `gemma_local.py` only stores the chosen token's logprob, extend `token_logprobs_and_entropy` to also keep the logprobs of the top 5 alternatives at each position. Store them for the violation-token position only, to keep the files small.
++
++- Locate the violation token the same way the category span is found now: the value span after the `"violation"` key, within that flag's own JSON object.
++- Check that the locator finds the right token on 3 real outputs, and print the token text and the logprob for each.
++
++Keep the existing `logprob_decision`, `logprob_category` and `logprob_derived_confidence` unchanged, so v1–v3 results can be compared directly.
++
++For flags where a field is missing (`c` has been missing in about 10% of e2b_nothinking flags), store `None`. Never impute values at parse time, and count the missing fields per field in the run summary.
++
++## 3. Analysis changes (`analyze_results.py` and the AUPRC script)
++
++- **Every flag counts as a model flag in TP/FP/FN, including `violation: "no"` ones.** The recall ceiling is the recall when every flag is kept.
++- **Rank on these signals:** `model_confidence`, `logprob_derived_confidence`, negative entropy, and the new `p_violation_yes`.
++  - For each, report AUROC, AUPRC, and recall at an FP budget of 10, 25, 50 or 100.
++  - Report these overall, per language and per category.
++- **Missing values:** rank missing-score flags *below* all others (treat them as the lowest score) instead of dropping them. Report `n_missing` per signal alongside the metrics. Also re-run v1–v3 with this rule so every version uses the same method.
++- **New breakdowns for v4:**
++  - TP rate by `speech_act`, by `quote_type`, and by `violation`;
++  - a 2×2 of `violation` (yes/no) against matched (TP/FP).
++
++  These show whether the model's own labels carry information.
++
++## 4. Before running
++
++Run `--dry-run` on 3 dev files with e2b_nothinking. Show me:
++
++- the raw output;
++- the parsed flags with the new fields;
++- the located violation token, its logprob and `p_violation_yes`;
++- confirmation that `stage2_classify.py` still renders the old schema.
++
++Then run v4 on the dev set with e2b_nothinking and e4b_nothinking, and with gemini-3.5-flash-lite if it's cheap. Gemini has no logprobs, so only its categorical fields can be analysed.
+diff --git a/skills/prompt-engineering/assets/moderation-eval-kit/04_new_prompt_version_setup_task.md b/skills/prompt-engineering/assets/moderation-eval-kit/04_new_prompt_version_setup_task.md
+new file mode 100644
+index 0000000..def314b
+--- /dev/null
++++ b/skills/prompt-engineering/assets/moderation-eval-kit/04_new_prompt_version_setup_task.md
+@@ -0,0 +1,53 @@
++# Task: Wire up prompt_v6 (final prompt iteration) and run it on the dev set
++
++Copy `prompt_v6.py` and `schemas_v6.py` into the repo root.
++
++## 1. Prompt → schema mapping that cannot fail silently
++
++The v5 run used the wrong schema because `prompt_loader.py` falls back to `schemas` for any prompt it doesn't list. Fix this permanently:
++
++- Each prompt file may declare a module-level `SCHEMA` constant (`prompt_v6.py` has `SCHEMA = "v6"`). In `prompt_loader.schema_module_for_prompt()`:
++  - read that constant;
++  - map `"v4"` → `schemas_v4` and `"v6"` → `schemas_v6`;
++  - fall back to the existing filename map only when the constant is absent.
++- Add `"prompt_v5.py": schemas_v4` to the filename map as well, for the record.
++- **Raise an error** if a prompt file named `prompt_v<N>.py` with N ≥ 4 resolves to the default `schemas` module. Only `prompt.py` and versions 1–3 may use the default schema.
++- Keep the existing ground-truth assertion: `stage2_classify.py` / `stage12_v2.py` must still resolve to `schemas`.
++
++## 2. Plumbing for the new fields
++
++- Add optional `model_speaker` (`spk`) and `model_context` (`ctx`) to `GemmaChunkFlag` in `schemas_gemma.py`, and carry them through to the per-file analysis JSON and `fp_flags.csv`.
++- `quote_type` no longer exists in v6. `model_quote_type` stays None for v6 results; that must not break any analysis.
++- The `violation` key name is unchanged, so `find_violation_token_index` and the `p_violation_yes` computation should work as they are. **Verify on a dry run**, especially for a thinking model, now that the thinking-offset bug is fixed.
++- `gemini_model_eval.py` should pick up the v6 schema through the same mapping.
++
++## 3. Hard check on field compliance
++
++At the end of every run, compute the per-field missing rate across all flags. If any required field (`t, seg, tr, f, spk, ctx, speech_act, j, violation, c`) is missing on more than 20% of flags:
++- print a loud warning;
++- write `"compliance_warning": true` into the run summary.
++
++Also report how many flags use a category other than the three valid ones (e.g. "Not a violation").
++
++## 4. Analysis additions for v6
++
++In the v6 analysis folder, add:
++- the TP rate by `spk` (expert / user / unclear / missing);
++- the TP rate by `speech_act` (already exists; make sure v6 is included);
++- for every hard-negative file in `manifest/dev_set_v1.csv`, the highest-confidence flag, its `speech_act`, and its `ctx`. This lets me check the safety-advice files directly (`424416192`, `427308167`).
++
++Also run the existing threshold-by-category table, AUROC, FP classification (with the stronger classifier model) and entropy outputs, exactly as for v4.
++
++## 5. Dry run, then the full dev run
++
++1. Dry run on 3 dev files, including `424416192` and `421768524`, with e2b_nothinking and e4b_thinking. Show me:
++   - the raw output;
++   - the parsed flags with `spk`, `ctx` and `speech_act`;
++   - the located violation token and `p_violation_yes`, for both models.
++2. If that's clean, run the full 50-file dev set on **e2b_nothinking, e4b_nothinking, e2b_thinking and e4b_thinking**, plus gemini-3.5-flash-lite if possible.
++3. Then compare v4 and v6 per model:
++   - recall, precision, specificity and FP files at thresholds none / 0.3 / 0.6 / 0.8 (all categories, and per category);
++   - TP flags and FN files;
++   - AUROC of `model_confidence` and `p_violation_yes`;
++   - flags per file;
++   - `speech_act` on the hard-negative files.
+diff --git a/skills/prompt-engineering/assets/moderation-eval-kit/README.md b/skills/prompt-engineering/assets/moderation-eval-kit/README.md
+new file mode 100644
+index 0000000..0a1b18c
+--- /dev/null
++++ b/skills/prompt-engineering/assets/moderation-eval-kit/README.md
+@@ -0,0 +1,41 @@
++# Moderation Evaluation Kit
++
++Task prompts and templates from the 2026 audio-moderation series, ready to paste into
++a coding agent (Claude Code) for the next flagging or moderation project. They were
++written against a specific repo (`os_moderation`), so **replace the file and module
++names, categories and model names with your project's own.** The structure, checks
++and order of work carry over.
++
++Read these first:
++- `../../references/evaluation-pipeline-playbook.md`
++- `../../references/error-analysis-playbook.md`
++- `../../references/recall-first-prompt-design.md`
++
++## Files, in the order you'd use them
++
++| File | Use |
++|---|---|
++| `02_dev_set_task.md` | Build a stratified, enriched, frozen dev set (50 files) plus a free baseline from existing results |
++| `03_schema_and_logprob_plumbing_task.md` | Add structured fields and verdict-token logprobs (P(yes) from the top-k), with the ground-truth schema kept separate |
++| `04_new_prompt_version_setup_task.md` | Wire in a new prompt version safely: the prompt declares its schema, unmapped prompts raise an error, per-field compliance warning, dry run, then a dev run |
++| `01_fp_classification_task.md` | Flag-level FP taxonomy, with code-enforced rules, resumable runs, a human-review export and adjusted precision |
++| `example_prompt_recall_first_v6_1.py` | Template for a recall-first prompt: one output rule; Clear/Possible/Never per category; one "about a violation" section; a scale tied to the tiers; field order with the verdict last |
++| `example_schema_v6.py` | A schema whose field order matches the prompt, with fields optional so omissions are measured rather than crashing the run |
++
++## Updates to make when reusing the older task prompts
++
++These task prompts were written mid-series, and later lessons change a few details:
++
++- **FP classification (01):**
++  - Add the `MATCHER_MISS` type before duplicates, with the code rule (a duplicate
++    requires a matched related GT flag), and the "same specific utterance, not the
++    same topic" criterion.
++  - Use a strong classifier model, and remember the model's native quotes may be in
++    the wrong script.
++- **Matching:** use the matcher v3 design in the pipeline playbook (global
++  one-to-one assignment, a content floor, a strong verifier, chunk-start timestamps
++  treated as unknown). Batched pairwise matching is not acceptable.
++- **Threshold tables:** use the strict, match-based TP definition with
++  `loose_tp`/`loose_recall` alongside, a "none" row that must equal the confusion
++  table, and a `redundant` flag outcome.
++- **Thinking models:** slice tokens to the answer before locating any logprob.
+diff --git a/skills/prompt-engineering/assets/moderation-eval-kit/example_prompt_recall_first_v6_1.py b/skills/prompt-engineering/assets/moderation-eval-kit/example_prompt_recall_first_v6_1.py
+new file mode 100644
+index 0000000..7b904f6
+--- /dev/null
++++ b/skills/prompt-engineering/assets/moderation-eval-kit/example_prompt_recall_first_v6_1.py
+@@ -0,0 +1,92 @@
++SCHEMA = "v6"
++
++
++def get_prompt() -> str:
++    return """
++    You are a content policy analyst reviewing audio from calls in Indian languages.
++
++    **[Context]**
++    - The audio comes from "Friends", an app where a **user** (the caller, who pays) talks to an **expert** (the paid host).
++    - Calls inside the app can be audio or video, and can switch between them. Every call type inside the app is allowed.
++
++    **[Goal and Output Rule]**
++    Find every possible violation. Your confidence score is used later to filter flags, so a missed violation is worse than a doubtful flag with low confidence.
++    - **Output** every quote that matches a "Clear" or "Possible" item below, or that is "About a violation" (see below).
++    - **Do not output** quotes that match a "Never a violation" item, or ordinary conversation (greetings, small talk, introductions, questions about the other person's day, work, family or location, filler words, call quality).
++    This is the only rule for what to output. Everything that is output gets a confidence from the Confidence Scale.
++    ---
++    **[Category 1: PlatformMove]**
++    A speaker proposes continuing the contact outside this app, or gives or asks for the means to do so.
++    - **Clear (0.9):**
++        - Proposing or asking to move to a named external app: "Come on WhatsApp", "Let's talk on Telegram", "Are you on Instagram?"
++        - Giving or asking for a phone number, social media ID or handle, or payment ID (UPI, Paytm), in any form: digits read out in groups ("98 45 12 30 77"), IDs spelled letter by letter ("S N E H A").
++        - A call outside the app, said explicitly: "normal call", "call me on my number", "phone call".
++        - Contrast phrases: "Not here, on Telegram".
++    - **Possible (0.6):** vague hints at contact elsewhere, without naming how: "Let's talk somewhere else", "Can we talk outside?"
++    - **Never a violation (do not output):**
++        - Any call type inside the app: audio call, video call, "call me", "call again", "cut the call", "switch to video".
++        - An app mentioned for something other than contacting each other: "I saw it on Instagram", "my cousin uses WhatsApp".
++        - A name, city, job or other personal details without contact information.
++
++    **[Category 2: SuspiciousActivity]**
++    Money or payment linked to sexual content, showing the body, or a sexual service.
++    - **Clear (0.9):** A price or payment for showing, nudity, an "open" call or a sexual act, whoever offers it: "Pay 300 and I will show", "1000 for an hour, open call", "I will send money if you open".
++    - **Possible (0.6):** Asking about a "rate" or "how much" in a suggestive conversation, without naming the service: "What is your rate?"; a request for money whose purpose is unclear: "Send me 500 first".
++    - **Never a violation (do not output):** The app's own coins, gifts or per-minute call charges; earnings on the app; general money talk (salary, prices of things).
++
++    **[Category 3: Explicit-Flirting]**
++    Sexual talk, sexual acts, or showing the body, directed at the other person.
++    - **Clear (0.9):**
++        - Asking for or offering to show the body, undress, or nudity: "Show me once on video", "Open your clothes", "I will remove my clothes".
++        - "Show" or "open" when it is about the body or the video: "Open and show", "Show everything".
++        - Body measurement questions: "What is your bra size?"
++        - Naming a sexual act or position, or asking about the other person's sexual preferences or experiences: "Which position do you like?"
++        - Requests for "open talk", "non-veg talk", or sexual talk.
++    - **Possible (0.6):** Suggestive requests that are not explicit: "Talk a little naughty", "Tell me something hot".
++    - **Never a violation (do not output):**
++        - Compliments: "You have a sexy voice", "You're beautiful".
++        - "I love you", talk about relationships, marriage, girlfriends, or shyness.
++        - "Show" or "open" about things that are not the body: "Show me your city", "Open the app".
++    ---
++    **[About a Violation, Not Doing It]**
++    This applies to every category. Output these, set "violation" to "no", and give confidence 0.3 or below:
++    - **Warnings and safety advice:** "Don't share your number with anyone", "People will say 'give money, I'll give my WhatsApp number', don't believe them". Everything inside a warning counts, including the scammer's words being quoted.
++    - **Stories and reported speech:** what someone else said or did at another time.
++    - **Refusals and denials:** "I won't give my number", "I don't do that".
++    - **Negated or rhetorical uses:** "Would he say 'sleep with me'? No, never."
++    - **Questions about the rules:** "Is it allowed to share numbers here?"
++    To tell these apart from a real violation, read the words around the quote. "Don't", "never", "be careful", "they will say", "people do this", "if anyone asks you" signal a warning or a story.
++    ---
++    **[Confidence Scale]**
++    - **0.9:** A "Clear" item, said directly to the other person in this call, with the words clearly heard.
++    - **0.6:** A "Possible" item, or a "Clear" item where part of the audio or the intent is unclear.
++    - **0.3:** "About a violation", or a weak match to a "Possible" item.
++    - **0.1:** Mentions an external app, money or sex, but is probably not a violation.
++    Use values in between when they fit better.
++    ---
++    **[Rules for Every Flag]**
++    - **Quotes must be real.** "seg" is the words actually spoken, copied in the native language and script exactly as heard. Never join words from different places or fill in words you did not hear. If you think a violation happened but cannot make out the words, quote what you hear and give confidence 0.3 or below.
++    - **Timestamps must be real.** "t" is when the quote starts, in MM:SS. Give your best estimate; never write 00:00 unless the quote really is at the start.
++    - **Duplicates:** The same quote repeated is flagged once, at its first occurrence. Different utterances are separate flags, even in the same exchange: a request for a number and the number itself are two flags.
++    - **At most 20 flags.** If there are more, keep the highest-confidence ones.
++
++    **[Fields, in This Order]**
++    1.  **"t":** Start time of the quote, MM:SS.
++    2.  **"seg":** The exact quote, native language and script.
++    3.  **"tr":** English translation of the quote.
++    4.  **"f":** Exactly one of "PlatformMove", "SuspiciousActivity", "Explicit-Flirting". No other values.
++    5.  **"spk":** Who said it: "expert", "user", or "unclear".
++    6.  **"ctx":** In ENGLISH, one or two sentences on what was said just before and just after the quote, and how the other person responded. Do not repeat the quote itself.
++    7.  **"speech_act":** "direct" (doing it now, to the other person), "reported" (warning, safety advice, story, quoting someone else), "hypothetical" (a question about the rules, or a hypothetical), or "denial" (refusing, denying, negated or rhetorical).
++    8.  **"j":** One English sentence: which item it matches, and why.
++    9.  **"violation":** "yes" only if "speech_act" is "direct" and it matches a "Clear" or "Possible" item. Otherwise "no".
++    10. **"c":** Confidence, from the Confidence Scale. If "violation" is "no", it must be 0.3 or below.
++    Every flag must include all ten fields.
++    ---
++    **[JSON Output Schema]**
++    Return ONE raw, minified JSON object that validates against this schema, with each flag's fields in the order above:
++    {json_schema_str}
++    ---
++    **[Your Task]**
++    Analyse the audio now. Your entire response must be only the minified JSON object. If there is nothing to output, return {"d": []}.
++    """.strip()
+diff --git a/skills/prompt-engineering/assets/moderation-eval-kit/example_schema_v6.py b/skills/prompt-engineering/assets/moderation-eval-kit/example_schema_v6.py
+new file mode 100644
+index 0000000..8f1213f
+--- /dev/null
++++ b/skills/prompt-engineering/assets/moderation-eval-kit/example_schema_v6.py
+@@ -0,0 +1,42 @@
++"""v6 output schema for prompt_v6.py. Like schemas_v4.py, deliberately SEPARATE
++from schemas.py: ground truth (stage2_classify.py / stage12_v2.py) must never
++import this file.
++
++Field order (t, seg, tr, f, spk, ctx, speech_act, j, violation, c) matches
++prompt_v6.py's Per-Flag Steps exactly; model_json_schema() emits properties in
++declaration order, and that schema is embedded in the prompt, so this order IS
++the order the model is told to fill fields in.
++
++Changes vs v4: adds spk (speaker) and ctx (surrounding words and the other
++person's response) before speech_act; drops quote_type (models labelled
++almost everything "verbatim", so it carried no signal). The "violation" key
++name is unchanged so gemma_local.find_violation_token_index works as-is.
++"""
++from typing import List, Literal, Optional
++
++from pydantic import BaseModel, ConfigDict, Field
++
++
++class FlagResultV6(BaseModel):
++    model_config = ConfigDict(populate_by_name=True)
++
++    timestamp: str = Field(alias="t", description="(string) Timestamp where the quote starts, MM:SS")
++    excerpt: str = Field(alias="seg", description="(string) Exact quote as spoken, native language")
++    translation: str = Field(alias="tr", description="(string) English translation of the quote")
++    flag: str = Field(alias="f", description="(string) PlatformMove | SuspiciousActivity | Explicit-Flirting")
++    speaker: Optional[Literal["expert", "user", "unclear"]] = Field(alias="spk", default=None, description="(string) Who said the quote")
++    context: Optional[str] = Field(alias="ctx", default=None, description="(string) English: words just before and after the quote, and how the other person responded")
++    speech_act: Optional[Literal["direct", "reported", "hypothetical", "denial"]] = Field(alias="speech_act", default=None)
++    justification: str = Field(alias="j", description="(string) One-sentence justification")
++    violation: Optional[Literal["yes", "no"]] = Field(alias="violation", default=None)
++    confidence: Optional[float] = Field(alias="c", default=None, description="(float) Confidence the flag is a real violation")
++
++
++class RawModelOutputV6(BaseModel):
++    model_config = ConfigDict(populate_by_name=True)
++
++    d: List[FlagResultV6] = Field(default_factory=list)
++
++
++def raw_model_output_json_schema() -> dict:
++    return RawModelOutputV6.model_json_schema(by_alias=True)
+diff --git a/skills/prompt-engineering/references/case-study-audio-moderation-2026.md b/skills/prompt-engineering/references/case-study-audio-moderation-2026.md
+new file mode 100644
+index 0000000..f71509d
+--- /dev/null
++++ b/skills/prompt-engineering/references/case-study-audio-moderation-2026.md
+@@ -0,0 +1,145 @@
++# Case Study: Open-Source Audio Moderation, Prompt Series v1–v6.1 (Sep–Oct 2026)
++
++A record of what was tried, what happened, and what was decided, so the next
++project can start from the end state instead of rediscovering it. The general
++lessons are distilled in:
++- `recall-first-prompt-design.md`
++- `evaluation-pipeline-playbook.md`
++- `error-analysis-playbook.md`
++
++## Setup
++
++- **Task:** flag policy violations in call audio from an app where users pay
++  experts to talk. Categories: PlatformMove (moving contact off the app),
++  SuspiciousActivity (payment for sexual content), Explicit-Flirting.
++- **Languages:** Hindi, Tamil, Telugu, Kannada, Malayalam.
++- **Models:**
++  - Gemma audio variants: e2b and e4b, with and without thinking mode (12b only
++    in the baseline);
++  - text-only runs on Conformer ASR transcripts;
++  - a Gemini flash-lite baseline.
++- **Ground truth:** Gemini transcribes each file, then classifies it with the
++  **original v1 prompt**. A second Gemini step matches model flags to GT flags.
++- **Output per flag:** category, timestamp, native quote, translation,
++  justification, confidence, and per-token logprobs, from which logprob-based
++  confidence and entropy are computed.
++- **Goal, as it became clear:** keep FN as low as possible, and have FPs fall
++  below a confidence threshold to be set later. **Use the model's self-reported
++  confidence for thresholds.**
++
++## Timeline
++
++| Step | What happened | Outcome / lesson |
++|---|---|---|
++| Baseline (v1) | Precision-first prompt full of alarm language | Precision 0.67–0.92, recall 0.12–0.82. e4b_nothinking was nearly silent. Gemini: 0.92/0.28 |
++| FP classification built | 9-type taxonomy, at flag level | The dry run classified **TPs** (an inverted filter) → added an eligibility assertion |
++| Matcher audit #1 | Batched Gemini matching: 13% of files disagreed with isolated runs; 5 files silently dropped by a safety block | Switched to one file per call; matching v2 |
++| Dev set | 50 files: stratified, enriched, chosen for disagreement, frozen | Iterations took minutes instead of hours |
++| v2 | Removed the penalty clause and repeated "do not flag" lines | e2b_nothinking: FP flags 99 → 55; e2b_thinking slightly worse |
++| Timestamp bug | `0s`-style timestamps skipped the chunk offset (12–24% of flags) | Defensive normalization |
++| v3 | Recall-first framing, one anchored scale, grading instead of filtering | e2b_nothinking: TP 26 → 37, AUROC 0.91; e4b_nothinking: TP 0 → 22 |
++| Missing-field analysis | ~10% of `c` missing (no constrained decoding); 95% of those were FPs | Rank missing scores lowest; don't drop them |
++| v4 | Speech-act, quote-type and verdict fields, with the verdict placed last | Best ceiling: e2b_nothinking TP 51, FN files 0; P(yes) AUROC 0.93 / 0.85; **but a flood of 1,445 flags** |
++| Thinking-offset bug | Logprob lookup ignored the thinking text → all thinking-model logprob and entropy values in v1–v4 invalid | Fixed for future runs; old values treated as missing |
++| v5 → "v5*" | Anti-flood rule plus definition fixes, **but run with the wrong schema** (not in the prompt→schema map) | Run largely discarded; the loader now fails loudly; per-field compliance check |
++| Threshold tables | File level per category × threshold; TN only at file level; strict (matched) TP | Kept the equivalence assertion against the confusion table |
++| Hard-negative audit | 14 confident FPs on clean files | **0 GT misses**; safety advice / reported speech (2 files), fabrication (3), negation (1) |
++| Justification mining | 3,767 FP justifications | Hedging rose to 27% (harmless); 51 internal contradictions; "direct" high-confidence FPs dominate |
++| Matcher audit #2 | 25 "matcher misses": the native quote was often in the **wrong script** | Translation fallback recovered only 7; the real flaw was matching pairs one at a time |
++| Matcher v3 | Global one-to-one assignment plus a content floor plus a verifier | 28 audited pairs validated; stable on repeat runs; TP 155 → 131 (wrong pairs removed) |
++| Verifier audit | 25% of rejections at score ≥ 0.9; a mix of errors and correct rejections | No auto-accept band; targeted question/statement instruction; stronger model |
++| v6 | Context and speaker fields, a safety-advice rule, negation, contrast pairs, examples per confidence level, "quotes must be real" | e2b_nothinking better (AUROC 0.86, far fewer high-confidence FPs); **e4b_nothinking worse on recall (FN files 7 → 12)**; the context field was ignored (it copied the quote) |
++| Speaker × speech act | "reported"/"denial" 0% TP; speaker uninformative | These labels safely remove ~25–40% of FPs; the rest need the score |
++| v6.1 | A consolidation pass: removed contradictions, one place per item, 12k → 7.6k characters | Pending results at the time of writing |
++
++## Key numbers to remember
++
++- **Recall-first prompting:** file-level FN went from 5 to 0 (e2b_nothinking), and
++  from 25 to 7 (e4b_nothinking, v4).
++- **Ranking:** the anchored confidence scale gave AUROC 0.86–0.91 for no-thinking
++  models; the verdict-token P(yes) gave 0.93 / 0.85.
++- **Thinking models:** self-reported confidence AUROC about 0.60–0.71.
++- **Scoring artefacts:** about 44% of early FPs. Of the matcher-related slice, 71
++  were duplicates and only 25 were matcher misses (most of those turned out not to
++  be).
++- **e2b_nothinking under v6:** 0 FN files, but flag recall 0.67 and 1,063 flags in
++  50 files.
++
++## Decisions and their reasons
++
++- **Thresholds set only on the full dataset,** per model, from the threshold
++  tables, using self-reported confidence.
++- **Duplicates are counted as "redundant", not as FPs,** at flag level only; file
++  level is unaffected.
++- **The matcher is locked (v3)** and every version is re-scored with it.
++- **Matching uses a strong verifier model;** no score band is accepted without
++  checking.
++- **The best prompt is chosen per model:** v6 for e2b_nothinking, v4 for
++  e4b_nothinking, pending v6.1 and the thinking-model results. Choose the model
++  first, then its prompt.
++
++## Open issues at handover
++
++1. Lock matcher v3 after the verifier fix and spot-checks; re-score v4, v6 and
++   v6.1.
++2. v6.1 results (no-thinking models) and v6 thinking-model results.
++3. Validate the chosen prompt on the full dataset, then set thresholds.
++4. A human-labelled dev and test set (the ground truth is Gemini under v1).
++5. A grounding check (quote vs Conformer transcript, using the translation too)
++   to catch fabrication.
++6. A model writing in the wrong script, and models defaulting to 00:00
++   timestamps (known prompt-side issues).
++
++## Roadmap beyond prompting (as assessed at the end of the series)
++
++1. **Labels:** a human-labelled dev set and a held-out test set; decide the
++   edge-case policies (reported speech, negation, compliments).
++2. **Improvements at inference time, without training:**
++   - a verification pass per candidate (quote plus ±30 s of transcript → yes/no
++     with a probability);
++   - self-consistency (several runs, scored by agreement), which mainly helps
++     thinking models;
++   - overlapping or longer chunks;
++   - combining models (high recall from one, precision from another).
++3. **Deterministic detectors:** pattern rules for phone numbers, digit groups, UPI
++   IDs and handles; spotting app names in the audio directly.
++4. **Conversation structure:** speaker diarization; detecting the expert's scripted
++   safety advice by comparing against known examples; reconciling flags across
++   chunks.
++5. **Calibration and thresholds:** isotonic or Platt calibration per model and
++   category; conformal prediction for a guaranteed recall level.
++6. **Retrieval-based few-shot examples** from a labelled bank of examples.
++7. **Training** (after labels exist):
++   - a probe on frozen model embeddings;
++   - transcribe-then-classify (Indic ASR + MuRIL/IndicBERT or similar);
++   - LoRA fine-tuning;
++   - preference tuning (DPO) on correct-vs-mistake pairs;
++   - distillation from a stronger model;
++   - active learning.
++8. **External scoring services, for example Jev** (thejevai.com): a hosted
++   decision API returning a choice, a score, or a "Noul" yes-probability. It's
++   **text-only** (no audio), so it fits as a verifier on transcript windows.
++   - Check data handling: transcripts contain sexual content and contact details,
++     and the docs describe the operator as separate from the underlying model
++     provider.
++   - Its Indian-language performance is unknown.
++   - Validate its probabilities like any other score.
++9. **Other models to test for Indian languages** (check current support for the
++   South Indian languages specifically):
++   - audio: Sarvam Shuka, Krutrim Dhwani, Qwen3-Omni / Qwen3.5-Omni;
++   - ASR: AI4Bharat IndicASR/IndicWhisper, Sarvam Saarika/Saaras (with
++     diarization);
++   - text: Sarvam-30B/105B (Apache 2.0) as a self-hosted verifier with logprobs.
++
++   Test perception first on the files the current model completely misses.
++
++**Priorities, by the problem found:**
++
++| Problem | Fix |
++|---|---|
++| Fabricated contact details | Pattern rules plus a grounding check |
++| Safety advice taken as a violation | Diarization plus detecting the scripted advice |
++| Spoken digits or spelled IDs missed | Pattern rules on transcripts |
++| Weak thinking-model confidence | Self-consistency or verification |
++| Setting thresholds with low FN | Calibration plus conformal prediction |
++| Perception misses | Chunking, then a different or fine-tuned model |
+diff --git a/skills/prompt-engineering/references/error-analysis-playbook.md b/skills/prompt-engineering/references/error-analysis-playbook.md
+new file mode 100644
+index 0000000..7e55690
+--- /dev/null
++++ b/skills/prompt-engineering/references/error-analysis-playbook.md
+@@ -0,0 +1,201 @@
++# Error Analysis Playbook: Classifying FPs and FNs
++
++How to find out *why* a flagging model is wrong, so each prompt or system change
++targets the right cause. A single FP count hides different causes that need
++opposite fixes, and one change can fix one cause while making another worse,
++leaving the total flat.
++
++Built from the 2026 audio-moderation series. Pipeline details are in
++`evaluation-pipeline-playbook.md`.
++
++---
++
++## 1. Principles
++
++- **Classify at flag level, not file level.** Most FP *flags* sit inside files
++  already scored TP: one model had 811 FP flags but only 62 FP files.
++- **Rule out measurement artefacts before blaming the model.** In the first
++  breakdown, about 44% of FPs were scoring artefacts: duplicates, matcher misses,
++  and ground-truth misses.
++- **Enforce in code every taxonomy rule that can be checked in code.** An LLM
++  classifier will break definitions otherwise.
++- **The classifier's judgement is evidence, not truth.** Send the high-impact
++  labels to human review, and spot-check the rest.
++- **Tag every result with the taxonomy version, prompt hash and matcher version,**
++  so distributions can be compared across prompt versions.
++
++## 2. The FP taxonomy (ordered: apply in order, stop at the first match)
++
++| # | Type | Definition | Usual fix |
++|---|---|---|---|
++| 1 | `GT_MISS` | The model is right; the ground truth missed a real violation | Correct the label (versioned log) |
++| 2 | `MATCHER_MISS` | The flag is the **same specific utterance** as a GT flag that is **unmatched**, so the matcher failed to pair them | Fix the matcher; counts as TP |
++| 3 | `WRONG_CATEGORY` | The same utterance is flagged in the GT under a different category | Clearer category boundaries |
++| 4 | `DUPLICATE_OR_EXTRA_INSTANCE` | Another instance of a violation whose GT flag is **already matched** | Scoring policy (count as redundant) |
++| 5 | `FABRICATION` | The quote, or anything like it, appears nowhere in the transcript | Grounding check, entropy, verification |
++| 6 | `MISHEARING` | A similar-sounding real utterance exists, but the meaning was distorted | Audio and perception (not the prompt) |
++| 7 | `EXCEPTION_IGNORED` | Real and correctly understood, but matches an explicit "never a violation" item | Definition structure; instruction-following |
++| 8 | `CONTEXT_CONFUSION` | Real, but reported, hypothetical, negated, a refusal, a joke, or safety advice | Speech-act rule, context field |
++| 9 | `OVER_SENSITIVITY` | Real, in context, but below the violation threshold | Positive definitions, boundaries, examples |
++| 10 | `UNCLEAR` | Not enough evidence (transcript missing, bad timestamp) | — |
++
++**Code-level rules (mandatory):**
++- `DUPLICATE_OR_EXTRA_INSTANCE` requires that `related_gt_flag_index` points at a
++  GT flag whose verified matched status is true. Otherwise the label is forced to
++  `MATCHER_MISS`.
++- `MATCHER_MISS` requires the **same specific utterance**, not the same topic. The
++  LLM classifier repeatedly over-applied it on topic grounds: "Give me your number
++  on WhatsApp" and "no need for WhatsApp" are different utterances.
++- Before classifying, check that **the number of eligible flags equals the sum of
++  `flag_fp`.** In one run an inverted filter fed *true positives* to the
++  classifier, and its labels still looked plausible.
++
++## 3. Inputs for each classified flag
++
++- **The model flag in full:** category, timestamp, native excerpt (load it from raw
++  results if the per-file data drops it), translation, justification, speech act,
++  speaker, context, confidence, and logprob scores.
++- **The GT transcript:** the whole thing, or ±90 s around the flag, plus a search
++  of the full transcript for the key terms.
++- **All GT flags** for that file, each with its matched status.
++- **The other model flags** in the same file (needed to detect duplicates).
++- **The policy definitions,** loaded from the prompt file at runtime, never copied
++  in by hand.
++- **Language,** and the dataset's original label (clearly named, and never
++  confused with the model's outcome bucket).
++
++## 4. Classifier prompt requirements
++
++- Walk through the decision order 1→N explicitly, writing the reasoning field
++  **before** the type.
++- Quote the exact transcript text relied on, or leave it empty, which is required
++  for `FABRICATION`.
++- Remember the classifier sees a transcript, not audio. It should set
++  `transcript_reliability: suspect` when the transcript looks garbled.
++- **Remember the model's native text may be in the wrong script.** Judge
++  fabrication and mishearing on the translation as well.
++- Output: `reasoning`, `fp_type`, `fp_reason`, `evidence_transcript_quote`,
++  `evidence_timestamp`, `fp_exception_matched`, `related_gt_flag_index`,
++  `transcript_reliability`, `classifier_confidence`.
++- Use a **strong classifier model**, stronger than the one that produced the
++  ground truth, so it doesn't share its blind spots. Validate responses against
++  the allowed values; retry, or mark `UNCLEAR`.
++
++## 5. Process
++
++1. **Dry run on 3 flags, from different file buckets** (TP-file, FP-file and
++   FN-file flags). Print the requests and responses, and write nothing. Check
++   **which model's results** were used, and that the flags really are unmatched.
++2. **Pilot: one model × one language,** full run. Report the breakdown by type,
++   split by file bucket (TP/FP/FN files), with 10 example rows across types.
++3. **Spot-check about 20 labels** against transcripts, especially duplicates and
++   matcher misses. If about 18 or more of 20 are right, proceed.
++4. **Full run only for the versions you'll compare.** It must be resumable (skip
++   flags already done with the same taxonomy version and prompt hash).
++5. **Human review export:** all `GT_MISS` and `MATCHER_MISS` flags, every flag with
++   low classifier confidence or a suspect transcript, plus a stratified sample of 5
++   per (model × type) with a fixed seed. Add `human_fp_type` and `human_notes`
++   columns, and a mode that scores classifier-vs-human agreement.
++
++**Outputs:**
++- the per-flag `fp_classification` stored in the per-file JSON;
++- `fp_flags.csv`;
++- breakdowns overall, by language and by category;
++- mean entropy and confidence per type;
++- adjusted precision;
++- the review sample.
++
++## 6. FN analysis (separate from FP classification)
++
++For every unmatched GT flag, check what the model output nearby:
++
++| Check | Meaning |
++|---|---|
++| The file has no model flags at all | Detection or perception failure |
++| Nothing within ±20 s | Detection failure for that moment |
++| A flag of the same category nearby, unmatched | Instance selection (wrong utterance from the same exchange), a duplicate-rule merge, or a matcher miss |
++| A flag of another category nearby | Category confusion |
++
++Then read the missed GT quotes, grouped by category, and look for recurring
++patterns.
++
++**What it revealed here:**
++- **One model's misses (e2b_nothinking) were 100% "flagged something nearby":**
++  instance selection, not detection.
++- **Another model's (e4b_nothinking) were 80% "nothing nearby":** real perception
++  or detection gaps.
++- **The recurring wording gaps:** euphemisms ("show", "open"), named sexual acts,
++  offers from the expert side, prices tied to time, digits read out in groups,
++  spelled-out IDs, and contrast phrases.
++- **The prompt's own duplicate rule** ("flag the same thing only once") merged a
++  request and the detail itself into one flag, guaranteeing FNs.
++- **Some misses were policy questions,** where the ground truth flagged reported
++  speech, negations or compliments. Don't change definitions to chase these; get
++  a human decision.
++
++## 7. Hard-negative audit (are the confident FPs model errors or GT gaps?)
++
++1. Take every FP at **≥ 0.6** on clean files that several models flagged (the
++   hard negatives), for each model in scope.
++2. For each one, read the GT transcript around the flag and tag it: fabrication /
++   safety advice or reported speech / negation / GT miss / other.
++3. **Confirm fabrications against an independent ASR transcript** (here a
++   Conformer). One case "fabricated" by the GT-transcript check turned out to be a
++   negation once the independent transcript was read.
++4. **Count by file as well as by flag.** 9 of 14 flags came from just 2 files.
++   Specificity is measured per file.
++5. Compare **excerpt entropy** for fabrications against the TP mean, per model.
++
++**Result here: 0 GT misses.** The causes were safety advice and reported speech
++(2 files), fabrication (3 files) and negation (1 file). The model labelled the
++scam warning `speech_act = direct`, so it never recognised the framing at all.
++Telling it to "respect the label" can't help; it has to read the surrounding
++context.
++
++## 8. Mining patterns from the model's own justifications
++
++Collect every FP's justification text and search it for recurring patterns:
++
++- **Hedging phrases** ("not a violation", "relates to", "could be interpreted").
++  Here they rose from 8% of FPs (v1) to 27% (v3/v4), averaging 0.19 confidence.
++  This is harmless by design under a recall-first prompt.
++- **Internal contradictions:** the justification says "not a violation" or
++  "advising … not to", but the category, confidence or speech act say otherwise.
++  Also flags with an invalid category such as `"Not a violation"`.
++  - Before adding a post-processing rule, check whether the verdict token or
++    P(yes) already ranks these low.
++  - A keyword rule can demote real TPs ("this isn't about coins; it *is* a
++    platform move"), so validate any rule on a sample.
++  - Forcing invalid categories to the lowest score is safe.
++- **"Direct", high-confidence FPs:** split them by whether the file has a GT flag
++  of the same category (a likely duplicate or matcher issue: re-audit with the
++  code-checked classifier) or no GT flags at all (overreach: sample about 20 for
++  transcript review).
++- Pool across prompt versions only for exploration. For decisions, use the
++  versions actually being compared.
++
++## 9. Using model labels as filters: test it
++
++Cross-tabulate TP rate by `speech_act` × `spk` (and by verdict). Here:
++
++- **"reported" and "denial" were 0% TP** (0 of 156), so pushing them to the bottom
++  costs no recall.
++- **A missing speech act and an "unclear" speaker were also 0% TP.**
++- **Together these safely remove about 25–40% of FPs.** The rest are labelled
++  "direct" and can only be separated by the score.
++- **"hypothetical" wasn't safe:** 8 of 125 were TPs, because requests were
++  phrased as questions.
++- **The `violation: no` label wasn't safe as a filter either:** 22 of 51 TPs said
++  "no" for one model.
++
++## 10. What to do with the results
++
++| Dominant type | Next step |
++|---|---|
++| Duplicates | Scoring policy: count them as redundant. Leave the prompt alone. |
++| Matcher misses | Matcher redesign (global assignment plus verifier), then re-score. |
++| GT misses | Versioned label corrections; human labels. |
++| Context confusion or ignored exceptions | Prompt: one speech-act section, a context field, consolidated definitions. |
++| Over-sensitivity | Prompt: positive definitions, boundaries, counter-examples. |
++| Fabrication or mishearing | Grounding check, entropy, a verification pass, a better audio model. |
++| FN from perception | Chunking, a different or fine-tuned audio model. Not the prompt. |
+diff --git a/skills/prompt-engineering/references/evaluation-pipeline-playbook.md b/skills/prompt-engineering/references/evaluation-pipeline-playbook.md
+new file mode 100644
+index 0000000..250a41e
+--- /dev/null
++++ b/skills/prompt-engineering/references/evaluation-pipeline-playbook.md
+@@ -0,0 +1,303 @@
++# Evaluation Pipeline Playbook for Flagging and Moderation Prompts
++
++An end-to-end recipe for measuring classification or flagging prompts against
++reference labels, built from the 2026 audio-moderation series. In that series,
++**bugs and design flaws in measurement were as large as the prompt effects being
++measured, several times over.** Build this pipeline, and audit it, before
++comparing prompts.
++
++Companion files:
++- `recall-first-prompt-design.md`: what to change in the prompt.
++- `error-analysis-playbook.md`: how to classify FPs and FNs.
++- `case-study-audio-moderation-2026.md`: the original timeline.
++- `assets/moderation-eval-kit/`: ready-to-paste task prompts for a coding agent.
++
++---
++
++## 0. Pipeline at a glance
++
++```
++audio → [model under test] → raw outputs (JSON + per-token logprobs)
++                                  │
++       ground truth ─────────────►│ matcher (model flag ↔ GT flag pairing)
++       (transcript + GT flags)    │
++                                  ▼
++                       per-file results (each flag: matched?, paired GT idx & category,
++                       scores, labels) → confusion tables, threshold tables,
++                       ranking metrics → FP/FN classification → audits
++```
++
++Every stage has failed silently at least once. Each section below lists the
++failure modes and the check that catches them.
++
++## 1. Ground truth
++
++**Know where it came from.** Here, the ground truth was Gemini running the
++**original v1 prompt** on its own transcript. That has consequences:
++
++- **Every metric measures agreement with that prompt's policy.**
++  - A prompt change that *clarifies* what the ground truth already does (for
++    example, "reported speech isn't a violation") is measured cleanly.
++  - A change that *alters the policy* will look like a regression, even when it's
++    better.
++  - Decide which kind each change is before running it.
++- **Don't let prompt changes drift from the ground-truth policy without noticing.**
++  By v6, some definitions ("show/open", "mentioning an app") no longer matched
++  the v1 policy.
++- **Keep the ground truth's schema and prompt separate from the experiment's.**
++  Here they shared a schema file, so changing the experiment's schema would
++  silently have changed future ground truth. Give each its own module and add an
++  assertion that the ground-truth generator uses the original.
++
++**Corrections:**
++- Fix confirmed ground-truth errors through a **versioned correction log**
++  (`gt_corrections_v1.csv`: file, flag, who checked it, why). Re-score *every*
++  version against the corrected labels, and keep the original alongside.
++- Verify suspected ground-truth misses against transcripts, and against an
++  independent ASR transcript, before correcting. Here, a hard-negative audit found
++  **0 ground-truth misses in 14 suspected FPs**; all were model errors. The
++  default assumption should be "the model is wrong".
++
++**The lasting fix: a human-labelled dev and test set.** 50 dev files is about a
++day of labelling, plus a stratified held-out test set (~150 files) that is never
++tuned on.
++
++## 2. The dev set (fast iteration)
++
++- **Stratify and enrich it; don't sample randomly.** The layout used, per
++  language (10 files):
++
++  | Slot | Files | Purpose |
++  |---|---|---|
++  | One positive per category | 3 | Category coverage |
++  | Hard positives (most models missed them) | 2 | Measures recall gains |
++  | Hard negatives (clean files that ≥ 3 models flagged) | 3 | Measures over-sensitivity |
++  | Easy negatives | 2 | Catches a prompt that starts flagging everything |
++
++- **Break ties toward model disagreement** (files where about half the models are
++  right). Those are the files a prompt change can move.
++- **Exclude** incomplete transcripts, files with unreliable matching, files
++  missing results for any model, and very long audio (above the 90th percentile).
++- **Validate the set:** at least 5 positives per category, at least 30 GT flags,
++  and at least 10 files with multiple GT flags.
++- **Mirror the original folder structure** so loaders work unchanged, add a
++  `--dataset-root` option, and keep separate result folders per dataset and prompt
++  (`*_dev_promptvN/`).
++- **Extract the old prompt's dev baseline from existing results.** No re-run is
++  needed.
++- **Freeze it** (`dev_set_v1`). Use it for direction, not proof: one file is 4
++  points of file-level recall. Confirm the final prompt on the full dataset.
++
++## 3. Running models: parsing and logprobs
++
++- **Map each prompt to its schema explicitly, and fail loudly.** Here, a new prompt
++  file wasn't in the prompt→schema map and silently fell back to the old 6-field
++  schema. The prompt text asked for 9 fields, the embedded schema showed 6, and
++  most models followed the schema: 92–94% of flags were missing the verdict field.
++  The run had to be discarded.
++  - Let each prompt declare its own schema (`SCHEMA = "v6"`).
++  - Raise an error for unmapped prompts.
++  - At the end of every run, report the missing rate per field, and **warn if any
++    required field is missing on more than 20% of flags.**
++- **Without constrained decoding, required fields are only suggestions.** Expect
++  about 10% omission. Use grammar- or schema-constrained decoding if possible, and
++  check it doesn't change what the model writes. Never fill in missing values when
++  parsing.
++- **Normalize timestamps defensively.** Models wrote `0s`, `5s`, ranges, and
++  `H:MM:SS`. The parser logged them but kept the raw value and skipped the chunk
++  offset, which broke matching for 12–24% of flags. Accept every format, convert to
++  seconds, and add the chunk offset.
++- **Chunk-start timestamps** (relative 00:00) are often the model's default when
++  unsure, not real times. Flag them as low-reliability.
++- **Locating logprobs:**
++  - Find the value of the relevant field (for example `"violation"`) *within that
++    flag's own JSON object*, and take the logprob of its first token.
++  - Store the top-k alternatives at that position, so P(yes) can be read for "no"
++    verdicts.
++  - **Thinking models:** the token stream includes the thinking text before the
++    answer, so slice the tokens to the answer before mapping character positions,
++    and handle answers that start partway through a token.
++  - Verify on 3 real outputs by printing the located token, its logprob and the
++    top alternatives. If the anchor isn't found, set the field to `None` and log
++    it; never fall back silently.
++- **Record per result:** the prompt hash, the schema version, the matcher version,
++  the model, and the chunk length.
++
++## 4. The matcher (pairing model flags with ground-truth flags)
++
++This was the most error-prone component. Lessons, roughly in the order they were
++learned:
++
++1. **Batching LLM matching calls is nondeterministic:** about 13% of files
++   disagreed between batched and one-file-per-call runs, with some files' results
++   dropped or garbled. Use **one file per call, temperature 0, cached**.
++2. **Silent drops change the denominator.** A safety block dropped 5 files from one
++   model's scoring with no retry. Assert that every model was scored on the same
++   set of files.
++3. **Native-text similarity fails when the model writes in the wrong script.** Use
++   similarity of the English translations too.
++4. **String similarity fails on paraphrases and creates false matches from single
++   shared words** ("super"). Use multilingual **sentence embeddings** for meaning
++   similarity.
++5. **Similarity can't tell whether two quotes are the same instance.** Shared
++   domain vocabulary ("show", "WhatsApp", "300") pushes scores high: pairs at
++   similarity 1.00 were sometimes different utterances ("WhatsApp number" vs "I
++   changed my phone number"). No score cut-off separates good from bad pairs.
++6. **Matching one pair at a time misses better candidates.** A ground-truth flag
++   got paired with a distant flag while closer, near-identical ones went unused.
++
++**The design that worked (matcher v3):**
++
++```
++for each file:
++  candidates = every (GT flag, model flag) pair within ±60 s
++  score(pair) =
++      content = max(translation_embedding_sim, native_sim if script-valid else 0)
++      time    = soft decay with distance; if model timestamp == chunk start → "unknown
++                within chunk" (scored as somewhere in that chunk, not a point)
++      category bonus (match) / penalty (mismatch; cross-category still possible)
++  hard gate: content ≥ minimum floor (time+category alone can never make a match)
++  assignment: optimal one-to-one (Hungarian) over the score matrix, min score to qualify
++  verification: LLM (STRONG model) confirms/vetoes each assigned pair, seeing native
++                text + translation + timestamps of both sides
++                → on veto: drop that pair, re-run assignment (next-best candidate)
++  record: score components, verified?, timestamp-unknown?, paired GT index + category
++```
++
++**Verifier lessons:**
++- **The verifier decides correctness,** because the score can't. Use the strongest
++  model available; the lite model was the weak point three times.
++- **Don't add a score band that's accepted automatically without checking it
++  against the data.** In this data, rejections at ≥ 0.9 were a mix of verifier
++  errors and correct rejections at every score level.
++- **Fix named verifier biases with targeted instructions.** For example, it
++  rejected pairs only because one side was a question and the other a statement,
++  which is a translation artefact in these languages. The instruction: "don't
++  reject solely on question vs statement phrasing; judge whether it's the same
++  moment and the same content". Remember that a question and its answer can be
++  two different utterances by different speakers.
++
++**Validating a matcher change:**
++- **Build a small audited set of pairs** (about 28 here): each lost or gained pair
++  tagged as *correctly declined*, *genuine regression*, *timestamp artefact*,
++  *better candidate missed*, *false gain* or *uncertain*.
++- **Score the new matcher on that set.** Make only *principled* fixes, ones you'd
++  choose without looking at a specific case (for example, max of the two content
++  signals, a content floor). Then **stop tuning**: the set is now your validation
++  data.
++- **Don't let the matcher under test overrule your manual audit.** Mark
++  disagreements as uncertain, and settle them by listening to the audio.
++- **Run it twice** and report the agreement rate (100% here).
++- **Report gross gains and losses, not just net TP.** Net 0 can hide equal
++  numbers gained and lost.
++- **Raw TP count is the wrong success measure.** It fell from 155 to 131 when wrong
++  pairings stopped being counted.
++- **Spot-check both rejected and confirmed pairs** (about 20 each; lock the matcher
++  if roughly 17 or more of each are right).
++- **Lock the matcher version** for the whole prompt series, record it with every
++  result, and **re-score every earlier version** whenever it changes.
++
++## 5. Scoring definitions
++
++**File level, for a category C** (or ALL), at threshold t, using the score you
++plan to threshold on:
++
++| | Has a matched flag of C (to a GT flag of C) with score ≥ t | Otherwise |
++|---|---|---|
++| **GT positive for C** | TP | FN |
++
++| | Has any flag of C with score ≥ t | Otherwise |
++|---|---|---|
++| **GT negative for C** | FP | TN |
++
++- **The TP rule requires a verified match** (strict). Also report
++  `loose_tp`/`loose_recall`, where any flag of C at or above t counts. The gap
++  between them is "right file, wrong utterance".
++- **Recording which GT flag each model flag was paired with** (and its category)
++  is necessary for the per-category rule.
++- Precision, recall, specificity, accuracy and F1 come from these counts. **TN only
++  exists at file level.**
++
++**Flag level, for category C at threshold t:**
++
++| Outcome | Definition |
++|---|---|
++| TP | Matched flags with score ≥ t |
++| **Redundant** | Correct extra instances of an already-matched GT flag (labelled by the FP classifier as duplicates, with the code-level check). Not an error, and not a new catch. |
++| FP | All other flags with score ≥ t |
++| FN | GT flags − TP |
++
++- **Flag recall** = TP ÷ GT flags. **Flag precision** = (TP + redundant) ÷ flags.
++- Report the redundant count separately. In production, de-duplicate per file and
++  category before review.
++- Duplicates don't affect file-level metrics: they always sit in files the model
++  already got right.
++
++**Missing scores:** rank them lowest (below every threshold), and report how many
++there are. Never drop them: they were 95% FPs, and excluding them inflated ranking
++metrics and hid 2 TPs. Include a **"none" threshold** row that uses every flag.
++
++## 6. Output tables to produce for every prompt version
++
++1. **Confusion tables** at file and flag level, overall and per language.
++2. **A threshold-by-category table** (`threshold_metrics_by_category.csv`): model ×
++   language × category (including ALL) × threshold (none, 0.0–0.9 in steps of
++   0.1), with TP/FP/FN/TN, precision, recall, specificity, accuracy, F1,
++   `strict_tp`, `loose_tp`, flag TP/FP/FN/redundant, flag precision and recall,
++   and the count of flags with a missing score. **Assertions:**
++   - TP + FN = number of GT positives, and FP + TN = number of GT negatives;
++   - the "none" row for ALL equals the confusion table;
++   - TP and FP never rise, and TN never falls, as the threshold rises.
++3. **Per-bucket and cumulative confidence tables:** each bucket's precision, share
++   of all TPs and FPs, and recall contribution, plus cumulative "at or above"
++   metrics. Use finer edges near 0 and 1 for probability scores.
++4. **Ranking metrics per score:** AUROC, AUPRC, and recall at a fixed FP budget
++   (10/25/50/100 FPs), overall, per language and per category.
++5. **Label tables:** TP rate by speech act, by speaker, and by verdict, plus
++   speaker × speech act, and the verdict-vs-matched 2×2. These show whether the
++   model's own labels carry information.
++6. **FP-type breakdown** (see `error-analysis-playbook.md`), plus adjusted
++   precision (ground-truth misses counted as TP, duplicates counted as redundant).
++7. **Flags per file** (distribution and maximum), the share of invalid categories,
++   the missing rate per field, and the share of quotes written in the expected
++   script (via Unicode ranges).
++
++## 7. How to compare two prompt versions
++
++1. **Same dev set, same matcher version, same ground-truth version.** Check all
++   three.
++2. **Primary:** FN files and flag recall at "none" (the ceiling), then recall at
++   the operating thresholds you're considering (for example 0.6 and 0.8).
++3. **Secondary:** FP files and specificity at those thresholds, and AUROC of the
++   score you'll threshold on.
++4. **Context:** flag volume, redundant count, and compliance (missing fields,
++   invalid categories).
++5. **Explain the difference:** FP-type shifts, speech-act labels on the
++   hard-negative files, and per-file differences for files whose bucket changed.
++6. **Look per model, and per category.** Effects often go in opposite directions.
++7. **Don't set thresholds during iteration.** Set them once, per model (and
++   possibly per category), on the full dataset, using the same threshold tables.
++   Consider calibration (isotonic regression) and conformal prediction for a
++   guaranteed recall level.
++
++## 8. Audit checklist before trusting any comparison
++
++- [ ] Every model was scored on the same files; no silent drops.
++- [ ] Prompt→schema mapping verified; per-field missing rate below 20%.
++- [ ] Timestamps normalized; chunk-start timestamps flagged.
++- [ ] Logprob locator verified on real outputs (thinking models included).
++- [ ] Matcher version locked and identical across the versions compared.
++- [ ] The "none" row of the threshold table equals the confusion table (assertion).
++- [ ] Selection assertions hold (for example, eligible FP flags = the sum of
++      `flag_fp`).
++- [ ] The judge or verifier model is stronger than the ground-truth generator.
++- [ ] The ground-truth correction log is applied to every version, or to none.
++
++## 9. Cost and runtime notes
++
++- Thinking modes were much slower, and their self-reported confidence didn't
++  respond to prompt changes. Iterate on the fast models, and re-test the slow ones
++  with the final prompt.
++- Get a cost estimate before full runs: flags to classify, calls, and retries.
++  Restrict expensive classification to the versions that will actually be compared
++  (here v4 and v6, not every historical version).
+diff --git a/skills/prompt-engineering/references/iteration-and-evaluation-discipline.md b/skills/prompt-engineering/references/iteration-and-evaluation-discipline.md
+index 8e3d2d8..e1e364c 100644
+--- a/skills/prompt-engineering/references/iteration-and-evaluation-discipline.md
++++ b/skills/prompt-engineering/references/iteration-and-evaluation-discipline.md
+@@ -17,15 +17,19 @@ concerns.
+   self-reported confidence field as meaningful until you've checked whether it
+   actually separates known-correct from known-incorrect outputs on labeled data.
+ - Confidence scores cluster near the extremes (very high when confident, well below
+-  0.5 when not) and rarely land in a useful "medium" band unless you explicitly
+-  engineer a calibration scheme into the prompt (e.g. "use <0.5 for mild cases, 0.7+
+-  only for severe/explicit cases"). A usable mid-confidence bucket won't emerge on
+-  its own — you have to instruct for it directly, per severity level.
+-- If the model exposes token-level log probabilities, prefer computing confidence
+-  directly from those (decision probability and, separately, category-choice
+-  probability) over any self-reported number. A combined score (e.g. geometric mean
+-  of the two) tends to be more informative than either alone, and more trustworthy
+-  than any self-report.
++  0.5 when not) and rarely land in a useful "medium" band unless the prompt defines
++  one. *Revised (2026 series):* per-category calibration rules ("<0.5 for mild cases,
++  0.7+ only for severe cases") made confidence reflect the category rule rather than
++  correctness. One anchored scale shared by all categories, tied to the definition
++  tiers, ranked far better (AUROC 0.75 → 0.91); see `recall-first-prompt-design.md`.
++- If the model exposes token-level log probabilities, compute logprob-based scores
++  and validate them alongside the self-reported number. *Revised (2026 series):*
++  neither wins by default. The logprob of the category token saturates, because the
++  model has already committed. A verdict token placed after the reasoning fields
++  was the best signal for no-thinking models (AUROC 0.93), while self-reported
++  confidence beat the category-token logprob. For thinking models, map positions
++  only after the thinking text, or every value is wrong. See
++  `recall-first-prompt-design.md` §5.
+ - Bucketed confidence analysis can silently drop out-of-range values (e.g. a flag
+   scoring below your "low" threshold cutoff), making it invisible to bucketed
+   reporting even though it still counts toward raw precision/accuracy. Check for
+diff --git a/skills/prompt-engineering/references/recall-first-prompt-design.md b/skills/prompt-engineering/references/recall-first-prompt-design.md
+new file mode 100644
+index 0000000..0b05c80
+--- /dev/null
++++ b/skills/prompt-engineering/references/recall-first-prompt-design.md
+@@ -0,0 +1,220 @@
++# Recall-First Prompt Design for Classification and Flagging
++
++How to write prompts for flagging and moderation tasks when the goal is **"miss as
++little as possible, and let FPs exist only below a score threshold set later"**,
++as opposed to precision-first ("only flag when sure").
++
++Evidence comes from an audio-moderation series (Sep–Oct 2026): open-source Gemma
++audio models (e2b/e4b, with and without thinking mode) on calls in 5 Indian
++languages, with 3 categories (PlatformMove, SuspiciousActivity, Explicit-Flirting),
++iterated over prompts v1–v6.1 on a 50-file dev set. See
++`case-study-audio-moderation-2026.md` for the timeline and numbers. Figures quoted
++here are dev-set results: treat them as directional, not proven.
++
++Companion files:
++- `evaluation-pipeline-playbook.md`: how to measure.
++- `error-analysis-playbook.md`: how to diagnose FPs and FNs.
++
++---
++
++## 1. Decide the objective first, because it changes the whole prompt
++
++| Objective | What the prompt should do | What to measure |
++|---|---|---|
++| Precision-first | Suppress doubtful cases ("if ambiguous, don't flag") | Precision and recall at the model's own decision |
++| **Recall-first + threshold later** | **Output every plausible candidate and grade it** | Recall with every flag kept (the recall ceiling), plus how well the score ranks TPs above FPs |
++
++**The recall with every flag kept is a hard ceiling.** A threshold can only remove
++flags. Every "when in doubt, don't flag" rule removes candidates before they're
++scored, and they can never be recovered. Under a recall-first objective,
++**suppression rules are the main thing to remove.**
++
++## 2. Grade candidates instead of filtering them
++
++- **Turn filtering rules into grading rules.** Instead of "don't flag reported
++  speech", use "output it, label it as reported, and give it low confidence".
++- **Keep hard exclusions only for genuine non-violations**, such as features the
++  policy explicitly allows (in-app video calls, platform coins). Flagging those
++  only adds noise.
++- **Tell the model how its output will be used:** "Your confidence will be used to
++  filter flags later, so a missed violation is worse than a doubtful flag with low
++  confidence." This measurably changed behaviour.
++
++**Observed effect** (precision-first v1 → recall-first v3/v4):
++- e2b_nothinking: TP flags 26 → 51 (of 73); FN files 5 → 0.
++- e4b_nothinking, which v1 had suppressed completely: TP flags 0 → 33 (4 flags in
++  total under v1).
++- The extra FPs went almost entirely to the bottom of the scale: in v3, 285 flags
++  were at confidence ≤ 0.3, and only 2 of them were TPs.
++
++## 3. Remove alarm and penalty language
++
++- **Penalty clauses, "CRITICAL", "NEVER", and the same "do not flag" repeated six or
++  more times all suppress output**, mostly at the expense of recall. Consolidate to
++  one calm statement placed at the end of the prompt.
++- **The effect differs by model.** Removing alarm language *nearly halved* FP flags
++  for e2b_nothinking (99 → 55, with recall held), yet slightly hurt e2b_thinking.
++  Test every change on every model you care about.
++
++## 4. Use one anchored confidence scale, never per-category rules
++
++- **Per-category confidence rules destroy ranking.** Rules like "below 0.5 for mild
++  flirting", "at least 0.7 to flag other categories" or "paraphrases below 0.5"
++  make confidence reflect the category and the rule, not how likely the flag is to
++  be correct.
++- **Use one scale with anchors, shared across categories.** The version that
++  worked:
++
++  | Score | Meaning |
++  |---|---|
++  | 0.9 | Clear |
++  | 0.6 | Possible, or clear but the audio or intent is unclear |
++  | 0.3 | About a violation (reported, warning, negation) or a weak match |
++  | 0.1 | Related words, probably nothing |
++
++  e2b_nothinking's AUROC rose from 0.75 to 0.91 with this scale plus the
++  recall-first framing.
++- **Tie the scale to the definition tiers** (Clear → 0.9, Possible → 0.6, About →
++  0.3, see §7), so the two can't disagree. In v6, the scale's examples put
++  "Are you on Insta?" at 0.6 while the definition listed "Are you on WhatsApp?" as
++  a clear case. Inconsistencies like that reduce how reliable the confidence is.
++
++## 5. Which ranking signal to trust depends on the model; validate each one
++
++| Signal | Finding |
++|---|---|
++| Self-reported confidence | Good for no-thinking models once anchored (AUROC 0.79–0.91). **Uninformative for thinking models** (around 0.60–0.71): they settle the decision while reasoning, then report it as 0.9 whether it's right or wrong. |
++| Logprob of the category token | Usually saturated near 1.0. The token is written after the model has committed, so it carries little information. |
++| **Logprob of a verdict token** (`violation: yes/no`, placed after the reasoning fields) | The best signal for no-thinking models: AUROC 0.93 (e2b) and 0.85 (e4b). |
++| Excerpt entropy | Separated fabrication for e2b_nothinking (0.62–0.82 vs a TP mean of 0.39), but not for e4b_thinking. |
++
++- **Neither self-reports nor logprobs win by default.** This revises the earlier
++  "prefer logprobs" rule. Compute both, and check each per model on labelled data.
++- **Field order is part of the prompt.** The evidence fields (quote, translation,
++  context, speech act, justification) must come *before* the verdict and the
++  confidence. State the order in the instructions *and* declare the fields in that
++  order in the schema, because the schema is embedded in the prompt.
++- **For "no" verdicts, read P(yes) from the top-k alternatives** at that position.
++  Fall back to 1 − P(no) only when "yes" isn't in the top-k, and record which
++  method was used.
++- **Thinking models:** the token stream includes the thinking text before the
++  answer. Any lookup that maps character positions to tokens must start where the
++  answer starts, or every logprob and entropy value is read from the wrong token.
++  (This bug made all thinking-model logprob results in v1–v4 invalid.)
++
++## 6. Structured fields: add the ones the model fills honestly
++
++| Field | Verdict |
++|---|---|
++| `speech_act` (direct / reported / hypothetical / denial) | **Keep.** "reported" and "denial" were 0% TP across 156 flags, so the label is reliable when used. Its weakness is that it's *under-used*: real warnings got labelled "direct". |
++| `violation` (yes / no), placed last | **Keep**, for the verdict-token logprob. The *label* itself can't be used as a filter: e2b_nothinking said "no" to 22 of its 51 TPs, while its P(yes) still ranked them well. |
++| `quote_type` (verbatim / paraphrase) | **Drop.** The models label nearly everything "verbatim", so it carries no signal. |
++| `spk` (expert / user / unclear) | **Weak.** TP rates were equal for expert and user. "unclear" was 0/53 TP, so it's useful only as a negative marker. |
++| `ctx` (the words around the quote) | **Small models ignored the intent:** they copied the quote, in the native script, instead of describing the context. Specify the language, say "do not repeat the quote", and check compliance. |
++
++Every added field also adds output length and another chance to omit a field.
++Measure the omission rate per field.
++
++## 7. Definitions: structure them so each item lives in exactly one place
++
++Rules added over several rounds of fixes pile up into contradictions. In v6, by
++the end:
++
++- **Safety advice was both "output it at ≤ 0.3"** (in the speech-act section)
++  **and "do not output it"** (a "Not a violation" item, governed by the output
++  rule). The model's behaviour on it was split.
++- **Compliments and relationship talk appeared in both** the "low confidence" list
++  and the "not a violation" list.
++- **"Flag anything plausible" competed with "do not output when …"**, so the model
++  tried to satisfy both: it emitted the flag and gave it the category
++  `"Not a violation"` (242 to 783 such flags per run).
++
++**A structure that avoids this (v6.1):**
++
++```
++[Output rule]  ONE rule, stated once: output Clear, Possible and About items;
++               never output Never items or ordinary conversation.
++[Category X]   Definition (one sentence)
++               Clear (0.9):    items + examples
++               Possible (0.6): items + examples
++               Never (don't output): items + examples
++[About a violation, not doing it]  ONE section for ALL categories:
++               warnings, safety advice, reported speech, refusals, negation,
++               questions about the rules → output with violation=no, c ≤ 0.3,
++               plus the cue words that signal them ("don't", "they will say", …)
++[Confidence scale]  tied to the tiers above
++[Fields]       in order; "violation" defined from the other fields
++```
++
++**Definition-writing rules learned:**
++
++- **Write positive definitions** (what the violation *is*: "a speaker proposes
++  continuing contact outside this app") instead of growing exception lists.
++- **Write in-app features into the definition itself** ("every call type inside
++  the app is allowed"). A separate exception list didn't stop a no-thinking model
++  from flagging in-app video calls.
++- **Use the speech-act rule** ("who is doing it, and is it happening now?"). Most
++  FPs were speech *about* a violation (warnings, stories, denials, questions about
++  the rules), not violations. One rule covers every category.
++- **Avoid keyword triggers.** "Suggestive comments", with no boundary, fired on any
++  "sex" or "sexy". A broad gloss ("show/open means nudity") fixes misses but needs
++  a boundary ("when it's about the body or the video"), with counter-examples.
++- **Spell out contact details in every spoken form** (digit groups, letters spelled
++  one by one, contrast phrases like "not here, on Telegram") for the
++  contact-detail category.
++- **Separate utterances are separate flags.** A request ("give me your number") and
++  the detail itself are two flags. Only the same quote repeated is a duplicate.
++- **Write examples yourself; never paste dev-set quotes into the prompt.** That
++  leaks the evaluation data and inflates dev scores.
++
++## 8. Anti-flood: ask for candidates without inviting everything
++
++- **"0.1 = mentioned, probably not a violation" plus a legitimate "no" verdict was
++  read as "list everything" by a 2B-effective model:** 1,445 flags in 50 files, up
++  to 94 in one file, including greetings.
++- **Fix:** "only flag quotes related to a category definition; ordinary
++  conversation is never a flag", with an explicit list (greetings, small talk,
++  introductions, call quality), and redefine 0.1 as "related to a definition (names
++  an external app, money, sex) but probably not a violation".
++- **Output caps may apply per chunk, not per file.** Check how many files hit the
++  cap, and whether low-confidence flags push real ones out.
++
++## 9. Grounding and fabrication
++
++- **Fabrication at confidence 0.95 does happen,** and no confidence threshold
++  removes it. Prompt rules ("quotes must be real, never join words from different
++  places, quote what you hear and cap confidence at 0.3 if unsure") help a little.
++- **The real fixes are outside the prompt:** fuzzy-match each quote against an
++  independent ASR transcript (on the translation too, see below), use entropy where
++  it separates, or add a verification pass.
++- **Audio models sometimes write the native quote in the wrong script** (Malayalam
++  in Bengali letters, Kannada as garbled Latin) while the English translation is
++  fine. Any check that relies on the native text has to tolerate this.
++- **Models default to "00:00" when unsure of timing** (the chunk start). Ask for
++  "best estimate, never 00:00 unless it really is at the start", and make the
++  matcher treat chunk-start timestamps as unknown.
++
++## 10. Model-specific behaviour seen
++
++- **Cautious models lose recall with every added caution.** e4b_nothinking: v4
++  missed 7 files, v6 missed 12. More context rules made it drop real candidates.
++  Compare FN per model for each prompt change.
++- **Small models degrade as prompts get longer and denser:** missing fields (about
++  10% without constrained decoding), invalid categories, ignored field
++  instructions. Consolidating v6 from about 12k to 7.6k characters was itself a
++  fix.
++- **The best prompt can differ by model** (here v6 for e2b_nothinking, v4 for
++  e4b_nothinking). If only one model will be deployed, choose the model first,
++  then its best prompt.
++
++## 11. Process lessons
++
++- **One variable per run is ideal,** but bundling is acceptable when the changes
++  serve one purpose (for example, switching from filtering to grading). Say so,
++  and use FP-type shifts and per-file diffs to work out which part did what.
++- **Know when to stop wording changes.** Once file-level recall is at its ceiling
++  and the remaining FPs come from fabrication, wrong attribution and perception,
++  the next gains come from verification, grounding, labels or training, not more
++  rules.
++- **Before declaring a "final" prompt, do a consolidation pass** that only removes
++  contradictions and duplicate rules, adding nothing new.
+-- 
+2.43.0
+
