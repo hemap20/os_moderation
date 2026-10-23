@@ -75,6 +75,12 @@ def full_dataset_runs():
 
 
 def model_input(model_key):
+    if "31bthinkEN" in model_key:
+        return "text (English, Gemma 31B-thinking translation of ITC)"
+    if "31bEN" in model_key:
+        return "text (English, Gemma 31B translation of ITC)"
+    if model_key.endswith("flash-lite_audio"):
+        return "audio"
     if "audiotrans" in model_key:
         return "text (English, Gemini-translated from audio)"
     if "itc" in model_key:

@@ -69,7 +69,7 @@ def output_dir(model: str) -> Path:
     return GEMINI_RESULTS_DIR / safe_name
 
 
-def call_classification(client, model: str, record: dsv2.FileRecordV2, logger: StageLogger) -> str:
+def call_classification(client, model: str, record: dsv2.FileRecordV2, logger: StageLogger, usage: Optional[dict] = None) -> str:
     prompt_text = prompt_loader.render_prompt(PROMPT_PATH, json_schema_str=RAW_SCHEMA_STR)
 
     def do_call():
@@ -78,9 +78,9 @@ def call_classification(client, model: str, record: dsv2.FileRecordV2, logger: S
             transcript_part = (
                 "[TRANSCRIPT OF THE CALL — analyse this text, which is the full "
                 "transcription of the audio, in place of the audio itself]\n\n" + load_transcript(record.file_id))
-            return gemini_client.generate_text(client, model, contents=[prompt_text, transcript_part])
+            return gemini_client.generate_text(client, model, contents=[prompt_text, transcript_part], usage_out=usage)
         uploaded = gemini_client.upload_audio(client, record.path)
-        return gemini_client.generate_text(client, model, contents=[uploaded, prompt_text])
+        return gemini_client.generate_text(client, model, contents=[uploaded, prompt_text], usage_out=usage)
 
     def on_retry(attempt, max_retries, delay, exc):
         logger.warn(f"{record.file_id}: attempt {attempt}/{max_retries} failed ({exc}); retrying in {delay:.1f}s")
@@ -137,12 +137,17 @@ def parse_classification(raw_text: str) -> tuple:
 
 
 def process_file(client, model: str, record: dsv2.FileRecordV2, logger: StageLogger):
-    raw_text = call_classification(client, model, record, logger)
+    usage = {}
+    t0 = time.perf_counter()
+    raw_text = call_classification(client, model, record, logger, usage)
+    seconds = time.perf_counter() - t0  # includes any retries
     flags, missing_counts = parse_classification(raw_text)
     result = GemmaFileResult(
         file_id=record.file_id, model=model, thinking=False, chunk_seconds=0.0,
         flags=flags, chunks_total=1, chunks_failed=0, status="success",
         missing_field_counts=missing_counts,
+        inference_time_sec=round(seconds, 3),
+        inference_meta={"input": "transcript" if TRANSCRIPT_DIR is not None else "audio", **usage},
     )
     return result, raw_text
 
