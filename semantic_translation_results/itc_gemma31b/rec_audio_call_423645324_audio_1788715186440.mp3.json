@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_audio_call_423645324_audio_1788715186440.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 129,
+  "affected_word_count": 4,
+  "semantic_error_rate": 0.031,
+  "seconds": 3.9,
+  "discrepancies": [
+    {
+      "reference_text": "உன்னைய பண்ணலாமா",
+      "translation_text": "shall we ride the vehicle",
+      "category": "tone_softened",
+      "word_count_affected": 2,
+      "explanation": "The explicit sexual reference 'shall I do you' (உன்னைய பண்ணலாமா) is translated as 'shall we ride the vehicle'."
+    },
+    {
+      "reference_text": "உன் கூட",
+      "translation_text": "with them",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'with you' (உன் கூட) but the translation says 'with them'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:31",
+      "type": "move_off_app",
+      "reference_text": "இன்ஸ்டா ஐடி",
+      "translation_text": "Insta ID",
+      "status": "preserved"
+    },
+    {
+      "t": "02:08",
+      "type": "sexual_or_explicit",
+      "reference_text": "செக்ஸியா பேசலாமா",
+      "translation_text": "shall we talk sexily",
+      "status": "preserved"
+    },
+    {
+      "t": "02:13",
+      "type": "sexual_or_explicit",
+      "reference_text": "செக்ஸியா பேசலாமா",
+      "translation_text": "shall we talk sexily",
+      "status": "preserved"
+    },
+    {
+      "t": "02:22",
+      "type": "sexual_or_explicit",
+      "reference_text": "உன்னைய பண்ணலாமா உன் கூட என்ஜாய் பண்ணலாமா",
+      "translation_text": "shall we ride the vehicle shall we enjoy with them",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate but softens the explicit sexual proposition at the very end of the call, translating 'shall I do you' as 'shall we ride the vehicle'."
+}

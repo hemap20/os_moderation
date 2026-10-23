@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_426649193_audio_1788991280922.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 56,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.1607,
+  "seconds": 3.5,
+  "discrepancies": [
+    {
+      "reference_text": "హైదరాబాద్ నుంచి అండి.",
+      "translation_text": "Where from in Hyderabad is your husband not there in the house is your husband not in the house",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds a long question about the husband being home which is not in the reference."
+    },
+    {
+      "reference_text": "సల్లు సైజు ఎంత?",
+      "translation_text": "what is the size sir what is the size",
+      "category": "tone_softened",
+      "word_count_affected": 3,
+      "explanation": "The explicit Telugu word for breasts ('సల్లు') is translated softly as 'size' without specifying breasts."
+    },
+    {
+      "reference_text": "చేశారు మా ఫ్రెండ్ చేశారు ఐడి బ్లాక్",
+      "translation_text": "Our brand does the ride block",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference talks about a friend's ID being blocked, but the translation mistranslates it as 'Our brand does the ride block'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:24",
+      "type": "sexual_or_explicit",
+      "reference_text": "సల్లు సైజు ఎంత?",
+      "translation_text": "what is the size sir what is the size",
+      "status": "softened"
+    },
+    {
+      "t": "00:34",
+      "type": "sexual_or_explicit",
+      "reference_text": "అది కూడా తీయొచ్చు కదా కొద్దిగా",
+      "translation_text": "the saree can also be removed a bit",
+      "status": "preserved"
+    },
+    {
+      "t": "00:39",
+      "type": "sexual_or_explicit",
+      "reference_text": "జాకెట్ కూడా తీయొచ్చు కదా పక్కన",
+      "translation_text": "The jacket can also be removed",
+      "status": "preserved"
+    },
+    {
+      "t": "00:42",
+      "type": "sexual_or_explicit",
+      "reference_text": "ఓపెన్ చేయండి",
+      "translation_text": "open the clothes",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation captures the sexual requests to remove clothes, but softens the explicit word for breasts and introduces hallucinated text about a husband."
+}

@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_audio_call_426279116_audio_1788962727515.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 150,
+  "affected_word_count": 6,
+  "semantic_error_rate": 0.04,
+  "seconds": 3.8,
+  "discrepancies": [
+    {
+      "reference_text": "ఏం జాబ్ చేస్తున్నారు?",
+      "translation_text": "what joke did you do",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation misinterprets 'job' as 'joke'."
+    },
+    {
+      "reference_text": "50 రూపీస్",
+      "translation_text": "twenty fifty rupees",
+      "category": "number_or_id_altered",
+      "word_count_affected": 2,
+      "explanation": "The translation adds 'twenty' to the amount, changing 50 to twenty fifty."
+    },
+    {
+      "reference_text": "ఇన్స్టాల్",
+      "translation_text": "Insta",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The translation incorrectly translates 'install' as 'Insta' (Instagram)."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:42",
+      "type": "sexual_or_explicit",
+      "reference_text": "కాకపోతే సుఖాలు ఎవరు తీరుస్తారు చెప్పు",
+      "translation_text": "but who will satisfy the pleasures, tell me",
+      "status": "preserved"
+    },
+    {
+      "t": "01:30",
+      "type": "money_or_payment",
+      "reference_text": "50 రూపీస్ అంతా వేశాను",
+      "translation_text": "I put about twenty fifty rupees",
+      "status": "preserved"
+    },
+    {
+      "t": "01:41",
+      "type": "move_off_app",
+      "reference_text": "అందరూ వాట్సాప్ వాట్సాప్ లో వీడియో కాల్ చేస్తాను",
+      "translation_text": "everyone WhatsApp, I will do video call in WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "01:41",
+      "type": "money_or_payment",
+      "reference_text": "300 ఇవ్వు",
+      "translation_text": "give three hundred",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the overall intent and tone of the conversation, including explicit and policy-relevant moments, despite minor errors like translating 'job' as 'joke' and 'install' as 'Insta'."
+}

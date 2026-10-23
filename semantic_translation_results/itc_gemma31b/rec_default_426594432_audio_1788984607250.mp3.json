@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_426594432_audio_1788984607250.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 16,
+  "affected_word_count": 7,
+  "semantic_error_rate": 0.4375,
+  "seconds": 3.2,
+  "discrepancies": [
+    {
+      "reference_text": "ಇಲ್ಲ ಪರವಾಗಿಲ್ಲ ಇಷ್ಟೇ ಸಾಕು",
+      "translation_text": "your offer is not audible",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'No, it's okay, this is enough', but the translation says 'your offer is not audible'."
+    },
+    {
+      "reference_text": "ವಾಟ್ಸಪ್ ಗೆ ಬರ್ತ್ಯಾ",
+      "translation_text": "WhatsApp paper cha",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'Will you come to WhatsApp?', but the translation is garbled as 'WhatsApp paper cha'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:04",
+      "type": "sexual_or_explicit",
+      "reference_text": "ತೋರ್ಸು",
+      "translation_text": "show it no",
+      "status": "preserved"
+    },
+    {
+      "t": "00:06",
+      "type": "sexual_or_explicit",
+      "reference_text": "ತೋರ್ಸು",
+      "translation_text": "show it",
+      "status": "preserved"
+    },
+    {
+      "t": "00:13",
+      "type": "sexual_or_explicit",
+      "reference_text": "ವಿಡಿಯೋ ತೋರ್ಸು",
+      "translation_text": "show it I said show it",
+      "status": "preserved"
+    },
+    {
+      "t": "00:15",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್",
+      "translation_text": "WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "00:17",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್ ಗೆ ಬರ್ತ್ಯಾ",
+      "translation_text": "WhatsApp paper cha",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the explicit requests to show things, but fails to accurately translate the request to move to WhatsApp, rendering it as gibberish."
+}

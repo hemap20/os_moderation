@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_audio_call_424970880_audio_1788845652480.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 53,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.0943,
+  "seconds": 3.3,
+  "discrepancies": [
+    {
+      "reference_text": "என்ன செக்ஸ் டாபிக்கா?",
+      "translation_text": "Hello, what six topic?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The word 'sex' was mistranslated as 'six'."
+    },
+    {
+      "reference_text": "வீடியோ கால்?",
+      "translation_text": "Very good",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The question 'Video call?' was translated as 'Very good'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:14",
+      "type": "sexual_or_explicit",
+      "reference_text": "வீடியோ கால்ல குடுத்தீங்களா?",
+      "translation_text": "Did you make a video call?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:19",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஓகே ஜி, வீடியோ கால்ல பேசிக்கலாமா?",
+      "translation_text": "",
+      "status": "missing"
+    },
+    {
+      "t": "00:27",
+      "type": "sexual_or_explicit",
+      "reference_text": "என்ன செக்ஸ் டாபிக்கா?",
+      "translation_text": "Hello, what six topic?",
+      "status": "softened"
+    },
+    {
+      "t": "00:34",
+      "type": "money_or_payment",
+      "reference_text": "நான் ஒன்லி பே அண்ட் சர்வீஸ் மட்டும்தான் எடுப்பேன்",
+      "translation_text": "I will only take pay and service.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:34",
+      "type": "sexual_or_explicit",
+      "reference_text": "வீடியோ கால் சர்வீஸ், இந்த மாதிரி பேச எல்லாம் மாட்டேன்",
+      "translation_text": "I won't talk like this for video call service.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation mostly preserves the intent of the call, but mistranslates 'sex' as 'six' and misses a proposal to talk on video call."
+}

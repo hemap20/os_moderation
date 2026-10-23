@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_426656120_audio_1788992939200.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 213,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.061,
+  "seconds": 4.1,
+  "discrepancies": [
+    {
+      "reference_text": "ലൈറ്റ് ഇട്ടേക്കണ",
+      "translation_text": "please turn on the light",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says the light is already turned on, but the translation says 'please turn on the light'."
+    },
+    {
+      "reference_text": "അത് ഒമാന്",
+      "translation_text": "where is it",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions Oman, which is missing from the translation."
+    },
+    {
+      "reference_text": "വേറെ ആരുടെയെങ്കിലും തരല്ലേ",
+      "translation_text": "don't give readymade",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'don't give someone else's [number]', but the translation says 'don't give readymade'."
+    },
+    {
+      "reference_text": "ഞാൻ ഹൈഡ് ചെയ്യാം",
+      "translation_text": "I will put hi",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I will hide [it]', but the translation mistranslates it as 'I will put hi'."
+    },
+    {
+      "reference_text": "ഹൈഡ് ആണോ",
+      "translation_text": "should I put hi",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Is it hidden?', but the translation mistranslates it as 'should I put hi'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:50",
+      "type": "move_off_app",
+      "reference_text": "ഞാൻ രണ്ടും ഉണ്ട് ഇതിനകത്ത് ഓപ്പൺ ഡോക്ക് ഇല്ല ഓപ്പൺ ഡോക്ക് വേണ്ടവർക്ക് വാട്സാപ്പ് നമ്പർ കൊടുക്കും",
+      "translation_text": "I have both in this, there is no open dock, for those who want open dock, I will give WhatsApp number",
+      "status": "preserved"
+    },
+    {
+      "t": "02:22",
+      "type": "move_off_app",
+      "reference_text": "പ്ലസ് 966 അല്ലേ... 971... 5656... 22... 56564... 565622... ഡബിൾ 2... 5... ഡബിൾ വൺ",
+      "translation_text": "plus nine six right, nine seven one... first nine seven... then five six five six five six five six... two two five six five six four... five six five six double two double two... five five double one double one",
+      "status": "preserved"
+    },
+    {
+      "t": "03:06",
+      "type": "money_or_payment",
+      "reference_text": "പെയ്ഡ് സർവീസ് ആണ് നിങ്ങൾക്ക് പറഞ്ഞേക്കാം",
+      "translation_text": "it's a paid service, let me tell you beforehand",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the core intent and policy-relevant moments, including sharing a WhatsApp number and mentioning a paid service, despite minor mistranslations of specific words like 'hide' and 'Oman'."
+}

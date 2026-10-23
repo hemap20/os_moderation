@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_audio_call_426596251_audio_1788984756063.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 67,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.0746,
+  "seconds": 5.3,
+  "discrepancies": [
+    {
+      "reference_text": "मैरिड है सिंगल है आप?",
+      "translation_text": "are you speaking from Marida?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The question about being married or single was mistranslated as speaking from a place called Marida."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:22",
+      "type": "move_off_app",
+      "reference_text": "अच्छा व्हाट्सएप वीडियो कॉलिंग करते हैं आप?",
+      "translation_text": "Okay, do you do WhatsApp video calling?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:25",
+      "type": "money_or_payment",
+      "reference_text": "क्या चार्ज लेते हैं?",
+      "translation_text": "What charge do you take?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:28",
+      "type": "money_or_payment",
+      "reference_text": "हम आप वो मतलब 300 में 10 मिनट देते हैं और 600 में आधा घंटा देते हैं",
+      "translation_text": "I mean, we give ten minutes for three hundred and half an hour for six hundred",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key policy-relevant details about WhatsApp video calling and pricing, though it contains a mistranslation regarding the user's marital status."
+}

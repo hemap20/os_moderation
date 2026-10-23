@@ -1,0 +1,38 @@
+{
+  "file_id": "rec_audio_call_421768524_audio_1788539479106.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 16,
+  "affected_word_count": 10,
+  "semantic_error_rate": 0.625,
+  "seconds": 2.4,
+  "discrepancies": [
+    {
+      "reference_text": "दूसरा वाला तो मेरा डिलीट ही है नंबर",
+      "translation_text": "the WhatsApp term has been deleted",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The translation incorrectly translates 'my other number is deleted' as 'the WhatsApp term has been deleted'."
+    },
+    {
+      "reference_text": "कहां से हो",
+      "translation_text": "Let's go",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation incorrectly translates 'Where are you from?' as 'Let's go'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:02",
+      "type": "move_off_app",
+      "reference_text": "हेलो व्हाट्सएप दूसरा वाला तो मेरा डिलीट ही है नंबर",
+      "translation_text": "Hello, the WhatsApp, the WhatsApp term has been deleted",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "no",
+  "summary": "The translation contains major errors, misinterpreting a statement about a deleted phone number as 'WhatsApp term' and a question about location as 'Let's go'."
+}

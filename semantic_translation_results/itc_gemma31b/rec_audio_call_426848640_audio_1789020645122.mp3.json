@@ -1,0 +1,38 @@
+{
+  "file_id": "rec_audio_call_426848640_audio_1789020645122.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 76,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.1447,
+  "seconds": 2.8,
+  "discrepancies": [
+    {
+      "reference_text": "शादी हो गई क्या हां शादी",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 5,
+      "explanation": "The reference discussion about marriage is completely missing from the translation."
+    },
+    {
+      "reference_text": "दिखाऊंगा नीचे वाला नीचे वाला दिखाऊंगा",
+      "translation_text": "I will show the bottom one the bottom one",
+      "category": "tone_softened",
+      "word_count_affected": 6,
+      "explanation": "The translation of 'नीचे वाला' as 'the bottom one' is literal and slightly softens the explicit sexual reference to genitals."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:36",
+      "type": "sexual_or_explicit",
+      "reference_text": "वीडियो कॉल करो क्या करोगे वीडियो कॉल करके हेलो वीडियो कॉल करो दिखाऊंगा नीचे वाला नीचे वाला दिखाऊंगा",
+      "translation_text": "What will you do video call Hello I will do a video call I will show the bottom one the bottom one",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation captures the main intent of the call, including the request for a video call and the explicit offer to show genitals, though the explicit phrasing is slightly softened and some minor conversation about marriage is missing."
+}

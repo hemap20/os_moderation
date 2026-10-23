@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_audio_call_421865395_audio_1788545383247.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 47,
+  "affected_word_count": 6,
+  "semantic_error_rate": 0.1277,
+  "seconds": 2.5,
+  "discrepancies": [
+    {
+      "reference_text": "वेयर आर यू फ्रॉम?",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The question 'Where are you from?' asked by the speaker at 00:29 is missing from the translation."
+    },
+    {
+      "reference_text": "इंग्लिश मालूम?",
+      "translation_text": "English ones",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The question asking if they know English is translated incorrectly as 'English ones'."
+    },
+    {
+      "reference_text": "300 अमाउंट वाट द वीडियो कॉलिंग ओके",
+      "translation_text": "three hundred amount send video calling okay",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The word 'send' is added to the translation, which is not present in the reference text."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:36",
+      "type": "money_or_payment",
+      "reference_text": "300 अमाउंट वाट द वीडियो कॉलिंग ओके",
+      "translation_text": "three hundred amount send video calling okay",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key policy moment regarding payment for video calling, though it has minor translation errors and misses one question."
+}

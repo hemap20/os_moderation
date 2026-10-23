@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_audio_call_424416192_audio_1788788125311.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 330,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.0455,
+  "seconds": 3.7,
+  "discrepancies": [
+    {
+      "reference_text": "பேசிட்டு போனா ஒன்னும் பெருசா தெரியாது",
+      "translation_text": "If we do basics, it won't seem like a big deal.",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'If we talk while going' (பேசிட்டு போனா), but the translation mistranslates it as 'If we do basics'."
+    },
+    {
+      "reference_text": "எனக்கு அந்த நீரு இனி 200 ரூபாய் எனக்கு குடு",
+      "translation_text": "Give me that hundred, two hundred rupees",
+      "category": "number_or_id_altered",
+      "word_count_affected": 9,
+      "explanation": "The reference says 'give me 200 rupees' (200 ரூபாய் எனக்கு குடு), but the translation adds 'hundred' to it."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:00",
+      "type": "move_off_app",
+      "reference_text": "வீடியோ கால் பண்ணுன்னு கேப்பாங்க, நம்பர் குடுன்னு கேப்பாங்க",
+      "translation_text": "They will ask to video call, they will ask for the number.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:24",
+      "type": "move_off_app",
+      "reference_text": "நம்பர் குடுத்து, அவங்க நைட் 10:00 மணிக்கு வீடியோ கால் பேசி",
+      "translation_text": "give their number and at ten o'clock at night... Talking on video call",
+      "status": "preserved"
+    },
+    {
+      "t": "02:21",
+      "type": "money_or_payment",
+      "reference_text": "காசு குடு",
+      "translation_text": "Give me money",
+      "status": "preserved"
+    },
+    {
+      "t": "02:21",
+      "type": "move_off_app",
+      "reference_text": "நான் வாட்ஸ்அப்ல நம்பர் தர்றேன், நம்ம வாட்ஸ்அப்ல பேசிக்கலாம்",
+      "translation_text": "I will give the number on WhatsApp, we can talk on WhatsApp.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:21",
+      "type": "money_or_payment",
+      "reference_text": "ஒரு மணி நேரம் பேசினா 100 ரூபாய் தான் வரும், எனக்கு அந்த நீரு இனி 200 ரூபாய் எனக்கு குடு",
+      "translation_text": "if we talk for one hour, it's only a hundred rupees. Give me that hundred, two hundred rupees",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is highly accurate and preserves all policy-relevant warnings about off-app movement and payment scams, with only minor translation errors."
+}

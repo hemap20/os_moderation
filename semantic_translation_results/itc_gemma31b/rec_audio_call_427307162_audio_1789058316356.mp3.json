@@ -1,0 +1,108 @@
+{
+  "file_id": "rec_audio_call_427307162_audio_1789058316356.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 350,
+  "affected_word_count": 20,
+  "semantic_error_rate": 0.0571,
+  "seconds": 6.8,
+  "discrepancies": [
+    {
+      "reference_text": "ఐటి సాఫ్ట్వేర్",
+      "translation_text": "Not IT software",
+      "category": "negation_flipped",
+      "word_count_affected": 2,
+      "explanation": "The reference states 'IT software' but the translation incorrectly adds a negation 'Not IT software'."
+    },
+    {
+      "reference_text": "ఈసారి హైదరాబాద్ వచ్చినప్పుడు మీట్ అవుదామా మనం?",
+      "translation_text": "Can we place an order this time let's meet",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference asks about meeting when coming to Hyderabad, but the translation introduces an unrelated phrase about placing an order."
+    },
+    {
+      "reference_text": "వరంగల్ మాది",
+      "translation_text": "ours is Ongole",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions 'Warangal' as their hometown, but the translation changes it to 'Ongole'."
+    },
+    {
+      "reference_text": "సోలార్ కంపెనీ ఇన్ చార్జ్",
+      "translation_text": "solar company incharge",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference states he is a solar company in-charge, but the translation links it with 'and IT' which is incorrect."
+    },
+    {
+      "reference_text": "మనం జస్ట్ అప్పుడు వెళ్దాం",
+      "translation_text": "we will go to the shop nicely",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'we will just go then', but the translation adds 'to the shop nicely' which is not in the source."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:51",
+      "type": "meeting_in_person",
+      "reference_text": "ఈసారి హైదరాబాద్ వచ్చినప్పుడు మీట్ అవుదామా మనం?",
+      "translation_text": "Can we place an order this time let's meet",
+      "status": "preserved"
+    },
+    {
+      "t": "03:57",
+      "type": "meeting_in_person",
+      "reference_text": "హైదరాబాద్ వచ్చినప్పుడు మీట్ అవుదాం అంటున్నా",
+      "translation_text": "when coming to Hyderabad you are saying study",
+      "status": "intent_changed"
+    },
+    {
+      "t": "04:45",
+      "type": "meeting_in_person",
+      "reference_text": "ఎక్కడికి వస్తే ఎలా మరి మీట్ అయ్యేది?",
+      "translation_text": "after coming there then what about you",
+      "status": "intent_changed"
+    },
+    {
+      "t": "04:50",
+      "type": "meeting_in_person",
+      "reference_text": "ఎలా మీట్ అవుదాం అంటున్నా?",
+      "translation_text": "I'm asking how we can meet",
+      "status": "preserved"
+    },
+    {
+      "t": "05:00",
+      "type": "meeting_in_person",
+      "reference_text": "ఎలా అండి మీట్ అయ్యేది అంటున్నా?",
+      "translation_text": "I'm asking how we can meet",
+      "status": "preserved"
+    },
+    {
+      "t": "06:20",
+      "type": "meeting_in_person",
+      "reference_text": "అదే ఎలా మీట్ అవుదాం అని",
+      "translation_text": "That's how we can meet",
+      "status": "preserved"
+    },
+    {
+      "t": "06:52",
+      "type": "move_off_app",
+      "reference_text": "ఫోన్ నెంబర్ ఇస్తారా?",
+      "translation_text": "Will you give phone number",
+      "status": "preserved"
+    },
+    {
+      "t": "08:18",
+      "type": "move_off_app",
+      "reference_text": "నెంబర్ చెప్పు అంటున్నా",
+      "translation_text": "I'm asking to tell the number",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation successfully preserves the core intent of the speakers trying to arrange an in-person meeting and exchange phone numbers, despite minor translation errors in location names and side details."
+}

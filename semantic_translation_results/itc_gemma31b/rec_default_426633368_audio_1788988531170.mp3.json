@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_426633368_audio_1788988531170.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 89,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.1685,
+  "seconds": 4.5,
+  "discrepancies": [
+    {
+      "reference_text": "என்ன வேணும்",
+      "translation_text": "tell me your Rithiksha",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'what do you want' but the translation introduces a random name 'Rithiksha'."
+    },
+    {
+      "reference_text": "அப்புறம் என்ன மாரிலங்கா",
+      "translation_text": "Okay keep it you I will come like that they are changing speak from here",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation completely hallucinates a long sentence instead of translating the simple reference phrase."
+    },
+    {
+      "reference_text": "கொஞ்சம் மாருவாத்த காமிங்க",
+      "translation_text": "Show these breasts",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks to show the face/head slightly, but the translation incorrectly translates it as 'breasts'."
+    },
+    {
+      "reference_text": "நல்லா வாய் போடுவீங்களா",
+      "translation_text": "Will you put [unclear] mm what mm / No will you put mouth mm",
+      "category": "tone_softened",
+      "word_count_affected": 3,
+      "explanation": "The reference asks explicitly about performing oral sex ('வாய் போடுவீங்களா'), which is translated literally/vaguely as 'put mouth'."
+    },
+    {
+      "reference_text": "நல்லா காமிங்க உங்க முகத்தை",
+      "translation_text": "Just like that you in the height oh show your breasts mm",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks to show the face ('முகத்தை'), but the translation incorrectly translates it as 'breasts'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:15",
+      "type": "sexual_or_explicit",
+      "reference_text": "கொஞ்சம் செக்ஸியா பேசுங்க",
+      "translation_text": "speak sexily",
+      "status": "preserved"
+    },
+    {
+      "t": "01:38",
+      "type": "sexual_or_explicit",
+      "reference_text": "நல்லா போடுங்க வாய் போடுவீங்களா",
+      "translation_text": "Will you put [unclear]",
+      "status": "softened"
+    },
+    {
+      "t": "01:54",
+      "type": "sexual_or_explicit",
+      "reference_text": "நல்லா வாய் போடுவீங்களா",
+      "translation_text": "will you put mouth",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation is highly inaccurate, frequently hallucinating words like 'breasts' when the reference says 'face', and translating explicit sexual requests like oral sex too literally or vaguely."
+}

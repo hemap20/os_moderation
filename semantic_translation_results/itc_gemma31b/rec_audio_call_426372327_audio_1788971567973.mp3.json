@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_audio_call_426372327_audio_1788971567973.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 102,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.0882,
+  "seconds": 2.9,
+  "discrepancies": [
+    {
+      "reference_text": "நீ அமௌன்ட் பே பண்ற மாதிரி இருக்கும்",
+      "translation_text": "it looks like I am paying the amount",
+      "category": "intent_changed",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'You will have to pay the amount' (referring to the caller), but the translation incorrectly says 'I am paying'."
+    },
+    {
+      "reference_text": "நான் ஏமாத்த மாட்டேன்",
+      "translation_text": "I cheat",
+      "category": "negation_flipped",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I won't cheat', but the translation flips this to 'I cheat'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:26",
+      "type": "move_off_app",
+      "reference_text": "வாட்ஸ்அப்ல பேசி இருக்கேன்",
+      "translation_text": "have you spoken on WhatsApp etc",
+      "status": "preserved"
+    },
+    {
+      "t": "00:58",
+      "type": "move_off_app",
+      "reference_text": "நம்பர் குடு",
+      "translation_text": "give number",
+      "status": "preserved"
+    },
+    {
+      "t": "01:00",
+      "type": "money_or_payment",
+      "reference_text": "நீ அமௌன்ட் பே பண்ற மாதிரி இருக்கும்",
+      "translation_text": "it looks like I am paying the amount",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:04",
+      "type": "money_or_payment",
+      "reference_text": "300",
+      "translation_text": "three hundred",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow of the conversation but contains critical errors regarding who is paying the money and whether the speaker cheats, reversing the original intent of those statements."
+}

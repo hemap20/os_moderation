@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_426439325_audio_1788975665682.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 51,
+  "affected_word_count": 18,
+  "semantic_error_rate": 0.3529,
+  "seconds": 3.3,
+  "discrepancies": [
+    {
+      "reference_text": "నా పేరు హేమ, నీ పేరు?",
+      "translation_text": "My name is Hemanth",
+      "category": "named_entity_altered",
+      "word_count_affected": 5,
+      "explanation": "The name 'Hema' is translated as 'Hemanth'."
+    },
+    {
+      "reference_text": "అన్ మ్యారీడ్, చూస్తున్నా ఫ్రెండ్స్ విత్ బెనిఫిట్స్ కోసం, నువ్వు?",
+      "translation_text": "He is saying married, you are looking for unmarried for friends benefits",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The speaker says she is unmarried and looking for friends with benefits, but the translation says 'He is saying married, you are looking for unmarried'."
+    },
+    {
+      "reference_text": "రొమాంటిక్ గా రొమాంటిక్ గా కాదా?",
+      "translation_text": "Tomato, is it not tomato?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The word 'romantic' is mistranslated as 'tomato'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:15",
+      "type": "sexual_or_explicit",
+      "reference_text": "అన్ మ్యారీడ్, చూస్తున్నా ఫ్రెండ్స్ విత్ బెనిఫిట్స్ కోసం, నువ్వు?",
+      "translation_text": "He is saying married, you are looking for unmarried for friends benefits",
+      "status": "preserved"
+    },
+    {
+      "t": "00:22",
+      "type": "sexual_or_explicit",
+      "reference_text": "ఫ్రెండ్స్ విత్ బెనిఫిట్స్ కోసం చూస్తున్నావ్ నువ్వు?",
+      "translation_text": "Are you looking for friendship benefits?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:50",
+      "type": "move_off_app",
+      "reference_text": "ఒక్క నిమిషం లైన్ లో ఉండు, ఇన్స్టా ఉందా?",
+      "translation_text": "One minute, stay on the line, do you have Insta?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:53",
+      "type": "move_off_app",
+      "reference_text": "ఇన్స్టా ఉంది",
+      "translation_text": "",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several errors, including mistranslating 'Hema' as 'Hemanth', 'romantic' as 'tomato', and missing the final confirmation about having Instagram."
+}

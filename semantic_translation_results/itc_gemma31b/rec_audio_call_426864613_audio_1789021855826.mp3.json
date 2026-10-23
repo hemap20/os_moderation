@@ -1,0 +1,44 @@
+{
+  "file_id": "rec_audio_call_426864613_audio_1789021855826.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 144,
+  "affected_word_count": 10,
+  "semantic_error_rate": 0.0694,
+  "seconds": 2.8,
+  "discrepancies": [
+    {
+      "reference_text": "ನಾವ್ ಮಂಗಳೂರು",
+      "translation_text": "Nagamangalore",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference says Mangalore, but the translation incorrectly translates it as Nagamangalore."
+    },
+    {
+      "reference_text": "ನಮ್ದು ಸ್ಟೇಷನರಿ ಶಾಪ್ ಇದೆ",
+      "translation_text": "our test",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The reference mentions having a stationery shop, which is translated incorrectly as 'our test'."
+    },
+    {
+      "reference_text": "ಮಮ್ಮಿ",
+      "translation_text": "Malli",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'Mummy' (mother), but the translation says 'Malli'."
+    },
+    {
+      "reference_text": "ರೆಸ್ಟ್ ಅಲ್ಲಿ ಇದ್ದೀರಾ?",
+      "translation_text": "in a hostel now",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks if they are resting, but the translation asks if they are in a hostel."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the overall friendly, casual tone of the call, though there are a few minor mistranslations of specific words like locations and shop types."
+}

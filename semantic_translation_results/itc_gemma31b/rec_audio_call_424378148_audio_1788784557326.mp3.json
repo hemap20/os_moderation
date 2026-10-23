@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_audio_call_424378148_audio_1788784557326.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 181,
+  "affected_word_count": 20,
+  "semantic_error_rate": 0.1105,
+  "seconds": 3.2,
+  "discrepancies": [
+    {
+      "reference_text": "என் பேரு ராஜேஷ்",
+      "translation_text": "my name is Raj",
+      "category": "named_entity_altered",
+      "word_count_affected": 3,
+      "explanation": "The name Rajesh was translated as Raj."
+    },
+    {
+      "reference_text": "நானா ஸ்டடி பண்ணிட்டு இருக்கேன்",
+      "translation_text": "me okay",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The speaker's statement that they are studying is missing from the translation."
+    },
+    {
+      "reference_text": "நான் கம்பெனில ஒர்க் பண்றேன்",
+      "translation_text": "I am doing computer work",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "Working in a company was translated as doing computer work."
+    },
+    {
+      "reference_text": "உங்களை விட ரெண்டு வயசு பெரிய பொண்ணுங்க",
+      "translation_text": "two years older than you",
+      "category": "key_content_missing",
+      "word_count_affected": 7,
+      "explanation": "The reference specifies that she is a girl/woman who is two years older, but the translation misses the word 'girl/woman'."
+    },
+    {
+      "reference_text": "அப்படியே வீட்ல வந்துட்டு",
+      "translation_text": "just took the bed",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "Coming home was mistranslated as taking the bed."
+    },
+    {
+      "reference_text": "நேத்து நைட்டு இன்ஸ்டால் பண்ணேன்",
+      "translation_text": "woke up yesterday night Installed",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds 'woke up' which is not in the reference."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:28",
+      "type": "move_off_app",
+      "reference_text": "இன்ஸ்டாகிராம்ல பார்த்தேனா",
+      "translation_text": "I saw it on Instagram",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the overall friendly tone and intent of the conversation, though there are minor errors such as translating 'Rajesh' as 'Raj' and mistranslating 'studying' and 'coming home'."
+}

@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426657127_audio_1788993186310.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 99,
+  "affected_word_count": 6,
+  "semantic_error_rate": 0.0606,
+  "seconds": 3.4,
+  "discrepancies": [
+    {
+      "reference_text": "എനിക്ക് രാവിലെ കുറച്ച് പൈസ വേണം ടോ.",
+      "translation_text": "do I need some money in the morning?",
+      "category": "intent_changed",
+      "word_count_affected": 6,
+      "explanation": "The speaker's statement that they need some money in the morning is translated as a question."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:36",
+      "type": "money_or_payment",
+      "reference_text": "എനിക്ക് രാവിലെ കുറച്ച് പൈസ വേണം ടോ.",
+      "translation_text": "do I need some money in the morning?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:45",
+      "type": "move_off_app",
+      "reference_text": "ഉണ്ട്. ഓപ്പൺ ഡോക് ഉണ്ട്. വാട്സാപ്പിലാണ്. പെയ്ഡ് സർവീസാണ്.",
+      "translation_text": "There is, there is open dock, it is on WhatsApp, it is a paid service",
+      "status": "preserved"
+    },
+    {
+      "t": "00:45",
+      "type": "money_or_payment",
+      "reference_text": "ഉണ്ട്. ഓപ്പൺ ഡോക് ഉണ്ട്. വാട്സാപ്പിലാണ്. പെയ്ഡ് സർവീസാണ്.",
+      "translation_text": "There is, there is open dock, it is on WhatsApp, it is a paid service",
+      "status": "preserved"
+    },
+    {
+      "t": "00:52",
+      "type": "money_or_payment",
+      "reference_text": "ഇതിൽ നിന്ന് അഞ്ച് രൂപ വെച്ച് കിട്ടുന്നുണ്ട് നമുക്ക് ഒരു മിനിറ്റിന്. സോ ഫ്രീ ആയിട്ട് ചെയ്യേണ്ട കാര്യം നമുക്കില്ലല്ലോ.",
+      "translation_text": "From this, five rupees is being received, for us per minute, so there is no need to do it for free, right?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:04",
+      "type": "move_off_app",
+      "reference_text": "ഞാൻ പറഞ്ഞന്നേയുള്ളൂ. ഞാൻ ചെയ്യുന്നെങ്കിൽ ഞാൻ വാട്സാപ്പിൽ ചെയ്യാറുള്ളൂ. എനിക്ക് സേഫ്റ്റി ഇഷ്യൂ കാരണം പേടിയാണ്.",
+      "translation_text": "I just said it. If I do it, I usually do it on WhatsApp, for me safety issues Because I am afraid",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate, but it incorrectly translates a statement about needing money as a question, slightly altering the intent."
+}

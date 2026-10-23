@@ -46,6 +46,8 @@ OUT = config.PROJECT_ROOT / "semantic_translation_results"
 SOURCES = {"audio": config.PROJECT_ROOT / "translations" / "audio_gemini31fl",
            "itc": config.PROJECT_ROOT / "translations" / "itc10s_gemini31fl",
            # Local Gemma translations of the same ITC transcripts (10-call speed test)
+           "itc_gemma31b": config.PROJECT_ROOT / "translations" / "itc10s_gemma31b",
+           "itc_gemma31b_thinking": config.PROJECT_ROOT / "translations" / "itc10s_gemma31b_thinking",
            **{f"itc_gemma_{m}": config.PROJECT_ROOT / "translations" / f"itc10s_gemma_{m}"
               for m in ("e2b", "e2b_thinking", "e4b", "e4b_thinking")}}
 CATS = ["number_or_id_altered", "negation_flipped", "named_entity_altered", "key_content_missing",

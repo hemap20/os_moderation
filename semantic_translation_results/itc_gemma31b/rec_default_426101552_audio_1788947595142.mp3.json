@@ -1,0 +1,38 @@
+{
+  "file_id": "rec_default_426101552_audio_1788947595142.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 128,
+  "affected_word_count": 8,
+  "semantic_error_rate": 0.0625,
+  "seconds": 2.5,
+  "discrepancies": [
+    {
+      "reference_text": "ಏನ್ ಮಾಡ್ತಾ ಇದ್ದೀರಾ?",
+      "translation_text": "what will you do",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'What are you doing?' but the translation translates it as future tense 'what will you do'."
+    },
+    {
+      "reference_text": "ಹೇ ಇಟ್ಕೊಳ್ಳೋಕೆ ಆಗ್ತಾ ಇಲ್ಲ",
+      "translation_text": "hey keeping it like that Aadhaar card",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'Hey, I can't control/hold it' (suggestive), but the translation hallucinated 'Aadhaar card'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:29",
+      "type": "sexual_or_explicit",
+      "reference_text": "ಹೇ ಇಟ್ಕೊಳ್ಳೋಕೆ ಆಗ್ತಾ ಇಲ್ಲ",
+      "translation_text": "hey keeping it like that Aadhaar card",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate for general conversation, but completely fails and hallucinates 'Aadhaar card' during a sexually suggestive moment at the end of the call."
+}

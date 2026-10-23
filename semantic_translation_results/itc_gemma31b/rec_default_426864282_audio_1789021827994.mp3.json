@@ -1,0 +1,58 @@
+{
+  "file_id": "rec_default_426864282_audio_1789021827994.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 165,
+  "affected_word_count": 28,
+  "semantic_error_rate": 0.1697,
+  "seconds": 4.1,
+  "discrepancies": [
+    {
+      "reference_text": "ಪೈ ಎಲ್ಲಿ ವರ್ಕ್ತಾ ಇದ್ದೀರಾ",
+      "translation_text": "where are you working",
+      "category": "named_entity_altered",
+      "word_count_affected": 4,
+      "explanation": "The reference mentions 'Pai' (Pai International, a home appliances store), which is omitted/altered in the translation."
+    },
+    {
+      "reference_text": "ಫಾರಿನ್ ಟೀಚರ್ ಅಂದ್ಕೊಂಡೆ ನಿಮ್ ಕಡೆ ಹೋಮ್ ಅಪ್ಲೈಯನ್ಸ್ ಕಂಡ್ರೆ ಗೊತ್ತಾಗುತ್ತೆ",
+      "translation_text": "Wearing an orange t-shirt, behind home appliances, if you see home appliances you will definitely know",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference says 'I thought you were a foreign teacher, but seeing the home appliances behind you makes it clear', which is mistranslated as 'Wearing an orange t-shirt'."
+    },
+    {
+      "reference_text": "ಇಲ್ಲ ಮ್ಯಾರೀಡ್",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The speaker's statement that they are married is missing from the translation."
+    },
+    {
+      "reference_text": "ಮ್ಯಾರೀಡ್ ಅನಿಸ್ತಿದೆ",
+      "translation_text": "yes",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'It feels like I'm married', which is translated simply as 'yes'."
+    },
+    {
+      "reference_text": "ಅಯ್ಯೋ",
+      "translation_text": "Oh Friends, all this",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds 'Friends, all this' which is not in the reference."
+    },
+    {
+      "reference_text": "ಇನ್ನ ಫುಲ್ ಹೆಂಗ ಅಂದ್ರೆ ಆಜಿಟಿವ್ ಇದೆ ಅದಕ್ಕೆ ಕೇಳ್ದೆ ಫುಲ್ ಹೆಂಗಾಗಿದ್ದೀರಾ ಇನ್ನು",
+      "translation_text": "laptop still full how negative is not there, that's why I'm asking",
+      "category": "other_meaning_change",
+      "word_count_affected": 11,
+      "explanation": "The reference says 'You still look so young, that's why I asked', which is mistranslated as 'laptop still full how negative is not there'."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow of the conversation about marriage and locations, but contains several mistranslations of specific details, such as the mention of 'Pai' and looking young."
+}

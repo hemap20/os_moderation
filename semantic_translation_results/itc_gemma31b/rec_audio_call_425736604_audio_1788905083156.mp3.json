@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_audio_call_425736604_audio_1788905083156.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 38,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.1316,
+  "seconds": 3.6,
+  "discrepancies": [
+    {
+      "reference_text": "पढ़ाई करता हूँ",
+      "translation_text": "studied",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'I study' (present tense), but the translation says 'studied' (past tense)."
+    },
+    {
+      "reference_text": "वीडियो कॉल चाहिए?",
+      "translation_text": "I want a video call",
+      "category": "intent_changed",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'Do you want a video call?' but the translation translates it as a statement 'I want a video call'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:32",
+      "type": "move_off_app",
+      "reference_text": "व्हाट्सएप में आओगे?",
+      "translation_text": "will you come on WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "00:34",
+      "type": "sexual_or_explicit",
+      "reference_text": "वीडियो कॉल चाहिए?",
+      "translation_text": "I want a video call",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation mostly captures the conversation but changes a question about wanting a video call into a statement of wanting one, and slightly alters the tense of the user's occupation."
+}

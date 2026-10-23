@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_425656790_audio_1788896051031.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 121,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.0744,
+  "seconds": 4.8,
+  "discrepancies": [
+    {
+      "reference_text": "என் பேரு சுதா",
+      "translation_text": "mm I am speaking",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The speaker's name 'Sudha' is missing from the translation."
+    },
+    {
+      "reference_text": "சோலோஸ் ஆப்",
+      "translation_text": "to eat dosa",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The app name 'Solos app' is mistranslated as 'to eat dosa'."
+    },
+    {
+      "reference_text": "செக்ஸியா",
+      "translation_text": "six",
+      "category": "tone_softened",
+      "word_count_affected": 1,
+      "explanation": "The word 'sexily' is mistranslated as 'six', softening the explicit nature of the conversation."
+    },
+    {
+      "reference_text": "மேரேஜ் ஆன லேடிஸ்",
+      "translation_text": "marriage and enjoys",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The phrase 'married ladies' is mistranslated as 'marriage and enjoys'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:47",
+      "type": "sexual_or_explicit",
+      "reference_text": "ரோமேண்டிக்கா பேசுவாங்க செக்ஸியா பேசுவாங்க பிரண்ட்லியாவும் பேசுவாங்க",
+      "translation_text": "will they speak romantically, six they will speak, they will also speak friendly",
+      "status": "softened"
+    },
+    {
+      "t": "01:03",
+      "type": "move_off_app",
+      "reference_text": "தனியா வாட்ஸ்அப் இதுல பேசினா பேசுங்க வாட்ஸ்அப் நம்பர் எல்லாம் கொடுத்து",
+      "translation_text": "if you speak separately on WhatsApp, speak, if they give WhatsApp numbers",
+      "status": "preserved"
+    },
+    {
+      "t": "01:07",
+      "type": "money_or_payment",
+      "reference_text": "ஜிபே பண்ண சொன்னா அதெல்லாம் பேசாதீங்க காசு வாங்கிட்டு ஏமாத்திருவாங்க",
+      "translation_text": "and tell you to GPay, don't speak about all that, they will take the money and cheat you",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate regarding the user's intent and warnings about off-app scams, but it mistranslates 'sexily' as 'six' and 'married ladies' as 'marriage and enjoys'."
+}

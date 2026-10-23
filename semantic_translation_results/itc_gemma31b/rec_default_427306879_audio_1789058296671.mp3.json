@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_427306879_audio_1789058296671.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 59,
+  "affected_word_count": 14,
+  "semantic_error_rate": 0.2373,
+  "seconds": 3.4,
+  "discrepancies": [
+    {
+      "reference_text": "నేను హలో అండి మీరు",
+      "translation_text": "You are from Hyderabad",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'I, hello, you' whereas the translation introduces 'Hyderabad' which is not mentioned."
+    },
+    {
+      "reference_text": "చేసుకోవాలి కదా",
+      "translation_text": "No, must get married, must do it at home",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds a whole sentence about getting married and doing it at home which is not in the reference."
+    },
+    {
+      "reference_text": "ఫస్ట్ కాల్ చేస్తారా",
+      "translation_text": "will you make a WhatsApp call?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks about making a 'first call' while the translation changes it to a 'WhatsApp call'."
+    },
+    {
+      "reference_text": "300",
+      "translation_text": "Three senses",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The number '300' is translated incorrectly as 'Three senses'."
+    },
+    {
+      "reference_text": "రామకృష్ణ గారు ఏం లేకపోతే లేదండి",
+      "translation_text": "if there is trust it's safety, otherwise you will say no",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference mentions a name 'Ramakrishna garu' and says 'if there is nothing, then no', which is translated completely differently."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:03",
+      "type": "money_or_payment",
+      "reference_text": "ఎంత చేయాలి ఎంత పంపించాలి 300",
+      "translation_text": "How much should I do, how much should I send? Three senses",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several inaccuracies, including translating 'first call' as 'WhatsApp call', mistranslating the number '300' as 'Three senses', and adding hallucinated details about marriage."
+}

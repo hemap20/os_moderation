@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_default_425476935_audio_1788886067609.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 76,
+  "affected_word_count": 6,
+  "semantic_error_rate": 0.0789,
+  "seconds": 4.5,
+  "discrepancies": [
+    {
+      "reference_text": "ಅಮೌಂಟ್ ಹಾಕಿರ್ತಾರೆ ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಶೋ ಮಾಡಬೇಕು ಲೇಟ್ ಮಾಡಬಾರದು",
+      "translation_text": "they put the amount, have to show in WhatsApp, right, can you do it, will you show",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The translation misses the instruction not to delay ('ಲೇಟ್ ಮಾಡಬಾರದು')."
+    },
+    {
+      "reference_text": "ಅಮೌಂಟ್ ಹಾಕಿರೋದು ವಾಟ್ಸಪ್ ಅಲ್ಲಿ",
+      "translation_text": "don't put the amount in WhatsApp",
+      "category": "negation_flipped",
+      "word_count_affected": 4,
+      "explanation": "The translation incorrectly introduces a negation, saying 'don't put the amount' instead of 'for those who have paid/put the amount'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:28",
+      "type": "money_or_payment",
+      "reference_text": "ಯಾಪ್ ಅಲ್ಲಿ ಇರ್ತೀವಿ ಮತ್ತೆ ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಅಮೌಂಟ್ ಹಾಕಿರ್ತಾರೆ ಅವರಿಗೆ ಶೋ ಮಾಡಬೇಕು",
+      "translation_text": "we will be in the app and they would have put the amount in WhatsApp, have to show it to them",
+      "status": "preserved"
+    },
+    {
+      "t": "00:28",
+      "type": "move_off_app",
+      "reference_text": "ಯಾಪ್ ಅಲ್ಲಿ ಇರ್ತೀವಿ ಮತ್ತೆ ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಅಮೌಂಟ್ ಹಾಕಿರ್ತಾರೆ ಅವರಿಗೆ ಶೋ ಮಾಡಬೇಕು",
+      "translation_text": "we will be in the app and they would have put the amount in WhatsApp, have to show it to them",
+      "status": "preserved"
+    },
+    {
+      "t": "00:33",
+      "type": "money_or_payment",
+      "reference_text": "ಅಮೌಂಟ್ ಹಾಕಿರ್ತಾರೆ ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಶೋ ಮಾಡಬೇಕು ಲೇಟ್ ಮಾಡಬಾರದು",
+      "translation_text": "they put the amount, have to show in WhatsApp, right, can you do it, will you show",
+      "status": "preserved"
+    },
+    {
+      "t": "00:33",
+      "type": "move_off_app",
+      "reference_text": "ಅಮೌಂಟ್ ಹಾಕಿರ್ತಾರೆ ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಶೋ ಮಾಡಬೇಕು ಲೇಟ್ ಮಾಡಬಾರದು",
+      "translation_text": "they put the amount, have to show in WhatsApp, right, can you do it, will you show",
+      "status": "preserved"
+    },
+    {
+      "t": "00:43",
+      "type": "sexual_or_explicit",
+      "reference_text": "ಎಲ್ಲಾ ಫುಲ್ ಓಪನ್ ಅಲ್ಲಿ ತೋರಿಸ್ತೀವಿ ಅಮೌಂಟ್ ಹಾಕಿರೋದು ವಾಟ್ಸಪ್ ಅಲ್ಲಿ",
+      "translation_text": "we will show everything full open, don't put the amount in WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "00:43",
+      "type": "move_off_app",
+      "reference_text": "ಎಲ್ಲಾ ಫುಲ್ ಓಪನ್ ಅಲ್ಲಿ ತೋರಿಸ್ತೀವಿ ಅಮೌಂಟ್ ಹಾಕಿರೋದು ವಾಟ್ಸಪ್ ಅಲ್ಲಿ",
+      "translation_text": "we will show everything full open, don't put the amount in WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "00:47",
+      "type": "money_or_payment",
+      "reference_text": "ಹಾಫ್ ಆನ್ ಅವರ್ ಗೆ 500",
+      "translation_text": "half an hour for them five hundred",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the overall intent and tone of the call, including explicit offers of showing 'full open' on WhatsApp for a payment of 500, though it contains a minor negation error regarding the payment."
+}

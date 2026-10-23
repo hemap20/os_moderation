@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_audio_call_426202958_audio_1788955393853.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 96,
+  "affected_word_count": 18,
+  "semantic_error_rate": 0.1875,
+  "seconds": 2.8,
+  "discrepancies": [
+    {
+      "reference_text": "अब थोड़े में क्या मिलेगा?",
+      "translation_text": "will I get fifty rupees?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The translation introduces 'fifty rupees' which is not present in the reference text."
+    },
+    {
+      "reference_text": "बिहार में कोई काम ही नहीं है जल्दी मिल नहीं रहा",
+      "translation_text": "There is no work at all in Bihar, let's meet quickly and do it",
+      "category": "other_meaning_change",
+      "word_count_affected": 10,
+      "explanation": "The reference says work is not easily found, but the translation incorrectly translates this as 'let's meet quickly and do it'."
+    },
+    {
+      "reference_text": "ये मांग है",
+      "translation_text": "do you have the brain of a DO?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'this is a demand' or 'this is in demand', which is completely mistranslated."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:52",
+      "type": "meeting_in_person",
+      "reference_text": "बिहार में कोई काम ही नहीं है जल्दी मिल नहीं रहा",
+      "translation_text": "There is no work at all in Bihar, let's meet quickly and do it",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several hallucinations and mistranslations, including introducing a monetary amount and a suggestion to meet up in person that were not in the original Hindi audio."
+}

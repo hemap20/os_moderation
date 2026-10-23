@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_audio_call_426604675_audio_1788985474412.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 93,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.1183,
+  "seconds": 11.0,
+  "discrepancies": [
+    {
+      "reference_text": "எவ்வளோ கால் பண்றேன் பே பண்றியா",
+      "translation_text": "will you do a nude call? will you do [unclear]? nude call, oh okay",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The translation incorrectly introduces 'nude call' when the reference is asking about paying for a call."
+    },
+    {
+      "reference_text": "300",
+      "translation_text": "",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The payment amount of 300 is completely missing from the translation."
+    },
+    {
+      "reference_text": "ஹாய் சென்ட் பண்ணு அபிஷேக் பாரு",
+      "translation_text": "I sent, come and share",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The translation misses the instruction to send 'Hi' and look for the name 'Abhishek'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:43",
+      "type": "money_or_payment",
+      "reference_text": "எவ்வளோ கால் பண்றேன் பே பண்றியா",
+      "translation_text": "will you do a nude call? will you do [unclear]? nude call, oh okay",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:49",
+      "type": "money_or_payment",
+      "reference_text": "எவ்வளோ பே பண்ணனும்",
+      "translation_text": "need to do [unclear]",
+      "status": "missing"
+    },
+    {
+      "t": "00:52",
+      "type": "money_or_payment",
+      "reference_text": "300",
+      "translation_text": "",
+      "status": "missing"
+    },
+    {
+      "t": "00:57",
+      "type": "move_off_app",
+      "reference_text": "நம்பர் ... 78 78 68 82 05 23",
+      "translation_text": "number ... seven eight seven eight six eight eight two zero five two three",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "partly",
+  "summary": "The translation incorrectly introduces explicit sexual content ('nude call') that is not in the reference, while completely missing the discussion about payment amounts, though the exchange of phone numbers is preserved."
+}

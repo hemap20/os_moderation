@@ -1,0 +1,31 @@
+{
+  "file_id": "rec_default_426610557_audio_1788986010552.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 5,
+  "affected_word_count": 0,
+  "semantic_error_rate": 0.0,
+  "seconds": 5.4,
+  "discrepancies": [
+    {
+      "reference_text": "",
+      "translation_text": "is my number select us the number is my WhatsApp select us",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds hallucinated text about WhatsApp and selecting that is not present in the reference."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:20",
+      "type": "move_off_app",
+      "reference_text": "नंबर",
+      "translation_text": "The number is my number select us the number is my WhatsApp select us",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate but hallucinates extra details about WhatsApp and selecting when the speaker only said 'number'."
+}

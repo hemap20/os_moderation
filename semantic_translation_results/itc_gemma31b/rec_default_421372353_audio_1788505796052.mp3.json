@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_default_421372353_audio_1788505796052.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 1080,
+  "affected_word_count": 14,
+  "semantic_error_rate": 0.013,
+  "seconds": 3.0,
+  "discrepancies": [
+    {
+      "reference_text": "என் பேரு விக்னேஷ்",
+      "translation_text": "my name is Vignesh",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation previously translates 'என் பேரு விக்னேஷ்' as 'save me from this crazy girl, my name is Vignesh' but then adds 'My name is Vijay Finance' later, misinterpreting the reference."
+    },
+    {
+      "reference_text": "விஜய் ஃபேனா நீங்க",
+      "translation_text": "Vijay Finance, Vijay Finance",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation misinterprets 'Vijay fan' (விஜய் ஃபேன்) as 'Vijay Finance'."
+    },
+    {
+      "reference_text": "குக்கர் படுத்துட்டு இருக்கான் ஃபுல்லா ஓபன்ல வச்சுட்டு இருக்கான்",
+      "translation_text": "she is praising, she has kept it fully open",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference talks about a guy lying down with his body fully exposed on camera, which the translation completely misinterprets."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "10:53",
+      "type": "sexual_or_explicit",
+      "reference_text": "குக்கர் படுத்துட்டு இருக்கான் ஃபுல்லா ஓபன்ல வச்சுட்டு இருக்கான்",
+      "translation_text": "she is praising, she has kept it fully open",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the friendly, conversational tone of the call but fails to accurately translate the reference to a user exposing themselves on camera, turning it into a completely different statement."
+}

@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_420599099_audio_1788430532077.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 467,
+  "affected_word_count": 27,
+  "semantic_error_rate": 0.0578,
+  "seconds": 5.3,
+  "discrepancies": [
+    {
+      "reference_text": "बड़ा हूं पर बैठा हूं",
+      "translation_text": "or sitting on the border",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The speaker says 'I am older, but I am sitting' (बड़ा हूं पर बैठा हूं), which is mistranslated as 'sitting on the border'."
+    },
+    {
+      "reference_text": "अगर बिजनेस बैठ गया बेटे फिर तो मैं अमीर हूं फिर मैं खरीद लूंगी",
+      "translation_text": "if the business fails then son then I am rich then I will buy",
+      "category": "other_meaning_change",
+      "word_count_affected": 13,
+      "explanation": "The reference says 'if the business takes off/succeeds' (बैठ गया), but the translation incorrectly translates it as 'fails'."
+    },
+    {
+      "reference_text": "ताड़ी हूं",
+      "translation_text": "I am stubborn",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The speaker says 'I am a girl, not a palm tree/drunkard' (ताड़ी हूं - likely a slip of tongue or colloquialism), which is translated as 'I am stubborn'."
+    },
+    {
+      "reference_text": "रोक रहे हैं",
+      "translation_text": "stopping",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The speaker says 'रोकड़ा है' (money/cash), which is mistranslated as 'stopping' (रोक रहे हैं)."
+    },
+    {
+      "reference_text": "रील्स आता है ना",
+      "translation_text": "news comes right",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference mentions social media 'reels' (रील्स), which is translated as 'news'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:25",
+      "type": "move_off_app",
+      "reference_text": "हां इंस्टाग्राम पे ना",
+      "translation_text": "yes on Instagram right",
+      "status": "preserved"
+    },
+    {
+      "t": "02:31",
+      "type": "move_off_app",
+      "reference_text": "मैं भी पता है इंस्टाग्राम से ही इधर आई",
+      "translation_text": "I also you know I came here from Instagram",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the overall tone and intent of the conversation, though it contains a few mistranslations of colloquial terms like 'रोकड़ा' (money) and 'बिजनेस बैठ गया' (business succeeding)."
+}

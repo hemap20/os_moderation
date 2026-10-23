@@ -1,0 +1,37 @@
+{
+  "file_id": "rec_audio_call_427301394_audio_1789057897529.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 7,
+  "affected_word_count": 2,
+  "semantic_error_rate": 0.2857,
+  "seconds": 2.8,
+  "discrepancies": [
+    {
+      "reference_text": "ஹலோ, ஸ்வேதா.",
+      "translation_text": "Hello hi, this is Side",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The name Swetha was translated as Side."
+    },
+    {
+      "reference_text": "",
+      "translation_text": "Cook cook",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation contains added nonsensical words not present in the reference."
+    },
+    {
+      "reference_text": "",
+      "translation_text": "Then",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation contains an added word at the end not present in the reference."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation mostly preserves the basic intent of greeting Swetha, though it introduces a name error in the first line and some hallucinated words at the end."
+}

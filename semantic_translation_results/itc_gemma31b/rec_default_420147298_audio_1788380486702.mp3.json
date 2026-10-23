@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_default_420147298_audio_1788380486702.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 913,
+  "affected_word_count": 19,
+  "semantic_error_rate": 0.0208,
+  "seconds": 3.0,
+  "discrepancies": [
+    {
+      "reference_text": "हम नहीं करेंगे क्या? हम भी लड़कियां तो हम भी तो करते हैं।",
+      "translation_text": "What, we are boys and we also do it.",
+      "category": "other_meaning_change",
+      "word_count_affected": 11,
+      "explanation": "The reference says 'we are girls' (लड़कियां) but the translation incorrectly translates it as 'boys'."
+    },
+    {
+      "reference_text": "लाओ अपना इंस्टाग्राम दो, वहीं बात करता हूं।",
+      "translation_text": "Oh, give your Instagram, I'll talk there.",
+      "category": "key_content_missing",
+      "word_count_affected": 8,
+      "explanation": "The translation is mostly accurate, but this is a critical policy moment (move_off_app) that needs to be highlighted."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "03:34",
+      "type": "meeting_in_person",
+      "reference_text": "अच्छा, मैं ही आ जाता हूं।",
+      "translation_text": "Okay, I'll just come home",
+      "status": "preserved"
+    },
+    {
+      "t": "04:29",
+      "type": "meeting_in_person",
+      "reference_text": "बस तो आ ही आ ही रहा हूं, वेट करो।",
+      "translation_text": "I am coming, I am coming, wait.",
+      "status": "preserved"
+    },
+    {
+      "t": "04:52",
+      "type": "move_off_app",
+      "reference_text": "ओह, लाओ अपना इंस्टाग्राम दो, वहीं बात करता हूं।",
+      "translation_text": "Oh, give your Instagram, I'll talk there.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is highly accurate and preserves the overall tone and intent, though it mistakenly translates 'girls' as 'boys' in one line."
+}

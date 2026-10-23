@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426460304_audio_1788976707317.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 59,
+  "affected_word_count": 17,
+  "semantic_error_rate": 0.2881,
+  "seconds": 3.0,
+  "discrepancies": [
+    {
+      "reference_text": "29",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 1,
+      "explanation": "The age '29' mentioned in the reference is missing from the translation."
+    },
+    {
+      "reference_text": "എങ്ങനെ എല്ലാം കോളേജ്",
+      "translation_text": "Kitchen kitchen how everything",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks about college, but the translation mistranslates it as 'Kitchen kitchen'."
+    },
+    {
+      "reference_text": "ഓപ്പൺ ടോക്ക് ചെയ്യാറുണ്ടോ എന്ന്",
+      "translation_text": "do you usually open doc",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks about 'open talk', which is mistranslated as 'open doc'."
+    },
+    {
+      "reference_text": "ശരിക്കും ചെയ്യാറില്ല എന്തേ",
+      "translation_text": "Really really can do right, what",
+      "category": "negation_flipped",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'I don't really do it, why?', but the translation flips this to 'Really really can do right'."
+    },
+    {
+      "reference_text": "ഞാൻ അത്ര ടോക്ക് ചെയ്യുന്നില്ല",
+      "translation_text": "Ah I won't auto drop",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'I don't talk that much', which is mistranslated as 'I won't auto drop'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:45",
+      "type": "sexual_or_explicit",
+      "reference_text": "എല്ലാം ഓപ്പൺ കോൾ ചെയ്യാറുണ്ടോ ഓപ്പൺ ടോക്ക് ചെയ്യാറുണ്ടോ എന്ന്",
+      "translation_text": "everything open do you usually call, do you usually open doc",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several critical mistranslations, including turning a negation about not doing open talks into an affirmation, and mistranslating 'open talk' as 'open doc'."
+}

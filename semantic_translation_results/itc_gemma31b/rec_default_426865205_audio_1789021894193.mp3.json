@@ -1,0 +1,44 @@
+{
+  "file_id": "rec_default_426865205_audio_1789021894193.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 26,
+  "affected_word_count": 3,
+  "semantic_error_rate": 0.1154,
+  "seconds": 6.2,
+  "discrepancies": [
+    {
+      "reference_text": "",
+      "translation_text": "where are you from?",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds a question about location that is not present in the reference."
+    },
+    {
+      "reference_text": "",
+      "translation_text": "Hubballi, where Hubballi, what are you doing there",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds a mention of Hubballi and a question about what the person is doing there, which is not in the reference."
+    },
+    {
+      "reference_text": "ನಾನು ಮಾತಾಡಿದ್ದೀನಿ ಅಲ್ವಾ",
+      "translation_text": "I haven't spoken to you in a long time, tell me",
+      "category": "negation_flipped",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I have spoken, right?' but the translation incorrectly negates this to 'I haven't spoken to you'."
+    },
+    {
+      "reference_text": "",
+      "translation_text": "No, we have come, we came today... I used what",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds extra phrases about coming today and using something, which are not in the reference."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation adds several phrases and details not present in the reference, and incorrectly negates a statement about having spoken before."
+}

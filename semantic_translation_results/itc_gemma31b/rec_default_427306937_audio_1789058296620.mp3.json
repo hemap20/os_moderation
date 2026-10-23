@@ -1,0 +1,44 @@
+{
+  "file_id": "rec_default_427306937_audio_1789058296620.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 72,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.2083,
+  "seconds": 3.6,
+  "discrepancies": [
+    {
+      "reference_text": "మీరు క్లేనా మరి అంత డీప్ గా మాట్లాడుతున్నారు",
+      "translation_text": "Is your wife not there then why are you talking so sadly where did she go",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The translation completely misinterprets the reference text about talking deeply/clay into a question about a wife and talking sadly."
+    },
+    {
+      "reference_text": "ఊర్లో ఉన్నాను జాబ్ చేస్తున్నాను",
+      "translation_text": "She is in the village I am doing a job",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation introduces 'She' (referring to the wife from the previous hallucinated line) instead of 'I am in the village'."
+    },
+    {
+      "reference_text": "సగం కనపడుతున్నాను",
+      "translation_text": "nothing is visible only that place is visible",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'I am half visible', but the translation says 'nothing is visible only that place is visible'."
+    },
+    {
+      "reference_text": "ఎవరైనా పరిచయమా?",
+      "translation_text": "other than that [unclear]",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The question asking if anyone is familiar/known is translated as 'other than that [unclear]'."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "no",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several severe hallucinations and mistranslations, particularly around the 01:01 mark where a question about talking deeply is translated as a question about a wife, though the general flow of the conversation is somewhat maintained."
+}

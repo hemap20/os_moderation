@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_default_426438311_audio_1788975608857.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 303,
+  "affected_word_count": 14,
+  "semantic_error_rate": 0.0462,
+  "seconds": 2.5,
+  "discrepancies": [
+    {
+      "reference_text": "വൈഫ് ഉണ്ടോ",
+      "translation_text": "is there a vibe",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The translation asks if there is a 'vibe' instead of asking if he has a wife."
+    },
+    {
+      "reference_text": "ഭാര്യയുടെ നമ്പർ ഒന്ന് തന്നേ",
+      "translation_text": "did you give the wife's number, gave it",
+      "category": "intent_changed",
+      "word_count_affected": 5,
+      "explanation": "The reference is a request to give the wife's number, but the translation turns it into a question and answer about whether it was given."
+    },
+    {
+      "reference_text": "എന്റെ ഭാര്യക്ക് അറിയാലോ ഞാൻ ഇതിൽ ഉള്ളത്",
+      "translation_text": "you know about my matter, why am I here",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference states that his wife knows he is on this app, which is mistranslated."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "03:17",
+      "type": "move_off_app",
+      "reference_text": "ഭാര്യയുടെ നമ്പർ ഒന്ന് തന്നേ",
+      "translation_text": "did you give the wife's number, gave it",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several errors, notably turning a request for a wife's phone number into a question about whether it was already given, and mistranslating 'wife' as 'vibe'."
+}

@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_audio_call_426658746_audio_1788993588302.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 47,
+  "affected_word_count": 7,
+  "semantic_error_rate": 0.1489,
+  "seconds": 2.7,
+  "discrepancies": [
+    {
+      "reference_text": "എത്രയായി അപ്പൊ",
+      "translation_text": "how many apps",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'how long has it been then?' but the translation incorrectly translates it as 'how many apps'."
+    },
+    {
+      "reference_text": "ഓപ്പൺ ഒക്കെയാണോ താല്പര്യം വാട്സാപ്പിൽ",
+      "translation_text": "are you interested in open document on WhatsApp",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks if they are interested in 'open' (explicit/nude) stuff on WhatsApp, but the translation mistranslates 'open' as 'open document'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:30",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഓപ്പൺ ഒക്കെയാണോ താല്പര്യം വാട്സാപ്പിൽ",
+      "translation_text": "are you interested in open document on WhatsApp",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:30",
+      "type": "move_off_app",
+      "reference_text": "ഓപ്പൺ ഒക്കെയാണോ താല്പര്യം വാട്സാപ്പിൽ",
+      "translation_text": "are you interested in open document on WhatsApp",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "partly",
+  "summary": "The translation contains a major error at the end, translating a sexual proposition about being 'open' on WhatsApp into a bizarre question about an 'open document'."
+}

@@ -1,0 +1,51 @@
+{
+  "file_id": "rec_default_426107744_audio_1788948040810.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 312,
+  "affected_word_count": 19,
+  "semantic_error_rate": 0.0609,
+  "seconds": 3.1,
+  "discrepancies": [
+    {
+      "reference_text": "क्यों तैयार हो?",
+      "translation_text": "You are cute yaar",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'Why are you ready?' (or misheard 'cute' as 'taiyar'), but the translation says 'You are cute yaar'."
+    },
+    {
+      "reference_text": "मेरा भी नहीं है",
+      "translation_text": "still have",
+      "category": "negation_flipped",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'I also don't have [one]', but the translation says 'still have'."
+    },
+    {
+      "reference_text": "परवेज है तो",
+      "translation_text": "supervisor",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'Parvez hai to' (or similar name/phrase), which is translated as 'supervisor'."
+    },
+    {
+      "reference_text": "दिमाग हो",
+      "translation_text": "are you sick?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'dimag ho' (or similar), which is translated as 'are you sick?'."
+    },
+    {
+      "reference_text": "लड़की इतना कब से सीधे होने लगे?",
+      "translation_text": "since when did girls become so straightforward?",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'ladke' (boys) in the audio context of the conversation, but the translation translates it as 'girls' twice."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the friendly, casual tone of the conversation, though it contains a few minor mistranslations such as flipping a negation and confusing 'boys' with 'girls' in one line."
+}
