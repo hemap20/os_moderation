@@ -118,6 +118,19 @@ def _build_model_dirs(gemma_results_dir: Path, gemini_results_dir: Path) -> Dict
         "gemini-3.1-flash-lite": gemini_results_dir / "gemini-3.1-flash-lite",
         "gemini-3.1-flash-lite_audiotrans_text": gemini_results_dir / "gemini-3.1-flash-lite_audiotrans_text",
         "gemini-3.1-flash-lite_itc10s_text": gemini_results_dir / "gemini-3.1-flash-lite_itc10s_text",
+        "gemini-3.1-flash-lite_audio_nothink": gemini_results_dir / "gemini-3.1-flash-lite_audio_nothink",
+        "gemini-3.1-flash-lite_itc10s_text_nothink": gemini_results_dir / "gemini-3.1-flash-lite_itc10s_text_nothink",
+        "gemini-3.1-flash-lite_audiotrans_text_nothink": gemini_results_dir / "gemini-3.1-flash-lite_audiotrans_text_nothink",
+        "gemini-3.1-flash-lite_31bEN_text_nothink": gemini_results_dir / "gemini-3.1-flash-lite_31bEN_text_nothink",
+        "gemini-3.1-flash-lite_31bthinkEN_text_nothink": gemini_results_dir / "gemini-3.1-flash-lite_31bthinkEN_text_nothink",
+        "gemini-3.1-flash-lite_audio": gemini_results_dir / "gemini-3.1-flash-lite_audio",
+        "gemini-3.5-flash-lite_audio": gemini_results_dir / "gemini-3.5-flash-lite_audio",
+        "gemini-3.5-flash-lite_itc10s_text": gemini_results_dir / "gemini-3.5-flash-lite_itc10s_text",
+        "gemini-3.5-flash-lite_audiotrans_text": gemini_results_dir / "gemini-3.5-flash-lite_audiotrans_text",
+        "gemini-3.1-flash-lite_31bEN_text": gemini_results_dir / "gemini-3.1-flash-lite_31bEN_text",
+        "gemini-3.1-flash-lite_31bthinkEN_text": gemini_results_dir / "gemini-3.1-flash-lite_31bthinkEN_text",
+        "gemini-3.5-flash-lite_31bEN_text": gemini_results_dir / "gemini-3.5-flash-lite_31bEN_text",
+        "gemini-3.5-flash-lite_31bthinkEN_text": gemini_results_dir / "gemini-3.5-flash-lite_31bthinkEN_text",
     }
 
 

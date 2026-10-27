@@ -1,0 +1,37 @@
+{
+  "file_id": "rec_default_427012589_audio_1789032630677.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 39,
+  "affected_word_count": 12,
+  "semantic_error_rate": 0.3077,
+  "seconds": 3.3,
+  "discrepancies": [
+    {
+      "reference_text": "ഞാൻ കോഴിക്കോട് കാണുന്നില്ലല്ലോ",
+      "translation_text": "I [am from] Kollam. Can't see, right?",
+      "category": "named_entity_altered",
+      "word_count_affected": 4,
+      "explanation": "The reference mentions Kozhikode, but the translation changes it to Kollam."
+    },
+    {
+      "reference_text": "അതൊക്കെ ഫേസ്ബുക്കിൽ കൂടെയല്ലേ കാണുള്ളൂ",
+      "translation_text": "Thatha, is it caught on Facebook? Still only seeing.",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The translation introduces 'Thatha' and mistranslates the statement about seeing through Facebook."
+    },
+    {
+      "reference_text": "ആ പിന്നെ പറയാലോ",
+      "translation_text": "That Apple, tell me.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The Malayalam phrase for 'then tell me' or 'we can talk later' is mistranslated as 'That Apple, tell me'."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several errors, including changing the city name Kozhikode to Kollam and mistranslating conversational phrases, though the general flow of the call is somewhat recognizable."
+}

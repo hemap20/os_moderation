@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_audio_call_426659403_audio_1788993755666.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 46,
+  "affected_word_count": 4,
+  "semantic_error_rate": 0.087,
+  "seconds": 2.6,
+  "discrepancies": [
+    {
+      "reference_text": "ಯಾರೂ ಕೂಡ ಮಾತಾಡ್ತಿದ್ದೀನಿ",
+      "translation_text": "I am also sleeping",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I am talking to someone' but the translation says 'I am also sleeping'."
+    },
+    {
+      "reference_text": "ಟಾಕಿ",
+      "translation_text": "doggy",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'talky' (talking) but the translation mistranslates it as 'doggy'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:25",
+      "type": "move_off_app",
+      "reference_text": "ಓಕೆ ನಂಬರ್ ಅಲ್ಲಿ ಮಾತಾಡುವ",
+      "translation_text": "okay what is the number we are seeing to talk",
+      "status": "preserved"
+    },
+    {
+      "t": "00:27",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್ ಅಲ್ಲಿ",
+      "translation_text": "on WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "00:30",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಮಾತಾಡೋಣ ಅಂದೆ",
+      "translation_text": "I said let's talk on WhatsApp",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the overall intent of moving the conversation off-app to WhatsApp, though it contains a few mistranslations such as translating 'talky' as 'doggy'."
+}

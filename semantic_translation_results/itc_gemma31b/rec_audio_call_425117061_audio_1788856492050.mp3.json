@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_audio_call_425117061_audio_1788856492050.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 185,
+  "affected_word_count": 8,
+  "semantic_error_rate": 0.0432,
+  "seconds": 2.6,
+  "discrepancies": [
+    {
+      "reference_text": "ಶ್ರೀ ವಿದ್ಯಾ ನೋಡ್ತಾ ಇದ್ದಾರೆ ಸರ್ ಮೋಸ್ಟ್ಲಿ",
+      "translation_text": "the name Sri Vidyadhan, before you thought",
+      "category": "named_entity_altered",
+      "word_count_affected": 6,
+      "explanation": "The name 'Sri Vidya' is mistranslated as 'Sri Vidyadhan'."
+    },
+    {
+      "reference_text": "ತವರು ಮನೆಯಲ್ಲ",
+      "translation_text": "not at the parents' house",
+      "category": "negation_flipped",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'at the parents' house' (ತವರು ಮನೆಯಲ್ಲಿ), but the translation incorrectly negates it as 'not at the parents' house'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:50",
+      "type": "move_off_app",
+      "reference_text": "Instagram ಐಡಿ ನಾನು ಕೊಡು ಕೊಡು ಕೊಡು ಅಂದೆ",
+      "translation_text": "Instagram ID I keep saying give give give",
+      "status": "preserved"
+    },
+    {
+      "t": "02:10",
+      "type": "move_off_app",
+      "reference_text": "Instagram ಐಡಿ ನಾನು ಅವತ್ತು ಕೇಳ್ದೆ ನಿಮ್ಮದು",
+      "translation_text": "Instagram ID I asked that day yours",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key moments where the caller asks for the expert's Instagram ID, though there are minor errors in names and a negation flip regarding the husband's location."
+}

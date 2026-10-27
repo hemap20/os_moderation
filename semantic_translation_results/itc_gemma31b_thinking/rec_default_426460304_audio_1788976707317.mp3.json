@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426460304_audio_1788976707317.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 59,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.2203,
+  "seconds": 2.9,
+  "discrepancies": [
+    {
+      "reference_text": "എങ്ങനെ എല്ലാം കോളേജ്",
+      "translation_text": "Kitchen, as kitchen, how",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference mentions 'college' which is mistranslated as 'kitchen'."
+    },
+    {
+      "reference_text": "ശരിക്കും ചെയ്യാറില്ല എന്തേ",
+      "translation_text": "Really, really can do, right? Why",
+      "category": "negation_flipped",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I don't really do it, why?' but the translation flips this to 'really can do, right?'."
+    },
+    {
+      "reference_text": "ഓപ്പൺ കോൾ",
+      "translation_text": "was it possible to expect open courses?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'open call' but the translation says 'open courses'."
+    },
+    {
+      "reference_text": "ഞാൻ അത്ര ടോക്ക് ചെയ്യുന്നില്ല",
+      "translation_text": "I won't auto drop",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'I don't talk that much' but the translation says 'I won't auto drop'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:45",
+      "type": "sexual_or_explicit",
+      "reference_text": "എല്ലാം ഓപ്പൺ കോൾ ചെയ്യാറുണ്ടോ ഓപ്പൺ ടോക്ക് ചെയ്യാറുണ്ടോ എന്ന്",
+      "translation_text": "whether you usually do all open calls, whether you usually do open doc",
+      "status": "preserved"
+    },
+    {
+      "t": "00:54",
+      "type": "sexual_or_explicit",
+      "reference_text": "ശരിക്കും ചെയ്യാറില്ല എന്തേ",
+      "translation_text": "Really, really can do, right? Why",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several errors, including mistranslating 'college' as 'kitchen' and flipping a negative response about doing 'open calls' into a positive one."
+}

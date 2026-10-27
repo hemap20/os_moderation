@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_audio_call_425656293_audio_1788896013602.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 87,
+  "affected_word_count": 22,
+  "semantic_error_rate": 0.2529,
+  "seconds": 5.4,
+  "discrepancies": [
+    {
+      "reference_text": "कैन वी शेयर स्नैपचैट?",
+      "translation_text": "can we share subject yes can we share Snapchat",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation introduces 'subject yes' which is not in the reference."
+    },
+    {
+      "reference_text": "यू कैन ट्रस्ट मी, वी विल डू लिटॉक्स एंड इट विल बी फन।",
+      "translation_text": "founder can trust me will do only talks mental help",
+      "category": "other_meaning_change",
+      "word_count_affected": 12,
+      "explanation": "The translation misinterprets 'You can trust me' as 'founder can trust me' and 'it will be fun' as 'mental help'."
+    },
+    {
+      "reference_text": "ये सब बातें यहां अलाउड नहीं है।",
+      "translation_text": "all these things are allowed",
+      "category": "negation_flipped",
+      "word_count_affected": 6,
+      "explanation": "The translation flips the negation, stating that these things are allowed when the reference says they are not allowed."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:33",
+      "type": "move_off_app",
+      "reference_text": "कैन वी शेयर स्नैपचैट?",
+      "translation_text": "can we share subject yes can we share Snapchat",
+      "status": "preserved"
+    },
+    {
+      "t": "00:39",
+      "type": "move_off_app",
+      "reference_text": "कैन वी शेयर स्नैपचैट?",
+      "translation_text": "Snapchat",
+      "status": "preserved"
+    },
+    {
+      "t": "00:41",
+      "type": "move_off_app",
+      "reference_text": "नो, क्योंकि यहां पे अलाउड नहीं है।",
+      "translation_text": "no because it is not allowed here",
+      "status": "preserved"
+    },
+    {
+      "t": "00:55",
+      "type": "sexual_or_explicit",
+      "reference_text": "डू यू लाइक सेक्स?",
+      "translation_text": "Do you like sex",
+      "status": "preserved"
+    },
+    {
+      "t": "00:57",
+      "type": "sexual_or_explicit",
+      "reference_text": "सॉरी फॉर आस्किंग दैट, बट डू यू लाइक एस?",
+      "translation_text": "sorry for asking that but do you like s",
+      "status": "preserved"
+    },
+    {
+      "t": "01:06",
+      "type": "sexual_or_explicit",
+      "reference_text": "ये सब बातें यहां अलाउड नहीं है।",
+      "translation_text": "all these things are allowed",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "no",
+  "summary": "The translation fails to preserve the speaker's intent at the end by incorrectly translating 'not allowed' as 'allowed' regarding explicit talk."
+}

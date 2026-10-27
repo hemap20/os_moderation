@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_427305984_audio_1789058228017.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 65,
+  "affected_word_count": 12,
+  "semantic_error_rate": 0.1846,
+  "seconds": 3.6,
+  "discrepancies": [
+    {
+      "reference_text": "నాకు తెలియదు",
+      "translation_text": "normal canvas",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'I don't know' but the translation says 'normal canvas'."
+    },
+    {
+      "reference_text": "ఏదైనా పని ఇట్లా మీటింగ్ అట్లా ఉందా?",
+      "translation_text": "Like money like meeting like that",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference asks about work or meeting, but the translation introduces 'money' which is not mentioned."
+    },
+    {
+      "reference_text": "మాది ఏమీ లేదు",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The speaker's denial 'We don't have anything like that' is missing from the translation."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:50",
+      "type": "meeting_in_person",
+      "reference_text": "ఏదైనా పని ఇట్లా మీటింగ్ అట్లా ఉందా?",
+      "translation_text": "Like money like meeting like that",
+      "status": "preserved"
+    },
+    {
+      "t": "01:00",
+      "type": "meeting_in_person",
+      "reference_text": "కలవడం",
+      "translation_text": "",
+      "status": "missing"
+    },
+    {
+      "t": "01:02",
+      "type": "meeting_in_person",
+      "reference_text": "కలవడం హలో",
+      "translation_text": "Hello madam hello hello madam",
+      "status": "missing"
+    },
+    {
+      "t": "01:05",
+      "type": "meeting_in_person",
+      "reference_text": "కలవడానికి",
+      "translation_text": "",
+      "status": "missing"
+    },
+    {
+      "t": "01:11",
+      "type": "meeting_in_person",
+      "reference_text": "మీట్ అవ్వడానికి అంటున్నావ్",
+      "translation_text": "What are you saying about meeting meeting",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation captures the general intent of discussing a meeting, but misses several specific lines about meeting up and incorrectly introduces the word 'money' where it was not spoken."
+}

@@ -1,0 +1,38 @@
+{
+  "file_id": "rec_audio_call_423610988_audio_1788712982461.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 30,
+  "affected_word_count": 6,
+  "semantic_error_rate": 0.2,
+  "seconds": 2.5,
+  "discrepancies": [
+    {
+      "reference_text": "मैं केरला",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The speaker's location 'Kerala' is completely missing from the translation."
+    },
+    {
+      "reference_text": "कौन सा है इंस्टाग्राम",
+      "translation_text": "who have you met Instagram",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The question asking which Instagram account they have is mistranslated as 'who have you met Instagram'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:23",
+      "type": "move_off_app",
+      "reference_text": "कौन सा है इंस्टाग्राम",
+      "translation_text": "who have you met Instagram",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "no",
+  "summary": "The translation is highly inaccurate, hallucinating unrelated phrases at the beginning and failing to correctly translate the user's location and their inquiry about Instagram."
+}

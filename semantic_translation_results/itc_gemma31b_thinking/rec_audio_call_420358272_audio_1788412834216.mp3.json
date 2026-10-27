@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_audio_call_420358272_audio_1788412834216.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 251,
+  "affected_word_count": 16,
+  "semantic_error_rate": 0.0637,
+  "seconds": 2.7,
+  "discrepancies": [
+    {
+      "reference_text": "நான் மேரிடு ஒர்க் பண்ணிட்டு இருக்கேன்",
+      "translation_text": "I am unmarried, I am working",
+      "category": "negation_flipped",
+      "word_count_affected": 5,
+      "explanation": "The speaker says they are married ('மேரிடு'), but the translation incorrectly states they are 'unmarried'."
+    },
+    {
+      "reference_text": "இல்ல அந்த மாதிரி அப்படிங்கும்போதே சொல்ல கூட சொல்ல விடமாட்டாங்க கால கட் பண்ணிட்டு போயிருவாங்க",
+      "translation_text": "No, like that, while going, let the children also say they put [it], they will cut the call and go.",
+      "category": "other_meaning_change",
+      "word_count_affected": 11,
+      "explanation": "The reference says they won't even let you speak and will cut the call, whereas the translation introduces nonsensical text about children."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:10",
+      "type": "sexual_or_explicit",
+      "reference_text": "எல்லாம் செக்சுவல் ஹராஸ்மென்ட் தான்",
+      "translation_text": "It's just sexual harassment.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:41",
+      "type": "sexual_or_explicit",
+      "reference_text": "அப்படியே வராங்களா நீங்க இத பண்ணுவீங்களா அத பண்ணுவீங்களான்னு கேப்பாங்க",
+      "translation_text": "they just come and ask if you will do this or do that.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the discussion about the app being used primarily for sexual harassment, though it flips 'married' to 'unmarried' for one speaker and has a minor mistranslation near the end."
+}

@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_default_426634262_audio_1788988662985.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 39,
+  "affected_word_count": 14,
+  "semantic_error_rate": 0.359,
+  "seconds": 4.4,
+  "discrepancies": [
+    {
+      "reference_text": "ஒன்னும் இல்ல",
+      "translation_text": "Full talk",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Nothing' but the translation says 'Full talk'."
+    },
+    {
+      "reference_text": "என்ன சைஸ் ஓடி",
+      "translation_text": "size how much",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'What size, dear?' but the translation translates it as 'size how much'."
+    },
+    {
+      "reference_text": "என்ன சைஸ் வேணும்",
+      "translation_text": "One size how much",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'What size do you want?' but the translation says 'One size how much'."
+    },
+    {
+      "reference_text": "இன்னும் கொஞ்சம் காமிக்க",
+      "translation_text": "I will show a little",
+      "category": "intent_changed",
+      "word_count_affected": 3,
+      "explanation": "The reference is a request to 'show a little more' but the translation changes it to 'I will show a little'."
+    },
+    {
+      "reference_text": "இல்ல பாத்துட்டு இருக்கேன்",
+      "translation_text": "Everything cannot be paid",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'No, I am watching' but the translation says 'Everything cannot be paid'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:27",
+      "type": "sexual_or_explicit",
+      "reference_text": "என்ன சைஸ் ஓடி",
+      "translation_text": "size how much",
+      "status": "softened"
+    },
+    {
+      "t": "00:30",
+      "type": "sexual_or_explicit",
+      "reference_text": "என்ன சைஸ் ஓடி",
+      "translation_text": "size how much",
+      "status": "softened"
+    },
+    {
+      "t": "00:33",
+      "type": "sexual_or_explicit",
+      "reference_text": "என்ன சைஸ் வேணும்",
+      "translation_text": "One size how much",
+      "status": "softened"
+    },
+    {
+      "t": "00:36",
+      "type": "move_off_app",
+      "reference_text": "வாட்ஸ்அப் வா",
+      "translation_text": "WhatsApp here",
+      "status": "preserved"
+    },
+    {
+      "t": "00:38",
+      "type": "sexual_or_explicit",
+      "reference_text": "இன்னும் கொஞ்சம் காமிக்க",
+      "translation_text": "I will show a little",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow and key policy moments like WhatsApp and size queries, but alters the specific meanings and directions of several statements, particularly at the end."
+}

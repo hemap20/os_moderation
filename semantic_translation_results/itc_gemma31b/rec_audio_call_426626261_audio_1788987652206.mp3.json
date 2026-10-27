@@ -1,0 +1,108 @@
+{
+  "file_id": "rec_audio_call_426626261_audio_1788987652206.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 212,
+  "affected_word_count": 26,
+  "semantic_error_rate": 0.1226,
+  "seconds": 5.1,
+  "discrepancies": [
+    {
+      "reference_text": "ஷைலா",
+      "translation_text": "Priya Priya",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The name Shaila is translated as Priya."
+    },
+    {
+      "reference_text": "எந்த ஊரு",
+      "translation_text": "which panchayat",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The question 'which town' is translated as 'which panchayat'."
+    },
+    {
+      "reference_text": "சேலம்",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 1,
+      "explanation": "The town name Salem is completely missing from the translation."
+    },
+    {
+      "reference_text": "மேரேஜ் ஆகி எத்தனை வருஷம் ஆச்சு",
+      "translation_text": "Maharaja how many years has it been",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The question about how many years since marriage is mistranslated as 'Maharaja how many years has it been'."
+    },
+    {
+      "reference_text": "ஹஸ்பண்ட் இல்லையா",
+      "translation_text": "husband children only children",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The question 'Is there no husband?' is translated as 'husband children only children'."
+    },
+    {
+      "reference_text": "செக்ஸியா பேசுவோமா",
+      "translation_text": "shall we speak sex",
+      "category": "tone_softened",
+      "word_count_affected": 2,
+      "explanation": "The explicit proposal 'Shall we talk sexily?' is translated as 'shall we speak sex'."
+    },
+    {
+      "reference_text": "நான் பேசல நான் பேசலன்னுட்டேன் ஓகேவா",
+      "translation_text": "Hey I will speak I will speak okay okay",
+      "category": "negation_flipped",
+      "word_count_affected": 6,
+      "explanation": "The speaker's refusal 'I won't talk, I said I won't talk' is translated as 'I will speak I will speak'."
+    },
+    {
+      "reference_text": "உங்களை என்ஜாய் பண்ணவா",
+      "translation_text": "Enjoy Pongal",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The sexual question 'Can I enjoy you?' is mistranslated as 'Enjoy Pongal'."
+    },
+    {
+      "reference_text": "லிப்ல ஒரு கிஸ் பிடிக்குமா",
+      "translation_text": "when well when long peace",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The question 'Do you like a kiss on the lips?' is completely lost and replaced with nonsensical words."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:57",
+      "type": "sexual_or_explicit",
+      "reference_text": "செக்ஸியா பேசுவோமா",
+      "translation_text": "shall we speak sex",
+      "status": "preserved"
+    },
+    {
+      "t": "03:03",
+      "type": "sexual_or_explicit",
+      "reference_text": "எனக்கு ஒரு மாதிரி மூடா இருக்கு செக்ஸியா பேசுவோமா",
+      "translation_text": "I am feeling very moody shall we speak sex",
+      "status": "preserved"
+    },
+    {
+      "t": "03:25",
+      "type": "sexual_or_explicit",
+      "reference_text": "உங்களை என்ஜாய் பண்ணவா",
+      "translation_text": "Enjoy Pongal",
+      "status": "missing"
+    },
+    {
+      "t": "03:38",
+      "type": "sexual_or_explicit",
+      "reference_text": "லிப்ல ஒரு கிஸ் பிடிக்குமா",
+      "translation_text": "when well when long peace",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "no",
+  "summary": "The translation fails to capture the explicit sexual nature of the conversation towards the end, mistranslating key sexual propositions and turning a refusal to talk dirty into an agreement."
+}

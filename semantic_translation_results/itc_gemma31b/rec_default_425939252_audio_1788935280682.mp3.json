@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_425939252_audio_1788935280682.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 560,
+  "affected_word_count": 18,
+  "semantic_error_rate": 0.0321,
+  "seconds": 4.0,
+  "discrepancies": [
+    {
+      "reference_text": "ഇപ്പൊ വയസ്സ് കുറവായില്ലേ. ഇപ്പൊ ഒന്നും സ്ഥിരം ഒന്നും പനിയൊന്നുമില്ല.",
+      "translation_text": "now ten years, hasn't it been a lot, now there is no permanent work",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference says 'I am young now, so I don't have permanent work/priesthood duties', but the translation incorrectly mentions 'ten years'."
+    },
+    {
+      "reference_text": "ഈശ്വര വിശ്വാസം ഉണ്ടാവണം.",
+      "translation_text": "Jesus Should have faith",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'one should have faith in God (eeshwara vishwasam)', but the translation mistranslates this as 'Jesus'."
+    },
+    {
+      "reference_text": "എന്റെ ടൈം ഏതാണ്ട് ആയി. പൈസ പോണു.",
+      "translation_text": "my time is almost up, can eat, can eat Money should go",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'My time is almost up, money is going (being spent)', but the translation adds 'can eat, can eat' and mistranslates 'money is going' as 'Money should go'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "03:50",
+      "type": "money_or_payment",
+      "reference_text": "ആ പെണ്ണിന് പൈസ വേണം. ആ പെണ്ണ് ചോദിക്കുന്നത് വലിയ എമൗണ്ടാ.",
+      "translation_text": "that girl wants money, the amount she is asking is huge",
+      "status": "preserved"
+    },
+    {
+      "t": "05:30",
+      "type": "money_or_payment",
+      "reference_text": "അല്ലാതെ ജോത്സ്യന്റെ അടുത്ത് പോയി കാശ് കളഞ്ഞിട്ട് കാര്യമൊന്നുമില്ല.",
+      "translation_text": "There is no point in going to my astrologer and wasting money",
+      "status": "preserved"
+    },
+    {
+      "t": "06:04",
+      "type": "money_or_payment",
+      "reference_text": "പൈസ പോണു.",
+      "translation_text": "Money should go",
+      "status": "preserved"
+    },
+    {
+      "t": "06:15",
+      "type": "move_off_app",
+      "reference_text": "വാട്സാപ്പ് ഉപയോഗിക്കുന്ന ആളാണോ?",
+      "translation_text": "are you a person who uses WhatsApp",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the overall meaning and intent of the conversation, including the discussion about family issues, money spent on astrologers, and the final query about WhatsApp, despite a few minor mistranslations."
+}

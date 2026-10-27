@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_audio_call_426099993_audio_1788947488901.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 378,
+  "affected_word_count": 24,
+  "semantic_error_rate": 0.0635,
+  "seconds": 4.8,
+  "discrepancies": [
+    {
+      "reference_text": "नाम नहीं है सिटी का?",
+      "translation_text": "There is no heat in the city",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks if the city has no name, but the translation incorrectly translates it as 'no heat'."
+    },
+    {
+      "reference_text": "नहीं है इसलिए बात कर रही हूं।",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 6,
+      "explanation": "The speaker's explanation of why she is talking is completely omitted from the translation."
+    },
+    {
+      "reference_text": "नहीं आपको नहीं लगेगा हमारा पति ही करेगा।",
+      "translation_text": "no, you don't feel, our husband",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference says 'No, you won't have to pay, my husband will do it (book the ticket)', which is mistranslated as 'you don't feel'."
+    },
+    {
+      "reference_text": "फिर आके मिलते नहीं मिलते?",
+      "translation_text": "do customers meet or not?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks 'will we meet after coming?', but the translation introduces the word 'customers' which is not in the source."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:10",
+      "type": "meeting_in_person",
+      "reference_text": "अरे आसपास रहते हो मजा आता तुम खाली फोन में मजा आएगा बोले तो कैसा? आसपास फोन में बात करिए ना पहले बाद में आऊंगा। कब आओगे?",
+      "translation_text": "Oh, if we lived nearby it would be fun, you just said it will be fun on the phone, so how is it, talk on the phone first, then come later. When will I come",
+      "status": "preserved"
+    },
+    {
+      "t": "03:04",
+      "type": "meeting_in_person",
+      "reference_text": "आ जाओ कभी हैदराबाद। नहीं है इसलिए बात कर रही हूं। कभी हैदराबाद आ जाओ घूमने के लिए। हां प्लान कर रही हूं आने का। आ जाओ दोनों घूम के आ जाएंगे। क्या ठीक है? हां? आऊंगा। आ जाओ कब आओगे फिर? वो दिसंबर को।",
+      "translation_text": "come sometime, come to Hyderabad sometime, come to Hyderabad sometime, come to Hyderabad sometime. Come to Hyderabad for visiting, yes, I am planning to come, come, both of us will go and visit. Okay fine, I will come, come, when will you come then, you will come in December",
+      "status": "preserved"
+    },
+    {
+      "t": "03:32",
+      "type": "money_or_payment",
+      "reference_text": "टिकट बुक करा दो। नहीं आपको नहीं लगेगा हमारा पति ही करेगा।",
+      "translation_text": "Book the ticket, no, you don't feel, our husband",
+      "status": "softened"
+    },
+    {
+      "t": "03:44",
+      "type": "meeting_in_person",
+      "reference_text": "फिर आके मिलते नहीं मिलते? हां? हेलो आके मिलोगे या ना मिलोगे?",
+      "translation_text": "do customers meet or not? Hello, will you meet after coming or not",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key intents regarding meeting in person, though there are minor mistranslations regarding ticket booking payments and a few other sentences."
+}

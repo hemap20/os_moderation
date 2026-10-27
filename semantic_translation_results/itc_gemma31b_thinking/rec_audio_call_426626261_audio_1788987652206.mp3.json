@@ -1,0 +1,136 @@
+{
+  "file_id": "rec_audio_call_426626261_audio_1788987652206.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 212,
+  "affected_word_count": 37,
+  "semantic_error_rate": 0.1745,
+  "seconds": 8.1,
+  "discrepancies": [
+    {
+      "reference_text": "ஷைலா",
+      "translation_text": "Priya Priya",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The name 'Shaila' was translated as 'Priya'."
+    },
+    {
+      "reference_text": "எந்த ஊரு",
+      "translation_text": "which panchayat",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The question 'which town/city' was translated as 'which panchayat'."
+    },
+    {
+      "reference_text": "சேலம்",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 1,
+      "explanation": "The city name 'Salem' is completely missing from the translation."
+    },
+    {
+      "reference_text": "வீட்ல தான் இருக்கேன்",
+      "translation_text": "we can see at home",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The statement 'I am at home' was translated as 'we can see at home'."
+    },
+    {
+      "reference_text": "மேரேஜ் ஆகி எத்தனை வருஷம் ஆச்சு",
+      "translation_text": "Maharaja how many years has it been sir",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The question about how many years since marriage was mistranslated as 'Maharaja how many years has it been'."
+    },
+    {
+      "reference_text": "ஹஸ்பண்ட் இல்லையா",
+      "translation_text": "husband children only children",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The question 'Is husband not there?' was translated as 'husband children only children'."
+    },
+    {
+      "reference_text": "ஹால்ல இருக்காரு",
+      "translation_text": "he is inside",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The location 'in the hall' was translated as 'inside'."
+    },
+    {
+      "reference_text": "செக்ஸியா பேசுவோமா",
+      "translation_text": "shall we talk about power",
+      "category": "tone_softened",
+      "word_count_affected": 2,
+      "explanation": "The request to 'talk sexily' was translated as 'talk about power'."
+    },
+    {
+      "reference_text": "செக்ஸியா பேசுவோமா",
+      "translation_text": "",
+      "category": "tone_softened",
+      "word_count_affected": 2,
+      "explanation": "The second instance of asking to 'talk sexily' is completely omitted/softened."
+    },
+    {
+      "reference_text": "நான் பேசல நான் பேசலன்னுட்டேன்",
+      "translation_text": "Hey I will speak I will speak",
+      "category": "negation_flipped",
+      "word_count_affected": 5,
+      "explanation": "The speaker's refusal 'I won't talk, I said I won't talk' was translated as 'I will speak I will speak'."
+    },
+    {
+      "reference_text": "உங்களை என்ஜாய் பண்ணவா",
+      "translation_text": "Enjoy Pongal",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The sexual question 'Can I enjoy you?' was mistranslated as 'Enjoy Pongal'."
+    },
+    {
+      "reference_text": "லிப்ல ஒரு கிஸ் பிடிக்குமா",
+      "translation_text": "when long piece",
+      "category": "tone_softened",
+      "word_count_affected": 5,
+      "explanation": "The question 'Do you like a kiss on the lips?' was mistranslated/softened to 'when long piece'."
+    },
+    {
+      "reference_text": "அவர் பண்ணுவாரா",
+      "translation_text": "If lying down will he do it",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The question 'Does he do it?' was translated as 'If lying down will he do it'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:57",
+      "type": "sexual_or_explicit",
+      "reference_text": "செக்ஸியா பேசுவோமா",
+      "translation_text": "shall we talk about power",
+      "status": "softened"
+    },
+    {
+      "t": "03:03",
+      "type": "sexual_or_explicit",
+      "reference_text": "எனக்கு ஒரு மாதிரி மூடா இருக்கு செக்ஸியா பேசுவோமா",
+      "translation_text": "I am feeling very moody shall we talk about power",
+      "status": "softened"
+    },
+    {
+      "t": "03:25",
+      "type": "sexual_or_explicit",
+      "reference_text": "உங்களை என்ஜாய் பண்ணவா",
+      "translation_text": "Enjoy Pongal",
+      "status": "intent_changed"
+    },
+    {
+      "t": "03:38",
+      "type": "sexual_or_explicit",
+      "reference_text": "லிப்ல ஒரு கிஸ் பிடிக்குமா",
+      "translation_text": "when long piece",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "no",
+  "summary": "The translation completely fails to preserve the explicit sexual nature of the call, turning requests for sexy talk and kissing into nonsensical phrases like 'talk about power' and 'Enjoy Pongal'."
+}

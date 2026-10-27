@@ -1,0 +1,30 @@
+{
+  "file_id": "rec_audio_call_423591955_audio_1788711572217.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 111,
+  "affected_word_count": 8,
+  "semantic_error_rate": 0.0721,
+  "seconds": 2.2,
+  "discrepancies": [
+    {
+      "reference_text": "मैं तो हाउसवाइफ हूं",
+      "translation_text": "So you are a housewife",
+      "category": "intent_changed",
+      "word_count_affected": 4,
+      "explanation": "The speaker says 'I am a housewife' but the translation turns it into a question/statement directed at the other person."
+    },
+    {
+      "reference_text": "मैंने इंटर की है",
+      "translation_text": "it is Turkey",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The speaker says they have completed intermediate education (Inter), but the translation mistranslates it as 'Turkey'."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate but contains a few errors, such as turning a self-statement about being a housewife into a question for the other person, and mistranslating 'Inter' (intermediate education) as 'Turkey'."
+}

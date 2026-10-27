@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_426857244_audio_1789021306090.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 102,
+  "affected_word_count": 17,
+  "semantic_error_rate": 0.1667,
+  "seconds": 4.8,
+  "discrepancies": [
+    {
+      "reference_text": "ఏదో రీఛార్జ్ చేశాను కదా అని చేస్తున్నాను",
+      "translation_text": "you did some recharge right I am doing that only",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'I did some recharge so I am calling', but the translation attributes the recharge to the other person."
+    },
+    {
+      "reference_text": "ఎందుకు నచ్చలేదు ఏంటి",
+      "translation_text": "didn't like the house what",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation incorrectly translates 'why didn't you like it' as 'didn't like the house'."
+    },
+    {
+      "reference_text": "సోదంతా",
+      "translation_text": "shoes what is this man",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference word meaning 'all nonsense/boring stuff' is mistranslated as 'shoes what is this man'."
+    },
+    {
+      "reference_text": "అంతే ముక్కలు వాళ్ళు వస్తున్నారు",
+      "translation_text": "old people are coming",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'only pieces (slang for girls/people) are coming', which is mistranslated as 'old people are coming'."
+    },
+    {
+      "reference_text": "ఎక్కడ అలవాలా",
+      "translation_text": "where should we meet",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'where in Alwal?', but the translation mistranslates it as 'where should we meet'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:34",
+      "type": "money_or_payment",
+      "reference_text": "ఏదో రీఛార్జ్ చేశాను కదా అని చేస్తున్నాను",
+      "translation_text": "you did some recharge right I am doing that only",
+      "status": "preserved"
+    },
+    {
+      "t": "01:03",
+      "type": "money_or_payment",
+      "reference_text": "డబ్బులు పోక తప్పితే ఏమీ లేదులే",
+      "translation_text": "Except for money there is nothing",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow of the conversation but contains several significant mistranslations, including turning a location question into a meeting request and misinterpreting slang terms."
+}

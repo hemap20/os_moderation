@@ -1,0 +1,38 @@
+{
+  "file_id": "rec_default_426226216_audio_1788957468242.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 52,
+  "affected_word_count": 8,
+  "semantic_error_rate": 0.1538,
+  "seconds": 2.3,
+  "discrepancies": [
+    {
+      "reference_text": "నేను రాసుకుంటాను కిందకి అంటావా?",
+      "translation_text": "can you go down a bit",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference text mentions writing down, but the translation incorrectly translates it as 'go down a bit'."
+    },
+    {
+      "reference_text": "ఇంకొంచెం అంటే వాట్సాప్.",
+      "translation_text": "I mean WhatsApp",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The translation misses the phrase 'a little more' in relation to WhatsApp."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:39",
+      "type": "move_off_app",
+      "reference_text": "ఇంకొంచెం అంటే వాట్సాప్.",
+      "translation_text": "I mean WhatsApp",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation generally preserves the intent of the conversation, but contains a mistranslation regarding writing down and slightly misses a phrase about WhatsApp."
+}

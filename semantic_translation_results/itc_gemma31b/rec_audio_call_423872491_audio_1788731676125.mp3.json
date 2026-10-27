@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_audio_call_423872491_audio_1788731676125.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 79,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.1392,
+  "seconds": 3.2,
+  "discrepancies": [
+    {
+      "reference_text": "सब कुछ करूंगी",
+      "translation_text": "Will you do everything?",
+      "category": "intent_changed",
+      "word_count_affected": 3,
+      "explanation": "The reference is a statement of what the speaker will do ('I will do everything'), but the translation turns it into a question ('Will you do everything?')."
+    },
+    {
+      "reference_text": "वरना मैं जा रही हूं किसी और को देने",
+      "translation_text": "Wait, I am going to give it to someone else.",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference says 'otherwise I am going to give it to someone else', whereas the translation translates 'otherwise' (वरना) as 'Wait'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:21",
+      "type": "sexual_or_explicit",
+      "reference_text": "वीडियो कॉल पर बात करना है आपको मुझसे",
+      "translation_text": "Do you want to talk to me on video call?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:27",
+      "type": "money_or_payment",
+      "reference_text": "हां 250 रुपए में आधे घंटे तक सब कुछ करूंगी",
+      "translation_text": "yes, the charge for half an hour is two hundred fifty rupees",
+      "status": "preserved"
+    },
+    {
+      "t": "00:27",
+      "type": "sexual_or_explicit",
+      "reference_text": "सब कुछ करूंगी",
+      "translation_text": "Will you do everything?",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow of the conversation, but changes a key statement about performing services on a video call into a question."
+}

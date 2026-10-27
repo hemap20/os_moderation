@@ -1,0 +1,37 @@
+{
+  "file_id": "rec_audio_call_427307060_audio_1789058304926.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 7,
+  "affected_word_count": 4,
+  "semantic_error_rate": 0.5714,
+  "seconds": 4.4,
+  "discrepancies": [
+    {
+      "reference_text": "हेलो",
+      "translation_text": "Nine",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The greeting 'Hello' is mistranslated as 'Nine'."
+    },
+    {
+      "reference_text": "",
+      "translation_text": "Yes",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The word 'Yes' is added in the translation where there is no corresponding reference text."
+    },
+    {
+      "reference_text": "एक मिनट रुकिए",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The request to wait for a minute is completely missing from the translation."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation fails to capture the request to wait a minute and introduces incorrect words like 'Nine' and 'Yes' instead of the greetings."
+}

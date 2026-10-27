@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_426857244_audio_1789021306090.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 102,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.1275,
+  "seconds": 5.1,
+  "discrepancies": [
+    {
+      "reference_text": "కెనడా నుంచి ఉన్నావా యాప్ కి వచ్చి",
+      "translation_text": "how many days has it been since coming to the app",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference asks if they are from Canada, but the translation asks how many days they have been on the app."
+    },
+    {
+      "reference_text": "సోదంతా",
+      "translation_text": "all shoes",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference word meaning 'all nonsense/boring talk' is mistranslated as 'all shoes'."
+    },
+    {
+      "reference_text": "ముక్కలు వాళ్ళు వస్తున్నారు",
+      "translation_text": "such old people are coming",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference mentions 'pieces/fragments of people' or 'broken people', which is translated as 'old people'."
+    },
+    {
+      "reference_text": "ఎక్కడ అలవాలా",
+      "translation_text": "where should we meet?",
+      "category": "intent_changed",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Where in Alwal?' (a location in Hyderabad), but the translation changes this to an invitation to meet."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:34",
+      "type": "money_or_payment",
+      "reference_text": "ఏదో రీఛార్జ్ చేశాను కదా అని చేస్తున్నాను",
+      "translation_text": "We did some recharge for the app, right? I'm just doing it",
+      "status": "preserved"
+    },
+    {
+      "t": "00:37",
+      "type": "money_or_payment",
+      "reference_text": "ఎందుకు రీఛార్జ్ చేశాక రా రా యాప్ కి",
+      "translation_text": "mother, why will I recharge, come to the app more",
+      "status": "preserved"
+    },
+    {
+      "t": "01:03",
+      "type": "money_or_payment",
+      "reference_text": "డబ్బులు పోక తప్పితే ఏమీ లేదులే",
+      "translation_text": "Except for money [unclear], there is nothing",
+      "status": "preserved"
+    },
+    {
+      "t": "01:26",
+      "type": "meeting_in_person",
+      "reference_text": "ఎక్కడ అలవాలా",
+      "translation_text": "where should we meet?",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several inaccuracies, including mistranslating a specific location in Hyderabad ('Alwal') as an invitation to meet in person, which alters the intent."
+}

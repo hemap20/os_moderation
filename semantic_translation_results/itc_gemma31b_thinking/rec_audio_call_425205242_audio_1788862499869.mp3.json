@@ -1,0 +1,94 @@
+{
+  "file_id": "rec_audio_call_425205242_audio_1788862499869.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 191,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.0785,
+  "seconds": 4.9,
+  "discrepancies": [
+    {
+      "reference_text": "ഞാൻ മാരീഡ് അല്ല",
+      "translation_text": "I am married",
+      "category": "negation_flipped",
+      "word_count_affected": 3,
+      "explanation": "The translation flips the negation, stating the speaker is married when they said they are not."
+    },
+    {
+      "reference_text": "നിങ്ങളോട് കോൾ ആണ്",
+      "translation_text": "It is a moded call",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation mistranslates 'nude call' (നിങ്ങളോട്/നഗ്ന കോൾ) as 'moded call'."
+    },
+    {
+      "reference_text": "ടെലഗ്രാം ഐഡി അറിയാം ഒരു ഹായ് അയക്കും",
+      "translation_text": "can I know via Telegram? Hi, oh my",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The translation misinterprets the instruction to send a 'hi' to the Telegram ID."
+    },
+    {
+      "reference_text": "ഒന്നും വന്നിട്ടില്ലല്ലോ",
+      "translation_text": "nothing is needed, right?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The translation says 'nothing is needed' instead of 'nothing has come/appeared'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:45",
+      "type": "sexual_or_explicit",
+      "reference_text": "എനിക്ക് ഓപ്പൺ ടോക്ക് സർവീസ് എടുക്കാൻ താല്പര്യം ഉണ്ടോ",
+      "translation_text": "Are you interested in taking the open talk service?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:57",
+      "type": "move_off_app",
+      "reference_text": "വീഡിയോ കോൾ സർവീസ് ആണ് ടെലഗ്രാമിൽ കൂടി ആണ്",
+      "translation_text": "It is a video call service, it is through Telegram",
+      "status": "preserved"
+    },
+    {
+      "t": "01:01",
+      "type": "money_or_payment",
+      "reference_text": "20 മിനിറ്റ് 250 രൂപയാണ് വീഡിയോ കോൾ ആണ്",
+      "translation_text": "Twenty minutes is two hundred and fifty rupees. It is a video call.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:05",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഓപ്പൺ ഓപ്പൺ ആണ്",
+      "translation_text": "It is open, open, open.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:08",
+      "type": "sexual_or_explicit",
+      "reference_text": "നിങ്ങളോട് കോൾ ആണ്",
+      "translation_text": "It is a moded call",
+      "status": "softened"
+    },
+    {
+      "t": "01:15",
+      "type": "move_off_app",
+      "reference_text": "ഓക്കെ ഞാൻ ടെലഗ്രാം ഐഡി അറിയാം ഒരു ഹായ് അയക്കും",
+      "translation_text": "then can I know via Telegram? Hi, oh my",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:20",
+      "type": "move_off_app",
+      "reference_text": "ക്യാപിറ്റൽ ലെറ്റർ എഫ് അടിക്കും... സ്മോൾ ലെറ്റർ ഐ ഡി എച്ച് എ... 120",
+      "translation_text": "capital F... Small letter i d h a i d h a one two zero",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow of the conversation but contains several errors, including flipping a negation about marital status, mistranslating 'nude call' as 'moded call', and garbling the instructions for exchanging Telegram details."
+}

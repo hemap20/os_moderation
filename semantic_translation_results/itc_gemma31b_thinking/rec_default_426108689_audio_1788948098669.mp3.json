@@ -1,0 +1,37 @@
+{
+  "file_id": "rec_default_426108689_audio_1788948098669.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 15,
+  "affected_word_count": 6,
+  "semantic_error_rate": 0.4,
+  "seconds": 2.8,
+  "discrepancies": [
+    {
+      "reference_text": "",
+      "translation_text": "For the health minister, for the health minister, for the health minister [x17] because it is needed",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation contains a bizarre repetitive phrase about a health minister at the beginning which is not present in the reference."
+    },
+    {
+      "reference_text": "നിങ്ങൾ എവിടെയാ",
+      "translation_text": "Your idea [unclear] [unclear]",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Where are you?' but the translation incorrectly translates it as 'Your idea'."
+    },
+    {
+      "reference_text": "എവിടെയാ സ്ഥലം എവിടെയാ സ്ഥലം",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The question asking about the location is completely missing from the translation."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "no",
+  "intent_preserved": "partly",
+  "summary": "The translation contains hallucinated text at the beginning, mistranslates a basic question about location, and completely omits other questions about the user's location."
+}

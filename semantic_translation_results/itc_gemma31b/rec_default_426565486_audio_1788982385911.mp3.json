@@ -1,0 +1,143 @@
+{
+  "file_id": "rec_default_426565486_audio_1788982385911.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 305,
+  "affected_word_count": 23,
+  "semantic_error_rate": 0.0754,
+  "seconds": 7.0,
+  "discrepancies": [
+    {
+      "reference_text": "കളിച്ചീനാ",
+      "translation_text": "have you played around, sister?",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference asks about having sex ('played'), but the translation adds 'sister' which completely changes the context."
+    },
+    {
+      "reference_text": "തിരുവനന്തപുരം",
+      "translation_text": "Constantly",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The city name Thiruvananthapuram is mistranslated as 'Constantly'."
+    },
+    {
+      "reference_text": "നക്കി തരാം",
+      "translation_text": "he had given it after licking",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'I will lick you', but the translation changes it to a past action by someone else."
+    },
+    {
+      "reference_text": "കേട്ടുമ്പോൾ വേദന ഉണ്ടോ",
+      "translation_text": "is there pain when giving birth?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks about pain when inserting/penetrating, but the translation mistranslates it as 'giving birth'."
+    },
+    {
+      "reference_text": "മോനെ",
+      "translation_text": "girl",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'son' (slang for penis), but the translation says 'girl'."
+    },
+    {
+      "reference_text": "പൂര് നക്കി തരാം",
+      "translation_text": "will lick along with it",
+      "category": "tone_softened",
+      "word_count_affected": 3,
+      "explanation": "The highly explicit reference to licking the vagina ('pooru') is translated as 'lick along with it'."
+    },
+    {
+      "reference_text": "നല്ല പാല് നക്കി തരും",
+      "translation_text": "will lick the milk well",
+      "category": "tone_softened",
+      "word_count_affected": 5,
+      "explanation": "The reference to licking vaginal juices/cum ('paalu') is translated literally as 'milk'."
+    },
+    {
+      "reference_text": "എന്റെ പൂര് നക്കി തരും നല്ല പാല്",
+      "translation_text": "I will make you completely mine, will buy well",
+      "category": "tone_softened",
+      "word_count_affected": 7,
+      "explanation": "The explicit reference to licking the vagina and juices is completely mistranslated and softened to 'make you mine'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:45",
+      "type": "sexual_or_explicit",
+      "reference_text": "കളിച്ചീനാ",
+      "translation_text": "have you played around, sister?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:24",
+      "type": "meeting_in_person",
+      "reference_text": "തിരുവനന്തപുരം വന്നാൽ കാണാൻ പറ്റുമോ",
+      "translation_text": "if you come constantly can we meet?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:30",
+      "type": "sexual_or_explicit",
+      "reference_text": "എനിക്കും കളിക്കാനാ",
+      "translation_text": "I also want to play",
+      "status": "preserved"
+    },
+    {
+      "t": "01:34",
+      "type": "sexual_or_explicit",
+      "reference_text": "അപ്പൊ നക്കി തരാം",
+      "translation_text": "he had given it after licking",
+      "status": "intent_changed"
+    },
+    {
+      "t": "02:29",
+      "type": "sexual_or_explicit",
+      "reference_text": "അപ്പൊ എന്റെ മോനെ കണ്ടല്ലോ",
+      "translation_text": "No need to see the girl",
+      "status": "intent_changed"
+    },
+    {
+      "t": "03:49",
+      "type": "sexual_or_explicit",
+      "reference_text": "നക്കി തരട്ടെ",
+      "translation_text": "Akkitattan",
+      "status": "missing"
+    },
+    {
+      "t": "06:10",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഞാൻ പൂര് നക്കി തരാം",
+      "translation_text": "Will lick along with it",
+      "status": "softened"
+    },
+    {
+      "t": "06:37",
+      "type": "sexual_or_explicit",
+      "reference_text": "എന്റെ പൂര് നക്കി തരും നല്ല പാല്",
+      "translation_text": "I will make you completely mine, will buy well",
+      "status": "softened"
+    },
+    {
+      "t": "06:45",
+      "type": "sexual_or_explicit",
+      "reference_text": "കേറ്റുന്നത് മാത്രം ഇഷ്ടമാ",
+      "translation_text": "Do you only like entering?",
+      "status": "preserved"
+    },
+    {
+      "t": "07:12",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഞാൻ കേറ്റട്ടോ",
+      "translation_text": "After entering?",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "partly",
+  "summary": "The translation fails to preserve the highly explicit sexual nature of the call, mistranslating slang terms for genitals and sexual acts into nonsensical or softened phrases."
+}

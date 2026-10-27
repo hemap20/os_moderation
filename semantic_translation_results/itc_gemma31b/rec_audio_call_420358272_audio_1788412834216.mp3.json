@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_audio_call_420358272_audio_1788412834216.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 251,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.0598,
+  "seconds": 4.3,
+  "discrepancies": [
+    {
+      "reference_text": "நான் ஓசூர்",
+      "translation_text": "I am a rice [unclear]",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The translation mistranslates the city name 'Hosur' as 'rice'."
+    },
+    {
+      "reference_text": "நான் மேரிடு ஒர்க் பண்ணிட்டு இருக்கேன்",
+      "translation_text": "I am unmarried I am working",
+      "category": "negation_flipped",
+      "word_count_affected": 5,
+      "explanation": "The speaker says they are married, but the translation says they are unmarried."
+    },
+    {
+      "reference_text": "சொல்ல கூட சொல்ல விடமாட்டாங்க",
+      "translation_text": "let the children speak",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation mistranslates 'they won't even let us say' as 'let the children speak'."
+    },
+    {
+      "reference_text": "எனக்கு காயின் முடிய போகுது",
+      "translation_text": "my call is also about to end",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation changes 'coins are about to end' to 'call is about to end'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:47",
+      "type": "money_or_payment",
+      "reference_text": "அதனால சரி ஆப் குள்ள வரலாமே சரி வந்தா பேசலாம்",
+      "translation_text": "so okay we can come inside the app right okay",
+      "status": "preserved"
+    },
+    {
+      "t": "02:10",
+      "type": "sexual_or_explicit",
+      "reference_text": "எல்லாம் செக்சுவல் ஹராஸ்மென்ட் தான்",
+      "translation_text": "sexual harassment only",
+      "status": "preserved"
+    },
+    {
+      "t": "02:17",
+      "type": "money_or_payment",
+      "reference_text": "பார்ட் டைமா நீங்க ஒர்க் பண்ணிக்கலாம்",
+      "translation_text": "you can work part time in this",
+      "status": "preserved"
+    },
+    {
+      "t": "02:41",
+      "type": "sexual_or_explicit",
+      "reference_text": "நீங்க இத பண்ணுவீங்களா அத பண்ணுவீங்களான்னு கேப்பாங்க",
+      "translation_text": "will you do this will you do that",
+      "status": "preserved"
+    },
+    {
+      "t": "02:52",
+      "type": "money_or_payment",
+      "reference_text": "எனக்கு காயின் முடிய போகுது",
+      "translation_text": "my call is also about to end",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the discussion about sexual harassment on the app, though it contains a few minor errors such as mistranslating 'Hosur' as 'rice' and 'married' as 'unmarried'."
+}

@@ -1,0 +1,101 @@
+{
+  "file_id": "rec_audio_call_426871106_audio_1789022339887.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 407,
+  "affected_word_count": 35,
+  "semantic_error_rate": 0.086,
+  "seconds": 5.2,
+  "discrepancies": [
+    {
+      "reference_text": "ನನ್ನ ಹತ್ರ ಮಾತಾಡಿದ್ರಲ್ಲ ನನ್ನ ಹತ್ರ ನೀವು?",
+      "translation_text": "Did you talk to me yesterday?",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference asks 'You talked to me, didn't you?' but the translation adds 'yesterday' which is not in the reference."
+    },
+    {
+      "reference_text": "ಎಕ್ಸ್ ಗೆ",
+      "translation_text": "next",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'to my ex' (ex-partner), but the translation mistranslates 'ex' as 'next'."
+    },
+    {
+      "reference_text": "ನಿಮ್ಮ ಎಕ್ಸ್ ಆ?",
+      "translation_text": "Your ex...",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'Your ex?' but the translation turns it into a trailing statement."
+    },
+    {
+      "reference_text": "ಎಕ್ಸ್ ಗೆ ಹೆಂಗೆ ಕೊಡುಸ್ತೀರಾ?",
+      "translation_text": "Excuse me, how is it? Will you give?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks 'How will you give to your ex?' but the translation mistranslates 'ex' as 'Excuse me'."
+    },
+    {
+      "reference_text": "ಮಗಳಿಗೆ",
+      "translation_text": "children, for my son",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'daughter' but the translation says 'children, for my son'."
+    },
+    {
+      "reference_text": "ರೆಸಾರ್ಟ್ ಗೆ ಹೋಗಿ ಸಕ್ಕತ್ತಾಗಿ ಪಾರ್ಟಿ ಮಾಡ್ತಿದ್ದು",
+      "translation_text": "reserve some and do it great",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'go to a resort and party nicely' but the translation mistranslates 'resort' as 'reserve'."
+    },
+    {
+      "reference_text": "ಒಂದು ಲಕ್ಷ ಒಂದು ಐದಾರು ಸಾವಿರ",
+      "translation_text": "five lakhs... five or six thousand",
+      "category": "number_or_id_altered",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'one lakh, some five or six thousand' but the translation introduces 'five lakhs'."
+    },
+    {
+      "reference_text": "ಎಕ್ಸ್ ಗೆ",
+      "translation_text": "next",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'to my ex' but the translation mistranslates it as 'next'."
+    },
+    {
+      "reference_text": "ಹುಡುಗಿ ಪೈಸಾ ಜಾಸ್ತಿ ನಾ ಟೈಮ್",
+      "translation_text": "Girl payasam, is that too much?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'For a girl, is money more important or time?' but the translation mistranslates 'paisa' (money) as 'payasam' (sweet dish)."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:39",
+      "type": "money_or_payment",
+      "reference_text": "ಎಷ್ಟು ಖರ್ಚು ಮಾಡಿದ್ದೀರಾ?",
+      "translation_text": "How much have you spent?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:48",
+      "type": "money_or_payment",
+      "reference_text": "ಒಂದು ಲಕ್ಷ",
+      "translation_text": "One lakh",
+      "status": "preserved"
+    },
+    {
+      "t": "03:53",
+      "type": "money_or_payment",
+      "reference_text": "ಕೊಡಿ ಅಂದೆ ಒಂದು ಲಕ್ಷ ಒಂದು ಐದಾರು ಸಾವಿರ",
+      "translation_text": "Give me five lakhs... five or six thousand is enough",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate in tone and intent, but contains several mistranslations of key words like 'ex' (translated as 'next' or 'excuse me') and 'resort' (translated as 'reserve')."
+}

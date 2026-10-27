@@ -1,0 +1,94 @@
+{
+  "file_id": "rec_default_426649193_audio_1788991280922.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 56,
+  "affected_word_count": 25,
+  "semantic_error_rate": 0.4464,
+  "seconds": 6.2,
+  "discrepancies": [
+    {
+      "reference_text": "ఎక్కడి నుంచి?",
+      "translation_text": "Where did it come from?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Where from?' (referring to location), but the translation translates it as 'Where did it come from?'."
+    },
+    {
+      "reference_text": "హైదరాబాద్ నుంచి అండి.",
+      "translation_text": "From where in Hyderabad... is your husband not there? Is your husband not at home?",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds questions about a husband being home which are not present in the reference."
+    },
+    {
+      "reference_text": "నేను ఐదు నిమిషాలు అండి. నేను ఐదు నిమిషాలు అండి.",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 6,
+      "explanation": "The speaker's mention of 'I am five minutes' or 'five minutes' is completely missing from the translation."
+    },
+    {
+      "reference_text": "సల్లు సైజు ఎంత?",
+      "translation_text": "what is the size sir, what is the size",
+      "category": "tone_softened",
+      "word_count_affected": 3,
+      "explanation": "The explicit Telugu word for breasts ('sallu') is translated simply as 'size' without the explicit anatomical reference."
+    },
+    {
+      "reference_text": "జాకెట్ కూడా తీయొచ్చు కదా పక్కన",
+      "translation_text": "Jacket also can be removed",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference refers to a blouse/jacket, but the translation translates it literally as 'jacket' which changes the cultural context of clothing."
+    },
+    {
+      "reference_text": "ఓపెన్ చేయండి",
+      "translation_text": "open the songs",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'open it' (referring to clothing/video), but the translation incorrectly adds 'the songs'."
+    },
+    {
+      "reference_text": "చేశారు మా ఫ్రెండ్ చేశారు ఐడి బ్లాక్",
+      "translation_text": "My brand does the ride block.",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'My friend did it, ID block', but the translation says 'My brand does the ride block'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:24",
+      "type": "sexual_or_explicit",
+      "reference_text": "సల్లు సైజు ఎంత?",
+      "translation_text": "what is the size sir, what is the size",
+      "status": "softened"
+    },
+    {
+      "t": "00:34",
+      "type": "sexual_or_explicit",
+      "reference_text": "అది కూడా తీయొచ్చు కదా కొద్దిగా",
+      "translation_text": "that too can be removed a little.",
+      "status": "preserved"
+    },
+    {
+      "t": "00:39",
+      "type": "sexual_or_explicit",
+      "reference_text": "జాకెట్ కూడా తీయొచ్చు కదా పక్కన",
+      "translation_text": "Jacket also can be removed",
+      "status": "preserved"
+    },
+    {
+      "t": "00:42",
+      "type": "sexual_or_explicit",
+      "reference_text": "ఓపెన్ చేయండి",
+      "translation_text": "open the songs",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several errors, including hallucinated questions about a husband, softening of explicit anatomical terms, and mistranslating 'open it' as 'open the songs'."
+}

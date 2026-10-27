@@ -1,0 +1,101 @@
+{
+  "file_id": "rec_audio_call_392643395_audio_1785861202288.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 629,
+  "affected_word_count": 22,
+  "semantic_error_rate": 0.035,
+  "seconds": 5.8,
+  "discrepancies": [
+    {
+      "reference_text": "मैं तो मुंबई में हूं अभी",
+      "translation_text": "I have toured Mumbai",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'I am in Mumbai right now', but the translation says 'I have toured Mumbai'."
+    },
+    {
+      "reference_text": "पूरा घटिया भोसड़ी वाले सब",
+      "translation_text": "completely pathetic",
+      "category": "tone_softened",
+      "word_count_affected": 5,
+      "explanation": "The translation omits the highly vulgar Hindi insult 'भोसड़ी वाले' (cunts/motherfuckers), softening it to 'completely pathetic'."
+    },
+    {
+      "reference_text": "अरे बहुत खराब खराब है बहनचोद",
+      "translation_text": "Oh, they are very bad, bad",
+      "category": "tone_softened",
+      "word_count_affected": 6,
+      "explanation": "The translation omits the strong Hindi swear word 'बहनचोद' (sisterfucker)."
+    },
+    {
+      "reference_text": "गांधी मैदान",
+      "translation_text": "Gandhi Bazaar",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The translation changes 'Gandhi Maidan' (a famous ground/park) to 'Gandhi Bazaar'."
+    },
+    {
+      "reference_text": "प्रिया राज",
+      "translation_text": "Prayagraj",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The translation incorrectly translates the name 'Priya Raj' as the city 'Prayagraj' at [06:31]."
+    },
+    {
+      "reference_text": "भोसड़ी",
+      "translation_text": "there",
+      "category": "tone_softened",
+      "word_count_affected": 1,
+      "explanation": "The translation completely omits the vulgar swear word 'भोसड़ी' (cunt) at the very end of the call."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "06:13",
+      "type": "move_off_app",
+      "reference_text": "कोई बात नहीं आप इंस्टाग्राम पे आ सकते हो मेरे",
+      "translation_text": "No problem, you can come on Instagram",
+      "status": "preserved"
+    },
+    {
+      "t": "06:36",
+      "type": "move_off_app",
+      "reference_text": "ओ नहीं है ऐसा नंबर पे आएगा नंबर दोगे तब",
+      "translation_text": "oh it won't come, it will come on this number",
+      "status": "preserved"
+    },
+    {
+      "t": "06:42",
+      "type": "move_off_app",
+      "reference_text": "मैं नंबर कांटेक्ट नहीं करती और अभी फर्स्ट बार है तो जरूरी नहीं है मैं नंबर कांटेक्ट",
+      "translation_text": "I don't do number contact, and since it's the first time, it's not necessary that I number contact",
+      "status": "preserved"
+    },
+    {
+      "t": "06:56",
+      "type": "move_off_app",
+      "reference_text": "तो आ जाओ ना इंस्टा पे आ जाओ वहीं बात करेंगे क्या दिक्कत है",
+      "translation_text": "so come on Insta, come on, we will talk there",
+      "status": "preserved"
+    },
+    {
+      "t": "08:40",
+      "type": "money_or_payment",
+      "reference_text": "कॉइन ऐड करके आइए ओके",
+      "translation_text": "Come after adding coins, okay",
+      "status": "preserved"
+    },
+    {
+      "t": "08:45",
+      "type": "money_or_payment",
+      "reference_text": "कॉइन ऐड करके आइए मुझे कॉल कीजिए इस पे फिर",
+      "translation_text": "add coins and come, call me on this then",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "yes",
+  "summary": "The translation successfully preserves the main intent of the speakers, including the attempts to move off-app to Instagram and the request to add coins, but it completely filters out multiple highly vulgar Hindi swear words."
+}

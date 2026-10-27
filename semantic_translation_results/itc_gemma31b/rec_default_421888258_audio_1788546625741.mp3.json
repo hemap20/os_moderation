@@ -1,0 +1,31 @@
+{
+  "file_id": "rec_default_421888258_audio_1788546625741.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 14,
+  "affected_word_count": 12,
+  "semantic_error_rate": 0.8571,
+  "seconds": 2.4,
+  "discrepancies": [
+    {
+      "reference_text": "यार बता रहा Instagram में स्टेटस डाल Instagram स्टेटस डाल Instagram में डाल दे",
+      "translation_text": "Is it clear, tell me Yes or no, yes, on Instagram status we were late, right, [unclear] is [unclear] is, on Instagram also I will change it We will do it everywhere, right, so it should be natural, it felt like that, right",
+      "category": "other_meaning_change",
+      "word_count_affected": 12,
+      "explanation": "The reference is repeatedly asking to post a status on Instagram, whereas the translation introduces unrelated concepts like being late, changing it, and making it natural."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:06",
+      "type": "move_off_app",
+      "reference_text": "Instagram में स्टेटस डाल Instagram स्टेटस डाल Instagram में डाल दे",
+      "translation_text": "on Instagram status we were late, right, [unclear] is [unclear] is, on Instagram also I will change it",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "no",
+  "summary": "The translation completely distorts the speaker's simple request to post a status on Instagram, introducing irrelevant details and changing the overall intent."
+}

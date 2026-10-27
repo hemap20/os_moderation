@@ -1,0 +1,101 @@
+{
+  "file_id": "rec_default_426848544_audio_1789020636084.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 295,
+  "affected_word_count": 14,
+  "semantic_error_rate": 0.0475,
+  "seconds": 6.4,
+  "discrepancies": [
+    {
+      "reference_text": "ఆ పుట్టుమచ్చ టెంప్టింగ్ గా ఉంది.",
+      "translation_text": "that photo is nice and tempting",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference mentions a mole (పుట్టుమచ్చ) being tempting, but the translation incorrectly translates it as 'photo'."
+    },
+    {
+      "reference_text": "ఎచ్చమల్లి.",
+      "translation_text": "Gachibowli",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The location 'Echammalli' (or similar local area) is translated as 'Gachibowli'."
+    },
+    {
+      "reference_text": "నువ్వు?",
+      "translation_text": "four ten",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The question 'You?' (asking where she stays) is mistranslated as 'four ten'."
+    },
+    {
+      "reference_text": "నాది ఉప్పల్.",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The speaker's response that she is from Uppal is completely missing from the translation."
+    },
+    {
+      "reference_text": "క్యాప్ జెమిని.",
+      "translation_text": "cabs sir tell the price",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The company name 'Capgemini' is mistranslated as 'cabs sir tell the price'."
+    },
+    {
+      "reference_text": "చూపియను.",
+      "translation_text": "I will show",
+      "category": "negation_flipped",
+      "word_count_affected": 1,
+      "explanation": "The speaker says 'I won't show' (చూపియను), but the translation flips this to 'I will show'."
+    },
+    {
+      "reference_text": "చూస్తాను.",
+      "translation_text": "I will show",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The speaker says 'I will watch/look' (చూస్తాను), but the translation says 'I will show'."
+    },
+    {
+      "reference_text": "చూపియను.",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 1,
+      "explanation": "The final refusal 'I won't show' is missing from the translation."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:56",
+      "type": "sexual_or_explicit",
+      "reference_text": "ఆ పుట్టుమచ్చ టెంప్టింగ్ గా ఉంది.",
+      "translation_text": "that photo is nice and tempting",
+      "status": "softened"
+    },
+    {
+      "t": "01:24",
+      "type": "sexual_or_explicit",
+      "reference_text": "ఏంటి, బాయ్ ఫ్రెండ్ ఉన్నాడా? కొరికేసాడా?",
+      "translation_text": "do you still have a boyfriend did he bite you",
+      "status": "preserved"
+    },
+    {
+      "t": "03:59",
+      "type": "sexual_or_explicit",
+      "reference_text": "ఒకసారి ఇలా చూపించొచ్చు కదా.",
+      "translation_text": "Once more do it like this like this",
+      "status": "softened"
+    },
+    {
+      "t": "04:03",
+      "type": "sexual_or_explicit",
+      "reference_text": "చూపియను.",
+      "translation_text": "I will show",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "no",
+  "summary": "The translation contains several critical errors, including flipping the female speaker's refusal to show herself ('I won't show') into an agreement ('I will show'), which completely alters the intent of the interaction."
+}

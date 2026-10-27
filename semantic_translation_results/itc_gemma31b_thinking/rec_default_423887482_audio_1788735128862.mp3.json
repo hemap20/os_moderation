@@ -1,0 +1,136 @@
+{
+  "file_id": "rec_default_423887482_audio_1788735128862.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 274,
+  "affected_word_count": 19,
+  "semantic_error_rate": 0.0693,
+  "seconds": 9.1,
+  "discrepancies": [
+    {
+      "reference_text": "क्लोज कर लो कपड़ा",
+      "translation_text": "do blouse, the cloth is not good",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'close the clothes' (meaning cover up/close the show), but the translation mistranslates it as 'do blouse, the cloth is not good'."
+    },
+    {
+      "reference_text": "नवी बाजी",
+      "translation_text": "no, vegetables",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'navi baaji' (new thing/news), which is mistranslated as 'no, vegetables' (sabzi)."
+    },
+    {
+      "reference_text": "बूब्स",
+      "translation_text": "books",
+      "category": "tone_softened",
+      "word_count_affected": 1,
+      "explanation": "The explicit word 'boobs' is mistranslated/censored as 'books'."
+    },
+    {
+      "reference_text": "500 500",
+      "translation_text": "Four hundred, five hundred",
+      "category": "number_or_id_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference says '500 500' but the translation adds 'Four hundred'."
+    },
+    {
+      "reference_text": "बाद में करूंगा",
+      "translation_text": "otherwise no. I won't talk",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I will do it later' but the translation says 'otherwise no. I won't talk'."
+    },
+    {
+      "reference_text": "क्योंकि विदाउट पैसे से नहीं कर सकते हैं",
+      "translation_text": "Can you meet with money, is a maulvi?",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'because without money we cannot do it', which is completely mistranslated as 'Can you meet with money, is a maulvi?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:59",
+      "type": "sexual_or_explicit",
+      "reference_text": "देखना चाहते हो तो शो कर शो देखना चाहते हो नहीं देखना चाहते तो क्लोज कर लो कपड़ा",
+      "translation_text": "do you want to see something new? This show, do you want to see the show? If you don't want to see, then do blouse, the cloth is not good",
+      "status": "softened"
+    },
+    {
+      "t": "01:39",
+      "type": "sexual_or_explicit",
+      "reference_text": "मैं बोल रहा हूं आपके बूब्स अच्छे हैं",
+      "translation_text": "I am saying your books are good",
+      "status": "softened"
+    },
+    {
+      "t": "01:51",
+      "type": "sexual_or_explicit",
+      "reference_text": "और दिखाओ ना",
+      "translation_text": "Show more",
+      "status": "preserved"
+    },
+    {
+      "t": "01:56",
+      "type": "sexual_or_explicit",
+      "reference_text": "नीचे तो दिखता नहीं है तो नीचे कैमरा जाते तो ब्लर हो जाता है यहां पे",
+      "translation_text": "it's not visible below, sir when the camera goes down it becomes blur",
+      "status": "preserved"
+    },
+    {
+      "t": "02:01",
+      "type": "move_off_app",
+      "reference_text": "हम व्हाट्सएप वगैरह पे भी वो करते हैं",
+      "translation_text": "We also do that on WhatsApp etc.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:11",
+      "type": "move_off_app",
+      "reference_text": "दीजिए आपके व्हाट्सएप आपके व्हाट्सएप दीजिए",
+      "translation_text": "Give your WhatsApp, your WhatsApp, give it",
+      "status": "preserved"
+    },
+    {
+      "t": "02:17",
+      "type": "money_or_payment",
+      "reference_text": "व्हाट्सएप पे पेमेंट डालना पड़ेगा आपको",
+      "translation_text": "you will have to make payment on WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "02:22",
+      "type": "money_or_payment",
+      "reference_text": "पेमेंट पेमेंट डालना पड़ेगा",
+      "translation_text": "payment, payment will have to come",
+      "status": "preserved"
+    },
+    {
+      "t": "02:27",
+      "type": "money_or_payment",
+      "reference_text": "500",
+      "translation_text": "five hundred rupees?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:33",
+      "type": "money_or_payment",
+      "reference_text": "500 500 जो आपको डालना है आप डाल सकते हो",
+      "translation_text": "Four hundred, five hundred, whatever you want to put, you can put",
+      "status": "preserved"
+    },
+    {
+      "t": "04:05",
+      "type": "money_or_payment",
+      "reference_text": "कॉल में पेमेंट डालोगे तभी कर पाएंगे क्योंकि विदाउट पैसे से नहीं कर सकते हैं",
+      "translation_text": "if you put payment in the call, only then will be able to do it, only then. Can you meet with money, is a maulvi?",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several critical errors, including mistranslating 'boobs' as 'books' and completely garbling the final sentence about not being able to do anything without money."
+}

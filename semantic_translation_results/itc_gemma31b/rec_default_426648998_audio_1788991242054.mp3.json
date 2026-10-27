@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_default_426648998_audio_1788991242054.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 65,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.1692,
+  "seconds": 4.2,
+  "discrepancies": [
+    {
+      "reference_text": "ಬೆಳ್ಳಗೆ",
+      "translation_text": "Bangalore madam no",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'fair/white' (ಬೆಳ್ಳಗೆ), but the translation incorrectly translates it as 'Bangalore madam no'."
+    },
+    {
+      "reference_text": "ಅದು ಚಿಕ್ಕ ಪ್ಲಸ್",
+      "translation_text": "Chikmagalur",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'that small plus', but the translation incorrectly translates it as 'Chikmagalur'."
+    },
+    {
+      "reference_text": "ಹೇರ್ ಬಾಕಿ ಇದೆ",
+      "translation_text": "kabaddi saree once Tippu boy",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'hair is remaining', but the translation is completely garbled and nonsensical."
+    },
+    {
+      "reference_text": "ನಿಪ್ಪಲ್ ನಿಪ್ಪಲ್ ಬಾಯಿಗೆ ಕೊಡು",
+      "translation_text": "Tippu boy Give dippal dippal dippal dippal give",
+      "category": "tone_softened",
+      "word_count_affected": 4,
+      "explanation": "The explicit request to 'put the nipple in the mouth' is mistranslated and softened into nonsensical words like 'Tippu boy' and 'dippal'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:24",
+      "type": "sexual_or_explicit",
+      "reference_text": "ಟೋರ್ಸೋ ಟೋರ್ಸೋ ಕರೆಕ್ಟ್ ಟೋರ್ಸೋ",
+      "translation_text": "Show show show correctly",
+      "status": "preserved"
+    },
+    {
+      "t": "00:38",
+      "type": "sexual_or_explicit",
+      "reference_text": "ಹೊರಗೆ ಹಾಕು ಎರಡು ಕೂಡ",
+      "translation_text": "go outside this too",
+      "status": "softened"
+    },
+    {
+      "t": "01:18",
+      "type": "sexual_or_explicit",
+      "reference_text": "ನಿಪ್ಪಲ್ ನಿಪ್ಪಲ್ ಬಾಯಿಗೆ ಕೊಡು",
+      "translation_text": "Tippu boy Give dippal dippal dippal dippal give",
+      "status": "softened"
+    },
+    {
+      "t": "01:42",
+      "type": "sexual_or_explicit",
+      "reference_text": "ಕೈ ಹಾಕು ಕೈ",
+      "translation_text": "Put hand put hand",
+      "status": "preserved"
+    },
+    {
+      "t": "01:51",
+      "type": "sexual_or_explicit",
+      "reference_text": "ಔಟ್ ಆಯ್ತು ಔಟ್ ಆಯ್ತು ಹೊರಗೆ ಹಾಕು ಹೊರಗೆ ಹಾಕು ಹೊರಗೆ ಹಾಕು",
+      "translation_text": "It came out it came out put it outside put it outside put it outside",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general sexual demands to show body parts and put hands, but fails to accurately translate specific explicit terms like 'nipple' and 'mouth', turning them into nonsensical words."
+}

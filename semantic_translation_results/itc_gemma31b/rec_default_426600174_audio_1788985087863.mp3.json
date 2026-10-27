@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426600174_audio_1788985087863.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 291,
+  "affected_word_count": 14,
+  "semantic_error_rate": 0.0481,
+  "seconds": 4.9,
+  "discrepancies": [
+    {
+      "reference_text": "പത്തു മാസമായി എന്ന് പറഞ്ഞില്ലേ",
+      "translation_text": "didn't I say it's been ten months",
+      "category": "intent_changed",
+      "word_count_affected": 5,
+      "explanation": "The reference asks 'Didn't you say it's been ten months?' but the translation changes this to 'didn't I say'."
+    },
+    {
+      "reference_text": "ഓപ്പൺ ടോക്ക് ആണോ",
+      "translation_text": "auto open dot com",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference mentions 'open talk' (explicit talk), which is mistranslated as 'auto open dot com'."
+    },
+    {
+      "reference_text": "ഓപ്പൺ ടോക്ക് ഒന്നും ഞാൻ സംസാരിച്ചിട്ടില്ല",
+      "translation_text": "haven't even spoken big open talk",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'I haven't spoken any open talk', but the translation adds 'big' and alters the meaning slightly."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "03:27",
+      "type": "sexual_or_explicit",
+      "reference_text": "കുറച്ചുപേർ ഇങ്ങനെ ചോദിക്കും നോർമൽ കോൾ ആണോ ഓപ്പൺ ടോക്ക് ആണോ അങ്ങനെയൊക്കെ ചോദിക്കും",
+      "translation_text": "if at least one person asks, is it a normal call or auto open dot com",
+      "status": "softened"
+    },
+    {
+      "t": "03:35",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഇല്ല ഓപ്പൺ ടോക്ക് ഒന്നും ഞാൻ സംസാരിച്ചിട്ടില്ല",
+      "translation_text": "haven't even spoken big open talk",
+      "status": "preserved"
+    },
+    {
+      "t": "03:43",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഓപ്പൺ ടോക്ക് അങ്ങനെ ചെയ്തിട്ടില്ല ഞാൻ ഇങ്ങനെ ഓരോരുത്തരും",
+      "translation_text": "haven't done that, I have been listening to each person saying",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate but contains some garbled phrases and mistranslates 'open talk' (explicit talk) as 'auto open dot com' in one instance, though the general context of discussing open talk is preserved."
+}

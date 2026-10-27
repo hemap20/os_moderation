@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426438311_audio_1788975608857.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 303,
+  "affected_word_count": 21,
+  "semantic_error_rate": 0.0693,
+  "seconds": 3.5,
+  "discrepancies": [
+    {
+      "reference_text": "ഞാൻ ഹേഴ്സ് ഇങ്ങ് ഫൈനൽ ഇയർ അടിക്കാൻ",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 6,
+      "explanation": "The speaker's mention of being in their final year of studies is completely missing from the translation."
+    },
+    {
+      "reference_text": "വൈഫ് ഉണ്ടോ",
+      "translation_text": "is there a vibe?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The translation asks about a 'vibe' instead of asking if he has a wife."
+    },
+    {
+      "reference_text": "ഭാര്യയുടെ നമ്പർ ഒന്ന് തന്നേ",
+      "translation_text": "Gave the wife's number, gave it.",
+      "category": "intent_changed",
+      "word_count_affected": 5,
+      "explanation": "The reference is a request asking for the wife's number, but the translation incorrectly states that the number was already given."
+    },
+    {
+      "reference_text": "എന്റെ ഭാര്യക്ക് അറിയാലോ ഞാൻ ഇതിൽ ഉള്ളത്",
+      "translation_text": "you know about my matter, do you know why I am there?",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference states that his wife knows he is on this app, which is mistranslated as a vague question about his matter."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:48",
+      "type": "move_off_app",
+      "reference_text": "ഇൻസ്റ്റാഗ്രാം",
+      "translation_text": "Instagram",
+      "status": "preserved"
+    },
+    {
+      "t": "03:17",
+      "type": "move_off_app",
+      "reference_text": "ഭാര്യയുടെ നമ്പർ ഒന്ന് തന്നേ",
+      "translation_text": "Gave the wife's number, gave it.",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several critical errors, including mistranslating a request for a wife's phone number as an assertion that it was already given, and turning 'wife' into 'vibe'."
+}

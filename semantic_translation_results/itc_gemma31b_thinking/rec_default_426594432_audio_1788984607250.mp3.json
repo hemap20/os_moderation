@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_default_426594432_audio_1788984607250.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 16,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.5625,
+  "seconds": 4.7,
+  "discrepancies": [
+    {
+      "reference_text": "ಇಲ್ಲ ಪರವಾಗಿಲ್ಲ ಇಷ್ಟೇ ಸಾಕು",
+      "translation_text": "no",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The phrase meaning 'No, it's okay, this is enough' is mostly missing, translated only as 'no'."
+    },
+    {
+      "reference_text": "ವಿಡಿಯೋ ತೋರ್ಸು",
+      "translation_text": "your offer is not audible, I said show, show",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks to 'show video', but the translation introduces unrelated text about an offer not being audible."
+    },
+    {
+      "reference_text": "ವಾಟ್ಸಪ್ ಗೆ ಬರ್ತ್ಯಾ",
+      "translation_text": "WhatsApp WhatsApp paper cha",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'Will you come to WhatsApp?', which is translated as nonsensical words 'WhatsApp WhatsApp paper cha'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:04",
+      "type": "sexual_or_explicit",
+      "reference_text": "ತೋರ್ಸು",
+      "translation_text": "Show",
+      "status": "preserved"
+    },
+    {
+      "t": "00:06",
+      "type": "sexual_or_explicit",
+      "reference_text": "ತೋರ್ಸು",
+      "translation_text": "Show",
+      "status": "preserved"
+    },
+    {
+      "t": "00:10",
+      "type": "sexual_or_explicit",
+      "reference_text": "ತೋರ್ಸು ಅಂದ್ರೆ",
+      "translation_text": "I said show, show",
+      "status": "preserved"
+    },
+    {
+      "t": "00:13",
+      "type": "sexual_or_explicit",
+      "reference_text": "ವಿಡಿಯೋ ತೋರ್ಸು",
+      "translation_text": "your offer is not audible, I said show, show",
+      "status": "softened"
+    },
+    {
+      "t": "00:15",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್",
+      "translation_text": "WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "00:17",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್ ಗೆ ಬರ್ತ್ಯಾ",
+      "translation_text": "WhatsApp WhatsApp paper cha",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "no",
+  "summary": "The translation fails to accurately convey the user's request to show video and the invitation to move to WhatsApp, rendering them as garbled or incorrect phrases."
+}

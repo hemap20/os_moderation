@@ -1,0 +1,101 @@
+{
+  "file_id": "rec_default_423104500_audio_1788669374178.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 131,
+  "affected_word_count": 19,
+  "semantic_error_rate": 0.145,
+  "seconds": 5.9,
+  "discrepancies": [
+    {
+      "reference_text": "வீடு கிடையாது ரூம்",
+      "translation_text": "There is no house, have to go",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'Not a house, it's a room', but the translation says 'There is no house, have to go'."
+    },
+    {
+      "reference_text": "பே பண்ணனும்",
+      "translation_text": "paper",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'need to pay' (pay பண்ணனும்), but the translation mistranslates 'pay' as 'paper'."
+    },
+    {
+      "reference_text": "முதல்ல இருந்து சொல்லுங்க",
+      "translation_text": "boss tell me",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'Tell me from the beginning', but the translation says 'boss tell me'."
+    },
+    {
+      "reference_text": "வாங்க பேசலாம்",
+      "translation_text": "come problem",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Come, let's talk', but the translation says 'come problem'."
+    },
+    {
+      "reference_text": "பே பண்ணியாச்சா",
+      "translation_text": "Okay",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Did you pay?', but the translation just says 'Okay'."
+    },
+    {
+      "reference_text": "இன்னும் பாக்கலையே இந்த பாக்கறேன் பாத்துட்டு இருக்கேன்",
+      "translation_text": "Right, not seeing this, this seeing",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'I haven't seen it yet, I am looking at it now', but the translation says 'Right, not seeing this, this seeing'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:01",
+      "type": "move_off_app",
+      "reference_text": "வாட்ஸ்அப் வீடியோ கால் பேசலாமா இன்ட்ரஸ்ட் இருக்கா",
+      "translation_text": "can we speak on WhatsApp video call, are you interested?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:19",
+      "type": "money_or_payment",
+      "reference_text": "300 பே பண்ணனும்",
+      "translation_text": "three hundred paper have to do",
+      "status": "softened"
+    },
+    {
+      "t": "01:19",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஃபுல் நியூடா பேசுவேன் டைம் லிமிட் இல்ல உங்களுக்கு ஃபுல் பில் ஆகுற வரைக்கும் நான் பேசுவேன்",
+      "translation_text": "I will speak fully nude, there is no time limit, I will speak until you are fulfilled",
+      "status": "preserved"
+    },
+    {
+      "t": "01:32",
+      "type": "move_off_app",
+      "reference_text": "9943684716",
+      "translation_text": "double nine four three six double nine four eight four seven one six",
+      "status": "preserved"
+    },
+    {
+      "t": "03:16",
+      "type": "money_or_payment",
+      "reference_text": "ஸ்கேனர் அனுப்பி இருக்கேன்",
+      "translation_text": "I have sent the scanner",
+      "status": "preserved"
+    },
+    {
+      "t": "04:16",
+      "type": "money_or_payment",
+      "reference_text": "பே பண்ணியாச்சா",
+      "translation_text": "",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the explicit sexual offer and the phone number exchange, but it mistranslates key payment-related phrases like 'pay' as 'paper' and completely misses the final question about whether the payment was made."
+}

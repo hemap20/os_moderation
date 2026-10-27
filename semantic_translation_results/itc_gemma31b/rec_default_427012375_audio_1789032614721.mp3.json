@@ -1,0 +1,38 @@
+{
+  "file_id": "rec_default_427012375_audio_1789032614721.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 30,
+  "affected_word_count": 7,
+  "semantic_error_rate": 0.2333,
+  "seconds": 8.9,
+  "discrepancies": [
+    {
+      "reference_text": "തിരുവനന്തപുരം",
+      "translation_text": "Swathandry you Swathandry you Thrissur",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The location Thiruvananthapuram was incorrectly translated as Thrissur and other gibberish."
+    },
+    {
+      "reference_text": "ഞാൻ വീട്ടിൽ തന്നെയാണ് വർക്ക് ചെയ്യുന്നത്",
+      "translation_text": "Working in our own hometown",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The speaker says they work from home, but the translation says they work in their own hometown."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:38",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഓപ്പൺ ഡോർക്ക് താല്പര്യമുണ്ടോ",
+      "translation_text": "are you interested in open door",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate but contains some errors regarding locations and working from home, while the policy-relevant question about 'open door' is preserved."
+}

@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_audio_call_426189476_audio_1788954198708.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 549,
+  "affected_word_count": 31,
+  "semantic_error_rate": 0.0565,
+  "seconds": 3.9,
+  "discrepancies": [
+    {
+      "reference_text": "എന്റെ പേര് സോസൻ",
+      "translation_text": "Name is Suhruth sir",
+      "category": "named_entity_altered",
+      "word_count_affected": 3,
+      "explanation": "The name 'Susan' (സോസൻ) is mistranslated as 'Suhruth sir'."
+    },
+    {
+      "reference_text": "ട്രോഫി എല്ലാം കിട്ടുക ഭാവുകം ഒക്കെ നിറഞ്ഞു കിട്ടാ",
+      "translation_text": "Will give all kinds of expressions, what is that, will all trophies be received? Will all trophies be received?",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The translation introduces confusing phrasing about 'expressions' and repeats the trophy question incorrectly."
+    },
+    {
+      "reference_text": "ആ ട്രോഫി അതൊക്കെ നിങ്ങളുടെ കഴിവ് പോലെ",
+      "translation_text": "Clothes etc. are full, you hear? Those clothes, that's all according to your skill, uh.",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The Malayalam word for trophy (ട്രോഫി) is mistranslated as 'clothes'."
+    },
+    {
+      "reference_text": "പടം ഒക്കെ ഡിസൈൻ ചെയ്യാൻ അറിയാമോ",
+      "translation_text": "do you know how to distort the pictures?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The translation says 'distort' instead of 'design' (ഡിസൈൻ ചെയ്യാൻ)."
+    },
+    {
+      "reference_text": "നിങ്ങളെ എന്താ പറയാ സെക്ഷ്വൽ ആയിട്ടുള്ള രീതിയിലുള്ള സംസാരം",
+      "translation_text": "your, what should I say, special way of talking",
+      "category": "tone_softened",
+      "word_count_affected": 7,
+      "explanation": "The explicit reference to 'sexual' (സെക്ഷ്വൽ) talk is softened to 'special way of talking'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "06:56",
+      "type": "sexual_or_explicit",
+      "reference_text": "നിങ്ങളെ എന്താ പറയാ സെക്ഷ്വൽ ആയിട്ടുള്ള രീതിയിലുള്ള സംസാരം അങ്ങനത്തെ കാര്യങ്ങളൊക്കെ ഇതിൽ കൂടുതൽ നിങ്ങൾക്ക് വരും",
+      "translation_text": "your, what should I say, special way of talking and things like that, you will get more of that in this.",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate in terms of intent, but it softens a key warning about sexual talk on the app by translating 'sexual' as 'special', and contains a few mistranslations of names and words like 'trophy' and 'design'."
+}

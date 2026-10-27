@@ -1,0 +1,44 @@
+{
+  "file_id": "rec_default_426864282_audio_1789021827994.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 165,
+  "affected_word_count": 20,
+  "semantic_error_rate": 0.1212,
+  "seconds": 3.0,
+  "discrepancies": [
+    {
+      "reference_text": "ಪೈ ಎಲ್ಲಿ ವರ್ಕ್...",
+      "translation_text": "where are you working...",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The translation misses the specific company name 'Pai' mentioned in the reference."
+    },
+    {
+      "reference_text": "ಫಾರಿನ್ ಟೀಚರ್ ಅಂದ್ಕೊಂಡೆ ನಿಮ್ ಕಡೆ ಹೋಮ್ ಅಪ್ಲೈಯನ್ಸ್ ಕಂಡ್ರೆ ಗೊತ್ತಾಗುತ್ತೆ",
+      "translation_text": "Wearing an orange t-shirt, behind appliance home appliance, if you see you'll know definitely",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference mentions thinking she was a 'foreign teacher', which is completely mistranslated as 'wearing an orange t-shirt'."
+    },
+    {
+      "reference_text": "ಇಲ್ಲ ಮ್ಯಾರೀಡ್",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The speaker's statement that they are married is missing from the translation."
+    },
+    {
+      "reference_text": "ಆಜಿಟಿವ್ ಇದೆ ಅದಕ್ಕೆ ಕೇಳ್ದೆ ಫುಲ್ ಹೆಂಗಾಗಿದ್ದೀರಾ ಇನ್ನು",
+      "translation_text": "how negative is not there, that's why I'm asking",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference says 'you look active/young', but the translation mistranslates 'active' (phonetically 'positive/active') as 'negative'."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate in terms of the general flow of the conversation, but it contains a few mistranslations of specific words like 'Pai' (company name), 'foreign teacher', and 'active'."
+}

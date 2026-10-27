@@ -1,0 +1,51 @@
+{
+  "file_id": "rec_audio_call_426855856_audio_1789021196066.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 146,
+  "affected_word_count": 17,
+  "semantic_error_rate": 0.1164,
+  "seconds": 3.5,
+  "discrepancies": [
+    {
+      "reference_text": "ನಮಸ್ತೆ ಎಲ್ಲಿಂದ ಮಾತಾಡ್ತಾ ಇರೋದು",
+      "translation_text": "Where are you speaking from? Are you from Mangalore?",
+      "category": "named_entity_altered",
+      "word_count_affected": 4,
+      "explanation": "The translation introduces 'Mangalore' which is not in the reference."
+    },
+    {
+      "reference_text": "ನಂದು ಪೀಣ್ಯ",
+      "translation_text": "are you on a premium?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions the area 'Peenya', but the translation misinterprets it as 'on a premium'."
+    },
+    {
+      "reference_text": "ಏನ್ ಮಾಡ್ಕೊಂಡಿದ್ದೀರಾ",
+      "translation_text": "What did you have for tiffin?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'What do you do?' but the translation asks about 'tiffin'."
+    },
+    {
+      "reference_text": "ಐಟಿ ಫೀಲ್ಡ್ ಅಮ್ಮ",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The speaker's response that they work in the IT field is completely missing from the translation."
+    },
+    {
+      "reference_text": "ನಾನು ಪ್ರೈವೇಟ್ ಕಂಪನಿಯಲ್ಲಿ ಜಾಬ್ ಮಾಡ್ತೀನಿ",
+      "translation_text": "I do my father's job properly",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'I work in a private company', but the translation says 'I do my father's job'."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several significant meaning changes and mistranslations of locations and occupations, though the general casual tone of the conversation is preserved."
+}

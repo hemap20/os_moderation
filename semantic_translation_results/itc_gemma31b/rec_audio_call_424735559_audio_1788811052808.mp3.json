@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_audio_call_424735559_audio_1788811052808.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 55,
+  "affected_word_count": 20,
+  "semantic_error_rate": 0.3636,
+  "seconds": 3.3,
+  "discrepancies": [
+    {
+      "reference_text": "बेटा",
+      "translation_text": "sir",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'beta' (son/child) but the translation says 'sir'."
+    },
+    {
+      "reference_text": "सिंगल हूँ, वीडियो कॉल पे बात करनी है क्या?",
+      "translation_text": "Listen son do you want to talk to her tomorrow",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The translation introduces 'tomorrow' and changes 'single' to 'Listen son' and 'talk to her'."
+    },
+    {
+      "reference_text": "वीडियो कॉल सर्विस है, तो बताओ आधे घंटे करूँगी 300 रुपये",
+      "translation_text": "if you want service tomorrow tell me I will do it for half an hour three hundred rupees",
+      "category": "other_meaning_change",
+      "word_count_affected": 11,
+      "explanation": "The translation omits 'video call' and adds 'tomorrow'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:19",
+      "type": "sexual_or_explicit",
+      "reference_text": "वीडियो कॉल पे बात करनी है क्या?",
+      "translation_text": "do you want to talk to her tomorrow",
+      "status": "softened"
+    },
+    {
+      "t": "00:26",
+      "type": "money_or_payment",
+      "reference_text": "वीडियो कॉल सर्विस है, तो बताओ आधे घंटे करूँगी 300 रुपये",
+      "translation_text": "if you want service tomorrow tell me I will do it for half an hour three hundred rupees",
+      "status": "preserved"
+    },
+    {
+      "t": "00:26",
+      "type": "sexual_or_explicit",
+      "reference_text": "वीडियो कॉल सर्विस है",
+      "translation_text": "service",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general offer of a paid service for 300 rupees, but it softens the explicit mention of a 'video call' and introduces incorrect words like 'tomorrow' and 'sir'."
+}

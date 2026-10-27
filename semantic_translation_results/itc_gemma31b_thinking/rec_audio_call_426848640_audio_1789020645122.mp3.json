@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_audio_call_426848640_audio_1789020645122.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 76,
+  "affected_word_count": 25,
+  "semantic_error_rate": 0.3289,
+  "seconds": 3.9,
+  "discrepancies": [
+    {
+      "reference_text": "शादी हो गई क्या हां शादी",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 5,
+      "explanation": "The conversation about marriage is completely missing from the translation."
+    },
+    {
+      "reference_text": "वीडियो कॉल करो क्या करोगे वीडियो कॉल करके",
+      "translation_text": "What will you do video call",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The translation merges the request to video call and the question about it into a single confusing phrase."
+    },
+    {
+      "reference_text": "दिखाऊंगा नीचे वाला नीचे वाला दिखाऊंगा",
+      "translation_text": "I will show the bottom one the bottom one",
+      "category": "tone_softened",
+      "word_count_affected": 6,
+      "explanation": "The translation of 'नीचे वाला' as 'the bottom one' is slightly softened compared to the explicit sexual reference in Hindi."
+    },
+    {
+      "reference_text": "नहीं देखना है बहुत देख चुका हूं",
+      "translation_text": "not to see have seen a lot",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The translation misses the subject 'I' ('I don't want to see') making it 'not to see'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:36",
+      "type": "sexual_or_explicit",
+      "reference_text": "वीडियो कॉल करो",
+      "translation_text": "What will you do video call",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:43",
+      "type": "sexual_or_explicit",
+      "reference_text": "दिखाऊंगा नीचे वाला नीचे वाला दिखाऊंगा",
+      "translation_text": "I will show the bottom one the bottom one",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow of the conversation but misses key details like the marriage question, and slightly softens/muddles the explicit request for a video call and showing private parts."
+}

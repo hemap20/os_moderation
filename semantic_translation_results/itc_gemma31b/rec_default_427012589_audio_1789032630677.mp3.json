@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_default_427012589_audio_1789032630677.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 39,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.2308,
+  "seconds": 2.9,
+  "discrepancies": [
+    {
+      "reference_text": "കോഴിക്കോട് കാണുന്നില്ലല്ലോ",
+      "translation_text": "can't see Kollam, right?",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The translation changes the place name 'Kozhikode' to 'Kollam'."
+    },
+    {
+      "reference_text": "എന്നെ കാണുന്നില്ലല്ലോ",
+      "translation_text": "Can't see the head either, right?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The translation incorrectly translates 'me' (എന്നെ) as 'the head'."
+    },
+    {
+      "reference_text": "എന്താ ചെയ്യുന്നേ",
+      "translation_text": "So what are the places doing?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The translation incorrectly translates 'What are you doing?' as 'what are the places doing?'."
+    },
+    {
+      "reference_text": "ആ പിന്നെ പറയാലോ",
+      "translation_text": "ah, tell me Apple",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation mistranslates 'then we can talk' or 'then tell me' as 'tell me Apple'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:22",
+      "type": "move_off_app",
+      "reference_text": "അതൊക്കെ ഫേസ്ബുക്കിൽ കൂടെയല്ലേ കാണുള്ളൂ",
+      "translation_text": "Is it only visible on Facebook now?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the general intent and tone of the call, but contains several mistranslations of specific words, including changing a place name and misinterpreting pronouns and common phrases."
+}

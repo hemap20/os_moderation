@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_default_426583408_audio_1788983706194.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 1524,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.0072,
+  "seconds": 3.6,
+  "discrepancies": [
+    {
+      "reference_text": "ನನ್ನ ಮಗ",
+      "translation_text": "my son",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'ಮಗಳು' (daughter) later in the call, but here she says 'ಮಗ' (son) which is translated as 'son', though she later refers to her daughter."
+    },
+    {
+      "reference_text": "ಮಗಳ ಜೊತೆ",
+      "translation_text": "with the child",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference specifically says 'ಮಗಳ ಜೊತೆ' (with daughter), but the translation generalizes it to 'with the child'."
+    },
+    {
+      "reference_text": "ಗೌಡ್ರಲ್ಲಿ ಇನ್ನೊಬ್ಬರು ಕೂಡ ಮಾಡ್ತಾರೆ ನಿಮಗೆ ಗೊತ್ತು",
+      "translation_text": "in Gowtari even women they do, you know that",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'Gowdas also drink, you know', but the translation mistranslates it as 'even women they do'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "08:28",
+      "type": "move_off_app",
+      "reference_text": "ನಂಬರ್ ಎಕ್ಸ್ಚೇಂಜ್ ಮಾಡ್ಕೊಳ್ಳೋಣ ತೊಂದರೆ ಇಲ್ಲ ಒಂದ್ಸಲ ಕಾಲಲ್ಲೂ ಮಾತಾಡೋಣ",
+      "translation_text": "let's exchange numbers, no problem Let's talk one or two more times.",
+      "status": "preserved"
+    },
+    {
+      "t": "09:36",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಪಿಂಗ್ ಮಾಡ್ತೀರಾ",
+      "translation_text": "So I will pin on WhatsApp.",
+      "status": "preserved"
+    },
+    {
+      "t": "09:42",
+      "type": "move_off_app",
+      "reference_text": "888 ನಾಳೆ ಮಾತಾಡೋಣ ಓಕೆನಾ ಈಗ ಬೇಡ",
+      "translation_text": "Number double eight, let's talk tomorrow, okay? Not now",
+      "status": "preserved"
+    },
+    {
+      "t": "09:51",
+      "type": "move_off_app",
+      "reference_text": "888 888 888 ಓಕೆ 45 ಓಕೆ 89 574",
+      "translation_text": "triple eight, triple eight, triple eight, okay, four five, okay, eight nine Yes, five seven four",
+      "status": "preserved"
+    },
+    {
+      "t": "11:13",
+      "type": "meeting_in_person",
+      "reference_text": "ಸಿಗಬಹುದಾ ನಾಳೆ",
+      "translation_text": "will it be possible tomorrow",
+      "status": "preserved"
+    },
+    {
+      "t": "13:19",
+      "type": "meeting_in_person",
+      "reference_text": "ಸಿಗಬಹುದಾ ನಾಳೆ ನಾರ್ಮಲ್ ಕ್ಯಾಶುವಲ್ ಕಾಫಿ ಇರಬಹುದು",
+      "translation_text": "same, but it won't happen tomorrow itself, same it won't happen tomorrow",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation successfully preserves the core intent of the speakers exchanging phone numbers to move off the app and discussing meeting in person, despite minor translation errors regarding family details."
+}

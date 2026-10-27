@@ -1,0 +1,44 @@
+{
+  "file_id": "rec_audio_call_426857427_audio_1789021321811.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 1095,
+  "affected_word_count": 19,
+  "semantic_error_rate": 0.0174,
+  "seconds": 4.2,
+  "discrepancies": [
+    {
+      "reference_text": "ಇವತ್ತು ಲೀವ್ ಅಲ್ಲಿ ಇದ್ದೆ, ನೀನು?",
+      "translation_text": "live today I was live, that's it hmm",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The translation mistranslates 'leave' (holiday) as 'live'."
+    },
+    {
+      "reference_text": "ಇದು ಬೇಬೀಸ್ ಇದ್ಯಾ?",
+      "translation_text": "is there a date of birth?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation asks about 'date of birth' instead of asking if there are babies/children."
+    },
+    {
+      "reference_text": "ಗಂಡು",
+      "translation_text": "Oh sister",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference states the baby is a boy ('gandu'), but the translation says 'Oh sister'."
+    },
+    {
+      "reference_text": "ಇತ್ಕರೆ ಕೆ.ಆರ್ ಪುರಂ ಕಡೆ ನಮ್ದು ಇರೋದು, ಕುಪ್ಪಂ ಮೂರ್ತಿ ಕೆ.ಆರ್ ಪುರಂ",
+      "translation_text": "Ours is towards KGF side, Kuppamma KGF center, towards Kolar side",
+      "category": "named_entity_altered",
+      "word_count_affected": 9,
+      "explanation": "The translation alters the location names, replacing 'KR Puram' and 'Kuppam Murthy' with 'KGF side' and 'Kuppamma KGF center'."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the overall friendly, casual tone of the conversation, though it contains a few minor mistranslations of specific terms like 'leave' and 'babies'."
+}

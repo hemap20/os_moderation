@@ -1,0 +1,38 @@
+{
+  "file_id": "rec_default_426226216_audio_1788957468242.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 52,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.1731,
+  "seconds": 2.6,
+  "discrepancies": [
+    {
+      "reference_text": "నేను రాసుకుంటాను కిందకి అంటావా?",
+      "translation_text": "will you touch a little lower",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'Do you say I will rub/write lower?' but the translation translates it as 'will you touch a little lower'."
+    },
+    {
+      "reference_text": "ఇంకొంచెం అంటే వాట్సాప్.",
+      "translation_text": "I mean WhatsApp",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The translation misses the 'A little more' part of the reference sentence."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:39",
+      "type": "move_off_app",
+      "reference_text": "ఇంకొంచెం అంటే వాట్సాప్.",
+      "translation_text": "I mean WhatsApp",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the overall intent and tone, though there is a slight mistranslation of a suggestive phrase and a minor omission in the final line."
+}

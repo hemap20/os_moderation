@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_audio_call_426594019_audio_1788984570393.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 421,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.0261,
+  "seconds": 2.8,
+  "discrepancies": [
+    {
+      "reference_text": "ఎక్కడి నుంచి అండి\nమేము భీమవరం అండి",
+      "translation_text": "Vijayawada, where are you from sir? Today Bhimavaram sir",
+      "category": "added_content",
+      "word_count_affected": 6,
+      "explanation": "The translation adds 'Vijayawada' which is not mentioned in the reference."
+    },
+    {
+      "reference_text": "మీ బ్రా సైజ్ ఎంత",
+      "translation_text": "What is your [unclear]?",
+      "category": "tone_softened",
+      "word_count_affected": 5,
+      "explanation": "The explicit question asking for bra size is marked as unclear in the translation."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:56",
+      "type": "money_or_payment",
+      "reference_text": "ఏవండీ నేను ఏదో చిన్న ఉద్యోగస్తుణ్ణి అండి\nఆ ఎంత వస్తుంది నెలకి\nనెలకి నాకు 12,000 వస్తదండి",
+      "translation_text": "Sir, I am just a small employee sir. How much does it come per month? I get twelve thousand per month sir",
+      "status": "preserved"
+    },
+    {
+      "t": "04:10",
+      "type": "sexual_or_explicit",
+      "reference_text": "మీ బ్రా సైజ్ ఎంత",
+      "translation_text": "What is your [unclear]?",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate, but it softens the explicit question about bra size by marking it as unclear, and adds an unmentioned location (Vijayawada) at the beginning."
+}

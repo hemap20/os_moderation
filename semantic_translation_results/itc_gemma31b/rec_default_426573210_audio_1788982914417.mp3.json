@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_426573210_audio_1788982914417.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 137,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.0803,
+  "seconds": 3.7,
+  "discrepancies": [
+    {
+      "reference_text": "ரேப் பண்ணி பண்ண யாரு ஒன்னும் பண்ண மாட்டாங்க",
+      "translation_text": "You shouldn't make me or my son nothing, that is wrong",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference talks about raping and nobody doing anything, which is mistranslated as making me or my son nothing."
+    },
+    {
+      "reference_text": "மிரண்டா",
+      "translation_text": "Parotta",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The soft drink 'Miranda' is mistranslated as 'Parotta'."
+    },
+    {
+      "reference_text": "சண்டைய சாமி",
+      "translation_text": "Two gods",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference phrase is mistranslated as 'Two gods'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:19",
+      "type": "sexual_or_explicit",
+      "reference_text": "கோயம்புத்தூர்ல வந்து ரேப் பண்ணீங்கன்னா உங்கள ஜெயில்ல புடிச்சு போட்டுருவாங்க",
+      "translation_text": "If you come and rape, they will catch you and put you in jail",
+      "status": "preserved"
+    },
+    {
+      "t": "01:27",
+      "type": "sexual_or_explicit",
+      "reference_text": "ரேப் பண்ணி பண்ண யாரு ஒன்னும் பண்ண மாட்டாங்க",
+      "translation_text": "You shouldn't make me or my son nothing, that is wrong",
+      "status": "missing"
+    },
+    {
+      "t": "02:53",
+      "type": "move_off_app",
+      "reference_text": "வாட்ஸ்அப்ல வரீங்களா",
+      "translation_text": "will you come on WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "03:00",
+      "type": "move_off_app",
+      "reference_text": "என் நம்பர் நோட் பண்ணிக்கோங்க 733 968 19 93",
+      "translation_text": "Note down the number, seven double three nine six eight one nine nine three",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the main move-off-app moments (sharing a phone number and asking to join WhatsApp) and one mention of rape, but fails to accurately translate another rape-related comment and contains several other meaning errors."
+}

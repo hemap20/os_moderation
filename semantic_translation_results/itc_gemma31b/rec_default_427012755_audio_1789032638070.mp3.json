@@ -1,0 +1,65 @@
+{
+  "file_id": "rec_default_427012755_audio_1789032638070.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 166,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.0783,
+  "seconds": 3.4,
+  "discrepancies": [
+    {
+      "reference_text": "കേരള",
+      "translation_text": "Cherthala, not Cherthala",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The reference says Kerala, but the translation incorrectly translates it as Cherthala."
+    },
+    {
+      "reference_text": "മംഗള",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 1,
+      "explanation": "The word 'Mangala' is missing from the translation."
+    },
+    {
+      "reference_text": "തമിഴ്നാട്",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 1,
+      "explanation": "The location 'Tamil Nadu' is completely missing from the translation."
+    },
+    {
+      "reference_text": "അള്ളാന്റെ മോനെ",
+      "translation_text": "daughter of God",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'son of God' (or a colloquial expression), but the translation says 'daughter of God'."
+    },
+    {
+      "reference_text": "മധുര",
+      "translation_text": "Madhur Grantham",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The place name 'Madurai' is mistranslated as 'Madhur Grantham'."
+    },
+    {
+      "reference_text": "എടാ അത് ഫേസ് കാണിക്കുന്നതല്ല",
+      "translation_text": "which one is that, it is taste",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'Hey, that is not showing the face', but the translation mistranslates it as 'which one is that, it is taste'."
+    },
+    {
+      "reference_text": "മകനൊക്കെ ഇല്ല",
+      "translation_text": "son didn't eat",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'No son or anything', but the translation says 'son didn't eat'."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation is highly inaccurate with multiple mistranslations of locations, names, and general phrases, though the basic flow of the conversation about showing faces and locations is partly preserved."
+}

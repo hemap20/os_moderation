@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_audio_call_426259277_audio_1788960796344.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 69,
+  "affected_word_count": 12,
+  "semantic_error_rate": 0.1739,
+  "seconds": 4.0,
+  "discrepancies": [
+    {
+      "reference_text": "మీ ఫేస్ చూడండి చూపియండి ఫస్ట్ తర్వాత చూద్దాం",
+      "translation_text": "See your name, show it first, then I will dial",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference asks to see her face ('మీ ఫేస్'), but the translation incorrectly translates it as 'your name' and 'dial'."
+    },
+    {
+      "reference_text": "ఎందుకులే మాట్లాడటం కాదులే",
+      "translation_text": "No, they will talk at home, it's not happening",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'Why talk, it's not happening' or 'No need to talk', but the translation introduces 'at home' which is not in the reference."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:00",
+      "type": "move_off_app",
+      "reference_text": "నెంబర్ ఇస్తారా ఆ నెంబర్ అర్థం కావాలి ఆ ఫోన్ నెంబర్ ఇస్తారా అంటున్నా",
+      "translation_text": "will you give the number? Need to understand, I am asking if you will give the phone number",
+      "status": "preserved"
+    },
+    {
+      "t": "00:00",
+      "type": "money_or_payment",
+      "reference_text": "మనీ వేస్తుంటే ఇస్తానండి",
+      "translation_text": "if I say I will send money, I will give it",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key policy moments regarding asking for a phone number and demanding money, though there are minor translation errors regarding seeing the face and talking."
+}

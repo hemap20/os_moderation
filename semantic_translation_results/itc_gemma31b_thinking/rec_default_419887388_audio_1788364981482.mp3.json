@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_default_419887388_audio_1788364981482.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 391,
+  "affected_word_count": 24,
+  "semantic_error_rate": 0.0614,
+  "seconds": 3.2,
+  "discrepancies": [
+    {
+      "reference_text": "सम ओपन टॉक वाली लड़की से थोड़ा बात करूंगी मैं",
+      "translation_text": "I will talk to girls who do open talk",
+      "category": "intent_changed",
+      "word_count_affected": 9,
+      "explanation": "The reference speaker says she will talk to some open talk girl (referring to herself as a girl who does open talk), but the translation says she will talk to girls who do open talk."
+    },
+    {
+      "reference_text": "ब्रेकअप कर दिया है अच्छे से ट्रीट नहीं करता मेरा बंदा मेरे को",
+      "translation_text": "breakup happened My guy doesn't treat me well",
+      "category": "other_meaning_change",
+      "word_count_affected": 11,
+      "explanation": "The reference says 'I broke up with him, my guy doesn't treat me well', whereas the translation says 'breakup happened'."
+    },
+    {
+      "reference_text": "मैं इतना भेजूंगा ना",
+      "translation_text": "I will send the patient",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'I will send so much' (or similar teasing), but the translation mistranslates it as 'send the patient'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:12",
+      "type": "sexual_or_explicit",
+      "reference_text": "मैं तो जॉब करता हूं इसमें लड़की उसमें जनरली ओपन टॉक करने के लिए कनेक्ट करता हूं",
+      "translation_text": "I do a job, in this girl in that, I generally connect for open talk",
+      "status": "preserved"
+    },
+    {
+      "t": "02:11",
+      "type": "sexual_or_explicit",
+      "reference_text": "सम ओपन टॉक वाली लड़की से थोड़ा बात करूंगी मैं",
+      "translation_text": "I will talk to girls who do open talk",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation generally preserves the tone and flow of the conversation, but it slightly alters the intent of the female speaker when she refers to herself as an 'open talk girl' and mistranslates a few minor phrases."
+}

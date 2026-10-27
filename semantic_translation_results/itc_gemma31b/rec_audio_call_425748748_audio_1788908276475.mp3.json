@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_audio_call_425748748_audio_1788908276475.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 119,
+  "affected_word_count": 19,
+  "semantic_error_rate": 0.1597,
+  "seconds": 176.7,
+  "discrepancies": [
+    {
+      "reference_text": "अच्छा, दिल्ली में कहाँ से?",
+      "translation_text": "Do you want to stay in Delhi?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The translation asks if the user wants to stay in Delhi instead of asking where in Delhi they are from."
+    },
+    {
+      "reference_text": "Instagram पे कनेक्ट होगे मेरे साथ?",
+      "translation_text": "Did you connect with me on Instagram?",
+      "category": "intent_changed",
+      "word_count_affected": 6,
+      "explanation": "The translation changes a future proposal/request to connect on Instagram into a past-tense question."
+    },
+    {
+      "reference_text": "मैं मयूर विहार से हूँ, जानते हो तुम?",
+      "translation_text": "do you know Mayur Vihar Singh?",
+      "category": "named_entity_altered",
+      "word_count_affected": 8,
+      "explanation": "The translation incorrectly translates the location 'Mayur Vihar' as a person's name 'Mayur Vihar Singh'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:20",
+      "type": "move_off_app",
+      "reference_text": "Instagram पे कनेक्ट होगे मेरे साथ?",
+      "translation_text": "Did you connect with me on Instagram?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:04",
+      "type": "move_off_app",
+      "reference_text": "Instagram पे कनेक्ट होगे?",
+      "translation_text": "connected on Instagram",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation mostly preserves the conversation but alters the intent of the first Instagram request and mistranslates a location name as a person's name."
+}

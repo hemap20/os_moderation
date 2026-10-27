@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426480223_audio_1788977664177.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 151,
+  "affected_word_count": 4,
+  "semantic_error_rate": 0.0265,
+  "seconds": 6.3,
+  "discrepancies": [
+    {
+      "reference_text": "",
+      "translation_text": "I can share the method",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds the phrase 'I can share the method' which is not present in the reference."
+    },
+    {
+      "reference_text": "ഞാൻ കൂടി മാസ്റ്റർബേറ്റ് ചെയ്യും",
+      "translation_text": "I am also master at home",
+      "category": "tone_softened",
+      "word_count_affected": 4,
+      "explanation": "The reference to masturbation ('മാസ്റ്റർബേറ്റ് ചെയ്യും') is mistranslated as 'master at home', softening the explicit sexual content."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:30",
+      "type": "money_or_payment",
+      "reference_text": "ഞാൻ പെയ്ഡ് ആയിട്ട് കോൾ ചെയ്യുന്നുണ്ട്",
+      "translation_text": "I am calling paid",
+      "status": "preserved"
+    },
+    {
+      "t": "01:39",
+      "type": "money_or_payment",
+      "reference_text": "എത്ര രൂപയാ",
+      "translation_text": "How many rupees is it",
+      "status": "preserved"
+    },
+    {
+      "t": "01:44",
+      "type": "money_or_payment",
+      "reference_text": "500 ആണ്",
+      "translation_text": "five hundred",
+      "status": "preserved"
+    },
+    {
+      "t": "01:50",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഫുൾ മൂഡ് ആയിട്ട് കാണിക്കും മൂഡ് ആയിട്ട് സംസാരിക്കും ഞാൻ കൂടി മാസ്റ്റർബേറ്റ് ചെയ്യും",
+      "translation_text": "Will show in full mood will talk in mood I am also master at home isn't it",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate but fails to correctly translate the explicit reference to masturbation, rendering it as 'master at home' instead."
+}

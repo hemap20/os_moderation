@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_audio_call_426576577_audio_1788983168675.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 1694,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.0065,
+  "seconds": 5.3,
+  "discrepancies": [
+    {
+      "reference_text": "ஏன் அக்கவுண்ட் சொல்லணுமா",
+      "translation_text": "should I call you akka (elder sister)?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks if she should tell him her bank account details, but the translation mistranslates 'account' as 'akka' (elder sister)."
+    },
+    {
+      "reference_text": "அவள் சென்னைல ஒர்க் பண்றாரு",
+      "translation_text": "he works in Chennai",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'He works in Chennai' (referring to her husband), but the translation says 'he works in Chennai' which is correct, but later she says 'அம்மா வீடு சைடு' (mother's house side) which is mistranslated as 'please concentrate on that for me'."
+    },
+    {
+      "reference_text": "அக்கவுண்ட் சொன்னதுதான் குடுப்பீங்களா",
+      "translation_text": "will you call only if I say sister",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks if she will only give it if he transfers money to her account, but the translation mistranslates 'account' as 'sister'."
+    },
+    {
+      "reference_text": "ஹேர்ட்டா இருக்கேனா",
+      "translation_text": "hotel",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'hurt' (transliterated as 'ஹேர்ட்'), but the translation mistranslates it as 'hotel'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:57",
+      "type": "money_or_payment",
+      "reference_text": "ஏன் அக்கவுண்ட் சொல்லணுமா",
+      "translation_text": "should I call you akka (elder sister)?",
+      "status": "missing"
+    },
+    {
+      "t": "11:56",
+      "type": "move_off_app",
+      "reference_text": "நீங்க நம்பர் குடுங்க நான் வாட்ஸ்அப் ஹாய் மெசேஜ் போடுறேன்",
+      "translation_text": "you give the number, I'll send a WhatsApp hi message",
+      "status": "preserved"
+    },
+    {
+      "t": "12:01",
+      "type": "move_off_app",
+      "reference_text": "இல்ல நம்பர் வேண்டாம் நான் டெலிகிராம் ஐடி வேணா தரேன்",
+      "translation_text": "I don't want the number, I'll give you the Telegram ID if you want",
+      "status": "preserved"
+    },
+    {
+      "t": "12:32",
+      "type": "money_or_payment",
+      "reference_text": "அக்கவுண்ட் சொன்னதுதான் குடுப்பீங்களா",
+      "translation_text": "will you call only if I say sister",
+      "status": "missing"
+    },
+    {
+      "t": "13:56",
+      "type": "move_off_app",
+      "reference_text": "நம்பர் ஷேர் பண்ணிட்டு போ தயவுசெய்து",
+      "translation_text": "let's share and go please",
+      "status": "preserved"
+    },
+    {
+      "t": "13:59",
+      "type": "move_off_app",
+      "reference_text": "95... 95... 66... 26... 9047",
+      "translation_text": "Nine five... nine five... double six... two six... nine zero four seven",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation successfully captures the exchange of phone numbers and the move off-app, but completely misses the references to bank accounts/payments by mistranslating 'account' as 'akka' (sister)."
+}

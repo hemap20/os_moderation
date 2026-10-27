@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_default_423324272_audio_1788687697269.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 266,
+  "affected_word_count": 10,
+  "semantic_error_rate": 0.0376,
+  "seconds": 3.3,
+  "discrepancies": [
+    {
+      "reference_text": "ಸಿಂಗಲ್",
+      "translation_text": "not single",
+      "category": "negation_flipped",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'single' but the translation flips it to 'not single'."
+    },
+    {
+      "reference_text": "ಐಟಿ ಸೆಲ್ ಅಲ್ಲಿ ವರ್ಕ್ ಮಾಡ್ತೀನಿ",
+      "translation_text": "fifty thousand Everyone I work",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The speaker says they work in an IT cell, but the translation incorrectly mentions 'fifty thousand'."
+    },
+    {
+      "reference_text": "ಕಾಲ್ ಕಟ್ ಆಗಿತ್ತು ಈಗ",
+      "translation_text": "will you cut the call",
+      "category": "intent_changed",
+      "word_count_affected": 4,
+      "explanation": "The speaker states that the call got cut earlier, but the translation turns this into a question asking if they will cut the call."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:09",
+      "type": "sexual_or_explicit",
+      "reference_text": "ಈ ಆಪ್ ಅಲ್ಲಿ ಫಿಸಿಕಲ್ ರಿಲೇಷನ್ ಶಿಪ್ ಇರ್ತಾರೆ ಫ್ರೆಂಡ್ಸ್ ಇರ್ತಾರೆ",
+      "translation_text": "Happily they will have physical relationship, they will be friends",
+      "status": "preserved"
+    },
+    {
+      "t": "01:14",
+      "type": "meeting_in_person",
+      "reference_text": "ಸೋ ಮೀಟ್ ಮಾಡ್ತಾರೆ ಆ ತರ",
+      "translation_text": "so they will meet, that kind of",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the overall friendly tone and intent of the call, though it contains a few minor translation errors regarding the speaker's job and relationship status."
+}

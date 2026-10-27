@@ -1,0 +1,38 @@
+{
+  "file_id": "rec_default_426573512_audio_1788982942725.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 128,
+  "affected_word_count": 3,
+  "semantic_error_rate": 0.0234,
+  "seconds": 3.6,
+  "discrepancies": [
+    {
+      "reference_text": "താല്പര്യം ഉണ്ടോ? ഇല്ല",
+      "translation_text": "Are you interested in open chat or no, normal chat? Yes yes yes [x256]",
+      "category": "negation_flipped",
+      "word_count_affected": 3,
+      "explanation": "The reference says she is not interested in open chat, but the translation incorrectly translates her response as 'Yes yes yes'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:10",
+      "type": "sexual_or_explicit",
+      "reference_text": "ആ ഞാൻ അത് ഓപ്പൺ ചാറ്റ് ഉണ്ടെന്ന് പറഞ്ഞാൽ ഫേസ് കാണിക്കാൻ പറഞ്ഞിട്ടാണ് ഓപ്പൺ ചാറ്റ് ഉണ്ടെങ്കിൽ പിന്നെ ഫേസ് കാണിക്കാൻ പറഞ്ഞിട്ടാണ്",
+      "translation_text": "Yes, I said there is open chat, that's why I asked to show the face, if there is open chat then I asked to show the face",
+      "status": "preserved"
+    },
+    {
+      "t": "01:22",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഓപ്പൺ ചാറ്റ് താല്പര്യം ഉണ്ടോ? ഇല്ല",
+      "translation_text": "Are you interested in open chat or no, normal chat? Yes yes yes [x256]",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate but completely flips the user's refusal of an 'open chat' (explicit chat) into an agreement, which changes the intent of the conversation."
+}

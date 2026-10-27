@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_default_427306879_audio_1789058296671.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 59,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.2542,
+  "seconds": 3.6,
+  "discrepancies": [
+    {
+      "reference_text": "నేను హలో అండి మీరు",
+      "translation_text": "You from Hyderabad",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds a reference to Hyderabad which is not present in the Telugu text."
+    },
+    {
+      "reference_text": "చేసుకోవాలి కదా",
+      "translation_text": "No, must get married, must do it at home.",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The translation introduces marriage and doing it at home, which is not in the reference."
+    },
+    {
+      "reference_text": "ఫ్రెష్ గా పోతే బాగుంటుంది",
+      "translation_text": "I am peeling fresh.",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation incorrectly translates going fresh as peeling fresh."
+    },
+    {
+      "reference_text": "ఫస్ట్ కాల్ చేస్తారా",
+      "translation_text": "will you make a WhatsApp call?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation changes 'first call' to 'WhatsApp call'."
+    },
+    {
+      "reference_text": "300",
+      "translation_text": "three senses.",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The number 300 is mistranslated as 'three senses'."
+    },
+    {
+      "reference_text": "రామకృష్ణ గారు ఏం లేకపోతే లేదండి",
+      "translation_text": "if there is trust, safety, otherwise you say no.",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The translation completely changes the meaning and omits the name Ramakrishna."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:55",
+      "type": "move_off_app",
+      "reference_text": "ఫస్ట్ కాల్ చేస్తారా",
+      "translation_text": "will you make a WhatsApp call?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:06",
+      "type": "money_or_payment",
+      "reference_text": "ఎంత పంపించాలి",
+      "translation_text": "how much should I send",
+      "status": "preserved"
+    },
+    {
+      "t": "01:09",
+      "type": "money_or_payment",
+      "reference_text": "300",
+      "translation_text": "three senses.",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "no",
+  "summary": "The translation contains several severe meaning changes, including mistranslating the amount 300 as 'three senses' and introducing 'WhatsApp call' where the reference says 'first call'."
+}

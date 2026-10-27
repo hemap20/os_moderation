@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_audio_call_426306233_audio_1788965543370.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 101,
+  "affected_word_count": 10,
+  "semantic_error_rate": 0.099,
+  "seconds": 3.6,
+  "discrepancies": [
+    {
+      "reference_text": "ಸೆಕ್ಸ್ ಬಗ್ಗೆ",
+      "translation_text": "",
+      "category": "tone_softened",
+      "word_count_affected": 2,
+      "explanation": "The explicit mention of 'sex' is completely omitted in the translation."
+    },
+    {
+      "reference_text": "ಏನ್ರೀ ಮಾಡ್ಕೋತೀರಾ ಸರ್ವಿಸ್",
+      "translation_text": "can do to the shop, I will show heaven",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks what service they want, but the translation introduces nonsensical phrases about a shop and showing heaven."
+    },
+    {
+      "reference_text": "ರಿಯಲಿ ನಾನು ಮಾತಾಡಲಿಕ್ಕೆ ಆಗಲ್ಲ",
+      "translation_text": "cannot talk for free",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'Really I cannot talk', but the translation adds 'for free' which changes the meaning."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:30",
+      "type": "sexual_or_explicit",
+      "reference_text": "ಸೆಕ್ಸ್ ಬಗ್ಗೆ",
+      "translation_text": "",
+      "status": "missing"
+    },
+    {
+      "t": "01:03",
+      "type": "money_or_payment",
+      "reference_text": "ಇಫ್ ನೀವು ಪೇ ಮಾಡ್ತೀನಿ ಅಂದ್ರೆ ನಾನು ವಿಡಿಯೋ ಕಾಲ್ ಆರ್ ವಾಯ್ಸ್ ಕಾಲ್ ಮಾಡ್ತೀನಿ",
+      "translation_text": "If you pay, meaning I will do video call and voice too",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "partly",
+  "summary": "The translation fails to capture the explicit mention of sex and distorts several sentences, though it preserves the offer of video/voice calls in exchange for payment."
+}

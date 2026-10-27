@@ -96,6 +96,40 @@ def moderate(args):
         print(f"{stage} {rec.file_id} {round(dur)}s audio: {secs:.1f}s (RTF {secs / dur:.3f}), {len(flags)} flags", flush=True)
 
 
+def audio_moderate(args):
+    """Direct audio moderation: Gemma hears 28 s chunks with prompt v8, through
+    gemma_local.process_file exactly as the real audio runs do."""
+    import tempfile
+    import gemma_local as gl
+    import prompt_loader
+    from pipeline_logging import StageLogger
+    gl.PROMPT_PATH = config.PROJECT_ROOT / "prompt_v8.py"
+    gl.RAW_SCHEMA_STR = json.dumps(prompt_loader.schema_module_for_prompt(gl.PROMPT_PATH).raw_model_output_json_schema())
+    stage = f"audio_moderate_{args.model}{'_thinking' if args.thinking else ''}"
+    logger = StageLogger(f"rtf_benchmark_{stage}")
+    t0 = time.time()
+    model, processor = gl.load_model(args.model)
+    load_s = round(time.time() - t0, 1)
+    print(f"{stage}: model loaded in {load_s}s on {model.device}", flush=True)
+    tmp = Path(tempfile.mkdtemp(prefix="rtf_audio_"))
+    from mutagen import File as MutagenFile
+    for rec in records(args.files):
+        info = MutagenFile(rec.path)
+        dur = float(info.info.length)
+        t0 = time.perf_counter()
+        result, _raw = gl.process_file(model, processor, rec, args.model, args.thinking, gl.DEFAULT_CHUNK_SECONDS, logger, tmp)
+        secs = time.perf_counter() - t0
+        import gc, torch
+        gc.collect()
+        if torch.backends.mps.is_available():
+            torch.mps.empty_cache()
+        log_row({"stage": stage, "file_id": rec.file_id, "language": rec.language, "audio_duration_sec": round(dur, 1),
+                 "seconds": round(secs, 2), "rtf": round(secs / dur, 4),
+                 "detail": f"{len(result.flags)} flags, {result.chunks_total} chunks, {result.chunks_failed} failed",
+                 "model_load_seconds": load_s, "device": str(model.device)})
+        print(f"{stage} {rec.file_id} {round(dur)}s audio: {secs:.1f}s (RTF {secs / dur:.3f}), {len(result.flags)} flags", flush=True)
+
+
 def summary(_args):
     rows = list(csv.DictReader(TIMING.open()))
     by = {}
@@ -125,10 +159,10 @@ def summary(_args):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["asr", "moderate", "summary"])
+    ap.add_argument("cmd", choices=["asr", "moderate", "audio_moderate", "summary"])
     ap.add_argument("--files", default="")
     ap.add_argument("--model", choices=["e2b", "e4b"])
     ap.add_argument("--thinking", action="store_true")
     a = ap.parse_args()
     OUT.mkdir(exist_ok=True)
-    {"asr": asr, "moderate": moderate, "summary": summary}[a.cmd](a)
+    {"asr": asr, "moderate": moderate, "audio_moderate": audio_moderate, "summary": summary}[a.cmd](a)

@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_audio_call_426659403_audio_1788993755666.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 46,
+  "affected_word_count": 20,
+  "semantic_error_rate": 0.4348,
+  "seconds": 3.5,
+  "discrepancies": [
+    {
+      "reference_text": "ಯಾರೂ ಕೂಡ ಮಾತಾಡ್ತಿದ್ದೀನಿ",
+      "translation_text": "I was there you I am also sleeping",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I am talking to someone' but the translation mentions 'sleeping'."
+    },
+    {
+      "reference_text": "ನಂಬರ್ ಅಲ್ಲಿ ಮಾತಾಡುವ",
+      "translation_text": "what is the number we are seeing to talk",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'let's talk on the number' but the translation asks 'what is the number we are seeing to talk'."
+    },
+    {
+      "reference_text": "ಅದರಲ್ಲಿ ಎಲ್ಲ ಟಾಕಿ ಮಾಡ್ತಾರೆ",
+      "translation_text": "in that everyone does doggy doggy doggy",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'everyone talks in that' but the translation mistranslates 'talk' (ಟಾಕಿ) as 'doggy'."
+    },
+    {
+      "reference_text": "ಯಾರು ಟಾಕಿ ಟಾಕಿ ಎಲ್ಲರೂ ಟಾಕಿ",
+      "translation_text": "everyone doggy",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference talks about 'talking' but the translation mistranslates it as 'doggy'."
+    },
+    {
+      "reference_text": "ಎಂತ ಫ್ರೀ ಆಗಿ ಮಾತಾಡ್ತೀಯಾ",
+      "translation_text": "how freely you talk",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks 'will you talk for free?' but the translation translates it as 'how freely you talk'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:25",
+      "type": "move_off_app",
+      "reference_text": "ಓಕೆ ನಂಬರ್ ಅಲ್ಲಿ ಮಾತಾಡುವ",
+      "translation_text": "okay what is the number we are seeing to talk",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:27",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್ ಅಲ್ಲಿ",
+      "translation_text": "on WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "00:30",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್ ಅಲ್ಲಿ ಮಾತಾಡೋಣ ಅಂದೆ",
+      "translation_text": "I said let's talk on WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "00:43",
+      "type": "money_or_payment",
+      "reference_text": "ಎಂತ ಫ್ರೀ ಆಗಿ ಮಾತಾಡ್ತೀಯಾ",
+      "translation_text": "how freely you talk",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several critical mistranslations, such as translating 'talking' (ಟಾಕಿ) as 'doggy' and turning a question about talking for free into an exclamation about talking freely."
+}

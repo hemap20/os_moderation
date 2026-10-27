@@ -1,0 +1,108 @@
+{
+  "file_id": "rec_default_427306227_audio_1789058240999.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 145,
+  "affected_word_count": 21,
+  "semantic_error_rate": 0.1448,
+  "seconds": 6.7,
+  "discrepancies": [
+    {
+      "reference_text": "లేడు హస్బెండ్ లేడా",
+      "translation_text": "No husband?",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'Is he not there? Is husband not there?' but the translation misses the first part."
+    },
+    {
+      "reference_text": "ఏమన్నాడు",
+      "translation_text": "what did he say?",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The translation mixes up the dialogue flow and attributes 'Who said?' and 'Yes yes' incorrectly in this segment."
+    },
+    {
+      "reference_text": "ఏమనలేదు",
+      "translation_text": "Devanandam",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'He didn't say anything' but the translation hallucinated a name 'Devanandam'."
+    },
+    {
+      "reference_text": "మీరు ఎక్కడి నుంచి",
+      "translation_text": "When will you let me go",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'Where are you from?' but the translation completely misinterprets it."
+    },
+    {
+      "reference_text": "నేనా నల్గొండ",
+      "translation_text": "I am not in myself",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Me? Nalgonda' but the translation says 'I am not in myself'."
+    },
+    {
+      "reference_text": "రెండు రోజులు",
+      "translation_text": "Two hundred",
+      "category": "number_or_id_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Two days' but the translation says 'Two hundred'."
+    },
+    {
+      "reference_text": "అన్నంలో గాని",
+      "translation_text": "Run and love",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'In food or...' but the translation says 'Run and love'."
+    },
+    {
+      "reference_text": "హస్బెండ్ సాటిస్ఫై చేయట్లేదా",
+      "translation_text": "is the husband not showing?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks 'Is husband not satisfying?' but the translation says 'is the husband not showing?'."
+    },
+    {
+      "reference_text": "దాని గురించి చాలదు మరి",
+      "translation_text": "There is a lot about that madam",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'That is not enough' but the translation says 'There is a lot about that madam'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:37",
+      "type": "sexual_or_explicit",
+      "reference_text": "టైం పాస్ సాటిస్ఫై లేకపోతే",
+      "translation_text": "Timepass, if not satisfied,",
+      "status": "preserved"
+    },
+    {
+      "t": "01:46",
+      "type": "sexual_or_explicit",
+      "reference_text": "ఫ్రెండ్షిప్ ఆల్సో సాటిస్ఫై",
+      "translation_text": "a friendship also satisfied.",
+      "status": "preserved"
+    },
+    {
+      "t": "02:02",
+      "type": "sexual_or_explicit",
+      "reference_text": "హస్బెండ్ సాటిస్ఫై చేయట్లేదా",
+      "translation_text": "is the husband not showing?",
+      "status": "softened"
+    },
+    {
+      "t": "02:07",
+      "type": "sexual_or_explicit",
+      "reference_text": "హస్బెండ్ సాటిస్ఫై చేయడా అంటున్నా",
+      "translation_text": "I am saying husband satisfying?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several severe mistranslations and hallucinations, but it manages to partly preserve the sexual/satisfaction-related intent of the conversation despite some errors."
+}

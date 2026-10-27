@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_audio_call_421223616_audio_1788491953131.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 61,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.1803,
+  "seconds": 2.4,
+  "discrepancies": [
+    {
+      "reference_text": "நான் கடலூர்",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The caller's location 'Cuddalore' is completely missing from the translation."
+    },
+    {
+      "reference_text": "நான் ஒரு ரெண்டு மாசம்",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The caller's response that they have been using the app for two months is missing."
+    },
+    {
+      "reference_text": "ஒரு ரெண்டு பேரு",
+      "translation_text": "some people",
+      "category": "number_or_id_altered",
+      "word_count_affected": 3,
+      "explanation": "The specific number 'two people' is translated vaguely as 'some people'."
+    },
+    {
+      "reference_text": "ஹவுஸ் வைஃப்",
+      "translation_text": "ah okay",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The speaker's occupation 'Housewife' is translated incorrectly as 'ah okay'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:38",
+      "type": "move_off_app",
+      "reference_text": "ஏதாவது காண்டாக்ட் இருக்கா?",
+      "translation_text": "because is there a contact?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:44",
+      "type": "move_off_app",
+      "reference_text": "இன்ஸ்டாகிராம்ல கொடுத்தாங்க",
+      "translation_text": "will give it on Instagram.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the general flow and policy-relevant mentions of Instagram, but misses key details like the caller's location, duration of app usage, and occupation."
+}

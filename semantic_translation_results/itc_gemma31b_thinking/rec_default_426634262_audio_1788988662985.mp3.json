@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_426634262_audio_1788988662985.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 39,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.2821,
+  "seconds": 4.2,
+  "discrepancies": [
+    {
+      "reference_text": "என்ன சைஸ் ஓடி",
+      "translation_text": "size how much",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation misinterprets the question about size as asking for a price or amount."
+    },
+    {
+      "reference_text": "வாட்ஸ்அப் வா",
+      "translation_text": "WhatsApp",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The translation misses the invitation/command to come to WhatsApp."
+    },
+    {
+      "reference_text": "இன்னும் கொஞ்சம் காமிக்க",
+      "translation_text": "I will show a bit here",
+      "category": "intent_changed",
+      "word_count_affected": 3,
+      "explanation": "The reference asks to show a bit more, whereas the translation says the speaker will show a bit."
+    },
+    {
+      "reference_text": "இல்ல பாத்துட்டு இருக்கேன்",
+      "translation_text": "Cannot pay everything",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'No, I am watching', but the translation completely changes this to a statement about payment."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:27",
+      "type": "sexual_or_explicit",
+      "reference_text": "என்ன சைஸ் ஓடி",
+      "translation_text": "size how much",
+      "status": "softened"
+    },
+    {
+      "t": "00:30",
+      "type": "sexual_or_explicit",
+      "reference_text": "என்ன சைஸ் ஓடி",
+      "translation_text": "One size how much",
+      "status": "softened"
+    },
+    {
+      "t": "00:36",
+      "type": "move_off_app",
+      "reference_text": "வாட்ஸ்அப் வா",
+      "translation_text": "WhatsApp",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:38",
+      "type": "sexual_or_explicit",
+      "reference_text": "இன்னும் கொஞ்சம் காமிக்க",
+      "translation_text": "I will show a bit here",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "no",
+  "summary": "The translation is highly inaccurate, misinterpreting explicit questions about size, reversing the direction of showing content, and introducing unrelated talk about payment."
+}

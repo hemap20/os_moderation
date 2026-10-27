@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_audio_call_426849624_audio_1789020718433.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 186,
+  "affected_word_count": 16,
+  "semantic_error_rate": 0.086,
+  "seconds": 12.0,
+  "discrepancies": [
+    {
+      "reference_text": "आ जाऊँ",
+      "translation_text": "Come come",
+      "category": "intent_changed",
+      "word_count_affected": 2,
+      "explanation": "The speaker asks 'Should I come?' but the translation translates it as an invitation 'Come come'."
+    },
+    {
+      "reference_text": "बिस्तर में आ जाऊँ",
+      "translation_text": "Should I come",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The translation omits 'in bed' from the speaker's request to join them in bed."
+    },
+    {
+      "reference_text": "हाँ आ रही हूँ",
+      "translation_text": "What is coming right na on the way",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation misinterprets 'Yes, I am coming' as a question about what is coming on the way."
+    },
+    {
+      "reference_text": "पिलाओगी",
+      "translation_text": "will you bring",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The translation translates 'Will you feed me/let me drink' as 'will you bring', losing the sexual connotation."
+    },
+    {
+      "reference_text": "आवाज नहीं जा रहा है",
+      "translation_text": "I am not going to college",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The translation completely misinterprets 'Voice is not going through' as 'I am not going to college'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:49",
+      "type": "sexual_or_explicit",
+      "reference_text": "बिस्तर में आ जाऊँ",
+      "translation_text": "Should I come",
+      "status": "softened"
+    },
+    {
+      "t": "01:43",
+      "type": "sexual_or_explicit",
+      "reference_text": "मुझे पीना है",
+      "translation_text": "I want to drink",
+      "status": "preserved"
+    },
+    {
+      "t": "02:26",
+      "type": "sexual_or_explicit",
+      "reference_text": "पीना है आपका",
+      "translation_text": "want to drink yours",
+      "status": "preserved"
+    },
+    {
+      "t": "02:35",
+      "type": "sexual_or_explicit",
+      "reference_text": "पिलाओगी",
+      "translation_text": "will you bring",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow of the conversation but contains several critical mistranslations, particularly softening the sexual requests and completely misinterpreting technical issues and other statements near the end."
+}

@@ -1,0 +1,101 @@
+{
+  "file_id": "rec_audio_call_423629370_audio_1788714233340.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 1609,
+  "affected_word_count": 33,
+  "semantic_error_rate": 0.0205,
+  "seconds": 5.6,
+  "discrepancies": [
+    {
+      "reference_text": "जन्म",
+      "translation_text": "there is a balm in the stomach",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The translation completely misinterprets the word 'जन्म' (meaning 'by birth' or 'since birth' in this context) as 'balm in the stomach'."
+    },
+    {
+      "reference_text": "मैं तो आज मैं पड़ी लिखी नहीं हूं छोकरों पर गिर रही हूं",
+      "translation_text": "I can't see the chain in my rhythm is she giving to the boys",
+      "category": "other_meaning_change",
+      "word_count_affected": 12,
+      "explanation": "The translation completely garbles the speaker's self-deprecating statement about not being educated and falling for boys."
+    },
+    {
+      "reference_text": "चार बच्चों की मां अच्छी लगी",
+      "translation_text": "the death of four children [unclear]",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The translation mistranslates 'मां अच्छी लगी' (liked the mother) as 'the death of'."
+    },
+    {
+      "reference_text": "अब बच्चे करने कब आ जाओगे?",
+      "translation_text": "After doing",
+      "category": "key_content_missing",
+      "word_count_affected": 6,
+      "explanation": "The translation completely misses the explicit question about when he will come to make babies."
+    },
+    {
+      "reference_text": "बच्चे करने का टाइम नहीं मेरे पास होता है",
+      "translation_text": "Children, I don't want to do, that is my chance",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The translation changes 'I don't have time to make babies' into a completely different sentence."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "08:34",
+      "type": "move_off_app",
+      "reference_text": "आप Instagram यूज करते हो?",
+      "translation_text": "do you use Instagram",
+      "status": "preserved"
+    },
+    {
+      "t": "09:28",
+      "type": "money_or_payment",
+      "reference_text": "मैंने तुमसे क्या बोला कि मेरी थोड़ी मजबूरी है कि मैं इस ऐप पे आई हूं... मैं आई हूं सिर्फ अर्निंग के लिए",
+      "translation_text": "what did I tell you that I have some compulsion that I... I have come no that is only for earning",
+      "status": "preserved"
+    },
+    {
+      "t": "09:37",
+      "type": "move_off_app",
+      "reference_text": "अब मैं इसमें number दे दूं या किसी को ID दे दूं तो उसमें नुकसान तो मेरा ही है ना",
+      "translation_text": "now if I give my number in this or give an ID to someone then the loss is mine right",
+      "status": "preserved"
+    },
+    {
+      "t": "10:08",
+      "type": "money_or_payment",
+      "reference_text": "तो मेरा खर्चा पानी कौन उठाएगा कहां से लाऊंगी मैं खर्चा पानी? ... मैं इस ऐप से अपना खर्चा उठाती हूं अपने बच्चों का खर्चा उठाती हूं",
+      "translation_text": "so who will bear my expenses? Where will I bring expenses from? I bear my own expenses according to my means, I bear my children's expenses",
+      "status": "preserved"
+    },
+    {
+      "t": "13:29",
+      "type": "sexual_or_explicit",
+      "reference_text": "अब बच्चे करने कब आ जाओगे?",
+      "translation_text": "After doing",
+      "status": "missing"
+    },
+    {
+      "t": "13:41",
+      "type": "sexual_or_explicit",
+      "reference_text": "बच्चे करने का टाइम नहीं मेरे पास होता है",
+      "translation_text": "Children, I don't want to do, that is my chance",
+      "status": "intent_changed"
+    },
+    {
+      "t": "13:44",
+      "type": "sexual_or_explicit",
+      "reference_text": "बच्चे करने कब आ जाओगे?",
+      "translation_text": "when to come to make children",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow of the conversation and the discussion about earning on the app, but it fails to accurately translate several key explicit statements regarding making babies at the end of the call."
+}

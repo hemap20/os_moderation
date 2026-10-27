@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426865848_audio_1789021942575.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 239,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.0209,
+  "seconds": 3.1,
+  "discrepancies": [
+    {
+      "reference_text": "ನಂಬರ್ ಇಸ್ಕೊಂಡು ಇಲ್ಲ ಕೊಟ್ಟೂ ಇಲ್ಲ",
+      "translation_text": "I have taken numbers but haven't given",
+      "category": "negation_flipped",
+      "word_count_affected": 5,
+      "explanation": "The reference says they have neither taken nor given phone numbers, but the translation incorrectly states they have taken numbers."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:18",
+      "type": "meeting_in_person",
+      "reference_text": "ನಾನು ಯಾರನ್ನು ಮೀಟ್ ಮಾಡಿಲ್ಲ",
+      "translation_text": "I haven't met anyone",
+      "status": "preserved"
+    },
+    {
+      "t": "01:21",
+      "type": "meeting_in_person",
+      "reference_text": "ತುಂಬಾ ಜನ ಮಾತಾಡ್ತಾರೆ ಮೀಟ್ ಮಾಡ್ತಾರೆ",
+      "translation_text": "many people talk, they meet",
+      "status": "preserved"
+    },
+    {
+      "t": "02:14",
+      "type": "move_off_app",
+      "reference_text": "ಯಾರಿಗೂ ಫೋನ್ ನಂಬರ್ಸ್ ಏನು ಶೇರ್ ಮಾಡಿಲ್ಲ ನೀವು",
+      "translation_text": "I haven't shared phone numbers with anyone, you",
+      "status": "preserved"
+    },
+    {
+      "t": "02:25",
+      "type": "move_off_app",
+      "reference_text": "ನಾನು ಫೋನ್ ನಂಬರ್ ಕೊಟ್ಟಿಲ್ಲ",
+      "translation_text": "I haven't given the phone number yet",
+      "status": "preserved"
+    },
+    {
+      "t": "02:32",
+      "type": "move_off_app",
+      "reference_text": "ನಂಬರ್ ಇಸ್ಕೊಂಡು ಇಲ್ಲ ಕೊಟ್ಟೂ ಇಲ್ಲ",
+      "translation_text": "I have taken numbers but haven't given",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate, but it incorrectly flips a negation at the end, stating the speaker has taken phone numbers when they actually said they have neither taken nor given any."
+}

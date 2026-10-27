@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_audio_call_426203802_audio_1788955464104.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 558,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.0269,
+  "seconds": 3.9,
+  "discrepancies": [
+    {
+      "reference_text": "जयपुर में कहां से हो?",
+      "translation_text": "I am from a village twenty kilometers from Jaipur",
+      "category": "key_content_missing",
+      "word_count_affected": 5,
+      "explanation": "The translation misses the question asking where the speaker is from in Jaipur, merging it into the next response."
+    },
+    {
+      "reference_text": "मैं जयपुर में 20 किलोमीटर गांव है वहां से हूं",
+      "translation_text": "I am from a village twenty kilometers from Jaipur",
+      "category": "other_meaning_change",
+      "word_count_affected": 10,
+      "explanation": "The reference says the village is 20 km from Jaipur, but the translation says 'a village twenty kilometers from Jaipur' which is mostly correct but misses the context of the question."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:46",
+      "type": "money_or_payment",
+      "reference_text": "सच बोलूं तीन चार दिन हुए और अभी मैंने रिचार्ज किया था वो खत्म होते ही मैं बंद कर रहा हूं",
+      "translation_text": "to tell the truth, it's been three four days and I had just recharged, as soon as that ends I am closing",
+      "status": "preserved"
+    },
+    {
+      "t": "02:53",
+      "type": "money_or_payment",
+      "reference_text": "मतलब रिचार्ज बार-बार आगे नहीं आगे रिचार्ज करके बात करना ये तो ना होती है यार",
+      "translation_text": "why recharge again and again, talking by recharging again and again is not how it's done man",
+      "status": "preserved"
+    },
+    {
+      "t": "03:03",
+      "type": "money_or_payment",
+      "reference_text": "रिचार्ज करके कितनी बार कितनी बार करूं ये?",
+      "translation_text": "how many times do I recharge this is it",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key details of the conversation, including the discussion about app recharges and medical advice, despite some minor phrasing differences."
+}

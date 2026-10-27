@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_default_419887388_audio_1788364981482.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 391,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.0332,
+  "seconds": 3.3,
+  "discrepancies": [
+    {
+      "reference_text": "मैं इतना भेजूंगा ना",
+      "translation_text": "I will send the patient then",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation mistranslates 'भेजूंगा' (will send) in this context, turning it into 'send the patient'."
+    },
+    {
+      "reference_text": "इतनी तारीफ करके",
+      "translation_text": "[unclear]",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The translation misses the phrase 'by praising so much' and marks it as unclear."
+    },
+    {
+      "reference_text": "सुंदर लड़की रोते हुए अच्छी नहीं लगती",
+      "translation_text": "you stopped the girl children",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The translation completely misinterprets 'beautiful girls don't look good crying' as 'you stopped the girl children'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:12",
+      "type": "sexual_or_explicit",
+      "reference_text": "लड़की उसमें जनरली ओपन टॉक करने के लिए कनेक्ट करता हूं",
+      "translation_text": "I generally connect to girls for open talk",
+      "status": "preserved"
+    },
+    {
+      "t": "02:11",
+      "type": "sexual_or_explicit",
+      "reference_text": "सम ओपन टॉक वाली लड़की से थोड़ा बात करूंगी मैं",
+      "translation_text": "I will talk to some open talk girls",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the overall intent and tone of the conversation, including references to 'open talk', though it contains a few mistranslations and missing phrases towards the end."
+}

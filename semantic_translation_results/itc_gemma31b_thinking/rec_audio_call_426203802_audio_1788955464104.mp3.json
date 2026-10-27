@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_audio_call_426203802_audio_1788955464104.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 558,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.0269,
+  "seconds": 4.5,
+  "discrepancies": [
+    {
+      "reference_text": "क्या करते हो दिल्ली नोएडा से?",
+      "translation_text": "What do you do sister from Noida",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The translation adds 'sister' which is not in the reference and changes the tone of a potential romantic interest."
+    },
+    {
+      "reference_text": "क्या है तुम्हारा?",
+      "translation_text": "what is my darkness my darkness my darkness",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation completely misinterprets the question 'what is your status?' as 'my darkness'."
+    },
+    {
+      "reference_text": "सर्चिंग फॉर बॉयफ्रेंड",
+      "translation_text": "Ninety two received on PhonePe boyfriend rupees seven no I don't get time nine received on PhonePe",
+      "category": "added_content",
+      "word_count_affected": 3,
+      "explanation": "The translation hallucinates PhonePe payment notifications that are not present in the audio/reference."
+    },
+    {
+      "reference_text": "मैं बन जाऊं?",
+      "translation_text": "I'll become dad",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation says 'I'll become dad' instead of 'Should I become (your boyfriend)?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:46",
+      "type": "money_or_payment",
+      "reference_text": "सच बोलूं तीन चार दिन हुए और अभी मैंने रिचार्ज किया था वो खत्म होते ही मैं बंद कर रहा हूं",
+      "translation_text": "should I tell the truth it's been three four days and just now I had recharged as soon as that ends I am closing",
+      "status": "preserved"
+    },
+    {
+      "t": "02:53",
+      "type": "money_or_payment",
+      "reference_text": "मतलब रिचार्ज बार-बार आगे नहीं आगे रिचार्ज करके बात करना ये तो ना होती है यार",
+      "translation_text": "recharging again and again recharging and talking this doesn't happen man",
+      "status": "preserved"
+    },
+    {
+      "t": "03:03",
+      "type": "money_or_payment",
+      "reference_text": "रिचार्ज करके कितनी बार कितनी बार करूं ये?",
+      "translation_text": "how many times do I recharge this is it",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the overall flow and intent of the conversation, including discussions about app recharges, but introduces several bizarre hallucinations and mistranslations like 'PhonePe' notifications and 'becoming dad'."
+}

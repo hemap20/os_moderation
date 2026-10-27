@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_default_425656790_audio_1788896051031.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 121,
+  "affected_word_count": 25,
+  "semantic_error_rate": 0.2066,
+  "seconds": 5.4,
+  "discrepancies": [
+    {
+      "reference_text": "என் பேரு சுதா",
+      "translation_text": "it's LWC only.",
+      "category": "named_entity_altered",
+      "word_count_affected": 3,
+      "explanation": "The speaker's name 'Sudha' is mistranslated as 'LWC only'."
+    },
+    {
+      "reference_text": "என் பேரு சக்திவேலுங்க",
+      "translation_text": "I am speaking Sakthivel",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'My name is Sakthivel', but the translation says 'I am speaking Sakthivel'."
+    },
+    {
+      "reference_text": "எந்த ஆப் யூஸ் பண்ணுவீங்க சக்தி",
+      "translation_text": "okay I will use it just like this.",
+      "category": "intent_changed",
+      "word_count_affected": 5,
+      "explanation": "A question asking which app Sakthi uses is translated as a statement about using it."
+    },
+    {
+      "reference_text": "சோலோஸ் ஆப் நீங்க எவ்வளவு நாளா யூஸ் பண்றீங்க",
+      "translation_text": "so for how many days have you been using it to eat dosa?",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The app name 'Solos app' is mistranslated as 'to eat dosa'."
+    },
+    {
+      "reference_text": "செக்ஸியா பேசுவாங்க",
+      "translation_text": "six...",
+      "category": "tone_softened",
+      "word_count_affected": 2,
+      "explanation": "The word 'sexily' is mistranslated/censored as 'six...'."
+    },
+    {
+      "reference_text": "மேரேஜ் ஆன லேடிஸ் வருவாங்க",
+      "translation_text": "marriage and enjoys will come",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The phrase 'married ladies will come' is mistranslated as 'marriage and enjoys will come'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:47",
+      "type": "sexual_or_explicit",
+      "reference_text": "ரோமேண்டிக்கா பேசுவாங்க செக்ஸியா பேசுவாங்க பிரண்ட்லியாவும் பேசுவாங்க",
+      "translation_text": "They will speak romantically, six... They will speak, they will also speak friendly.",
+      "status": "softened"
+    },
+    {
+      "t": "01:03",
+      "type": "move_off_app",
+      "reference_text": "தனியா வாட்ஸ்அப் இதுல பேசினா பேசுங்க வாட்ஸ்அப் நம்பர் எல்லாம் கொடுத்து",
+      "translation_text": "if you speak on WhatsApp separately, speak. If they give WhatsApp numbers",
+      "status": "preserved"
+    },
+    {
+      "t": "01:07",
+      "type": "money_or_payment",
+      "reference_text": "ஜிபே பண்ண சொன்னா அதெல்லாம் பேசாதீங்க காசு வாங்கிட்டு ஏமாத்திருவாங்க",
+      "translation_text": "and ask to GPay, don't talk about all that, they will take money and cheat.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate regarding the main advice about avoiding WhatsApp/GPay scams, but it contains several odd mistranslations like 'dosa' for 'Solos app' and 'six...' for 'sexily'."
+}

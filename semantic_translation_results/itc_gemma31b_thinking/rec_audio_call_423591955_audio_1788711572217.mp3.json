@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_audio_call_423591955_audio_1788711572217.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 111,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.1171,
+  "seconds": 2.4,
+  "discrepancies": [
+    {
+      "reference_text": "मैं तो हाउसवाइफ हूं",
+      "translation_text": "So you are a housewife",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation changes the speaker's statement about herself into a question/statement about the other person."
+    },
+    {
+      "reference_text": "पति क्या करते हैं आपके?",
+      "translation_text": "what else is known what do you do",
+      "category": "key_content_missing",
+      "word_count_affected": 5,
+      "explanation": "The translation misses the reference to the husband's occupation."
+    },
+    {
+      "reference_text": "मैंने इंटर की है",
+      "translation_text": "I have It is Turkey",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation mistranslates 'Inter' (intermediate education) as 'Turkey' and leaves the sentence incomplete."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:12",
+      "type": "sexual_or_explicit",
+      "reference_text": "बाकी आप गर्लफ्रेंड बनना चाहेंगी मेरी?",
+      "translation_text": "otherwise would you like to become my girlfriend",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow of the conversation but contains several errors, including mistranslating the speaker's education level and misattributing who is the housewife."
+}

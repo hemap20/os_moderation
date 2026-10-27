@@ -1,0 +1,30 @@
+{
+  "file_id": "rec_default_426865205_audio_1789021894193.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 26,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.1923,
+  "seconds": 2.6,
+  "discrepancies": [
+    {
+      "reference_text": "ಏನ್ ಮಾಡ್ತಿದ್ದೀರಾ",
+      "translation_text": "where are you from, Davangere?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'What are you doing?' but the translation asks 'where are you from, Davangere?'."
+    },
+    {
+      "reference_text": "ನಾನು ಮಾತಾಡಿದ್ದೀನಿ ಅಲ್ವಾ",
+      "translation_text": "I haven't spoken for a long time with you, tell me.",
+      "category": "negation_flipped",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I have spoken, right?' but the translation flips this to 'I haven't spoken for a long time'."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation introduces several meaning changes, including hallucinating locations like Davangere and Hubli, and flipping a positive statement about having spoken before into a negative one."
+}

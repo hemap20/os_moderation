@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_audio_call_426849843_audio_1789020732404.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 1791,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.0084,
+  "seconds": 5.6,
+  "discrepancies": [
+    {
+      "reference_text": "ननद अनमैरिड है ना",
+      "translation_text": "Sister-in-law is married, right?",
+      "category": "negation_flipped",
+      "word_count_affected": 4,
+      "explanation": "The reference states the sister-in-law is unmarried, but the translation says she is married."
+    },
+    {
+      "reference_text": "तो वहां पे आपकी",
+      "translation_text": "So there your thirty two thirty two...",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'So there your...' but the translation inserts 'thirty two thirty two' which belongs to the next line."
+    },
+    {
+      "reference_text": "तो वो अपने आप को भूल जाती है",
+      "translation_text": "they feel like food [unclear]",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'they forget about themselves', but the translation incorrectly translates this as 'they feel like food'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "03:41",
+      "type": "money_or_payment",
+      "reference_text": "इसमें अर्निंग के लिए दिखा रहा था कि आपको बात करने का शौक है तो आप दोस्त एप्लीकेशन पे आइए बातें करिए तो पैसे मिलते हैं इसके",
+      "translation_text": "it was showing for earning that if you are fond of talking, then come to the Friends application and talk, then you get money.",
+      "status": "preserved"
+    },
+    {
+      "t": "04:21",
+      "type": "move_off_app",
+      "reference_text": "सीधे डायरेक्ट जो है आएंगे और बोलते हैं कि आप व्हाट्सएप दीजिए मैंने कहा देखिए ये काम मैं नहीं करती हूं व्हाट्सएप व्हाट्सएप ना मैं नंबर देती हूं ना कुछ बस सिर्फ और सिर्फ ऑडियो कॉल मैं करती हूं",
+      "translation_text": "they come directly and say that give your WhatsApp. I said look, I don't do this work, WhatsApp WhatsApp, I neither give my number nor anything, I only do audio calls",
+      "status": "preserved"
+    },
+    {
+      "t": "08:40",
+      "type": "move_off_app",
+      "reference_text": "मैंने कहा तो मैंने कहा तुम इसको डिलीट कर दोगे अच्छा तुम ठीक है मैं कभी किसी से बोलती नहीं हूं लेकिन अपना व्हाट्सएप नंबर दे दो व्हाट्सएप नंबर या कॉल करने के लिए ताकि मैं खुद तुमको कॉल करके बात करूं",
+      "translation_text": "so I said you will delete this, okay, fine, I never tell anyone but you give your WhatsApp number WhatsApp number or for calling so that I myself can call you and talk",
+      "status": "preserved"
+    },
+    {
+      "t": "09:56",
+      "type": "move_off_app",
+      "reference_text": "चार-पांच तो ऐसी है जिनका मेरे जिनको मैंने अपना व्हाट्सएप नंबर देके रखा हूं",
+      "translation_text": "there are four or five others to whom I have given my WhatsApp number",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is highly accurate and preserves all policy-relevant moments regarding off-app contact and earning money, with only minor errors such as flipping a negation about marital status."
+}

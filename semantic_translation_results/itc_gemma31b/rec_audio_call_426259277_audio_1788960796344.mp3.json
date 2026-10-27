@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_audio_call_426259277_audio_1788960796344.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 69,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.1594,
+  "seconds": 2.6,
+  "discrepancies": [
+    {
+      "reference_text": "మనీ వేస్తుంటే ఇస్తానండి",
+      "translation_text": "if you say you will send money, I will give it",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'if you send money, I will give it', but the translation adds 'if you say you will send money'."
+    },
+    {
+      "reference_text": "మీ ఫేస్ చూడండి చూపియండి ఫస్ట్ తర్వాత చూద్దాం",
+      "translation_text": "Look at your name, show it first, then I will hit",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference asks to see her face ('show your face first, then we'll see'), but the translation incorrectly translates 'face' as 'name' and 'we'll see' as 'I will hit'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:00",
+      "type": "move_off_app",
+      "reference_text": "నెంబర్ ఇస్తారా ఆ నెంబర్ అర్థం కావాలి ఆ ఫోన్ నెంబర్ ఇస్తారా అంటున్నా",
+      "translation_text": "will you give your number? You need to understand, I am asking if you will give your phone number",
+      "status": "preserved"
+    },
+    {
+      "t": "00:00",
+      "type": "money_or_payment",
+      "reference_text": "మనీ వేస్తుంటే ఇస్తానండి",
+      "translation_text": "if you say you will send money, I will give it",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the overall intent of exchanging a phone number for money, though there are minor translation errors regarding showing the face."
+}

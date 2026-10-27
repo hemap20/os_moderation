@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_audio_call_424355050_audio_1788782425826.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 170,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.0529,
+  "seconds": 3.7,
+  "discrepancies": [
+    {
+      "reference_text": "ನೀವು ಪೇ ಮಾಡ್ತೀನಿ ಅಂದ್ರೆ ನಂಬರ್ ಹೇಳಿ ಕಾಲ್ ಮಾಡ್ತೀನಿ",
+      "translation_text": "You, I will pay, I mean tell the number I will call",
+      "category": "intent_changed",
+      "word_count_affected": 9,
+      "explanation": "The reference says 'If you say you will pay, tell me the number and I will call', but the translation incorrectly translates it as 'I will pay'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:40",
+      "type": "move_off_app",
+      "reference_text": "ವಾಟ್ಸಪ್ ವಿಡಿಯೋ ಕಾಲ್ ಇಂಟರೆಸ್ಟ್ ಇದಿಯಾ",
+      "translation_text": "Are you interested in WhatsApp video call?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:59",
+      "type": "move_off_app",
+      "reference_text": "ಫೋನ್ ನಂಬರ್ ಕೊಡ್ತೀರಾ",
+      "translation_text": "give the phone number",
+      "status": "preserved"
+    },
+    {
+      "t": "01:02",
+      "type": "money_or_payment",
+      "reference_text": "ನೀವು ಪೇ ಮಾಡ್ತೀನಿ ಅಂದ್ರೆ ನಂಬರ್ ಹೇಳಿ ಕಾಲ್ ಮಾಡ್ತೀನಿ",
+      "translation_text": "You, I will pay, I mean tell the number I will call",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:11",
+      "type": "money_or_payment",
+      "reference_text": "30 ಮಿನಿಟ್ಸ್ ಗೆ 300 ಆಗುತ್ತೆ",
+      "translation_text": "it will be three hundred for thirty minutes",
+      "status": "preserved"
+    },
+    {
+      "t": "01:19",
+      "type": "sexual_or_explicit",
+      "reference_text": "ಫುಲ್ ನ್ಯೂಡ್ ಅಲ್ಲಿ ಇರುತ್ತೆ",
+      "translation_text": "it will be full nude [unclear]",
+      "status": "preserved"
+    },
+    {
+      "t": "01:25",
+      "type": "sexual_or_explicit",
+      "reference_text": "ಸ್ನಾನ ಮಾಡೋದೆಲ್ಲ ತೋರಿಸ್ತೀರಾ",
+      "translation_text": "Will you show everything like bathing?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:06",
+      "type": "money_or_payment",
+      "reference_text": "ಪೇ ಮಾಡಬೇಕಾ",
+      "translation_text": "do I have to pay?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the explicit nature of the call and the off-app requests, but misrepresents who is paying whom in one key sentence."
+}
