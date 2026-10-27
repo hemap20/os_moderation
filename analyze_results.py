@@ -111,6 +111,8 @@ def _build_model_dirs(gemma_results_dir: Path, gemini_results_dir: Path) -> Dict
         "e2b_itc10s_text_thinking": gemma_results_dir / "e2b_itc10s_text_thinking",
         "e4b_itc10s_text_thinking": gemma_results_dir / "e4b_itc10s_text_thinking",
         "gemini-3.5-flash-lite": gemini_results_dir / "gemini-3.5-flash-lite",
+        "gemini-3.1-flash-lite_audio_v1": gemini_results_dir / "gemini-3.1-flash-lite_audio_v1",
+        "gemini-3.1-flash-lite_audio_v1_nothink": gemini_results_dir / "gemini-3.1-flash-lite_audio_v1_nothink",
         "gemini-3.1-flash-lite": gemini_results_dir / "gemini-3.1-flash-lite",
         "gemini-3.1-flash-lite_audiotrans_text": gemini_results_dir / "gemini-3.1-flash-lite_audiotrans_text",
         "gemini-3.1-flash-lite_itc10s_text": gemini_results_dir / "gemini-3.1-flash-lite_itc10s_text",

@@ -167,7 +167,11 @@ def generate_text(
     contents: list,
     response_mime_type: str = "application/json",
     response_json_schema: Optional[dict] = None,
+    usage_out: Optional[dict] = None,
+    thinking_budget: int = 1024,
 ) -> str:
+    """usage_out, if given, is filled with token usage (prompt / output / thinking,
+    and prompt tokens per modality). thinking_budget=0 turns thinking off."""
     # gemini-2.5-pro's "thinking" is uncapped by default and can consume the
     # entire output token budget on internal reasoning alone, hitting
     # MAX_TOKENS before writing any actual output (finish_reason=MAX_TOKENS,
@@ -182,7 +186,7 @@ def generate_text(
             response_json_schema=response_json_schema,
             temperature=0,
             max_output_tokens=63000,
-            thinking_config=types.ThinkingConfig(thinking_budget=1024),
+            thinking_config=types.ThinkingConfig(thinking_budget=thinking_budget),
             safety_settings=SAFETY_SETTINGS,
         ),
     )
@@ -208,4 +212,14 @@ def generate_text(
         if finish_reason_name in _NON_RETRYABLE_FINISH_REASONS:
             raise NonRetryableGeminiError(message)
         raise GeminiError(message)
+    if usage_out is not None and response.usage_metadata is not None:
+        um = response.usage_metadata
+        usage_out.clear()
+        usage_out.update({
+            "prompt_tokens": um.prompt_token_count or 0,
+            "output_tokens": um.candidates_token_count or 0,
+            "thinking_tokens": getattr(um, "thoughts_token_count", None) or 0,
+            "prompt_tokens_by_modality": {getattr(d.modality, "name", str(d.modality)): d.token_count
+                                          for d in (um.prompt_tokens_details or [])},
+        })
     return response.text
