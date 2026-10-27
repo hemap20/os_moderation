@@ -1,0 +1,94 @@
+{
+  "file_id": "rec_default_426610860_audio_1788986032726.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 43,
+  "affected_word_count": 8,
+  "semantic_error_rate": 0.186,
+  "seconds": 5.7,
+  "discrepancies": [
+    {
+      "reference_text": "ന്യൂഡ് വീഡിയോ കോളിന് താല്പര്യമുണ്ടോ?",
+      "translation_text": "are you interested in three video calls?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation incorrectly translates 'nude video call' as 'three video calls' in the first instance."
+    },
+    {
+      "reference_text": "500",
+      "translation_text": "eleven",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The price of 500 is incorrectly translated as eleven."
+    },
+    {
+      "reference_text": "അഞ്ച് മിനിറ്റ്",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The duration of five minutes is missing from the translation."
+    },
+    {
+      "reference_text": "808",
+      "translation_text": "four zero eight",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The phone number prefix 808 is incorrectly translated as four zero eight."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:07",
+      "type": "sexual_or_explicit",
+      "reference_text": "നിങ്ങൾക്ക് ന്യൂഡ് വീഡിയോ കോളിന് താല്പര്യമുണ്ടോ?",
+      "translation_text": "are you interested in three video calls?",
+      "status": "softened"
+    },
+    {
+      "t": "00:12",
+      "type": "sexual_or_explicit",
+      "reference_text": "ന്യൂഡ് വീഡിയോ കോളിന് താല്പര്യമുണ്ടോ എന്ന്",
+      "translation_text": "are you interested in nude",
+      "status": "preserved"
+    },
+    {
+      "t": "00:17",
+      "type": "move_off_app",
+      "reference_text": "എന്താണ് വാട്സാപ്പിലാണോ?",
+      "translation_text": "is it in that field or on WhatsApp?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:19",
+      "type": "money_or_payment",
+      "reference_text": "എത്ര? 500",
+      "translation_text": "How much, eleven",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:32",
+      "type": "move_off_app",
+      "reference_text": "നമ്പർ തരട്ടെ",
+      "translation_text": "That was the number",
+      "status": "preserved"
+    },
+    {
+      "t": "00:36",
+      "type": "move_off_app",
+      "reference_text": "808",
+      "translation_text": "four zero eight",
+      "status": "preserved"
+    },
+    {
+      "t": "00:49",
+      "type": "move_off_app",
+      "reference_text": "808 93 33 54 316 316",
+      "translation_text": "Eight zero eight nine three nine three three Five four five four three one six three one six",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several errors in numbers, including the price and parts of the phone number, and initially mistranslates 'nude' as 'three', but the overall intent to exchange a number for a video call is partially preserved."
+}

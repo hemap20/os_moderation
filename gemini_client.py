@@ -168,6 +168,7 @@ def generate_text(
     response_mime_type: str = "application/json",
     response_json_schema: Optional[dict] = None,
     usage_out: Optional[dict] = None,
+    thinking_budget: int = 1024,
 ) -> str:
     """usage_out, if given, is filled with the response's token usage
     (prompt / output / thinking tokens, and prompt tokens per modality) so
@@ -186,7 +187,7 @@ def generate_text(
             response_json_schema=response_json_schema,
             temperature=0,
             max_output_tokens=63000,
-            thinking_config=types.ThinkingConfig(thinking_budget=1024),
+            thinking_config=types.ThinkingConfig(thinking_budget=thinking_budget),  # 0 = thinking off
             safety_settings=SAFETY_SETTINGS,
         ),
     )

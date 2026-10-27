@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_audio_call_426604675_audio_1788985474412.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 93,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.1398,
+  "seconds": 5.1,
+  "discrepancies": [
+    {
+      "reference_text": "எவ்வளோ கால் பண்றேன் பே பண்றியா",
+      "translation_text": "will you do a nude call? will you pay?",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference asks 'How much call do I make, will you pay?' but the translation incorrectly introduces 'nude call'."
+    },
+    {
+      "reference_text": "எவ்வளோ காலா",
+      "translation_text": "nude call",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference repeats 'How much call?' but the translation incorrectly translates it as 'nude call'."
+    },
+    {
+      "reference_text": "300",
+      "translation_text": "Must pay, re-answer",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The specific payment amount of 300 is missing from the translation."
+    },
+    {
+      "reference_text": "ஹாய் சென்ட் பண்ணு அபிஷேக் பாரு",
+      "translation_text": "I will send, come and share",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'Send a hi, look for Abhishek' but the translation says 'I will send, come and share'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:43",
+      "type": "money_or_payment",
+      "reference_text": "எவ்வளோ கால் பண்றேன் பே பண்றியா",
+      "translation_text": "will you do a nude call? will you pay?",
+      "status": "preserved"
+    },
+    {
+      "t": "00:49",
+      "type": "money_or_payment",
+      "reference_text": "எவ்வளோ பே பண்ணனும்",
+      "translation_text": "Must pay",
+      "status": "preserved"
+    },
+    {
+      "t": "00:52",
+      "type": "money_or_payment",
+      "reference_text": "300",
+      "translation_text": "",
+      "status": "missing"
+    },
+    {
+      "t": "00:57",
+      "type": "move_off_app",
+      "reference_text": "நம்பர்",
+      "translation_text": "number",
+      "status": "preserved"
+    },
+    {
+      "t": "00:59",
+      "type": "move_off_app",
+      "reference_text": "ஆமா சொல்லட்டுமா 78 78 78 68 68 82 82 05 05 23 05 23",
+      "translation_text": "Shall I say? seven eight aa seven eight seven eight six eight six eight eight two. [unclear] zero five zero five two three zero five two three",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation successfully captures the exchange of a phone number and the discussion of payment, but it incorrectly introduces the word 'nude' and misses the specific payment amount of 300."
+}

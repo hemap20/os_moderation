@@ -1,0 +1,92 @@
+{
+  "file_id": "rec_audio_call_425861520_audio_1788928521393.mp3",
+  "model": "gemini-3.1-flash-lite",
+  "thinking": false,
+  "chunk_seconds": 0.0,
+  "flags": [
+    {
+      "model_category": "SuspiciousActivity",
+      "model_timestamp": "00:40",
+      "model_excerpt": "Do you want any personal shirt?",
+      "model_translation": "Do you want any personal service?",
+      "model_justification": "This is a strong case of offering a service for payment, which is a violation of the SuspiciousActivity policy.",
+      "model_confidence": 0.9,
+      "logprob_decision": null,
+      "logprob_category": null,
+      "logprob_derived_confidence": null,
+      "excerpt_token_entropy": null,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "model_speaker": "expert",
+      "model_context": "The expert asks the user about their occupation and then immediately pivots to offering a personal service for payment. The user does not respond to this specific offer.",
+      "logprob_violation": null,
+      "p_violation_yes": null,
+      "p_violation_method": null,
+      "violation_token_topk": null
+    },
+    {
+      "model_category": "SuspiciousActivity",
+      "model_timestamp": "00:50",
+      "model_excerpt": "If you make payment, I will do it.",
+      "model_translation": "If you make payment, I will do it.",
+      "model_justification": "This is a strong case of linking payment to a service, violating the SuspiciousActivity policy.",
+      "model_confidence": 0.9,
+      "logprob_decision": null,
+      "logprob_category": null,
+      "logprob_derived_confidence": null,
+      "excerpt_token_entropy": null,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "model_speaker": "expert",
+      "model_context": "The expert confirms that the service is contingent on payment. The user remains silent.",
+      "logprob_violation": null,
+      "p_violation_yes": null,
+      "p_violation_method": null,
+      "violation_token_topk": null
+    },
+    {
+      "model_category": "Explicit-Flirting",
+      "model_timestamp": "00:50",
+      "model_excerpt": "If you want video calls or something like that, will you talk a bit sexually?",
+      "model_translation": "If you want video calls or something like that, will you talk a bit sexually?",
+      "model_justification": "This is a strong case of soliciting sexual talk, which violates the Explicit-Flirting policy.",
+      "model_confidence": 0.9,
+      "logprob_decision": null,
+      "logprob_category": null,
+      "logprob_derived_confidence": null,
+      "excerpt_token_entropy": null,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "model_speaker": "expert",
+      "model_context": "The expert asks if the user wants sexual talk during a video call. The user does not explicitly agree or disagree.",
+      "logprob_violation": null,
+      "p_violation_yes": null,
+      "p_violation_method": null,
+      "violation_token_topk": null
+    }
+  ],
+  "chunks_total": 1,
+  "chunks_failed": 0,
+  "status": "success",
+  "error": null,
+  "missing_field_counts": {
+    "c": 0,
+    "speech_act": 0,
+    "quote_type": 0,
+    "violation": 0
+  },
+  "inference_time_sec": 1.669,
+  "inference_meta": {
+    "input": "transcript",
+    "thinking_budget": 0,
+    "prompt_tokens": 3134,
+    "output_tokens": 346,
+    "thinking_tokens": 0,
+    "prompt_tokens_by_modality": {
+      "TEXT": 3134
+    }
+  }
+}

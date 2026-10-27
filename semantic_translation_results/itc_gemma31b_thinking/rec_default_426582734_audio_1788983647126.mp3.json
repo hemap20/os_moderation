@@ -1,0 +1,101 @@
+{
+  "file_id": "rec_default_426582734_audio_1788983647126.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 666,
+  "affected_word_count": 10,
+  "semantic_error_rate": 0.015,
+  "seconds": 6.5,
+  "discrepancies": [
+    {
+      "reference_text": "సెక్సీగా",
+      "translation_text": "Shashi",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The word 'sexy' was mistranslated as a proper name 'Shashi'."
+    },
+    {
+      "reference_text": "వర్జినా?",
+      "translation_text": "Not much more, you have them.",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The question asking if she is a virgin was completely mistranslated."
+    },
+    {
+      "reference_text": "32",
+      "translation_text": "thirteen thirteen twelve",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The weight '32' was mistranslated as 'thirteen thirteen twelve'."
+    },
+    {
+      "reference_text": "కొలీగ్ తో",
+      "translation_text": "in college",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'office colleague' but the translation says 'in college'."
+    },
+    {
+      "reference_text": "సెక్స్ వీడియోస్?",
+      "translation_text": "these meetings?",
+      "category": "tone_softened",
+      "word_count_affected": 2,
+      "explanation": "The explicit question about sex videos was translated as 'meetings'."
+    },
+    {
+      "reference_text": "మెయిల్స్ టచ్ చేస్తేనే",
+      "translation_text": "touch mails",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The word 'males' (men) was mistranslated as 'mails' (letters/emails)."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:45",
+      "type": "sexual_or_explicit",
+      "reference_text": "మీరు చాలా బాగున్నారు సెక్సీగా",
+      "translation_text": "overall you are very good, Shashi.",
+      "status": "softened"
+    },
+    {
+      "t": "03:17",
+      "type": "sexual_or_explicit",
+      "reference_text": "ఓకే వర్జినా?",
+      "translation_text": "Not much more, you have them.",
+      "status": "intent_changed"
+    },
+    {
+      "t": "05:11",
+      "type": "sexual_or_explicit",
+      "reference_text": "అప్పటివరకు ఫీలింగ్ వస్తే నార్మల్ గా అంటే చేసుకోవడం కాదు కానీ నార్మల్ రబ్బింగ్ అయితే",
+      "translation_text": "Until now, if feelings come, normally, I mean just doing it is normal, rubbing is okay.",
+      "status": "preserved"
+    },
+    {
+      "t": "05:52",
+      "type": "sexual_or_explicit",
+      "reference_text": "అంటే అదే సెల్ఫ్ గా మాస్టర్ బేట్ అదే చేస్తావా అని",
+      "translation_text": "I mean, that, the same self, masturbate, you're asking if I do that",
+      "status": "preserved"
+    },
+    {
+      "t": "07:28",
+      "type": "sexual_or_explicit",
+      "reference_text": "చూసావా సెక్స్ వీడియోస్?",
+      "translation_text": "Did you see these meetings?",
+      "status": "softened"
+    },
+    {
+      "t": "09:19",
+      "type": "sexual_or_explicit",
+      "reference_text": "ఇప్పుడు బ్రెస్ట్ కూడా ప్రెస్ చేస్తూ ఉంటారు కదా",
+      "translation_text": "Breast, there won't be focus right there.",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow of the conversation but suffers from several critical mistranslations of sexual terms, such as translating 'sexy' as 'Shashi', 'males' as 'mails', and 'sex videos' as 'meetings'."
+}

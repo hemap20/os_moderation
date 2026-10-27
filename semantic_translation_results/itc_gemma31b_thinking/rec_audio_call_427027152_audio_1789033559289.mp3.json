@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_audio_call_427027152_audio_1789033559289.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 1018,
+  "affected_word_count": 17,
+  "semantic_error_rate": 0.0167,
+  "seconds": 6.1,
+  "discrepancies": [
+    {
+      "reference_text": "ഡിഗ്രി ആണോ",
+      "translation_text": "Is he a nurse?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks if she has a degree, but the translation asks if he is a nurse."
+    },
+    {
+      "reference_text": "സൈത്ര എന്ന് പറയും",
+      "translation_text": "It's called Pythro.",
+      "category": "named_entity_altered",
+      "word_count_affected": 3,
+      "explanation": "The name 'Saithra' is translated incorrectly as 'Pythro'."
+    },
+    {
+      "reference_text": "അഞ്ചു രൂപ 15 രൂപ ഒക്കെ മേടിച്ചിട്ടുണ്ട്",
+      "translation_text": "five rupees, fifteen rupees",
+      "category": "number_or_id_altered",
+      "word_count_affected": 7,
+      "explanation": "The reference mentions charging 5k (5000) or 15k (15000) rupees, but the translation literally says 5 rupees and 15 rupees."
+    },
+    {
+      "reference_text": "മൂന്ന് നാല് രൂപയൊക്കെ മേടിക്കത്തുള്ളൂ",
+      "translation_text": "only three or four rupees will be charged",
+      "category": "number_or_id_altered",
+      "word_count_affected": 5,
+      "explanation": "The reference mentions charging 3k or 4k rupees, but the translation literally says 3 or 4 rupees."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "05:45",
+      "type": "money_or_payment",
+      "reference_text": "നമ്മളെ ഇപ്പൊ ഒരാൾ വിളിച്ചെന്ന് വെച്ചാൽ അപ്പൊ ഈ ലൈവ് ഇടാൻ വിളിക്കുകയാണെങ്കിൽ അവരുടെ എന്റെ കാശ് 6000 രൂപയാണ്",
+      "translation_text": "suppose someone calls us now, then if they call to do a live, my money per day... is six thousand rupees.",
+      "status": "preserved"
+    },
+    {
+      "t": "06:16",
+      "type": "money_or_payment",
+      "reference_text": "ഷോപ്പിന്റെ ഷോപ്പിന്റെ പ്രൊമോഷൻ ഒക്കെ ചെയ്യാറുണ്ട് അതായത് ചെറിയ ഷോട്ട് പോലെ അങ്ങനെയൊക്കെ ചെയ്യാറുണ്ട് അതിനൊക്കെ നമുക്ക് അറിയാവുന്നവരാണെങ്കിൽ ചെറിയ പൈസയ്ക്ക് ചെയ്യും ഇല്ലെങ്കിൽ ഒരു അഞ്ചു രൂപ 15 രൂപ ഒക്കെ മേടിച്ചിട്ടുണ്ട്",
+      "translation_text": "I do promotions for shops and all. That is, I do things like small shorts. For those, they are people we know, if it's for a small amount, I've charged around five rupees, fifteen rupees...",
+      "status": "softened"
+    },
+    {
+      "t": "10:48",
+      "type": "move_off_app",
+      "reference_text": "ആ ഇതല്ല ഇതിനകത്തൊന്നും പറയാൻ പറ്റത്തില്ല ഒന്നെങ്കിൽ നമ്പർ തരാം അല്ലെങ്കിൽ എന്റെ നമ്പർ തരാം നോക്കിയിട്ട് വിളിച്ചാൽ മതി",
+      "translation_text": "yeah, not this, cannot say anything inside this, either... Will give number, or just look at my number and call",
+      "status": "preserved"
+    },
+    {
+      "t": "10:55",
+      "type": "move_off_app",
+      "reference_text": "നമ്പർ കൊടുക്കുന്നതിനോട് താല്പര്യമില്ല ഇൻസ്റ്റാ ഐഡി എന്താ പേര്",
+      "translation_text": "not interested in giving the number, what is the Insta ID?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key intents and policy moments, though it translates colloquial shorthand for thousands of rupees literally as single-digit rupees."
+}

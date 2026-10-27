@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_423978016_audio_1788753648923.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 137,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.0365,
+  "seconds": 3.0,
+  "discrepancies": [
+    {
+      "reference_text": "आज ही डाउनलोड किया।",
+      "translation_text": "it's not downloaded",
+      "category": "negation_flipped",
+      "word_count_affected": 3,
+      "explanation": "The reference says they downloaded it today, but the translation incorrectly negates this."
+    },
+    {
+      "reference_text": "प्राइवेट टॉकिंग",
+      "translation_text": "private shopping",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The translation mistranslates 'private talking' as 'private shopping'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:35",
+      "type": "move_off_app",
+      "reference_text": "प्राइवेट व्हाट्सएप चलता है यहाँ।",
+      "translation_text": "private WhatsApp works",
+      "status": "preserved"
+    },
+    {
+      "t": "01:37",
+      "type": "move_off_app",
+      "reference_text": "प्राइवेट व्हाट्सएप रहता है। प्राइवेट टॉकिंग ओनली व्हाट्सएप, नथिंग एल्स।",
+      "translation_text": "it stays private WhatsApp, private shopping only WhatsApp WhatsApp nothing else.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:45",
+      "type": "money_or_payment",
+      "reference_text": "चार्जेस लगता है।",
+      "translation_text": "there are charges",
+      "status": "preserved"
+    },
+    {
+      "t": "01:51",
+      "type": "money_or_payment",
+      "reference_text": "500 चार्जेस है।",
+      "translation_text": "Five hundred charges.",
+      "status": "preserved"
+    },
+    {
+      "t": "01:51",
+      "type": "sexual_or_explicit",
+      "reference_text": "500 में फुल ओपनली वीडियो कॉल।",
+      "translation_text": "In five hundred, full openly video call",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key policy-relevant details regarding WhatsApp, charges, and open video calls, despite minor errors like translating 'talking' as 'shopping'."
+}

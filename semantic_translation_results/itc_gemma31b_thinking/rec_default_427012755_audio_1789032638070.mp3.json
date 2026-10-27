@@ -1,0 +1,51 @@
+{
+  "file_id": "rec_default_427012755_audio_1789032638070.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 166,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.0904,
+  "seconds": 2.6,
+  "discrepancies": [
+    {
+      "reference_text": "കേരള",
+      "translation_text": "Cherthala",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The reference says Kerala, but the translation incorrectly translates it as Cherthala."
+    },
+    {
+      "reference_text": "തമിഴ്നാട്",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 1,
+      "explanation": "The reference mentions Tamil Nadu, which is completely missing from the translation."
+    },
+    {
+      "reference_text": "എനിക്ക് അതിലൊന്നും കാര്യമില്ല",
+      "translation_text": "Something else, there are no big big forests",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'I don't care about that', but the translation hallucinated 'there are no big big forests'."
+    },
+    {
+      "reference_text": "ഞാൻ ഈ ദുനിയാവിലേ ഇല്ലാത്ത ഒരാളാ",
+      "translation_text": "I am far away.",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'I am someone who is not in this world', but the translation simplifies it to 'I am far away'."
+    },
+    {
+      "reference_text": "മകനൊക്കെ ഇല്ല",
+      "translation_text": "didn't eat the son.",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'No son or anything', but the translation mistranslates it as 'didn't eat the son'."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several critical mistranslations of locations and phrases, such as translating Kerala as Cherthala and completely misinterpreting a phrase about not having a son as 'didn't eat the son'."
+}

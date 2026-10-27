@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_426649926_audio_1788991429022.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 22,
+  "affected_word_count": 8,
+  "semantic_error_rate": 0.3636,
+  "seconds": 3.9,
+  "discrepancies": [
+    {
+      "reference_text": "ಎಲ್ಲಾ ಸ್ಟಾಲಿನ್ ಬಸ್ ಸ್ಟಾಪ್",
+      "translation_text": "are you at work, that's it",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference mentions a bus stop, which is translated completely differently as being at work."
+    },
+    {
+      "reference_text": "ಯಾರಾ ಇದು ಕಾನ್ಸೆಪ್ಟ್",
+      "translation_text": "Cancer in this",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference word 'concept' is mistranslated as 'Cancer'."
+    },
+    {
+      "reference_text": "2762",
+      "translation_text": "two seven two seven four",
+      "category": "number_or_id_altered",
+      "word_count_affected": 1,
+      "explanation": "The last digits of the phone number are translated incorrectly."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:29",
+      "type": "move_off_app",
+      "reference_text": "ನಂಬರ್ ಕೊಡು",
+      "translation_text": "give the number",
+      "status": "preserved"
+    },
+    {
+      "t": "00:41",
+      "type": "move_off_app",
+      "reference_text": "ನಂಬರ್ ಹೇಳಿ ಕಾಲ್ ಮಾಡ್ತೀನಿ",
+      "translation_text": "tell the number I will call",
+      "status": "preserved"
+    },
+    {
+      "t": "00:45",
+      "type": "move_off_app",
+      "reference_text": "8861 8861 044 2762",
+      "translation_text": "double eight six one double eight six one Zero double four there is zero double four two seven two seven four",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the overall intent of sharing a phone number to move off the app, but contains errors in the specific digits of the phone number and mistranslates some conversational context."
+}

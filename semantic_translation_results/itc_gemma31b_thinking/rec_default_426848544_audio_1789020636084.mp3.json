@@ -1,0 +1,94 @@
+{
+  "file_id": "rec_default_426848544_audio_1789020636084.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 295,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.0508,
+  "seconds": 6.8,
+  "discrepancies": [
+    {
+      "reference_text": "ముస్లిం లో",
+      "translation_text": "people Muslim?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference refers to a location (likely Mallepally/Masab Tank area, misheard as Muslim), not asking if people are Muslim."
+    },
+    {
+      "reference_text": "ఆ పుట్టుమచ్చ టెంప్టింగ్ గా ఉంది.",
+      "translation_text": "that photo is good and tempting",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference mentions a mole (పుట్టుమచ్చ) being tempting, whereas the translation says 'photo'."
+    },
+    {
+      "reference_text": "ఇప్పుడు లేరు.",
+      "translation_text": "Didn't run away",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'not there now' regarding the boyfriend, which the translation mistranslates as 'Didn't run away'."
+    },
+    {
+      "reference_text": "ఎచ్చమల్లి.",
+      "translation_text": "Gachibowli four ten",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The location 'Yacharam' or 'Echhamalli' is mistranslated as 'Gachibowli four ten'."
+    },
+    {
+      "reference_text": "నాది ఉప్పల్.",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The speaker's location 'Uppal' is completely missing from the translation."
+    },
+    {
+      "reference_text": "క్యాప్ జెమిని.",
+      "translation_text": "cabs sir tell the price",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The company name 'Capgemini' is mistranslated as 'cabs sir tell the price'."
+    },
+    {
+      "reference_text": "చూపియను.",
+      "translation_text": "I will show",
+      "category": "negation_flipped",
+      "word_count_affected": 1,
+      "explanation": "The speaker says 'I won't show' (refusal), but the translation flips it to 'I will show'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:56",
+      "type": "sexual_or_explicit",
+      "reference_text": "ఆ పుట్టుమచ్చ టెంప్టింగ్ గా ఉంది.",
+      "translation_text": "that photo is good and tempting",
+      "status": "preserved"
+    },
+    {
+      "t": "01:24",
+      "type": "sexual_or_explicit",
+      "reference_text": "ఏంటి, బాయ్ ఫ్రెండ్ ఉన్నాడా? కొరికేసాడా?",
+      "translation_text": "still do you have a boyfriend did he bite",
+      "status": "preserved"
+    },
+    {
+      "t": "03:59",
+      "type": "sexual_or_explicit",
+      "reference_text": "ఒకసారి ఇలా చూపించొచ్చు కదా.",
+      "translation_text": "One more time do like this like this",
+      "status": "preserved"
+    },
+    {
+      "t": "04:03",
+      "type": "sexual_or_explicit",
+      "reference_text": "చూపియను.",
+      "translation_text": "I will show",
+      "status": "intent_changed"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "no",
+  "summary": "The translation contains several critical errors, including flipping a refusal to show herself into an agreement to show, and mistranslating key locations and company names."
+}

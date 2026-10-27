@@ -1,0 +1,94 @@
+{
+  "file_id": "rec_default_420511327_audio_1788424417781.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 439,
+  "affected_word_count": 23,
+  "semantic_error_rate": 0.0524,
+  "seconds": 5.0,
+  "discrepancies": [
+    {
+      "reference_text": "ನಿಮ್ ಊರು",
+      "translation_text": "Tumakuru",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'your town' (ನಿಮ್ ಊರು), but the translation incorrectly translates this as a specific place name 'Tumakuru'."
+    },
+    {
+      "reference_text": "ನಾನಾ ಹೌಸ್ ವೈಫ್ ನಿಮ್ದು",
+      "translation_text": "That is my house wife",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The speaker says 'Me? I am a housewife. What about you?', but the translation says 'That is my house wife'."
+    },
+    {
+      "reference_text": "ಫಸ್ಟ್ ಮಗನ",
+      "translation_text": "Pushpaga hmm, what is Pushpaga?",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Is the first one a son?', but the translation hallucinates 'Pushpaga'."
+    },
+    {
+      "reference_text": "ಆಪ್ ಗೆ ಬಂದು ನೀವು",
+      "translation_text": "since you came to the office?",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks about coming to the 'app' (ಆಪ್ ಗೆ), but the translation says 'office'."
+    },
+    {
+      "reference_text": "ಅಕೌಂಟ್ ಬಿಟ್ಟಿದ್ದೀರಾ",
+      "translation_text": "account",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'Have you left/opened an account?', but the translation translates this very poorly and misses the verb."
+    },
+    {
+      "reference_text": "ಕಂಬ ಹಾಕ್ತಿದ್ದೆ",
+      "translation_text": "put the comp",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'I would have put up a pole' (ಕಂಬ), but the translation says 'put the comp'."
+    },
+    {
+      "reference_text": "ಮಾತಾಡೋದೇ ಎರಡು ಕಾಲು ಅಷ್ಟೇ",
+      "translation_text": "talking is only two legs",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'I only talk for about two calls', but the translation literally translates 'calls' (ಕಾಲು) as 'legs'."
+    },
+    {
+      "reference_text": "ಮಕ್ ಹೋಗ್ಬಿಟ್ಟಿ",
+      "translation_text": "I spat on their face",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'scolded them' or 'said it to their face' (ಮಕ್ ಹೋಗ್ಬಿಟ್ಟಿ), but the translation incorrectly translates this as 'spat on their face'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "05:40",
+      "type": "move_off_app",
+      "reference_text": "ನಿಮ್ದು ನಂಬರ್ ಕೊಡಿ ಮಾತಾಡೋಣ",
+      "translation_text": "give the number let's talk",
+      "status": "preserved"
+    },
+    {
+      "t": "06:05",
+      "type": "move_off_app",
+      "reference_text": "ನಂಬರ್ ಕೊಟ್ಬಿಟ್ಟರಲ್ಲ",
+      "translation_text": "Should I give the number?",
+      "status": "preserved"
+    },
+    {
+      "t": "06:14",
+      "type": "move_off_app",
+      "reference_text": "ಏನಕ್ಕೆ ನಂಬರ್ ಕೊಡೋಣ",
+      "translation_text": "why should I give the number",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation contains several mistranslations of common words (such as translating 'calls' as 'legs' and 'pole' as 'comp'), but the overall intent of the conversation and the policy-relevant discussion about sharing phone numbers are preserved."
+}

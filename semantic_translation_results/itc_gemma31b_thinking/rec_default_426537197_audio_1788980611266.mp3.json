@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_426537197_audio_1788980611266.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 56,
+  "affected_word_count": 9,
+  "semantic_error_rate": 0.1607,
+  "seconds": 3.2,
+  "discrepancies": [
+    {
+      "reference_text": "രാജേഷ്",
+      "translation_text": "Reshma",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The name Rajesh is translated as Reshma."
+    },
+    {
+      "reference_text": "അങ്കമാലി",
+      "translation_text": "Andhra",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The place Angamaly is translated as Andhra."
+    },
+    {
+      "reference_text": "ഇല്ലല്ലോ",
+      "translation_text": "Yeah",
+      "category": "negation_flipped",
+      "word_count_affected": 1,
+      "explanation": "The negative response 'No' is translated as 'Yeah'."
+    },
+    {
+      "reference_text": "ഞാൻ ഓപ്പൺ ടോക്ക് താല്പര്യമുണ്ടോ",
+      "translation_text": "will give this person open talk",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The question asking if they are interested in open talk is translated as 'will give this person open talk'."
+    },
+    {
+      "reference_text": "ഇല്ല താല്പര്യമില്ല",
+      "translation_text": "Right?",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The user's clear refusal of 'No, I am not interested' is completely missing and replaced with 'Right?'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:59",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഞാൻ ഓപ്പൺ ടോക്ക് താല്പര്യമുണ്ടോ",
+      "translation_text": "will give this person open talk",
+      "status": "softened"
+    },
+    {
+      "t": "01:05",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഓപ്പൺ ടോക്ക് താല്പര്യമുണ്ടോ എന്ന്",
+      "translation_text": "Whether there is interest in open talk",
+      "status": "preserved"
+    },
+    {
+      "t": "01:09",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഇല്ല താല്പര്യമില്ല",
+      "translation_text": "Right?",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "no",
+  "summary": "The translation alters names and locations, flips a negation, and completely misses the user's final refusal to engage in 'open talk' (sexual talk)."
+}

@@ -1,0 +1,38 @@
+{
+  "file_id": "rec_default_427303915_audio_1789058082453.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 59,
+  "affected_word_count": 2,
+  "semantic_error_rate": 0.0339,
+  "seconds": 2.8,
+  "discrepancies": [
+    {
+      "reference_text": "ஏதோ காமிக்கிறீங்களான்னு",
+      "translation_text": "No no",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The translation completely misses the speaker repeating their question about showing something, translating it as 'No no' instead."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:39",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஏன் காமிக்கிறீங்களா?",
+      "translation_text": "will you show",
+      "status": "preserved"
+    },
+    {
+      "t": "00:59",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஏதோ காமிக்கிறீங்களான்னு",
+      "translation_text": "",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the initial casual conversation and the first explicit question about showing, but fails to translate the final repetition of that explicit question."
+}

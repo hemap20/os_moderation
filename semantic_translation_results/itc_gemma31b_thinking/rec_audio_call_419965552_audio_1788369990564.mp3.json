@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_audio_call_419965552_audio_1788369990564.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 66,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.2273,
+  "seconds": 4.4,
+  "discrepancies": [
+    {
+      "reference_text": "आज आज का नहीं मिलेंगे।",
+      "translation_text": "will not meet with Jessica",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The translation introduces the name 'Jessica' which is not present in the reference text."
+    },
+    {
+      "reference_text": "ब्लॉक कर दूँ?",
+      "translation_text": "just call on Facebook",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference asks about blocking, but the translation mentions calling on Facebook."
+    },
+    {
+      "reference_text": "पूरा पहले आज दवाई दो। लाओ, उनको।",
+      "translation_text": "Laddu Chamko",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference talks about giving medicine first, which is completely mistranslated as 'Laddu Chamko'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:04",
+      "type": "move_off_app",
+      "reference_text": "फेसबुक पे, व्हाट्सएप पे?",
+      "translation_text": "on Facebook, on WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "00:06",
+      "type": "move_off_app",
+      "reference_text": "व्हाट्सएप पे नहीं, फेसबुक पे लगा रही हूँ।",
+      "translation_text": "not on WhatsApp, it happens on Facebook, put it on Facebook",
+      "status": "preserved"
+    },
+    {
+      "t": "00:30",
+      "type": "meeting_in_person",
+      "reference_text": "गुप्ता जी नाम है मेरा, आज आज का नहीं मिलेंगे।",
+      "translation_text": "My name is Gupta ji, will not meet with Jessica",
+      "status": "preserved"
+    },
+    {
+      "t": "00:42",
+      "type": "move_off_app",
+      "reference_text": "फेसबुक पे नहीं, इंस्टाग्राम पे देखो।",
+      "translation_text": "not on Facebook, look on Instagram",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the mentions of social media platforms and meeting in person, but contains several hallucinated and incorrect phrases towards the end of the call."
+}

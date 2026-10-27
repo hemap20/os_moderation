@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_426667318_audio_1788995960432.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 90,
+  "affected_word_count": 13,
+  "semantic_error_rate": 0.1444,
+  "seconds": 4.4,
+  "discrepancies": [
+    {
+      "reference_text": "എന്റെ പേര് അഞ്ജലി ഞാൻ തൃശ്ശൂർ",
+      "translation_text": "Hebbe Rajjali Nadirpur",
+      "category": "named_entity_altered",
+      "word_count_affected": 5,
+      "explanation": "The name Anjali and place Thrissur are completely mistranslated as Hebbe Rajjali Nadirpur."
+    },
+    {
+      "reference_text": "സിംഗിൾ ആണോ സിംഗിൾ ആണ്",
+      "translation_text": "Sinhala Balurama Sinhala Balurama",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The question and answer about being single are mistranslated as Sinhala Balurama."
+    },
+    {
+      "reference_text": "ഒപ്പൺ ചെയ്യുമോ",
+      "translation_text": "open pant ma Vijila no",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The request to open/show is mistranslated with gibberish words."
+    },
+    {
+      "reference_text": "സീറ്റ് ചെയ്യുമോ",
+      "translation_text": "Will the girl cheat",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference asks 'will you cheat?' (or 'cheat ചെയ്യുമോ'), which is translated as 'Will the girl cheat'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:06",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഓപ്പൺ ചെയ്യുമോ",
+      "translation_text": "open pant ma Vijila no",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:10",
+      "type": "move_off_app",
+      "reference_text": "വാട്സാപ്പ് നമ്പർ തരുമോ",
+      "translation_text": "Will you give WhatsApp number",
+      "status": "preserved"
+    },
+    {
+      "t": "01:18",
+      "type": "move_off_app",
+      "reference_text": "93 45 777 532",
+      "translation_text": "Nayan three four five four five triple seven triple seven five three two five three two",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the main flow of the conversation, including the exchange of a WhatsApp number, but contains several severe mistranslations of names, places, and specific questions."
+}

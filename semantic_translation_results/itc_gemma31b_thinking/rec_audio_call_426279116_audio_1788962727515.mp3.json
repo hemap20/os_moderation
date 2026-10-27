@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_audio_call_426279116_audio_1788962727515.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 150,
+  "affected_word_count": 18,
+  "semantic_error_rate": 0.12,
+  "seconds": 4.0,
+  "discrepancies": [
+    {
+      "reference_text": "సుఖంగా ప్రశాంతంగా అలాగే ఉండండి",
+      "translation_text": "comfortably and peacefully. Stay beautiful like that",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation adds 'Stay beautiful like that' which is not in the reference text ('అలాగే ఉండండి' means 'stay like that')."
+    },
+    {
+      "reference_text": "ఏం జాబ్ చేస్తున్నారు?",
+      "translation_text": "what joke did you make",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation misinterprets 'జాబ్' (job) as 'joke'."
+    },
+    {
+      "reference_text": "50 రూపీస్",
+      "translation_text": "twenty fifty rupees",
+      "category": "number_or_id_altered",
+      "word_count_affected": 2,
+      "explanation": "The translation adds 'twenty' to the amount '50 rupees'."
+    },
+    {
+      "reference_text": "నువ్వే లాస్ట్ కాలండి తీసేస్తాను",
+      "translation_text": "you took all the last calls",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'you are probably the last call, I will remove/disconnect', but the translation says 'you took all the last calls'."
+    },
+    {
+      "reference_text": "ఇన్స్టాల్ అది నమ్మటానికి లేదు",
+      "translation_text": "there is nothing to believe in Insta",
+      "category": "named_entity_altered",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'install' (referring to the app installation), but the translation translates it as 'Insta' (Instagram)."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:42",
+      "type": "sexual_or_explicit",
+      "reference_text": "కాకపోతే సుఖాలు ఎవరు తీరుస్తారు చెప్పు",
+      "translation_text": "but who will satisfy the pleasures, tell me",
+      "status": "preserved"
+    },
+    {
+      "t": "01:30",
+      "type": "money_or_payment",
+      "reference_text": "50 రూపీస్ అంతా వేశాను",
+      "translation_text": "I put in about twenty fifty rupees",
+      "status": "preserved"
+    },
+    {
+      "t": "01:41",
+      "type": "move_off_app",
+      "reference_text": "అందరూ వాట్సాప్ వాట్సాప్ లో వీడియో కాల్ చేస్తాను",
+      "translation_text": "everyone WhatsApp, I will do a video call on WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "01:41",
+      "type": "money_or_payment",
+      "reference_text": "300 ఇవ్వు",
+      "translation_text": "give three hundred",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation preserves the overall tone and intent of the conversation, including the policy-relevant mentions of WhatsApp, payments, and sexual pleasures, despite minor translation errors regarding numbers and specific words."
+}

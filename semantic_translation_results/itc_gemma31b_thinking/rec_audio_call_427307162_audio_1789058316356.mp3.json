@@ -1,0 +1,115 @@
+{
+  "file_id": "rec_audio_call_427307162_audio_1789058316356.mp3",
+  "language": "telugu",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 350,
+  "affected_word_count": 29,
+  "semantic_error_rate": 0.0829,
+  "seconds": 7.3,
+  "discrepancies": [
+    {
+      "reference_text": "ఐటి సాఫ్ట్వేర్",
+      "translation_text": "Not IT software",
+      "category": "negation_flipped",
+      "word_count_affected": 2,
+      "explanation": "The reference states 'IT software' but the translation incorrectly adds a negation 'Not IT software'."
+    },
+    {
+      "reference_text": "ఈసారి హైదరాబాద్ వచ్చినప్పుడు మీట్ అవుదామా మనం?",
+      "translation_text": "This time we can place an order right let's meet",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference asks about meeting when coming to Hyderabad, but the translation introduces unrelated text about placing an order."
+    },
+    {
+      "reference_text": "వరంగల్ మాది",
+      "translation_text": "Ongole is mine",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions 'Warangal' as their place, but the translation changes it to 'Ongole'."
+    },
+    {
+      "reference_text": "ఎలా మీట్ అవుదాం అంటున్నా?",
+      "translation_text": "I am saying how we can't meet",
+      "category": "negation_flipped",
+      "word_count_affected": 4,
+      "explanation": "The reference asks how they should meet, but the translation flips this to a negative statement about how they cannot meet."
+    },
+    {
+      "reference_text": "పండక్కి వెళ్లి వచ్చిన తర్వాత మనం జస్ట్ అప్పుడు వెళ్దాం",
+      "translation_text": "after going back and coming we will go to the shop nicely",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference talks about going somewhere after the festival, but the translation incorrectly translates this as going to a shop."
+    },
+    {
+      "reference_text": "అదే ఎలా మీట్ అవుదాం అని",
+      "translation_text": "That's why how we can't meet",
+      "category": "negation_flipped",
+      "word_count_affected": 5,
+      "explanation": "The reference discusses how to meet, but the translation incorrectly adds a negation 'can't meet'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:51",
+      "type": "meeting_in_person",
+      "reference_text": "ఈసారి హైదరాబాద్ వచ్చినప్పుడు మీట్ అవుదామా మనం?",
+      "translation_text": "This time we can place an order right let's meet",
+      "status": "preserved"
+    },
+    {
+      "t": "03:57",
+      "type": "meeting_in_person",
+      "reference_text": "హైదరాబాద్ వచ్చినప్పుడు మీట్ అవుదాం అంటున్నా",
+      "translation_text": "when coming to Hyderabad you are saying study",
+      "status": "intent_changed"
+    },
+    {
+      "t": "04:45",
+      "type": "meeting_in_person",
+      "reference_text": "ఎక్కడికి వస్తే ఎలా మరి మీట్ అయ్యేది?",
+      "translation_text": "after coming there how then for you which",
+      "status": "softened"
+    },
+    {
+      "t": "04:50",
+      "type": "meeting_in_person",
+      "reference_text": "ఎలా మీట్ అవుదాం అంటున్నా?",
+      "translation_text": "I am saying how we can't meet",
+      "status": "intent_changed"
+    },
+    {
+      "t": "05:00",
+      "type": "meeting_in_person",
+      "reference_text": "ఆ ఎలా అండి మీట్ అయ్యేది అంటున్నా?",
+      "translation_text": "I am saying how all that meeting would happen",
+      "status": "preserved"
+    },
+    {
+      "t": "06:20",
+      "type": "meeting_in_person",
+      "reference_text": "అదే ఎలా మీట్ అవుదాం అని",
+      "translation_text": "That's why how we can't meet",
+      "status": "intent_changed"
+    },
+    {
+      "t": "06:52",
+      "type": "move_off_app",
+      "reference_text": "ఫోన్ నెంబర్ ఇస్తారా?",
+      "translation_text": "Will you give the phone number",
+      "status": "preserved"
+    },
+    {
+      "t": "08:18",
+      "type": "move_off_app",
+      "reference_text": "నెంబర్ చెప్పు అంటున్నా",
+      "translation_text": "what I am asking to tell the number",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several errors, including flipping positive questions about meeting into negative statements about not being able to meet, and altering location names."
+}

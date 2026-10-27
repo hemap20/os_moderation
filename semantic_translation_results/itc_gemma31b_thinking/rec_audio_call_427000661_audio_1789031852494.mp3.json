@@ -1,0 +1,101 @@
+{
+  "file_id": "rec_audio_call_427000661_audio_1789031852494.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 647,
+  "affected_word_count": 17,
+  "semantic_error_rate": 0.0263,
+  "seconds": 5.2,
+  "discrepancies": [
+    {
+      "reference_text": "ഞാൻ അക്കൗണ്ടന്റ് ആയിട്ട് വർക്ക് ചെയ്യുക",
+      "translation_text": "I work in the name of recording",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'I work as an accountant', but the translation incorrectly translates it as 'I work in the name of recording'."
+    },
+    {
+      "reference_text": "ഒരാഴ്ച ലീവ് ആയിരുന്നു",
+      "translation_text": "I was on leave for one day",
+      "category": "number_or_id_altered",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'I was on leave for a week (one week)', but the translation says 'one day'."
+    },
+    {
+      "reference_text": "ഇൻസ്റ്റയിൽ മെസ്സേജ് അയച്ചാൽ നമുക്ക് ബെനഫിറ്റ് കിട്ടുമല്ലോ",
+      "translation_text": "If we explain on Insta, we won't get any benefit, right?",
+      "category": "negation_flipped",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'If we message on Insta, we will get the benefit', but the translation flips this to 'we won't get any benefit'."
+    },
+    {
+      "reference_text": "വാട്സാപ്പിൽ",
+      "translation_text": "Vastu",
+      "category": "named_entity_altered",
+      "word_count_affected": 1,
+      "explanation": "The reference mentions 'WhatsApp', but the translation mistranslates it as 'Vastu'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "04:45",
+      "type": "move_off_app",
+      "reference_text": "മെസ്സേജ് പിന്നെ ഇൻസ്റ്റയിൽ ഒക്കെ വഴി ഒക്കെ നമുക്ക് അയക്കാം",
+      "translation_text": "message, then read through Instagram",
+      "status": "preserved"
+    },
+    {
+      "t": "04:50",
+      "type": "move_off_app",
+      "reference_text": "ഇൻസ്റ്റയിൽ മെസ്സേജ് അയച്ചാൽ നമുക്ക് ബെനഫിറ്റ് കിട്ടുമല്ലോ",
+      "translation_text": "If we explain on Insta, we won't get any benefit, right?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "06:57",
+      "type": "money_or_payment",
+      "reference_text": "എനിക്ക് എത്ര പൈസയാണ് ഇതിൽ റീചാർജ് ചെയ്യേണ്ടത്",
+      "translation_text": "How much money is needed to recharge this?",
+      "status": "preserved"
+    },
+    {
+      "t": "07:09",
+      "type": "money_or_payment",
+      "reference_text": "റീചാർജ് ഇന്ന് ഒരു 300 350 ചെയ്തിട്ടുണ്ടാവും",
+      "translation_text": "Charge, it would have been done for three hundred, three hundred and fifty rupees",
+      "status": "preserved"
+    },
+    {
+      "t": "08:03",
+      "type": "money_or_payment",
+      "reference_text": "മെസ്സേജ് ഇത് ചാർജ് ചെയ്യാൻ വരുന്ന മെസ്സേജ് ആണ്",
+      "translation_text": "Message, this is the message that said to charge",
+      "status": "preserved"
+    },
+    {
+      "t": "08:09",
+      "type": "money_or_payment",
+      "reference_text": "ഇത് റീചാർജ് ചെയ്യാൻ പെയ്മെന്റ് ചെയ്യാൻ പറഞ്ഞ മെസ്സേജ് ആണ്",
+      "translation_text": "Understood that this is not for recharging or making payment?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "08:19",
+      "type": "money_or_payment",
+      "reference_text": "ഞാൻ ഇതിൽ സംസാരിച്ചാലാണ് എണിങ്സ് കിട്ടുള്ളൂ അല്ലേ മറ്റേതിൽ സംസാരിച്ചാൽ ഒന്നും കിട്ടില്ലല്ലോ അല്ലേ",
+      "translation_text": "Some are, will get innings, right? Won't get anything talked about in the other one, right?",
+      "status": "preserved"
+    },
+    {
+      "t": "08:54",
+      "type": "move_off_app",
+      "reference_text": "എന്നാൽ ഞാൻ വാട്സാപ്പിൽ",
+      "translation_text": "but I Vastu",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation contains several errors, including mistranslating 'WhatsApp' as 'Vastu' and flipping the meaning of sentences regarding benefits on Instagram and payment messages."
+}

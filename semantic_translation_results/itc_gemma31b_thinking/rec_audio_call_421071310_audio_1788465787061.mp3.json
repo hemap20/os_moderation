@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_audio_call_421071310_audio_1788465787061.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 818,
+  "affected_word_count": 22,
+  "semantic_error_rate": 0.0269,
+  "seconds": 4.3,
+  "discrepancies": [
+    {
+      "reference_text": "किस लिए आऊंगा वीडियो कॉल में? मुझे सेक्स में इंटरेस्ट नहीं है।",
+      "translation_text": "I want to be taught on video call I'm not interested in this",
+      "category": "other_meaning_change",
+      "word_count_affected": 12,
+      "explanation": "The translation completely misses the mention of 'sex' and mistranslates the question about video calls."
+    },
+    {
+      "reference_text": "कोई रेंट का काम करने नहीं",
+      "translation_text": "not to do some whore's work",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'not to do some work on rent/hire', which the translation incorrectly renders as 'whore's work'."
+    },
+    {
+      "reference_text": "क्योंकि आप चुतिया हो, इसलिए।",
+      "translation_text": "Because you are [unclear], that's why",
+      "category": "tone_softened",
+      "word_count_affected": 5,
+      "explanation": "The explicit insult 'chutiya' (idiot/fucker) is marked as unclear in the translation."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "03:36",
+      "type": "sexual_or_explicit",
+      "reference_text": "किस लिए आऊंगा वीडियो कॉल में? मुझे सेक्स में इंटरेस्ट नहीं है।",
+      "translation_text": "I want to be taught on video call I'm not interested in this",
+      "status": "missing"
+    },
+    {
+      "t": "03:57",
+      "type": "money_or_payment",
+      "reference_text": "कितने दूँगा मैं? कितने दूँगा मैं आपको? 300 रुपये दूँगा, 400 रुपये दूँगा, 500 रुपये दूँगा।",
+      "translation_text": "how much will I give, how much will I give I will give you three hundred rupees, four hundred rupees, five hundred rupees",
+      "status": "preserved"
+    },
+    {
+      "t": "04:26",
+      "type": "sexual_or_explicit",
+      "reference_text": "300 रुपये में आप बॉडी दिखा रहे हो सबको।",
+      "translation_text": "why in three hundred rupees you are showing your body to everyone",
+      "status": "preserved"
+    },
+    {
+      "t": "05:25",
+      "type": "money_or_payment",
+      "reference_text": "मैंने वीडियो कॉल इसीलिए बोला था क्योंकि वीडियो कॉल पे मुझे ज्यादा कॉइन मिलता है।",
+      "translation_text": "I mentioned video call because I said that I get more coins on video call",
+      "status": "preserved"
+    },
+    {
+      "t": "05:47",
+      "type": "move_off_app",
+      "reference_text": "आपने व्हाट्सएप वीडियो कॉल बोला, ठीक है?",
+      "translation_text": "you mentioned WhatsApp video call, okay",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation captures the main argument about video calls, coins, and body showing, but it softens the explicit mention of sex and misses/mangles some of the stronger insults."
+}

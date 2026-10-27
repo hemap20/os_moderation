@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_default_427012537_audio_1789032626712.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 58,
+  "affected_word_count": 14,
+  "semantic_error_rate": 0.2414,
+  "seconds": 4.5,
+  "discrepancies": [
+    {
+      "reference_text": "ഒന്ന് പറയൂ ഈ ഔട്ട്‌ഫിറ്റ് ഒക്കെ എവിടെയാ ഉള്ളത് എവിടെയാ",
+      "translation_text": "Awesome dress outfit all is awesome, right? Where are you",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference asks where the outfit is, but the translation incorrectly translates it as praising the outfit as awesome."
+    },
+    {
+      "reference_text": "എന്താ കഴിക്കുന്നേ മുറുക്കോ",
+      "translation_text": "what are you eating sleep or rice what are you eating",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference asks if they are eating 'murukku' (a snack), but the translation says 'sleep or rice'."
+    },
+    {
+      "reference_text": "ബിങ്കോ",
+      "translation_text": "Then tight Binko",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds the word 'Then tight' which is not in the reference."
+    },
+    {
+      "reference_text": "ഇതില്",
+      "translation_text": "at home",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference asks if she has open chat 'in this' (on the app), but the translation says 'at home'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:36",
+      "type": "sexual_or_explicit",
+      "reference_text": "എനിക്ക് ഒന്ന് കാണാൻ പറ്റില്ലല്ലേ",
+      "translation_text": "can I see the outfit no right for me Cannot take right",
+      "status": "preserved"
+    },
+    {
+      "t": "00:43",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഓപ്പൺ ചാറ്റ് ഉണ്ടോ നിനക്ക് ഇതില്",
+      "translation_text": "is there open chat for you at home",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation contains several mistranslations of specific words like 'murukku' and 'in this', but the overall intent and policy-relevant moments regarding seeing the outfit and open chat are preserved."
+}

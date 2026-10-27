@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_audio_call_425117061_audio_1788856492050.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 185,
+  "affected_word_count": 8,
+  "semantic_error_rate": 0.0432,
+  "seconds": 3.4,
+  "discrepancies": [
+    {
+      "reference_text": "ಶ್ರೀ ವಿದ್ಯಾ ನೋಡ್ತಾ ಇದ್ದಾರೆ ಸರ್ ಮೋಸ್ಟ್ಲಿ",
+      "translation_text": "the name Sri Vidyadhan, before you thought",
+      "category": "named_entity_altered",
+      "word_count_affected": 6,
+      "explanation": "The name 'Sri Vidya' is mistranslated as 'Sri Vidyadhan'."
+    },
+    {
+      "reference_text": "ಕೇಳ್ತಾ ಇದ್ದಲ್ಲ",
+      "translation_text": "Didn't you tell about the case, what case is there, didn't you tell",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The Kannada word for 'hearing/listening' (kēḷtā) was mistranslated as 'case' (kēsu)."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:48",
+      "type": "move_off_app",
+      "reference_text": "Instagram ಐಡಿ ನಾನು ಕೊಡು ಕೊಡು ಕೊಡು ಅಂದೆ",
+      "translation_text": "Instagram ID, I am saying give give give",
+      "status": "preserved"
+    },
+    {
+      "t": "02:10",
+      "type": "move_off_app",
+      "reference_text": "Instagram ಐಡಿ ನಾನು ಅವತ್ತು ಕೇಳ್ದೆ ನಿಮ್ಮದು",
+      "translation_text": "Instagram ID, I asked for yours that day",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key policy moments regarding the request for an Instagram ID, though it contains a few minor mistranslations of specific words."
+}

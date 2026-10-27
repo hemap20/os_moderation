@@ -1,21 +1,32 @@
-rank,model,input,prompt,calls,partial,basis,balanced_acc,recall,specificity,call_precision,flag_precision,precision_gap,right_flags_high,ambiguous_recall,n_flags,updated
-1,gemini-3.1-flash-lite_audiotrans_text,"text (English, Gemini-translated from audio)",v8,381,,pp_full,0.88,0.86,0.9,0.81,0.35,0.33,0.94,0.62,1170,2026-10-19
-2,31b_itc10s_text_nothinking,text (Indic-Transcribe-Core),v8,381,,pp_full,0.85,0.8,0.91,0.82,0.38,0.24,0.89,0.65,935,2026-10-19
-3,gemini-3.1-flash-lite_itc10s_text,text (Indic-Transcribe-Core),v8,381,,pp_full,0.85,0.84,0.87,0.77,0.41,0.36,0.94,0.65,900,2026-10-19
-4,31b_itc10s_text_thinking,text (Indic-Transcribe-Core),v8,381,,pp_full,0.78,0.64,0.92,0.79,0.3,0.14,0.76,0.55,1204,2026-10-19
-5,e4b_itc10s_text_nothinking,text (Indic-Transcribe-Core),v8,381,,pp_full,0.78,0.63,0.93,0.89,0.38,0.22,0.89,0.23,662,2026-10-19
-6,gemini-3.1-flash-lite,audio,v6,381,,pp_full,0.77,0.59,0.95,0.78,0.33,0.35,0.87,0.2,718,2026-10-19
-7,e4b_thinking,audio,v7,127,yes,pp_full,0.77,0.7,0.84,0.75,0.22,0.15,0.67,0.25,461,2026-10-19
-8,e4b_thinking,audio,v1,183,yes,raw,0.73,0.65,0.81,0.76,0.37,0.15,0.76,0.06,381,2026-10-19
-9,e4b_nothinking,audio,v7,330,yes,pp_full,0.73,0.55,0.9,0.73,0.14,0.25,0.73,0.17,1456,2026-10-19
-10,e2b_itc10s_text_nothinking,text (Indic-Transcribe-Core),v8,381,,pp_full,0.69,0.52,0.86,0.67,0.34,0.29,0.66,0.15,679,2026-10-19
-11,e2b_thinking,audio,v1,381,,raw,0.67,0.47,0.86,0.78,0.38,0.13,0.68,0.03,514,2026-10-19
-12,e2b_nothinking,audio,v1,381,,raw,0.64,0.38,0.89,0.67,0.19,0.36,0.59,0.05,1016,2026-10-19
-13,e2b_nothinking,audio,v6,380,,pp_full,0.64,0.5,0.77,0.6,0.04,0.21,0.6,0.17,6611,2026-10-19
-14,e2b_thinking,audio,v8,165,yes,pp_full,0.64,0.51,0.77,0.66,0.21,0.11,0.67,0.18,487,2026-10-19
-15,gemini-3.5-flash-lite,audio,v1,377,,raw,0.62,0.27,0.97,0.92,0.74,0.22,0.92,0.0,96,2026-10-19
-16,12b_nothinking,audio,v1,381,,raw,0.61,0.33,0.9,0.79,0.38,0.27,0.97,0.05,248,2026-10-19
-17,e2b_conformer5s_text_nothinking,text (Indic-Conformer),v1,381,,raw,0.6,0.27,0.93,0.69,0.36,0.36,0.65,0.03,287,2026-10-19
-18,e4b_conformer5s_text_nothinking,text (Indic-Conformer),v1,381,,raw,0.56,0.17,0.96,0.86,0.45,0.35,0.97,0.05,142,2026-10-19
-19,e4b_nothinking,audio,v1,380,,raw,0.55,0.12,0.99,0.87,0.62,0.48,0.96,0.0,45,2026-10-19
-20,gemini-3.5-flash-lite,audio,v6,380,,pp_full,0.53,0.07,0.99,0.95,0.71,0.18,0.82,0.0,31,2026-10-19
+rank,model,run_key,input,prompt,calls,partial,basis,balanced_acc,recall,specificity,call_precision,flag_precision,precision_gap,right_flags_high,ambiguous_recall,n_flags,updated
+1,gemini-3.1-FL_thinking_v8,gemini-3.1-flash-lite_audiotrans_text,"text (English, Gemini-translated from audio)",v8,381,,pp_full,0.88,0.86,0.9,0.81,0.35,0.33,0.94,0.62,1170,2026-10-26
+2,31b_nothinking_v8,31b_itc10s_text_nothinking,text (Indic-Transcribe-Core),v8,381,,pp_full,0.85,0.8,0.91,0.82,0.38,0.24,0.89,0.65,935,2026-10-26
+3,gemini-3.1-FL_thinking_v8,gemini-3.1-flash-lite_itc10s_text,text (Indic-Transcribe-Core),v8,381,,pp_full,0.85,0.84,0.87,0.77,0.41,0.36,0.94,0.65,900,2026-10-26
+4,gemini-3.5-flash-lite_v8,gemini-3.5-flash-lite_audiotrans_text,"text (English, Gemini-translated from audio)",v8,381,,pp_full,0.85,0.79,0.91,0.86,0.45,0.27,0.92,0.5,745,2026-10-26
+5,gemini-3.1-FL_thinking_v8,gemini-3.1-flash-lite_31bEN_text,"text (English, Gemma 31B translation of ITC)",v8,381,,pp_full,0.84,0.76,0.92,0.8,0.37,0.29,0.9,0.42,994,2026-10-26
+6,gemini-3.1-FL_nothinking_v8,gemini-3.1-flash-lite_audiotrans_text_nothink,"text (English, Gemini-translated from audio)",v8,381,,pp_full,0.84,0.85,0.84,0.81,0.42,0.34,0.96,0.6,917,2026-10-26
+7,gemini-3.1-FL_nothinking_v8,gemini-3.1-flash-lite_itc10s_text_nothink,text (Indic-Transcribe-Core),v8,381,,pp_full,0.84,0.86,0.82,0.77,0.46,0.35,0.96,0.68,777,2026-10-26
+8,gemini-3.5-flash-lite_v8,gemini-3.5-flash-lite_itc10s_text,text (Indic-Transcribe-Core),v8,359,,pp_full,0.83,0.75,0.91,0.84,0.51,0.2,0.88,0.45,513,2026-10-26
+9,gemini-3.1-FL_nothinking_v8,gemini-3.1-flash-lite_31bEN_text_nothink,"text (English, Gemma 31B translation of ITC)",v8,381,,pp_full,0.82,0.82,0.83,0.77,0.41,0.3,0.94,0.62,846,2026-10-26
+10,gemini-3.1-FL_thinking_v8,gemini-3.1-flash-lite_31bthinkEN_text,"text (English, Gemma 31B-thinking translation of ITC)",v8,381,,pp_full,0.82,0.75,0.9,0.78,0.35,0.26,0.9,0.45,1012,2026-10-26
+11,gemini-3.1-FL_nothinking_v8,gemini-3.1-flash-lite_31bthinkEN_text_nothink,"text (English, Gemma 31B-thinking translation of ITC)",v8,381,,pp_full,0.82,0.81,0.84,0.77,0.42,0.29,0.94,0.55,824,2026-10-26
+12,31b_thinking_v8,31b_itc10s_text_thinking,text (Indic-Transcribe-Core),v8,381,,pp_full,0.78,0.64,0.92,0.79,0.3,0.14,0.76,0.55,1204,2026-10-26
+13,e4b_nothinking_v8,e4b_itc10s_text_nothinking,text (Indic-Transcribe-Core),v8,381,,pp_full,0.78,0.63,0.93,0.89,0.38,0.22,0.89,0.23,662,2026-10-26
+14,gemini-3.1-FL_thinking_v8,gemini-3.1-flash-lite_audio,audio,v8,380,,pp_full,0.78,0.68,0.87,0.7,0.24,0.39,0.91,0.35,1017,2026-10-26
+15,gemini-3.1-FL_nothinking_v8,gemini-3.1-flash-lite_audio_nothink,audio,v8,380,,pp_full,0.78,0.69,0.87,0.69,0.3,0.39,0.93,0.3,796,2026-10-26
+16,gemini-3.1-FL_thinking_v6,gemini-3.1-flash-lite,audio,v6,381,,pp_full,0.77,0.59,0.95,0.78,0.33,0.35,0.87,0.2,718,2026-10-26
+17,e4b_thinking_v7,e4b_thinking,audio,v7,127,yes,pp_full,0.77,0.7,0.84,0.75,0.22,0.15,0.67,0.25,461,2026-10-26
+18,e4b_thinking_v1,e4b_thinking,audio,v1,183,yes,raw,0.73,0.65,0.81,0.76,0.37,0.15,0.76,0.06,381,2026-10-26
+19,e4b_nothinking_v7,e4b_nothinking,audio,v7,330,yes,pp_full,0.73,0.55,0.9,0.73,0.14,0.25,0.73,0.17,1456,2026-10-26
+20,e2b_nothinking_v8,e2b_itc10s_text_nothinking,text (Indic-Transcribe-Core),v8,381,,pp_full,0.69,0.52,0.86,0.67,0.34,0.29,0.66,0.15,679,2026-10-26
+21,e2b_thinking_v1,e2b_thinking,audio,v1,381,,raw,0.67,0.47,0.86,0.78,0.38,0.13,0.68,0.03,514,2026-10-26
+22,e2b_nothinking_v1,e2b_nothinking,audio,v1,381,,raw,0.64,0.38,0.89,0.67,0.19,0.36,0.59,0.05,1016,2026-10-26
+23,e2b_nothinking_v6,e2b_nothinking,audio,v6,380,,pp_full,0.64,0.5,0.77,0.6,0.04,0.21,0.6,0.17,6611,2026-10-26
+24,e2b_thinking_v8,e2b_thinking,audio,v8,165,yes,pp_full,0.64,0.51,0.77,0.66,0.21,0.11,0.67,0.18,487,2026-10-26
+25,gemini-3.5-flash-lite_v1,gemini-3.5-flash-lite,audio,v1,377,,raw,0.62,0.27,0.97,0.92,0.74,0.22,0.92,0.0,96,2026-10-26
+26,12b_nothinking_v1,12b_nothinking,audio,v1,381,,raw,0.61,0.33,0.9,0.79,0.38,0.27,0.97,0.05,248,2026-10-26
+27,e2b_nothinking_v1,e2b_conformer5s_text_nothinking,text (Indic-Conformer),v1,381,,raw,0.6,0.27,0.93,0.69,0.36,0.36,0.65,0.03,287,2026-10-26
+28,e4b_nothinking_v1,e4b_conformer5s_text_nothinking,text (Indic-Conformer),v1,381,,raw,0.56,0.17,0.96,0.86,0.45,0.35,0.97,0.05,142,2026-10-26
+29,e4b_nothinking_v1,e4b_nothinking,audio,v1,380,,raw,0.55,0.12,0.99,0.87,0.62,0.48,0.96,0.0,45,2026-10-26
+30,gemini-3.5-flash-lite_v6,gemini-3.5-flash-lite,audio,v6,380,,pp_full,0.53,0.07,0.99,0.95,0.71,0.18,0.82,0.0,31,2026-10-26
+31,gemini-3.5-flash-lite_v8,gemini-3.5-flash-lite_audio,audio,v8,378,,pp_full,0.52,0.05,0.99,0.93,0.59,-0.08,0.88,0.03,27,2026-10-26

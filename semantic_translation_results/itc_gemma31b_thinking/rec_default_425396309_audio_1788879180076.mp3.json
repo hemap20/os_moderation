@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_425396309_audio_1788879180076.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 88,
+  "affected_word_count": 3,
+  "semantic_error_rate": 0.0341,
+  "seconds": 8.7,
+  "discrepancies": [
+    {
+      "reference_text": "",
+      "translation_text": "I mean Sangeeta Kumari Namaste",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds a name and greeting that are not present in the reference audio."
+    },
+    {
+      "reference_text": "ओके मैं डालता हूं",
+      "translation_text": "Oh criminal dog nine",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation completely misinterprets the speaker saying they will send a message as 'Oh criminal dog nine'."
+    },
+    {
+      "reference_text": "",
+      "translation_text": "Yes / What is the matter",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation contains extra lines at the end of the call that do not exist in the reference."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:24",
+      "type": "move_off_app",
+      "reference_text": "व्हाट्सएप वीडियो कॉल नहीं लेते",
+      "translation_text": "you don't take WhatsApp video calls",
+      "status": "preserved"
+    },
+    {
+      "t": "00:37",
+      "type": "money_or_payment",
+      "reference_text": "250 लगेगा",
+      "translation_text": "two fifty will be charged",
+      "status": "preserved"
+    },
+    {
+      "t": "00:37",
+      "type": "sexual_or_explicit",
+      "reference_text": "फुल ओपन शो करेंगे",
+      "translation_text": "full open show will do",
+      "status": "preserved"
+    },
+    {
+      "t": "00:52",
+      "type": "move_off_app",
+      "reference_text": "नंबर 95 सेव कर लो ... 29",
+      "translation_text": "Number nine five save it ... two nine",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation successfully preserves the key policy-violating moments, including the exchange of a phone number, pricing, and explicit show details, despite some hallucinated text and a mistranslated final line."
+}

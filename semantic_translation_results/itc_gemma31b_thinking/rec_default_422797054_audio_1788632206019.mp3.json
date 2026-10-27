@@ -1,0 +1,66 @@
+{
+  "file_id": "rec_default_422797054_audio_1788632206019.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 315,
+  "affected_word_count": 5,
+  "semantic_error_rate": 0.0159,
+  "seconds": 4.4,
+  "discrepancies": [
+    {
+      "reference_text": "नंबर पे पेमेंट करना पड़ेगा",
+      "translation_text": "Will I have to pay on the number?",
+      "category": "intent_changed",
+      "word_count_affected": 5,
+      "explanation": "The reference is a statement/demand by the female speaker ('You will have to pay on the number'), but the translation turns it into a question by the male speaker ('Will I have to pay...')."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "02:01",
+      "type": "move_off_app",
+      "reference_text": "आपका स्नैपचैट है क्या",
+      "translation_text": "Do you have Snapchat?",
+      "status": "preserved"
+    },
+    {
+      "t": "02:10",
+      "type": "move_off_app",
+      "reference_text": "नंबर शेयर कर लो",
+      "translation_text": "Share the number",
+      "status": "preserved"
+    },
+    {
+      "t": "02:19",
+      "type": "money_or_payment",
+      "reference_text": "नंबर पे पेमेंट करना पड़ेगा",
+      "translation_text": "Will I have to pay on the number?",
+      "status": "intent_changed"
+    },
+    {
+      "t": "02:49",
+      "type": "sexual_or_explicit",
+      "reference_text": "क्या दिखाओगे",
+      "translation_text": "Will you show what you say",
+      "status": "preserved"
+    },
+    {
+      "t": "03:05",
+      "type": "sexual_or_explicit",
+      "reference_text": "अभी एक बार दिखा दो वो अच्छा है या नहीं मुझे कैसे पता",
+      "translation_text": "now show once, whether that is good or not, how would I know?",
+      "status": "preserved"
+    },
+    {
+      "t": "03:22",
+      "type": "sexual_or_explicit",
+      "reference_text": "हां एक बार दिखा दो बेबी एक बार",
+      "translation_text": "yes yes so show once baby",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate, but it incorrectly frames the female speaker's demand for payment as a question from the male speaker."
+}

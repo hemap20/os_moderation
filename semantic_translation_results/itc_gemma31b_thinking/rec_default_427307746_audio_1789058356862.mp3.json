@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_427307746_audio_1789058356862.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 72,
+  "affected_word_count": 29,
+  "semantic_error_rate": 0.4028,
+  "seconds": 13.3,
+  "discrepancies": [
+    {
+      "reference_text": "எப்படி இருக்கீங்க? ... சாப்டீங்களா? ... உங்க பேரு என்ன?",
+      "translation_text": "How to speak how to speak ... Two people should go ... Can talk however we want ... Ah it will change Single Town",
+      "category": "other_meaning_change",
+      "word_count_affected": 22,
+      "explanation": "The entire introductory conversation about how they are doing, eating, and names is completely mistranslated into nonsensical phrases."
+    },
+    {
+      "reference_text": "உள்ள ஒன்னும் இல்லையா?",
+      "translation_text": "Didn't put anything inside",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The question asking if she is wearing anything underneath is mistranslated as 'Didn't put anything inside'."
+    },
+    {
+      "reference_text": "ஆடுது",
+      "translation_text": "That happened",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference to her breasts shaking/moving is mistranslated as 'that happened'."
+    },
+    {
+      "reference_text": "டீ-ஷர்ட்",
+      "translation_text": "teacher",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The word 'T-shirt' is mistranslated as 'teacher'."
+    },
+    {
+      "reference_text": "காட்டுங்க பாக்கலாம்",
+      "translation_text": "Door people",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The request to show her body ('Show me, let's see') is completely lost and translated as 'Door people'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:23",
+      "type": "sexual_or_explicit",
+      "reference_text": "உள்ள ஒன்னும் இல்லையா?",
+      "translation_text": "Didn't put anything inside",
+      "status": "softened"
+    },
+    {
+      "t": "01:30",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஆடுது",
+      "translation_text": "That happened",
+      "status": "missing"
+    },
+    {
+      "t": "01:50",
+      "type": "sexual_or_explicit",
+      "reference_text": "காட்டுங்க பாக்கலாம்",
+      "translation_text": "Door people",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "no",
+  "intent_preserved": "no",
+  "summary": "The translation is highly inaccurate, turning normal introductory questions into gibberish and completely failing to translate the explicit sexual requests and remarks at the end of the call."
+}

@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_audio_call_423645324_audio_1788715186440.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 129,
+  "affected_word_count": 7,
+  "semantic_error_rate": 0.0543,
+  "seconds": 3.7,
+  "discrepancies": [
+    {
+      "reference_text": "உன் கூட என்ஜாய் பண்ணலாமா",
+      "translation_text": "can we enjoy with them",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The translation uses 'them' instead of 'you' (உன் கூட - with you)."
+    },
+    {
+      "reference_text": "உன்னைய பண்ணலாமா",
+      "translation_text": "can we do the vehicle over",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The translation mistranslates 'do you' (sexual connotation) as 'do the vehicle over'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "1:31",
+      "type": "move_off_app",
+      "reference_text": "இன்ஸ்டா ஐடி",
+      "translation_text": "Insta ID",
+      "status": "preserved"
+    },
+    {
+      "t": "2:08",
+      "type": "sexual_or_explicit",
+      "reference_text": "செக்ஸியா பேசலாமா",
+      "translation_text": "can we talk sexily",
+      "status": "preserved"
+    },
+    {
+      "t": "2:13",
+      "type": "sexual_or_explicit",
+      "reference_text": "செக்ஸியா பேசலாமா",
+      "translation_text": "can we talk sexily",
+      "status": "preserved"
+    },
+    {
+      "t": "2:22",
+      "type": "sexual_or_explicit",
+      "reference_text": "உன்னைய பண்ணலாமா உன் கூட என்ஜாய் பண்ணலாமா",
+      "translation_text": "can we do the vehicle over can we enjoy with them",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the general flow and the explicit request to talk sexily, but mistranslates the final explicit sexual proposition ('do you' and 'enjoy with you') into nonsensical phrases ('do the vehicle over' and 'enjoy with them')."
+}

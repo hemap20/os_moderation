@@ -1,0 +1,37 @@
+{
+  "file_id": "rec_audio_call_426864613_audio_1789021855826.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 144,
+  "affected_word_count": 7,
+  "semantic_error_rate": 0.0486,
+  "seconds": 2.7,
+  "discrepancies": [
+    {
+      "reference_text": "ನಾವ್ ಮಂಗಳೂರು",
+      "translation_text": "Nagamangalore is it",
+      "category": "named_entity_altered",
+      "word_count_affected": 2,
+      "explanation": "The reference mentions Mangalore (ಮಂಗಳೂರು), but the translation incorrectly translates it as Nagamangalore."
+    },
+    {
+      "reference_text": "ನಮ್ದು ಸ್ಟೇಷನರಿ ಶಾಪ್ ಇದೆ",
+      "translation_text": "our test",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The reference mentions having a stationery shop, which is completely mistranslated as 'our test'."
+    },
+    {
+      "reference_text": "ಮ್ಯಾರೀಡ್",
+      "translation_text": "owner",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'married', but the translation says 'owner'."
+    }
+  ],
+  "policy_moments": [],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate in terms of tone and intent, but contains a few mistranslations of key details such as location (Mangalore translated as Nagamangalore) and marital status (married translated as owner)."
+}

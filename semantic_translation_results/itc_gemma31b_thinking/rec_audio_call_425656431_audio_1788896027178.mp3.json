@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_audio_call_425656431_audio_1788896027178.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 117,
+  "affected_word_count": 3,
+  "semantic_error_rate": 0.0256,
+  "seconds": 4.1,
+  "discrepancies": [
+    {
+      "reference_text": "व्हाट्सएप पे भी",
+      "translation_text": "on rain too",
+      "category": "named_entity_altered",
+      "word_count_affected": 3,
+      "explanation": "The translation incorrectly translates 'WhatsApp' as 'rain'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:22",
+      "type": "money_or_payment",
+      "reference_text": "200 300 रुपये भी बन जाते हैं दिन के और कोई एक आधा डाल डूल भी देते हैं",
+      "translation_text": "Because two hundred three hundred rupees are also made per day and someone also gives one half [unclear]",
+      "status": "preserved"
+    },
+    {
+      "t": "00:22",
+      "type": "move_off_app",
+      "reference_text": "व्हाट्सएप पे भी बात करने के",
+      "translation_text": "on rain too For talking",
+      "status": "intent_changed"
+    },
+    {
+      "t": "00:34",
+      "type": "move_off_app",
+      "reference_text": "अच्छा तो व्हाट्सएप पे भी कर लेती हो बात",
+      "translation_text": "so hello yes, I also talk on WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "00:37",
+      "type": "move_off_app",
+      "reference_text": "हां जी व्हाट्सएप पे भी कर लेती हूं ना तभी तो हो जाते हैं थोड़ी अर्निंग",
+      "translation_text": "yes I also talk on WhatsApp, right, that's why a little earning happens",
+      "status": "preserved"
+    },
+    {
+      "t": "00:45",
+      "type": "money_or_payment",
+      "reference_text": "और इसमें करेंगे तो इसमें तो रात भर में 100 200 रुपये ही कमा पाते हैं ना",
+      "translation_text": "and if we do it in this, then in this, only one hundred two hundred rupees can be earned in a night, right?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "partly",
+  "summary": "The translation is mostly accurate but misinterprets one instance of 'WhatsApp' as 'rain', which obscures a policy-relevant mention of moving off-app."
+}

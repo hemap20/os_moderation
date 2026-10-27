@@ -1,0 +1,80 @@
+{
+  "file_id": "rec_audio_call_424378148_audio_1788784557326.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 181,
+  "affected_word_count": 24,
+  "semantic_error_rate": 0.1326,
+  "seconds": 3.8,
+  "discrepancies": [
+    {
+      "reference_text": "என் பேரு ராஜேஷ்",
+      "translation_text": "my name is Raj",
+      "category": "named_entity_altered",
+      "word_count_affected": 3,
+      "explanation": "The name Rajesh was translated as Raj."
+    },
+    {
+      "reference_text": "நானா ஸ்டடி பண்ணிட்டு இருக்கேன்",
+      "translation_text": "m me okay",
+      "category": "key_content_missing",
+      "word_count_affected": 4,
+      "explanation": "The speaker's statement that they are studying is missing from the translation."
+    },
+    {
+      "reference_text": "நான் கம்பெனில ஒர்க் பண்றேன்",
+      "translation_text": "I am doing campal work",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "Working in a company was mistranslated as doing 'campal' work."
+    },
+    {
+      "reference_text": "கமிட்டடா",
+      "translation_text": "computer ah",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The word 'committed' (relationship status) was mistranslated as 'computer'."
+    },
+    {
+      "reference_text": "உங்களை விட ரெண்டு வயசு பெரிய பொண்ணுங்க",
+      "translation_text": "than you two years age",
+      "category": "key_content_missing",
+      "word_count_affected": 7,
+      "explanation": "The translation misses the fact that she is a girl/woman who is two years older."
+    },
+    {
+      "reference_text": "ஆமா",
+      "translation_text": "yes mother",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The affirmation 'Aama' (yes) was mistranslated as 'yes mother' (likely confusing 'Amma' with 'Aama')."
+    },
+    {
+      "reference_text": "அப்படியே வீட்ல வந்துட்டு",
+      "translation_text": "just took the bed-lap",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "Coming home was mistranslated as taking 'the bed-lap'."
+    },
+    {
+      "reference_text": "நேத்து நைட்டு இன்ஸ்டால் பண்ணேன்",
+      "translation_text": "yesterday night woke up I installed",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds 'woke up' which is not in the reference."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:28",
+      "type": "move_off_app",
+      "reference_text": "இன்ஸ்டாகிராம்ல பார்த்தேனா",
+      "translation_text": "I saw on Instagram",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate in terms of intent and tone, but contains several minor mistranslations of specific words (e.g., 'committed' as 'computer', 'Rajesh' as 'Raj', and 'yes' as 'yes mother')."
+}

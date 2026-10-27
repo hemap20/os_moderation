@@ -52,7 +52,7 @@ HIGH = 0.8
 TOTAL_FILES = 381
 SIGNAL = "_lb_conf"
 
-COLUMNS = ["rank", "model", "input", "prompt", "calls", "partial", "basis",
+COLUMNS = ["rank", "model", "run_key", "input", "prompt", "calls", "partial", "basis",
            "balanced_acc", "recall", "specificity", "call_precision", "flag_precision", "precision_gap",
            "right_flags_high", "ambiguous_recall", "n_flags", "updated"]
 
@@ -72,6 +72,19 @@ def full_dataset_runs():
             if m:
                 runs.append((f"v{m.group(1)}", d))
     return runs
+
+
+def display_name(model_key, prompt):
+    """<model>_<thinking|nothinking>_<prompt>, e.g. gemini-3.1-FL_nothinking_v8, 31b_thinking_v8.
+    Gemini 3.1 Flash Lite ran with a 1024-token thinking budget unless the run key ends in
+    _nothink (budget 0). Gemini 3.5 Flash Lite never produced thinking tokens, so it has no mode."""
+    k = model_key
+    if k.startswith("gemini-3.1-flash-lite"):
+        return f"gemini-3.1-FL_{'nothinking' if k.endswith('_nothink') else 'thinking'}_{prompt}"
+    if k.startswith("gemini-3.5-flash-lite"):
+        return f"gemini-3.5-flash-lite_{prompt}"
+    base = k.split("_")[0]  # e2b / e4b / 12b / 31b
+    return f"{base}_{'thinking' if k.endswith('thinking') and not k.endswith('nothinking') else 'nothinking'}_{prompt}"
 
 
 def model_input(model_key):
@@ -162,7 +175,8 @@ def build():
             amb_rows = [r for r in rows if r["file_id"] in ambiguous]
             amb = threshold_metrics_for_group(amb_rows, "ALL", HIGH, SIGNAL)["recall"] if amb_rows else None
             rows_out.append({
-                "model": model_dir.name, "input": model_input(model_dir.name), "prompt": prompt,
+                "model": display_name(model_dir.name, prompt), "run_key": model_dir.name,
+                "input": model_input(model_dir.name), "prompt": prompt,
                 "calls": len(rows), "partial": "yes" if len(rows) < 0.9 * TOTAL_FILES else "",
                 "basis": "raw" if prompt == "v1" else "pp_full",
                 "balanced_acc": r2((rec + spec) / 2) if rec is not None and spec is not None else None,

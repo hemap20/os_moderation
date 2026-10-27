@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_audio_call_422812035_audio_1788633064712.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 103,
+  "affected_word_count": 22,
+  "semantic_error_rate": 0.2136,
+  "seconds": 3.7,
+  "discrepancies": [
+    {
+      "reference_text": "बीएफ ना देख लेंगे",
+      "translation_text": "then we will not give BF",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference says 'we will watch BF (blue film/porn) instead' but the translation says 'we will not give BF'."
+    },
+    {
+      "reference_text": "150 देंगे 200 बना देंगे 14 आएंगे बढ़िया से अच्छे से।",
+      "translation_text": "one hundred fifty per day two hundred rupees [unclear] they will come themselves nicely well",
+      "category": "other_meaning_change",
+      "word_count_affected": 10,
+      "explanation": "The translation misinterprets the numbers and the slang '14' (chudaenge - will get fucked) as 'they will come themselves'."
+    },
+    {
+      "reference_text": "चले जाओ फिर यहां क्यों गांड मरा रहे हो?",
+      "translation_text": "Go away then why are you getting [unclear] here",
+      "category": "tone_softened",
+      "word_count_affected": 8,
+      "explanation": "The highly explicit Hindi insult 'गांड मरा रहे हो' (getting your ass fucked / wasting time) is marked as unclear and softened."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "00:38",
+      "type": "sexual_or_explicit",
+      "reference_text": "आपको सेक्सी वीडियो कॉल्स पसंद है?",
+      "translation_text": "do you sexy video call",
+      "status": "preserved"
+    },
+    {
+      "t": "00:46",
+      "type": "money_or_payment",
+      "reference_text": "पैसे लेकर करती हूं, करोगे?",
+      "translation_text": "I do it for money will you do it",
+      "status": "preserved"
+    },
+    {
+      "t": "00:54",
+      "type": "money_or_payment",
+      "reference_text": "350",
+      "translation_text": "three hundred fifty",
+      "status": "preserved"
+    },
+    {
+      "t": "01:15",
+      "type": "sexual_or_explicit",
+      "reference_text": "150 देंगे 200 बना देंगे 14 आएंगे बढ़िया से अच्छे से।",
+      "translation_text": "one hundred fifty per day two hundred rupees [unclear] they will come themselves nicely well",
+      "status": "intent_changed"
+    },
+    {
+      "t": "01:20",
+      "type": "sexual_or_explicit",
+      "reference_text": "चले जाओ फिर यहां क्यों गांड मरा रहे हो?",
+      "translation_text": "Go away then why are you getting [unclear] here",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the main negotiation about paid sexy video calls, but fails to accurately translate the explicit sexual slang and insults towards the end of the call."
+}

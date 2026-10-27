@@ -1,0 +1,87 @@
+{
+  "file_id": "rec_default_426573210_audio_1788982914417.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 137,
+  "affected_word_count": 22,
+  "semantic_error_rate": 0.1606,
+  "seconds": 4.3,
+  "discrepancies": [
+    {
+      "reference_text": "ரேப் பண்ணி பண்ண யாரு ஒன்னும் பண்ண மாட்டாங்க",
+      "translation_text": "Should not make it so that I am not there for my son, that is wrong",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference talks about rape and nobody doing anything, but the translation completely changes this to not being there for a son."
+    },
+    {
+      "reference_text": "சரக்கு சரக்கு சரக்கு மாசாவா",
+      "translation_text": "What liquor liquor liquor, for a month",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference mentions 'Maaza' (the drink), which the translation mistranslates as 'for a month' (confusing Maaza with Maasam)."
+    },
+    {
+      "reference_text": "மிரண்டா",
+      "translation_text": "Parotta",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference mentions the drink 'Miranda', which is mistranslated as 'Parotta'."
+    },
+    {
+      "reference_text": "நம்ம வெயிட் பண்ணும்போது அடிக்கலாம்",
+      "translation_text": "I will hit you when I meet you",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The reference talks about drinking/hitting a drink while waiting, but the translation turns it into a physical threat of hitting someone."
+    },
+    {
+      "reference_text": "சண்டைய சாமி",
+      "translation_text": "Two gods",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Sandaiye Saami' (likely a name or phrase), which is mistranslated as 'Two gods'."
+    },
+    {
+      "reference_text": "ஏய் செல்ல காணுமே",
+      "translation_text": "Magician didn't come",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'Hey, can't see the phone/darling', which is mistranslated as 'Magician didn't come'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:19",
+      "type": "sexual_or_explicit",
+      "reference_text": "கோயம்புத்தூர்ல வந்து ரேப் பண்ணீங்கன்னா உங்கள ஜெயில்ல புடிச்சு போட்டுருவாங்க",
+      "translation_text": "If you come and rape, they will catch you and put you in jail",
+      "status": "preserved"
+    },
+    {
+      "t": "01:27",
+      "type": "sexual_or_explicit",
+      "reference_text": "ரேப் பண்ணி பண்ண யாரு ஒன்னும் பண்ண மாட்டாங்க",
+      "translation_text": "Should not make it so that I am not there for my son, that is wrong",
+      "status": "missing"
+    },
+    {
+      "t": "02:53",
+      "type": "move_off_app",
+      "reference_text": "வாட்ஸ்அப்ல வரீங்களா",
+      "translation_text": "will you come on WhatsApp",
+      "status": "preserved"
+    },
+    {
+      "t": "03:00",
+      "type": "move_off_app",
+      "reference_text": "என் நம்பர் நோட் பண்ணிக்கோங்க 733 968 19 93",
+      "translation_text": "Note down the number, seven double three Nine six eight one nine Nine three",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation preserves the critical move-off-app moments (WhatsApp and phone number sharing) and one mention of rape, but it completely misses another mention of rape and contains several severe mistranslations of conversational details."
+}

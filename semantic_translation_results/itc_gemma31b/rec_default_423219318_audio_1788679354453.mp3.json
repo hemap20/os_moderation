@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_default_423219318_audio_1788679354453.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 541,
+  "affected_word_count": 11,
+  "semantic_error_rate": 0.0203,
+  "seconds": 4.4,
+  "discrepancies": [
+    {
+      "reference_text": "എന്റെ പാവം പുറത്തു പോകണം എന്ന് പറഞ്ഞു",
+      "translation_text": "said my picture should go out",
+      "category": "other_meaning_change",
+      "word_count_affected": 7,
+      "explanation": "The reference says 'my husband/darling said we need to go out' (using 'paavam' colloquially for partner), which is mistranslated as 'my picture should go out'."
+    },
+    {
+      "reference_text": "ഉമ്മച്ചി",
+      "translation_text": "mother",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'ummachchi' (mother-in-law/mother), but the translation later introduces 'father' ('father will come') which is not in the reference."
+    },
+    {
+      "reference_text": "ആള്",
+      "translation_text": "father",
+      "category": "other_meaning_change",
+      "word_count_affected": 1,
+      "explanation": "The reference uses 'aalu' (the person/husband) which the translation incorrectly translates as 'father'."
+    },
+    {
+      "reference_text": "ഓപ്പൺ ടോക്സ്",
+      "translation_text": "open dogs",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'open talks' (explicit/sexual talk), which is mistranslated as 'open dogs'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "04:55",
+      "type": "money_or_payment",
+      "reference_text": "സ്പെഷ്യലി വീഡിയോ കോളിന് നല്ല പൈസ കിട്ടും",
+      "translation_text": "especially for video calls, it's a lot Money is gained",
+      "status": "preserved"
+    },
+    {
+      "t": "10:20",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഓപ്പൺ ടോക്സ് ആണോ എന്ന് ചോദിക്കുമല്ലോ ആൾക്കാര്",
+      "translation_text": "you asked if I want to do open talks, people",
+      "status": "preserved"
+    },
+    {
+      "t": "12:10",
+      "type": "sexual_or_explicit",
+      "reference_text": "പ്രോപ്പർ ഇങ്ങനത്തെ സെക്സ് ടോക്ക് മാത്രം",
+      "translation_text": "it was proper sex talk like this",
+      "status": "preserved"
+    },
+    {
+      "t": "12:45",
+      "type": "sexual_or_explicit",
+      "reference_text": "അതിനുവേണ്ടിയിട്ട് ഇവര് ഓപ്പൺ ടോക്സ്",
+      "translation_text": "for that they want open dogs",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate regarding the general conversation flow, but it contains a few odd mistranslations such as 'open dogs' instead of 'open talks' and misinterpreting references to the speaker's husband as 'father'."
+}

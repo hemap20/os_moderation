@@ -1,0 +1,70 @@
+{
+  "file_id": "rec_audio_call_420511856_audio_1788424457087.mp3",
+  "model": "gemini-3.1-flash-lite",
+  "thinking": false,
+  "chunk_seconds": 0.0,
+  "flags": [
+    {
+      "model_category": "SuspiciousActivity",
+      "model_timestamp": "01:40",
+      "model_excerpt": "சிக்ஸ் ஏ பர்சன்டேஜ் தான் சொல்லுங்கள் தொண்ணூறா ஐம்பது ரூபா இல்லை",
+      "model_translation": "Tell me the percentage/rate, is it 90 or 50 rupees?",
+      "model_justification": "Asking about a rate in a suggestive conversation matches the weaker case for SuspiciousActivity.",
+      "model_confidence": 0.6,
+      "logprob_decision": null,
+      "logprob_category": null,
+      "logprob_derived_confidence": null,
+      "excerpt_token_entropy": null,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "model_speaker": "user",
+      "model_context": "The user is discussing the type of talk they want and asks about the rate for sexy talk. The expert does not respond to the price.",
+      "logprob_violation": null,
+      "p_violation_yes": null,
+      "p_violation_method": null,
+      "violation_token_topk": null
+    },
+    {
+      "model_category": "Explicit-Flirting",
+      "model_timestamp": "02:50",
+      "model_excerpt": "ஈஸியாக பேச மாட்டேன் நார்மல் ம் ஓகே ஜாலியாக பேசினா போதும்",
+      "model_translation": "I won't talk [sexually], normal... okay, fun talk is enough.",
+      "model_justification": "This is a refusal of sexual talk, which falls under the 'About a violation' category.",
+      "model_confidence": 0.3,
+      "logprob_decision": null,
+      "logprob_category": null,
+      "logprob_derived_confidence": null,
+      "excerpt_token_entropy": null,
+      "model_speech_act": "denial",
+      "model_quote_type": null,
+      "model_violation": "no",
+      "model_speaker": "user",
+      "model_context": "The user is clarifying their boundaries regarding the type of conversation they want to have. The expert agrees.",
+      "logprob_violation": null,
+      "p_violation_yes": null,
+      "p_violation_method": null,
+      "violation_token_topk": null
+    }
+  ],
+  "chunks_total": 1,
+  "chunks_failed": 0,
+  "status": "success",
+  "error": null,
+  "missing_field_counts": {
+    "c": 0,
+    "speech_act": 0,
+    "quote_type": 0,
+    "violation": 0
+  },
+  "inference_time_sec": 5.244,
+  "inference_meta": {
+    "input": "transcript",
+    "prompt_tokens": 3678,
+    "output_tokens": 263,
+    "thinking_tokens": 1445,
+    "prompt_tokens_by_modality": {
+      "TEXT": 3678
+    }
+  }
+}

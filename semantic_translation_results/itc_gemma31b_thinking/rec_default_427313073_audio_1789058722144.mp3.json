@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_default_427313073_audio_1789058722144.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 115,
+  "affected_word_count": 10,
+  "semantic_error_rate": 0.087,
+  "seconds": 3.1,
+  "discrepancies": [
+    {
+      "reference_text": "என்ன ஆப் பண்றீங்க",
+      "translation_text": "What are you turning off?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation mistranslates 'what are you doing' (ஆப் பண்றீங்க / ஆப் - job/work) as 'turning off'."
+    },
+    {
+      "reference_text": "லைஃப்ல எப்படி போகுது",
+      "translation_text": "How is the expense going?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation mistranslates 'how is life going' as 'how is the expense going'."
+    },
+    {
+      "reference_text": "ஜஸ்ட் பிரண்ட்லி டாக் தான்",
+      "translation_text": "just friend writer only",
+      "category": "other_meaning_change",
+      "word_count_affected": 4,
+      "explanation": "The translation mistranslates 'friendly talk' as 'friend writer'."
+    },
+    {
+      "reference_text": "",
+      "translation_text": "They have sent a coupon.",
+      "category": "added_content",
+      "word_count_affected": 0,
+      "explanation": "The translation adds a sentence about a coupon at the end which is not in the reference."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:20",
+      "type": "sexual_or_explicit",
+      "reference_text": "நான் ரொமான்டிக்கா பேச தான் இந்த ஆப்புக்கு வந்தேன் உனக்கு ஓகேயா",
+      "translation_text": "I came to that app to speak romantically, is it okay for you?",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation contains several minor mistranslations of common phrases (e.g., 'friendly talk' as 'friend writer' and 'what are you doing' as 'turning off') and adds an extra sentence at the end, but the core intent and romantic/explicit proposal are preserved."
+}

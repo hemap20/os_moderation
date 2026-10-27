@@ -1,0 +1,45 @@
+{
+  "file_id": "rec_default_421372353_audio_1788505796052.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 1080,
+  "affected_word_count": 25,
+  "semantic_error_rate": 0.0231,
+  "seconds": 2.9,
+  "discrepancies": [
+    {
+      "reference_text": "கர்த்தரே இந்த பாவி என்கிட்ட இருந்து என்ன காப்பாத்துங்க என் பேரு விக்னேஷ்",
+      "translation_text": "oh Lord, save me from this woman, sir, name is Vignesh",
+      "category": "other_meaning_change",
+      "word_count_affected": 11,
+      "explanation": "The speaker says 'save me from this sinner' (referring to himself jokingly), but the translation says 'save me from this woman'."
+    },
+    {
+      "reference_text": "நான் வேற விஜய் ஃபேன் ஆச்சே",
+      "translation_text": "My name is Vijay, Finance? Vijay Finance?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The speaker says 'I am a Vijay fan', but the translation misinterprets it as 'My name is Vijay, Finance?'."
+    },
+    {
+      "reference_text": "குக்கர் படுத்துட்டு இருக்கான் ஃபுல்லா ஓபன்ல வச்சுட்டு இருக்கான்",
+      "translation_text": "Pugazh is [unclear], she has kept it fully open",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference talks about a guy lying down completely naked ('fully open'), which is mistranslated and loses the explicit context."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "10:53",
+      "type": "sexual_or_explicit",
+      "reference_text": "குக்கர் படுத்துட்டு இருக்கான் ஃபுல்லா ஓபன்ல வச்சுட்டு இருக்கான்",
+      "translation_text": "Pugazh is [unclear], she has kept it fully open",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate in capturing the friendly banter and conversation flow, but it fails to accurately translate a key explicit moment where a user was lying down naked on a call."
+}

@@ -1,0 +1,101 @@
+{
+  "file_id": "rec_default_423104500_audio_1788669374178.mp3",
+  "language": "tamil",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 131,
+  "affected_word_count": 24,
+  "semantic_error_rate": 0.1832,
+  "seconds": 4.4,
+  "discrepancies": [
+    {
+      "reference_text": "வீடு கிடையாது ரூம்",
+      "translation_text": "There is no house, have to go",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The reference says 'Not a house, it's a room', but the translation says 'There is no house, have to go'."
+    },
+    {
+      "reference_text": "ஏன் வீடியோ கால் தானே பண்ணிருக்கீங்க பேஸ் காமிக்க மாட்டீங்களா",
+      "translation_text": "why have you cut the video? Won't you show your face?",
+      "category": "other_meaning_change",
+      "word_count_affected": 8,
+      "explanation": "The reference says 'Why, you have made a video call, won't you show your face?', but the translation says 'why have you cut the video?'."
+    },
+    {
+      "reference_text": "300 பே பண்ணனும்",
+      "translation_text": "three hundred paper Must do",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The translation mistranslates 'pay' as 'paper'."
+    },
+    {
+      "reference_text": "வாங்க பேசலாம்",
+      "translation_text": "come problem",
+      "category": "other_meaning_change",
+      "word_count_affected": 2,
+      "explanation": "The reference says 'Come, let's talk', but the translation says 'come problem'."
+    },
+    {
+      "reference_text": "பே பண்ணியாச்சா",
+      "translation_text": "Right",
+      "category": "key_content_missing",
+      "word_count_affected": 2,
+      "explanation": "The question 'Did you pay?' is completely missing and translated as 'Right'."
+    },
+    {
+      "reference_text": "இன்னும் பாக்கலையே இந்த பாக்கறேன் பாத்துட்டு இருக்கேன்",
+      "translation_text": "this is not seen, this seeing",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The reference says 'I haven't seen it yet, I am looking at it now', but the translation says 'this is not seen, this seeing'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:01",
+      "type": "move_off_app",
+      "reference_text": "என் பேரு சுமதி ஐ அம் மேரிட் ஹவுஸ் வைப் வாட்ஸ்அப் வீடியோ கால் பேசலாமா இன்ட்ரஸ்ட் இருக்கா",
+      "translation_text": "My name is Sumathi, married house wife, shall we talk on WhatsApp video call, are you interested?",
+      "status": "preserved"
+    },
+    {
+      "t": "01:19",
+      "type": "money_or_payment",
+      "reference_text": "300 பே பண்ணனும்",
+      "translation_text": "three hundred paper Must do",
+      "status": "softened"
+    },
+    {
+      "t": "01:19",
+      "type": "sexual_or_explicit",
+      "reference_text": "ஃபுல் நியூடா பேசுவேன் டைம் லிமிட் இல்ல உங்களுக்கு ஃபுல் பில் ஆகுற வரைக்கும் நான் பேசுவேன்",
+      "translation_text": "I will speak fully nude, there is no time limit, I will speak until you are fulfilled",
+      "status": "preserved"
+    },
+    {
+      "t": "01:32",
+      "type": "move_off_app",
+      "reference_text": "9943684716",
+      "translation_text": "Double nine four three six double nine four Eight four seven one six",
+      "status": "preserved"
+    },
+    {
+      "t": "03:16",
+      "type": "money_or_payment",
+      "reference_text": "வாங்க ஸ்கேனர் அனுப்பி இருக்கேன் வாங்க பேசலாம்",
+      "translation_text": "Come, I have sent the scanner, come problem",
+      "status": "preserved"
+    },
+    {
+      "t": "04:16",
+      "type": "money_or_payment",
+      "reference_text": "பே பண்ணியாச்சா",
+      "translation_text": "",
+      "status": "missing"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "partly",
+  "summary": "The translation captures the explicit offer of a nude WhatsApp video call and the phone number, but it contains several garbled phrases and misses the final question about whether the payment was made."
+}

@@ -1,0 +1,73 @@
+{
+  "file_id": "rec_audio_call_426851856_audio_1789020892000.mp3",
+  "language": "hindi",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 283,
+  "affected_word_count": 28,
+  "semantic_error_rate": 0.0989,
+  "seconds": 4.6,
+  "discrepancies": [
+    {
+      "reference_text": "मैं यूपी से हूं",
+      "translation_text": "UP Jammu",
+      "category": "named_entity_altered",
+      "word_count_affected": 4,
+      "explanation": "The translation incorrectly introduces 'Jammu' which is not in the reference text."
+    },
+    {
+      "reference_text": "पर्सनल नंबर ले सकते हैं आप अपना?",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 6,
+      "explanation": "The user's request to get her personal number is completely missing from the translation."
+    },
+    {
+      "reference_text": "कोई जीएफ नहीं है ना मेरी",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 6,
+      "explanation": "The user's statement that he doesn't have a girlfriend is missing from the translation."
+    },
+    {
+      "reference_text": "आप बन जाओ",
+      "translation_text": "",
+      "category": "key_content_missing",
+      "word_count_affected": 3,
+      "explanation": "The user's proposal for her to become his girlfriend is missing from the translation."
+    },
+    {
+      "reference_text": "नो हम यहां जीएफ बीएफ बनने नहीं आए हैं",
+      "translation_text": "Here yes now haven't come to make so",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The translation fails to capture her clear refusal to become his girlfriend."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:45",
+      "type": "move_off_app",
+      "reference_text": "पर्सनल नंबर ले सकते हैं आप अपना?",
+      "translation_text": "",
+      "status": "missing"
+    },
+    {
+      "t": "01:49",
+      "type": "move_off_app",
+      "reference_text": "अब इतना ज्यादा किसी से पर्सनल नंबर मांगोगे तो कौन देगा?",
+      "translation_text": "If you ask someone for their personal number so quickly who will give it",
+      "status": "preserved"
+    },
+    {
+      "t": "01:56",
+      "type": "move_off_app",
+      "reference_text": "इतना जल्दी मांगोगे तो कौन देगा?",
+      "translation_text": "if you ask so quickly who will give it",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "no",
+  "summary": "The translation misses key moments where the user asks for the expert's personal number and proposes that she become his girlfriend, as well as her explicit refusal of that proposal."
+}

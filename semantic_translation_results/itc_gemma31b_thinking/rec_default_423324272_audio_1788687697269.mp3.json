@@ -1,0 +1,52 @@
+{
+  "file_id": "rec_default_423324272_audio_1788687697269.mp3",
+  "language": "kannada",
+  "source": "itc_gemma31b_thinking",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 266,
+  "affected_word_count": 15,
+  "semantic_error_rate": 0.0564,
+  "seconds": 2.8,
+  "discrepancies": [
+    {
+      "reference_text": "ಸಿಂಗಲ್",
+      "translation_text": "not single",
+      "category": "negation_flipped",
+      "word_count_affected": 1,
+      "explanation": "The reference says 'single' but the translation incorrectly negates it as 'not single'."
+    },
+    {
+      "reference_text": "ಬೇರೆ ಯಾರ ಜೊತೆನೂ ಮಾತಾಡೇ ಇಲ್ವಾ ನೀವು ಆಪ್ ಅಲ್ಲಿ",
+      "translation_text": "Didn't you talk with other artists too",
+      "category": "other_meaning_change",
+      "word_count_affected": 9,
+      "explanation": "The reference asks if they haven't spoken to anyone else on the app, but the translation mistranslates 'app' as 'artists'."
+    },
+    {
+      "reference_text": "ಐಟಿ ಸೆಲ್ ಅಲ್ಲಿ ವರ್ಕ್ ಮಾಡ್ತೀನಿ",
+      "translation_text": "fifty thousand",
+      "category": "other_meaning_change",
+      "word_count_affected": 5,
+      "explanation": "The reference says 'work in IT cell' but the translation hallucinated 'fifty thousand'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "01:09",
+      "type": "sexual_or_explicit",
+      "reference_text": "ಈ ಆಪ್ ಅಲ್ಲಿ ಫಿಸಿಕಲ್ ರಿಲೇಷನ್ ಶಿಪ್ ಇರ್ತಾರೆ ಫ್ರೆಂಡ್ಸ್ ಇರ್ತಾರೆ",
+      "translation_text": "Happily physical relationship they have, friends they have",
+      "status": "preserved"
+    },
+    {
+      "t": "01:14",
+      "type": "meeting_in_person",
+      "reference_text": "ಸೋ ಮೀಟ್ ಮಾಡ್ತಾರೆ ಆ ತರ",
+      "translation_text": "so they meet, like that",
+      "status": "preserved"
+    }
+  ],
+  "tone_preserved": "yes",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate and preserves the key policy moments regarding physical relationships and meeting, though it contains a few minor mistranslations such as 'not single' instead of 'single' and 'fifty thousand' instead of 'IT cell'."
+}

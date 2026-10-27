@@ -1,0 +1,59 @@
+{
+  "file_id": "rec_audio_call_426189476_audio_1788954198708.mp3",
+  "language": "malayalam",
+  "source": "itc_gemma31b",
+  "judge": "gemini-3.5-flash",
+  "reference_word_count": 549,
+  "affected_word_count": 19,
+  "semantic_error_rate": 0.0346,
+  "seconds": 5.1,
+  "discrepancies": [
+    {
+      "reference_text": "എന്റെ പേര് സോസൻ",
+      "translation_text": "Name is Suhruth sir, okay Suhruth sir.",
+      "category": "named_entity_altered",
+      "word_count_affected": 3,
+      "explanation": "The name 'Sosan' is mistranslated as 'Suhruth sir'."
+    },
+    {
+      "reference_text": "ഹസ്ബൻഡ് എന്താ ചെയ്യുന്നത്",
+      "translation_text": "What is father's name?",
+      "category": "other_meaning_change",
+      "word_count_affected": 3,
+      "explanation": "The question 'What does your husband do?' is mistranslated as 'What is father's name?'."
+    },
+    {
+      "reference_text": "പടം ഒക്കെ ഡിസൈൻ ചെയ്യാൻ അറിയാമോ",
+      "translation_text": "do you know how to distort pictures?",
+      "category": "other_meaning_change",
+      "word_count_affected": 6,
+      "explanation": "The question 'Do you know how to design pictures?' is mistranslated as 'distort pictures'."
+    },
+    {
+      "reference_text": "നിങ്ങളെ എന്താ പറയാ സെക്ഷ്വൽ ആയിട്ടുള്ള രീതിയിലുള്ള സംസാരം",
+      "translation_text": "your what do you call, special way of talking",
+      "category": "tone_softened",
+      "word_count_affected": 7,
+      "explanation": "The explicit reference to 'sexual talk' is softened to 'special way of talking'."
+    }
+  ],
+  "policy_moments": [
+    {
+      "t": "06:46",
+      "type": "sexual_or_explicit",
+      "reference_text": "ഇതിൽ കൂടുതൽ ഓപ്പൺ ടോക്ക് നിങ്ങൾക്ക് വരുള്ളൂ",
+      "translation_text": "You will get more open talks in this",
+      "status": "preserved"
+    },
+    {
+      "t": "06:56",
+      "type": "sexual_or_explicit",
+      "reference_text": "നിങ്ങളെ എന്താ പറയാ സെക്ഷ്വൽ ആയിട്ടുള്ള രീതിയിലുള്ള സംസാരം അങ്ങനത്തെ കാര്യങ്ങളൊക്കെ ഇതിൽ കൂടുതൽ നിങ്ങൾക്ക് വരും",
+      "translation_text": "your what do you call, special way of talking and things like that, you will get more of that in this",
+      "status": "softened"
+    }
+  ],
+  "tone_preserved": "partly",
+  "intent_preserved": "yes",
+  "summary": "The translation is mostly accurate but softens the explicit warning about 'sexual talk' to 'special way of talking' and contains a few minor mistranslations of names and words."
+}
