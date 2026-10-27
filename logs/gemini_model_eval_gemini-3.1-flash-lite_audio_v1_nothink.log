@@ -892,3 +892,34 @@ json.decoder.JSONDecodeError: Unterminated string starting at: line 1 column 45 
 [2026-10-27T15:01:13] [INFO] [9/11] rec_audio_call_426100503_audio_1788947524083.mp3
 [2026-10-27T15:01:16] [INFO] [10/11] rec_default_426669005_audio_1788996409641.mp3
 [2026-10-27T15:01:17] [INFO] [11/11] rec_default_426460304_audio_1788976707317.mp3
+[2026-10-27T16:20:45] [WARN] rec_default_425476935_audio_1788886067609.mp3: attempt 1/5 failed ([Errno 54] Connection reset by peer); retrying in 2.0s
+[2026-10-27T16:22:24] [ERROR] rec_default_425476935_audio_1788886067609.mp3: FAILED — Unterminated string starting at: line 1 column 45 (char 44)
+Traceback (most recent call last):
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemini_client.py", line 145, in parse_json_lenient
+    obj, _end = json.JSONDecoder().raw_decode(stripped)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Unterminated string starting at: line 1 column 45 (char 44)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemini_model_eval.py", line 265, in process_one
+    result, raw_text = process_file(client, args.model, record, logger)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemini_model_eval.py", line 149, in process_file
+    flags, missing_counts = parse_classification(raw_text)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemini_model_eval.py", line 109, in parse_classification
+    parsed = gemini_client.parse_json_lenient(raw_text)
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemini_client.py", line 148, in parse_json_lenient
+    raise exc
+  File "/Users/hemapunyamoorty/Desktop/os_moderation/gemini_client.py", line 141, in parse_json_lenient
+    return json.loads(text)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/json/decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+json.decoder.JSONDecodeError: Unterminated string starting at: line 1 column 45 (char 44)
+
+[2026-10-27T16:22:24] [INFO] Done in 4880.1s — success=10 error=1 — missing fields (count of flags lacking each): c=0, speech_act=0, quote_type=0, violation=0

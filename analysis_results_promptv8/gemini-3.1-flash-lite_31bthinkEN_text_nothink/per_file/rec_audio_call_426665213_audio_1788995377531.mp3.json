@@ -1,0 +1,76 @@
+{
+  "file_id": "rec_audio_call_426665213_audio_1788995377531.mp3",
+  "language": "telugu",
+  "gt_flag_count": 2,
+  "model_flag_count": 2,
+  "flag_tp": 1,
+  "flag_fn": 1,
+  "flag_fp": 1,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "However, I properly attend WhatsApp video calls",
+      "timestamp": "00:43",
+      "excerpt": "కాకపోతే నేను ప్రాపర్లీ వాట్సాప్ వీడియో కాల్స్ అటెండ్ అవుతా",
+      "confidence": 0.9,
+      "matched": true,
+      "matched_model_category": "PlatformMove"
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "If you send the amount, the calls will be 30 to 40 minutes",
+      "timestamp": "00:58",
+      "excerpt": "అమౌంట్ పంపిస్తే మీకు కాల్స్ వచ్చేసి 30 టు 40 మినిట్స్ ఉంటుంది",
+      "confidence": 0.9,
+      "matched": false,
+      "matched_model_category": null
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "You are attending WhatsApp video calls, are you interested?",
+      "timestamp": "00:50",
+      "excerpt": "You are attending WhatsApp video calls, are you interested?",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": null,
+      "entropy_mean": null,
+      "neg_entropy": null,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": null,
+      "model_speaker": "user",
+      "model_context": "The user asks if the expert is interested in moving the conversation to WhatsApp for video calls. The expert does not explicitly agree.",
+      "matched": true,
+      "matched_gt_category": "PlatformMove",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": []
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "How much? For me, two fifty amount.",
+      "timestamp": "00:50",
+      "excerpt": "How much? For me, two fifty amount.",
+      "model_confidence": 0.6,
+      "logprob_derived_confidence": null,
+      "entropy_mean": null,
+      "neg_entropy": null,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": null,
+      "model_speaker": "user",
+      "model_context": "The user asks about the price for a video call and suggests an amount of 250. The expert responds by asking about call charges.",
+      "matched": false,
+      "matched_gt_category": null,
+      "pp_confidence": 0.6,
+      "pp_dropped": false,
+      "pp_rules_applied": []
+    }
+  ]
+}

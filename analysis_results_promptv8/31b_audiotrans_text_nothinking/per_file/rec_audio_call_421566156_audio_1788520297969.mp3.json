@@ -1,0 +1,67 @@
+{
+  "file_id": "rec_audio_call_421566156_audio_1788520297969.mp3",
+  "language": "tamil",
+  "gt_flag_count": 1,
+  "model_flag_count": 2,
+  "flag_tp": 1,
+  "flag_fn": 0,
+  "flag_fp": 1,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Do you know the WhatsApp number?",
+      "timestamp": "00:13",
+      "excerpt": "வாட்ஸ்அப் நம்பர் தெரியுமா?",
+      "confidence": 0.9,
+      "matched": true,
+      "matched_model_category": "PlatformMove"
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Do you know your WhatsApp number?",
+      "timestamp": "00:13",
+      "excerpt": "Do you know your WhatsApp number?",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": 0.9999991357337081,
+      "entropy_mean": 2.801816039307826e-06,
+      "neg_entropy": -2.801816039307826e-06,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": 0.9999998807907247,
+      "model_speaker": "expert",
+      "model_context": "The expert asks the user where they are calling from, then asks about their WhatsApp number. The user responds that they only talk through the app.",
+      "matched": true,
+      "matched_gt_category": "PlatformMove",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": []
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "No, I just talk through this app, that's all.",
+      "timestamp": "00:15",
+      "excerpt": "No, I just talk through this app, that's all.",
+      "model_confidence": 0.3,
+      "logprob_derived_confidence": 0.9999954998794557,
+      "entropy_mean": 0.00036762457601798325,
+      "neg_entropy": -0.00036762457601798325,
+      "model_speech_act": "denial",
+      "model_quote_type": null,
+      "model_violation": "no",
+      "p_violation_yes": 0.0,
+      "model_speaker": "user",
+      "model_context": "The expert asked for the user's WhatsApp number. The user is refusing to provide it.",
+      "matched": false,
+      "matched_gt_category": null,
+      "pp_confidence": 0.3,
+      "pp_dropped": false,
+      "pp_rules_applied": []
+    }
+  ]
+}

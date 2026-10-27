@@ -1,0 +1,1145 @@
+{
+  "content": "{\"d\": []}",
+  "reasoning": "*   Role: Content Policy Analyst.\n    *   Context: \"Friends\" app (User pays Expert).\n    *   Categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.\n    *   Output: Minified JSON.\n    *   Specific Rules:\n        *   `PlatformMove`: Moving outside the app, phone numbers, IDs, meeting in person.\n        *   `SuspiciousActivity`: Money linked to sexual content/nudity/sexual services.\n        *   `Explicit-Flirting`: Sexual talk, nudity requests, sexual acts.\n        *   \"About a Violation\": Warnings, stories, refusals, hypotheticals (violation: \"no\", confidence <= 0.3).\n        *   Allowed: App-internal calls, compliments, general money talk (salary/rent), non-sexual \"normal talk\".\n\n    *   [00:00 - 00:10]: Greetings, location (Bangalore), education (MBA). -> *Ordinary conversation (Allowed).*\n    *   [00:15 - 00:27]: Confusion about the way of talking. -> *Ordinary conversation (Allowed).*\n    *   [00:30 - 00:44]: \"Can we talk?\" / \"What do I get out of it if I talk?\" -> *Ordinary conversation/negotiation (Allowed).*\n    *   [00:52]: \"What should I do? I will pay you.\" -> *General money talk? Or linked to something? Let's look at the context.*\n    *   [01:03]: \"If you pay, then I will do a video call or voice call.\" -> *Wait, the app allows audio and video calls. Is this a request to move outside the app or a request for payment for a service?*\n        *   The prompt says: \"Every call type inside the app is allowed.\"\n        *   The prompt says: \"Allowed... The app's own coins, gifts or per-minute call charges... earnings on the app.\"\n        *   However, \"If you pay, then I will do a video call or voice call\" sounds like a transaction for a specific call type. But since video/voice calls are *inside* the app, is this a violation?\n        *   Let's check `SuspiciousActivity`: \"Money or payment linked to sexual content, showing the body, or a sexual service.\"\n        *   Is a \"video call\" a sexual service? Not inherently.\n        *   Is it a `PlatformMove`? \"Proposing or asking to move to a named external app... Asking for or proposing a call outside the app: 'Will you do a normal call?'\"\n        *   The speaker says \"I will do a video call or voice call.\" It doesn't specify *outside* the app.\n        *   Let's re-read: \"If you pay, then I will do a video call or voice call.\"\n        *   In the context of this app, the user *already* pays the expert.\n        *   If the expert is asking for *extra* payment for a video call, is that a violation?\n        *   `SuspiciousActivity` requires the payment to be linked to *sexual content, showing the body, or a sexual service*. A video call is not automatically a sexual service.\n        *   `PlatformMove` requires a proposal to move *outside* the app. \"Video call\" is allowed inside the app.\n\n    *   [01:18 - 01:25]: \"Can we talk about something else?\" / \"Sorry, I really can't talk about anything else.\" -> *Ordinary conversation/refusal (Allowed).*\n\n    *   Quote: \"I will pay you\" [00:52] and \"If you pay, then I will do a video call or voice call\" [01:03].\n    *   Is this `SuspiciousActivity`? No sexual content mentioned.\n    *   Is this `PlatformMove`? No external app or \"normal call\" (outside app) mentioned.\n    *   Is this `Explicit-Flirting`? No.\n\n    *   The conversation is very brief and mostly consists of greetings, confusion, and a mention of payment for a call.\n    *   Since video/voice calls are allowed in the app and no sexual nature is mentioned, and no external platform is mentioned, there are no violations based on the provided definitions.\n\n    *   Wait, let me double-check the \"Normal call\" vs \"Video call\" distinction.\n    *   `PlatformMove` Strong cases: \"Will you do a normal call?\", \"Can we do a normal call?\".\n    *   The speaker says \"I will do a video call or voice call.\"\n    *   In many of these datasets, \"voice call\" or \"video call\" without the word \"normal\" or \"WhatsApp/Telegram\" refers to the app's functionality.\n    *   The prompt says: \"Every call type inside the app is allowed.\"\n    *   Therefore, \"I will do a video call or voice call\" is allowed.\n\n    *   Is \"I will pay you\" [00:52] suspicious?\n    *   `SuspiciousActivity` requires a link to sexual content. There is none here.\n\n    *   Is there any `Explicit-Flirting`?\n    *   No.\n\n    *   Is there any `PlatformMove`?\n    *   No.\n\n    *   Result: No violations found.\n\n    *   Return `{\"d\": []}`.",
+  "response": {
+    "id": "gen-1793097448-pdKZDQZ0uL5GSTW2IRET",
+    "object": "chat.completion",
+    "created": 1793097448,
+    "model": "google/gemma-4-31b-it",
+    "provider": "Parasail",
+    "system_fingerprint": null,
+    "service_tier": null,
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": {
+          "content": [
+            {
+              "token": "{\"",
+              "bytes": [
+                123,
+                34
+              ],
+              "logprob": -0.13516098260879517,
+              "top_logprobs": [
+                {
+                  "token": "{\"",
+                  "bytes": [
+                    123,
+                    34
+                  ],
+                  "logprob": -0.13516098260879517
+                },
+                {
+                  "token": "```",
+                  "bytes": [
+                    96,
+                    96,
+                    96
+                  ],
+                  "logprob": -2.070197582244873
+                },
+                {
+                  "token": "***",
+                  "bytes": [
+                    42,
+                    42,
+                    42
+                  ],
+                  "logprob": -10.674964904785156
+                },
+                {
+                  "token": "`",
+                  "bytes": [
+                    96
+                  ],
+                  "logprob": -11.444422721862793
+                },
+                {
+                  "token": "探",
+                  "bytes": [
+                    230,
+                    142,
+                    162
+                  ],
+                  "logprob": -12.220107078552246
+                },
+                {
+                  "token": "构建",
+                  "bytes": [
+                    230,
+                    158,
+                    132,
+                    229,
+                    187,
+                    186
+                  ],
+                  "logprob": -12.469902038574219
+                },
+                {
+                  "token": "呈现",
+                  "bytes": [
+                    229,
+                    145,
+                    136,
+                    231,
+                    142,
+                    176
+                  ],
+                  "logprob": -12.590935707092285
+                },
+                {
+                  "token": "观察",
+                  "bytes": [
+                    232,
+                    167,
+                    130,
+                    229,
+                    175,
+                    159
+                  ],
+                  "logprob": -12.645602226257324
+                },
+                {
+                  "token": " those",
+                  "bytes": [
+                    32,
+                    116,
+                    104,
+                    111,
+                    115,
+                    101
+                  ],
+                  "logprob": -13.234650611877441
+                },
+                {
+                  "token": " merchants",
+                  "bytes": [
+                    32,
+                    109,
+                    101,
+                    114,
+                    99,
+                    104,
+                    97,
+                    110,
+                    116,
+                    115
+                  ],
+                  "logprob": -13.254181861877441
+                },
+                {
+                  "token": " {\"",
+                  "bytes": [
+                    32,
+                    123,
+                    34
+                  ],
+                  "logprob": -13.361357688903809
+                },
+                {
+                  "token": " dunes",
+                  "bytes": [
+                    32,
+                    100,
+                    117,
+                    110,
+                    101,
+                    115
+                  ],
+                  "logprob": -13.500997543334961
+                },
+                {
+                  "token": "**",
+                  "bytes": [
+                    42,
+                    42
+                  ],
+                  "logprob": -13.506856918334961
+                },
+                {
+                  "token": " cocktails",
+                  "bytes": [
+                    32,
+                    99,
+                    111,
+                    99,
+                    107,
+                    116,
+                    97,
+                    105,
+                    108,
+                    115
+                  ],
+                  "logprob": -13.538103103637695
+                },
+                {
+                  "token": "Conclusion",
+                  "bytes": [
+                    67,
+                    111,
+                    110,
+                    99,
+                    108,
+                    117,
+                    115,
+                    105,
+                    111,
+                    110
+                  ],
+                  "logprob": -13.540056228637695
+                },
+                {
+                  "token": " compreensão",
+                  "bytes": [
+                    32,
+                    99,
+                    111,
+                    109,
+                    112,
+                    114,
+                    101,
+                    101,
+                    110,
+                    115,
+                    195,
+                    163,
+                    111
+                  ],
+                  "logprob": -13.569348335266113
+                },
+                {
+                  "token": "预测",
+                  "bytes": [
+                    233,
+                    162,
+                    132,
+                    230,
+                    181,
+                    139
+                  ],
+                  "logprob": -13.577159881591797
+                },
+                {
+                  "token": " pregnant",
+                  "bytes": [
+                    32,
+                    112,
+                    114,
+                    101,
+                    103,
+                    110,
+                    97,
+                    110,
+                    116
+                  ],
+                  "logprob": -13.581066131591797
+                },
+                {
+                  "token": "get",
+                  "bytes": [
+                    103,
+                    101,
+                    116
+                  ],
+                  "logprob": -13.743136405944824
+                },
+                {
+                  "token": " vantagem",
+                  "bytes": [
+                    32,
+                    118,
+                    97,
+                    110,
+                    116,
+                    97,
+                    103,
+                    101,
+                    109
+                  ],
+                  "logprob": -13.766566276550293
+                }
+              ]
+            },
+            {
+              "token": "d",
+              "bytes": [
+                100
+              ],
+              "logprob": -5.006802894058637e-06,
+              "top_logprobs": [
+                {
+                  "token": "d",
+                  "bytes": [
+                    100
+                  ],
+                  "logprob": -5.006802894058637e-06
+                },
+                {
+                  "token": " d",
+                  "bytes": [
+                    32,
+                    100
+                  ],
+                  "logprob": -12.581401824951172
+                },
+                {
+                  "token": "D",
+                  "bytes": [
+                    68
+                  ],
+                  "logprob": -15.129986763000488
+                },
+                {
+                  "token": "$",
+                  "bytes": [
+                    36
+                  ],
+                  "logprob": -15.538885116577148
+                },
+                {
+                  "token": "\\",
+                  "bytes": [
+                    92
+                  ],
+                  "logprob": -16.932559967041016
+                },
+                {
+                  "token": "${",
+                  "bytes": [
+                    36,
+                    123
+                  ],
+                  "logprob": -17.293094635009766
+                },
+                {
+                  "token": "<tool_call|>",
+                  "bytes": [
+                    60,
+                    116,
+                    111,
+                    111,
+                    108,
+                    95,
+                    99,
+                    97,
+                    108,
+                    108,
+                    124,
+                    62
+                  ],
+                  "logprob": -17.504207611083984
+                },
+                {
+                  "token": "#",
+                  "bytes": [
+                    35
+                  ],
+                  "logprob": -17.56463050842285
+                },
+                {
+                  "token": "set",
+                  "bytes": [
+                    115,
+                    101,
+                    116
+                  ],
+                  "logprob": -17.83708953857422
+                },
+                {
+                  "token": "to",
+                  "bytes": [
+                    116,
+                    111
+                  ],
+                  "logprob": -17.95846939086914
+                },
+                {
+                  "token": "-",
+                  "bytes": [
+                    45
+                  ],
+                  "logprob": -18.14085578918457
+                },
+                {
+                  "token": " \\",
+                  "bytes": [
+                    32,
+                    92
+                  ],
+                  "logprob": -18.20173454284668
+                },
+                {
+                  "token": " diph",
+                  "bytes": [
+                    32,
+                    100,
+                    105,
+                    112,
+                    104
+                  ],
+                  "logprob": -18.415124893188477
+                },
+                {
+                  "token": "}",
+                  "bytes": [
+                    125
+                  ],
+                  "logprob": -18.6901798248291
+                },
+                {
+                  "token": ")",
+                  "bytes": [
+                    41
+                  ],
+                  "logprob": -18.782033920288086
+                },
+                {
+                  "token": "get",
+                  "bytes": [
+                    103,
+                    101,
+                    116
+                  ],
+                  "logprob": -18.843313217163086
+                },
+                {
+                  "token": " kitchens",
+                  "bytes": [
+                    32,
+                    107,
+                    105,
+                    116,
+                    99,
+                    104,
+                    101,
+                    110,
+                    115
+                  ],
+                  "logprob": -19.058069229125977
+                },
+                {
+                  "token": "誠",
+                  "bytes": [
+                    232,
+                    170,
+                    160
+                  ],
+                  "logprob": -19.134868621826172
+                },
+                {
+                  "token": "<",
+                  "bytes": [
+                    60
+                  ],
+                  "logprob": -19.211719512939453
+                },
+                {
+                  "token": "\":",
+                  "bytes": [
+                    34,
+                    58
+                  ],
+                  "logprob": -19.273237228393555
+                }
+              ]
+            },
+            {
+              "token": "\":",
+              "bytes": [
+                34,
+                58
+              ],
+              "logprob": 0,
+              "top_logprobs": [
+                {
+                  "token": "\":",
+                  "bytes": [
+                    34,
+                    58
+                  ],
+                  "logprob": 0
+                },
+                {
+                  "token": "\"",
+                  "bytes": [
+                    34
+                  ],
+                  "logprob": -17.64382553100586
+                },
+                {
+                  "token": "\":[],",
+                  "bytes": [
+                    34,
+                    58,
+                    91,
+                    93,
+                    44
+                  ],
+                  "logprob": -18.757831573486328
+                },
+                {
+                  "token": " monolayer",
+                  "bytes": [
+                    32,
+                    109,
+                    111,
+                    110,
+                    111,
+                    108,
+                    97,
+                    121,
+                    101,
+                    114
+                  ],
+                  "logprob": -19.61092185974121
+                },
+                {
+                  "token": "get",
+                  "bytes": [
+                    103,
+                    101,
+                    116
+                  ],
+                  "logprob": -20.193979263305664
+                },
+                {
+                  "token": " Rely",
+                  "bytes": [
+                    32,
+                    82,
+                    101,
+                    108,
+                    121
+                  ],
+                  "logprob": -20.59459686279297
+                },
+                {
+                  "token": "=[]",
+                  "bytes": [
+                    61,
+                    91,
+                    93
+                  ],
+                  "logprob": -20.82628059387207
+                },
+                {
+                  "token": " remercie",
+                  "bytes": [
+                    32,
+                    114,
+                    101,
+                    109,
+                    101,
+                    114,
+                    99,
+                    105,
+                    101
+                  ],
+                  "logprob": -21.02737808227539
+                },
+                {
+                  "token": " mew",
+                  "bytes": [
+                    32,
+                    109,
+                    101,
+                    119
+                  ],
+                  "logprob": -21.089305877685547
+                },
+                {
+                  "token": " pigeons",
+                  "bytes": [
+                    32,
+                    112,
+                    105,
+                    103,
+                    101,
+                    111,
+                    110,
+                    115
+                  ],
+                  "logprob": -21.290742874145508
+                },
+                {
+                  "token": " Radius",
+                  "bytes": [
+                    32,
+                    82,
+                    97,
+                    100,
+                    105,
+                    117,
+                    115
+                  ],
+                  "logprob": -21.352773666381836
+                },
+                {
+                  "token": " Estadio",
+                  "bytes": [
+                    32,
+                    69,
+                    115,
+                    116,
+                    97,
+                    100,
+                    105,
+                    111
+                  ],
+                  "logprob": -21.756481170654297
+                },
+                {
+                  "token": " artigos",
+                  "bytes": [
+                    32,
+                    97,
+                    114,
+                    116,
+                    105,
+                    103,
+                    111,
+                    115
+                  ],
+                  "logprob": -21.77202606201172
+                },
+                {
+                  "token": " Terrain",
+                  "bytes": [
+                    32,
+                    84,
+                    101,
+                    114,
+                    114,
+                    97,
+                    105,
+                    110
+                  ],
+                  "logprob": -21.911972045898438
+                },
+                {
+                  "token": " rodr",
+                  "bytes": [
+                    32,
+                    114,
+                    111,
+                    100,
+                    114
+                  ],
+                  "logprob": -21.966421127319336
+                },
+                {
+                  "token": "\"}",
+                  "bytes": [
+                    34,
+                    125
+                  ],
+                  "logprob": -22.106487274169922
+                },
+                {
+                  "token": " Verz",
+                  "bytes": [
+                    32,
+                    86,
+                    101,
+                    114,
+                    122
+                  ],
+                  "logprob": -22.137624740600586
+                },
+                {
+                  "token": " meyd",
+                  "bytes": [
+                    32,
+                    109,
+                    101,
+                    121,
+                    100
+                  ],
+                  "logprob": -22.2232723236084
+                },
+                {
+                  "token": "shutdown",
+                  "bytes": [
+                    115,
+                    104,
+                    117,
+                    116,
+                    100,
+                    111,
+                    119,
+                    110
+                  ],
+                  "logprob": -22.231060028076172
+                },
+                {
+                  "token": " idées",
+                  "bytes": [
+                    32,
+                    105,
+                    100,
+                    195,
+                    169,
+                    101,
+                    115
+                  ],
+                  "logprob": -22.293367385864258
+                }
+              ]
+            },
+            {
+              "token": " []",
+              "bytes": [
+                32,
+                91,
+                93
+              ],
+              "logprob": -0.004499170463532209,
+              "top_logprobs": [
+                {
+                  "token": " []",
+                  "bytes": [
+                    32,
+                    91,
+                    93
+                  ],
+                  "logprob": -0.004499170463532209
+                },
+                {
+                  "token": "[]}",
+                  "bytes": [
+                    91,
+                    93,
+                    125
+                  ],
+                  "logprob": -5.40631103515625
+                },
+                {
+                  "token": "[]",
+                  "bytes": [
+                    91,
+                    93
+                  ],
+                  "logprob": -14.28368854522705
+                },
+                {
+                  "token": "=[]",
+                  "bytes": [
+                    61,
+                    91,
+                    93
+                  ],
+                  "logprob": -15.189691543579102
+                },
+                {
+                  "token": " [];",
+                  "bytes": [
+                    32,
+                    91,
+                    93,
+                    59
+                  ],
+                  "logprob": -17.142288208007812
+                },
+                {
+                  "token": " [])",
+                  "bytes": [
+                    32,
+                    91,
+                    93,
+                    41
+                  ],
+                  "logprob": -18.12803840637207
+                },
+                {
+                  "token": " [],",
+                  "bytes": [
+                    32,
+                    91,
+                    93,
+                    44
+                  ],
+                  "logprob": -18.9444637298584
+                },
+                {
+                  "token": "}",
+                  "bytes": [
+                    125
+                  ],
+                  "logprob": -19.18789291381836
+                },
+                {
+                  "token": " []:",
+                  "bytes": [
+                    32,
+                    91,
+                    93,
+                    58
+                  ],
+                  "logprob": -19.40142250061035
+                },
+                {
+                  "token": " []);",
+                  "bytes": [
+                    32,
+                    91,
+                    93,
+                    41,
+                    59
+                  ],
+                  "logprob": -19.43196678161621
+                },
+                {
+                  "token": "  ",
+                  "bytes": [
+                    32,
+                    32
+                  ],
+                  "logprob": -20.506534576416016
+                },
+                {
+                  "token": " Those",
+                  "bytes": [
+                    32,
+                    84,
+                    104,
+                    111,
+                    115,
+                    101
+                  ],
+                  "logprob": -20.66084098815918
+                },
+                {
+                  "token": " !}",
+                  "bytes": [
+                    32,
+                    33,
+                    125
+                  ],
+                  "logprob": -20.66084098815918
+                },
+                {
+                  "token": " ",
+                  "bytes": [
+                    32
+                  ],
+                  "logprob": -20.784414291381836
+                },
+                {
+                  "token": " //}",
+                  "bytes": [
+                    32,
+                    47,
+                    47,
+                    125
+                  ],
+                  "logprob": -20.87716293334961
+                },
+                {
+                  "token": " orchard",
+                  "bytes": [
+                    32,
+                    111,
+                    114,
+                    99,
+                    104,
+                    97,
+                    114,
+                    100
+                  ],
+                  "logprob": -21.031877517700195
+                },
+                {
+                  "token": " orchards",
+                  "bytes": [
+                    32,
+                    111,
+                    114,
+                    99,
+                    104,
+                    97,
+                    114,
+                    100,
+                    115
+                  ],
+                  "logprob": -21.10929298400879
+                },
+                {
+                  "token": " [{\"",
+                  "bytes": [
+                    32,
+                    91,
+                    123,
+                    34
+                  ],
+                  "logprob": -21.372783660888672
+                },
+                {
+                  "token": "กับ",
+                  "bytes": [
+                    224,
+                    184,
+                    129,
+                    224,
+                    184,
+                    177,
+                    224,
+                    184,
+                    154
+                  ],
+                  "logprob": -21.48139762878418
+                },
+                {
+                  "token": "%}",
+                  "bytes": [
+                    37,
+                    125
+                  ],
+                  "logprob": -21.574546813964844
+                }
+              ]
+            },
+            {
+              "token": "}",
+              "bytes": [
+                125
+              ],
+              "logprob": -9.536747711536009e-07,
+              "top_logprobs": [
+                {
+                  "token": "}",
+                  "bytes": [
+                    125
+                  ],
+                  "logprob": -9.536747711536009e-07
+                },
+                {
+                  "token": " }",
+                  "bytes": [
+                    32,
+                    125
+                  ],
+                  "logprob": -14.61600399017334
+                },
+                {
+                  "token": "}]",
+                  "bytes": [
+                    125,
+                    93
+                  ],
+                  "logprob": -16.359663009643555
+                },
+                {
+                  "token": "]}",
+                  "bytes": [
+                    93,
+                    125
+                  ],
+                  "logprob": -16.39080238342285
+                },
+                {
+                  "token": "}\\",
+                  "bytes": [
+                    125,
+                    92
+                  ],
+                  "logprob": -17.166522979736328
+                },
+                {
+                  "token": "}.",
+                  "bytes": [
+                    125,
+                    46
+                  ],
+                  "logprob": -18.03435707092285
+                },
+                {
+                  "token": "}}",
+                  "bytes": [
+                    125,
+                    125
+                  ],
+                  "logprob": -18.712995529174805
+                },
+                {
+                  "token": "}'",
+                  "bytes": [
+                    125,
+                    39
+                  ],
+                  "logprob": -18.841840744018555
+                },
+                {
+                  "token": " unable",
+                  "bytes": [
+                    32,
+                    117,
+                    110,
+                    97,
+                    98,
+                    108,
+                    101
+                  ],
+                  "logprob": -19.103351593017578
+                },
+                {
+                  "token": " the",
+                  "bytes": [
+                    32,
+                    116,
+                    104,
+                    101
+                  ],
+                  "logprob": -19.46609115600586
+                },
+                {
+                  "token": "  ",
+                  "bytes": [
+                    32,
+                    32
+                  ],
+                  "logprob": -19.489482879638672
+                },
+                {
+                  "token": "}\"",
+                  "bytes": [
+                    125,
+                    34
+                  ],
+                  "logprob": -19.575231552124023
+                },
+                {
+                  "token": ")}",
+                  "bytes": [
+                    41,
+                    125
+                  ],
+                  "logprob": -19.645374298095703
+                },
+                {
+                  "token": "}=",
+                  "bytes": [
+                    125,
+                    61
+                  ],
+                  "logprob": -19.668750762939453
+                },
+                {
+                  "token": "}`",
+                  "bytes": [
+                    125,
+                    96
+                  ],
+                  "logprob": -19.84790802001953
+                },
+                {
+                  "token": " testimonials",
+                  "bytes": [
+                    32,
+                    116,
+                    101,
+                    115,
+                    116,
+                    105,
+                    109,
+                    111,
+                    110,
+                    105,
+                    97,
+                    108,
+                    115
+                  ],
+                  "logprob": -19.90241050720215
+                },
+                {
+                  "token": " presiden",
+                  "bytes": [
+                    32,
+                    112,
+                    114,
+                    101,
+                    115,
+                    105,
+                    100,
+                    101,
+                    110
+                  ],
+                  "logprob": -19.933549880981445
+                },
+                {
+                  "token": " Balance",
+                  "bytes": [
+                    32,
+                    66,
+                    97,
+                    108,
+                    97,
+                    110,
+                    99,
+                    101
+                  ],
+                  "logprob": -20.034725189208984
+                },
+                {
+                  "token": "}(",
+                  "bytes": [
+                    125,
+                    40
+                  ],
+                  "logprob": -20.08918571472168
+                },
+                {
+                  "token": "\n",
+                  "bytes": [
+                    10
+                  ],
+                  "logprob": -20.11252212524414
+                }
+              ]
+            }
+          ],
+          "refusal": null
+        },
+        "finish_reason": "stop",
+        "native_finish_reason": "stop",
+        "message": {
+          "role": "assistant",
+          "content": "{\"d\": []}",
+          "refusal": null,
+          "reasoning": "*   Role: Content Policy Analyst.\n    *   Context: \"Friends\" app (User pays Expert).\n    *   Categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.\n    *   Output: Minified JSON.\n    *   Specific Rules:\n        *   `PlatformMove`: Moving outside the app, phone numbers, IDs, meeting in person.\n        *   `SuspiciousActivity`: Money linked to sexual content/nudity/sexual services.\n        *   `Explicit-Flirting`: Sexual talk, nudity requests, sexual acts.\n        *   \"About a Violation\": Warnings, stories, refusals, hypotheticals (violation: \"no\", confidence <= 0.3).\n        *   Allowed: App-internal calls, compliments, general money talk (salary/rent), non-sexual \"normal talk\".\n\n    *   [00:00 - 00:10]: Greetings, location (Bangalore), education (MBA). -> *Ordinary conversation (Allowed).*\n    *   [00:15 - 00:27]: Confusion about the way of talking. -> *Ordinary conversation (Allowed).*\n    *   [00:30 - 00:44]: \"Can we talk?\" / \"What do I get out of it if I talk?\" -> *Ordinary conversation/negotiation (Allowed).*\n    *   [00:52]: \"What should I do? I will pay you.\" -> *General money talk? Or linked to something? Let's look at the context.*\n    *   [01:03]: \"If you pay, then I will do a video call or voice call.\" -> *Wait, the app allows audio and video calls. Is this a request to move outside the app or a request for payment for a service?*\n        *   The prompt says: \"Every call type inside the app is allowed.\"\n        *   The prompt says: \"Allowed... The app's own coins, gifts or per-minute call charges... earnings on the app.\"\n        *   However, \"If you pay, then I will do a video call or voice call\" sounds like a transaction for a specific call type. But since video/voice calls are *inside* the app, is this a violation?\n        *   Let's check `SuspiciousActivity`: \"Money or payment linked to sexual content, showing the body, or a sexual service.\"\n        *   Is a \"video call\" a sexual service? Not inherently.\n        *   Is it a `PlatformMove`? \"Proposing or asking to move to a named external app... Asking for or proposing a call outside the app: 'Will you do a normal call?'\"\n        *   The speaker says \"I will do a video call or voice call.\" It doesn't specify *outside* the app.\n        *   Let's re-read: \"If you pay, then I will do a video call or voice call.\"\n        *   In the context of this app, the user *already* pays the expert.\n        *   If the expert is asking for *extra* payment for a video call, is that a violation?\n        *   `SuspiciousActivity` requires the payment to be linked to *sexual content, showing the body, or a sexual service*. A video call is not automatically a sexual service.\n        *   `PlatformMove` requires a proposal to move *outside* the app. \"Video call\" is allowed inside the app.\n\n    *   [01:18 - 01:25]: \"Can we talk about something else?\" / \"Sorry, I really can't talk about anything else.\" -> *Ordinary conversation/refusal (Allowed).*\n\n    *   Quote: \"I will pay you\" [00:52] and \"If you pay, then I will do a video call or voice call\" [01:03].\n    *   Is this `SuspiciousActivity`? No sexual content mentioned.\n    *   Is this `PlatformMove`? No external app or \"normal call\" (outside app) mentioned.\n    *   Is this `Explicit-Flirting`? No.\n\n    *   The conversation is very brief and mostly consists of greetings, confusion, and a mention of payment for a call.\n    *   Since video/voice calls are allowed in the app and no sexual nature is mentioned, and no external platform is mentioned, there are no violations based on the provided definitions.\n\n    *   Wait, let me double-check the \"Normal call\" vs \"Video call\" distinction.\n    *   `PlatformMove` Strong cases: \"Will you do a normal call?\", \"Can we do a normal call?\".\n    *   The speaker says \"I will do a video call or voice call.\"\n    *   In many of these datasets, \"voice call\" or \"video call\" without the word \"normal\" or \"WhatsApp/Telegram\" refers to the app's functionality.\n    *   The prompt says: \"Every call type inside the app is allowed.\"\n    *   Therefore, \"I will do a video call or voice call\" is allowed.\n\n    *   Is \"I will pay you\" [00:52] suspicious?\n    *   `SuspiciousActivity` requires a link to sexual content. There is none here.\n\n    *   Is there any `Explicit-Flirting`?\n    *   No.\n\n    *   Is there any `PlatformMove`?\n    *   No.\n\n    *   Result: No violations found.\n\n    *   Return `{\"d\": []}`.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "text": "*   Role: Content Policy Analyst.\n    *   Context: \"Friends\" app (User pays Expert).\n    *   Categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.\n    *   Output: Minified JSON.\n    *   Specific Rules:\n        *   `PlatformMove`: Moving outside the app, phone numbers, IDs, meeting in person.\n        *   `SuspiciousActivity`: Money linked to sexual content/nudity/sexual services.\n        *   `Explicit-Flirting`: Sexual talk, nudity requests, sexual acts.\n        *   \"About a Violation\": Warnings, stories, refusals, hypotheticals (violation: \"no\", confidence <= 0.3).\n        *   Allowed: App-internal calls, compliments, general money talk (salary/rent), non-sexual \"normal talk\".\n\n    *   [00:00 - 00:10]: Greetings, location (Bangalore), education (MBA). -> *Ordinary conversation (Allowed).*\n    *   [00:15 - 00:27]: Confusion about the way of talking. -> *Ordinary conversation (Allowed).*\n    *   [00:30 - 00:44]: \"Can we talk?\" / \"What do I get out of it if I talk?\" -> *Ordinary conversation/negotiation (Allowed).*\n    *   [00:52]: \"What should I do? I will pay you.\" -> *General money talk? Or linked to something? Let's look at the context.*\n    *   [01:03]: \"If you pay, then I will do a video call or voice call.\" -> *Wait, the app allows audio and video calls. Is this a request to move outside the app or a request for payment for a service?*\n        *   The prompt says: \"Every call type inside the app is allowed.\"\n        *   The prompt says: \"Allowed... The app's own coins, gifts or per-minute call charges... earnings on the app.\"\n        *   However, \"If you pay, then I will do a video call or voice call\" sounds like a transaction for a specific call type. But since video/voice calls are *inside* the app, is this a violation?\n        *   Let's check `SuspiciousActivity`: \"Money or payment linked to sexual content, showing the body, or a sexual service.\"\n        *   Is a \"video call\" a sexual service? Not inherently.\n        *   Is it a `PlatformMove`? \"Proposing or asking to move to a named external app... Asking for or proposing a call outside the app: 'Will you do a normal call?'\"\n        *   The speaker says \"I will do a video call or voice call.\" It doesn't specify *outside* the app.\n        *   Let's re-read: \"If you pay, then I will do a video call or voice call.\"\n        *   In the context of this app, the user *already* pays the expert.\n        *   If the expert is asking for *extra* payment for a video call, is that a violation?\n        *   `SuspiciousActivity` requires the payment to be linked to *sexual content, showing the body, or a sexual service*. A video call is not automatically a sexual service.\n        *   `PlatformMove` requires a proposal to move *outside* the app. \"Video call\" is allowed inside the app.\n\n    *   [01:18 - 01:25]: \"Can we talk about something else?\" / \"Sorry, I really can't talk about anything else.\" -> *Ordinary conversation/refusal (Allowed).*\n\n    *   Quote: \"I will pay you\" [00:52] and \"If you pay, then I will do a video call or voice call\" [01:03].\n    *   Is this `SuspiciousActivity`? No sexual content mentioned.\n    *   Is this `PlatformMove`? No external app or \"normal call\" (outside app) mentioned.\n    *   Is this `Explicit-Flirting`? No.\n\n    *   The conversation is very brief and mostly consists of greetings, confusion, and a mention of payment for a call.\n    *   Since video/voice calls are allowed in the app and no sexual nature is mentioned, and no external platform is mentioned, there are no violations based on the provided definitions.\n\n    *   Wait, let me double-check the \"Normal call\" vs \"Video call\" distinction.\n    *   `PlatformMove` Strong cases: \"Will you do a normal call?\", \"Can we do a normal call?\".\n    *   The speaker says \"I will do a video call or voice call.\"\n    *   In many of these datasets, \"voice call\" or \"video call\" without the word \"normal\" or \"WhatsApp/Telegram\" refers to the app's functionality.\n    *   The prompt says: \"Every call type inside the app is allowed.\"\n    *   Therefore, \"I will do a video call or voice call\" is allowed.\n\n    *   Is \"I will pay you\" [00:52] suspicious?\n    *   `SuspiciousActivity` requires a link to sexual content. There is none here.\n\n    *   Is there any `Explicit-Flirting`?\n    *   No.\n\n    *   Is there any `PlatformMove`?\n    *   No.\n\n    *   Result: No violations found.\n\n    *   Return `{\"d\": []}`.",
+              "format": "unknown",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3440,
+      "completion_tokens": 1226,
+      "total_tokens": 4666,
+      "cost": 0.00073478,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3018,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00073478,
+        "upstream_inference_prompt_cost": 0.00024438,
+        "upstream_inference_completions_cost": 0.0004904
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1116,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

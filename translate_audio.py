@@ -6,7 +6,11 @@ retries) but translates instead of transcribing verbatim.
 Output: translations/audio_gemini31fl/<file_id>.json, with segments [{t, en}],
 the model, prompt version and timing. Calls already done are skipped.
 
+Each file also records token usage (summed over all requests for that call,
+including resumes) and the thinking budget used.
+
 Usage: python3 translate_audio.py [--workers 6] [--limit N] [--files id1,id2]
+       [--model gemini-3.5-flash-lite] [--thinking-budget 0] [--out-name audio_gemini35fl]
 """
 import argparse
 import json
@@ -22,6 +26,7 @@ import gemini_client as gc
 MODEL = "gemini-3.1-flash-lite"
 OUT_DIR = config.PROJECT_ROOT / "translations" / "audio_gemini31fl"
 PROMPT_VERSION = "audio_translate_v2"
+THINKING_BUDGET = 1024  # --thinking-budget; 0 turns thinking off
 
 PROMPT = """
 You are a precise audio translation engine. Listen to the ENTIRE attached audio file from start to end
@@ -82,8 +87,16 @@ def salvage(text):
     return segs
 
 
-def request(client, audio, prompt):
-    return gc.call_with_retries(lambda: gc.generate_text(client, MODEL, [audio, prompt], response_json_schema=SCHEMA))
+def request(client, audio, prompt, usage):
+    u = {}
+    text = gc.call_with_retries(lambda: gc.generate_text(client, MODEL, [audio, prompt], response_json_schema=SCHEMA,
+                                                         usage_out=u, thinking_budget=THINKING_BUDGET))
+    usage["requests"] += 1
+    for k in ("prompt_tokens", "output_tokens", "thinking_tokens"):
+        usage[k] += u.get(k, 0)
+    for m, n in u.get("prompt_tokens_by_modality", {}).items():
+        usage["prompt_tokens_by_modality"][m] = usage["prompt_tokens_by_modality"].get(m, 0) + n
+    return text
 
 
 def process(client, rec):
@@ -91,7 +104,8 @@ def process(client, rec):
     audio = gc.upload_audio(client, rec.path)
     prompt = PROMPT.format(language=rec.language.capitalize())
     segs, resumed = [], 0
-    text = request(client, audio, prompt)
+    usage = {"requests": 0, "prompt_tokens": 0, "output_tokens": 0, "thinking_tokens": 0, "prompt_tokens_by_modality": {}}
+    text = request(client, audio, prompt, usage)
     for _ in range(4):
         try:
             part = [s for s in gc.parse_json_lenient(text).get("segments", []) if isinstance(s, dict) and s.get("t")]
@@ -105,7 +119,7 @@ def process(client, rec):
                 raise
             segs += [s for s in part if not segs or (mmss(s["t"]) or 0) > (mmss(segs[-1]["t"]) or 0)]
             resumed += 1
-            text = request(client, audio, prompt + RESUME.format(t=segs[-1]["t"]))
+            text = request(client, audio, prompt + RESUME.format(t=segs[-1]["t"]), usage)
     else:
         raise ValueError("reply still broken after resuming 4 times")
     from mutagen import File as MutagenFile
@@ -120,6 +134,7 @@ def process(client, rec):
         "possibly_incomplete": bool(duration and duration - last > max(config.INCOMPLETE_TRANSCRIPT_MIN_GAP_SEC,
                                                                         config.INCOMPLETE_TRANSCRIPT_GAP_FRACTION * duration)),
         "resumed_after_loop": resumed,
+        "thinking_budget": THINKING_BUDGET, "usage": usage,
         "segments": [{"t": s["t"], "en": s.get("en", "")} for s in segs],
     }
     (OUT_DIR / f"{rec.file_id}.json").write_text(json.dumps(out, ensure_ascii=False, indent=2))
@@ -127,11 +142,18 @@ def process(client, rec):
 
 
 def main():
+    global MODEL, OUT_DIR, THINKING_BUDGET
     ap = argparse.ArgumentParser()
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--files", type=str, default=None, help="comma-separated file_ids")
+    ap.add_argument("--model", default=MODEL)
+    ap.add_argument("--thinking-budget", type=int, default=THINKING_BUDGET)
+    ap.add_argument("--out-name", default=None, help="folder under translations/ (default audio_gemini31fl)")
     args = ap.parse_args()
+    MODEL, THINKING_BUDGET = args.model, args.thinking_budget
+    if args.out_name:
+        OUT_DIR = config.PROJECT_ROOT / "translations" / args.out_name
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     seen, recs = set(), []
     for r in dsv2.load_dataset_v2(config.DOSTT_DIR):

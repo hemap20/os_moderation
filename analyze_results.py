@@ -106,6 +106,8 @@ def _build_model_dirs(gemma_results_dir: Path, gemini_results_dir: Path) -> Dict
         "31b_conformer5s_text_thinking": gemma_results_dir / "31b_conformer5s_text_thinking",
         "31b_itc10s_text_nothinking": gemma_results_dir / "31b_itc10s_text_nothinking",
         "31b_itc10s_text_thinking": gemma_results_dir / "31b_itc10s_text_thinking",
+        "31b_audiotrans_text_nothinking": gemma_results_dir / "31b_audiotrans_text_nothinking",
+        "31b_audiotrans_text_thinking": gemma_results_dir / "31b_audiotrans_text_thinking",
         "e2b_itc10s_text_nothinking": gemma_results_dir / "e2b_itc10s_text_nothinking",
         "e4b_itc10s_text_nothinking": gemma_results_dir / "e4b_itc10s_text_nothinking",
         "e2b_itc10s_text_thinking": gemma_results_dir / "e2b_itc10s_text_thinking",

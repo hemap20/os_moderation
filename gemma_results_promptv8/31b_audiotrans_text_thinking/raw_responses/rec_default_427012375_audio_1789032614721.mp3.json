@@ -1,0 +1,1114 @@
+{
+  "content": "{\"d\": []}",
+  "reasoning": "*   Role: Content Policy Analyst.\n    *   Context: \"Friends\" app (User pays, Expert is paid host).\n    *   Goal: Find violations in three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.\n    *   Output: Minified JSON object.\n    *   Constraints:\n        *   `PlatformMove`: Proposing external contact, phone numbers, IDs, meeting in person.\n        *   `SuspiciousActivity`: Money/payment for sexual content/services.\n        *   `Explicit-Flirting`: Sexual talk, nudity requests, sexual acts, \"open talk\".\n        *   \"About a Violation\": Warnings, stories, refusals, hypotheticals (violation: \"no\", confidence <= 0.3).\n        *   Allowed: Internal app calls, \"normal talk\", general compliments, \"I love you\", non-sexual \"show/open\".\n        *   Ordinary conversation (greetings, location, work) should be ignored.\n\n    *   [00:00] Hello. (Ordinary)\n    *   [00:05] Hi. (Ordinary)\n    *   [00:07] Hello, I don't know. (Ordinary)\n    *   [00:10] Who is this? (Ordinary)\n    *   [00:12] I am Trivandrum. (Ordinary - location)\n    *   [00:14] Are you from Trivandrum? (Ordinary - location)\n    *   [00:16] Are you from Trivandrum? (Ordinary - location)\n    *   [00:19] Yes, sure. And you? (Ordinary)\n    *   [00:21] I am working. (Ordinary - work)\n    *   [00:24] Where? (Ordinary - work)\n    *   [00:26] I am working in Technopark, Trivandrum. (Ordinary - work/location)\n    *   [00:30] And you? (Ordinary)\n    *   [00:33] I am also working in accounts. (Ordinary - work)\n    *   [00:38] Do you have an open door? (Potential violation?)\n    *   [00:40] No. (Response)\n\n    *   Quote: \"Do you have an open door?\"\n    *   Context: The conversation has been very mundane (location, work). Suddenly, one person asks \"Do you have an open door?\".\n    *   Analysis: In the context of these apps, \"open\" often refers to \"open talk\" or \"open call\" (sexual content). However, \"open door\" literally means a door. But in the slang of these platforms, \"open\" is a keyword for `Explicit-Flirting`.\n    *   Wait, let's look at the `Explicit-Flirting` rules: \"Requests for 'open talk', 'non-veg talk', 'hot talk', 'dirty talk', or sexual talk.\"\n    *   \"Open door\" is not \"open talk\". Is it a request to show the body? \"Open your clothes\" is a strong case. \"Open and show\" is a strong case.\n    *   Is \"Do you have an open door?\" a request for sexual talk or nudity? It's ambiguous. It could be literal (asking if they are in a private place) or a coded request for an \"open call\".\n    *   Comparing to \"Weaker cases\": \"Suggestive requests that are not explicit\".\n    *   However, \"open door\" is very vague. If it's a request for a private space to do something sexual, it's suggestive. If it's literal, it's ordinary.\n    *   Let's look at the \"Allowed\" section: \"Show or open about things that are not the body: 'Show me your city', 'Open the app'\".\n    *   \"Open door\" is likely not a violation unless it's clearly sexual. In this transcript, there is no preceding sexual context. It's just a sudden question.\n    *   Actually, in many Indian contexts for these apps, \"open\" is used as a shorthand for sexual content. But \"open door\" specifically? It sounds more like asking if they are alone/private.\n    *   Let's re-read the `Explicit-Flirting` strong cases: \"Requests for 'open talk'...\".\n    *   If the user is asking if the other person is in a private setting (\"open door\" meaning \"are you alone/is the door open/closed\"), it's often a precursor to sexual requests.\n    *   But based on the strict definitions provided:\n        *   `PlatformMove`: No.\n        *   `SuspiciousActivity`: No.\n        *   `Explicit-Flirting`: \"Open\" is mentioned, but \"open door\" is not \"open talk\" or \"open your clothes\".\n    *   Is it a \"weaker case\" (suggestive)? It's very borderline.\n    *   Let's consider if it's \"About a violation\" (hypothetical/question about rules). No.\n    *   Is it \"Ordinary conversation\"? Asking about a door is usually ordinary, but in this specific app context, it's suspicious.\n    *   However, the prompt says: \"Do not output... ordinary conversation\".\n    *   If I flag \"Do you have an open door?\" as `Explicit-Flirting`, the confidence would be very low (0.3 or 0.1) because it's not explicitly sexual.\n    *   Let's look at the transcript again.\n        User: \"Do you have an open door?\"\n        Expert: \"No.\"\n    *   This doesn't match the strong or weak cases for `Explicit-Flirting` clearly. \"Open talk\" is the keyword. \"Open door\" is literal.\n    *   Conclusion: There are no clear violations here. The conversation is almost entirely ordinary. \"Do you have an open door?\" is too ambiguous to be a high-confidence flag and doesn't fit the specific \"open talk\" or \"open clothes\" patterns.\n\n    *   Wait, let me double-check if \"open door\" is a known euphemism in this specific dataset's domain. Usually, \"open call\" is the term. \"Open door\" might just be a weird translation or a literal question.\n    *   Given the instructions: \"a missed violation is worse than a doubtful flag with low confidence.\"\n    *   If I flag it:\n        *   Category: `Explicit-Flirting`\n        *   Confidence: 0.3 (since it's ambiguous)\n        *   Violation: \"no\" (because it's a question that might be about the situation, or just too weak).\n        *   Actually, if I think it's a \"weaker case\" (suggestive), violation is \"yes\" and confidence is 0.6. But \"open door\" is not inherently suggestive without more context.\n    *   Let's compare with \"Open the app\" (Allowed). \"Open door\" is similar.\n    *   I will treat this as ordinary conversation/non-violating.\n\n    *   No `PlatformMove`.\n    *   No `SuspiciousActivity`.\n    *   No `Explicit-Flirting`.\n\n    *   Return `{\"d\": []}`.",
+  "response": {
+    "id": "gen-1793100754-bGOuOPyZvSmZCe8y5eXp",
+    "object": "chat.completion",
+    "created": 1793100754,
+    "model": "google/gemma-4-31b-it",
+    "provider": "Parasail",
+    "system_fingerprint": null,
+    "service_tier": null,
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": {
+          "content": [
+            {
+              "token": "{\"",
+              "bytes": [
+                123,
+                34
+              ],
+              "logprob": -0.15916933119297028,
+              "top_logprobs": [
+                {
+                  "token": "{\"",
+                  "bytes": [
+                    123,
+                    34
+                  ],
+                  "logprob": -0.15916933119297028
+                },
+                {
+                  "token": "```",
+                  "bytes": [
+                    96,
+                    96,
+                    96
+                  ],
+                  "logprob": -1.917792558670044
+                },
+                {
+                  "token": "***",
+                  "bytes": [
+                    42,
+                    42,
+                    42
+                  ],
+                  "logprob": -10.857990264892578
+                },
+                {
+                  "token": "`",
+                  "bytes": [
+                    96
+                  ],
+                  "logprob": -11.712722778320312
+                },
+                {
+                  "token": "观察",
+                  "bytes": [
+                    232,
+                    167,
+                    130,
+                    229,
+                    175,
+                    159
+                  ],
+                  "logprob": -12.41425609588623
+                },
+                {
+                  "token": "呈现",
+                  "bytes": [
+                    229,
+                    145,
+                    136,
+                    231,
+                    142,
+                    176
+                  ],
+                  "logprob": -13.025174140930176
+                },
+                {
+                  "token": "构建",
+                  "bytes": [
+                    230,
+                    158,
+                    132,
+                    229,
+                    187,
+                    186
+                  ],
+                  "logprob": -13.073991775512695
+                },
+                {
+                  "token": "探",
+                  "bytes": [
+                    230,
+                    142,
+                    162
+                  ],
+                  "logprob": -13.079850196838379
+                },
+                {
+                  "token": " dunes",
+                  "bytes": [
+                    32,
+                    100,
+                    117,
+                    110,
+                    101,
+                    115
+                  ],
+                  "logprob": -13.083755493164062
+                },
+                {
+                  "token": "get",
+                  "bytes": [
+                    103,
+                    101,
+                    116
+                  ],
+                  "logprob": -13.293696403503418
+                },
+                {
+                  "token": "激",
+                  "bytes": [
+                    230,
+                    191,
+                    128
+                  ],
+                  "logprob": -13.581780433654785
+                },
+                {
+                  "token": "Conclusion",
+                  "bytes": [
+                    67,
+                    111,
+                    110,
+                    99,
+                    108,
+                    117,
+                    115,
+                    105,
+                    111,
+                    110
+                  ],
+                  "logprob": -13.634512901306152
+                },
+                {
+                  "token": "<",
+                  "bytes": [
+                    60
+                  ],
+                  "logprob": -13.678457260131836
+                },
+                {
+                  "token": " those",
+                  "bytes": [
+                    32,
+                    116,
+                    104,
+                    111,
+                    115,
+                    101
+                  ],
+                  "logprob": -13.681386947631836
+                },
+                {
+                  "token": " merchants",
+                  "bytes": [
+                    32,
+                    109,
+                    101,
+                    114,
+                    99,
+                    104,
+                    97,
+                    110,
+                    116,
+                    115
+                  ],
+                  "logprob": -14.066079139709473
+                },
+                {
+                  "token": "#",
+                  "bytes": [
+                    35
+                  ],
+                  "logprob": -14.085602760314941
+                },
+                {
+                  "token": " jars",
+                  "bytes": [
+                    32,
+                    106,
+                    97,
+                    114,
+                    115
+                  ],
+                  "logprob": -14.109030723571777
+                },
+                {
+                  "token": "**",
+                  "bytes": [
+                    42,
+                    42
+                  ],
+                  "logprob": -14.116839408874512
+                },
+                {
+                  "token": " {\"",
+                  "bytes": [
+                    32,
+                    123,
+                    34
+                  ],
+                  "logprob": -14.17930793762207
+                },
+                {
+                  "token": "\\",
+                  "bytes": [
+                    92
+                  ],
+                  "logprob": -14.20273208618164
+                }
+              ]
+            },
+            {
+              "token": "d",
+              "bytes": [
+                100
+              ],
+              "logprob": -3.337865791763761e-06,
+              "top_logprobs": [
+                {
+                  "token": "d",
+                  "bytes": [
+                    100
+                  ],
+                  "logprob": -3.337865791763761e-06
+                },
+                {
+                  "token": " d",
+                  "bytes": [
+                    32,
+                    100
+                  ],
+                  "logprob": -12.922019004821777
+                },
+                {
+                  "token": "$",
+                  "bytes": [
+                    36
+                  ],
+                  "logprob": -15.930654525756836
+                },
+                {
+                  "token": "D",
+                  "bytes": [
+                    68
+                  ],
+                  "logprob": -16.047916412353516
+                },
+                {
+                  "token": "\\",
+                  "bytes": [
+                    92
+                  ],
+                  "logprob": -17.35296630859375
+                },
+                {
+                  "token": "${",
+                  "bytes": [
+                    36,
+                    123
+                  ],
+                  "logprob": -17.472896575927734
+                },
+                {
+                  "token": "<tool_call|>",
+                  "bytes": [
+                    60,
+                    116,
+                    111,
+                    111,
+                    108,
+                    95,
+                    99,
+                    97,
+                    108,
+                    108,
+                    124,
+                    62
+                  ],
+                  "logprob": -18.04522705078125
+                },
+                {
+                  "token": " \\",
+                  "bytes": [
+                    32,
+                    92
+                  ],
+                  "logprob": -18.317787170410156
+                },
+                {
+                  "token": "#",
+                  "bytes": [
+                    35
+                  ],
+                  "logprob": -18.348127365112305
+                },
+                {
+                  "token": " diph",
+                  "bytes": [
+                    32,
+                    100,
+                    105,
+                    112,
+                    104
+                  ],
+                  "logprob": -18.378477096557617
+                },
+                {
+                  "token": "to",
+                  "bytes": [
+                    116,
+                    111
+                  ],
+                  "logprob": -18.560800552368164
+                },
+                {
+                  "token": "set",
+                  "bytes": [
+                    115,
+                    101,
+                    116
+                  ],
+                  "logprob": -18.74349594116211
+                },
+                {
+                  "token": " uma",
+                  "bytes": [
+                    32,
+                    117,
+                    109,
+                    97
+                  ],
+                  "logprob": -19.140548706054688
+                },
+                {
+                  "token": "get",
+                  "bytes": [
+                    103,
+                    101,
+                    116
+                  ],
+                  "logprob": -19.385669708251953
+                },
+                {
+                  "token": "-",
+                  "bytes": [
+                    45
+                  ],
+                  "logprob": -19.447036743164062
+                },
+                {
+                  "token": "誠",
+                  "bytes": [
+                    232,
+                    170,
+                    160
+                  ],
+                  "logprob": -19.447036743164062
+                },
+                {
+                  "token": "<",
+                  "bytes": [
+                    60
+                  ],
+                  "logprob": -19.493083953857422
+                },
+                {
+                  "token": " kitchens",
+                  "bytes": [
+                    32,
+                    107,
+                    105,
+                    116,
+                    99,
+                    104,
+                    101,
+                    110,
+                    115
+                  ],
+                  "logprob": -19.523794174194336
+                },
+                {
+                  "token": "}",
+                  "bytes": [
+                    125
+                  ],
+                  "logprob": -19.539152145385742
+                },
+                {
+                  "token": " Vox",
+                  "bytes": [
+                    32,
+                    86,
+                    111,
+                    120
+                  ],
+                  "logprob": -19.585237503051758
+                }
+              ]
+            },
+            {
+              "token": "\":",
+              "bytes": [
+                34,
+                58
+              ],
+              "logprob": 0,
+              "top_logprobs": [
+                {
+                  "token": "\":",
+                  "bytes": [
+                    34,
+                    58
+                  ],
+                  "logprob": 0
+                },
+                {
+                  "token": "\"",
+                  "bytes": [
+                    34
+                  ],
+                  "logprob": -18.10114860534668
+                },
+                {
+                  "token": "\":[],",
+                  "bytes": [
+                    34,
+                    58,
+                    91,
+                    93,
+                    44
+                  ],
+                  "logprob": -18.618515014648438
+                },
+                {
+                  "token": "get",
+                  "bytes": [
+                    103,
+                    101,
+                    116
+                  ],
+                  "logprob": -19.461244583129883
+                },
+                {
+                  "token": " monolayer",
+                  "bytes": [
+                    32,
+                    109,
+                    111,
+                    110,
+                    111,
+                    108,
+                    97,
+                    121,
+                    101,
+                    114
+                  ],
+                  "logprob": -19.49201202392578
+                },
+                {
+                  "token": "=[]",
+                  "bytes": [
+                    61,
+                    91,
+                    93
+                  ],
+                  "logprob": -20.837167739868164
+                },
+                {
+                  "token": " Rely",
+                  "bytes": [
+                    32,
+                    82,
+                    101,
+                    108,
+                    121
+                  ],
+                  "logprob": -21.008045196533203
+                },
+                {
+                  "token": " Terrain",
+                  "bytes": [
+                    32,
+                    84,
+                    101,
+                    114,
+                    114,
+                    97,
+                    105,
+                    110
+                  ],
+                  "logprob": -21.132410049438477
+                },
+                {
+                  "token": " mew",
+                  "bytes": [
+                    32,
+                    109,
+                    101,
+                    119
+                  ],
+                  "logprob": -21.303529739379883
+                },
+                {
+                  "token": " Canopy",
+                  "bytes": [
+                    32,
+                    67,
+                    97,
+                    110,
+                    111,
+                    112,
+                    121
+                  ],
+                  "logprob": -21.342437744140625
+                },
+                {
+                  "token": " meyd",
+                  "bytes": [
+                    32,
+                    109,
+                    101,
+                    121,
+                    100
+                  ],
+                  "logprob": -21.443628311157227
+                },
+                {
+                  "token": "shutdown",
+                  "bytes": [
+                    115,
+                    104,
+                    117,
+                    116,
+                    100,
+                    111,
+                    119,
+                    110
+                  ],
+                  "logprob": -21.451414108276367
+                },
+                {
+                  "token": " remercie",
+                  "bytes": [
+                    32,
+                    114,
+                    101,
+                    109,
+                    101,
+                    114,
+                    99,
+                    105,
+                    101
+                  ],
+                  "logprob": -21.552648544311523
+                },
+                {
+                  "token": " pigeons",
+                  "bytes": [
+                    32,
+                    112,
+                    105,
+                    103,
+                    101,
+                    111,
+                    110,
+                    115
+                  ],
+                  "logprob": -21.685089111328125
+                },
+                {
+                  "token": " Invoice",
+                  "bytes": [
+                    32,
+                    73,
+                    110,
+                    118,
+                    111,
+                    105,
+                    99,
+                    101
+                  ],
+                  "logprob": -21.685089111328125
+                },
+                {
+                  "token": " Estadio",
+                  "bytes": [
+                    32,
+                    69,
+                    115,
+                    116,
+                    97,
+                    100,
+                    105,
+                    111
+                  ],
+                  "logprob": -21.86436653137207
+                },
+                {
+                  "token": " Wak",
+                  "bytes": [
+                    32,
+                    87,
+                    97,
+                    107
+                  ],
+                  "logprob": -21.934545516967773
+                },
+                {
+                  "token": " rodr",
+                  "bytes": [
+                    32,
+                    114,
+                    111,
+                    100,
+                    114
+                  ],
+                  "logprob": -22.059341430664062
+                },
+                {
+                  "token": "稳定性",
+                  "bytes": [
+                    231,
+                    168,
+                    179,
+                    229,
+                    174,
+                    154,
+                    230,
+                    128,
+                    167
+                  ],
+                  "logprob": -22.07494354248047
+                },
+                {
+                  "token": " Radius",
+                  "bytes": [
+                    32,
+                    82,
+                    97,
+                    100,
+                    105,
+                    117,
+                    115
+                  ],
+                  "logprob": -22.090547561645508
+                }
+              ]
+            },
+            {
+              "token": " []",
+              "bytes": [
+                32,
+                91,
+                93
+              ],
+              "logprob": -0.016879478469491005,
+              "top_logprobs": [
+                {
+                  "token": " []",
+                  "bytes": [
+                    32,
+                    91,
+                    93
+                  ],
+                  "logprob": -0.016879478469491005
+                },
+                {
+                  "token": "[]}",
+                  "bytes": [
+                    91,
+                    93,
+                    125
+                  ],
+                  "logprob": -4.090421199798584
+                },
+                {
+                  "token": "[]",
+                  "bytes": [
+                    91,
+                    93
+                  ],
+                  "logprob": -12.223649024963379
+                },
+                {
+                  "token": "=[]",
+                  "bytes": [
+                    61,
+                    91,
+                    93
+                  ],
+                  "logprob": -14.29606819152832
+                },
+                {
+                  "token": " [];",
+                  "bytes": [
+                    32,
+                    91,
+                    93,
+                    59
+                  ],
+                  "logprob": -17.184326171875
+                },
+                {
+                  "token": " [])",
+                  "bytes": [
+                    32,
+                    91,
+                    93,
+                    41
+                  ],
+                  "logprob": -18.260841369628906
+                },
+                {
+                  "token": " [],",
+                  "bytes": [
+                    32,
+                    91,
+                    93,
+                    44
+                  ],
+                  "logprob": -18.50225257873535
+                },
+                {
+                  "token": " []:",
+                  "bytes": [
+                    32,
+                    91,
+                    93,
+                    58
+                  ],
+                  "logprob": -19.139354705810547
+                },
+                {
+                  "token": "}",
+                  "bytes": [
+                    125
+                  ],
+                  "logprob": -19.32223129272461
+                },
+                {
+                  "token": " []);",
+                  "bytes": [
+                    32,
+                    91,
+                    93,
+                    41,
+                    59
+                  ],
+                  "logprob": -19.780935287475586
+                },
+                {
+                  "token": "%}",
+                  "bytes": [
+                    37,
+                    125
+                  ],
+                  "logprob": -19.780935287475586
+                },
+                {
+                  "token": " orchards",
+                  "bytes": [
+                    32,
+                    111,
+                    114,
+                    99,
+                    104,
+                    97,
+                    114,
+                    100,
+                    115
+                  ],
+                  "logprob": -20.057126998901367
+                },
+                {
+                  "token": " orchard",
+                  "bytes": [
+                    32,
+                    111,
+                    114,
+                    99,
+                    104,
+                    97,
+                    114,
+                    100
+                  ],
+                  "logprob": -20.133968353271484
+                },
+                {
+                  "token": " Those",
+                  "bytes": [
+                    32,
+                    84,
+                    104,
+                    111,
+                    115,
+                    101
+                  ],
+                  "logprob": -20.180097579956055
+                },
+                {
+                  "token": "  ",
+                  "bytes": [
+                    32,
+                    32
+                  ],
+                  "logprob": -20.180097579956055
+                },
+                {
+                  "token": " //}",
+                  "bytes": [
+                    32,
+                    47,
+                    47,
+                    125
+                  ],
+                  "logprob": -20.25701904296875
+                },
+                {
+                  "token": " !}",
+                  "bytes": [
+                    32,
+                    33,
+                    125
+                  ],
+                  "logprob": -20.488075256347656
+                },
+                {
+                  "token": "に",
+                  "bytes": [
+                    227,
+                    129,
+                    171
+                  ],
+                  "logprob": -20.688661575317383
+                },
+                {
+                  "token": " ",
+                  "bytes": [
+                    32
+                  ],
+                  "logprob": -20.858619689941406
+                },
+                {
+                  "token": " [{\"",
+                  "bytes": [
+                    32,
+                    91,
+                    123,
+                    34
+                  ],
+                  "logprob": -20.858619689941406
+                }
+              ]
+            },
+            {
+              "token": "}",
+              "bytes": [
+                125
+              ],
+              "logprob": -1.1920935776288388e-06,
+              "top_logprobs": [
+                {
+                  "token": "}",
+                  "bytes": [
+                    125
+                  ],
+                  "logprob": -1.1920935776288388e-06
+                },
+                {
+                  "token": " }",
+                  "bytes": [
+                    32,
+                    125
+                  ],
+                  "logprob": -14.369682312011719
+                },
+                {
+                  "token": "}]",
+                  "bytes": [
+                    125,
+                    93
+                  ],
+                  "logprob": -15.838638305664062
+                },
+                {
+                  "token": "]}",
+                  "bytes": [
+                    93,
+                    125
+                  ],
+                  "logprob": -15.962946891784668
+                },
+                {
+                  "token": "}\\",
+                  "bytes": [
+                    125,
+                    92
+                  ],
+                  "logprob": -16.702430725097656
+                },
+                {
+                  "token": "}.",
+                  "bytes": [
+                    125,
+                    46
+                  ],
+                  "logprob": -17.310928344726562
+                },
+                {
+                  "token": "}}",
+                  "bytes": [
+                    125,
+                    125
+                  ],
+                  "logprob": -18.02947425842285
+                },
+                {
+                  "token": "}'",
+                  "bytes": [
+                    125,
+                    39
+                  ],
+                  "logprob": -18.658327102661133
+                },
+                {
+                  "token": " unable",
+                  "bytes": [
+                    32,
+                    117,
+                    110,
+                    97,
+                    98,
+                    108,
+                    101
+                  ],
+                  "logprob": -19.29451560974121
+                },
+                {
+                  "token": "  ",
+                  "bytes": [
+                    32,
+                    32
+                  ],
+                  "logprob": -19.33351707458496
+                },
+                {
+                  "token": " testimonials",
+                  "bytes": [
+                    32,
+                    116,
+                    101,
+                    115,
+                    116,
+                    105,
+                    109,
+                    111,
+                    110,
+                    105,
+                    97,
+                    108,
+                    115
+                  ],
+                  "logprob": -19.442699432373047
+                },
+                {
+                  "token": "}`",
+                  "bytes": [
+                    125,
+                    96
+                  ],
+                  "logprob": -19.51287078857422
+                },
+                {
+                  "token": ")}",
+                  "bytes": [
+                    41,
+                    125
+                  ],
+                  "logprob": -19.62978744506836
+                },
+                {
+                  "token": " Balance",
+                  "bytes": [
+                    32,
+                    66,
+                    97,
+                    108,
+                    97,
+                    110,
+                    99,
+                    101
+                  ],
+                  "logprob": -19.68433380126953
+                },
+                {
+                  "token": " the",
+                  "bytes": [
+                    32,
+                    116,
+                    104,
+                    101
+                  ],
+                  "logprob": -19.746660232543945
+                },
+                {
+                  "token": "}{",
+                  "bytes": [
+                    125,
+                    123
+                  ],
+                  "logprob": -19.75444984436035
+                },
+                {
+                  "token": "}=",
+                  "bytes": [
+                    125,
+                    61
+                  ],
+                  "logprob": -19.793394088745117
+                },
+                {
+                  "token": "}\"",
+                  "bytes": [
+                    125,
+                    34
+                  ],
+                  "logprob": -19.793394088745117
+                },
+                {
+                  "token": " balance",
+                  "bytes": [
+                    32,
+                    98,
+                    97,
+                    108,
+                    97,
+                    110,
+                    99,
+                    101
+                  ],
+                  "logprob": -19.941335678100586
+                },
+                {
+                  "token": "}(",
+                  "bytes": [
+                    125,
+                    40
+                  ],
+                  "logprob": -20.026945114135742
+                }
+              ]
+            }
+          ],
+          "refusal": null
+        },
+        "finish_reason": "stop",
+        "native_finish_reason": "stop",
+        "message": {
+          "role": "assistant",
+          "content": "{\"d\": []}",
+          "refusal": null,
+          "reasoning": "*   Role: Content Policy Analyst.\n    *   Context: \"Friends\" app (User pays, Expert is paid host).\n    *   Goal: Find violations in three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.\n    *   Output: Minified JSON object.\n    *   Constraints:\n        *   `PlatformMove`: Proposing external contact, phone numbers, IDs, meeting in person.\n        *   `SuspiciousActivity`: Money/payment for sexual content/services.\n        *   `Explicit-Flirting`: Sexual talk, nudity requests, sexual acts, \"open talk\".\n        *   \"About a Violation\": Warnings, stories, refusals, hypotheticals (violation: \"no\", confidence <= 0.3).\n        *   Allowed: Internal app calls, \"normal talk\", general compliments, \"I love you\", non-sexual \"show/open\".\n        *   Ordinary conversation (greetings, location, work) should be ignored.\n\n    *   [00:00] Hello. (Ordinary)\n    *   [00:05] Hi. (Ordinary)\n    *   [00:07] Hello, I don't know. (Ordinary)\n    *   [00:10] Who is this? (Ordinary)\n    *   [00:12] I am Trivandrum. (Ordinary - location)\n    *   [00:14] Are you from Trivandrum? (Ordinary - location)\n    *   [00:16] Are you from Trivandrum? (Ordinary - location)\n    *   [00:19] Yes, sure. And you? (Ordinary)\n    *   [00:21] I am working. (Ordinary - work)\n    *   [00:24] Where? (Ordinary - work)\n    *   [00:26] I am working in Technopark, Trivandrum. (Ordinary - work/location)\n    *   [00:30] And you? (Ordinary)\n    *   [00:33] I am also working in accounts. (Ordinary - work)\n    *   [00:38] Do you have an open door? (Potential violation?)\n    *   [00:40] No. (Response)\n\n    *   Quote: \"Do you have an open door?\"\n    *   Context: The conversation has been very mundane (location, work). Suddenly, one person asks \"Do you have an open door?\".\n    *   Analysis: In the context of these apps, \"open\" often refers to \"open talk\" or \"open call\" (sexual content). However, \"open door\" literally means a door. But in the slang of these platforms, \"open\" is a keyword for `Explicit-Flirting`.\n    *   Wait, let's look at the `Explicit-Flirting` rules: \"Requests for 'open talk', 'non-veg talk', 'hot talk', 'dirty talk', or sexual talk.\"\n    *   \"Open door\" is not \"open talk\". Is it a request to show the body? \"Open your clothes\" is a strong case. \"Open and show\" is a strong case.\n    *   Is \"Do you have an open door?\" a request for sexual talk or nudity? It's ambiguous. It could be literal (asking if they are in a private place) or a coded request for an \"open call\".\n    *   Comparing to \"Weaker cases\": \"Suggestive requests that are not explicit\".\n    *   However, \"open door\" is very vague. If it's a request for a private space to do something sexual, it's suggestive. If it's literal, it's ordinary.\n    *   Let's look at the \"Allowed\" section: \"Show or open about things that are not the body: 'Show me your city', 'Open the app'\".\n    *   \"Open door\" is likely not a violation unless it's clearly sexual. In this transcript, there is no preceding sexual context. It's just a sudden question.\n    *   Actually, in many Indian contexts for these apps, \"open\" is used as a shorthand for sexual content. But \"open door\" specifically? It sounds more like asking if they are alone/private.\n    *   Let's re-read the `Explicit-Flirting` strong cases: \"Requests for 'open talk'...\".\n    *   If the user is asking if the other person is in a private setting (\"open door\" meaning \"are you alone/is the door open/closed\"), it's often a precursor to sexual requests.\n    *   But based on the strict definitions provided:\n        *   `PlatformMove`: No.\n        *   `SuspiciousActivity`: No.\n        *   `Explicit-Flirting`: \"Open\" is mentioned, but \"open door\" is not \"open talk\" or \"open your clothes\".\n    *   Is it a \"weaker case\" (suggestive)? It's very borderline.\n    *   Let's consider if it's \"About a violation\" (hypothetical/question about rules). No.\n    *   Is it \"Ordinary conversation\"? Asking about a door is usually ordinary, but in this specific app context, it's suspicious.\n    *   However, the prompt says: \"Do not output... ordinary conversation\".\n    *   If I flag \"Do you have an open door?\" as `Explicit-Flirting`, the confidence would be very low (0.3 or 0.1) because it's not explicitly sexual.\n    *   Let's look at the transcript again.\n        User: \"Do you have an open door?\"\n        Expert: \"No.\"\n    *   This doesn't match the strong or weak cases for `Explicit-Flirting` clearly. \"Open talk\" is the keyword. \"Open door\" is literal.\n    *   Conclusion: There are no clear violations here. The conversation is almost entirely ordinary. \"Do you have an open door?\" is too ambiguous to be a high-confidence flag and doesn't fit the specific \"open talk\" or \"open clothes\" patterns.\n\n    *   Wait, let me double-check if \"open door\" is a known euphemism in this specific dataset's domain. Usually, \"open call\" is the term. \"Open door\" might just be a weird translation or a literal question.\n    *   Given the instructions: \"a missed violation is worse than a doubtful flag with low confidence.\"\n    *   If I flag it:\n        *   Category: `Explicit-Flirting`\n        *   Confidence: 0.3 (since it's ambiguous)\n        *   Violation: \"no\" (because it's a question that might be about the situation, or just too weak).\n        *   Actually, if I think it's a \"weaker case\" (suggestive), violation is \"yes\" and confidence is 0.6. But \"open door\" is not inherently suggestive without more context.\n    *   Let's compare with \"Open the app\" (Allowed). \"Open door\" is similar.\n    *   I will treat this as ordinary conversation/non-violating.\n\n    *   No `PlatformMove`.\n    *   No `SuspiciousActivity`.\n    *   No `Explicit-Flirting`.\n\n    *   Return `{\"d\": []}`.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "text": "*   Role: Content Policy Analyst.\n    *   Context: \"Friends\" app (User pays, Expert is paid host).\n    *   Goal: Find violations in three categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.\n    *   Output: Minified JSON object.\n    *   Constraints:\n        *   `PlatformMove`: Proposing external contact, phone numbers, IDs, meeting in person.\n        *   `SuspiciousActivity`: Money/payment for sexual content/services.\n        *   `Explicit-Flirting`: Sexual talk, nudity requests, sexual acts, \"open talk\".\n        *   \"About a Violation\": Warnings, stories, refusals, hypotheticals (violation: \"no\", confidence <= 0.3).\n        *   Allowed: Internal app calls, \"normal talk\", general compliments, \"I love you\", non-sexual \"show/open\".\n        *   Ordinary conversation (greetings, location, work) should be ignored.\n\n    *   [00:00] Hello. (Ordinary)\n    *   [00:05] Hi. (Ordinary)\n    *   [00:07] Hello, I don't know. (Ordinary)\n    *   [00:10] Who is this? (Ordinary)\n    *   [00:12] I am Trivandrum. (Ordinary - location)\n    *   [00:14] Are you from Trivandrum? (Ordinary - location)\n    *   [00:16] Are you from Trivandrum? (Ordinary - location)\n    *   [00:19] Yes, sure. And you? (Ordinary)\n    *   [00:21] I am working. (Ordinary - work)\n    *   [00:24] Where? (Ordinary - work)\n    *   [00:26] I am working in Technopark, Trivandrum. (Ordinary - work/location)\n    *   [00:30] And you? (Ordinary)\n    *   [00:33] I am also working in accounts. (Ordinary - work)\n    *   [00:38] Do you have an open door? (Potential violation?)\n    *   [00:40] No. (Response)\n\n    *   Quote: \"Do you have an open door?\"\n    *   Context: The conversation has been very mundane (location, work). Suddenly, one person asks \"Do you have an open door?\".\n    *   Analysis: In the context of these apps, \"open\" often refers to \"open talk\" or \"open call\" (sexual content). However, \"open door\" literally means a door. But in the slang of these platforms, \"open\" is a keyword for `Explicit-Flirting`.\n    *   Wait, let's look at the `Explicit-Flirting` rules: \"Requests for 'open talk', 'non-veg talk', 'hot talk', 'dirty talk', or sexual talk.\"\n    *   \"Open door\" is not \"open talk\". Is it a request to show the body? \"Open your clothes\" is a strong case. \"Open and show\" is a strong case.\n    *   Is \"Do you have an open door?\" a request for sexual talk or nudity? It's ambiguous. It could be literal (asking if they are in a private place) or a coded request for an \"open call\".\n    *   Comparing to \"Weaker cases\": \"Suggestive requests that are not explicit\".\n    *   However, \"open door\" is very vague. If it's a request for a private space to do something sexual, it's suggestive. If it's literal, it's ordinary.\n    *   Let's look at the \"Allowed\" section: \"Show or open about things that are not the body: 'Show me your city', 'Open the app'\".\n    *   \"Open door\" is likely not a violation unless it's clearly sexual. In this transcript, there is no preceding sexual context. It's just a sudden question.\n    *   Actually, in many Indian contexts for these apps, \"open\" is used as a shorthand for sexual content. But \"open door\" specifically? It sounds more like asking if they are alone/private.\n    *   Let's re-read the `Explicit-Flirting` strong cases: \"Requests for 'open talk'...\".\n    *   If the user is asking if the other person is in a private setting (\"open door\" meaning \"are you alone/is the door open/closed\"), it's often a precursor to sexual requests.\n    *   But based on the strict definitions provided:\n        *   `PlatformMove`: No.\n        *   `SuspiciousActivity`: No.\n        *   `Explicit-Flirting`: \"Open\" is mentioned, but \"open door\" is not \"open talk\" or \"open your clothes\".\n    *   Is it a \"weaker case\" (suggestive)? It's very borderline.\n    *   Let's consider if it's \"About a violation\" (hypothetical/question about rules). No.\n    *   Is it \"Ordinary conversation\"? Asking about a door is usually ordinary, but in this specific app context, it's suspicious.\n    *   However, the prompt says: \"Do not output... ordinary conversation\".\n    *   If I flag \"Do you have an open door?\" as `Explicit-Flirting`, the confidence would be very low (0.3 or 0.1) because it's not explicitly sexual.\n    *   Let's look at the transcript again.\n        User: \"Do you have an open door?\"\n        Expert: \"No.\"\n    *   This doesn't match the strong or weak cases for `Explicit-Flirting` clearly. \"Open talk\" is the keyword. \"Open door\" is literal.\n    *   Conclusion: There are no clear violations here. The conversation is almost entirely ordinary. \"Do you have an open door?\" is too ambiguous to be a high-confidence flag and doesn't fit the specific \"open talk\" or \"open clothes\" patterns.\n\n    *   Wait, let me double-check if \"open door\" is a known euphemism in this specific dataset's domain. Usually, \"open call\" is the term. \"Open door\" might just be a weird translation or a literal question.\n    *   Given the instructions: \"a missed violation is worse than a doubtful flag with low confidence.\"\n    *   If I flag it:\n        *   Category: `Explicit-Flirting`\n        *   Confidence: 0.3 (since it's ambiguous)\n        *   Violation: \"no\" (because it's a question that might be about the situation, or just too weak).\n        *   Actually, if I think it's a \"weaker case\" (suggestive), violation is \"yes\" and confidence is 0.6. But \"open door\" is not inherently suggestive without more context.\n    *   Let's compare with \"Open the app\" (Allowed). \"Open door\" is similar.\n    *   I will treat this as ordinary conversation/non-violating.\n\n    *   No `PlatformMove`.\n    *   No `SuspiciousActivity`.\n    *   No `Explicit-Flirting`.\n\n    *   Return `{\"d\": []}`.",
+              "format": "unknown",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3207,
+      "completion_tokens": 1648,
+      "total_tokens": 4855,
+      "cost": 0.00086962,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3007,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00086962,
+        "upstream_inference_prompt_cost": 0.00021042,
+        "upstream_inference_completions_cost": 0.0006592
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1443,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

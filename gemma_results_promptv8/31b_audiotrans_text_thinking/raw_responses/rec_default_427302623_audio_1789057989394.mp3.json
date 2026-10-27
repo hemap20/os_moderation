@@ -1,0 +1,1002 @@
+{
+  "content": "{\"d\":[]}",
+  "reasoning": "*   Role: Content policy analyst.\n    *   Task: Review audio (transcript) for violations in Indian languages.\n    *   Categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.\n    *   Output: Minified JSON object.\n    *   Constraints:\n        *   `PlatformMove`: Proposing external contact, phone numbers, IDs, meeting in person.\n        *   `SuspiciousActivity`: Money linked to sexual content/services.\n        *   `Explicit-Flirting`: Sexual talk, nudity requests, sexual acts.\n        *   \"About a Violation\": Warnings, stories, refusals, hypotheticals (violation: \"no\", confidence <= 0.3).\n        *   Allowed: Internal app calls, \"normal talk\", non-contact app mentions, general personal details, compliments, relationship talk.\n        *   Ordinary conversation (greetings, small talk, etc.) should not be output.\n\n    *   [00:05] Hello. (Greeting - Allowed)\n    *   [00:07] Hello. (Greeting - Allowed)\n    *   [00:09] Hello, who is this? (Greeting/Intro - Allowed)\n    *   [00:10] I am Divya. (Name - Allowed)\n    *   [00:13] Who, what is your name? (Intro - Allowed)\n    *   [00:15] Divya. (Name - Allowed)\n    *   [00:19] Divya? (Name - Allowed)\n    *   [00:20] Divya. (Name - Allowed)\n    *   [00:22] Okay, what are you doing? (Small talk - Allowed)\n    *   [00:25] Work is done, what about you? (Small talk - Allowed)\n    *   [00:28] I didn't understand. (Filler/Clarification - Allowed)\n    *   [00:30] My work is done. (Small talk - Allowed)\n    *   [00:32] Okay, okay. (Filler - Allowed)\n    *   [00:39] What work do you do? (Small talk/Job - Allowed)\n    *   [00:41] I am in accounts, what about you? (Job - Allowed)\n    *   [00:45] I didn't understand. (Filler/Clarification - Allowed)\n    *   [00:47] Accounts. (Job - Allowed)\n    *   [00:49] Okay, okay. (Filler - Allowed)\n\n    *   No mentions of external apps, phone numbers, or meeting in person.\n    *   No mentions of money or payments.\n    *   No sexual talk, requests for nudity, or flirting.\n    *   The entire conversation is basic introductions and small talk about work.\n\n    *   Since no violations were found, the output should be `{\"d\": []}`.",
+  "response": {
+    "id": "gen-1793096321-MdFuBO5yg6BQzbL9yyEx",
+    "object": "chat.completion",
+    "created": 1793096321,
+    "model": "google/gemma-4-31b-it",
+    "provider": "Parasail",
+    "system_fingerprint": null,
+    "service_tier": null,
+    "choices": [
+      {
+        "index": 0,
+        "logprobs": {
+          "content": [
+            {
+              "token": "{\"",
+              "bytes": [
+                123,
+                34
+              ],
+              "logprob": -7.570076559204608e-05,
+              "top_logprobs": [
+                {
+                  "token": "{\"",
+                  "bytes": [
+                    123,
+                    34
+                  ],
+                  "logprob": -7.570076559204608e-05
+                },
+                {
+                  "token": "```",
+                  "bytes": [
+                    96,
+                    96,
+                    96
+                  ],
+                  "logprob": -9.549173355102539
+                },
+                {
+                  "token": "***",
+                  "bytes": [
+                    42,
+                    42,
+                    42
+                  ],
+                  "logprob": -15.636459350585938
+                },
+                {
+                  "token": "<?",
+                  "bytes": [
+                    60,
+                    63
+                  ],
+                  "logprob": -16.350648880004883
+                },
+                {
+                  "token": " merchants",
+                  "bytes": [
+                    32,
+                    109,
+                    101,
+                    114,
+                    99,
+                    104,
+                    97,
+                    110,
+                    116,
+                    115
+                  ],
+                  "logprob": -16.428630828857422
+                },
+                {
+                  "token": "观察",
+                  "bytes": [
+                    232,
+                    167,
+                    130,
+                    229,
+                    175,
+                    159
+                  ],
+                  "logprob": -16.537776947021484
+                },
+                {
+                  "token": "探",
+                  "bytes": [
+                    230,
+                    142,
+                    162
+                  ],
+                  "logprob": -16.607921600341797
+                },
+                {
+                  "token": "预测",
+                  "bytes": [
+                    233,
+                    162,
+                    132,
+                    230,
+                    181,
+                    139
+                  ],
+                  "logprob": -16.98951530456543
+                },
+                {
+                  "token": " kitchens",
+                  "bytes": [
+                    32,
+                    107,
+                    105,
+                    116,
+                    99,
+                    104,
+                    101,
+                    110,
+                    115
+                  ],
+                  "logprob": -17.00507926940918
+                },
+                {
+                  "token": "`",
+                  "bytes": [
+                    96
+                  ],
+                  "logprob": -17.121768951416016
+                },
+                {
+                  "token": " Rotating",
+                  "bytes": [
+                    32,
+                    82,
+                    111,
+                    116,
+                    97,
+                    116,
+                    105,
+                    110,
+                    103
+                  ],
+                  "logprob": -17.121768951416016
+                },
+                {
+                  "token": " crowds",
+                  "bytes": [
+                    32,
+                    99,
+                    114,
+                    111,
+                    119,
+                    100,
+                    115
+                  ],
+                  "logprob": -17.215076446533203
+                },
+                {
+                  "token": " those",
+                  "bytes": [
+                    32,
+                    116,
+                    104,
+                    111,
+                    115,
+                    101
+                  ],
+                  "logprob": -17.23062515258789
+                },
+                {
+                  "token": "のような",
+                  "bytes": [
+                    227,
+                    129,
+                    174,
+                    227,
+                    130,
+                    136,
+                    227,
+                    129,
+                    134,
+                    227,
+                    129,
+                    170
+                  ],
+                  "logprob": -17.277259826660156
+                },
+                {
+                  "token": " nodules",
+                  "bytes": [
+                    32,
+                    110,
+                    111,
+                    100,
+                    117,
+                    108,
+                    101,
+                    115
+                  ],
+                  "logprob": -17.3083438873291
+                },
+                {
+                  "token": " mindset",
+                  "bytes": [
+                    32,
+                    109,
+                    105,
+                    110,
+                    100,
+                    115,
+                    101,
+                    116
+                  ],
+                  "logprob": -17.354961395263672
+                },
+                {
+                  "token": "核心",
+                  "bytes": [
+                    230,
+                    160,
+                    184,
+                    229,
+                    191,
+                    131
+                  ],
+                  "logprob": -17.448163986206055
+                },
+                {
+                  "token": " {\"",
+                  "bytes": [
+                    32,
+                    123,
+                    34
+                  ],
+                  "logprob": -17.47922134399414
+                },
+                {
+                  "token": "激",
+                  "bytes": [
+                    230,
+                    191,
+                    128
+                  ],
+                  "logprob": -17.494749069213867
+                },
+                {
+                  "token": " groupby",
+                  "bytes": [
+                    32,
+                    103,
+                    114,
+                    111,
+                    117,
+                    112,
+                    98,
+                    121
+                  ],
+                  "logprob": -17.54132080078125
+                }
+              ]
+            },
+            {
+              "token": "d",
+              "bytes": [
+                100
+              ],
+              "logprob": -1.1920935776288388e-06,
+              "top_logprobs": [
+                {
+                  "token": "d",
+                  "bytes": [
+                    100
+                  ],
+                  "logprob": -1.1920935776288388e-06
+                },
+                {
+                  "token": " d",
+                  "bytes": [
+                    32,
+                    100
+                  ],
+                  "logprob": -14.147611618041992
+                },
+                {
+                  "token": "D",
+                  "bytes": [
+                    68
+                  ],
+                  "logprob": -16.97354507446289
+                },
+                {
+                  "token": "$",
+                  "bytes": [
+                    36
+                  ],
+                  "logprob": -17.064626693725586
+                },
+                {
+                  "token": " uma",
+                  "bytes": [
+                    32,
+                    117,
+                    109,
+                    97
+                  ],
+                  "logprob": -18.13385581970215
+                },
+                {
+                  "token": "#",
+                  "bytes": [
+                    35
+                  ],
+                  "logprob": -18.241390228271484
+                },
+                {
+                  "token": "${",
+                  "bytes": [
+                    36,
+                    123
+                  ],
+                  "logprob": -18.95041275024414
+                },
+                {
+                  "token": " diph",
+                  "bytes": [
+                    32,
+                    100,
+                    105,
+                    112,
+                    104
+                  ],
+                  "logprob": -19.027708053588867
+                },
+                {
+                  "token": "<tool_call|>",
+                  "bytes": [
+                    60,
+                    116,
+                    111,
+                    111,
+                    108,
+                    95,
+                    99,
+                    97,
+                    108,
+                    108,
+                    124,
+                    62
+                  ],
+                  "logprob": -19.151466369628906
+                },
+                {
+                  "token": "set",
+                  "bytes": [
+                    115,
+                    101,
+                    116
+                  ],
+                  "logprob": -19.5078182220459
+                },
+                {
+                  "token": "\\",
+                  "bytes": [
+                    92
+                  ],
+                  "logprob": -19.75615119934082
+                },
+                {
+                  "token": " patriotism",
+                  "bytes": [
+                    32,
+                    112,
+                    97,
+                    116,
+                    114,
+                    105,
+                    111,
+                    116,
+                    105,
+                    115,
+                    109
+                  ],
+                  "logprob": -19.880441665649414
+                },
+                {
+                  "token": " \\",
+                  "bytes": [
+                    32,
+                    92
+                  ],
+                  "logprob": -19.91152572631836
+                },
+                {
+                  "token": "to",
+                  "bytes": [
+                    116,
+                    111
+                  ],
+                  "logprob": -19.942615509033203
+                },
+                {
+                  "token": "}",
+                  "bytes": [
+                    125
+                  ],
+                  "logprob": -19.958160400390625
+                },
+                {
+                  "token": "誠",
+                  "bytes": [
+                    232,
+                    170,
+                    160
+                  ],
+                  "logprob": -20.0670166015625
+                },
+                {
+                  "token": "\":",
+                  "bytes": [
+                    34,
+                    58
+                  ],
+                  "logprob": -20.199270248413086
+                },
+                {
+                  "token": " dizziness",
+                  "bytes": [
+                    32,
+                    100,
+                    105,
+                    122,
+                    122,
+                    105,
+                    110,
+                    101,
+                    115,
+                    115
+                  ],
+                  "logprob": -20.214834213256836
+                },
+                {
+                  "token": "|",
+                  "bytes": [
+                    124
+                  ],
+                  "logprob": -20.25374984741211
+                },
+                {
+                  "token": " Vox",
+                  "bytes": [
+                    32,
+                    86,
+                    111,
+                    120
+                  ],
+                  "logprob": -20.30045509338379
+                }
+              ]
+            },
+            {
+              "token": "\":",
+              "bytes": [
+                34,
+                58
+              ],
+              "logprob": -1.0728841743912199e-06,
+              "top_logprobs": [
+                {
+                  "token": "\":",
+                  "bytes": [
+                    34,
+                    58
+                  ],
+                  "logprob": -1.0728841743912199e-06
+                },
+                {
+                  "token": "\"",
+                  "bytes": [
+                    34
+                  ],
+                  "logprob": -14.468544960021973
+                },
+                {
+                  "token": " monolayer",
+                  "bytes": [
+                    32,
+                    109,
+                    111,
+                    110,
+                    111,
+                    108,
+                    97,
+                    121,
+                    101,
+                    114
+                  ],
+                  "logprob": -16.7830810546875
+                },
+                {
+                  "token": "onDestroy",
+                  "bytes": [
+                    111,
+                    110,
+                    68,
+                    101,
+                    115,
+                    116,
+                    114,
+                    111,
+                    121
+                  ],
+                  "logprob": -17.117589950561523
+                },
+                {
+                  "token": "\":[],",
+                  "bytes": [
+                    34,
+                    58,
+                    91,
+                    93,
+                    44
+                  ],
+                  "logprob": -17.3200740814209
+                },
+                {
+                  "token": " rodr",
+                  "bytes": [
+                    32,
+                    114,
+                    111,
+                    100,
+                    114
+                  ],
+                  "logprob": -17.343446731567383
+                },
+                {
+                  "token": " Rely",
+                  "bytes": [
+                    32,
+                    82,
+                    101,
+                    108,
+                    121
+                  ],
+                  "logprob": -17.772260665893555
+                },
+                {
+                  "token": " Radius",
+                  "bytes": [
+                    32,
+                    82,
+                    97,
+                    100,
+                    105,
+                    117,
+                    115
+                  ],
+                  "logprob": -18.17811393737793
+                },
+                {
+                  "token": "\"}",
+                  "bytes": [
+                    34,
+                    125
+                  ],
+                  "logprob": -18.392866134643555
+                },
+                {
+                  "token": "稳定性",
+                  "bytes": [
+                    231,
+                    168,
+                    179,
+                    229,
+                    174,
+                    154,
+                    230,
+                    128,
+                    167
+                  ],
+                  "logprob": -18.627199172973633
+                },
+                {
+                  "token": " Either",
+                  "bytes": [
+                    32,
+                    69,
+                    105,
+                    116,
+                    104,
+                    101,
+                    114
+                  ],
+                  "logprob": -18.661376953125
+                },
+                {
+                  "token": " Outline",
+                  "bytes": [
+                    32,
+                    79,
+                    117,
+                    116,
+                    108,
+                    105,
+                    110,
+                    101
+                  ],
+                  "logprob": -18.699460983276367
+                },
+                {
+                  "token": "Spending",
+                  "bytes": [
+                    83,
+                    112,
+                    101,
+                    110,
+                    100,
+                    105,
+                    110,
+                    103
+                  ],
+                  "logprob": -18.740474700927734
+                },
+                {
+                  "token": "感激",
+                  "bytes": [
+                    230,
+                    132,
+                    159,
+                    230,
+                    191,
+                    128
+                  ],
+                  "logprob": -18.7917423248291
+                },
+                {
+                  "token": " Terrain",
+                  "bytes": [
+                    32,
+                    84,
+                    101,
+                    114,
+                    114,
+                    97,
+                    105,
+                    110
+                  ],
+                  "logprob": -19.04613494873047
+                },
+                {
+                  "token": "shutdown",
+                  "bytes": [
+                    115,
+                    104,
+                    117,
+                    116,
+                    100,
+                    111,
+                    119,
+                    110
+                  ],
+                  "logprob": -19.105703353881836
+                },
+                {
+                  "token": " metabolized",
+                  "bytes": [
+                    32,
+                    109,
+                    101,
+                    116,
+                    97,
+                    98,
+                    111,
+                    108,
+                    105,
+                    122,
+                    101,
+                    100
+                  ],
+                  "logprob": -19.151599884033203
+                },
+                {
+                  "token": "([])",
+                  "bytes": [
+                    40,
+                    91,
+                    93,
+                    41
+                  ],
+                  "logprob": -19.205307006835938
+                },
+                {
+                  "token": " एवं",
+                  "bytes": [
+                    32,
+                    224,
+                    164,
+                    143,
+                    224,
+                    164,
+                    181,
+                    224,
+                    164,
+                    130
+                  ],
+                  "logprob": -19.24436378479004
+                },
+                {
+                  "token": " mew",
+                  "bytes": [
+                    32,
+                    109,
+                    101,
+                    119
+                  ],
+                  "logprob": -19.377153396606445
+                }
+              ]
+            },
+            {
+              "token": "[]}",
+              "bytes": [
+                91,
+                93,
+                125
+              ],
+              "logprob": -0.3099527060985565,
+              "top_logprobs": [
+                {
+                  "token": "[]}",
+                  "bytes": [
+                    91,
+                    93,
+                    125
+                  ],
+                  "logprob": -0.3099527060985565
+                },
+                {
+                  "token": " []",
+                  "bytes": [
+                    32,
+                    91,
+                    93
+                  ],
+                  "logprob": -1.3233938217163086
+                },
+                {
+                  "token": "[]",
+                  "bytes": [
+                    91,
+                    93
+                  ],
+                  "logprob": -8.153155326843262
+                },
+                {
+                  "token": "=[]",
+                  "bytes": [
+                    61,
+                    91,
+                    93
+                  ],
+                  "logprob": -16.282485961914062
+                },
+                {
+                  "token": "%}",
+                  "bytes": [
+                    37,
+                    125
+                  ],
+                  "logprob": -17.853721618652344
+                },
+                {
+                  "token": "[]>",
+                  "bytes": [
+                    91,
+                    93,
+                    62
+                  ],
+                  "logprob": -18.067453384399414
+                },
+                {
+                  "token": " Those",
+                  "bytes": [
+                    32,
+                    84,
+                    104,
+                    111,
+                    115,
+                    101
+                  ],
+                  "logprob": -18.619121551513672
+                },
+                {
+                  "token": " terrain",
+                  "bytes": [
+                    32,
+                    116,
+                    101,
+                    114,
+                    114,
+                    97,
+                    105,
+                    110
+                  ],
+                  "logprob": -19.18890380859375
+                },
+                {
+                  "token": " SERV",
+                  "bytes": [
+                    32,
+                    83,
+                    69,
+                    82,
+                    86
+                  ],
+                  "logprob": -19.235214233398438
+                },
+                {
+                  "token": " rowIndex",
+                  "bytes": [
+                    32,
+                    114,
+                    111,
+                    119,
+                    73,
+                    110,
+                    100,
+                    101,
+                    120
+                  ],
+                  "logprob": -19.235214233398438
+                },
+                {
+                  "token": " landslides",
+                  "bytes": [
+                    32,
+                    108,
+                    97,
+                    110,
+                    100,
+                    115,
+                    108,
+                    105,
+                    100,
+                    101,
+                    115
+                  ],
+                  "logprob": -19.42061424255371
+                },
+                {
+                  "token": " [];",
+                  "bytes": [
+                    32,
+                    91,
+                    93,
+                    59
+                  ],
+                  "logprob": -19.513404846191406
+                },
+                {
+                  "token": " whoever",
+                  "bytes": [
+                    32,
+                    119,
+                    104,
+                    111,
+                    101,
+                    118,
+                    101,
+                    114
+                  ],
+                  "logprob": -19.637210845947266
+                },
+                {
+                  "token": "()}",
+                  "bytes": [
+                    40,
+                    41,
+                    125
+                  ],
+                  "logprob": -19.68366813659668
+                },
+                {
+                  "token": "に",
+                  "bytes": [
+                    227,
+                    129,
+                    171
+                  ],
+                  "logprob": -19.9006290435791
+                },
+                {
+                  "token": "}",
+                  "bytes": [
+                    125
+                  ],
+                  "logprob": -19.97818374633789
+                },
+                {
+                  "token": " ORDIN",
+                  "bytes": [
+                    32,
+                    79,
+                    82,
+                    68,
+                    73,
+                    78
+                  ],
+                  "logprob": -19.993698120117188
+                },
+                {
+                  "token": " squadra",
+                  "bytes": [
+                    32,
+                    115,
+                    113,
+                    117,
+                    97,
+                    100,
+                    114,
+                    97
+                  ],
+                  "logprob": -20.086816787719727
+                },
+                {
+                  "token": " Andromeda",
+                  "bytes": [
+                    32,
+                    65,
+                    110,
+                    100,
+                    114,
+                    111,
+                    109,
+                    101,
+                    100,
+                    97
+                  ],
+                  "logprob": -20.086816787719727
+                },
+                {
+                  "token": " orchard",
+                  "bytes": [
+                    32,
+                    111,
+                    114,
+                    99,
+                    104,
+                    97,
+                    114,
+                    100
+                  ],
+                  "logprob": -20.319812774658203
+                }
+              ]
+            }
+          ],
+          "refusal": null
+        },
+        "finish_reason": "stop",
+        "native_finish_reason": "stop",
+        "message": {
+          "role": "assistant",
+          "content": "{\"d\":[]}",
+          "refusal": null,
+          "reasoning": "*   Role: Content policy analyst.\n    *   Task: Review audio (transcript) for violations in Indian languages.\n    *   Categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.\n    *   Output: Minified JSON object.\n    *   Constraints:\n        *   `PlatformMove`: Proposing external contact, phone numbers, IDs, meeting in person.\n        *   `SuspiciousActivity`: Money linked to sexual content/services.\n        *   `Explicit-Flirting`: Sexual talk, nudity requests, sexual acts.\n        *   \"About a Violation\": Warnings, stories, refusals, hypotheticals (violation: \"no\", confidence <= 0.3).\n        *   Allowed: Internal app calls, \"normal talk\", non-contact app mentions, general personal details, compliments, relationship talk.\n        *   Ordinary conversation (greetings, small talk, etc.) should not be output.\n\n    *   [00:05] Hello. (Greeting - Allowed)\n    *   [00:07] Hello. (Greeting - Allowed)\n    *   [00:09] Hello, who is this? (Greeting/Intro - Allowed)\n    *   [00:10] I am Divya. (Name - Allowed)\n    *   [00:13] Who, what is your name? (Intro - Allowed)\n    *   [00:15] Divya. (Name - Allowed)\n    *   [00:19] Divya? (Name - Allowed)\n    *   [00:20] Divya. (Name - Allowed)\n    *   [00:22] Okay, what are you doing? (Small talk - Allowed)\n    *   [00:25] Work is done, what about you? (Small talk - Allowed)\n    *   [00:28] I didn't understand. (Filler/Clarification - Allowed)\n    *   [00:30] My work is done. (Small talk - Allowed)\n    *   [00:32] Okay, okay. (Filler - Allowed)\n    *   [00:39] What work do you do? (Small talk/Job - Allowed)\n    *   [00:41] I am in accounts, what about you? (Job - Allowed)\n    *   [00:45] I didn't understand. (Filler/Clarification - Allowed)\n    *   [00:47] Accounts. (Job - Allowed)\n    *   [00:49] Okay, okay. (Filler - Allowed)\n\n    *   No mentions of external apps, phone numbers, or meeting in person.\n    *   No mentions of money or payments.\n    *   No sexual talk, requests for nudity, or flirting.\n    *   The entire conversation is basic introductions and small talk about work.\n\n    *   Since no violations were found, the output should be `{\"d\": []}`.",
+          "reasoning_details": [
+            {
+              "type": "reasoning.text",
+              "text": "*   Role: Content policy analyst.\n    *   Task: Review audio (transcript) for violations in Indian languages.\n    *   Categories: `PlatformMove`, `SuspiciousActivity`, `Explicit-Flirting`.\n    *   Output: Minified JSON object.\n    *   Constraints:\n        *   `PlatformMove`: Proposing external contact, phone numbers, IDs, meeting in person.\n        *   `SuspiciousActivity`: Money linked to sexual content/services.\n        *   `Explicit-Flirting`: Sexual talk, nudity requests, sexual acts.\n        *   \"About a Violation\": Warnings, stories, refusals, hypotheticals (violation: \"no\", confidence <= 0.3).\n        *   Allowed: Internal app calls, \"normal talk\", non-contact app mentions, general personal details, compliments, relationship talk.\n        *   Ordinary conversation (greetings, small talk, etc.) should not be output.\n\n    *   [00:05] Hello. (Greeting - Allowed)\n    *   [00:07] Hello. (Greeting - Allowed)\n    *   [00:09] Hello, who is this? (Greeting/Intro - Allowed)\n    *   [00:10] I am Divya. (Name - Allowed)\n    *   [00:13] Who, what is your name? (Intro - Allowed)\n    *   [00:15] Divya. (Name - Allowed)\n    *   [00:19] Divya? (Name - Allowed)\n    *   [00:20] Divya. (Name - Allowed)\n    *   [00:22] Okay, what are you doing? (Small talk - Allowed)\n    *   [00:25] Work is done, what about you? (Small talk - Allowed)\n    *   [00:28] I didn't understand. (Filler/Clarification - Allowed)\n    *   [00:30] My work is done. (Small talk - Allowed)\n    *   [00:32] Okay, okay. (Filler - Allowed)\n    *   [00:39] What work do you do? (Small talk/Job - Allowed)\n    *   [00:41] I am in accounts, what about you? (Job - Allowed)\n    *   [00:45] I didn't understand. (Filler/Clarification - Allowed)\n    *   [00:47] Accounts. (Job - Allowed)\n    *   [00:49] Okay, okay. (Filler - Allowed)\n\n    *   No mentions of external apps, phone numbers, or meeting in person.\n    *   No mentions of money or payments.\n    *   No sexual talk, requests for nudity, or flirting.\n    *   The entire conversation is basic introductions and small talk about work.\n\n    *   Since no violations were found, the output should be `{\"d\": []}`.",
+              "format": "unknown",
+              "index": 0
+            }
+          ]
+        }
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 3239,
+      "completion_tokens": 683,
+      "total_tokens": 3922,
+      "cost": 0.00048833,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3008,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00048833,
+        "upstream_inference_prompt_cost": 0.00021513,
+        "upstream_inference_completions_cost": 0.0002732
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 544,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

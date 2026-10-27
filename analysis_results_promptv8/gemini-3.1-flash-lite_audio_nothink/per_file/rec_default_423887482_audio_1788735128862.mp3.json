@@ -1,0 +1,85 @@
+{
+  "file_id": "rec_default_423887482_audio_1788735128862.mp3",
+  "language": "hindi",
+  "gt_flag_count": 3,
+  "model_flag_count": 2,
+  "flag_tp": 1,
+  "flag_fn": 2,
+  "flag_fp": 1,
+  "file_bucket": "TP",
+  "qualifying_pm_ef_bucket": "TP",
+  "match_reliability": 1.0,
+  "gt_flags": [
+    {
+      "category": "Explicit-Flirting",
+      "translation": "I am saying your boobs are nice",
+      "timestamp": "01:39",
+      "excerpt": "मैं बोल रहा हूं आपके बूब्स अच्छे हैं",
+      "confidence": 0.4,
+      "matched": false,
+      "matched_model_category": null
+    },
+    {
+      "category": "PlatformMove",
+      "translation": "We also do that on WhatsApp etc.",
+      "timestamp": "02:01",
+      "excerpt": "हम व्हाट्सएप वगैरह पे भी वो करते हैं",
+      "confidence": 0.9,
+      "matched": false,
+      "matched_model_category": null
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "I will give it sir, you will have to send payment on WhatsApp",
+      "timestamp": "02:17",
+      "excerpt": "मैं दे दूंगी सर व्हाट्सएप पे पेमेंट डालना पड़ेगा आपको",
+      "confidence": 0.9,
+      "matched": true,
+      "matched_model_category": "SuspiciousActivity"
+    }
+  ],
+  "model_flags": [
+    {
+      "category": "PlatformMove",
+      "translation": "Give me your WhatsApp",
+      "timestamp": "02:12",
+      "excerpt": "दीजिए आपके व्हाट्सएप",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": null,
+      "entropy_mean": null,
+      "neg_entropy": null,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": null,
+      "model_speaker": "user",
+      "model_context": "The user asks for the expert's WhatsApp number. The expert replies that she will give it after the payment.",
+      "matched": false,
+      "matched_gt_category": null,
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": []
+    },
+    {
+      "category": "SuspiciousActivity",
+      "translation": "You will have to make the payment on WhatsApp",
+      "timestamp": "02:17",
+      "excerpt": "व्हाट्सएप पर पेमेंट डालना पड़ेगा आपको",
+      "model_confidence": 0.9,
+      "logprob_derived_confidence": null,
+      "entropy_mean": null,
+      "neg_entropy": null,
+      "model_speech_act": "direct",
+      "model_quote_type": null,
+      "model_violation": "yes",
+      "p_violation_yes": null,
+      "model_speaker": "expert",
+      "model_context": "The expert tells the user that he needs to make a payment on WhatsApp to get her number. The user asks how much.",
+      "matched": true,
+      "matched_gt_category": "SuspiciousActivity",
+      "pp_confidence": 0.9,
+      "pp_dropped": false,
+      "pp_rules_applied": []
+    }
+  ]
+}

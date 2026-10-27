@@ -62,19 +62,26 @@ RAW_SCHEMA_STR: str = ""
 TRANSCRIPT_SOURCES = {
     "conformer": ("indic_conformer_results", "conformer"),
     "itc": ("indic_transcribe_core_results", "itc"),
+    # English translations made by Gemini 3.1 FL from the audio (one flat JSON per file)
+    "audiotrans": ("translations/audio_gemini31fl", "audiotrans"),
 }
 
 
 def output_dir(model_key: str, source: str, transcript_chunk_seconds: float, thinking: bool) -> Path:
     tag = TRANSCRIPT_SOURCES[source][1]
+    if source == "audiotrans":
+        return GEMMA_RESULTS_DIR / f"{model_key}_audiotrans_text_{'thinking' if thinking else 'nothinking'}"
     return GEMMA_RESULTS_DIR / f"{model_key}_{tag}{transcript_chunk_seconds:g}s_text_{'thinking' if thinking else 'nothinking'}"
 
 
 def load_transcript_lines(source: str, transcript_chunk_seconds: float, file_id: str) -> Optional[str]:
     """'[t] text' per line, same format gemma_local_text.py feeds the model.
     Both ASR pipelines write the same per-file JSON shape."""
-    p = (config.PROJECT_ROOT / TRANSCRIPT_SOURCES[source][0] / f"chunk_{transcript_chunk_seconds:g}s"
-         / "transcripts" / f"{file_id}.json")
+    if source == "audiotrans":
+        p = config.PROJECT_ROOT / TRANSCRIPT_SOURCES[source][0] / f"{file_id}.json"
+    else:
+        p = (config.PROJECT_ROOT / TRANSCRIPT_SOURCES[source][0] / f"chunk_{transcript_chunk_seconds:g}s"
+             / "transcripts" / f"{file_id}.json")
     if not p.exists():
         return None
     data = json.loads(p.read_text())
@@ -83,7 +90,7 @@ def load_transcript_lines(source: str, transcript_chunk_seconds: float, file_id:
     segments = data.get("segments", [])
     if not segments:
         return data.get("full_text", "")
-    return "\n".join(f"[{s.get('t')}] {s.get('text', '')}" for s in segments)
+    return "\n".join(f"[{s.get('t')}] {s.get('en') or s.get('text', '')}" for s in segments)
 
 
 def api_key() -> str:
